@@ -1,14 +1,24 @@
-Apache Cordova API Documentation
-================================
+Adobe PhoneGap Documentation
+============================
 
-The JavaScript API documentation for [Apache Cordova](http://cordova.io/).
+The JavaScript API documentation for [Adobe PhoneGap](http://phonegap.com/).
 
-The documentation is available at [docs.cordova.io](http://docs.cordova.io/).
+The documentation is available at [docs.phonegap.com](http://docs.phonegap.com/).
+
+Under Development
+-----------------
+
+The documentation is currently a fork of [Apache Cordova's Documentation](https://git-wip-us.apache.org/repos/asf?p=cordova-docs.git;a=summary).
+
+This is a transitional step that will be removed in the coming weeks. Until then,
+we encourage contributors to use the Apache Cordova project as an avenue
+for contributions. All of your work will make it into the PhoneGap Documentation.
+Promise :)
 
 Documentation Format
 --------------------
 
-All of the [Apache Cordova](http://cordova.io/) documentation is written with [markdown](http://daringfireball.net/projects/markdown/syntax), a lightweight markup language that can be typeset to HTML. Markdown provides a simple and flexible way to document Cordova's core API and platform-specific APIs.
+All of the (http://cordova.io/) documentation is written with [markdown](http://daringfireball.net/projects/markdown/syntax), a lightweight markup language that can be typeset to HTML. Markdown provides a simple and flexible way to document Cordova's core API and platform-specific APIs.
 
 File Structure
 --------------
