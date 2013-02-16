@@ -29,6 +29,7 @@ require 'table_of_contents'
 require 'version_menu'
 require 'navigation_menu'
 require 'prettify'
+require 'phonegapify'
 
 class DocsGenerator
   include FileHelpers
@@ -82,7 +83,7 @@ class DocsGenerator
   protected
   
   def before_jodoc(input_directory, options)
-    klasses = [ YamlFrontMatter.new, FileMerger.new ]
+    klasses = [ YamlFrontMatter.new, PhoneGapify.new, FileMerger.new ]
     
     klasses.each do |klass|
       each_file input_directory do |file|
