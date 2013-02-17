@@ -19,6 +19,31 @@ class PhoneGapify
   def run(filename)
     content = IO.read(filename)
 
+    # [Apache Cordova](http://cordova.io) => [PhoneGap](http://phonegap.com)
+    # cordova.io => phonegap.com
+    #
+    # [Apache Cordova](http://www.apache.org/dist/cordova/) => [PhoneGap](http://phonegap.com/download)
+    # http://www.apache.org/dist/cordova/ => http://phonegap.com/download
+    #
+    # [Cordova](http://cordova.apache.org/) => [PhoneGap](http://phonegap.com/download)
+    # [Cordova](http://cordova.apache.org/#download) => [PhoneGap](http://phonegap.com/download)
+    #
+    # [Apache Cordova home page](http://cordova.apache.org/) => [PhoneGap](http://phonegap.com)
+    # [Cordova](http://phonegap.com/download) => [PhoneGap](http://phonegap.com/download)
+    # [Apache Cordova](http://phonegap.com/download) => [PhoneGap](http://phonegap.com/download)
+
+    content.gsub!('[Apache Cordova](http://cordova.io)',                    '[PhoneGap](http://phonegap.com)')
+    content.gsub!('cordova.io',                                             'phonegap.com')
+    content.gsub!('[Apache Cordova](http://www.apache.org/dist/cordova/)',  '[PhoneGap](http://phonegap.com/download)')
+    content.gsub!('http://www.apache.org/dist/cordova/',                    'http://phonegap.com/download')
+    content.gsub!('[Cordova](http://cordova.apache.org/)',                  '[PhoneGap](http://phonegap.com/download)')
+    content.gsub!('[Cordova](http://cordova.apache.org/#download)',         '[PhoneGap](http://phonegap.com/download)')
+    content.gsub!('[Apache Cordova home page](http://cordova.apache.org/)', '[PhoneGap](http://phonegap.com)')
+    content.gsub!('Cordova](http://phonegap.com/download)',                 '[PhoneGap](http://phonegap.com/download)')
+    content.gsub!('Apache Cordova](http://phonegap.com/download)',          '[PhoneGap](http://phonegap.com/download)')
+
+    File.open(filename, 'w') { |file| file.write content }
+
     return content
   end
 end
