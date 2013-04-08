@@ -71,7 +71,7 @@ Full Example
           <head>
             <title>Media Example</title>
         
-            <script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script>
+            <script type="text/javascript" charset="utf-8" src="cordova-2.6.0.js"></script>
             <script type="text/javascript" charset="utf-8">
         
             // Wait for Cordova to load
@@ -188,3 +188,11 @@ iOS Quirk
     
         var myMedia = new Media("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3")
         myMedia.play({ playAudioWhenScreenIsLocked : false })
+
+
+- __order of file search__
+
+    When only a file name or simple path is provided, iOS will search in the www for the file and then in the application documents/tmp directory.
+
+        var myMedia = new Media("audio/beer.mp3")
+        myMedia.play()  // will first look for file in www/audio/beer.mp3 then in <application>/documents/tmp/audio/beer.mp3

@@ -57,7 +57,7 @@ __Parameters:__
 - __filePath__ - Full path of the file on the device
 - __server__ - URL of the server to receive the file (must already be encoded using encodeURI())
 - __successCallback__ - A callback that is called with a Metadata object. _(Function)_
-- __errorCallback__ - A callback that is called if an error occurs retrieving the Metadata. Invoked with a FileError object. _(Function)_
+- __errorCallback__ - A callback that is called if an error occurs retrieving the Metadata. Invoked with a FileTransferError object. _(Function)_
 - __options__ - Optional parameters such as file name and mimetype
 - __trustAllHosts__ - Optional parameter, defaults to false. If set to true then it will accept all security certificates. This is useful as Android rejects self signed security certificates. Not recommended for production use. Supported on Android and iOS. _(boolean)_
 
@@ -98,7 +98,7 @@ __Full Example__
     <head>
         <title>File Transfer Example</title>
     
-        <script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova-2.6.0.js"></script>
         <script type="text/javascript" charset="utf-8">
             
             // Wait for Cordova to load
@@ -197,8 +197,9 @@ __Parameters:__
 - __source__ - URL of the server to download the file (must already be encoded using encodeURI())
 - __target__ - Full path of the file on the device
 - __successCallback__ - A callback that is called with a FileEntry object. _(Function)_
-- __errorCallback__ - A callback that is called if an error occurs retrieving the Metadata. Invoked with a FileError object. _(Function)_
+- __errorCallback__ - A callback that is called if an error occurs retrieving the Metadata. Invoked with a FileTransferError object. _(Function)_
 - __trustAllHosts__ - Optional parameter, defaults to false. If set to true then it will accept all security certificates. This is useful as Android rejects self signed security certificates. Not recommended for production use. Supported on Android and iOS. _(boolean)_
+- __options__ - Optional parameters, currently only supports headers (such as Authorization (Basic Authentication), etc).
 
 __Quick Example__
 
@@ -217,6 +218,12 @@ __Quick Example__
             console.log("download error source " + error.source);
             console.log("download error target " + error.target);
             console.log("upload error code" + error.code);
+        },
+        false,
+        {
+            headers: {
+                "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+            }
         }
     );
 
