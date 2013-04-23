@@ -23,7 +23,7 @@ InAppBrowser
 > The InAppBrowser is a web-browser that is shown in your app when you use the `window.open` call.
 
     var ref = window.open('http://apache.org', '_blank', 'location=yes');
-    
+
 Description
 -----------
 
@@ -70,12 +70,12 @@ addEventListener
 - __ref:__ reference to the InAppBrowser window (`InAppBrowser`)
 - __eventname:__ the event to listen for (`String`)
 
-        loadstart - event fired when the InAppBrowser starts to load a URL 
+        loadstart - event fired when the InAppBrowser starts to load a URL
         loadstop - event fired when the InAppBrowser finished loading a URL
         loaderror - event fired when the InAppBrowser encounters an error loading a URL
-        exit - event fired when the InAppBrowser window is closed 
+        exit - event fired when the InAppBrowser window is closed
 
-- __callback:__ the function that is called when the event is fired. 
+- __callback:__ the function that is called when the event is fired.
 The function is passed an `InAppBrowserEvent` object.
 
 Supported Platforms
@@ -99,7 +99,7 @@ Full Example
       <head>
         <title>InAppBrowser.addEventListener Example</title>
 
-        <script type="text/javascript" charset="utf-8" src="cordova-2.6.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
         <script type="text/javascript" charset="utf-8">
 
         // Wait for Cordova to load
@@ -132,12 +132,12 @@ removeEventListener
 - __ref:__ reference to the InAppBrowser window (`InAppBrowser`)
 - __eventname:__ the event to stop listening for (`String`)
 
-        loadstart - event fired when the InAppBrowser starts to load a URL 
+        loadstart - event fired when the InAppBrowser starts to load a URL
         loadstop - event fired when the InAppBrowser finished loading a URL
         loaderror - event fired when the InAppBrowser encounters an error loading a URL
-        exit - event fired when the InAppBrowser window is closed 
+        exit - event fired when the InAppBrowser window is closed
 
-- __callback:__ the function that was to be called when the event is fired. 
+- __callback:__ the function that was to be called when the event is fired.
 The function is passed an `InAppBrowserEvent` object.
 
 Supported Platforms
@@ -163,16 +163,16 @@ Full Example
       <head>
         <title>InAppBrowser.removeEventListener Example</title>
 
-        <script type="text/javascript" charset="utf-8" src="cordova-2.6.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
         <script type="text/javascript" charset="utf-8">
 
         // Wait for Cordova to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
-        
+
         // Global InAppBrowser reference
         var iabRef = null;
-        
+
         function iabLoadStart(event) {
             alert(event.type + ' - ' + event.url);
         }
@@ -180,11 +180,11 @@ Full Example
         function iabLoadStop(event) {
             alert(event.type + ' - ' + event.url);
         }
-   
+
         function iabLoadError(event) {
             alert(event.type + ' - ' + event.message);
         }
-   
+
         function iabClose(event) {
              alert(event.type);
              iabRef.removeEventListener('loadstart', iabLoadStart);
@@ -224,6 +224,7 @@ Supported Platforms
 - Android
 - iOS
 - Windows Phone 7 + 8
+- BlackBerry 10
 
 Quick Example
 -------------
@@ -239,7 +240,7 @@ Full Example
       <head>
         <title>InAppBrowser.close Example</title>
 
-        <script type="text/javascript" charset="utf-8" src="cordova-2.6.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
         <script type="text/javascript" charset="utf-8">
 
         // Wait for Cordova to load
@@ -262,6 +263,163 @@ Full Example
       </body>
     </html>
 
+executeScript
+=============
+
+> Injects JavaScript code into the InAppBrowser window
+
+    ref.executeScript(details, callback);
+
+- __ref:__ reference to the InAppBrowser window (`InAppBrowser`)
+- __injectDetails:__ details of the script ot run (`Object`)
+    - Supported keys:  (exactly one of "file" or "code" should be present)
+
+            "file" - URL of the script to inject
+            "code" - Text of the script to inject
+
+- __callback:__ the function that is to be called in the Cordova application after the JavaScript code is injected.
+    - If the injected script is of type "code", then the callback will be called with a single argument, which is
+      the return value of the script, wrapped in an Array. (For multi-line scripts, this is the return value of the
+      last statement, or the last expression evaluated.)
+
+Supported Platforms
+-------------------
+
+- Android
+- iOS
+
+Quick Example
+-------------
+
+    var ref = window.open('http://apache.org', '_blank', 'location=yes');
+    ref.addEventListener('loadstop', function() {
+        ref.executeSript({file: "myscript.js"});
+    });
+
+Full Example
+------------
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>InAppBrowser.executeScript Example</title>
+
+        <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+        // Wait for Cordova to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // Global InAppBrowser reference
+        var iabRef = null;
+
+        // Inject our custom JavaScript into the InAppBrowser window
+        //
+        function replaceHeaderImage() {
+            iabRef.executeScript({
+                code: "var img=document.querySelector('#header img'); img.src='http://cordova.apache.org/images/cordova_bot.png';"
+            }, function() {
+                alert("Image Element Successfully Hijacked");
+            }
+        }
+
+        function iabClose(event) {
+             iabRef.removeEventListener('loadstop', replaceHeaderImage);
+             iabRef.removeEventListener('exit', iabClose);
+        }
+
+        // Cordova is ready
+        //
+        function onDeviceReady() {
+             iabRef = window.open('http://apache.org', '_blank', 'location=yes');
+             iabRef.addEventListener('loadstop', replaceHeaderImage);
+             iabRef.addEventListener('exit', iabClose);
+        }
+
+        </script>
+      </head>
+      <body>
+      </body>
+    </html>
+
+insertCSS
+=========
+
+> Injects CSS into the InAppBrowser window
+
+    ref.insertCSS(details, callback);
+
+- __ref:__ reference to the InAppBrowser window (`InAppBrowser`)
+- __injectDetails:__ details of the script ot run (`Object`)
+    - Supported keys:  (exactly one of "file" or "code" should be present)
+
+            "file" - URL of the stylesheet to inject
+            "code" - Text of the stylesheet to inject
+
+- __callback:__ the function that is to be called in the Cordova application after the CSS is injected.
+
+Supported Platforms
+-------------------
+
+- Android
+- iOS
+
+Quick Example
+-------------
+
+    var ref = window.open('http://apache.org', '_blank', 'location=yes');
+    ref.addEventListener('loadstop', function() {
+        ref.insertCSS({file: "mystyles.css"});
+    });
+
+Full Example
+------------
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>InAppBrowser.executeScript Example</title>
+
+        <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+        // Wait for Cordova to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // Global InAppBrowser reference
+        var iabRef = null;
+
+        // Inject our custom CSS into the InAppBrowser window
+        //
+        function changeBackgroundColor() {
+            iabRef.executeScript({
+                code: "body { background: #ffff00"
+            }, function() {
+                alert("Styles Altered");
+            }
+        }
+
+        function iabClose(event) {
+             iabRef.removeEventListener('loadstop', changeBackgroundColor);
+             iabRef.removeEventListener('exit', iabClose);
+        }
+
+        // Cordova is ready
+        //
+        function onDeviceReady() {
+             iabRef = window.open('http://apache.org', '_blank', 'location=yes');
+             iabRef.addEventListener('loadstop', changeBackgroundColor);
+             iabRef.addEventListener('exit', iabClose);
+        }
+
+        </script>
+      </head>
+      <body>
+      </body>
+    </html>
+
 InAppBrowserEvent
 =================
 
@@ -270,5 +428,7 @@ The object that is passed to the callback function from an addEventListener call
 Properties
 ----------
 
-- __type:__ the eventname (`String`) - one of loadstart, loadstop, or exit
+- __type:__ the eventname (`String`) - one of loadstart, loadstop, loaderror or exit
 - __url:__ the URL that was loaded (`String`)
+- __code:__ the error code (`Number`) - only in the case of loaderror
+- __message:__ the error message (`String`) - only in the case of loaderror
