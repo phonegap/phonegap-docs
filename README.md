@@ -138,6 +138,19 @@ If all you want to generate is edge/English, then
 
 ### Problems
     
+Updating the Apache Cordova Documentation
+-----------------------------------------
+
+Consider the example of updating the Apache Cordova `2.7.0` docuemtnation.
+
+1. Get the latest copy of [cordova-docs](https://github.com/apache/cordova-docs).
+1. Copy & paste `cordova-docs/docs/en/2.7.0/` to `phonegap-docs/docs/en/2.7.0/`
+1. Copy & paste `cordova-docs/docs/en/edge/` to `phonegap-docs/docs/en/edge/`
+1. `git commit -am "Update 2.7.0 and Edge from Apache Cordova."`
+1. Update `VERSION` to `2.7.0`
+1. `git commit -am "Version 2.7.0"`
+1. `git tag 2.7.0`
+
 Generated a Version Release
 ---------------------------
 
