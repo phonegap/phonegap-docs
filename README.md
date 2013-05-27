@@ -141,7 +141,7 @@ If all you want to generate is edge/English, then
 Updating the Apache Cordova Documentation
 -----------------------------------------
 
-Consider the example of updating the Apache Cordova `2.7.0` docuemtnation.
+Consider the example of updating the Apache Cordova `2.7.0` documentation.
 
 1. Get the latest copy of [cordova-docs](https://github.com/apache/cordova-docs).
 1. Copy & paste `cordova-docs/docs/en/2.7.0/` to `phonegap-docs/docs/en/2.7.0/`
