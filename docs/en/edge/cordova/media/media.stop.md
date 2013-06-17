@@ -24,11 +24,11 @@ Stops playing an audio file.
 
     media.stop();
 
-
 Description
 -----------
 
-Function `media.stop` is a synchronous function that stops playing an audio file.
+The `media.stop` method executes synchronously to stop playing an
+audio file.
 
 Supported Platforms
 -------------------
@@ -55,7 +55,8 @@ Quick Example
             // error callback
             function(err) {
                 console.log("playAudio():Audio Error: "+err);
-        });
+            }
+        );
 
         // Play audio
         my_media.play();
@@ -63,7 +64,7 @@ Quick Example
         // Pause after 10 seconds
         setTimeout(function() {
             my_media.stop();
-        }, 10000);        
+        }, 10000);
     }
 
 Full Example
@@ -74,34 +75,34 @@ Full Example
         <html>
           <head>
             <title>Media Example</title>
-        
+
             <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
             <script type="text/javascript" charset="utf-8">
-        
-            // Wait for Cordova to load
+
+            // Wait for device API libraries to load
             //
             document.addEventListener("deviceready", onDeviceReady, false);
-        
-            // Cordova is ready
+
+            // device APIs are available
             //
             function onDeviceReady() {
                 playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
             }
-        
+
             // Audio player
             //
             var my_media = null;
             var mediaTimer = null;
-        
+
             // Play audio
             //
             function playAudio(src) {
                 // Create Media object from src
                 my_media = new Media(src, onSuccess, onError);
-        
+
                 // Play audio
                 my_media.play();
-        
+
                 // Update my_media position every second
                 if (mediaTimer == null) {
                     mediaTimer = setInterval(function() {
@@ -122,17 +123,17 @@ Full Example
                     }, 1000);
                 }
             }
-        
+
             // Pause audio
-            // 
+            //
             function pauseAudio() {
                 if (my_media) {
                     my_media.pause();
                 }
             }
-        
+
             // Stop audio
-            // 
+            //
             function stopAudio() {
                 if (my_media) {
                     my_media.stop();
@@ -140,26 +141,26 @@ Full Example
                 clearInterval(mediaTimer);
                 mediaTimer = null;
             }
-        
+
             // onSuccess Callback
             //
             function onSuccess() {
                 console.log("playAudio():Audio Success");
             }
-        
-            // onError Callback 
+
+            // onError Callback
             //
             function onError(error) {
-                alert('code: '    + error.code    + '\n' + 
+                alert('code: '    + error.code    + '\n' +
                       'message: ' + error.message + '\n');
             }
-        
+
             // Set audio position
-            // 
+            //
             function setAudioPosition(position) {
                 document.getElementById('audio_position').innerHTML = position;
             }
-        
+
             </script>
           </head>
           <body>

@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -20,7 +20,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 accelerometer.clearWatch
 ========================
 
-Stop watching the `Acceleration` referenced by the watch ID parameter.
+Stop watching the `Acceleration` referenced by the `watchID` parameter.
 
     navigator.accelerometer.clearWatch(watchID);
 
@@ -31,7 +31,7 @@ Supported Platforms
 
 - Android
 - BlackBerry WebWorks (OS 5.0 and higher)
-- iPhone
+- iOS
 - Windows Phone 7 and 8
 - Bada 1.2 & 2.x
 - Tizen
@@ -41,11 +41,11 @@ Quick Example
 -------------
 
     var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-    
+
     // ... later on ...
-    
+
     navigator.accelerometer.clearWatch(watchID);
-    
+
 Full Example
 ------------
 
@@ -59,12 +59,12 @@ Full Example
 
         // The watch id references the current `watchAcceleration`
         var watchID = null;
-        
-        // Wait for Cordova to load
+
+        // Wait for device API libraries to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        // Cordova is ready
+        // device APIs are available
         //
         function onDeviceReady() {
             startWatch();
@@ -73,13 +73,13 @@ Full Example
         // Start watching the acceleration
         //
         function startWatch() {
-            
+
             // Update acceleration every 3 seconds
             var options = { frequency: 3000 };
-            
+
             watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
         }
-        
+
         // Stop watching the acceleration
         //
         function stopWatch() {
@@ -88,14 +88,15 @@ Full Example
                 watchID = null;
             }
         }
-		    
+
         // onSuccess: Get a snapshot of the current acceleration
         //
         function onSuccess(acceleration) {
             var element = document.getElementById('accelerometer');
+
             element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
                                 'Acceleration Y: ' + acceleration.y + '<br />' +
-                                'Acceleration Z: ' + acceleration.z + '<br />' + 
+                                'Acceleration Z: ' + acceleration.z + '<br />' +
                                 'Timestamp: '      + acceleration.timestamp + '<br />';
         }
 
@@ -109,6 +110,6 @@ Full Example
       </head>
       <body>
         <div id="accelerometer">Waiting for accelerometer...</div>
-		<button onclick="stopWatch();">Stop Watching</button>
+            <button onclick="stopWatch();">Stop Watching</button>
       </body>
     </html>

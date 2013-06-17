@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -25,16 +25,15 @@ A `CompassError` object is returned to the `compassError` callback function when
 Properties
 ----------
 
-- __code:__ One of the predefined error codes listed below.
+- __code__: One of the predefined error codes listed below.
 
 Constants
 ---------
-- `CompassError.COMPASS_INTERNAL_ERR` 
+- `CompassError.COMPASS_INTERNAL_ERR`
 - `CompassError.COMPASS_NOT_SUPPORTED`
 
 Description
 -----------
 
-The `CompassError` object is returned to the user through the `compassError` callback function when an error occurs.
-
-
+When an error occurs, the `CompassError` object is passed as a
+parameter to a `compassError` callback function.

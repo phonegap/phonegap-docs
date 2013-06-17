@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -20,12 +20,12 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 ContactError
 ========
 
-A `ContactError` object is returned to the `contactError` callback when an error occurs.
+A `ContactError` object is passed to the `contactError` callback when an error occurs.
 
 Properties
 ----------
 
-- __code:__ One of the predefined error codes listed below.
+- __code__: One of the predefined error codes listed below.
 
 Constants
 ---------
@@ -41,5 +41,6 @@ Constants
 Description
 -----------
 
-The `ContactError` object is returned to the user through the `contactError` callback function when an error occurs.
+The `ContactError` object is returned to the user through the
+`contactError` callback function when an error occurs.
 

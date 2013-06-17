@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -20,9 +20,9 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 accelerometerOptions
 ====================
 
-An optional parameter to customize the retrieval of the accelerometer.
+An optional parameter to customize the retrieval of accelerometer values.
 
 Options
 -------
 
-- __frequency:__ How often to retrieve the `Acceleration` in milliseconds. _(Number)_ (Default: 10000)
+- __frequency__: How often to retrieve the `Acceleration` in milliseconds. _(Number)_ (Default: 10000)

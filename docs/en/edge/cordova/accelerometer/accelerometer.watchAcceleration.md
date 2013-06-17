@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -20,27 +20,35 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 accelerometer.watchAcceleration
 ===============================
 
-At a regular interval, get the acceleration along the x, y, and z axis.
+At a regular interval, get the acceleration along the _x_, _y_, and _z_ axis.
 
     var watchID = navigator.accelerometer.watchAcceleration(accelerometerSuccess,
                                                            accelerometerError,
                                                            [accelerometerOptions]);
-                                                           
+
 Description
 -----------
 
-The accelerometer is a motion sensor that detects the change (delta) in movement relative to the current position. The accelerometer can detect 3D movement along the x, y, and z axis.
+The accelerometer is a motion sensor that detects the change (delta)
+in movement relative to the current position. The accelerometer can
+detect 3D movement along the _x_, _y_, and _z_ axis.
 
-The `accelerometer.watchAcceleration` gets the device's current acceleration at a regular interval. Each time the `Acceleration` is retrieved, the `accelerometerSuccess` callback function is executed. Specify the interval in milliseconds via the `frequency` parameter in the `acceleratorOptions` object.
+The `accelerometer.watchAcceleration` method retrieves the device's
+current `Acceleration` at a regular interval, executing the
+`accelerometerSuccess` callback function each time. Specify the
+interval in milliseconds via the `acceleratorOptions` object's
+`frequency` parameter.
 
-The returned watch ID references the accelerometer watch interval. The watch ID can be used with `accelerometer.clearWatch` to stop watching the accelerometer.
+The returned watch ID references the accelerometer's watch interval,
+and can be used with `accelerometer.clearWatch` to stop watching the
+accelerometer.
 
 Supported Platforms
 -------------------
 
 - Android
 - BlackBerry WebWorks (OS 5.0 and higher)
-- iPhone
+- iOS
 - Windows Phone 7 and 8
 - Bada 1.2 & 2.x
 - Tizen
@@ -61,7 +69,7 @@ Quick Example
     };
 
     var options = { frequency: 3000 };  // Update every 3 seconds
-    
+
     var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 
 Full Example
@@ -77,12 +85,12 @@ Full Example
 
         // The watch id references the current `watchAcceleration`
         var watchID = null;
-        
-        // Wait for Cordova to load
+
+        // Wait for device API libraries to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        // Cordova is ready
+        // device APIs are available
         //
         function onDeviceReady() {
             startWatch();
@@ -91,13 +99,13 @@ Full Example
         // Start watching the acceleration
         //
         function startWatch() {
-            
+
             // Update acceleration every 3 seconds
             var options = { frequency: 3000 };
-            
+
             watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
         }
-        
+
         // Stop watching the acceleration
         //
         function stopWatch() {
@@ -106,14 +114,14 @@ Full Example
                 watchID = null;
             }
         }
-        
+
         // onSuccess: Get a snapshot of the current acceleration
         //
         function onSuccess(acceleration) {
             var element = document.getElementById('accelerometer');
-            element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
-                                'Acceleration Y: ' + acceleration.y + '<br />' +
-                                'Acceleration Z: ' + acceleration.z + '<br />' +
+            element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
+                                'Acceleration Y: ' + acceleration.y         + '<br />' +
+                                'Acceleration Z: ' + acceleration.z         + '<br />' +
                                 'Timestamp: '      + acceleration.timestamp + '<br />';
         }
 
@@ -129,10 +137,12 @@ Full Example
         <div id="accelerometer">Waiting for accelerometer...</div>
       </body>
     </html>
-    
- iPhone Quirks
+
+iOS Quirks
 -------------
 
-- At the interval requested, Cordova will call the success callback function and pass the accelerometer results.
-- However, in requests to the device Cordova restricts the interval to minimum of every 40ms and a maximum of every 1000ms.
-  - For example, if you request an interval of 3 seconds (3000ms), Cordova will request an interval of 1 second from the device but invoke the success callback at the requested interval of 3 seconds.
+The API calls the success callback function at the interval requested,
+but restricts the range of requests to the device between 40ms and
+1000ms. For example, if you request an interval of 3 seconds,
+(3000ms), the API requests data from the device every 1 second, but
+only executes the success callback every 3 seconds.

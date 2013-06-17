@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -20,21 +20,25 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 batterycritical
 ===========
 
-This is an event that fires when a Cordova application detects the battery has reached the critical level threshold.
+The event fires when the battery has reached the critical level
+threshold.
 
     window.addEventListener("batterycritical", yourCallbackFunction, false);
 
 Details
 -------
 
-This event that fires when a Cordova application detects the percentage of battery has reached the critical battery threshold. This value is device specific.
+The event fires when the percentage of battery charge has reached the
+critical battery threshold. The value is device-specific.
 
-The batterycritical handler will be called with an object that contains two properties:
+The `batterycritical` handler is passed an object that contains two
+properties:
 
-- __level:__ The percentage of battery (0-100). _(Number)_
-- __isPlugged:__ A boolean that represents whether or not the device is plugged in or not. _(Boolean)_
+- __level__: The percentage of battery charge (0-100). _(Number)_
+- __isPlugged__: A boolean that indicates whether the device is plugged in. _(Boolean)_
 
-Typically, you will want to attach an event listener with `window.addEventListener` once you receive the Cordova 'deviceready' event.
+Applications typically should use `window.addEventListener` to attach
+an event listener once the `deviceready` event fires.
 
 Supported Platforms
 -------------------
@@ -51,7 +55,7 @@ Quick Example
 
     function onBatteryCritical(info) {
         // Handle the battery critical event
-       	alert("Battery Level Critical " + info.level + "%\nRecharge Soon!"); 
+        alert("Battery Level Critical " + info.level + "%\nRecharge Soon!");
     }
 
 Full Example
@@ -60,33 +64,29 @@ Full Example
     <!DOCTYPE html>
     <html>
       <head>
-        <title>Cordova Battery Critical Example</title>
+        <title>Battery Critical Example</title>
 
         <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
         <script type="text/javascript" charset="utf-8">
 
-        // Call onDeviceReady when Cordova is loaded.
+        // Wait for device API libraries to load
         //
-        // At this point, the document has loaded but cordova-x.x.x.js has not.
-        // When Cordova is loaded and talking with the native device,
-        // it will call the event `deviceready`.
-        // 
-	    function onLoad() {
-    	    document.addEventListener("deviceready", onDeviceReady, false);
-    	}
+        function onLoad() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
 
-        // Cordova is loaded and it is now safe to make calls Cordova methods
+        // device APIs are available
         //
         function onDeviceReady() {
-		    window.addEventListener("batterycritical", onBatteryCritical, false);
+            window.addEventListener("batterycritical", onBatteryCritical, false);
         }
 
         // Handle the batterycritical event
         //
         function onBatteryCritical(info) {
-	       	alert("Battery Level Critical " + info.level + "%\nRecharge Soon!"); 
+            alert("Battery Level Critical " + info.level + "%\nRecharge Soon!");
         }
-        
+
         </script>
       </head>
       <body onload="onLoad()">

@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -29,4 +29,4 @@ onError callback function that provides an error message.
 Parameters
 ----------
 
-- __message:__ The message is provided by the device's native code. (`String`)
+- __message__: The message is provided by the device's native code. _(String)_

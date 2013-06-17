@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -29,7 +29,7 @@ Supported Platforms
 
 - Android 2.1+
 - BlackBerry WebWorks (OS 5.0 and higher)
-- iPhone
+- iOS
 - Windows Phone 7 and 8
 - Bada 1.2 & 2.x
 - webOS
@@ -41,7 +41,7 @@ Quick Example
 
     // Android:    Froyo OS would return "2.2"
     //             Eclair OS would return "2.1", "2.0.1", or "2.0"
-    //             Version can also return update level "2.1-update1" 
+    //             Version can also return update level "2.1-update1"
     //
     // BlackBerry: Torch 9800 using OS 6.0 would return "6.0.0.600"
     //
@@ -63,19 +63,18 @@ Full Example
         <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
         <script type="text/javascript" charset="utf-8">
 
-        // Wait for Cordova to load
+        // Wait for device API libraries to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        // Cordova is ready
+        // device APIs are available
         //
         function onDeviceReady() {
             var element = document.getElementById('deviceProperties');
-        
-            element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
-                                'Device Cordova: '  + device.cordova  + '<br />' + 
-                                'Device Platform: ' + device.platform + '<br />' + 
-                                'Device UUID: '     + device.uuid     + '<br />' + 
+            element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+                                'Device Cordova: '  + device.cordova  + '<br />' +
+                                'Device Platform: ' + device.platform + '<br />' +
+                                'Device UUID: '     + device.uuid     + '<br />' +
                                 'Device Version: '  + device.version  + '<br />';
         }
 

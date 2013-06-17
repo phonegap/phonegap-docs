@@ -24,11 +24,11 @@ Stops recording an audio file.
 
     media.stopRecord();
 
-
 Description
 -----------
 
-Function `media.stopRecord` is a synchronous function that stops recording an audio file.
+The `media.stopRecord` method executes synchronously, stopping the
+recording of an audio file.
 
 Supported Platforms
 -------------------
@@ -38,12 +38,12 @@ Supported Platforms
 - iOS
 - Windows Phone 7 and 8
 - Windows 8
-    
+
 Quick Example
 -------------
 
     // Record audio
-    // 
+    //
     function recordAudio() {
         var src = "myrecording.mp3";
         var mediaRec = new Media(src,
@@ -51,11 +51,12 @@ Quick Example
             function() {
                 console.log("recordAudio():Audio Success");
             },
-            
+
             // error callback
             function(err) {
                 console.log("recordAudio():Audio Error: "+ err.code);
-            });
+            }
+        );
 
         // Record audio
         mediaRec.startRecord();
@@ -65,7 +66,6 @@ Quick Example
             mediaRec.stopRecord();
         }, 10000);
     }
-
 
 Full Example
 ------------
@@ -78,12 +78,12 @@ Full Example
         <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
         <script type="text/javascript" charset="utf-8">
 
-        // Wait for Cordova to load
+        // Wait for device API libraries to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
         // Record audio
-        // 
+        //
         function recordAudio() {
             var src = "myrecording.mp3";
             var mediaRec = new Media(src, onSuccess, onError);
@@ -103,27 +103,27 @@ Full Example
             }, 1000);
         }
 
-        // Cordova is ready
+        // device APIs are available
         //
         function onDeviceReady() {
             recordAudio();
         }
-    
+
         // onSuccess Callback
         //
         function onSuccess() {
             console.log("recordAudio():Audio Success");
         }
-    
-        // onError Callback 
+
+        // onError Callback
         //
         function onError(error) {
-            alert('code: '    + error.code    + '\n' + 
+            alert('code: '    + error.code    + '\n' +
                   'message: ' + error.message + '\n');
         }
 
         // Set audio position
-        // 
+        //
         function setAudioPosition(position) {
             document.getElementById('audio_position').innerHTML = position;
         }
@@ -139,4 +139,4 @@ Full Example
 Tizen Quirks
 ----------
 
-- This API is not supported on Tizen devices.
+- Not supported on Tizen devices.

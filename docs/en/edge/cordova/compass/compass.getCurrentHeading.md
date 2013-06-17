@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -27,15 +27,18 @@ Get the current compass heading.
 Description
 -----------
 
-The compass is a sensor that detects the direction or heading that the device is pointed.  It measures the heading in degrees from 0 to 359.99.
+The compass is a sensor that detects the direction or heading that the
+device is pointed, typically from the top of the device.  It measures
+the heading in degrees from 0 to 359.99, where 0 is north.
 
-The compass heading information is returned via a CompassHeading object using the `compassSuccess` callback function.
+The compass heading information is returned via a `CompassHeading`
+object using the `compassSuccess` callback function.
 
 Supported Platforms
 -------------------
 
 - Android
-- iPhone
+- iOS
 - Windows Phone 7 and 8 ( if available in hardware )
 - Bada 1.2 & 2.x
 - webOS
@@ -66,22 +69,22 @@ Full Example
         <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
         <script type="text/javascript" charset="utf-8">
 
-        // Wait for Cordova to load
+        // Wait for device API libraries to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        // Cordova is ready
+        // device APIs are available
         //
         function onDeviceReady() {
             navigator.compass.getCurrentHeading(onSuccess, onError);
         }
-    
+
         // onSuccess: Get the current heading
         //
         function onSuccess(heading) {
             alert('Heading: ' + heading.magneticHeading);
         }
-    
+
         // onError: Failed to get the heading
         //
         function onError(compassError) {
@@ -95,4 +98,4 @@ Full Example
         <p>getCurrentHeading</p>
       </body>
     </html>
-    
+

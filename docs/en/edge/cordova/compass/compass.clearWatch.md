@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -30,7 +30,7 @@ Supported Platforms
 -------------------
 
 - Android
-- iPhone
+- iOS
 - Windows Phone 7 and 8 ( if available in hardware )
 - Bada 1.2 & 2.x
 - webOS
@@ -41,11 +41,11 @@ Quick Example
 -------------
 
     var watchID = navigator.compass.watchHeading(onSuccess, onError, options);
-    
+
     // ... later on ...
-    
+
     navigator.compass.clearWatch(watchID);
-    
+
 Full Example
 ------------
 
@@ -59,12 +59,12 @@ Full Example
 
         // The watch id references the current `watchHeading`
         var watchID = null;
-        
-        // Wait for Cordova to load
+
+        // Wait for device API libraries to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        // Cordova is ready
+        // device APIs are available
         //
         function onDeviceReady() {
             startWatch();
@@ -73,13 +73,13 @@ Full Example
         // Start watching the compass
         //
         function startWatch() {
-            
+
             // Update compass every 3 seconds
             var options = { frequency: 3000 };
-            
+
             watchID = navigator.compass.watchHeading(onSuccess, onError, options);
         }
-        
+
         // Stop watching the compass
         //
         function stopWatch() {
@@ -88,7 +88,7 @@ Full Example
                 watchID = null;
             }
         }
-        
+
         // onSuccess: Get the current heading
         //
         function onSuccess(heading) {
@@ -101,7 +101,6 @@ Full Example
         function onError(compassError) {
             alert('Compass error: ' + compassError.code);
         }
-
 
         </script>
       </head>

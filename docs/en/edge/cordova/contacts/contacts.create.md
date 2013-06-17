@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -27,9 +27,10 @@ Returns a new Contact object.
 Description
 -----------
 
-contacts.create is a synchronous function that returns a new `Contact` object.
+The `contacts.create` method is synchronous, and returns a new `Contact` object.
 
-This method does not persist the Contact object to the device contacts database.  To persist the Contact object to the device, invoke the `Contact.save` method.
+This method does not retain the Contact object in the device contacts
+database, for which you need to invoke the `Contact.save` method.
 
 Supported Platforms
 -------------------
@@ -56,18 +57,18 @@ Full Example
         <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
         <script type="text/javascript" charset="utf-8">
 
-        // Wait for Cordova to load
+        // Wait for device API libraries to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        // Cordova is ready
+        // device APIs are available
         //
         function onDeviceReady() {
-			var myContact = navigator.contacts.create({"displayName": "Test User"});
-			myContact.note = "This contact has a note.";
-			console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
+            var myContact = navigator.contacts.create({"displayName": "Test User"});
+            myContact.note = "This contact has a note.";
+            console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
         }
-    
+
 
         </script>
       </head>

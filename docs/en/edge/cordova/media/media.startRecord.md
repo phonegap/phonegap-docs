@@ -24,11 +24,11 @@ Starts recording an audio file.
 
     media.startRecord();
 
-
 Description
 -----------
 
-Function `media.startRecord` is a synchronous function that starts recording an audio file.
+The `media.startRecord` method executes synchronously, starts a
+recording for an audio file.
 
 Supported Platforms
 -------------------
@@ -38,12 +38,12 @@ Supported Platforms
 - iOS
 - Windows Phone 7 and 8
 - Windows 8
-    
+
 Quick Example
 -------------
 
     // Record audio
-    // 
+    //
     function recordAudio() {
         var src = "myrecording.mp3";
         var mediaRec = new Media(src,
@@ -51,7 +51,7 @@ Quick Example
             function() {
                 console.log("recordAudio():Audio Success");
             },
-            
+
             // error callback
             function(err) {
                 console.log("recordAudio():Audio Error: "+ err.code);
@@ -60,7 +60,6 @@ Quick Example
         // Record audio
         mediaRec.startRecord();
     }
-
 
 Full Example
 ------------
@@ -73,12 +72,12 @@ Full Example
         <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
         <script type="text/javascript" charset="utf-8">
 
-        // Wait for Cordova to load
+        // Wait for device API libraries to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
         // Record audio
-        // 
+        //
         function recordAudio() {
             var src = "myrecording.amr";
             var mediaRec = new Media(src, onSuccess, onError);
@@ -98,27 +97,27 @@ Full Example
             }, 1000);
         }
 
-        // Cordova is ready
+        // device APIs are available
         //
         function onDeviceReady() {
             recordAudio();
         }
-    
+
         // onSuccess Callback
         //
         function onSuccess() {
             console.log("recordAudio():Audio Success");
         }
-    
-        // onError Callback 
+
+        // onError Callback
         //
         function onError(error) {
-            alert('code: '    + error.code    + '\n' + 
+            alert('code: '    + error.code    + '\n' +
                   'message: ' + error.message + '\n');
         }
 
         // Set audio position
-        // 
+        //
         function setAudioPosition(position) {
             document.getElementById('audio_position').innerHTML = position;
         }
@@ -134,18 +133,18 @@ Full Example
 Android Quirks
 ----------
 
-- Android devices record audio in Adaptive Multi-Rate format. The specified file should end with a .amr extension.
+- Android devices record audio in Adaptive Multi-Rate format. The specified file should end with a _.amr_ extension.
 
 BlackBerry WebWorks Quirks
 ----------
 
-- BlackBerry devices record audio in Adaptive Multi-Rate format. The specified file must end with a .amr extension.
+- BlackBerry devices record audio in Adaptive Multi-Rate format. The specified file must end with a _.amr_ extension.
 
 iOS Quirks
 ----------
 
-- iOS only records to files of type .wav and returns an error if the file name extension is not correct.
-- If a full path is not provided the recording will be placed in the <application>/documents/tmp directory.  This can be accessed via the File apis using LocalFileSystem.TEMPORARY.  Subdirectories are not created at record time and must already exist.  Thus,  myRecording.wav will work but recordings/myRecording.wav will not if the recordings directory does not already exist at <application>/documents/tmp/.
+- iOS only records to files of type _.wav_ and returns an error if the file name extension is not correct.
+- If a full path is not provided, the recording is placed in the application's _documents/tmp_ directory. This can be accessed via the `File` API using `LocalFileSystem.TEMPORARY`. Any subdirectory specified at record time must already exist.
 - Files can be recorded and played back using the documents URI:
 
         var myMedia = new Media("documents://beer.mp3")
@@ -153,4 +152,4 @@ iOS Quirks
 Tizen Quirks
 ----------
 
-- This API is not supported on Tizen devices.
+- Not supported on Tizen devices.

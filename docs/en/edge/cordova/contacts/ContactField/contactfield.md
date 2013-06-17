@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -20,21 +20,35 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 ContactField
 ============
 
-Supports generic fields in a `Contact` object.  Some properties that are stored as `ContactField` objects include email addresses, phone numbers, and urls.
+Supports generic fields in a `Contact` object.  Some properties stored
+as `ContactField` objects include email addresses, phone numbers, and
+URLs.
 
 Properties
 ----------
 
-- __type:__ A string that tells you what type of field this is (example: 'home'). _(DOMString)_
-- __value:__ The value of the field (such as a phone number or email address). _(DOMString)_
-- __pref:__ Set to `true` if this `ContactField` contains the user's preferred value. _(boolean)_
+- __type__: A string that indicates what type of field this is, _home_ for example. _(DOMString)_
+- __value__: The value of the field, such as a phone number or email address. _(DOMString)_
+- __pref__: Set to `true` if this `ContactField` contains the user's preferred value. _(boolean)_
 
 Details
 -------
 
-The `ContactField` object is a reusable component that is used to support contact fields in a generic fashion.  Each `ContactField` object contains a value property, a type property, and a pref property.  A `Contact` object stores several properties in `ContactField[]` arrays, such as phone numbers and email addresses.
+The `ContactField` object is a reusable component that represents
+contact fields generically.  Each `ContactField` object contains a
+`value`, `type`, and `pref` property.  A `Contact` object stores
+several properties in `ContactField[]` arrays, such as phone numbers
+and email addresses.
 
-In most instances, there are no pre-determined values for the __type__ attribute of a `ContactField` object.  For example, a phone number can have __type__ values of 'home', 'work', 'mobile', 'iPhone', or any other value that is supported by the contact database on a particular device platform.  However, in the case of the `Contact` __photos__ field, Cordova makes use of the __type__ field to indicate the format of the returned image.  Cordova will return __type: 'url'__ when the __value__ attribute contains a URL to the photo image, or __type: 'base64'__ when the returned __value__ attribute contains a Base64 encoded image string.
+In most instances, there are no pre-determined values for a
+`ContactField` object's __type__ attribute.  For example, a phone
+number can specify __type__ values of _home_, _work_, _mobile_,
+_iPhone_, or any other value that is supported by a particular device
+platform's contact database.  However, for the `Contact` __photos__
+field, the __type__ field indicates the format of the returned image:
+__url__ when the __value__ attribute contains a URL to the photo
+image, or _base64_ when the __value__ contains a base64-encoded image
+string.
 
 Supported Platforms
 -------------------
@@ -49,18 +63,18 @@ Supported Platforms
 Quick Example
 -------------
 
-	// create a new contact
-	var contact = navigator.contacts.create();
-	
-	// store contact phone numbers in ContactField[]
-	var phoneNumbers = [];
-	phoneNumbers[0] = new ContactField('work', '212-555-1234', false);
-	phoneNumbers[1] = new ContactField('mobile', '917-555-5432', true); // preferred number
-	phoneNumbers[2] = new ContactField('home', '203-555-7890', false);
-	contact.phoneNumbers = phoneNumbers;
-	
-	// save the contact
-	contact.save();
+        // create a new contact
+        var contact = navigator.contacts.create();
+
+        // store contact phone numbers in ContactField[]
+        var phoneNumbers = [];
+        phoneNumbers[0] = new ContactField('work', '212-555-1234', false);
+        phoneNumbers[1] = new ContactField('mobile', '917-555-5432', true); // preferred number
+        phoneNumbers[2] = new ContactField('home', '203-555-7890', false);
+        contact.phoneNumbers = phoneNumbers;
+
+        // save the contact
+        contact.save();
 
 Full Example
 ------------
@@ -73,46 +87,47 @@ Full Example
         <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
         <script type="text/javascript" charset="utf-8">
 
-        // Wait for Cordova to load
+        // Wait for device API libraries to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        // Cordova is ready
+        // device APIs are available
         //
+
         function onDeviceReady() {
-			// create a new contact
-			var contact = navigator.contacts.create();
+            // create a new contact
+            var contact = navigator.contacts.create();
 
-			// store contact phone numbers in ContactField[]
-			var phoneNumbers = [];
-			phoneNumbers[0] = new ContactField('work', '212-555-1234', false);
-			phoneNumbers[1] = new ContactField('mobile', '917-555-5432', true); // preferred number
-			phoneNumbers[2] = new ContactField('home', '203-555-7890', false);
-			contact.phoneNumbers = phoneNumbers;
+            // store contact phone numbers in ContactField[]
+            var phoneNumbers = [];
+            phoneNumbers[0] = new ContactField('work', '212-555-1234', false);
+            phoneNumbers[1] = new ContactField('mobile', '917-555-5432', true); // preferred number
+            phoneNumbers[2] = new ContactField('home', '203-555-7890', false);
+            contact.phoneNumbers = phoneNumbers;
 
-			// save the contact
-			contact.save();
+            // save the contact
+            contact.save();
 
-			// search contacts, returning display name and phone numbers
-			var options = new ContactFindOptions();
-			options.filter="";
-			filter = ["displayName","phoneNumbers"];
-			navigator.contacts.find(filter, onSuccess, onError, options);
+            // search contacts, returning display name and phone numbers
+            var options = new ContactFindOptions();
+            options.filter = "";
+            filter = ["displayName", "phoneNumbers"];
+            navigator.contacts.find(filter, onSuccess, onError, options);
         }
-    
+
         // onSuccess: Get a snapshot of the current contacts
         //
-		function onSuccess(contacts) {
-			for (var i=0; i<contacts.length; i++) {
-				// display phone numbers
-				for (var j=0; j<contacts[i].phoneNumbers.length; j++) {
-					alert("Type: " + contacts[i].phoneNumbers[j].type + "\n" + 
-							"Value: "  + contacts[i].phoneNumbers[j].value + "\n" + 
-							"Preferred: "  + contacts[i].phoneNumbers[j].pref);
-				}
-			}
-		};
-    
+        function onSuccess(contacts) {
+            for (var i = 0; i < contacts.length; i++) {
+                // display phone numbers
+                for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
+                    alert("Type: "      + contacts[i].phoneNumbers[j].type  + "\n" +
+                          "Value: "     + contacts[i].phoneNumbers[j].value + "\n" +
+                          "Preferred: " + contacts[i].phoneNumbers[j].pref);
+                }
+            }
+        };
+
         // onError: Failed to get the contacts
         //
         function onError(contactError) {
@@ -130,19 +145,20 @@ Full Example
 Android Quirks
 --------------
 
-- __pref:__ This property is not support by Android devices, and will always return `false`.
+- __pref__: Not supported, returning `false`.
 
 BlackBerry WebWorks (OS 5.0 and higher) Quirks
 --------------------------------------------
 
-- __type:__ Partially supported.  Used for phone numbers.
-- __value:__ Supported.
-- __pref:__ This property is not supported, and will always return `false`.
+- __type__: Partially supported.  Used for phone numbers.
+- __value__: Supported.
+- __pref__: Not supported, returning `false`.
 
 iOS Quirks
 -----------
-- __pref:__ This property is not supported on iOS devices and will always return `false`.
+- __pref__: Not supported, returning `false`.
 
 Bada Quirks
 -----------
-- __type:__ Property has to be one of the following for Email or Address fields: "WORK", "HOME". Property has to be one of the following for Phone fields: "WORK", "HOME", "VOICE", "FAX", "MSG", "CELL", "PAGER","BBS", "MODEM", "CAR", "ISDN","VIDEO", "PCS"
+
+- __type__: For email or address fields, property must be _WORK_ or _HOME_. For phone fields, must be _WORK_, _HOME_, _VOICE_, _FAX_, _MSG_, _CELL_, _PAGER_, _BBS_, _MODEM_, _CAR_, _ISDN_,_VIDEO_, or _PCS_.

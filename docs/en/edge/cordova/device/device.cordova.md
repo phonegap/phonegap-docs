@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -23,7 +23,7 @@ device.cordova
 Get the version of Cordova running on the device.
 
     var string = device.cordova;
-    
+
 Description
 -----------
 
@@ -34,7 +34,7 @@ Supported Platforms
 
 - Android
 - BlackBerry WebWorks (OS 5.0 and higher)
-- iPhone
+- iOS
 - Windows Phone 7 and 8
 - Bada 1.2 & 2.x
 - Tizen
@@ -56,19 +56,18 @@ Full Example
         <script type="text/javascript" charset="utf-8" src="cordova-x.x.x.js"></script>
         <script type="text/javascript" charset="utf-8">
 
-        // Wait for Cordova to load
+        // Wait for device API libraries to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        // Cordova is ready
+        // device APIs are available
         //
         function onDeviceReady() {
             var element = document.getElementById('deviceProperties');
-    
-            element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
-                                'Device Cordova: '  + device.cordova  + '<br />' + 
-                                'Device Platform: ' + device.platform + '<br />' + 
-                                'Device UUID: '     + device.uuid     + '<br />' + 
+            element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+                                'Device Cordova: '  + device.cordova  + '<br />' +
+                                'Device Platform: ' + device.platform + '<br />' +
+                                'Device UUID: '     + device.uuid     + '<br />' +
                                 'Device Version: '  + device.version  + '<br />';
         }
 

@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -29,12 +29,13 @@ Success callback function that provides the `Contact` array resulting from a `co
 Parameters
 ----------
 
-- __contacts:__ The contact array resulting from a find operation. (`Contact`)
+- __contacts__: The contact array resulting from a find operation. _(Contact)_
 
 Example
 -------
 
     function contactSuccess(contacts) {
-		for (var i=0; i<contacts.length; i++) {
-			console.log("Display Name = " + contacts[i].displayName;
+        for (var i=0; i<contacts.length; i++) {
+            console.log("Display Name = " + contacts[i].displayName);
+        }
     }
