@@ -35,6 +35,8 @@ Methods
 - addEventListener
 - removeEventListener
 - close
+- executeScript
+- insertCSS
 
 Permissions
 -----------
@@ -351,7 +353,7 @@ insertCSS
     ref.insertCSS(details, callback);
 
 - __ref:__ reference to the InAppBrowser window (`InAppBrowser`)
-- __injectDetails:__ details of the script ot run (`Object`)
+- __injectDetails:__ details of the script to run (`Object`)
     - Supported keys:  (exactly one of "file" or "code" should be present)
 
             "file" - URL of the stylesheet to inject
@@ -379,7 +381,7 @@ Full Example
     <!DOCTYPE html>
     <html>
       <head>
-        <title>InAppBrowser.executeScript Example</title>
+        <title>InAppBrowser.insertCSS Example</title>
 
         <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
         <script type="text/javascript" charset="utf-8">
@@ -394,7 +396,7 @@ Full Example
         // Inject our custom CSS into the InAppBrowser window
         //
         function changeBackgroundColor() {
-            iabRef.executeScript({
+            iabRef.insertCSS({
                 code: "body { background: #ffff00"
             }, function() {
                 alert("Styles Altered");
