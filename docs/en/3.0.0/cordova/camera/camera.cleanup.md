@@ -1,5 +1,5 @@
 ---
-license: Licensed to the Apache Software Foundation (ASF) under one
+ license: Licensed to the Apache Software Foundation (ASF) under one
          or more contributor license agreements.  See the NOTICE file
          distributed with this work for additional information
          regarding copyright ownership.  The ASF licenses this file
@@ -17,13 +17,36 @@ license: Licensed to the Apache Software Foundation (ASF) under one
          under the License.
 ---
 
-# Upgrading Guides
+camera.cleanup
+=================
 
-> Learn how to upgrade an application to the latest Apache Cordova release.
+Removes intermediate photos taken by the camera from temporary
+storage.
 
-- Upgrading Android
-- Upgrading BlackBerry
-- Upgrading iOS
-- Upgrading Windows Phone
-- Upgrading Windows 8
+    navigator.camera.cleanup( cameraSuccess, cameraError );
 
+Description
+-----------
+
+Removes intermediate image files that are kept in temporary storage
+after calling `camera.getPicture`. Applies only when the value of
+`Camera.sourceType` equals `Camera.PictureSourceType.CAMERA` and the
+`Camera.destinationType` equals `Camera.DestinationType.FILE_URI`.
+
+Supported Platforms
+-------------------
+
+- iOS
+
+Example
+-------------
+
+    navigator.camera.cleanup(onSuccess, onFail);
+
+    function onSuccess() {
+        console.log("Camera cleanup success.")
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
