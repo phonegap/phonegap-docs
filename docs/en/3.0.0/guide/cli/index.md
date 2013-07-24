@@ -72,9 +72,9 @@ To install the `cordova` command-line tool, follow these steps:
 Go to the directory where you maintain your source code, and run a
 command such as the following:
 
-        $ cordova create HelloWorld com.example.hello "Hello World"
+        $ cordova create hello com.example.hello HelloWorld
 
-The first argument specifies a _HelloWorld_ directory to be generated
+The first argument specifies a _hello_ directory to be generated
 for your project. Its `www` subdirectory houses your application's
 home page, along with various resources under `css`, `js`, and `img`,
 which follow common web development file-naming conventions. The
@@ -83,7 +83,7 @@ distribute the application.
 
 The other two arguments are optional: the `com.example.hello` argument
 provides your project with a reverse domain-style identifier, and the
-`"Hello World!"` provides the application's display text. You can edit
+`HelloWorld` provides the application's display text. You can edit
 both of these values later in the `config.xml` file.
 
 ## Add Platforms
@@ -91,7 +91,7 @@ both of these values later in the `config.xml` file.
 All subsequent commands need to be run within the project's directory,
 or any subdirectories within its scope:
 
-        $ cd HelloWorld
+        $ cd hello
 
 Before you can build the project, you need to specify a set of target
 platforms. Your ability to run these commands depends on whether your
@@ -100,7 +100,7 @@ SDK.  Run any of these from a Mac:
 
         $ cordova platform add ios
         $ cordova platform add android
-        $ cordova platform add blackberry
+        $ cordova platform add blackberry10
 
 Run any of these from a Windows machine, where _wp_ refers to
 different versions of the Windows Phone operating system:
@@ -108,7 +108,7 @@ different versions of the Windows Phone operating system:
         $ cordova platform add wp7
         $ cordova platform add wp8
         $ cordova platform add android
-        $ cordova platform add blackberry
+        $ cordova platform add blackberry10
 
 Run this to check your current set of platforms:
 
@@ -118,7 +118,7 @@ Run this to check your current set of platforms:
 
 Run either of the following synonymous commands to remove a platform:
 
-        $ cordova platform remove blackberry
+        $ cordova platform remove blackberry10
         $ cordova platform rm android
 
 Running commands to add or remove platforms affects the contents of
@@ -170,7 +170,7 @@ an alternative to modify and compile the platform-specific code that
 Cordova generates within `platforms/ios`. You can use the same
 approach with other platforms' SDKs.
 
-## View the App in an Emulator
+## Test the App on an Emulator or Device
 
 SDKs for mobile platforms often come bundled with emulators that
 execute a device image, so that you can launch the app from the home
@@ -195,6 +195,18 @@ image to display the latest application, which is now available for
 launch from the home screen:
 
 ![](img/guide/cli/android_emulate_install.png)
+
+Alternately, you can plug the handset into your computer and test the
+app directly:
+
+        $ cordova run android
+
+Before running this command, you need to set up the device for
+testing, following procedures that vary for each platform. In
+Android's case, you would have to enable a __USB debugging__ option on
+the device, and perhaps add a USB driver depending on your development
+environmnent.
+See Platform Guides for details on each platform's requirements.
 
 ## Add Features
 
@@ -264,11 +276,45 @@ debug console from a release version:
 You can batch-remove or add plugins by specifying more than one
 argument for each command.
 
-<!--
+## Customize each Platform
 
-## Run the App on the Device
+While Cordova allows you to easily deploy an app for many different
+platforms, sometimes you need to add customizations.  In that case,
+you don't want to modify the source files in various `www` directories
+within the top-level `platforms` directory, because they're regularly
+replaced with the top-level `www` directory's cross-platform source.
 
--->
+Instead, the top-level `merges` directory offers a place to specify
+assets to deploy on specific platforms. Each platform-specific
+subdirectory within `merges` mirrors the directory structure of the
+`www` source tree, allowing you to override or add files as needed.
+For example, here is how you might uses `merges` to boost the default
+font size for Android devices:
+
+* Edit the `www/index.html` file, adding a link to an additional CSS
+  file, `overrides.css` in this case:
+
+        <link rel="stylesheet" type="text/css" href="css/overrides.css" />
+
+* Optionally create an empty `www/css/overrides.css` file, which would
+  apply for all non-Android builds, preventing a missing-file error.
+
+* Create a `css` subdirectory within `merges/android`, then add a
+  corresponding `overrides.css` file. Specify CSS that overrides the
+  12-point default font size specified within `www/css/index.css`, for
+  example:
+
+        body { font-size:14px; }
+
+When you rebuild the project, the Android version features the custom
+font size, while others remain unchanged.
+
+You can also use `merges` to add files not present in the original
+`www` directory. For example, an app can incorporate a _back button_
+graphic into the iOS interface, stored in
+`merges/ios/img/back_button.png`, while the Android version can
+instead capture `backbutton` events from the corresponding hardware
+button.
 
 ## Update the App
 
@@ -279,10 +325,18 @@ update it to the latest version by running the following command:
 
 Use this syntax to install a specific version:
 
-        $ sudo npm install -g cordova@2.8.0
+        $ sudo npm install -g cordova@3.0.0
 
 Run the `info` command for a listing that includes the current version
 along with other available version numbers:
 
         $ npm info cordova
 
+Cordova 3.0 is the first version to support the command-line interface
+described in this section. If you are updating from a version prior to
+3.0, you need to create a new project as described above, then copy
+the older application's assets into the top-level `www` directory.
+Where applicable, further details about upgrading to 3.0 are available
+in the Platform Guides.  Once you upgrade to the `cordova`
+command-line interface, the more time-consuming procedures described
+there are no longer relevant.

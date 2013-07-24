@@ -27,7 +27,7 @@ detailed platform-specific information:
 * BlackBerry 10 Command-line Tools
 
 The command-line tools above refer to versions prior to Cordova 3.0.
-See The Cordova Command-line Interface for information about the
+See The Command-line Interface for information about the
 current interface.
 
 ## Requirements
@@ -53,9 +53,18 @@ To create a new project, you use the `create` command to set up the folder struc
 1.  On the command line, navigate to the folder where you extracted Cordova.
 2.  Run the `create` command using the following syntax:
 
-        bin/create <path-to-project>
+        bin/create <path-to-project> <project-package> <project-name>
 
 This command creates the folder structure for your project at the specified location. All of your project resource files should be stored in the *<path-to-project>*/www folder, or in a subfolder within it.
+
+where
+
+- '<path-to-project>' specifies the directory you want the project created in
+- '<project-package>' specifies a reverse domain style identifier
+- '<project-name>' specifies the apps display name
+
+*Note*: the create command bootstraps dependency installation through the 'npm install' command. Depending on installation directory and system permissions, this may require admin privileges.
+If a problem is encountered on OSX/Linux, run 'sudo npm install' before using the create command. On Windows, run 'npm install' in a command line utility opened with admin privileges.
 
 ## Adding and managing targets
 
