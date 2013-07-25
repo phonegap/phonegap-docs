@@ -40,7 +40,7 @@ but may be eventually be automated.
 ## Guide to using CordovaWebView in an Android Project
 
 1. Use `bin/create` to fetch the `commons-codec-1.6.jar` file.
-2. `cd` into `/framework` and run `ant jar` to build the cordova jar. It creates the .jar file formed as `cordova-x.x.x.jar` in the `/framework` folder.
+2. `cd` into `/framework` and run `ant jar` to build the cordova jar. It creates the .jar file formed as `cordova-3.0.0.jar` in the `/framework` folder.
 3. Copy the cordova jar into your Android project's `/libs` directory.
 4. Edit your application's `main.xml` file (under `/res/xml`) to look like the following, with the `layout_height`, `layout_width` and `id` modified to suit your application:
 

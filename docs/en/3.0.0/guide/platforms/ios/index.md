@@ -74,9 +74,9 @@ __Install__ button next to the __Command Line Tools__ listing.
 Use the `cordova` utility to set up a new project, as described in The
 Cordova The Command-line Interface. For example, in a source-code directory:
 
-        $ cordova create hello com.example.hello "Hello World"
+        $ cordova create hello com.example.hello "HelloWorld"
         $ cd hello
-        $ cordova platform add android
+        $ cordova platform add ios
         $ cordova prepare              # or "cordova build"
 
 Once created, you can open it from within Xcode. Double-click to open
