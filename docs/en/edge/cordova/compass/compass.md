@@ -51,33 +51,26 @@ Interface, to add or remove this feature for a project:
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
 
-* Android
+* Android (in `app/res/xml/config.xml`)
 
-    <!-- app/res/xml/config.xml -->
-    <feature name="Compass">
-        <param name="android-package" value="org.apache.cordova.CompassListener" />
-    </feature>
+        <feature name="Compass">
+            <param name="android-package" value="org.apache.cordova.CompassListener" />
+        </feature>
 
-* BlackBerry WebWorks
+* BlackBerry WebWorks (no special permissions required)
 
-  No special permissions are required.
+* iOS (in `config.xml`)
 
-* iOS
+        <feature name="Compass">
+            <param name="ios-package" value="CDVLocation" />
+        </feature>
 
-    <!-- config.xml -->
-    <feature name="Compass">
-        <param name="ios-package" value="CDVLocation" />
-    </feature>
+* Windows Phone (in `Properties/WPAppManifest.xml`)
 
-* Windows Phone
+        <Capabilities>
+            <Capability Name="ID_CAP_SENSORS" />
+        </Capabilities>
 
-    <!-- Properties/WPAppManifest.xml -->
-    <Capabilities>
-        <Capability Name="ID_CAP_SENSORS" />
-    </Capabilities>
+  Reference: [Application Manifest for Windows Phone](http://msdn.microsoft.com/en-us/library/ff769509%28v=vs.92%29.aspx)
 
-Reference: [Application Manifest for Windows Phone](http://msdn.microsoft.com/en-us/library/ff769509%28v=vs.92%29.aspx)
-
-* Tizen
-
-  No special permissions are required.
+* Tizen (no special permissions required)

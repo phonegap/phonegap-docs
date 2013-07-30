@@ -47,35 +47,30 @@ platform-specific configuration settings described below:
 
 * Android
 
-    <!-- app/res/xml/config.xml -->
-    <feature name="Notification">
-        <param name="android-package" value="org.apache.cordova.Notification" />
-    </feature>
+        (in app/res/xml/config.xml)
+        <feature name="Notification">
+            <param name="android-package" value="org.apache.cordova.Notification" />
+        </feature>
 
-    <!-- app/AndroidManifest.xml -->
-    <uses-permission android:name="android.permission.VIBRATE" />
+        (in app/AndroidManifest.xml)
+        <uses-permission android:name="android.permission.VIBRATE" />
 
 * BlackBerry WebWorks
 
-    <!-- www/plugins.xml -->
-    <feature name="Notification">
-        <param name="blackberry-package" value="org.apache.cordova.notification.Notification" />
-    </feature>
+        (in www/plugins.xml)
+        <feature name="Notification">
+            <param name="blackberry-package" value="org.apache.cordova.notification.Notification" />
+        </feature>
 
-    <!-- www/config.xml -->
-    <feature id="blackberry.ui.dialog" />
+        (in www/config.xml)
+        <feature id="blackberry.ui.dialog" />
 
-* iOS
+* iOS (in `config.xml`)
 
-    <!-- config.xml -->
-    <feature name="Notification">
-        <param name="ios-package" value="CDVNotification" />
-    </feature>
+        <feature name="Notification">
+            <param name="ios-package" value="CDVNotification" />
+        </feature>
 
-* Windows Phone
+* Windows Phone (no special permissions required)
 
-  No special permissions are required.
-
-* Tizen
-
-  No special permissions are required.
+* Tizen (no special permissions required)

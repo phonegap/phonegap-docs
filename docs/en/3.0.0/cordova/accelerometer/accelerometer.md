@@ -53,40 +53,35 @@ Interface, to add or remove this feature for a project:
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
 
-* Android
+* Android (in `app/res/xml/config.xml`)
 
-    <!-- app/res/xml/config.xml -->
-    <feature name="Accelerometer">
-        <param name="android-package" value="org.apache.cordova.AccelListener" />
-    </feature>
+        <feature name="Accelerometer">
+            <param name="android-package" value="org.apache.cordova.AccelListener" />
+        </feature>
 
 * BlackBerry WebWorks
 
-    <!-- www/plugins.xml -->
-    <feature name="Accelerometer">
-        <param name="blackberry-package" value="org.apache.cordova.accelerometer.Accelerometer" />
-    </feature>
+        (in www/plugins.xml)
+        <feature name="Accelerometer">
+            <param name="blackberry-package" value="org.apache.cordova.accelerometer.Accelerometer" />
+        </feature>
 
-    <!-- www/config.xml -->
-    <feature id="blackberry.system"  required="true" version="1.0.0.0" />
-    <feature id="org.apache.cordova" required="true" version="1.0.0" />
+        (in www/config.xml)
+        <feature id="blackberry.system"  required="true" version="1.0.0.0" />
+        <feature id="org.apache.cordova" required="true" version="1.0.0" />
 
-* iOS
+* iOS (in `config.xml`)
 
-    <!-- config.xml -->
-    <feature name="Accelerometer">
-        <param name="ios-package" value="CDVAccelerometer" />
-    </feature>
+        <feature name="Accelerometer">
+            <param name="ios-package" value="CDVAccelerometer" />
+        </feature>
 
-* Windows Phone
+* Windows Phone (in `Properties/WPAppManifest.xml`)
 
-    <!-- Properties/WPAppManifest.xml -->
-    <Capabilities>
-        <Capability Name="ID_CAP_SENSORS" />
-    </Capabilities>
+        <Capabilities>
+            <Capability Name="ID_CAP_SENSORS" />
+        </Capabilities>
 
-Reference: [Application Manifest for Windows Phone](http://msdn.microsoft.com/en-us/library/ff769509%28v=vs.92%29.aspx)
+  Reference: [Application Manifest for Windows Phone](http://msdn.microsoft.com/en-us/library/ff769509%28v=vs.92%29.aspx)
 
-* Tizen
-
-  No special permissions are required.
+* Tizen (no special permissions required)

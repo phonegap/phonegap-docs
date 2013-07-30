@@ -55,45 +55,42 @@ platform-specific configuration settings described below:
 
 * Android
 
-    <!-- app/res/xml/config.xml -->
-    <feature name="File">
-        <param name="android-package" value="org.apache.cordova.FileUtils" />
-    </feature>
-    <feature name="FileTransfer">
-        <param name="android-package" value="org.apache.cordova.FileTransfer" />
-    </feature>
+        (in app/res/xml/config.xml)
+        <feature name="File">
+            <param name="android-package" value="org.apache.cordova.FileUtils" />
+        </feature>
+        <feature name="FileTransfer">
+            <param name="android-package" value="org.apache.cordova.FileTransfer" />
+        </feature>
 
-    <!-- app/AndroidManifest.xml -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        (in app/AndroidManifest.xml)
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 * BlackBerry WebWorks
 
-    <!-- www/plugins.xml -->
-    <feature name="File">
-        <param name="blackberry-package" value="org.apache.cordova.file.FileManager" />
-    </feature>
-    <feature name="FileTransfer">
-        <param name="blackberry-package" value="org.apache.cordova.http.FileTransfer" />
-    </feature>
+        (in www/plugins.xml)
+        <feature name="File">
+            <param name="blackberry-package" value="org.apache.cordova.file.FileManager" />
+        </feature>
+        <feature name="FileTransfer">
+            <param name="blackberry-package" value="org.apache.cordova.http.FileTransfer" />
+        </feature>
 
-    <!-- www/config.xml -->
-    <feature id="blackberry.io.file" required="true" version="1.0.0.0" />
-    <feature id="blackberry.utils"   required="true" version="1.0.0.0" />
-    <feature id="blackberry.io.dir"  required="true" version="1.0.0.0" />
-    <rim:permissions>
-        <rim:permit>access_shared</rim:permit>
-    </rim:permissions>
+        (in www/config.xml)
+        <feature id="blackberry.io.file" required="true" version="1.0.0.0" />
+        <feature id="blackberry.utils"   required="true" version="1.0.0.0" />
+        <feature id="blackberry.io.dir"  required="true" version="1.0.0.0" />
+        <rim:permissions>
+            <rim:permit>access_shared</rim:permit>
+        </rim:permissions>
 
-* iOS
+* iOS (in `config.xml`)
 
-    <!-- config.xml -->
-    <feature name="File">
-        <param name="ios-package" value="CDVFile" />
-    </feature>
-    <feature name="FileTransfer">
-        <param name="ios-package" value="CDVFileTransfer" />
-    </feature>
+        <feature name="File">
+            <param name="ios-package" value="CDVFile" />
+        </feature>
+        <feature name="FileTransfer">
+            <param name="ios-package" value="CDVFileTransfer" />
+        </feature>
 
-* Windows Phone
-
-  No special permissions are required.
+* Windows Phone (no special permissions required)

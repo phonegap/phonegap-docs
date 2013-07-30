@@ -22,12 +22,22 @@ Storage
 
 > Provides access to the device's storage options.
 
-This API is based on the [W3C Web SQL Database
-Specification](http://dev.w3.org/html5/webdatabase/) and [W3C Web
-Storage API Specification](http://dev.w3.org/html5/webstorage/). Some
-devices already provide an implementation of these specifications, in
-which case the built-in support applies.  Cordova's implementation
-offers compatible support for those that don't.
+This API offers storage options based on two different W3C
+specifications:
+
+* The
+  [Web Storage API Specification](http://dev.w3.org/html5/webstorage/)
+  allows you to access data via simple key/value pairs.  See the
+  section on localStorage for complete details on this interface.
+
+* The
+  [Web SQL Database Specification](http://dev.w3.org/html5/webdatabase/)
+  offers more full-featured database tables accessed via SQL queries.
+  A summary of this interface appears immediately below.
+
+Cordova provides access to both interfaces for the minority of devices
+that don't already support them. Otherwise the built-in
+implementations apply.
 
 Methods
 -------
@@ -50,30 +60,24 @@ Objects
 - SQLResultSet
 - SQLResultSetRowList
 - SQLError
-- localStorage
 
 ## Accessing the Feature
 
-* Android
+As of version 3.0, access to Storage APIs is built into Cordova, and
+does not require using the CLI to add plugins as described in The
+Command-line Interface.
 
-    <!-- app/res/xml/config.xml -->
-    <feature name="Storage">
-        <param name="android-package" value="org.apache.cordova.Storage" />
-    </feature>
+If you are using the older set of Cordova tools that precede the CLI,
+the following platform-specific configuration settings are still
+required:
 
-* BlackBerry WebWorks
+* Android (in `app/res/xml/config.xml`)
 
-    <!-- www/config.xml -->
-    <feature id="blackberry.widgetcache" required="true" version="1.0.0.0" />
+        <feature name="Storage">
+            <param name="android-package" value="org.apache.cordova.Storage" />
+        </feature>
 
-* iOS
+* BlackBerry WebWorks (in `www/config.xml`)
 
-  No special permissions are required.
+        <feature id="blackberry.widgetcache" required="true" version="1.0.0.0" />
 
-* Windows Phone
-
-  No special permissions are required.
-
-* Tizen
-
-  No special permissions are required.
