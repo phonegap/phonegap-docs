@@ -71,7 +71,7 @@ class DocsGenerator
 
         copy_directory(input_path, @working_directory)
 
-        puts " => Generating the Cordova Documentation for #{version_dir}-#{language_dir}..."
+        puts " => Generating the PhoneGap Documentation for #{version_dir}-#{language_dir}..."
         generated_path = after_jodoc(jodocify(before_jodoc(@working_directory, options), options), options)
 
         move_directory(generated_path, output_path)
