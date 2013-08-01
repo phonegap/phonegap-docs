@@ -63,9 +63,12 @@ platform-specific configuration settings described below:
             <param name="ios-package" value="CDVInAppBrowser" />
         </feature>
 
-* Windows Phone 7 + 8 (in `config.xml`)
+* Windows Phone 7 and 8 (in `config.xml`)
 
         <feature name="InAppBrowser" />
+
+Some platforms may support this feature without requiring any special
+configuration.  See Platform Support for an overview.
 
 addEventListener
 ================
@@ -89,8 +92,9 @@ Supported Platforms
 -------------------
 
 - Android
+- BlackBerry
 - iOS
-- Windows Phone 7 + 8
+- Windows Phone 7 and 8
 
 Quick Example
 -------------
@@ -152,8 +156,9 @@ Supported Platforms
 -------------------
 
 - Android
+- BlackBerry
 - iOS
-- Windows Phone 7 + 8
+- Windows Phone 7 and 8
 
 Quick Example
 -------------
@@ -230,9 +235,9 @@ Supported Platforms
 -------------------
 
 - Android
+- BlackBerry
 - iOS
-- Windows Phone 7 + 8
-- BlackBerry 10
+- Windows Phone 7 and 8
 
 Quick Example
 -------------
@@ -284,6 +289,7 @@ Supported Platforms
 -------------------
 
 - Android
+- BlackBerry
 - iOS
 
 Quick Example
@@ -350,6 +356,7 @@ Supported Platforms
 -------------------
 
 - Android
+- BlackBerry
 - iOS
 
 Quick Example
@@ -426,6 +433,7 @@ Supported Platforms
 -------------------
 
 - Android
+- BlackBerry
 - iOS
 
 Quick Example

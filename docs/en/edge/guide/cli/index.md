@@ -149,7 +149,7 @@ Edit this application however you want, but any initialization should
 be specified as part of the `deviceready` event handler, referenced by
 default from `www/js/index.js`.
 <!-- XREF
-(See Application Development Guide for details.)
+(See the Application Development Guide for details.)
 XREF -->
 
 Run the following command to iteratively build the project:
@@ -351,7 +351,8 @@ Use this syntax to install a specific version:
 
         $ sudo npm install -g cordova@3.0.0
 
-Run the `info` command for a listing that includes the current version
+Run `cordova -v` to see the currently running version.  Run the `npm
+info` command for a longer listing that includes the current version
 along with other available version numbers:
 
         $ npm info cordova
