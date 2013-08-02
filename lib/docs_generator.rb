@@ -40,6 +40,7 @@ class DocsGenerator
   def initialize(input_directory = nil, output_directory = nil)
     @input_directory   = input_directory  || default_input_directory
     @output_directory  = output_directory || default_output_directory
+    @merge_directory   = default_merge_directory
     @working_directory = File.join tmp_directory, 'docs'
   end
   
@@ -66,10 +67,12 @@ class DocsGenerator
         next if one_version and version_dir != one_version
         output_path = File.join @output_directory, language_dir, version_dir
         input_path  = File.join @input_directory,  language_dir, version_dir
+        merge_path  = File.join @merge_directory,  language_dir, version_dir
         options     = { :lang => language_dir, :version => version_dir }
         next unless File.directory? input_path
 
         copy_directory(input_path, @working_directory)
+        merge_directory(merge_path, @working_directory)
 
         puts " => Generating the PhoneGap Documentation for #{version_dir}-#{language_dir}..."
         generated_path = after_jodoc(jodocify(before_jodoc(@working_directory, options), options), options)

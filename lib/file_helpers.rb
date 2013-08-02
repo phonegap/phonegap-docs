@@ -30,6 +30,10 @@ module FileHelpers
     File.join root_directory, 'public'
   end
   
+  def default_merge_directory
+    File.join root_directory, 'docs-phonegap'
+  end
+  
   def tmp_directory
     File.join root_directory, 'tmp'
   end
@@ -42,6 +46,12 @@ module FileHelpers
     FileUtils.rm_rf   destination
     FileUtils.mkdir_p File.dirname(destination)
     FileUtils.cp_r    source, destination
+  end
+  
+  def merge_directory(source, destination)
+    if File.exists? source
+      FileUtils.copy_entry source, destination
+    end
   end
   
   def move_directory(source, destination)

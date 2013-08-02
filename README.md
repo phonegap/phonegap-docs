@@ -24,12 +24,20 @@ File Structure
 --------------
 
     docs/
-    docs/LANGUAGE
-    docs/LANGUAGE/VERSION
+    docs/LANGUAGE/
+    docs/LANGUAGE/VERSION/
     docs/LANGUAGE/VERSION/cordova/
     docs/LANGUAGE/VERSION/cordova/PluginName/
     docs/LANGUAGE/VERSION/cordova/PluginName/className.md
     docs/LANGUAGE/VERSION/cordova/PluginName/className.functionName.md
+
+Merging PhoneGap-Specific Documentation
+---------------------------------------
+
+    docs-phonegap/
+    docs-phonegap/LANGUAGE/
+    docs-phonegap/LANGUAGE/VERSION/
+    docs-phonegap/LANGUAGE/VERSION/path/to/className.md
 
 Contributing to the Documentation
 ---------------------------------
