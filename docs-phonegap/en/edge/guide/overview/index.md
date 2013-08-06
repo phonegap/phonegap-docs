@@ -20,14 +20,15 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # Overview
 
-Cordova is an open-source mobile development framework. It allows you
-to use standard web technologies such as HTML5, CSS3, and JavaScript
-for cross-platform development, avoiding each mobile platforms' native
-development language.  Applications execute within wrappers targeted
-to each platform, and rely on standards-compliant API bindings to
-access each device's sensors, data, and network status.
+PhoneGap is an web-based mobile development framework, based on the
+open-source Cordova project. PhoneGap allows you to use standard web
+technologies such as HTML5, CSS3, and JavaScript for cross-platform
+development, avoiding each mobile platforms' native development
+language.  Applications execute within wrappers targeted to each
+platform, and rely on standards-compliant API bindings to access each
+device's sensors, data, and network status.
 
-Use Cordova if you are:
+Use PhoneGap if you are:
 
 * a mobile developer and want to extend an application across more
   than one platform, without having to re-implement it with each
@@ -43,7 +44,7 @@ Use Cordova if you are:
 
 ## Basic Components
 
-Cordova applications rely on a common `config.xml` file that provides
+PhoneGap applications rely on a common `config.xml` file that provides
 information about the app and specifies parameters affecting how it
 works, such as whether it responds to orientation shifts. This file
 adheres to the W3C's
@@ -56,21 +57,21 @@ images, media files, or other resources are necessary for it to run.
 The app executes as a _WebView_ within the native application wrapper,
 which you distribute to app stores.  For the web app to interact with
 various device features the way native apps do, it must also reference
-a `cordova.js` file, which provides API bindings.
+a `phonegap.js` file, which provides API bindings.
 <!-- XREF
 (See the API Reference for an overview, and the Application
 Development Guide for examples of how to use them.)
 XREF -->
 
-The Cordova-enabled WebView may provide the application with its
+The PhoneGap-enabled WebView may provide the application with its
 entire user interface. It can also be a component within a larger,
 hybrid application that mixes the WebView with native application
-components.  Cordova provides a _plugin_ interface for these
+components.  PhoneGap provides a _plugin_ interface for these
 components to communicate with each other.
 
 ## Development Paths
 
-The easiest way to set up an application is to run the `cordova`
+The easiest way to set up an application is to run the `phonegap`
 command-line utility, also known as the _command-line interface_
 (CLI). (To install the CLI, see The Command-line Interface.)
 Depending on the set of platforms you wish to target, you can rely on
@@ -78,7 +79,11 @@ the CLI for progressively greater shares of the development cycle:
 
 * In the most basic scenario, you can use the CLI simply to create a
   new project that is populated with default configuration for you to
-  modify.
+  modify. Once you install a mobile platform's SDK, you can then
+  compile apps locally.
+
+* In another scenario, you can send your code to a PhoneGap Build
+  server to be compiled remotely for various platforms.
 
 * For many mobile platforms, you can also use the CLI to set up
   additional project files required to compile within each SDK.  For
@@ -129,53 +134,90 @@ available for each mobile platform:
 <thead>
     <tr>
         <th></td>
-        <th>Android</th>
-        <th>BlackBerry</th>
-        <th>BlackBerry 10</th>
-        <th>iOS</th>
-        <th>Windows<br/>Phone 7</th>
-        <th>Windows<br/>Phone 8</th>
-        <th>Windows<br/>8</th>
-        <th>Tizen</th>
+        <th><tt>android</tt></th>
+        <th><tt>blackberry</tt> (6)</th>
+        <th><tt>blackberry10</tt></th>
+        <th><tt>ios</tt></th>
+        <th><tt>wp7</tt> (Windows<br/>Phone 7)</th>
+        <th><tt>wp8</tt> (Windows<br/>Phone 8)</th>
+        <th><tt>win8</tt><br/>(Windows 8)</th>
+        <th><tt>tizen</tt></th>
+        <th><tt>webos</tt></th>
+        <th><tt>symbian</tt></th>
     </tr>
 
 </thead>
 
 <tbody>
+
     <tr>
-        <th><a href="guide_cli_index.md.html">cordova<br/>CLI</a></th>
-        <td data-col="android"    class="y">Mac, Windows, Linux</td>
-        <td data-col="blackberry" class="n">Mac, Windows</td>
+        <th><a href="guide_platforms_index.md.html">Local SDK Support</a></th>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
+        <td data-col="blackberry10" class="y"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="y"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
+    </tr>
+
+    <tr>
+        <th><a href="guide_build_index.md.html">Remote PhoneGap Build</a></th>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
+        <td data-col="blackberry10" class="n"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="n"></td>
+        <td data-col="win8"         class="n"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="y"></td>
+    </tr>
+
+    <tr>
+        <th><a href="guide_cli_index.md.html">phonegap<br/>CLI</a></th>
+        <td data-col="android"      class="y">Mac, Windows, Linux</td>
+        <td data-col="blackberry"   class="n">Mac, Windows</td>
         <td data-col="blackberry10" class="y">Mac, Windows</td>
-        <td data-col="ios"        class="y">Mac</td>
-        <td data-col="winphone7"  class="y">Windows</td>
-        <td data-col="winphone8"  class="y">Windows</td>
-        <td data-col="win8"       class="n"></td>
-        <td data-col="tizen"       class="n"></td>
+        <td data-col="ios"          class="y">Mac</td>
+        <td data-col="winphone7"    class="y">Windows</td>
+        <td data-col="winphone8"    class="y">Windows</td>
+        <td data-col="win8"         class="n"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="u"></td>
+        <td data-col="symbian"      class="u"></td>
     </tr>
 
     <tr>
         <th><a href="guide_hybrid_webviews_index.md.html">Embedded<br/>WebView</a></th>
-        <td data-col="android"    class="y"><a href="guide_platforms_android_webview.md.html">(see details)</a></td>
-        <td data-col="blackberry" class="n"></td>
+        <td data-col="android"      class="y"><a href="guide_platforms_android_webview.md.html">(see details)</a></td>
+        <td data-col="blackberry"   class="n"></td>
         <td data-col="blackberry10" class="n"></td>
-        <td data-col="ios"        class="y"><a href="guide_platforms_ios_webview.md.html">(see details)</a></td>
-        <td data-col="winphone7"  class="n"></td>
-        <td data-col="winphone8"  class="n"></td>
-        <td data-col="win8"       class="n"></td>
-        <td data-col="tizen"       class="n"></td>
+        <td data-col="ios"          class="y"><a href="guide_platforms_ios_webview.md.html">(see details)</a></td>
+        <td data-col="winphone7"    class="n"></td>
+        <td data-col="winphone8"    class="n"></td>
+        <td data-col="win8"         class="n"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
         <th><a href="guide_hybrid_plugins_index.md.html">Plug-in<br/>Interface</a></th>
-        <td data-col="android"    class="y"><a href="guide_guide_platforms_android_plugin.md.html">(see details)</a></td>
-        <td data-col="blackberry" class="y"><a href="guide_guide_platforms_blackberry_plugin.md.html">(see details)</a></td>
+        <td data-col="android"      class="y"><a href="guide_guide_platforms_android_plugin.md.html">(see details)</a></td>
+        <td data-col="blackberry"   class="y"><a href="guide_guide_platforms_blackberry_plugin.md.html">(see details)</a></td>
         <td data-col="blackberry10" class="y"><a href="guide_guide_platforms_blackberry10_plugin.md.html">(see details)</a></td>
-        <td data-col="ios"        class="y"><a href="guide_guide_platforms_ios_plugin.md.html">(see details)</a></td>
-        <td data-col="winphone7"  class="y"><a href="guide_guide_platforms_wp8_plugin.md.html">(see details)</a></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="n"></td>
-        <td data-col="tizen"       class="n"></td>
+        <td data-col="ios"          class="y"><a href="guide_guide_platforms_ios_plugin.md.html">(see details)</a></td>
+        <td data-col="winphone7"    class="y"><a href="guide_guide_platforms_wp8_plugin.md.html">(see details)</a></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="n"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="u"></td>
+        <td data-col="symbian"      class="u"></td>
     </tr>
 
     <tr>
@@ -185,194 +227,226 @@ available for each mobile platform:
 
     <tr>
         <th><a href="cordova_accelerometer_accelerometer.md.html">Accelerometer</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="y"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="y"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="y"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_camera_camera.md.html">Camera</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="y"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="y"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="y"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_media_capture_capture.md.html">Capture</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="n"></td>
-        <td data-col="tizen"       class="n"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="n"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="u"></td>
+        <td data-col="symbian"      class="u"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_compass_compass.md.html">Compass</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="n"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="n"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y">(3GS+)</td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="y"></td>
+        <td data-col="ios"          class="y">(3GS+)</td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="y"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_connection_connection.md.html">Connection</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="y"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="y"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="y"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_contacts_contacts.md.html">Contacts</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="n"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="y"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_device_device.md.html">Device</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="y"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="y"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="y"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_events_events.md.html">Events</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="y"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="y"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="y"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_file_file.md.html">File</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="p">(no FileTransfer)</td>
-        <td data-col="winphone8"  class="p">(no FileTransfer)</td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="n"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="p">(no FileTransfer)</td>
+        <td data-col="winphone8"    class="p">(no FileTransfer)</td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_geolocation_geolocation.md.html">Geolocation</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="y"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="y"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="y"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_globalization_globalization.md.html">Globalization</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="n"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="n"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="n"></td>
-        <td data-col="tizen"       class="n"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="n"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="n"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="u"></td>
+        <td data-col="symbian"      class="u"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_inappbrowser_inappbrowser.md.html">InAppBrowser</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="n"></td>
-        <td data-col="tizen"       class="n"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="n"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="u"></td>
+        <td data-col="symbian"      class="u"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_media_media.md.html">Media</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="n"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="n"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="y"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="y"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_notification_notification.md.html">Notification</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="y"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="y"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="y"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_splashscreen_splashscreen.md.html">Splashscreen</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="n"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="n"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="y"></td>
-        <td data-col="winphone8"  class="y"></td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="n"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="y"></td>
+        <td data-col="winphone8"    class="y"></td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="u"></td>
+        <td data-col="symbian"      class="u"></td>
     </tr>
 
     <tr>
         <th><a href="cordova_storage_storage.md.html">Storage</a></th>
-        <td data-col="android"    class="y"></td>
-        <td data-col="blackberry" class="y"></td>
+        <td data-col="android"      class="y"></td>
+        <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
-        <td data-col="ios"        class="y"></td>
-        <td data-col="winphone7"  class="p">localStorage only</td>
-        <td data-col="winphone8"  class="p">localStorage only</td>
-        <td data-col="win8"       class="y"></td>
-        <td data-col="tizen"       class="y"></td>
+        <td data-col="ios"          class="y"></td>
+        <td data-col="winphone7"    class="p">localStorage only</td>
+        <td data-col="winphone8"    class="p">localStorage only</td>
+        <td data-col="win8"         class="y"></td>
+        <td data-col="tizen"        class="y"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
 </tbody>
