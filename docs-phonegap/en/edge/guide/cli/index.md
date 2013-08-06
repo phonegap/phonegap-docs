@@ -21,21 +21,42 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 # The Command-line Interface
 
 This guide shows you how to create applications and deploy them to
-various native mobile platforms using the `cordova` command-line
+various native mobile platforms using the `phonegap` command-line
 interface (CLI). This tool allows you to create new projects, build
-them on different platforms, and run them within an emulator. You can
-also use the CLI to initialize project code, after which you use
-various platforms' SDKs to develop them further.
+them on different platforms, either locally or on a remote server, and
+run them within an emulator or device.  You can also use the CLI to
+initialize project code, after which you use various platforms' SDKs
+to develop them further.
 
 ## Prerequisites
 
-Before running any command-line tools, you need to install SDKs for
-each platform you wish to target.
-(See the Platform Guides for more details.)
+Before building projects locally, you need to install SDKs for each
+platform you wish to target.  (See the Platform Guides for details on
+how to install each.) Otherwise, you can use the cloud-based PhoneGap
+Build service to compile apps for the following platforms remotely:
 
-To add support or rebuild a project for any platform, you need to run
-the command-line interface from the same machine that supports the
-platform's SDK. The CLI supports the following combinations:
+* Android
+* iOS
+* BlackBerry 6
+* Windows Phone 7
+* WebOS
+* Symbian
+
+ In contrast to
+PhoneGap Build, local builds support BlackBerry 10.  The WebOS and
+Symbian platforms are _only_ available when building remotely. The
+following platforms are only available when building locally:
+
+* Windows Phone 8
+* Windows 8
+
+See the Platform Support table for an overview of all available
+options. See Build Applications Remotely below for details on PhoneGap
+Build.
+
+If building locally, you need to run the command-line interface from
+the same machine that supports the platform's SDK. The CLI supports
+the following combinations:
 
 * iOS             (Mac)
 * Android         (Mac, Linux)
@@ -51,31 +72,28 @@ The more likely it is that you run the CLI from different machines,
 the more it makes sense to maintain a remote source code repository,
 whose assets you pull down to local working directories.
 
-To install the `cordova` command-line tool, follow these steps:
+To install the `phonegap` command-line tool, follow these steps:
 
 1. Download and install [Node.js](http://nodejs.org/). Following
    installation, you should be able to invoke `node` or `npm` on your
    command line.
 
-1. Install the `cordova` utility. In Unix, prefixing the additional
+1. Install the `phonegap` utility. In Unix, prefixing the additional
    `sudo` command may be necessary to install development utilities in
    otherwise restricted directories:
 
-        $ sudo npm install -g cordova
+        $ sudo npm install -g phonegap
 
    The installation log may produce errors for any uninstalled
    platform SDKs.  Following installation, you should be able to run
-   `cordova` on the command line.
+   `phonegap` on the command line.
 
 ## Create the App
 
 Go to the directory where you maintain your source code, and run a
 command such as the following:
 
-        $ cordova create hello com.example.hello HelloWorld
-
-It may take some time for the command to complete, so be patient. Run
-the `cordova -d` to see information about progress.
+        $ phonegap create hello com.example.hello HelloWorld
 
 The first argument specifies a _hello_ directory to be generated
 for your project. Its `www` subdirectory houses your application's
@@ -86,130 +104,96 @@ distribute the application.
 
 The other two arguments are optional: the `com.example.hello` argument
 provides your project with a reverse domain-style identifier, and the
-`HelloWorld` provides the application's display text. You can edit
-both of these values later in the `config.xml` file.
+`HelloWorld` provides the application's display text. The `-i` and
+`-n` command-line options and their corresponding flags make these
+explicit:
 
-## Add Platforms
+        $ phonegap create hello -n HelloWorld -i com.example.hello
+        $ phonegap create hello --name HelloWorld --id com.example.hello
+
+Alterately, you can edit both of these optional values in the
+`config.xml` file later during development.
+
+## Build the App
 
 All subsequent commands need to be run within the project's directory,
 or any subdirectories within its scope:
 
         $ cd hello
 
-Before you can build the project, you need to specify a set of target
-platforms. Your ability to run these commands depends on whether your
-machine supports each SDK, and whether you have already installed each
-SDK.  Run any of these from a Mac:
-
-        $ cordova platform add ios
-        $ cordova platform add android
-        $ cordova platform add blackberry10
-
-Run any of these from a Windows machine, where _wp_ refers to
-different versions of the Windows Phone operating system:
-
-        $ cordova platform add wp7
-        $ cordova platform add wp8
-        $ cordova platform add android
-        $ cordova platform add blackberry10
-
-Run this to check your current set of platforms:
-
-        $ cordova platforms ls
-
-(Note the `platform` and `platforms` commands are synonymous.)
-
-Run either of the following synonymous commands to remove a platform:
-
-        $ cordova platform remove blackberry10
-        $ cordova platform rm android
-
-Running commands to add or remove platforms affects the contents of
-the project's _platforms_ directory, where each specified platform
-appears as a subdirectory. The _www_ source directory is reproduced
-within each platform's subdirectory, appearing for example in
-`platforms/ios/www` or `platforms/android/assets/www`.  By default,
-each platform's configuration file is set up to be able to access all
-of Cordova's APIs.
-
-If you wish, you can use an SDK at this point to open the project you
-created. However, any edits you make to the project within an SDK
-affect the derivative set of assets, not the original cross-platform
-source files. Use this approach if you simply want to initialize a
-project.
-(See the Platform Guides for information on how to develop applications within each SDK.)
-Read on if you wish to use command-line tools for the entire
-development cycle.
-
-## Build the App
-
-By default, the `cordova create` script generates a skeletal web-based
-application whose home page is the project's `www/index.html` file.
-Edit this application however you want, but any initialization should
-be specified as part of the `deviceready` event handler, referenced by
-default from `www/js/index.js`.
+By default, the `phonegap create` script generates a skeletal
+web-based application whose home page is the project's
+`www/index.html` file, with its default logic referenced from
+`www/js/index.js`.  Edit this application however you want, but
+initialize it as part of a `deviceready` event handler, which executes
+once device APIs become available.
 <!-- XREF
-(See the Application Development Guide for details.)
+(See the Application Development Guide and API Reference for details.)
 XREF -->
 
-Run the following command to iteratively build the project:
+The `build` command compiles an application for whichever platform you
+specify, identified by common stub arguments, generating
+platform-specific files within the project's `platforms`
+subdirectory. For example, the following targets iPhone and iPad
+devices:
 
-        $ cordova build
+        $ phonegap build ios
+        [phonegap] detecting iOS SDK environment...
+        [phonegap] using the local environment
+        [phonegap] compiling iOS...
+        [phonegap] successfully compiled iOS app
 
-This generates platform-specific code within the project's `platforms`
-subdirectory.  You can optionally limit the scope of each build to
-specific platforms:
+High-level information on the command's progress displays as feedback.
+If you need lower-level details, use the `-V` (verbose) option:
 
-        $ cordova build ios
+        $ phonegap -V build ios
 
-The `cordova build` command is a shorthand for the following, which in
-this example is also targeted to a single platform:
-
-        $ cordova prepare ios
-        $ cordova compile ios
-
-In this case, once you run `prepare`, you can use Apple's Xcode SDK as
-an alternative to modify and compile the platform-specific code that
-Cordova generates within `platforms/ios`. You can use the same
-approach with other platforms' SDKs.
+<!-- need list of clobber subdirs -->
 
 ## Test the App on an Emulator or Device
 
-SDKs for mobile platforms often come bundled with emulators that
-execute a device image, so that you can launch the app from the home
-screen and see how it interacts with many platform features.  Run a
-command such as the following to rebuild the app and view it within a
-specific platform's emulator:
+While PhoneGap applications are implemented as web pages, you can't
+use a standard browser to preview pages that invoke its device APIs.
+To test how an application interacts with platform features, install
+it onto a device or emulator. This example installs onto Android:
 
-        $ cordova emulate android
+        $ phonegap install android
 
-Some mobile platforms emulate a particular device by default, such as
-the iPhone for iOS projects. For other platforms, you may need to
-first associate a device with an emulator.
-(See the Platform Guides for details.)
-For example, you may first run the `android` command to launch the
-Android SDK, then run a particular device image, which launches it
-according to its default behavior:
+As an alternative, the combined `run` command performs both the
+`build` and `install` operations in one line:
 
-![](img/guide/cli/android_emulate_init.png)
+        $ phonegap run android
+        [phonegap] detecting Android SDK environment...
+        [phonegap] using the local environment
+        [phonegap] compiling Android...
+        [phonegap] successfully compiled Android app
+        [phonegap] trying to install app onto device
+        [phonegap] no device was found
+        [phonegap] trying to install app onto emulator
+        [phonegap] successfully installed onto emulator
 
-Following up with the `cordova emulate` command refreshes the emulator
-image to display the latest application, which is now available for
-launch from the home screen:
+If your Android device is connected and properly configured, the
+application displays there by default, otherwise it displays on the
+SDK emulator.
 
-![](img/guide/cli/android_emulate_install.png)
+Either the device or the emulator may need to be configured, as
+detailed in the Platform Guides.  In Android's case, to test on the
+device you would have to enable a __USB debugging__ option on the
+device, and perhaps add a USB driver depending on your development
+environment.  To test in an emulator, you may first need to set up or
+choose a particular AVD (_Android Virtual Device_).
 
-Alternately, you can plug the handset into your computer and test the
-app directly:
+The `run` command makes the app accessible on the home screen as if
+you had downloaded it from an app store:
 
-        $ cordova run android
+![](img/guide/cli/pg_android_emulate.png)
 
-Before running this command, you need to set up the device for
-testing, following procedures that vary for each platform. In
-Android's case, you would have to enable a __USB debugging__ option on
-the device, and perhaps add a USB driver depending on your development
-environmnent.
-See Platform Guides for details on each platform's requirements.
+You can also override the device-to-emulator fallback behavior
+described above.  Adding the `-e` (or `--emulator`) option to either
+the `install` or `run` command forces the app to display in the
+emulator, even if a device is connected.  Likewise, adding the `-d`
+(or `--device`) option forces it to try to install onto the device,
+without falling back to the emulator in case it fails to install.
 
 ## Add Features
 
@@ -217,92 +201,93 @@ When you build and view a new project, the default application that
 appears doesn't do very much. You can modify the app in many ways to
 take advantage of standard web technologies, but for the app to
 communicate closely with various device-level features, you need to
-add plugins that provide access to core Cordova APIs.
+add plugins that provide access to core PhoneGap APIs.
 
 A _plugin_ is a bit of add-on code that provides an interface to
 native components. You can design your own plugin interface, for
-example when designing a hybrid app that mixes a Cordova WebView with
-native components. (See Embedding WebViews and Plugin Development Guide for details.)  More commonly, you would add a plugin to enable
-one of Cordova's basic device-level features
+example when designing a hybrid app that mixes a PhoneGap WebView with
+native components. (See Embedding WebViews and Plugin Development
+Guide for details.)  More commonly, you would add a plugin to enable
+one of PhoneGap's basic device-level features
 <!-- XREF
 discussed in the Application Development Guide and
 XREF -->
 detailed in the API Reference.
 
-The `cordova plugin add` command requires you to specify the
+The `phonegap plugin add` command requires you to specify the
 repository for the plugin code.  Here are examples of features you
 might add:
 
 * Basic device information (Device API):
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git
 
 * Network Connection and Battery Events:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-battery-status.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-battery-status.git
 
 * Accelerometer, Compass, and Geolocation:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-motion.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-orientation.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-geolocation.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-motion.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-orientation.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-geolocation.git
 
 * Camera, Media playback and Capture:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-camera.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media-capture.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media.git    
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-camera.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media-capture.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media.git
 
 * Access files on device or network (File API):
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file-transfer.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file-transfer.git
 
 * Notification via dialog box or vibration:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-vibration.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-vibration.git
 
 * Contacts:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-contacts.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-contacts.git
 
 * Globalization:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-globalization.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-globalization.git
 
 * Splashscreen:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-splashscreen.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-splashscreen.git
 
 * Open new browser windows (InAppBrowser):
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
 
 * Debug console:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-console.git
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-console.git
 
-Use `plugin ls` (or `plugin list`, or `plugin` by itself) to view
-currently installed plugins. Each displays by its identifier:
+Use `plugin list` to view currently installed plugins. Each displays
+by its identifier:
 
-        $ cordova plugin ls    # or 'plugin list'
-        [ 'org.apache.cordova.core.console' ]
+        $ phonegap plugin list
+        [phonegap] org.apache.cordova.core.console
 
 To remove a plugin, refer to it by the same identifier that appears in
-the listing. For example, here is how you would remove support for a
-debug console from a release version:
+the listing, which corresponds to subdirectories within the project's
+`plugins` directory. For example, here is how you would remove support
+for a debug console from a final release version:
 
-        $ cordova plugin rm org.apache.cordova.core.console        
-        $ cordova plugin remove org.apache.cordova.core.console    # same
+        $ phonegap plugin remove org.apache.cordova.core.console
 
 You can batch-remove or add plugins by specifying more than one
 argument for each command.
 
 ## Customize Each Platform
 
-While Cordova allows you to easily deploy an app for many different
+While PhoneGap allows you to easily deploy an app for many different
 platforms, sometimes you need to add customizations.  In that case,
 you don't want to modify the source files in various `www` directories
 within the top-level `platforms` directory, because they're regularly
@@ -340,28 +325,94 @@ graphic into the iOS interface, stored in
 instead capture `backbutton` events from the corresponding hardware
 button.
 
-## Updating Cordova
+## Build Applications Remotely
 
-After installing the `cordova` utility, you can always
-update it to the latest version by running the following command:
+By default, building an application generates files in various
+subdirectories within `platforms`, and relies on locally installed SDK
+tools.  As an alternative, you may be able to build the application
+remotely using Adobe's PhoneGap Build service. This development path
+means there's no need to maintain SDK tools on your system, and it
+also involves a different way to install apps onto your device, with
+no emulator testing available.  PhoneGap Build also supports
+additional platforms (Symbian and WebOS) that can only be compiled
+remotely. (See the Platform Support table for details.)
 
-        $ sudo npm update -g cordova
+First, you need an account on the
+[PhoneGap Build](https://build.phonegap.com) site.
+Then use the `login` command to associate each app you work on with
+the account. Here are two minor variations of the same command:
 
-Use this syntax to install a specific version:
+        $ phonegap remote login -u iamreallyadog@gmail.com -p mYpASSw0RD
+        $ phonegap remote login --username iamreallyadog@gmail.com --password mYpASSw0RD
 
-        $ sudo npm install -g cordova@3.0.0
+<!-- login for each app? -->
 
-Run `cordova -v` to see the currently running version.  Run the `npm
-info` command for a longer listing that includes the current version
-along with other available version numbers:
+If you don't first run this command, you will be prompted for account
+details wach time you build a remote application.  Use the
+corresponding `logout` command to dissociate the app with the account:
 
-        $ npm info cordova
+        $ phonegap remote logout
 
-Cordova 3.0 is the first version to support the command-line interface
-described in this section. If you are updating from a version prior to
-3.0, you need to create a new project as described above, then copy
-the older application's assets into the top-level `www` directory.
-Where applicable, further details about upgrading to 3.0 are available
-in the Platform Guides.  Once you upgrade to the `cordova`
-command-line interface and use `npm update` to stay current, the more
-time-consuming procedures described there are no longer relevant.
+<!-- implicit logout? -->
+
+To compile your app remotely, prefix the `build` command with the
+additional `remote` command:
+
+        $ phonegap remote build ios
+
+To use plugins, you must first add them locally, then build them
+remotely. For example:
+
+        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
+        $ phonegap remote build ios
+
+Since in the remote build environment no SDK is present that would
+allow you to run an emulator or tether a device, the `install` and
+`run` commands simply generate a QRCode in the PhoneGap Build
+interface:
+
+        $ phonegap remote install ios
+        # ...or...
+        $ phonegap remote run ios
+
+![](img/guide/cli/pg_build_qr.png)
+
+Note that commands operate locally by default, but there is an
+explicit `local` command. For example, these commands do the same
+thing:
+
+        $ phonegap local build ios
+        $ phonegap build ios
+
+## Updating PhoneGap
+
+After installing the `phonegap` utility, you can always update it to
+the latest version by running the following command:
+
+        $ sudo npm update -g phonegap
+
+The `version` command, or the `-v` option, displays the currently
+running version:
+
+        $ phonegap version
+        $ phonegap -v
+
+Run the `npm info` command for a longer listing that includes the
+current version along with other available version numbers:
+
+        $ npm info phonegap
+
+Use this syntax to install a specific version listed there:
+
+        $ sudo npm install -g phonegap@2.9.0-rc1-0.12.2
+
+PhoneGap 3.0 is the first version to support the command-line
+interface described in this section. If you are updating from a
+version prior to 3.0, you need to create a new project as described
+above, then copy the older application's assets into the top-level
+`www` directory.  Where applicable, further details about upgrading to
+3.0 are available in the Platform Guides.  Once you upgrade to the
+`phonegap` command-line interface and use `npm update` to stay
+current, the more time-consuming procedures described there are no
+longer relevant.
+
