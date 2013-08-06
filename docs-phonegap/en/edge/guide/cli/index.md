@@ -214,60 +214,60 @@ discussed in the Application Development Guide and
 XREF -->
 detailed in the API Reference.
 
-The `phonegap plugin add` command requires you to specify the
+The `phonegap local plugin add` command requires you to specify the
 repository for the plugin code.  Here are examples of features you
 might add:
 
 * Basic device information (Device API):
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git
 
 * Network Connection and Battery Events:
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-battery-status.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-battery-status.git
 
 * Accelerometer, Compass, and Geolocation:
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-motion.git
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-orientation.git
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-geolocation.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-motion.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-orientation.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-geolocation.git
 
 * Camera, Media playback and Capture:
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-camera.git
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media-capture.git
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-camera.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media-capture.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media.git
 
 * Access files on device or network (File API):
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file.git
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file-transfer.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file-transfer.git
 
 * Notification via dialog box or vibration:
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs.git
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-vibration.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-vibration.git
 
 * Contacts:
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-contacts.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-contacts.git
 
 * Globalization:
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-globalization.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-globalization.git
 
 * Splashscreen:
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-splashscreen.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-splashscreen.git
 
 * Open new browser windows (InAppBrowser):
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
 
 * Debug console:
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-console.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-console.git
 
 Use `plugin list` to view currently installed plugins. Each displays
 by its identifier:
@@ -363,7 +363,7 @@ additional `remote` command:
 To use plugins, you must first add them locally, then build them
 remotely. For example:
 
-        $ phonegap plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
+        $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
         $ phonegap remote build ios
 
 Since in the remote build environment no SDK is present that would
