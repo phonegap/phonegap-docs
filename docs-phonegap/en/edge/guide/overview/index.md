@@ -344,8 +344,8 @@ CLI's shorthand stubs.)
         <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
         <td data-col="ios"          class="y"></td>
-        <td data-col="winphone7"    class="p">(no FileTransfer)</td>
-        <td data-col="winphone8"    class="p">(no FileTransfer)</td>
+        <td data-col="winphone7"    class="p">no FileTransfer</td>
+        <td data-col="winphone8"    class="p">no FileTransfer</td>
         <td data-col="win8"         class="y"></td>
         <td data-col="tizen"        class="n"></td>
         <td data-col="webos"        class="n"></td>
