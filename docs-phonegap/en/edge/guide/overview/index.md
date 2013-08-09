@@ -152,6 +152,20 @@ CLI's shorthand stubs.)
 <tbody>
 
     <tr>
+        <th><a href="guide_cli_index.md.html">phonegap<br/>CLI</a></th>
+        <td data-col="android"      class="y">Mac, Windows, Linux</td>
+        <td data-col="blackberry"   class="n">Mac, Windows</td>
+        <td data-col="blackberry10" class="y">Mac, Windows</td>
+        <td data-col="ios"          class="y">Mac</td>
+        <td data-col="winphone7"    class="y">Windows</td>
+        <td data-col="winphone8"    class="y">Windows</td>
+        <td data-col="win8"         class="n"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="y"></td>
+    </tr>
+
+    <tr>
         <th><a href="guide_platforms_index.md.html">Local SDK Support</a></th>
         <td data-col="android"      class="y"></td>
         <td data-col="blackberry"   class="y"></td>
@@ -173,20 +187,6 @@ CLI's shorthand stubs.)
         <td data-col="ios"          class="y"></td>
         <td data-col="winphone7"    class="y"></td>
         <td data-col="winphone8"    class="n"></td>
-        <td data-col="win8"         class="n"></td>
-        <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="y"></td>
-        <td data-col="symbian"      class="y"></td>
-    </tr>
-
-    <tr>
-        <th><a href="guide_cli_index.md.html">phonegap<br/>CLI</a></th>
-        <td data-col="android"      class="y">Mac, Windows, Linux</td>
-        <td data-col="blackberry"   class="n">Mac, Windows</td>
-        <td data-col="blackberry10" class="y">Mac, Windows</td>
-        <td data-col="ios"          class="y">Mac</td>
-        <td data-col="winphone7"    class="y">Windows</td>
-        <td data-col="winphone8"    class="y">Windows</td>
         <td data-col="win8"         class="n"></td>
         <td data-col="tizen"        class="n"></td>
         <td data-col="webos"        class="y"></td>
