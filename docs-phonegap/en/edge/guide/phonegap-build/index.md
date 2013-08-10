@@ -43,8 +43,8 @@ Build.
 
 3. [Where can I Get Help?](#whats_next)
 
-
 <a id="#what_do_i_upload"></a>
+
 ###What Do I Upload?
 
 ####Preparing the Assets
@@ -75,9 +75,10 @@ application can still access the PhoneGap API.
 
 To do so, simply ensure that the following reference is made in your `index.html`
 
-    <script src="phonegap.js"></script>
+        <script src="phonegap.js"></script>
 
 <a id="#configure_application"></a>
+
 ###How Do I Configure My Application?
 
 PhoneGap Build supports a configuration XML file, `config.xml`.
@@ -89,6 +90,7 @@ For more information on the config.xml see our
 [documentation](/docs/config-xml).
 
 <a id="whats_next"></a>
+
 ###What's Next?
 
 You should now be ready to proceed with building your application on
@@ -102,6 +104,7 @@ achieve a better understanding of PhoneGap Build.
 * [Debugging Your Applications with PhoneGap Build](/docs/phonegap-debug)
 
 <a id="help"></a>
+
 ###Where can I get help?
 
 If you're running into errors during compilation we have prepared
@@ -112,8 +115,6 @@ If your question has still not been answered, or you would like to
 provide some feedback to our team we use our
 [community support channel](http://community.phonegap.com)
 for most of our communication. Don't hesitate to drop us a line!
-
-
 
 # Getting Started
 

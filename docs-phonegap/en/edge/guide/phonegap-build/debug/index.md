@@ -32,7 +32,6 @@ which serve as an indispensable tool to developers working on web
 based projects. And now debug build provides the same benefits for
 PhoneGap developers.
 
-
 ## Sections
 
 1. [Configuring A project to use Build](#project_build)
@@ -44,13 +43,14 @@ PhoneGap developers.
 3. [Example Use Case](#example_use_case)
 4. [Closing Remarks](#closing_remarks)
 
-
 <a id="project_build"></a>
+
 ##Configuring A Project to use Build
 
 Build can be configured on either of the two cases.
 
 <a id="new_build_project"></a>
+
 ###New Application
 
 After logging in Navigate to
@@ -65,6 +65,7 @@ simply unselect the "enable debugging" option from the application
 edit page (as seen in the section below) and save your changes.
 
 <a id="existing_build_project"></a>
+
 ###Existing Application
 
 After logging in navigate to
@@ -84,6 +85,7 @@ future simply unselect the "enable debugging" option and save your
 changes.
 
 <a id="runnin_debug_mode"></a>
+
 ##Running Debug Mode
 
 To run you application in debug mode navigate to
@@ -95,6 +97,7 @@ page that includes the following options available at this time:
 elements, and console.
 
 <a id="running_debug_mode_elements"></a>
+
 ###Elements:
 
 This powerhouse tool enables you too modify the application in
@@ -108,8 +111,8 @@ interact with the javascript. Example use cases include bug tracking,
 and view application log output in realtime.
 
 <a id="example_use_case"></a>
-##Example Use Case
 
+##Example Use Case
 
 Walking through this demonstration will enable you to get a better
 understanding of the possible work flow in debug.
@@ -138,11 +141,10 @@ the sections labeled "elements" and "console".
 
 ![alt edit app page](images/phonegap-debug/console.jpg)
 
-
 4) You may have realized that we have a typo in our header when we
 include phonegap.js. The Line should read.
 
-    <script stype="text/javascript" src="phonegap.js"></script> 
+        <script stype="text/javascript" src="phonegap.js"></script> 
 
 With out this interactive debugging session we would need to re-build
 our code, and deploy the it once again on the simulator or device;
@@ -151,7 +153,7 @@ using JQuery to dynamically import the required javascript file.
 
 Go to the console and insert the following code.
 
-    $.getScript('phonegap.js', function() { alert('Load was performed.'); })
+        $.getScript('phonegap.js', function() { alert('Load was performed.'); })
 
 Now if you take a look at the device or simulator we should have an
 alert that prompts us when PhoneGap has been loaded.
@@ -162,11 +164,11 @@ notice that nothing has happened, this is because we have a typo in
 our html document. Modify the attribute id on the following line
 (double click the attribute):
 
-    <input type="button" id="buh_button" value="Check For Bugs">
+        <input type="button" id="buh_button" value="Check For Bugs">
 
 to the following:
 
-    <input type="button" id="bug_button" value="Check For Bugs">
+        <input type="button" id="bug_button" value="Check For Bugs">
 
 This modification can be applied to any aspect of the application such
 as css, html, and javascript.
@@ -174,8 +176,8 @@ as css, html, and javascript.
 6) Now proceed to clicking the "Check for Bugs", at this point you
 should get an alert stating "Ya! No more bugs".
 
-
 <a id="closing_remarks"></a>
+
 ##Closing Remarks:
 
 This concludes the simple demonstration on debug build, hopefully by
@@ -183,8 +185,6 @@ now we have been able to demonstrate the time and effort saved through
 having such a tool. If you have any further questions or comments
 please feel free to drop us a line at
 [http://community.phonegap.com](http://community.phonegap.com/nitobi/products/nitobi_phonegap_build).
-
-
 
 # Using a Custom Debug Server
 
@@ -211,6 +211,7 @@ is outside the scope of this guide.
 3. [Common Issues](#common_issues)
 
 <a id="setting_up_weinre"></a>
+
 ##Setting up Weinre
 
 ###Get Weinre
@@ -218,7 +219,7 @@ is outside the scope of this guide.
 Once you have `npm` installed, obtaining and installing Weinre is as
 simple as running the following command in a terminal.
 
-    sudo npm -g install weinre
+        sudo npm -g install weinre
 
 That's it! Now you're ready to run your very own Weinre instance.
 
@@ -226,18 +227,19 @@ That's it! Now you're ready to run your very own Weinre instance.
 
 To start your new local Weinre instance run the following command:
 
-    weinre
+        weinre
 
 You will now see output like the following:
 
-    Hardeeps-MacBook-Air:~ hardeep$ weinre
-    2013-07-01T20:03:34.890Z weinre: starting server at http://localhost:8080
+        Hardeeps-MacBook-Air:~ hardeep$ weinre
+        2013-07-01T20:03:34.890Z weinre: starting server at http://localhost:8080
 
 Weinre is now up and running! If you are running this behind a router
 that uses NAT you will need to find your IP address. You will use this
 IP when specifying your configuration with Build.
 
 <a id="setting_up_weinre"></a>
+
 ##Using a Local Weinre Instance with Build
 
 Obtain the ip address of your machine running Weinre. This can be done
@@ -249,10 +251,10 @@ Now you're ready to use your local server with Build. Using the
 domain param value to the ip address you found earlier, and the key
 param value to a unique identifier.
 
-    <feature name="debug-server" required="true">↵
-      <param name="domain" value="http://[ your ip address ]"/>↵
-      <param name="key" value="[ a unique id for your app ]"/>↵
-    </feature>↵
+        <feature name="debug-server" required="true">↵
+          <param name="domain" value="http://[ your ip address ]"/>↵
+          <param name="key" value="[ a unique id for your app ]"/>↵
+        </feature>↵
 
 That's it! You can now upload this to Build, install it on your
 device, and debug using your local Wienre server.

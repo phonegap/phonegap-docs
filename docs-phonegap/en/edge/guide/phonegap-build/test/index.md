@@ -29,7 +29,6 @@ PhoneGap Build hopes to create an easy to use and useful environment
 for managing and building applications with many developers and
 testers.
 
-
 ### Adding and Removing Collaborators:
 
 To add or remove a user to your app, you will first need to head over
@@ -68,8 +67,6 @@ Build or have a general question head over to our
 [community](http://community.phonegap.com) page and start a
 discussion!
 
-
-
 # Hydration
 
 Adobe® PhoneGap Build is excited to offer Hydration to its users. Hydration 
@@ -101,16 +98,18 @@ for most of our communication. Don't hesitate to drop us a line!
     4. [Disabling Hydration](#disable_hydration)
     
 <a id="create_hydration_build"></a>
+
 ##Configuring A project to use Hydration
 
 Hydration can be enabled and disabled for both new projects and existing
 projects, however it requires a project with the following PhoneGap
 versions
 
-    supported versions:  2.0.0 and above
-    supported platforms: iOS, Android 
+        supported versions:  2.0.0 and above
+        supported platforms: iOS, Android 
 
 <a id="new_build_project"></a>
+
 ###Hydrate a New Application
 
 After logging in navigate to
@@ -124,6 +123,7 @@ and hit "Create".
 Until disabled, every build will produce a hydrated version of this app.
 
 <a id="existing_build_project"></a>
+
 ###Hydrate an Existing Application
 
 After logging in navigate to
@@ -137,6 +137,7 @@ Until disabled, every build will produce a hydrated version of this app.
 ##Building an application with Hydration
 
 <a id="build_application"></a>
+
 ###Building an Application
 
 Building an application with Hydration is as simple as building any
@@ -148,13 +149,14 @@ project's settings.
 
 These settings include:
 
-    name, version, version code, icons, splash screens, preferences,
-    features, and access tags
+        name, version, version code, icons, splash screens, preferences,
+        features, and access tags
 
 Please note that the end user must update their binary everytime a
 native binary is generated.
 
 <a id="installing_application"></a>
+
 ###Installing the hydrated application
 
 The binary provided by build is exactly like its non-Hydrated binary
@@ -167,6 +169,7 @@ Hydration builds. For example, Adhoc distribution (IOS) builds can
 only be provisioned for one-hundred devices.
 
 <a href="update_application"></a>
+
 ###Updating the application
 
 Once a developer has compiled a new build the Hydrated application can
@@ -188,6 +191,7 @@ user can obtain the binary by downloading it, or by using one of our
 other methods.
 
 <a id="disable_hydration"></a>
+
 ###Disabling Hydration 
 
 After logging in Navigate to

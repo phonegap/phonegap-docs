@@ -36,6 +36,7 @@ This usually means something has gone wrong on our end. Please
 [contact us](http://community.phonegap.com) to let us know.
 
 <a name="no_index"></a>
+
 ## App has no index.html
 
 PhoneGap Build, and PhoneGap/Cordova apps in general, require a file
@@ -46,6 +47,7 @@ Please ensure that you have an `index.html` in the root of your app,
 and your build should go through correctly.
 
 <a name="phonegap_unsupported"></a>
+
 ## PhoneGap version not supported
 
 You have specified a `phonegap-version` in your `config.xml` file that
@@ -54,6 +56,7 @@ is not currently supported by PhoneGap Build. Please see out
 currently supported.
 
 <a name="invalid_filename"></a>
+
 ## Invalid File/Directory name
 
 Mobile filesystems are very picky about certain filenames - in
@@ -62,6 +65,7 @@ Chinese or Arabic letters. Please rename any files with non-ASCII
 characters, and your app should build successfully.
 
 <a name="malformed_config"></a>
+
 ## Malformed config.xml
 
 We were unable to successfully parse the `config.xml` file that you
@@ -72,6 +76,7 @@ Please check whether your `config.xml` is valid XML - you can use the
 necessary changes to fix it.
 
 <a name="file_exists"></a>
+
 ## Plugin File Exists
 
 We were unable to install a plugin as a file injected for the plugin
@@ -83,6 +88,7 @@ files themselves should not be included in your app before uploading
 to build.
 
 <a name="plugin_unsupported"></a>
+
 ## Plugin not supported
 
 The plugin (or plugin version, if specified) referenced in your
@@ -92,6 +98,7 @@ Please visit the [plugins page](/plugins) to view all supported
 plugins.
 
 <a name="plugin_parameter_missing"></a>
+
 ## One of your plugins requires a parameter
 
 One of the plugins included in your app requires a parameter that is
@@ -109,6 +116,7 @@ gist](https://gist.github.com/778233). There are other common reasons
 a build could fail on the BlackBerry:
 
 <a name="signing_timeout"></a>
+
 #### Signing Timeout
 
 To run on a device, all BlackBerry builds have to be signed by RIM's
@@ -129,6 +137,7 @@ contain only alphanumeric characters. Until RIM can fix this issue,
 unfortunately there is nothing we can do about this.
 
 <a name="invalid_directory_names"></a>
+
 #### Invalid Directory Names
 
 Another twist in the BlackBerry Widget Packager saga, there are two
@@ -137,6 +146,7 @@ application package contains directories with either of these names,
 the Widget Packager will fail. Make sure you rename those directories!
 
 <a name="icons_too_large"></a>
+
 #### Icon(s) Too Large
 
 According to the [BlackBerry Widget Packager source
@@ -146,6 +156,7 @@ applications is 16,384 bytes. Anything larger than this will trigger
 an error from the packager, and thus, an error in your build.
 
 <a name="invalid_pw"></a>
+
 #### Invalid CSK password: signing not verified
 
 The BlackBerry WebWorks Signing Tool could not verify the signing
@@ -159,6 +170,7 @@ to be at least 8 characters long - a shorter password will also raise
 this error.
 
 <a name="too_many_files"></a>
+
 #### Too many files in www directory
 
 A limitation of the BlackBerry WebWorks Packager is that a limited
@@ -170,6 +182,7 @@ If you receive this error, you will need to remove some files from
 your `www` directory in order for your app to build.
 
 <a name="invalid_metadata_characters"></a>
+
 #### Invalid Characters in Metadata
 
 Another BlackBerry WebWorks Packager limitation is that only Latin
@@ -182,6 +195,7 @@ If you receive this error, you will need to edit your app metadata
 remove any offending characters.
 
 <a name="data_section_too_large"></a>
+
 #### Data Section(s) Too Large
 
 BlackBerry builds can also fail if a "data section" - any part of your
@@ -193,6 +207,7 @@ For your app to build for BlackBerry, please try removing any such
 assets from your package.
 
 <a name="long_description"></a>
+
 #### Description too long
 
 The BlackBerry WebWorks Packager processes your app configuration
@@ -207,6 +222,7 @@ trunctate the description.
 ## iOS build has failed
 
 <a name="libpng"></a>
+
 ### Icon or splash screen is not a png file
 
 When building for iOS, the PhoneGap framework assumes that the image
@@ -217,6 +233,7 @@ or corrupted png files. Please check those files to ensure that they
 are valid pngs, and rebuild.
 
 <a name="no_cert"></a>
+
 ### Certificate not found
 
 Your app was submitted without an associated signing certificate and
@@ -225,6 +242,7 @@ PhoneGap Build account](/people/edit), and that you've associated that
 key with your app on the app edit page.
 
 <a name="cert_import"></a>
+
 ### Unable to import certificate
 
 Our servers were unable to use the certificate you provided with the
@@ -236,6 +254,7 @@ Please try uploading your certificate again, ensuring that you supply
 the correct credentials with it.
 
 <a name="cert_profile_mismatch"></a>
+
 ### Certificate doesn't match profile
 
 Our servers were unable to sign your app using the profile and
@@ -248,6 +267,7 @@ Try generating a new provisioning profile that matches your
 certificate, and uploading that to PhoneGap Build.
 
 <a name="profile_expired"></a>
+
 ### Provisioning Profile expired
 
 Our servers were unable to sign your app using the profile and
@@ -259,6 +279,7 @@ Developer Portal and upload that to PhoneGap Build before your app can
 build successfully.
 
 <a name="unreadable_profile"></a>
+
 ### Unable to read provisioning profile
 
 Our servers were unable to sign your app using the profile and
@@ -273,6 +294,7 @@ upload that to PhoneGap Build before rebuilding your app.
 ## Android build has failed
 
 <a name="keystore"></a>
+
 ### Keystore Issues
 
 All of the following error messages represent issues with your Android
@@ -300,6 +322,7 @@ keystore. You may need to reupload your Android keys for your signed
 build to succeed.
 
 <a name="identical_filenames"></a>
+
 ## Identical filenames
 
 The Android filesystem, unlike many desktop operating systems, is
@@ -322,6 +345,7 @@ all alphanumerics. If your build has failed on webOS, it is likely
 that one of these is the root issue.
 
 <a name="plugin-error"></a>
+
 ## Plugin error
 
 The most likely cause for this error is error is that you have
