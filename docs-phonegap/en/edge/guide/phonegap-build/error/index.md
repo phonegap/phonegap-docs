@@ -24,11 +24,11 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
  # Build Failed?
 
-At Adobe® PhoneGap™ Build, we do our best to take any package you
-submit and build a cross-platform mobile application from it. However,
-sometimes that won't work: platforms have their own quirks, and
-sometimes our site has some quirks too. Here are some errors you may
-receive, and how you can fix them.
+At Adobe&reg; PhoneGap&trade; Build, we do our best to take any
+package you submit and build a cross-platform mobile application from
+it. However, sometimes that won't work: platforms have their own
+quirks, and sometimes our site has some quirks too. Here are some
+errors you may receive, and how you can fix them.
 
  ## App is pending on all platforms for over ten minutes
 

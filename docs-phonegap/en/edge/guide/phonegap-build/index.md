@@ -33,7 +33,8 @@ PhoneGap Build offers three basic development options:
   Build website.
 
 * You can link your PhoneGap Build account to your GitHub account,
-  then pull in remote code repositories.
+  either public or private, then dynamically pull in remote code
+  repositories.
 
 * You can link the `phonegap` command-line tool to your PhoneGap Build
   account. Its `remote` option allows you to compile projects remotely
@@ -41,14 +42,14 @@ PhoneGap Build offers three basic development options:
 
 This guide provides an overview of the first two options, with basic
 details on how to set up an account, link it to a code repository,
-import projects, compile them, and download packaged apps.
-
-Whichever option you choose, the CLI offers the easiest way to set up
-the required `www` project directory, with its `config.xml` package
-specification and its `index.html` home page.  See The Command-line
-Interface for information on how to use the CLI to generate a project.
-The Build Applications Remotely section provides details on how to use
-the `remote` command to compile your local project in PhoneGap Build.
+import projects, compile them, and download packaged apps.  Whichever
+option you choose, the CLI offers the easiest way to set up the
+project's required top-level `www` project directory, with its
+`config.xml` package specification and its `index.html` home page.
+See The Command-line Interface for information on how to use the CLI
+to generate a new project.  See the Build Applications Remotely
+section for details on how to use the CLI's `remote` command to
+compile your local project in PhoneGap Build.
 
 <!-- Q: is CLI's `login` command required once per project? -->
 
@@ -71,13 +72,15 @@ advanced options:
 
 ## Register for your Account
 
+## Add Features for Remotely Built Projects
+
 <!--
 
  # Getting Started
 
-Hi, and welcome to Adobe® PhoneGap™ Build. PhoneGap Build allows you
-to create cross-platform mobile apps based on HTML, CSS, and
-JavaScript through a simple web interface. We take care of all the
+Hi, and welcome to Adobe&reg; PhoneGap&trade; Build. PhoneGap Build
+allows you to create cross-platform mobile apps based on HTML, CSS,
+and JavaScript through a simple web interface. We take care of all the
 packaging and compilation, and you get some mobile apps back in a
 matter of minutes.
 
@@ -220,7 +223,7 @@ Now go write some great apps!
 
  # FAQ
 
-Have a question about Adobe® PhoneGap™ Build? Check out our FAQ
+Have a question about Adobe&reg; PhoneGap&trade; Build? Check out our FAQ
 below. We’ll be adding to this FAQ regularly, so if you have questions
 that need answering, [please ask us](http://community.phonegap.com).
 

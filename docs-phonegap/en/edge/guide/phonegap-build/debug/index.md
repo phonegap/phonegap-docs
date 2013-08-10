@@ -24,7 +24,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
  # Debug Build
 
-We are proud to offer debug build for Adobe® PhoneGap™ Build
+We are proud to offer debug build for Adobe&reg; PhoneGap&trade; Build
 users. This service enables users to debug and interactively modify
 their applications during runtime; this new addition offers similar
 functionality to those found in Firebug and Google Chrome Inspector,
@@ -188,8 +188,8 @@ please feel free to drop us a line at
 
  # Using a Custom Debug Server
 
-Adobe® PhoneGap™ Build allows users to use their own debug server with
-the Build service.
+Adobe&reg; PhoneGap&trade; Build allows users to use their own debug
+server with the Build service.
 
 Build uses a tool called Weinre to enable remote debugging of
 mobile apps.

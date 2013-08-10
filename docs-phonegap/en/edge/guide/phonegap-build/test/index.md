@@ -69,7 +69,7 @@ discussion!
 
  # Hydration
 
-Adobe® PhoneGap Build is excited to offer Hydration to its users. Hydration
+Adobe&reg; PhoneGap Build is excited to offer Hydration to its users. Hydration
 is a tool that has two main benifits for developers and testers:
 
 1. Compilation times are improved significantly.

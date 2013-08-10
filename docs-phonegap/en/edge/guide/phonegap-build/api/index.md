@@ -24,10 +24,10 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
  # API v1 Overview
 
-The Adobe® PhoneGap™ Build API allows programmatic access to creating,
-building, updating and downloading PhoneGap apps, using the PhoneGap
-Build web service. It is designed for easy integration into IDEs,
-shell scripts, app builders, and anywhere else.
+The Adobe&reg; PhoneGap&trade; Build API allows programmatic access to
+creating, building, updating and downloading PhoneGap apps, using the
+PhoneGap Build web service. It is designed for easy integration into
+IDEs, shell scripts, app builders, and anywhere else.
 
 This document covers version 1 of the API. If you the older release of
 the API, please see [the version 0
@@ -419,7 +419,7 @@ Again, `404` error if the app cannot be found.
 
  # Read API V1
 
-This document is part of the Adobe® PhoneGap™ Build API V1
+This document is part of the Adobe&reg; PhoneGap&trade; Build API V1
 documentation; see also:
 
 * [API Overview](/docs/api)
@@ -887,7 +887,7 @@ along with the error message as JSON:
 
  # Write API V1
 
-This document is part of the Adobe® PhoneGap™ Build API V1
+This document is part of the Adobe&reg; PhoneGap&trade; Build API V1
 documentation; see also:
 
 * [API Overview](/docs/api)
