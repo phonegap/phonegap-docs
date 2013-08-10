@@ -184,4 +184,93 @@ having such a tool. If you have any further questions or comments
 please feel free to drop us a line at
 [http://community.phonegap.com](http://community.phonegap.com/nitobi/products/nitobi_phonegap_build).
 
+
+
+# Using a Custom Debug Server
+
+Adobe® PhoneGap™ Build allows users to use their own debug server with
+the Build service.
+
+Build uses a tool called Weinre to enable remote debugging of
+mobile apps.
+
+This guide provides information on setting up your own local server.
+
+The pre-requisites for running Weinre are that you need to have `npm`
+installed.
+
+Once you've installed Weinre you will only be able to use the local
+server within your own network unless you plan to host it on a
+publicly accessible location. This will require additional setup that
+is outside the scope of this guide.
+
+## Sections
+
+1. [Setting up Weinre](#setting_up_weinre)
+2. [Using a Local Weinre Instance with Build](#using_with_build)
+3. [Common Issues](#common_issues)
+
+<a id="setting_up_weinre"></a>
+##Setting up Weinre
+
+###Get Weinre
+
+Once you have `npm` installed, obtaining and installing Weinre is as
+simple as running the following command in a terminal.
+
+    sudo npm -g install weinre
+
+That's it! Now you're ready to run your very own Weinre instance.
+
+###Start Weinre
+
+To start your new local Weinre instance run the following command:
+
+    weinre
+
+You will now see output like the following:
+
+    Hardeeps-MacBook-Air:~ hardeep$ weinre
+    2013-07-01T20:03:34.890Z weinre: starting server at http://localhost:8080
+
+Weinre is now up and running! If you are running this behind a router
+that uses NAT you will need to find your IP address. You will use this
+IP when specifying your configuration with Build.
+
+<a id="setting_up_weinre"></a>
+##Using a Local Weinre Instance with Build
+
+Obtain the ip address of your machine running Weinre. This can be done
+on Windows by running `ipconfig` or on OSX/Linux by running
+`ifconfig`.
+
+Now you're ready to use your local server with Build. Using the
+[config.xml](/docs/config-xml) specify the following. Change the
+domain param value to the ip address you found earlier, and the key
+param value to a unique identifier.
+
+    <feature name="debug-server" required="true">↵
+      <param name="domain" value="http://[ your ip address ]"/>↵
+      <param name="key" value="[ a unique id for your app ]"/>↵
+    </feature>↵
+
+That's it! You can now upload this to Build, install it on your
+device, and debug using your local Wienre server.
+
+##Common Issues
+
+**I can't connect to my Local Server**
+
+First of all make sure that your server is running. Chances are if
+you're using the default configuration you can visit
+http://localhost:8080 and it should be responding.
+
+If this works it's most likely the IP address you're providing to
+Build; please verify that it is correct. A google search such as
+`windows [version] find ip address` or `OSX [version] find ip address`
+will help you find articles on getting the right ip.
+
+Assuming that you're using a router running NAT verify that you can
+visit it within your network by visiting http://[ip address]:8080.
+
 -->
