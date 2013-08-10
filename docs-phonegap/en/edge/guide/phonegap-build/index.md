@@ -76,14 +76,6 @@ advanced options:
 
 <!--
 
- # Getting Started
-
-Hi, and welcome to Adobe&reg; PhoneGap&trade; Build. PhoneGap Build
-allows you to create cross-platform mobile apps based on HTML, CSS,
-and JavaScript through a simple web interface. We take care of all the
-packaging and compilation, and you get some mobile apps back in a
-matter of minutes.
-
 The first step is to register an account and log in - we'll assume
 that you've gotten that far, and you're at the __+ new app__ form.
 
