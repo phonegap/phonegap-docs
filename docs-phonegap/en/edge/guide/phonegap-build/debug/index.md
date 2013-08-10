@@ -22,7 +22,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 <!--
 
-# Debug Build
+ # Debug Build
 
 We are proud to offer debug build for Adobe® PhoneGap™ Build
 users. This service enables users to debug and interactively modify
@@ -32,7 +32,7 @@ which serve as an indispensable tool to developers working on web
 based projects. And now debug build provides the same benefits for
 PhoneGap developers.
 
-## Sections
+ ## Sections
 
 1. [Configuring A project to use Build](#project_build)
     1. [New Application](#new_build_project)
@@ -45,13 +45,13 @@ PhoneGap developers.
 
 <a id="project_build"></a>
 
-##Configuring A Project to use Build
+ ##Configuring A Project to use Build
 
 Build can be configured on either of the two cases.
 
 <a id="new_build_project"></a>
 
-###New Application
+ ###New Application
 
 After logging in Navigate to
 [https://build.phonegap.com/](https://build.phonegap.com/), and click
@@ -66,7 +66,7 @@ edit page (as seen in the section below) and save your changes.
 
 <a id="existing_build_project"></a>
 
-###Existing Application
+ ###Existing Application
 
 After logging in navigate to
 [https://build.phonegap.com/apps](https://build.phonegap.com/apps),
@@ -86,7 +86,7 @@ changes.
 
 <a id="runnin_debug_mode"></a>
 
-##Running Debug Mode
+ ##Running Debug Mode
 
 To run you application in debug mode navigate to
 https://build.phonegap.com/apps, select the appropriate link to
@@ -98,7 +98,7 @@ elements, and console.
 
 <a id="running_debug_mode_elements"></a>
 
-###Elements:
+ ###Elements:
 
 This powerhouse tool enables you too modify the application in
 realtime; a handy feature when making minor modifications or bug fixes
@@ -112,7 +112,7 @@ and view application log output in realtime.
 
 <a id="example_use_case"></a>
 
-##Example Use Case
+ ##Example Use Case
 
 Walking through this demonstration will enable you to get a better
 understanding of the possible work flow in debug.
@@ -178,7 +178,7 @@ should get an alert stating "Ya! No more bugs".
 
 <a id="closing_remarks"></a>
 
-##Closing Remarks:
+ ##Closing Remarks:
 
 This concludes the simple demonstration on debug build, hopefully by
 now we have been able to demonstrate the time and effort saved through
@@ -186,7 +186,7 @@ having such a tool. If you have any further questions or comments
 please feel free to drop us a line at
 [http://community.phonegap.com](http://community.phonegap.com/nitobi/products/nitobi_phonegap_build).
 
-# Using a Custom Debug Server
+ # Using a Custom Debug Server
 
 Adobe® PhoneGap™ Build allows users to use their own debug server with
 the Build service.
@@ -204,7 +204,7 @@ server within your own network unless you plan to host it on a
 publicly accessible location. This will require additional setup that
 is outside the scope of this guide.
 
-## Sections
+ ## Sections
 
 1. [Setting up Weinre](#setting_up_weinre)
 2. [Using a Local Weinre Instance with Build](#using_with_build)
@@ -212,9 +212,9 @@ is outside the scope of this guide.
 
 <a id="setting_up_weinre"></a>
 
-##Setting up Weinre
+ ##Setting up Weinre
 
-###Get Weinre
+ ###Get Weinre
 
 Once you have `npm` installed, obtaining and installing Weinre is as
 simple as running the following command in a terminal.
@@ -223,7 +223,7 @@ simple as running the following command in a terminal.
 
 That's it! Now you're ready to run your very own Weinre instance.
 
-###Start Weinre
+ ###Start Weinre
 
 To start your new local Weinre instance run the following command:
 
@@ -240,7 +240,7 @@ IP when specifying your configuration with Build.
 
 <a id="setting_up_weinre"></a>
 
-##Using a Local Weinre Instance with Build
+ ##Using a Local Weinre Instance with Build
 
 Obtain the ip address of your machine running Weinre. This can be done
 on Windows by running `ipconfig` or on OSX/Linux by running
@@ -259,7 +259,7 @@ param value to a unique identifier.
 That's it! You can now upload this to Build, install it on your
 device, and debug using your local Wienre server.
 
-##Common Issues
+ ##Common Issues
 
 **I can't connect to my Local Server**
 

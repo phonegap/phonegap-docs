@@ -22,14 +22,14 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 <!--
 
-# Collaborating on Projects
+ # Collaborating on Projects
 
 When working with a team, apps are a collaborative undertaking.
 PhoneGap Build hopes to create an easy to use and useful environment
 for managing and building applications with many developers and
 testers.
 
-### Adding and Removing Collaborators:
+ ### Adding and Removing Collaborators:
 
 To add or remove a user to your app, you will first need to head over
 to your apps’ detail page.
@@ -47,7 +47,7 @@ If the new collaborator has not yet created a PhoneGap Build account
 they will need to create one first and login; if they are logged in or
 do not have an account will see a 404 page.
 
-### What are the Tester and Developer roles for?
+ ### What are the Tester and Developer roles for?
 
 We allow you to specify one of two roles for a collaborator.
 
@@ -59,7 +59,7 @@ of deleting the app or managing signing keys.
 You can of course revoke people's access to your app, or change them
 from a developer to tester.
 
-### Have feedback?
+ ### Have feedback?
 
 We'd love to hear your thoughts on our collaborator workflow! If you
 have any feedback on how we can improve collaboration on PhoneGap
@@ -67,7 +67,7 @@ Build or have a general question head over to our
 [community](http://community.phonegap.com) page and start a
 discussion!
 
-# Hydration
+ # Hydration
 
 Adobe® PhoneGap Build is excited to offer Hydration to its users. Hydration 
 is a tool that has two main benifits for developers and testers:
@@ -86,7 +86,7 @@ If you have any questions or you would like to provide some feedback
 to our team we use our [community support channel](http://community.phonegap.com)
 for most of our communication. Don't hesitate to drop us a line!
 
-## Sections
+ ## Sections
 
 1. [Configuring A project to use Hydration](#create_hydration_build)
     1. [Hydrate a New Application](#new_build_project)
@@ -99,7 +99,7 @@ for most of our communication. Don't hesitate to drop us a line!
     
 <a id="create_hydration_build"></a>
 
-##Configuring A project to use Hydration
+ ##Configuring A project to use Hydration
 
 Hydration can be enabled and disabled for both new projects and existing
 projects, however it requires a project with the following PhoneGap
@@ -110,7 +110,7 @@ versions
 
 <a id="new_build_project"></a>
 
-###Hydrate a New Application
+ ###Hydrate a New Application
 
 After logging in navigate to
 [https://build.phonegap.com/](https://build.phonegap.com/),
@@ -124,7 +124,7 @@ Until disabled, every build will produce a hydrated version of this app.
 
 <a id="existing_build_project"></a>
 
-###Hydrate an Existing Application
+ ###Hydrate an Existing Application
 
 After logging in navigate to
 [https://build.phonegap.com/](https://build.phonegap.com/).
@@ -134,11 +134,11 @@ checkbox labelled "enable hydration".
 
 Until disabled, every build will produce a hydrated version of this app.
 
-##Building an application with Hydration
+ ##Building an application with Hydration
 
 <a id="build_application"></a>
 
-###Building an Application
+ ###Building an Application
 
 Building an application with Hydration is as simple as building any
 other application with build. Once you've enabled Hydration simply
@@ -157,7 +157,7 @@ native binary is generated.
 
 <a id="installing_application"></a>
 
-###Installing the hydrated application
+ ###Installing the hydrated application
 
 The binary provided by build is exactly like its non-Hydrated binary
 equivalent. Simply install the application as you would a
@@ -170,7 +170,7 @@ only be provisioned for one-hundred devices.
 
 <a href="update_application"></a>
 
-###Updating the application
+ ###Updating the application
 
 Once a developer has compiled a new build the Hydrated application can
 be updated by the end user. This update proccess occurs on every
@@ -192,7 +192,7 @@ other methods.
 
 <a id="disable_hydration"></a>
 
-###Disabling Hydration 
+ ###Disabling Hydration 
 
 After logging in Navigate to
 [https://build.phonegap.com/](https://build.phonegap.com/),

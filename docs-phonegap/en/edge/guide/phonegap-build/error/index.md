@@ -18,11 +18,11 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 ---
 
-# PhoneGap Build
+# Common Errors
 
 <!--
 
-# Build Failed?
+ # Build Failed?
 
 At Adobe® PhoneGap™ Build, we do our best to take any package you
 submit and build a cross-platform mobile application from it. However,
@@ -30,14 +30,14 @@ sometimes that won't work: platforms have their own quirks, and
 sometimes our site has some quirks too. Here are some errors you may
 receive, and how you can fix them.
 
-## App is pending on all platforms for over ten minutes
+ ## App is pending on all platforms for over ten minutes
 
 This usually means something has gone wrong on our end. Please
 [contact us](http://community.phonegap.com) to let us know.
 
 <a name="no_index"></a>
 
-## App has no index.html
+ ## App has no index.html
 
 PhoneGap Build, and PhoneGap/Cordova apps in general, require a file
 named `index.html` in your app. This is used as the starting point
@@ -48,7 +48,7 @@ and your build should go through correctly.
 
 <a name="phonegap_unsupported"></a>
 
-## PhoneGap version not supported
+ ## PhoneGap version not supported
 
 You have specified a `phonegap-version` in your `config.xml` file that
 is not currently supported by PhoneGap Build. Please see out
@@ -57,7 +57,7 @@ currently supported.
 
 <a name="invalid_filename"></a>
 
-## Invalid File/Directory name
+ ## Invalid File/Directory name
 
 Mobile filesystems are very picky about certain filenames - in
 particular, they don't allow files with non-ASCII characters, such as
@@ -66,7 +66,7 @@ characters, and your app should build successfully.
 
 <a name="malformed_config"></a>
 
-## Malformed config.xml
+ ## Malformed config.xml
 
 We were unable to successfully parse the `config.xml` file that you
 provided - it most likely is not well-formed XML.
@@ -77,7 +77,7 @@ necessary changes to fix it.
 
 <a name="file_exists"></a>
 
-## Plugin File Exists
+ ## Plugin File Exists
 
 We were unable to install a plugin as a file injected for the plugin
 already exists in your www folder.
@@ -89,7 +89,7 @@ to build.
 
 <a name="plugin_unsupported"></a>
 
-## Plugin not supported
+ ## Plugin not supported
 
 The plugin (or plugin version, if specified) referenced in your
 config.xml is not supported on PhoneGap build.
@@ -99,7 +99,7 @@ plugins.
 
 <a name="plugin_parameter_missing"></a>
 
-## One of your plugins requires a parameter
+ ## One of your plugins requires a parameter
 
 One of the plugins included in your app requires a parameter that is
 not included in your config.xml.
@@ -108,7 +108,7 @@ Please read the documentation of the plugin to get a list of all
 required parameters. Please visit the [plugins page](/plugins) to view
 all supported plugins.
 
-## BlackBerry build has failed
+ ## BlackBerry build has failed
 
 The BlackBerry WebWorks framework that PhoneGap uses has many of its
 particular quirks, as [detailed in this
@@ -117,7 +117,7 @@ a build could fail on the BlackBerry:
 
 <a name="signing_timeout"></a>
 
-#### Signing Timeout
+ #### Signing Timeout
 
 To run on a device, all BlackBerry builds have to be signed by RIM's
 signing servers. PhoneGap Build attempts to do this with every
@@ -127,7 +127,7 @@ your BlackBerry build again.
 
 <a name="invalid_characters"></a>
 
-#### Invalid Characters in Filenames and/or Directories
+ #### Invalid Characters in Filenames and/or Directories
 
 The BlackBerry Widget Packager, a RIM tool that takes your application
 assets and packages them into a BlackBerry-compatible binary, has very
@@ -138,7 +138,7 @@ unfortunately there is nothing we can do about this.
 
 <a name="invalid_directory_names"></a>
 
-#### Invalid Directory Names
+ #### Invalid Directory Names
 
 Another twist in the BlackBerry Widget Packager saga, there are two
 names that are reserved for directory names: `bin` and `src`. If your
@@ -147,7 +147,7 @@ the Widget Packager will fail. Make sure you rename those directories!
 
 <a name="icons_too_large"></a>
 
-#### Icon(s) Too Large
+ #### Icon(s) Too Large
 
 According to the [BlackBerry Widget Packager source
 code](https://github.com/blackberry/WebWorks/blob/master/packager/src/net/rim/tumbler/rapc/Rapc.java#L177-178),
@@ -157,7 +157,7 @@ an error from the packager, and thus, an error in your build.
 
 <a name="invalid_pw"></a>
 
-#### Invalid CSK password: signing not verified
+ #### Invalid CSK password: signing not verified
 
 The BlackBerry WebWorks Signing Tool could not verify the signing
 using the key you uploaded, with the password you provided. This is
@@ -171,7 +171,7 @@ this error.
 
 <a name="too_many_files"></a>
 
-#### Too many files in www directory
+ #### Too many files in www directory
 
 A limitation of the BlackBerry WebWorks Packager is that a limited
 amount of files can be present in your application package, or the
@@ -183,7 +183,7 @@ your `www` directory in order for your app to build.
 
 <a name="invalid_metadata_characters"></a>
 
-#### Invalid Characters in Metadata
+ #### Invalid Characters in Metadata
 
 Another BlackBerry WebWorks Packager limitation is that only Latin
 characters are allowed in application metadata (name, description,
@@ -196,7 +196,7 @@ remove any offending characters.
 
 <a name="data_section_too_large"></a>
 
-#### Data Section(s) Too Large
+ #### Data Section(s) Too Large
 
 BlackBerry builds can also fail if a "data section" - any part of your
 `www` data - is too large to be processed by the Packager. This is
@@ -208,7 +208,7 @@ assets from your package.
 
 <a name="long_description"></a>
 
-#### Description too long
+ #### Description too long
 
 The BlackBerry WebWorks Packager processes your app configuration
 (your `config.xml` file), including your app description, as part of
@@ -219,11 +219,11 @@ exception.
 If you'd like your app to build successfully for BlackBerry, please
 trunctate the description.
 
-## iOS build has failed
+ ## iOS build has failed
 
 <a name="libpng"></a>
 
-### Icon or splash screen is not a png file
+ ### Icon or splash screen is not a png file
 
 When building for iOS, the PhoneGap framework assumes that the image
 files provided for display in the system - as icons or splash screens
@@ -234,7 +234,7 @@ are valid pngs, and rebuild.
 
 <a name="no_cert"></a>
 
-### Certificate not found
+ ### Certificate not found
 
 Your app was submitted without an associated signing certificate and
 keychain pair. Please ensure that you've [added the key to your
@@ -243,7 +243,7 @@ key with your app on the app edit page.
 
 <a name="cert_import"></a>
 
-### Unable to import certificate
+ ### Unable to import certificate
 
 Our servers were unable to use the certificate you provided with the
 password that you provided. Because we could not import the
@@ -255,7 +255,7 @@ the correct credentials with it.
 
 <a name="cert_profile_mismatch"></a>
 
-### Certificate doesn't match profile
+ ### Certificate doesn't match profile
 
 Our servers were unable to sign your app using the profile and
 certificate that you uploaded, because the identity listed on the
@@ -268,7 +268,7 @@ certificate, and uploading that to PhoneGap Build.
 
 <a name="profile_expired"></a>
 
-### Provisioning Profile expired
+ ### Provisioning Profile expired
 
 Our servers were unable to sign your app using the profile and
 certificate that you uploaded, because the provisioning profile itself
@@ -280,7 +280,7 @@ build successfully.
 
 <a name="unreadable_profile"></a>
 
-### Unable to read provisioning profile
+ ### Unable to read provisioning profile
 
 Our servers were unable to sign your app using the profile and
 certificate that you uploaded, because we could not read/parse your
@@ -291,11 +291,11 @@ valid provisioning profile from the Apple Developer Portal. If you've
 made an error, please ensure you have a valid profile available and
 upload that to PhoneGap Build before rebuilding your app.
 
-## Android build has failed
+ ## Android build has failed
 
 <a name="keystore"></a>
 
-### Keystore Issues
+ ### Keystore Issues
 
 All of the following error messages represent issues with your Android
 signing keys:
@@ -323,7 +323,7 @@ build to succeed.
 
 <a name="identical_filenames"></a>
 
-## Identical filenames
+ ## Identical filenames
 
 The Android filesystem, unlike many desktop operating systems, is
 case-insensitive -- you cannot have a file called `index.html` and a
@@ -331,7 +331,7 @@ file called `index.HTML` in the same Android app package.
 
 Delete one of the files, and your app should build successfully.
 
-## webOS build has failed
+ ## webOS build has failed
 
 The webOS packager&#151;an executable called `palm-package`&#151;is
 particularly sensitive about the version number and package name of
@@ -346,7 +346,7 @@ that one of these is the root issue.
 
 <a name="plugin-error"></a>
 
-## Plugin error
+ ## Plugin error
 
 The most likely cause for this error is error is that you have
 included plugin javascript files in your app package, such as

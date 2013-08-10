@@ -20,9 +20,60 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # PhoneGap Build
 
+Adobe&reg; PhoneGap&trade; Build is a web service that compiles
+PhoneGap apps for you remotely, making downloadable packages available
+in a simple web interface at
+[build.phonegap.com](http://build.phonegap.com).  Relying on PhoneGap
+Build means you don't need to install and maintain local SDK tools,
+and can expect to update projects smoothly.
+
+PhoneGap Build offers three basic development options:
+
+* You can upload your project files directly through the PhoneGap
+  Build website.
+
+* You can link your PhoneGap Build account to your GitHub account,
+  then pull in remote code repositories.
+
+* You can link the `phonegap` command-line tool to your PhoneGap Build
+  account. Its `remote` option allows you to compile projects remotely
+  in a single command.
+
+This guide provides an overview of the first two options, with basic
+details on how to set up an account, link it to a code repository,
+import projects, compile them, and download packaged apps.
+
+Whichever option you choose, the CLI offers the easiest way to set up
+the required `www` project directory, with its `config.xml` package
+specification and its `index.html` home page.  See The Command-line
+Interface for information on how to use the CLI to generate a project.
+The Build Applications Remotely section provides details on how to use
+the `remote` command to compile your local project in PhoneGap Build.
+
+<!-- Q: is CLI's `login` command required once per project? -->
+
+Once you have set up your PhoneGap Build account and generated
+projects as described below, see the following sections for more
+advanced options:
+
+* Collaborating and Testing shows how you can use the site to grant
+  access rights to software testers, with the option for them to
+  automatically download the latest version of the app.
+
+* Remote Debugging Tools shows how to configure PhoneGap Build's
+  debugging options, or use a custom debug server.
+
+* Common Errors shows how to overcome several problems you may
+  encounter when compiling a PhoneGap project remotely.
+
+* The PhoneGap Build API details how an application can communicate
+  with the PhoneGap Build service to compile PhoneGap projects.
+
+## Register for your Account
+
 <!--
 
-# Getting Started
+ # Getting Started
 
 Hi, and welcome to Adobe® PhoneGap™ Build. PhoneGap Build allows you
 to create cross-platform mobile apps based on HTML, CSS, and
@@ -78,7 +129,7 @@ have your own copy of the source repository.
 You probably want to customize the app a little at this point, so
 clone the repository to do so:
 
-$ git clone https://github.com/alunny/phonegap-start.git
+        $ git clone https://github.com/alunny/phonegap-start.git
 
 and open `config.xml` from the root of the repository. I'm going to
 edit the following attributes:
@@ -101,7 +152,7 @@ and let's change `icon.png` to something new:
 
 Alright, let's push those changes to our repo.
 
-$ git push origin master
+        $ git push origin master
 
 ![alunny-start with changes](images/getting-started/alunny-start-changes.png)
 
@@ -167,7 +218,7 @@ displayed with a QR code reader of your choice.
 
 Now go write some great apps!
 
-# FAQ
+ # FAQ
 
 <section class="module">
 
@@ -178,7 +229,7 @@ that need answering, [please ask us](http://community.phonegap.com).
 </section>
 <section class="module">
 
-## What is the PhoneGap Build service and how is it different from PhoneGap?
+ ## What is the PhoneGap Build service and how is it different from PhoneGap?
 
 PhoneGap is a mobile application development framework, based upon the
 open source [Apache Cordova](http://incubator.apache.org/cordova/)
@@ -192,7 +243,7 @@ you to easily build those same mobile apps in the cloud.
 
 <section class="module">
 
-## How do I get started with PhoneGap Build?
+ ## How do I get started with PhoneGap Build?
 
 Simply upload your web assets - a ZIP file of HTML, CSS and
 JavaScript, or a single index.html file - to PhoneGap Build, point us
@@ -204,7 +255,7 @@ for all mobile platforms.
 
 <section class="module">
 
-## Do I need to install anything before I use PhoneGap Build?
+ ## Do I need to install anything before I use PhoneGap Build?
 
 No!
 
@@ -212,7 +263,7 @@ No!
 
 <section class="module">
 
-## What about developer accounts and SDKs? Do I need to set those up before starting with PhoneGap Build?
+ ## What about developer accounts and SDKs? Do I need to set those up before starting with PhoneGap Build?
 
 No! But you might want to install some of the SDK emulators if you
 don’t own a particular device that you want to test a build for.
@@ -221,7 +272,7 @@ don’t own a particular device that you want to test a build for.
 
 <section class="module">
 
-## What do I do with my app when I get it back from PhoneGap Build? Is it ready for app store submission?
+ ## What do I do with my app when I get it back from PhoneGap Build? Is it ready for app store submission?
 
 It depends on the platform that you're targeting. For the webOS and
 Symbian platforms, you will get back a binary that is ready for
@@ -234,7 +285,7 @@ process.
 
 <section class="module">
 
-## Can I build for iPhone?
+ ## Can I build for iPhone?
 
 Yes! Check out our [iOS Guide](/docs/ios-builds) for information on
 how to get PhoneGap Build up and running with iOS.
@@ -243,7 +294,7 @@ how to get PhoneGap Build up and running with iOS.
 
 <section class="module">
 
-## Can I integrate PhoneGap Build with my existing tools?
+ ## Can I integrate PhoneGap Build with my existing tools?
 
 Yes! we now have an [API available](/docs/api) you can use over HTTPS
 to build apps, and access data about your existing apps.
@@ -252,7 +303,7 @@ to build apps, and access data about your existing apps.
 
 <section class="module">
 
-## Can I use PhoneGap Build with a private Github repository?
+ ## Can I use PhoneGap Build with a private Github repository?
 
 Yes!  As of the most recent update to PhoneGap Build, you can now
 point the service at a private GitHub repository. Once your Build
@@ -264,7 +315,7 @@ uses it when creating new builds of your code.
 
 <section class="module" id="private-app">
 
-## What is the difference between public and private apps?
+ ## What is the difference between public and private apps?
 
 Public apps have their source code hosted in a publicly accessible
 GitHub repository.  Private apps have their source code hosted in a
@@ -276,7 +327,7 @@ assets to the PhoneGap Build service.
 
 <section class="module">
 
-## Where do I go to find PhoneGap Build help?
+ ## Where do I go to find PhoneGap Build help?
 
 Ask a question on our community forum:
 <http://community.phonegap.com>, or ask us on Twitter:
@@ -284,7 +335,7 @@ Ask a question on our community forum:
 
 </section>
 
-# Preparing Your Application for PhoneGap Build
+ # Preparing Your Application for PhoneGap Build
 
 PhoneGap Build requires an application to be packaged in a specific
 manner that may not be intuitive at first.
@@ -295,7 +346,7 @@ Packaging specification](http://www.w3.org/TR/widgets/).
 The following is a guide to help package your application for PhoneGap
 Build.
 
-##Sections
+ ##Sections
 
 1. [What Do I Upload?](#what_do_i_upload)
 
@@ -307,9 +358,9 @@ Build.
 
 <a id="#what_do_i_upload"></a>
 
-###What Do I Upload?
+ ###What Do I Upload?
 
-####Preparing the Assets
+ ####Preparing the Assets
 
 PhoneGap Build only requires the assets of your application. This is
 essentially your www directory which contains your html, css, images,
@@ -318,19 +369,19 @@ js files, etc.
 PhoneGap Build will most likely fail to compile your application
 if native files are uploaded (.h, .m, .java, etc).
 
-####Removing Unnecessary Files
+ ####Removing Unnecessary Files
 
 Once you've included the necessary assets, remove the `phonegap.js`
 (cordova.js) as Build will automatically inject it during compile
 time.
 
-####Why must you delete the `phonegap.js`?
+ ####Why must you delete the `phonegap.js`?
 
 PhoneGap requires a different JavaScript file for each platform and
 using an incompatible `phonegap.js` will result in errors when
 running your application.
 
-####Making Sure You can Still Access the PhoneGap API
+ ####Making Sure You can Still Access the PhoneGap API
 
 Once you've deleted the `phonegap.js` you'll need to make sure that your
 application can still access the PhoneGap API.
@@ -341,7 +392,7 @@ To do so, simply ensure that the following reference is made in your `index.html
 
 <a id="#configure_application"></a>
 
-###How Do I Configure My Application?
+ ###How Do I Configure My Application?
 
 PhoneGap Build supports a configuration XML file, `config.xml`.
 
@@ -353,7 +404,7 @@ For more information on the config.xml see our
 
 <a id="whats_next"></a>
 
-###What's Next?
+ ###What's Next?
 
 You should now be ready to proceed with building your application on
 PhoneGap Build.
@@ -367,7 +418,7 @@ achieve a better understanding of PhoneGap Build.
 
 <a id="help"></a>
 
-###Where can I get help?
+ ###Where can I get help?
 
 If you're running into errors during compilation we have prepared
 a list of
