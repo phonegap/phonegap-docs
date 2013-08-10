@@ -69,7 +69,7 @@ discussion!
 
  # Hydration
 
-Adobe® PhoneGap Build is excited to offer Hydration to its users. Hydration 
+Adobe® PhoneGap Build is excited to offer Hydration to its users. Hydration
 is a tool that has two main benifits for developers and testers:
 
 1. Compilation times are improved significantly.
@@ -96,7 +96,7 @@ for most of our communication. Don't hesitate to drop us a line!
     2. [Installing the hydrated application](#installing_application)
     3. [Updating the application](#update_application)
     4. [Disabling Hydration](#disable_hydration)
-    
+
 <a id="create_hydration_build"></a>
 
  ##Configuring A project to use Hydration
@@ -106,7 +106,7 @@ projects, however it requires a project with the following PhoneGap
 versions
 
         supported versions:  2.0.0 and above
-        supported platforms: iOS, Android 
+        supported platforms: iOS, Android
 
 <a id="new_build_project"></a>
 
@@ -192,7 +192,7 @@ other methods.
 
 <a id="disable_hydration"></a>
 
- ###Disabling Hydration 
+ ###Disabling Hydration
 
 After logging in Navigate to
 [https://build.phonegap.com/](https://build.phonegap.com/),
@@ -203,6 +203,6 @@ the checkbox labeled "enable hydration", and finally hit save.
 You've now successfully disabled Hydration.
 
 Please note, that users will now need to download updates to your app
-manually again. 
+manually again.
 
 -->

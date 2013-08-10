@@ -140,8 +140,6 @@ representation of the current user.
 
  # API v0
 
-<section class="module">
-
  ## Version 0
 
 Version 0 (v0) of the API is a preview release for the beta version of
@@ -160,9 +158,6 @@ credentials (the present author favors OAuth 2).
 All unauthenticated requests return a `401` (unauthorized) status
 code.
 
-</section>
-<section class="module">
-
  ## JSON
 
 All successful requests return either a JSON-encoded string or a
@@ -177,11 +172,7 @@ check the error field on the parsed response, a la:
         if (res.status != 200)
             console.log(JSON.parse(res.body).error)
 
-</section>
-
  # API Docs
-
-<section class="module">
 
  ## Read API
 
@@ -283,9 +274,6 @@ To get a specific platform's keys use
 
 If the app does not exist or belongs to another user, an error message
 is returned with status code `404`:
-
-</section>
-<section class="module">
 
  ## Write API
 
@@ -429,8 +417,6 @@ Delete the app. Sad to see you go :(
 
 Again, `404` error if the app cannot be found.
 
-</section>
-
  # Read API V1
 
 This document is part of the Adobe® PhoneGap™ Build API V1
@@ -453,7 +439,7 @@ PhoneGap Build API. It is aliased to
 `https://build.phonegap.com/api/v1`.
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/me
-        {   
+        {
             "id": 1,
             "username":"alunny",
             "email":"andrew.lunny@nitobi.com",
@@ -1259,7 +1245,6 @@ to use.
 Here is a sample post selecting a new Android key for an app and
 unlocking it:
 
-        
         $ curl -u andrew.lunny@nitobi.com -X PUT
         -d 'data={"keys":{"android":
         {"id":457,"key_pw":"password1","keystore_pw":"password2"}}'
@@ -1496,7 +1481,6 @@ Signing](/docs/ios-builds) documentation.
 
 A sample post would look like this:
 
-        
         $ curl -u andrew.lunny@nitobi.com
         -F cert=@My_Certificate.p12 -F profile=@MyDevices.mobileprovision
         -F 'data={"title":"Developer Cert","password":"12345678"}'
@@ -1536,7 +1520,6 @@ documentation.
 
 A sample post would look like this:
 
-        
         $ curl -u andrew.lunny@nitobi.com
         -F keystore=@android.keystore
         -F 'data={"title":"Android Key","alias":"release",
@@ -1572,7 +1555,6 @@ Keys](/docs/blackberry-keys) documentation.
 
 A sample post would look like this:
 
-                
         $ curl -u andrew.lunny@nitobi.com
         -F db=@sigtool.db -F csk=@sigtool.csk
         -F 'data={"title":"My BB Key","password":"78901234"}'
@@ -1603,8 +1585,7 @@ try to build with that key.
 
  #### iOS Example
 
-        
-        $ curl -u andrew.lunny@nitobi.com 
+        $ curl -u andrew.lunny@nitobi.com
         -d 'data={"password":"password1"}'
         -X PUT
         https://build.phonegap.com/api/v1/keys/ios/11
@@ -1621,8 +1602,7 @@ try to build with that key.
 
  #### Android Example
 
-        
-        $ curl -u andrew.lunny@nitobi.com 
+        $ curl -u andrew.lunny@nitobi.com
         -d 'data={"key_pw":"password1","keystore_pw":"password2"}'
         -X PUT
         https://build.phonegap.com/api/v1/keys/android/2
@@ -1637,8 +1617,7 @@ try to build with that key.
 
  #### BlackBerry Example
 
-        
-        $ curl -u andrew.lunny@nitobi.com 
+        $ curl -u andrew.lunny@nitobi.com
         -d 'data={"password":"password1"}'
         -X PUT
         https://build.phonegap.com/api/v1/keys/blackberry/2

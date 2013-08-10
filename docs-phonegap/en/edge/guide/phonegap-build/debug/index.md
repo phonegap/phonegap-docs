@@ -116,7 +116,7 @@ and view application log output in realtime.
 
 Walking through this demonstration will enable you to get a better
 understanding of the possible work flow in debug.
-   
+
 You may download this sample application "Hello Debugging World" from:
 
 [https://github.com/hardeep/PhoneGap-Build-Debug](https://github.com/hardeep/PhoneGap-Build-Debug)
@@ -144,7 +144,7 @@ the sections labeled "elements" and "console".
 4) You may have realized that we have a typo in our header when we
 include phonegap.js. The Line should read.
 
-        <script stype="text/javascript" src="phonegap.js"></script> 
+        <script stype="text/javascript" src="phonegap.js"></script>
 
 With out this interactive debugging session we would need to re-build
 our code, and deploy the it once again on the simulator or device;
