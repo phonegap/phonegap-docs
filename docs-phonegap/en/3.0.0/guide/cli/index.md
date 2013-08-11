@@ -272,7 +272,7 @@ might add:
 Use `plugin list` to view currently installed plugins. Each displays
 by its identifier:
 
-        $ phonegap plugin list
+        $ phonegap local plugin list
         [phonegap] org.apache.cordova.core.console
 
 To remove a plugin, refer to it by the same identifier that appears in
@@ -280,7 +280,7 @@ the listing, which corresponds to subdirectories within the project's
 `plugins` directory. For example, here is how you would remove support
 for a debug console from a final release version:
 
-        $ phonegap plugin remove org.apache.cordova.core.console
+        $ phonegap local plugin remove org.apache.cordova.core.console
 
 You can batch-remove or add plugins by specifying more than one
 argument for each command.
