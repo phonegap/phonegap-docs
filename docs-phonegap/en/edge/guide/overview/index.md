@@ -217,8 +217,8 @@ CLI's shorthand stubs.)
         <td data-col="winphone8"    class="y"></td>
         <td data-col="win8"         class="n"></td>
         <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="u"></td>
-        <td data-col="symbian"      class="u"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
@@ -264,8 +264,8 @@ CLI's shorthand stubs.)
         <td data-col="winphone8"    class="y"></td>
         <td data-col="win8"         class="n"></td>
         <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="u"></td>
-        <td data-col="symbian"      class="u"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
@@ -376,8 +376,8 @@ CLI's shorthand stubs.)
         <td data-col="winphone8"    class="y"></td>
         <td data-col="win8"         class="n"></td>
         <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="u"></td>
-        <td data-col="symbian"      class="u"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
@@ -390,8 +390,8 @@ CLI's shorthand stubs.)
         <td data-col="winphone8"    class="y"></td>
         <td data-col="win8"         class="n"></td>
         <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="u"></td>
-        <td data-col="symbian"      class="u"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
@@ -432,8 +432,8 @@ CLI's shorthand stubs.)
         <td data-col="winphone8"    class="y"></td>
         <td data-col="win8"         class="y"></td>
         <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="u"></td>
-        <td data-col="symbian"      class="u"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
