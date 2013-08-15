@@ -153,7 +153,7 @@ repository:
         $ git init
         $ git add .
         $ git commit -am "bootstrap default app"
-        $ git remote add origin https://github.com/iamreallyadog/hello.git
+        $ git remote add origin https://github.com/ulothrix/hello.git
         $ git push -u origin master
 
 Then, after modifying code and other local assets, commit the code and
