@@ -114,14 +114,11 @@ downloads available once they're done:
 ![](img/guide/phonegap-build/pgbuild_builtapp.png)
 
 Click on each platform's link to download each package.  Otherwise,
-while testing your app, the QR code offers a quick way to install it
-onto the device.  Using a QR-reading app on iOS, Android, or
-BlackBerry devices, scan the image directly from your computer screen:
-
-![](img/guide/phonegap-build/pgbuild_qr.png)
-
-This loads the app wirelessly and prompts you to install it, after
-which it is available on the home screen:
+while testing your app, the QR code image on the right of the panel
+offers a quick way to install it onto the device.  Using a QR-reading
+app on iOS, Android, or BlackBerry devices, scan the image directly
+from your computer screen.  The app loads wirelessly and prompts you
+to install it, and then becomes available on the home screen:
 
 ![](img/guide/phonegap-build/pgbuild_onAndroid.png)
 
