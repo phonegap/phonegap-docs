@@ -129,6 +129,18 @@ Note that you may have to change device settings to allow you to
 install apps in this manner, outside of the customary app-store
 interface.
 
+As you can see, the interface is very easy to use. After you have
+built an app, clicking on the name or icon allows you to rebuild
+each platform independently:
+
+![](img/guide/phonegap-build/pgbuild_appdetails.png)
+
+To delete an app from the PhoneGap&nbsp;Build site after initially
+building it, scroll to the bottom of the __Settings__ tab, which
+otherwise displays the app's basic metadata.
+
+See Collaborating and Testing for information 
+
 ## Building from a Repository
 
 <!-- 2DO: add screen shots showing github UI -->
