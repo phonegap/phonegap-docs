@@ -225,6 +225,10 @@ elements in the project's top-level `config.xml` file:
 
 See Configuration Reference for information about other application
 settings you can modify in the `config.xml` file.
+<!-- XREF
+See the Application Development Guide for more information on how to
+use all these features.
+XREF -->
 
 <!--
 
