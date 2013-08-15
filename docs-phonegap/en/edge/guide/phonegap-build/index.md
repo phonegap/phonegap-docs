@@ -23,9 +23,9 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 Adobe&reg; PhoneGap&trade; Build is a web service that compiles
 PhoneGap apps for you remotely, making downloadable packages available
 in a simple web interface at
-[build.phonegap.com](http://build.phonegap.com).  Relying on PhoneGap
-Build means you don't need to install and maintain local SDK tools,
-and can expect to update projects smoothly.
+[build.phonegap.com](http://build.phonegap.com). If you use PhoneGap
+Build, you don't need to install and maintain local SDK tools, and can
+expect to update projects smoothly.
 
 PhoneGap Build offers three basic development options:
 
@@ -42,14 +42,15 @@ PhoneGap Build offers three basic development options:
 
 This guide provides an overview of the first two options, with basic
 details on how to set up an account, link it to a code repository,
-import projects, compile them, and download packaged apps.  Whichever
-option you choose, the CLI offers the easiest way to set up the
-project's required top-level `www` project directory, with its
-`config.xml` package specification and its `index.html` home page.
-See The Command-line Interface for information on how to use the CLI
-to generate a new project.  See the Build Applications Remotely
-section for details on how to use the CLI's `remote` command to
-compile your local project in PhoneGap Build.
+import projects, compile them, download packaged apps, and install
+them wirelessly onto a device.  Whichever option you choose, the CLI
+offers the easiest way to set up the project's required top-level
+`www` project directory, with its `config.xml` package specification
+and its `index.html` home page.  See The Command-line Interface for
+information on how to use the CLI to generate a new project.  See the
+Build Applications Remotely section for details on how to use the
+CLI's `remote` command to compile your local project in PhoneGap
+Build.
 
 <!-- Q: is CLI's `login` command required once per project? -->
 
@@ -70,16 +71,119 @@ advanced options:
 * The PhoneGap Build API details how an application can communicate
   with the PhoneGap Build service to compile PhoneGap projects.
 
-## Register for your Account
+## Adding an App
+
+Register for a new account at
+[build.phonegap.com](https://build.phonegap.com), specified by a
+unique email/password pair, or using the same credentials as in your
+GitHub account.
+
+Once logged in for the first time, you are prompted to create a new
+app, either __open-source__ or from __private__ source:
+
+![](img/guide/phonegap-build/pgbuild_newapp.png)
+
+Choosing the __private__ tab allows you to upload a _.zip_ archive of
+the source code, whose directory contains web assets such as a
+`config.xml` file for the app's metadata, and an `index.html` for the
+home page. You can use the `phonegap` CLI tool to create the project's
+top-level `www` directory, then send an archive:
+
+        $ cd /path/to/my/development/directories
+        $ phonegap create hello com.example.hello HelloWorld
+        $ ls hello
+        merges    platforms     plugins         www
+        $ ls hello/www
+        config.xml   icon.png   index.html      res             spec.html
+        css          img        js              spec
+        $ cd hello
+        $ zip -r hello.zip www
+
+Once you upload the `hello.zip` archive, the site displays the app's
+metadata from its `config.xml` file, and it is ready to build:
+
+![](img/guide/phonegap-build/pgbuild_listapp.png)
+
+Once you build the app, the site compiles each platform and makes
+downloads available once they're done:
+
+![](img/guide/phonegap-build/pgbuild_builtapp.png)
+
+Click on each platform's link to download each package.  Otherwise,
+while testing your app, the QR code offers a quick way to install it
+onto the device.  Using a QR-reading app on iOS, Android, or
+BlackBerry devices, scan the image directly from your computer screen:
+
+![](img/guide/phonegap-build/pgbuild_qr.png)
+
+This loads the app wirelessly and prompts you to install it, after
+which it is available on the home screen:
+
+![](img/guide/phonegap-build/pgbuild_onAndroid.png)
+
+Note that you may have to change device settings to allow you to
+install apps in this manner, outside of an app-store interface.
 
 ## Add Features for Remotely Built Projects
 
+<!-- NOTE: VERSION-specific content -->
+
+The most recent version of PhoneGap implements basic device APIs using
+a system of added _plugins_. The version used in PhoneGap Build
+([2.9.0](http://docs.phonegap.com/en/2.9.0)) uses a different system
+based on project settings. To enable device APIs, place any of the
+following `<feature>` elements in the project's top-level `config.xml`
+file:
+
+* Basic device information (Device API):
+
+        <feature name="Device" value="org.apache.cordova.core.Device"/>
+
+* Network Connection and Battery Events:
+
+        <feature name="NetworkStatus" value="org.apache.cordova.core.NetworkManager" />
+        <feature name="Battery" value="org.apache.cordova.core.BatteryListener" />
+
+* Accelerometer, Compass, and Geolocation:
+
+        <feature name="Accelerometer" value="org.apache.cordova.core.AccelListener" />
+        <feature name="Compass" value="org.apache.cordova.core.CompassListener" />
+        <feature name="Geolocation" value="org.apache.cordova.core.GeoBroker" />
+
+* Camera, Media playback and Capture:
+
+        <feature name="Camera" value="org.apache.cordova.core.CameraLauncher" />
+        <feature name="Media" value="org.apache.cordova.core.AudioHandler" />
+        <feature name="Capture" value="org.apache.cordova.core.Capture" />
+
+* Access files on device or network (File API):
+
+        <feature name="File" value="org.apache.cordova.core.FileUtils" />
+        <feature name="FileTransfer" value="org.apache.cordova.core.FileTransfer" />
+
+* Notification via dialog box or vibration:
+
+        <feature name="Notification" value="org.apache.cordova.core.Notification" />
+        <feature name="Vibration" value="org.apache.cordova.core.Vibration" />
+
+* Contacts:
+
+        <feature name="Contacts" value="org.apache.cordova.core.ContactManager" />
+
+* Globalization:
+
+        <feature name="Globalization" value="org.apache.cordova.core.globalization" />
+
+* Splashscreen:
+
+        <feature name="SplashScreen" value="org.apache.cordova.core.SplashScreen" />
+
+* Open new browser windows (InAppBrowser):
+
+        <feature name="InAppBrowser" value="org.apache.cordova.core.InAppBrowser" />
+
+
 <!--
-
-The first step is to register an account and log in - we'll assume
-that you've gotten that far, and you're at the __+ new app__ form.
-
-![New App Form](images/getting-started/new-app-form.png)
 
 PhoneGap Build gives you two options - you can upload an existing
 PhoneGap project either as a single `index.html` or a package zip
