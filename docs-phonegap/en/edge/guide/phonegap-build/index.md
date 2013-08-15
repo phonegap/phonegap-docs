@@ -54,6 +54,8 @@ Build.
 
 <!-- Q: is CLI's `login` command required once per project? -->
 
+<!--
+
 Once you have set up your PhoneGap Build account and generated
 projects as described below, see the following sections for more
 advanced options:
@@ -70,6 +72,8 @@ advanced options:
 
 * The PhoneGap Build API details how an application can communicate
   with the PhoneGap Build service to compile PhoneGap projects.
+
+-->
 
 ## Adding an App
 
