@@ -129,18 +129,20 @@ interface.
 
 <!-- 2DO: add screen shots showing github UI -->
 
-Uploading a zip archive as described above can be time-consuming. As
-an alternative, you can link a newly created app to a GitHub
-repository, either open-source or private.
+Uploading a _.zip_ archive as described above can be awfully
+time-consuming.  As an alternative, you can link a newly created app
+to a GitHub repository, either open-source or private.
 
 To do so, make sure you have a viable repository URL. On your GitHub
 page, go to the __Repositories__ tab and navigate to the app's
 repository, creating a new one if necessary. The URL link displays in
-the sidebar.
+the sidebar:
+
+![](img/guide/phonegap-build/pgbuild_giturl.png)
 
 Here is a simple way to use the PhoneGap CLI to create a new project
-(as described in The Command-line Interface), then link it to a GitHub
-repository:
+on your local machine (as described in The Command-line Interface),
+then link it to a GitHub repository:
 
         $ cd /path/to/my/development/directories
         $ phonegap create hello com.example.hello HelloWorld
