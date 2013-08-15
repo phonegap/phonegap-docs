@@ -18,6 +18,7 @@
 class JoDoc
   JO_DOC_CLI    = 'jodoc'
   TEMPLATE_PATH = File.expand_path File.join(File.dirname(__FILE__), '..', '..', 'template', 'docs' )
+  PHONEGAP_TEMPLATE_PATH = File.expand_path File.join(File.dirname(__FILE__), '..', '..', 'template', 'docs-phonegap' )
   
   attr_accessor :input_directory
   attr_accessor :output_directory
@@ -30,6 +31,14 @@ class JoDoc
     # add custom language template
     if options[:lang]
       @template_directories.push(File.join TEMPLATE_PATH, options[:lang])
+    end
+
+    # add phonegap default template
+    @template_directories.push(File.join PHONEGAP_TEMPLATE_PATH, 'default')
+
+    # add phonegap custom language template
+    if options[:lang]
+      @template_directories.push(File.join PHONEGAP_TEMPLATE_PATH, options[:lang])
     end
 
     check_dependencies

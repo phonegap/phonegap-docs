@@ -21,7 +21,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 # Overview
 
 PhoneGap is an web-based mobile development framework, based on the
-open-source Cordova project. PhoneGap allows you to use standard web
+open-source [Cordova](http://cordova.apache.org) project. PhoneGap allows you to use standard web
 technologies such as HTML5, CSS3, and JavaScript for cross-platform
 development, avoiding each mobile platforms' native development
 language.  Applications execute within wrappers targeted to each
@@ -125,7 +125,8 @@ XREF -->
 ## Platform Support
 
 The following shows the set of development tools and device APIs
-available for each mobile platform:
+available for each mobile platform. (Column headers display the
+CLI's shorthand stubs.)
 
 <!-- START HTML -->
 
@@ -149,6 +150,20 @@ available for each mobile platform:
 </thead>
 
 <tbody>
+
+    <tr>
+        <th><a href="guide_cli_index.md.html">phonegap<br/>CLI</a></th>
+        <td data-col="android"      class="y">Mac, Windows, Linux</td>
+        <td data-col="blackberry"   class="n"></td>
+        <td data-col="blackberry10" class="y">Mac, Windows</td>
+        <td data-col="ios"          class="y">Mac</td>
+        <td data-col="winphone7"    class="y">Windows</td>
+        <td data-col="winphone8"    class="y">Windows</td>
+        <td data-col="win8"         class="n"></td>
+        <td data-col="tizen"        class="n"></td>
+        <td data-col="webos"        class="y"></td>
+        <td data-col="symbian"      class="y"></td>
+    </tr>
 
     <tr>
         <th><a href="guide_platforms_index.md.html">Local SDK Support</a></th>
@@ -179,20 +194,6 @@ available for each mobile platform:
     </tr>
 
     <tr>
-        <th><a href="guide_cli_index.md.html">phonegap<br/>CLI</a></th>
-        <td data-col="android"      class="y">Mac, Windows, Linux</td>
-        <td data-col="blackberry"   class="n">Mac, Windows</td>
-        <td data-col="blackberry10" class="y">Mac, Windows</td>
-        <td data-col="ios"          class="y">Mac</td>
-        <td data-col="winphone7"    class="y">Windows</td>
-        <td data-col="winphone8"    class="y">Windows</td>
-        <td data-col="win8"         class="n"></td>
-        <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="u"></td>
-        <td data-col="symbian"      class="u"></td>
-    </tr>
-
-    <tr>
         <th><a href="guide_hybrid_webviews_index.md.html">Embedded<br/>WebView</a></th>
         <td data-col="android"      class="y"><a href="guide_platforms_android_webview.md.html">(see details)</a></td>
         <td data-col="blackberry"   class="n"></td>
@@ -216,8 +217,8 @@ available for each mobile platform:
         <td data-col="winphone8"    class="y"></td>
         <td data-col="win8"         class="n"></td>
         <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="u"></td>
-        <td data-col="symbian"      class="u"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
@@ -263,8 +264,8 @@ available for each mobile platform:
         <td data-col="winphone8"    class="y"></td>
         <td data-col="win8"         class="n"></td>
         <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="u"></td>
-        <td data-col="symbian"      class="u"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
@@ -343,8 +344,8 @@ available for each mobile platform:
         <td data-col="blackberry"   class="y"></td>
         <td data-col="blackberry10" class="y"></td>
         <td data-col="ios"          class="y"></td>
-        <td data-col="winphone7"    class="p">(no FileTransfer)</td>
-        <td data-col="winphone8"    class="p">(no FileTransfer)</td>
+        <td data-col="winphone7"    class="p">no FileTransfer</td>
+        <td data-col="winphone8"    class="p">no FileTransfer</td>
         <td data-col="win8"         class="y"></td>
         <td data-col="tizen"        class="n"></td>
         <td data-col="webos"        class="n"></td>
@@ -375,8 +376,8 @@ available for each mobile platform:
         <td data-col="winphone8"    class="y"></td>
         <td data-col="win8"         class="n"></td>
         <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="u"></td>
-        <td data-col="symbian"      class="u"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
@@ -389,8 +390,8 @@ available for each mobile platform:
         <td data-col="winphone8"    class="y"></td>
         <td data-col="win8"         class="n"></td>
         <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="u"></td>
-        <td data-col="symbian"      class="u"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
@@ -431,8 +432,8 @@ available for each mobile platform:
         <td data-col="winphone8"    class="y"></td>
         <td data-col="win8"         class="y"></td>
         <td data-col="tizen"        class="n"></td>
-        <td data-col="webos"        class="u"></td>
-        <td data-col="symbian"      class="u"></td>
+        <td data-col="webos"        class="n"></td>
+        <td data-col="symbian"      class="n"></td>
     </tr>
 
     <tr>
