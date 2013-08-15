@@ -30,6 +30,10 @@ license: Licensed to the Apache Software Foundation (ASF) under one
             <span>Create, build, and deploy from the command-line.</span>
         </li>
         <li>
+            <h2>PhoneGap Build</h2>
+            <span>Compile your apps in the cloud.</span>
+        </li>
+        <li>
             <h2>Platform Guides</h2>
             <span>Set up each SDK and update projects</span>
         </li>
