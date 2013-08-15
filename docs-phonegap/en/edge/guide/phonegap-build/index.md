@@ -103,8 +103,10 @@ top-level `www` directory, then send an archive:
         $ cd hello
         $ zip -r hello.zip www
 
-Once you upload the `hello.zip` archive, the site displays the app's
-metadata from its `config.xml` file, and it is ready to build:
+Once you upload the `hello.zip` archive, the site displays metadata
+from the app's `config.xml` file, specified by the `<name>`,
+`<description>`, and `<icon>` elements.  At this point, it is __Ready
+to Build__:
 
 ![](img/guide/phonegap-build/pgbuild_listapp.png)
 
@@ -115,15 +117,16 @@ downloads available once they're done:
 
 Click on each platform's link to download each package.  Otherwise,
 while testing your app, the QR code image on the right of the panel
-offers a quick way to install it onto the device.  Using a QR-reading
+offers an easy way to install it onto the device.  Using a QR-reading
 app on iOS, Android, or BlackBerry devices, scan the image directly
 from your computer screen.  The app loads wirelessly and prompts you
-to install it, and then becomes available on the home screen:
+to install it. It then becomes available on the home screen:
 
 ![](img/guide/phonegap-build/pgbuild_onAndroid.png)
 
 Note that you may have to change device settings to allow you to
-install apps in this manner, outside of an app-store interface.
+install apps in this manner, outside of the customary app-store
+interface.
 
 ## Building from a Repository
 
