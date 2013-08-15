@@ -23,20 +23,18 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 Adobe&reg; PhoneGap&trade; Build is a web service that compiles
 PhoneGap apps for you remotely, making downloadable packages available
 in a simple web interface at
-[build.phonegap.com](http://build.phonegap.com). If you use PhoneGap
-Build, you don't need to install and maintain local SDK tools, and can
+[build.phonegap.com](http://build.phonegap.com). If you use PhoneGap&nbsp;Build, you don't need to install and maintain local SDK tools, and can
 expect to update projects smoothly.
 
-PhoneGap Build offers three basic development options:
+PhoneGap&nbsp;Build offers three basic development options:
 
-* You can upload your project files directly through the PhoneGap
-  Build website.
+* You can upload your project files directly through the PhoneGap&nbsp;Build website.
 
-* You can link your PhoneGap Build account to your GitHub account,
+* You can link your PhoneGap&nbsp;Build account to your GitHub account,
   either public or private, then dynamically pull in remote code
   repositories.
 
-* You can link the `phonegap` command-line tool to your PhoneGap Build
+* You can link the `phonegap` command-line tool to your PhoneGap&nbsp;Build
   account. Its `remote` option allows you to compile projects remotely
   in a single command.
 
@@ -49,14 +47,13 @@ offers the easiest way to set up the project's required top-level
 and its `index.html` home page.  See The Command-line Interface for
 information on how to use the CLI to generate a new project.  See the
 Build Applications Remotely section for details on how to use the
-CLI's `remote` command to compile your local project in PhoneGap
-Build.
+CLI's `remote` command to compile your local project in PhoneGap&nbsp;Build.
 
 <!-- Q: is CLI's `login` command required once per project? -->
 
 <!--
 
-Once you have set up your PhoneGap Build account and generated
+Once you have set up your PhoneGap&nbsp;Build account and generated
 projects as described below, see the following sections for more
 advanced options:
 
@@ -64,14 +61,14 @@ advanced options:
   access rights to software testers, with the option for them to
   automatically download the latest version of the app.
 
-* Remote Debugging Tools shows how to configure PhoneGap Build's
+* Remote Debugging Tools shows how to configure PhoneGap&nbsp;Build's
   debugging options, or use a custom debug server.
 
 * Common Errors shows how to overcome several problems you may
   encounter when compiling a PhoneGap project remotely.
 
-* The PhoneGap Build API details how an application can communicate
-  with the PhoneGap Build service to compile PhoneGap projects.
+* The PhoneGap&nbsp;Build API details how an application can communicate
+  with the PhoneGap&nbsp;Build service to compile PhoneGap projects.
 
 -->
 
@@ -162,7 +159,7 @@ push it to your GitHub repository:
         $ git commit -am "modified app"
         $ git push
 
-On the PhoneGap Build site, press __Update Code__ to pull the latest
+On the PhoneGap&nbsp;Build site, press __Update Code__ to pull the latest
 master branch, and __Rebuild All__ to generate application packages
 from the updated code.
 
@@ -171,10 +168,10 @@ from the updated code.
 <!-- NOTE: VERSION-specific content -->
 
 The most recent version of PhoneGap implements basic device APIs using
-a system of added _plugins_. The version used in PhoneGap Build
+a system of added _plugins_. The version used in PhoneGap&nbsp;Build
 ([2.9.0](http://docs.phonegap.com/en/2.9.0)) uses a somewhat different
 system based on project settings. To enable device APIs for projects
-compiled with PhoneGap Build, place any of the following `<feature>`
+compiled with PhoneGap&nbsp;Build, place any of the following `<feature/>`
 elements in the project's top-level `config.xml` file:
 
 * Basic device information (Device API):
