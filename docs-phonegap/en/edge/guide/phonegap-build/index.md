@@ -144,7 +144,7 @@ repository:
         $ cd /path/to/my/development/directories
         $ phonegap create hello com.example.hello HelloWorld
         $ cd hello
-            # use Markdown to document the app in the GitHub site:
+          # use this Markdown file to document the app on the GitHub site:
         $ touch README.md
         $ git init
         $ git add .
@@ -168,10 +168,10 @@ from the updated code.
 
 The most recent version of PhoneGap implements basic device APIs using
 a system of added _plugins_. The version used in PhoneGap Build
-([2.9.0](http://docs.phonegap.com/en/2.9.0)) uses a different system
-based on project settings. To enable device APIs, place any of the
-following `<feature>` elements in the project's top-level `config.xml`
-file:
+([2.9.0](http://docs.phonegap.com/en/2.9.0)) uses a somewhat different
+system based on project settings. To enable device APIs for projects
+compiled with PhoneGap Build, place any of the following `<feature>`
+elements in the project's top-level `config.xml` file:
 
 * Basic device information (Device API):
 
