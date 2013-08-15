@@ -230,6 +230,11 @@ See the Application Development Guide for more information on how to
 use all these features.
 XREF -->
 
+__NOTE:__ PhoneGap&nbsp;Build does not support custom plugin
+interfaces, which are discussed in the Plugin Development Guide. Use
+the CLI-based workflow described in The Command-line Interface as an
+alternative.
+
 <!--
 
 ## validate existing download instructions...
