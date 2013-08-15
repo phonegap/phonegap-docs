@@ -126,6 +126,8 @@ install apps in this manner, outside of an app-store interface.
 
 ## Building from a Repository
 
+<!-- 2DO: add screen shots showing github UI -->
+
 Uploading a zip archive as described above can be time-consuming. As
 an alternative, you can link a newly created app to a GitHub
 repository, either open-source or private.
