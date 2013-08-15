@@ -23,20 +23,22 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 Adobe&reg; PhoneGap&trade; Build is a web service that compiles
 PhoneGap apps for you remotely, making downloadable packages available
 in a simple web interface at
-[build.phonegap.com](http://build.phonegap.com). If you use PhoneGap&nbsp;Build, you don't need to install and maintain local SDK tools, and can
-expect to update projects smoothly.
+[build.phonegap.com](http://build.phonegap.com). If you use
+PhoneGap&nbsp;Build, you don't need to install and maintain local SDK
+tools, and can expect to update projects smoothly.
 
 PhoneGap&nbsp;Build offers three basic development options:
 
-* You can upload your project files directly through the PhoneGap&nbsp;Build website.
+* You can upload your project files directly through the
+  PhoneGap&nbsp;Build website.
 
-* You can link your PhoneGap&nbsp;Build account to your GitHub account,
-  either public or private, then dynamically pull in remote code
-  repositories.
+* You can link your PhoneGap&nbsp;Build account to your GitHub
+  account, either public or private, then dynamically pull in remote
+  code repositories.
 
-* You can link the `phonegap` command-line tool to your PhoneGap&nbsp;Build
-  account. Its `remote` option allows you to compile projects remotely
-  in a single command.
+* You can link the `phonegap` command-line tool to your
+  PhoneGap&nbsp;Build account. Its `remote` option allows you to
+  compile projects remotely in a single command.
 
 This guide provides an overview of the first two options, with basic
 details on how to set up an account, link it to a code repository,
@@ -47,7 +49,8 @@ offers the easiest way to set up the project's required top-level
 and its `index.html` home page.  See The Command-line Interface for
 information on how to use the CLI to generate a new project.  See the
 Build Applications Remotely section for details on how to use the
-CLI's `remote` command to compile your local project in PhoneGap&nbsp;Build.
+CLI's `remote` command to compile your local project in
+PhoneGap&nbsp;Build.
 
 <!-- Q: is CLI's `login` command required once per project? -->
 
@@ -67,8 +70,9 @@ advanced options:
 * Common Errors shows how to overcome several problems you may
   encounter when compiling a PhoneGap project remotely.
 
-* The PhoneGap&nbsp;Build API details how an application can communicate
-  with the PhoneGap&nbsp;Build service to compile PhoneGap projects.
+* The PhoneGap&nbsp;Build API details how an application can
+  communicate with the PhoneGap&nbsp;Build service to compile PhoneGap
+  projects.
 
 -->
 
@@ -161,9 +165,9 @@ push it to your GitHub repository:
         $ git commit -am "modified app"
         $ git push
 
-On the PhoneGap&nbsp;Build site, press __Update Code__ to pull the latest
-master branch, and __Rebuild All__ to generate application packages
-from the updated code.
+On the PhoneGap&nbsp;Build site, press __Update Code__ to pull the
+latest master branch, and __Rebuild All__ to generate application
+packages from the updated code.
 
 ## Add Features for Remotely Built Projects
 
@@ -230,10 +234,10 @@ See the Application Development Guide for more information on how to
 use all these features.
 XREF -->
 
-__NOTE:__ PhoneGap&nbsp;Build does not support custom plugin
-interfaces, which are discussed in the Plugin Development Guide. Use
-the CLI-based workflow described in The Command-line Interface as an
-alternative.
+__NOTE:__ PhoneGap&nbsp;Build does _not_ allow you to compile custom
+plugin interfaces to native components, as discussed in the Plugin
+Development Guide. The CLI-based workflow described in The
+Command-line Interface supports this feature.
 
 <!--
 
