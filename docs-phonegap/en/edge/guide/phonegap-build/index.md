@@ -139,8 +139,6 @@ To delete an app from the PhoneGap&nbsp;Build site after initially
 building it, scroll to the bottom of the __Settings__ tab, which
 otherwise displays the app's basic metadata.
 
-See Collaborating and Testing for information 
-
 ## Building from a Repository
 
 <!-- 2DO: add screen shots showing github UI -->
