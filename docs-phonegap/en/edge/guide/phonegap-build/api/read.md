@@ -18,9 +18,9 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 ---
 
-# Read API V1
+# The PhoneGap Build Read API
 
-This document is part of the Adobe® PhoneGap™ Build API V1 documentation; see also:
+This document is part of the Adobe$reg; PhoneGap&trade; Build API V1 documentation; see also:
 
 * [API Overview](/docs/api)
 * [Write API](/docs/write_api)

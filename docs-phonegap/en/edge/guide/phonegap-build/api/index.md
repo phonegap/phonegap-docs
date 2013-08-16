@@ -20,21 +20,20 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # The PhoneGap Build API
 
-## API v1 Overview
+The Adobe$reg; PhoneGap&trade; Build API allows applications to use
+the PhoneGap Build web service to create, build, update and download
+PhoneGap apps. It is designed to easily integrate into IDEs, shell
+scripts, app builders, and anywhere else.
 
-The Adobe® PhoneGap™ Build API allows programmatic access to creating,
-building, updating and downloading PhoneGap apps, using the PhoneGap
-Build web service. It is designed for easy integration into IDEs,
-shell scripts, app builders, and anywhere else.
+This section discusses general issues with credentials and data
+formats. See the following for details on how to interact with the
+API:
 
-This document covers version 1 of the API. If you the older release of
-the API, please see [the version 0
-documentation](/docs/api_version_0).
+* The PhoneGap Build Read API
+* The PhoneGap Build Write API
 
-## API Documentation
-
-* [Read API](/docs/read_api)
-* [Write API](/docs/write_api)
+The API's Version 1 is current. For information on the older release,
+see The PhoneGap Build API, Version 0.
 
 ## Authentication
 
@@ -75,11 +74,9 @@ requests return a `401` (unauthorized) status code.
 In all of the examples below, token authentication is used for
 clarity.
 
-<strong>Github users</strong>
-
-Users who registered using Github authentication may not have PhoneGap
-Build credentials, and therefore may not be able to use basic
-authentication. To retrieve an authententication token for your
+__NOTE:__ Users who registered using Github authentication may not
+have PhoneGap Build credentials, and therefore may not be able to use
+basic authentication. To retrieve an authententication token for your
 Github-linked account, go to Edit Account (top right in the site
 navigation bar). Find the authentication tokens section, and there you
 can obtain, as well as create, reset, or delete your token. Note that

@@ -18,7 +18,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 ---
 
-# The PhoneGap API, Version 0
+# The PhoneGap Build API, Version 0
 
 Version 0 (v0) of the API is a preview release for the beta version of
 PhoneGap Build. Although we are keeping this release online for
