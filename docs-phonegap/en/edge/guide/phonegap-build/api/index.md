@@ -51,8 +51,8 @@ When using basic authentication, use your PhoneGap Build credentials
             "email":"andrew.lunny@nitobi.com"
         }
 
-To use token authentication, use basic auth to post to `/token` with
-your token request. You will receive a token as a response:
+To use token authentication, use basic authentication to post to
+`/token` with your request, and the token returns in the response:
 
         $ curl -u andrew.lunny@nitobi.com -X POST -d "" https://build.phonegap.com/token</pre></strong>
         {
@@ -101,8 +101,8 @@ check the error field on the parsed response, a la:
 
 As is standard in HTTP, a 4xx status indicates an error with the
 request, while a 5xx status indicates an error on our servers. Please
-check [our support forums](http://community.phonegap.com) if you get a
-500 error, or if you receive an unexpected 400 error.
+check [PhoneGap's support forums] (http://community.phonegap.com) if
+you get a 500 error, or if you receive an unexpected 400 error.
 
 ## JSONP
 
@@ -116,19 +116,17 @@ will be wrapped in that function:
             "email":"andrew.lunny@nitobi.com"
         })
 
-This allows you to access the PhoneGap Build API through regular old
-`<script>` tags. [More information about
-JSONP](http://en.wikipedia.org/wiki/JSONP).
+This allows you to access the PhoneGap Build API using `<script>`
+tags.
 
 ## HATEOAS
 
-The PhoneGap Build API v1 tries to use __Hypermedia as the Engine of
-Application State ([HATEOAS](http://en.wikipedia.org/wiki/HATEOAS))__
-as much as possible. For an application developer, this should mean
-that you can hit the source of the api - `/api/v1` - and then follow
-the `link` attributes of the nested resources to navigate the
-application, without having knowledge of the other routes within your
-application.
+The PhoneGap Build API v1 tries to use _Hypermedia as the Engine of
+Application State_ ([HATEOAS] (http://en.wikipedia.org/wiki/HATEOAS))
+as much as possible. For an application developer, this mean that you
+can hit the source of the api - `/api/v1` - and then follow the `link`
+attributes of the nested resources to navigate the application,
+without having knowledge of the other routes within your application.
 
 The home resource for the API v1 is the same as the `/me` resource - a
 representation of the current user.

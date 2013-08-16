@@ -59,8 +59,8 @@ Create a new app.
   modified after creation, or in your `config.xml` file. Defaults to
   empty text.
 
-* __debug__: Builds your app in [debug mode](/docs/phonegap-debug).
-  Defaults to `false`.
+* __debug__: Builds your app in debug mode, as detailed in Remote
+  Debugging Tools.  Defaults to `false`.
 
 * __keys__: Set the signing keys to use for each platform you wish to
   sign. (See below for details.)
@@ -70,11 +70,11 @@ Create a new app.
   complete.
 
 * __phonegap_version__: Which version of PhoneGap your app uses. See
-  [config.xml](/docs/config-xml) for details on which are supported,
+  the Configuration Reference for details on which are supported,
   and which one is currently the default.
 
-* __hydrates__: Builds your app with [hydration](/docs/hydration)
-  enabled. Defaults to `false`.
+* __hydrates__: Builds your app with hydration enabled, as described
+  in Collaborating and Testing. Defaults to `false`.
 
 ### create_method
 
@@ -311,8 +311,8 @@ Updating the metadata involves sending a JSON object as the parameter
 
 * __description__: the app's description.
 
-* __debug__: whether to build your app in [debug
-  mode](/docs/phonegap-debug).
+* __debug__: whether to build your app in debug mode, as detailed in
+  Remote Debugging Tools.
 
 * __private__: whether the app has restricted visibility.
 
@@ -450,8 +450,8 @@ Sets an icon file for a given app. Send a `png` file as your post's
 
 If you want different icons for different resolutions, you should
 _not_ use this API method. Instead, include the different icon files
-in your application package and specify their use in your [config.xml
-file](/docs/config-xml).
+in your application package and specify their use in your `config.xml`
+file, as detailed in the Configuration Reference.
 
 The response has a `201` created status, and the application is queued
 for building:
