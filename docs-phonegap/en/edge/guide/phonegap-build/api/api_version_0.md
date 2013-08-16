@@ -4,11 +4,18 @@
 
 ## Version 0
 
-Version 0 (v0) of the API is a preview release for the beta version of PhoneGap Build. Although we are keeping this release online for existing clients, it will not receive any further updates. If you are developing a new application to access PhoneGap Build, use [the latest version of the API (currently v1)](/docs/api).
+Version 0 (v0) of the API is a preview release for the beta version of
+PhoneGap Build. Although we are keeping this release online for
+existing clients, it will not receive any further updates. If you are
+developing a new application to access PhoneGap Build, use [the latest
+version of the API (currently v1)](/docs/api).
 
 ### Authentication
 
-v0 currently authenticates through HTTPS with basic authentication. We are investigating other authentication options, particularly for allowing users to authorize apps/dev tools with their PhoneGap Build credentials (the present author favors OAuth 2).
+v0 currently authenticates through HTTPS with basic authentication. We
+are investigating other authentication options, particularly for
+allowing users to authorize apps/dev tools with their PhoneGap Build
+credentials (the present author favors OAuth 2).
 
 All unauthenticated requests return a `401` (unauthorized) status code.
 
@@ -17,11 +24,14 @@ All unauthenticated requests return a `401` (unauthorized) status code.
 
 ## JSON
 
-All successful requests return either a JSON-encoded string or a binary file. All failing requests return a JSON-encoded string of the following form (with an appropriate status code):
+All successful requests return either a JSON-encoded string or a
+binary file. All failing requests return a JSON-encoded string of the
+following form (with an appropriate status code):
 
     {"error":"some error message"}
 
-When using the API, check the status code returned; if it's not 200, check the error field on the parsed response, a la:
+When using the API, check the status code returned; if it's not 200,
+check the error field on the parsed response, a la:
 
     if (res.status != 200)
         console.log(JSON.parse(res.body).error)
@@ -67,7 +77,8 @@ Get a JSON-encoded representation of the authenticated user's apps.
 
 ### GET https://build.phonegap.com/api/v0/apps/:id
 
-Get a JSON-encoded representation of a single app (belonging to the authenticated user).
+Get a JSON-encoded representation of a single app (belonging to the
+authenticated user).
 
 <pre><strong>$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/50</strong></pre>
     {"created_at":"2010-11-09T20:36:58Z","title":"alunny's Amazing App",
@@ -78,7 +89,8 @@ Get a JSON-encoded representation of a single app (belonging to the authenticate
      "version":99.999,"package":"com.alunny.amazing","person_id":1,
      "desc":"An Amazing app by alunny"}
 
-If the app does not exist or belongs to another user, an error message is returned with status code `404`:
+If the app does not exist or belongs to another user, an error message
+is returned with status code `404`:
 
 <pre><strong>$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/54</strong></pre>
     {"error":"app #54 not available"}
@@ -89,20 +101,24 @@ Get the icon file of an app.
 
 <pre><strong>$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/50/icon &gt; icon.png</strong></pre>
 
-If there's no icon available, an error message is returned with status code `404`:
+If there's no icon available, an error message is returned with status
+code `404`:
 
 <pre><strong>$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/52/icon</strong></pre>
     {"error":"No icon available for app #52"}
 
 ### GET https://build.phonegap.com/api/v0/apps/:id/:platform
 
-Download the app package for the given platform; available platforms right now are `android`, `blackberry`, `symbian` and `webos`.
+Download the app package for the given platform; available platforms
+right now are `android`, `blackberry`, `symbian` and `webos`.
 
-The request actually returns a redirect to the app package itself--ensure your API client follows redirects to download the app.
+The request actually returns a redirect to the app package
+itself--ensure your API client follows redirects to download the app.
 
 <pre><strong>$ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/50/android &gt; app_50.apk</strong></pre>
 
-If the app package (for the specified platform) is unavailable, an error message is returned with status code `404`:
+If the app package (for the specified platform) is unavailable, an
+error message is returned with status code `404`:
 
 <pre><strong>$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/52/android</strong></pre>
     {"error":"App #52 for android error"}
@@ -124,7 +140,8 @@ To get a specific platform's keys use
 
 <pre><strong>$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/keys/:platform</strong></pre>
 
-If the app does not exist or belongs to another user, an error message is returned with status code `404`:
+If the app does not exist or belongs to another user, an error message
+is returned with status code `404`:
 
 </section>
 <section class="module">
@@ -133,7 +150,9 @@ If the app does not exist or belongs to another user, an error message is return
 
 ### POST https://build.phonegap.com/api/v0/apps
 
-Create a new app. Requires a title parameter to be passed, and either the URL of a public git/svn repository, or an `index.html` or project zip file to be sent.
+Create a new app. Requires a title parameter to be passed, and either
+the URL of a public git/svn repository, or an `index.html` or project
+zip file to be sent.
 
 With a repo_url:
 
@@ -147,7 +166,8 @@ With a repo_url:
     "package":"com.alunny.amazing","person_id":1,
     "desc":"An Amazing app by alunny"}
 
-With a file (note that if you're using curl, you'll want the `-F` option, not `-d`):
+With a file (note that if you're using curl, you'll want the `-F`
+option, not `-d`):
 
 <pre><strong>$ curl -F file=@index.html -F 'data={"title":"Another App"}' -u andrew.lunny@nitobi.com \
   https://build.phonegap.com/api/v0/apps</strong></pre>
@@ -162,7 +182,10 @@ Again, JSON errors if anything goes wrong:
 <pre><strong>$ curl -u andrew.lunny@nitobi.com -d 'data={"title":"New App"}' https://build.phonegap.com/api/v0/apps</strong></pre>
     {"error":"Need either a repo url or a file"}
 
-An error with the request returns status code `400` (bad request) - the JSON string details what changes have to be made. If status code `500` is returned, an internal error has occurred - please contact us about this request.
+An error with the request returns status code `400` (bad request) -
+the JSON string details what changes have to be made. If status code
+`500` is returned, an internal error has occurred - please contact us
+about this request.
 
 ### POST https://build.phonegap.com/api/v0/apps/:id/:icon
 
@@ -175,11 +198,16 @@ Set an icon file for the given app:
     "webos_status":"webos complete","id":56,"icon":"icon.png",
     "version":null,"package":null,"person_id":1,"desc":null}
 
-A JSON error with status code `400` is returned if there is an error in the request.
+A JSON error with status code `400` is returned if there is an error
+in the request.
 
 ### POST https://build.phonegap.com/api/v0/apps/:id/push
 
-Update the current app from its source repo - designed, among other things, to work with [Github's post-receive hooks](http://help.github.com/post-receive-hooks/) functionality. Right now, the post data is ignored - I'm including some dummy data so curl agrees to set a Content-Length header.
+Update the current app from its source repo - designed, among other
+things, to work with [Github's post-receive
+hooks](http://help.github.com/post-receive-hooks/)
+functionality. Right now, the post data is ignored - I'm including
+some dummy data so curl agrees to set a Content-Length header.
 
 <pre><strong>$ curl -X POST -d data=dummy -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/55/push</strong></pre>
     {"created_at":"2010-11-29T21:13:26Z","title":"alunny's Amazing App",
@@ -190,7 +218,9 @@ Update the current app from its source repo - designed, among other things, to w
     "package":"com.alunny.amazing","person_id":1,
     "desc":"An Amazing app by alunny"}
 
-If the app is not associated with a repository, status code `400` is returned. If the app cannot be found, status code `404` is returned. If there is an internal error, `500` is returned:
+If the app is not associated with a repository, status code `400` is
+returned. If the app cannot be found, status code `404` is
+returned. If there is an internal error, `500` is returned:
 
 <pre><strong>$ curl -X POST -d data=dummy -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/56/push</strong></pre>
     {"error":"app #56 is not repo backed"}
@@ -246,7 +276,8 @@ Will produce a response similar to:
 
     {"title":"example key","updated_at":"2011-07-08T10:48:18-07:00","id":1}
 
-If the app does not exist or belongs to another user, an error message is returned with status code `404`:
+If the app does not exist or belongs to another user, an error message
+is returned with status code `404`:
 
 ### DELETE https://build.phonegap.com/api/v0/apps/:id
 
