@@ -177,7 +177,7 @@ Again, JSON errors result if anything goes wrong:
 
 Any errors with the request return a `400` status code. Status codes
 of `500` indicate an internal error; contact the [PhoneGap&nbsp;Build
-team] (http://community.phonegap.com).
+team](http://community.phonegap.com).
 
 ### POST https://build.phonegap.com/api/v0/apps/:id/:icon
 
@@ -193,7 +193,7 @@ Set an app's icon file:
 ### POST https://build.phonegap.com/api/v0/apps/:id/push
 
 Update the current app from its source repo, using [Github's
-post-receive hooks] (http://help.github.com/post-receive-hooks/)
+post-receive hooks](http://help.github.com/post-receive-hooks/)
 functionality. In the example below, the post data is ignored, but is
 present for `curl` to agree to set a `Content-Length` header:
 

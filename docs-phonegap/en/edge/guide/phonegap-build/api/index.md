@@ -99,7 +99,7 @@ check the error field on the parsed response, for example:
 
 As is standard in HTTP, a _4xx_ status indicates an error with the
 request, while a _5xx_ status indicates an server error. Contact
-[PhoneGap's support forums] (http://community.phonegap.com) if you get
+[PhoneGap's support forums](http://community.phonegap.com) if you get
 a 500 error, or an unexpected 400 error.
 
 ## JSONP
