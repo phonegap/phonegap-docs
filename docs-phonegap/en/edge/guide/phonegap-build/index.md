@@ -130,6 +130,16 @@ Note that you may have to change device settings to allow you to
 install apps in this manner, outside of the customary app-store
 interface.
 
+If you replace the `icon.png` file and make a few changes to the app's
+metadata in the `config.xml`, they're reflected on the site the next
+time you upload the code:
+
+![](img/guide/phonegap-build/pgbuild_modapp.png)
+
+Those changes also reflect when you re-install onto a device:
+
+![](img/guide/phonegap-build/pgbuild_onAndroidMod.png)
+
 As you can see, the interface is very easy to use. After you have
 built an app, clicking on the name or icon allows you to rebuild
 each platform independently:
