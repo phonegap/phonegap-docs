@@ -24,77 +24,73 @@ This section details write methods for version 1 of the API. See The
 PhoneGap Build API for an overview, or The PhoneGap Build Read API for
 read methods.
 
-All write APIs expect JSON-encoded content. Many also accept file
-uploads. Because of this, we expect API requests to have the content
-type `multipart/form-data`, and JSON bodies of requests are expected
-to have the name `data`. We're looking for a more elegant way of
-dealing with this in a future release.
+All write API methods expect JSON-encoded content. Many also accept
+file uploads. API requests should have the content type
+`multipart/form-data`, and bodies of JSON requests should be named
+`data`.
 
-### POST https://build.phonegap.com/api/v1/apps
+## POST https://build.phonegap.com/api/v1/apps
 
 Create a new app.
 
-#### Required parameters
+### Required parameters
 
-* __title__: You must specify a title for your app - if a title is
-  also specified in a `config.xml` in your package, the one in the
-  `config.xml` file will take preference.
+* __title__: You must specify a title for your app. Any title
+  specified in your package's `config.xml` takes precedence.
 
 * __create_method__: How the app is created (described below). There
   are two valid values:
 
   * __file__: A file is being uploaded with the app content
 
-  * __remote_repo__: You have a remote repository with your app
-        content
+  * __remote_repo__: You have a remote repository with your app content
 
-#### Optional parameters
+### Optional parameters
 
-* __package__: Sets the package identifier for your app. This can also
-  be done after creation, or in your `config.xml` file. Defaults to
-  `com.phonegap.www`
+* __package__: Sets your app's package identifier. This can be
+  modified after the app's creation, or in your `config.xml` file.
+  Defaults to `com.phonegap.www`
 
-* __version__: Sets the version of your app. This can also be done
-  after creation, or in your `config.xml` file. Defaults to `0.0.1`
+* __version__: Sets your app's version number. This can also be
+  modified after the app's creation, or in your `config.xml` file.
+  Defaults to `0.0.1`
 
-* __description__: Sets the description for your app. This can also be
-  done after creation, or in your `config.xml` file. Defaults to
-  empty.
+* __description__: Sets your app's description. This can also be
+  modified after creation, or in your `config.xml` file. Defaults to
+  empty text.
 
-* __debug__: Builds your app in [debug
-  mode](/docs/phonegap-debug). Defaults to false.
+* __debug__: Builds your app in [debug mode](/docs/phonegap-debug).
+  Defaults to `false`.
 
 * __keys__: Set the signing keys to use for each platform you wish to
-  sign. See below for more details
+  sign. (See below for details.)
 
 * __private__: Whether your app can be publicly downloaded. Defaults
-  to `true` during beta period; will default to `false` once the beta
-  period is complete
+  to `true` during beta period, and `false` once the beta period is
+  complete.
 
 * __phonegap_version__: Which version of PhoneGap your app uses. See
   [config.xml](/docs/config-xml) for details on which are supported,
-  and which one is currently the default
+  and which one is currently the default.
 
 * __hydrates__: Builds your app with [hydration](/docs/hydration)
-  enabled. Defaults to false.
+  enabled. Defaults to `false`.
 
-#### create_method
+### create_method
 
-A new app can be created from an archive file or a remote git
+A new app can be created from an archive file or from a remote git
 repository. You can choose which one of these to use by setting the
 `create_method` parameter in your JSON data.
 
-The create method is immutable - an app that is created from a
-repository can never be changed to be file-backed, or vice versa. If
-you want to change at some later date, delete the old app and create a
-new one.
+The create method is immutable. An app created from a repository can
+never be changed to be file-backed, or vice versa. If you want to
+change at some later date, delete the old app and create a new one.
 
-#### File-backed applications
+### File-backed applications
 
 To create a file-backed application, set the `create_method` parameter
-to `file`, and include a zip file, a tar.gz file, or an index.html
-file in the multipart body of your post, with the parameter name
-`file`:
+to `file`, and include a zip file (`tar.gz`) or an `index.html` file
+in the multipart body of your post, using `file` as a parameter name:
 
         $ curl -F file=@/Users/alunny/index.html -u andrew.lunny@nitobi.com -F 'data={"title":"API V1 App","package":"com.alunny.apiv1","version":"0.1.0","create_method":"file"}' https://build.phonegap.com/api/v1/apps
         {
@@ -148,13 +144,13 @@ file in the multipart body of your post, with the parameter name
             "build_count":null
         }
 
-#### Remote-repository backed applications
+### Remote-repository backed applications
 
-To create an app based on a remote repo, set the `create_method`
+To create an app based on a remote repository, set the `create_method`
 parameter to `remote_repo`, and include a `repo` parameter with the
-URL of the repository.
+repository's URL.
 
-The URL has to be publicly accessible: PhoneGap Build will not
+The URL has to be publicly accessible; PhoneGap Build does not
 authenticate against your repository. If you wish to keep your code
 private, use one of the other `create_method` options:
 
@@ -210,20 +206,20 @@ private, use one of the other `create_method` options:
         }
 
 If you provide a repository URL that requires authentication, the
-response will have a `400` HTTP status code and the error message in
-the body of the response:
+response returns a `400` HTTP status code along with the error message
+in the body of the response:
 
         $ curl -u andrew.lunny@nitobi.com -d 'data={"title":"API V1 App","repo":"https://alunny@github.com/alunny/phonegap-start.git","create_method":"remote_repo"}' https://build.phonegap.com/api/v1/apps
         {
             "error":"Private repository URLs not supported - try removing &quot;alunny@&quot;"
         }
 
-#### Signing keys
+### Signing keys
 
 To sign your builds on PhoneGap Build, you must first upload one or
 more keys, through the `POST https://build.phonegap.com/api/v1/keys`
 method, or through the web interface. You can get a list of all the
-keys associated with your account by sending a GET request to that
+keys associated with your account by sending a GET request to the
 same URL.
 
 In the `data` JSON hash that you send to the build server, you can
@@ -234,8 +230,8 @@ The value for each platform can be the integer id, such as:
 
         "keys":{"ios":123}
 
-Or an object, containing the `password` field (or for Android, the
-`key_pw` and `keystore_pw` fields), such as:
+or an object, containing the `password` field, or the `key_pw` and
+`keystore_pw` fields for Android, such as:
 
         "keys":{"ios":{"id":123,"password":"password1"}
 
@@ -243,7 +239,7 @@ Using the second form allows you to unlock the given key, without
 making a separate PUT request to
 `https://build.phonegap.com/v1/keys/ios/123`
 
-Here is a sample post (using the first form):
+Here is a sample post, using the first form:
 
         $ curl -u andrew.lunny@nitobi.com -d 'data={"title":"Signing Keys","repo":"https://github.com/alunny/phonegap-start.git","create_method":"remote_repo","keys":{"ios":123,"android":567}}' https://build.phonegap.com/api/v1/apps
         {
@@ -297,32 +293,32 @@ Here is a sample post (using the first form):
             "build_count":null
         }
 
-### PUT https://build.phonegap.com/api/v1/apps/:id
+## PUT https://build.phonegap.com/api/v1/apps/:id
 
-Update an existing app - the contents of the app, the app's metadata,
-or both. The response will be a JSON representation of the app - the
-same as the `GET /api/v1/apps/:id` request.
+Update an existing app, either its contents, its metadata, or both.
+The response is a JSON representation of the app, the same as for `GET
+/api/v1/apps/:id`.
 
 Updating the metadata involves sending a JSON object as the parameter
 `data`. Available options in this JSON object are:
 
-* __title__: the title of your application
+* __title__: the title of your application.
 
-* __package__: the app's package identifier (such as
-  `com.phonegap.www`)
+* __package__: the app's package identifier, such as
+  `com.phonegap.www`.
 
-* __version__: the app's version (such as `0.0.1`)
+* __version__: the app's version, such as `0.0.1`.
 
-* __description__: the app's description
+* __description__: the app's description.
 
-* __debug__: whether your app will be built in [debug
-  mode](/docs/phonegap-debug)
+* __debug__: whether to build your app in [debug
+  mode](/docs/phonegap-debug).
 
-* __private__: whether the app has restricted visibility or not
+* __private__: whether the app has restricted visibility.
 
-* __phonegap_version__: which release of PhoneGap your app uses
+* __phonegap_version__: which release of PhoneGap your app uses.
 
-Here is a simple example: updating an app's version:
+Here is a simple example that update an app's version number:
 
         $ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"version":"0.2.0"}' https://build.phonegap.com/api/v1/apps/8
         {
@@ -365,18 +361,16 @@ Here is a simple example: updating an app's version:
             "build_count":12
         }
 
-By default, the app will be built for all supported platforms once the
-metadata has been changed.
+By default, the app is built for all supported platforms once the
+metadata changes.
 
-#### Signing Keys
+### Signing Keys
 
 As with creating a new app, you can specify a signing key to use for
-each platform that you wish to build for. You can also put the
-credentials for a key, which will ensure the key is unlocked and ready
-to use.
+each platform that you wish to build for. You can also put a key's
+credentials, which ensures the key is unlocked and ready to use.
 
-Here is a sample post selecting a new Android key for an app and
-unlocking it:
+This sample post selects a new Android key for an app, and unlocks it:
 
         $ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"keys":{"android": {"id":457,"key_pw":"password1","keystore_pw":"password2"}}' https://build.phonegap.com/api/v1/apps/36500
 
@@ -431,84 +425,83 @@ unlocking it:
             "build_count":null
         }
 
-#### Updating a file-based application
+### Updating a file-based application
 
 If the application has been created from a file upload, you can
-include a new `index.html`, zip file, or tar.gz file as the `file`
+include a new `index.html`, zip, or `tar.gz` file as the `file`
 parameter in your request to update the contents:
 
         $ curl -u andrew.lunny@nitobi.com -X PUT -F file=@/Users/alunny/new/index.html https://build.phonegap.com/api/v1/apps/8
 
-#### Updating a repo-based application
+### Updating a repo-based application
 
 To update an application from a remote repository, simply add the
 `pull` field to your `data` hash, and set it to `true`:
 
         $ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"pull":"true"}' https://build.phonegap.com/api/v1/apps/8
 
-PhoneGap Build will then attempt to download the new code from your
-remote repository, and rebuild your app for all supported platforms.
+PhoneGap Build then tries to download the new code from your remote
+repository, and rebuilds your app for all supported platforms.
 
-### POST https://build.phonegap.com/api/v1/apps/:id/icon
+## POST https://build.phonegap.com/api/v1/apps/:id/icon
 
-Sets an icon file for a given app. Send a `png` file as the `icon`
-parameter in your post.
+Sets an icon file for a given app. Send a `png` file as your post's
+`icon` parameter.
 
-If you want to have multiple icons for different resolutions, you
-should _not_ use this API method. Instead, include the different icon
-files in your application package and specify their use in your
-[config.xml file](/docs/config-xml).
+If you want different icons for different resolutions, you should
+_not_ use this API method. Instead, include the different icon files
+in your application package and specify their use in your [config.xml
+file](/docs/config-xml).
 
-The response will have a `201` created status, and the application
-will be queued for building:
+The response has a `201` created status, and the application is queued
+for building:
 
         $ curl -u andrew.lunny@nitobi.com -f icon=@icon.png https://build.phonegap.com/api/v1/apps/8/icon
 
-### POST https://build.phonegap.com/api/v1/apps/:id/build
+## POST https://build.phonegap.com/api/v1/apps/:id/build
 
-Queue new builds for a specified app. The older builds will be
-discarded, while new ones are queued.
+Queue new builds for a specified app. The older builds are discarded,
+while new ones are queued.
 
 The builds will use the most current app contents, as well as the
-selected signing keys. The response will have a `202` (accepted)
-status:
+selected signing keys. The response have a `202` (accepted) status:
 
         $ curl -u andrew.lunny@nitobi.com -X POST -d '' https://build.phonegap.com/api/v1/apps/12/build
 
-To choose which platforms to build, include those as a JSON encoded
-parameter in your post:
+To choose which platforms to build, include them as a JSON encoded
+parameter:
 
         $ curl -u andrew.lunny@nitobi.com -X POST -d 'data={"platforms":["android","webos"]}' https://build.phonegap.com/api/v1/apps/12/build
 
 Once the builds are queued, you will want to watch the results of `GET
-/api/v1/apps/:id` to see when each platform's status changes from
-`pending` (to `complete` or `error`).
+/api/v1/apps/:id` to check when each platform's status changes from
+`pending` to either `complete` or `error`.
 
-### POST https://build.phonegap.com/api/v1/apps/:id/build/:platform
+## POST https://build.phonegap.com/api/v1/apps/:id/build/:platform
 
-A simpler URL for the case of building a single platform:
+A simpler URL to build for a single platform:
 
         $ curl -u andrew.lunny@nitobi.com -X POST -d '' https://build.phonegap.com/api/v1/apps/12/build/android
 
-### POST https://build.phonegap.com/api/v1/apps/:id/collaborators
+## POST https://build.phonegap.com/api/v1/apps/:id/collaborators
 
 Add a collaborator to work with you on a given application. You must
-be the owner/admin of the app to do this.
+be the app's owner/admin to do so.
 
-#### Required parameters
+### Required parameters
 
-* __email__: The email address of your new collaborator
+* __email__: The email address of your new collaborator.
 
-* __role__: What level of access the new collaborator will have -
-  either `tester` (read-only access) or `dev` (read and write access)
+* __role__: The new collaborator's level of access: either `tester`
+  (read-only) or `dev` (read and write).
 
-If the user is on the system, a `201` (created) HTTP status code is
-returned, which lets you know that the user can now access your
-app. If she is not registered, a `202` (accepted) status is returned,
-and the collaboration is listed as pending.
+If the user is on the system, a `201` (created) HTTP status code
+results, which lets you know that the user can now access your app. If
+the user is not registered, a `202` (accepted) status results, and
+the collaboration is listed as `pending`.
 
-A JSON representation of the affected app is returned after the
-collaboration has been added:
+A JSON representation of the affected app returns after the
+collaboration is added:
 
         $ curl -u andrew.lunny@nitobi.com -d 'data={"email":"newguy@nitobi.com","role":"dev"}' https://build.phonegap.com/api/v1/apps/12/collaborators
         {
@@ -545,14 +538,14 @@ collaboration has been added:
             ...
         }
 
-### PUT https://build.phonegap.com/api/v1/apps/:id/collaborators/:id
+## PUT https://build.phonegap.com/api/v1/apps/:id/collaborators/:id
 
 Allows you to change the role for a particular collaborator on
-PhoneGap Build, to `dev` or `tester`.
+PhoneGap Build, either to `dev` or `tester`.
 
-If you are not the owner of an app, you will receive a `401`
-unauthorized response. You cannot change the email of a collaborator
-at present; trying to do so will return a `400` status:
+If you are not the owner of an app, a `401` unauthorized response
+results. You cannot change the email of a collaborator; attempts to do
+so return a `400` status:
 
         $ curl -u andrew.lunny@nitobi.com -d 'data={"role":"tester"}' -X PUT https://build.phonegap.com/api/v1/apps/12/collaborators/13
         {
@@ -589,15 +582,15 @@ at present; trying to do so will return a `400` status:
             "link":"/api/v1/apps/12/collaborators/13"
         }
 
-### POST https://build.phonegap.com/api/v1/keys/:platform
+## POST https://build.phonegap.com/api/v1/keys/:platform
 
 Add a signing key to your PhoneGap Build account. The `platform`
 parameter has to be specified in the URL, and different files are
 required depending on the platform you're targeting.
 
-#### iOS Signing Keys
+### iOS Signing Keys
 
-To build for iOS, we require:
+The following are required for iOS builds:
 
 * a `p12` certificate file
 * a `mobileprovision` file
@@ -621,13 +614,13 @@ A sample post would look like this:
             "locked":false
          }
 
-If you omit the `password` parameter, your key will be _locked_ after
-the upload completes. You won't be able to build with it until you
-unlock the key.
+If you omit the `password` parameter, your key is _locked_ after the
+upload completes. You won't be able to build with it until you unlock
+the key.
 
-#### Android Keys
+### Android Keys
 
-To sign your Android builds, we require:
+The following are required for Android builds:
 
 * a `keystore` file
 * the alias used for that keystore
@@ -639,7 +632,7 @@ Details on how to get your keystore file and the associated data are
 available in our [Android Code Signing](/docs/android-signing)
 documentation.
 
-A sample post would look like this:
+Here is a sample post:
 
         $ curl -u andrew.lunny@nitobi.com -F keystore=@android.keystore -F 'data={"title":"Android Key","alias":"release", "key_pw":"90123456","keystore_pw":"78901234"}' https://build.phonegap.com/api/v1/keys/android
         {
@@ -652,12 +645,12 @@ A sample post would look like this:
         }
 
 If you omit one or both of the `key_pw` and `keystore_pw` parameters,
-your key will be _locked_ after the upload. You won't be able to build
-with it until you unlock the key.
+your key is _locked_ after the upload. You won't be able to build with
+it until you unlock the key.
 
-#### BlackBerry Keys
+### BlackBerry Keys
 
-To sign your Blackberry builds, we require:
+The following are required for BlackBerry builds:
 
 * a `sigtool.csk` file
 * a `sigtool.db` file
@@ -667,7 +660,7 @@ To sign your Blackberry builds, we require:
 How to obtain the `sigtool` files is outlined in our [BlackBerry
 Keys](/docs/blackberry-keys) documentation.
 
-A sample post would look like this:
+Here is a sample post:
 
         $ curl -u andrew.lunny@nitobi.com -F db=@sigtool.db -F csk=@sigtool.csk -F 'data={"title":"My BB Key","password":"78901234"}' https://build.phonegap.com/api/v1/keys/blackberry
         {
@@ -678,25 +671,24 @@ A sample post would look like this:
             "locked":false
         }
 
-If you omit the `password` parameter, your key will be _locked_ after
-the upload completes. You won't be able to build with it until you
-unlock the key.
+If you omit the `password` parameter, your key is _locked_ after the
+upload completes. You won't be able to build with it until you unlock
+the key.
 
-### PUT https://build.phonegap.com/api/v1/keys/:platform/:id
+## PUT https://build.phonegap.com/api/v1/keys/:platform/:id
 
-Updating an existing signing key on PhoneGap Build - used to unlock a
+Updates an existing signing key on PhoneGap Build, used to unlock a
 signing key so it can be used for future builds. To unlock a key, you
-need to provide the appropriate credentials - a single password for
-iOS or BlackBerry, or two passwords (one for the key, one for the
-keystore) for Android.
+need to provide the appropriate credentials: a single password for iOS
+or BlackBerry, or two passwords for Android, one for the key, and one
+for the keystore.
 
-Please note that PhoneGap Build _does not_ verify the password of your
-keys - if the password is incorrect, you will see an error when you
-try to build with that key.
+__NOTE:__ PhoneGap Build _does not_ verify your key's password.  If
+incorrect, an error results when you try to build with that key.
 
-#### iOS Example
+* iOS example:
 
-        $ curl -u andrew.lunny@nitobi.com -d 'data={"password":"password1"}' -X PUT https://build.phonegap.com/api/v1/keys/ios/11
+         $ curl -u andrew.lunny@nitobi.com -d 'data={"password":"password1"}' -X PUT https://build.phonegap.com/api/v1/keys/ios/11
          {
             "title":"Developer Cert",
             "default":false,
@@ -708,7 +700,7 @@ try to build with that key.
             "locked":false
          }
 
-#### Android Example
+* Android example:
 
         $ curl -u andrew.lunny@nitobi.com -d 'data={"key_pw":"password1","keystore_pw":"password2"}' -X PUT https://build.phonegap.com/api/v1/keys/android/2
         {
@@ -720,7 +712,7 @@ try to build with that key.
             "locked":false
         }
 
-#### BlackBerry Example
+* BlackBerry example:
 
         $ curl -u andrew.lunny@nitobi.com -d 'data={"password":"password1"}' -X PUT https://build.phonegap.com/api/v1/keys/blackberry/2
         {
@@ -731,9 +723,9 @@ try to build with that key.
             "locked":false
         }
 
-### DELETE https://build.phonegap.com/api/v1/apps/:id
+## DELETE https://build.phonegap.com/api/v1/apps/:id
 
-Delete your application from PhoneGap Build - will return either a
+Delete your application from PhoneGap Build, returning either a
 `202` (accepted) status, or `404` (if the app cannot be found):
 
         $ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v1/apps/8
@@ -741,7 +733,7 @@ Delete your application from PhoneGap Build - will return either a
             "success":"app 8 deleted"
         }
 
-### DELETE https://build.phonegap.com/api/v1/apps/:id/collaborators/:id
+## DELETE https://build.phonegap.com/api/v1/apps/:id/collaborators/:id
 
 Remove a collaborator from a project that you own:
 
@@ -750,9 +742,9 @@ Remove a collaborator from a project that you own:
             "success":"foo@bar.com removed from app 9"
         }
 
-### DELETE https://build.phonegap.com/api/v1/keys/:platform/:id
+## DELETE https://build.phonegap.com/api/v1/keys/:platform/:id
 
-Delete a signing key from PhoneGap Build - will return either a `202`
+Delete a signing key from PhoneGap Build, returning either a `202`
 (accepted) status, or `404` (if the key cannot be found):
 
         $ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v1/keys/android/8
