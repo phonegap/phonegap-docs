@@ -20,7 +20,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # The PhoneGap Build API
 
-The Adobe$reg; PhoneGap&trade; Build API allows applications to use
+The Adobe&reg; PhoneGap&trade; Build API allows applications to use
 the PhoneGap Build web service to create, build, update and download
 PhoneGap apps. It is designed to easily integrate into IDEs, shell
 scripts, app builders, and anywhere else.

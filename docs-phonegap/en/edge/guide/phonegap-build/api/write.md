@@ -20,11 +20,9 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # The PhoneGap Build Write API
 
-This document is part of the Adobe$reg; PhoneGap&trade; Build API V1
-documentation; see also:
-
-* [API Overview](/docs/api)
-* [Read API](/docs/read_api)
+This section details write methods for version 1 of the API. See The
+PhoneGap Build API for an overview, or The PhoneGap Build Read API for
+read methods.
 
 All write APIs expect JSON-encoded content. Many also accept file
 uploads. Because of this, we expect API requests to have the content

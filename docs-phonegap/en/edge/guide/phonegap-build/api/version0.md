@@ -21,10 +21,9 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 # The PhoneGap Build API, Version 0
 
 Version 0 (v0) of the API is a preview release for the beta version of
-PhoneGap Build. Although we are keeping this release online for
-existing clients, it will not receive any further updates. If you are
-developing a new application to access PhoneGap Build, use [the latest
-version of the API (currently v1)](/docs/api).
+PhoneGap Build. Although available for existing clients, it will not
+receive any further updates. If you are developing a new application
+to access PhoneGap Build, see The PhoneGap Build API.
 
 ### Authentication
 
@@ -162,8 +161,7 @@ zip file to be sent.
 
 With a repo_url:
 
-        $ curl -u andrew.lunny@nitobi.com -d 'data={"title":"New App","repo":"http://github.com/alunny/phonegap-start.git"}' \
-  https://build.phonegap.com/api/v0/apps
+        $ curl -u andrew.lunny@nitobi.com -d 'data={"title":"New App","repo":"http://github.com/alunny/phonegap-start.git"}' https://build.phonegap.com/api/v0/apps
         {"created_at":"2010-11-29T21:13:26Z","title":"alunny's Amazing App",
         "updated_at":"2010-11-29T21:13:26Z","symbian_status":"pending",
         "repo_url":"http://github.com/alunny/phonegap-start.git",
@@ -175,8 +173,7 @@ With a repo_url:
 With a file (note that if you're using curl, you'll want the `-F`
 option, not `-d`):
 
-        $ curl -F file=@index.html -F 'data={"title":"Another App"}' -u andrew.lunny@nitobi.com \
-  https://build.phonegap.com/api/v0/apps
+        $ curl -F file=@index.html -F 'data={"title":"Another App"}' -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps
         {"created_at":"2010-11-29T21:52:32Z","title":"Another App",
         "updated_at":"2010-11-29T21:52:32Z","symbian_status":"pending",
         "repo_url":null,"blackberry_status":"pending","android_status":"pending",
@@ -235,8 +232,7 @@ returned. If there is an internal error, `500` is returned:
 
 Update the meta-data associated with your app:
 
-        $ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"title":"New Title"}' \
-  https://build.phonegap.com/api/v0/apps/56
+        $ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"title":"New Title"}' https://build.phonegap.com/api/v0/apps/56
         {"created_at":"2010-11-29T21:52:32Z","title":"New Title",
         "updated_at":"2010-11-29T22:37:44Z","symbian_status":"pending",
         "repo_url":null,"blackberry_status":"pending","android_status":"pending",
