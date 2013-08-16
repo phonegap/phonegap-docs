@@ -28,7 +28,7 @@ Create a new app.
   * __file__: A file is being uploaded with the app content
 
   * __remote_repo__: You have a remote repository with your app
-    content
+        content
 
 #### Optional parameters
 
@@ -78,57 +78,57 @@ to `file`, and include a zip file, a tar.gz file, or an index.html
 file in the multipart body of your post, with the parameter name
 `file`.
 
-<pre><strong>$ curl -F file=@/Users/alunny/index.html -u andrew.lunny@nitobi.com -F 'data={"title":"API V1 App","package":"com.alunny.apiv1","version":"0.1.0","create_method":"file"}' https://build.phonegap.com/api/v1/apps</strong></pre>
-    {
-        "keys":{
-            "ios":{
-                "title":"ios-key",
-                "default":true,
-                "id":2,
-                "link":"/api/v1/keys/ios/2"
-             },
-             "blackberry":null,
-             "android":{
-                "title":"release-key",
-                "default":true,
-                "id":2,
-                "link":"/api/v1/keys/android/2"
-             }
-        },
-        "download":{},
-        "title":"API V1 App",
-        "repo":null,
-        "collaborators":[
-            {
-                "person":"andrew.lunny@nitobi.com",
-                "role":"admin"
-            }
-        ],
-        "role":"admin",
-        "id":26486,
-        "icon":{
-            "filename":null,
-            "link":"/api/v1/apps/26486/icon"
-        },
-        "package":"com.alunny.apiv1",
-        "version":"0.1.0",
-        "description":null,
-        "debug":false,
-        "private":true,
-        "link":"/api/v1/apps/26486",
-        "status":{
-            "webos":"pending",
-            "ios":"pending",
-            "blackberry":"pending",
-            "android":"pending",
-            "symbian":"pending",
-            "winphone":"pending"
-        },
-        "error":{},
-        "phonegap_version":"2.9.0",
-        "hydrates":false,
-        "build_count":null
-    }
+        $ curl -F file=@/Users/alunny/index.html -u andrew.lunny@nitobi.com -F 'data={"title":"API V1 App","package":"com.alunny.apiv1","version":"0.1.0","create_method":"file"}' https://build.phonegap.com/api/v1/apps
+        {
+            "keys":{
+                "ios":{
+                    "title":"ios-key",
+                    "default":true,
+                    "id":2,
+                    "link":"/api/v1/keys/ios/2"
+                 },
+                 "blackberry":null,
+                 "android":{
+                    "title":"release-key",
+                    "default":true,
+                    "id":2,
+                    "link":"/api/v1/keys/android/2"
+                 }
+            },
+            "download":{},
+            "title":"API V1 App",
+            "repo":null,
+            "collaborators":[
+                {
+                    "person":"andrew.lunny@nitobi.com",
+                    "role":"admin"
+                }
+            ],
+            "role":"admin",
+            "id":26486,
+            "icon":{
+                "filename":null,
+                "link":"/api/v1/apps/26486/icon"
+            },
+            "package":"com.alunny.apiv1",
+            "version":"0.1.0",
+            "description":null,
+            "debug":false,
+            "private":true,
+            "link":"/api/v1/apps/26486",
+            "status":{
+                "webos":"pending",
+                "ios":"pending",
+                "blackberry":"pending",
+                "android":"pending",
+                "symbian":"pending",
+                "winphone":"pending"
+            },
+            "error":{},
+            "phonegap_version":"2.9.0",
+            "hydrates":false,
+            "build_count":null
+        }
 
 #### Remote-repository backed applications
 
@@ -140,65 +140,65 @@ The URL has to be publicly accessible: PhoneGap Build will not
 authenticate against your repository. If you wish to keep your code
 private, use one of the other `create_method` options.
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -d 'data={"title":"API V1 App","repo":"https://github.com/alunny/phonegap-start.git","create_method":"remote_repo"}' https://build.phonegap.com/api/v1/apps</strong></pre>
-    {
-        "keys":{
-            "ios":{
-                "title":"ios-key",
-                "default":true,
-                "id":2,
-                "link":"/api/v1/keys/ios/2"
-             },
-             "blackberry":null,
-             "android":{
-                "title":"release-key",
-                "default":true,
-                "id":2,
-                "link":"/api/v1/keys/android/2"
-             }
-        },
-        "download":{},
-        "title":"alunnys Amazing App",
-        "repo":"https://github.com/alunny/phonegap-start.git",
-        "collaborators":[
-            {
-                "person":"andrew.lunny@nitobi.com",
-                "role":"admin"
-            }
-        ],
-        "role":"admin",
-        "id":26488,
-        "icon":{
-            "filename":"blurry",
-            "link":"/api/v1/apps/26488/icon"
-        },
-        "package":null,
-        "version":null,
-        "description":null,
-        "debug":false,
-        "private":true,
-        "link":"/api/v1/apps/26488,
-        "status":{
-            "webos":"pending",
-            "ios":"pending",
-            "blackberry":"pending",
-            "android":"pending",
-            "symbian":"pending"
-        },
-        "error":{},
-        "phonegap_version":"2.9.0",
-        "hydrates":false,
-        "build_count":null
-    }
+        $ curl -u andrew.lunny@nitobi.com -d 'data={"title":"API V1 App","repo":"https://github.com/alunny/phonegap-start.git","create_method":"remote_repo"}' https://build.phonegap.com/api/v1/apps
+        {
+            "keys":{
+                "ios":{
+                    "title":"ios-key",
+                    "default":true,
+                    "id":2,
+                    "link":"/api/v1/keys/ios/2"
+                 },
+                 "blackberry":null,
+                 "android":{
+                    "title":"release-key",
+                    "default":true,
+                    "id":2,
+                    "link":"/api/v1/keys/android/2"
+                 }
+            },
+            "download":{},
+            "title":"alunnys Amazing App",
+            "repo":"https://github.com/alunny/phonegap-start.git",
+            "collaborators":[
+                {
+                    "person":"andrew.lunny@nitobi.com",
+                    "role":"admin"
+                }
+            ],
+            "role":"admin",
+            "id":26488,
+            "icon":{
+                "filename":"blurry",
+                "link":"/api/v1/apps/26488/icon"
+            },
+            "package":null,
+            "version":null,
+            "description":null,
+            "debug":false,
+            "private":true,
+            "link":"/api/v1/apps/26488,
+            "status":{
+                "webos":"pending",
+                "ios":"pending",
+                "blackberry":"pending",
+                "android":"pending",
+                "symbian":"pending"
+            },
+            "error":{},
+            "phonegap_version":"2.9.0",
+            "hydrates":false,
+            "build_count":null
+        }
 
 If you provide a repository URL that requires authentication, the
 response will have a `400` HTTP status code and the error message in
 the body of the response:
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -d 'data={"title":"API V1 App","repo":"https://alunny@github.com/alunny/phonegap-start.git","create_method":"remote_repo"}' https://build.phonegap.com/api/v1/apps</strong></pre>
-    {
-        "error":"Private repository URLs not supported - try removing &quot;alunny@&quot;"
-    }
+        $ curl -u andrew.lunny@nitobi.com -d 'data={"title":"API V1 App","repo":"https://alunny@github.com/alunny/phonegap-start.git","create_method":"remote_repo"}' https://build.phonegap.com/api/v1/apps
+        {
+            "error":"Private repository URLs not supported - try removing &quot;alunny@&quot;"
+        }
 
 #### Signing keys
 
@@ -214,12 +214,12 @@ build.
 
 The value for each platform can be the integer id, such as:
 
-    "keys":{"ios":123}
+        "keys":{"ios":123}
 
 Or an object, containing the `password` field (or for Android, the
 `key_pw` and `keystore_pw` fields), such as:
 
-    "keys":{"ios":{"id":123,"password":"password1"}
+        "keys":{"ios":{"id":123,"password":"password1"}
 
 Using the second form allows you to unlock the given key, without
 making a separate PUT request to
@@ -227,57 +227,57 @@ making a separate PUT request to
 
 Here is a sample post (using the first form):
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -d 'data={"title":"Signing Keys","repo":"https://github.com/alunny/phonegap-start.git","create_method":"remote_repo","keys":{"ios":123,"android":567}}' https://build.phonegap.com/api/v1/apps</strong></pre>
-    {
-        "keys":{
-            "ios":{
-                "title":"new iOS key",
-                "default":false,
-                "id":123,
-                "link":"/api/v1/keys/ios/123"
-             },
-             "blackberry":null,
-             "android":{
-                "title":"some android key",
-                "default":false,
-                "id":567,
-                "link":"/api/v1/keys/android/567"
-             }
-        },
-        "download":{},
-        "title":"Remote Application",
-        "repo":"https://github.com/phonegap/phonegap-start.git",
-        "collaborators":[
-            {
-                "person":"andrew.lunny@nitobi.com",
-                "role":"admin"
-            }
-        ],
-        "role":"admin",
-        "id":36500,
-        "icon":{
-            "filename":"null",
-            "link":"/api/v1/apps/36500/icon"
-        },
-        "package":null,
-        "version":null,
-        "description":null,
-        "debug":false,
-        "private":true,
-        "link":"/api/v1/apps/36500,
-        "status":{
-            "webos":"pending",
-            "ios":"pending",
-            "blackberry":"pending",
-            "android":"pending",
-            "symbian":"pending",
-            "winphone":"pending"
-        },
-        "error":{},
-        "phonegap_version":"2.9.0",
-        "hydrates":false,
-        "build_count":null
-    }
+        $ curl -u andrew.lunny@nitobi.com -d 'data={"title":"Signing Keys","repo":"https://github.com/alunny/phonegap-start.git","create_method":"remote_repo","keys":{"ios":123,"android":567}}' https://build.phonegap.com/api/v1/apps
+        {
+            "keys":{
+                "ios":{
+                    "title":"new iOS key",
+                    "default":false,
+                    "id":123,
+                    "link":"/api/v1/keys/ios/123"
+                 },
+                 "blackberry":null,
+                 "android":{
+                    "title":"some android key",
+                    "default":false,
+                    "id":567,
+                    "link":"/api/v1/keys/android/567"
+                 }
+            },
+            "download":{},
+            "title":"Remote Application",
+            "repo":"https://github.com/phonegap/phonegap-start.git",
+            "collaborators":[
+                {
+                    "person":"andrew.lunny@nitobi.com",
+                    "role":"admin"
+                }
+            ],
+            "role":"admin",
+            "id":36500,
+            "icon":{
+                "filename":"null",
+                "link":"/api/v1/apps/36500/icon"
+            },
+            "package":null,
+            "version":null,
+            "description":null,
+            "debug":false,
+            "private":true,
+            "link":"/api/v1/apps/36500,
+            "status":{
+                "webos":"pending",
+                "ios":"pending",
+                "blackberry":"pending",
+                "android":"pending",
+                "symbian":"pending",
+                "winphone":"pending"
+            },
+            "error":{},
+            "phonegap_version":"2.9.0",
+            "hydrates":false,
+            "build_count":null
+        }
 
 ### PUT https://build.phonegap.com/api/v1/apps/:id
 
@@ -306,46 +306,46 @@ Updating the metadata involves sending a JSON object as the parameter
 
 Here is a simple example: updating an app's version:
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"version":"0.2.0"}' https://build.phonegap.com/api/v1/apps/8</strong></pre>
-    {
-        "id":8,
-        "version":"0.2.0",
-        "keys":{
-            "ios":null,
-            "blackberry":null,
-            "android":null
-        },
-        "repo":null,
-        "download":{},
-        "collaborators":[
-            {
-                "person":"andrew.lunny@nitobi.com",
-                "role":"admin"
-            }
-        ],
-        "title":"App From API",
-        "role":"admin",
-        "icon":{
-            "filename":null,
-            "link":"/api/v1/apps/8/icon"
-        },
-        "package":null,
-        "link":"/api/v1/apps/8",
-        "debug":false,
-        "private":true,
-        "description":null,
-        "status":{
-            "webos":"pending",
-            "ios":null,
-            "blackberry":"pending",
-            "android":"pending",
-            "symbian":"pending"
-        },
-        "error":{},
-        "phonegap_version":"2.9.0",
-        "hydrates":false,
-        "build_count":12
-    }
+        $ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"version":"0.2.0"}' https://build.phonegap.com/api/v1/apps/8
+        {
+            "id":8,
+            "version":"0.2.0",
+            "keys":{
+                "ios":null,
+                "blackberry":null,
+                "android":null
+            },
+            "repo":null,
+            "download":{},
+            "collaborators":[
+                {
+                    "person":"andrew.lunny@nitobi.com",
+                    "role":"admin"
+                }
+            ],
+            "title":"App From API",
+            "role":"admin",
+            "icon":{
+                "filename":null,
+                "link":"/api/v1/apps/8/icon"
+            },
+            "package":null,
+            "link":"/api/v1/apps/8",
+            "debug":false,
+            "private":true,
+            "description":null,
+            "status":{
+                "webos":"pending",
+                "ios":null,
+                "blackberry":"pending",
+                "android":"pending",
+                "symbian":"pending"
+            },
+            "error":{},
+            "phonegap_version":"2.9.0",
+            "hydrates":false,
+            "build_count":12
+        }
 
 By default, the app will be built for all supported platforms once the
 metadata has been changed.
@@ -360,62 +360,58 @@ to use.
 Here is a sample post selecting a new Android key for an app and
 unlocking it:
 
-<pre><strong>
-$ curl -u andrew.lunny@nitobi.com -X PUT
--d 'data={"keys":{"android":
-{"id":457,"key_pw":"password1","keystore_pw":"password2"}}'
-https://build.phonegap.com/api/v1/apps/36500</strong></pre>
-    {
-        "keys":{
-            "ios":{
-                "title":"new iOS key",
-                "default":false,
-                "id":123,
-                "link":"/api/v1/keys/ios/123"
-             },
-             "blackberry":null,
-             "android":{
-                "title":"changed android key",
-                "default":false,
-                "id":457,
-                "link":"/api/v1/keys/android/457"
-             }
-        },
-        "download":{},
-        "title":"Remote Application",
-        "repo":"https://github.com/phonegap/phonegap-start.git",
-        "collaborators":[
-            {
-                "person":"andrew.lunny@nitobi.com",
-                "role":"admin"
-            }
-        ],
-        "role":"admin",
-        "id":36500,
-        "icon":{
-            "filename":"null",
-            "link":"/api/v1/apps/36500/icon"
-        },
-        "package":null,
-        "version":null,
-        "description":null,
-        "debug":false,
-        "private":true,
-        "link":"/api/v1/apps/36500,
-        "status":{
-            "webos":"pending",
-            "ios":"pending",
-            "blackberry":"pending",
-            "android":"pending",
-            "symbian":"pending",
-            "winphone":"pending"
-        },
-        "error":{},
-        "phonegap_version":"2.9.0",
-        "hydrates":false,
-        "build_count":null
-    }
+        $ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"keys":{"android": {"id":457,"key_pw":"password1","keystore_pw":"password2"}}' https://build.phonegap.com/api/v1/apps/36500
 
+        {
+            "keys":{
+                "ios":{
+                    "title":"new iOS key",
+                    "default":false,
+                    "id":123,
+                    "link":"/api/v1/keys/ios/123"
+                 },
+                 "blackberry":null,
+                 "android":{
+                    "title":"changed android key",
+                    "default":false,
+                    "id":457,
+                    "link":"/api/v1/keys/android/457"
+                 }
+            },
+            "download":{},
+            "title":"Remote Application",
+            "repo":"https://github.com/phonegap/phonegap-start.git",
+            "collaborators":[
+                {
+                    "person":"andrew.lunny@nitobi.com",
+                    "role":"admin"
+                }
+            ],
+            "role":"admin",
+            "id":36500,
+            "icon":{
+                "filename":"null",
+                "link":"/api/v1/apps/36500/icon"
+            },
+            "package":null,
+            "version":null,
+            "description":null,
+            "debug":false,
+            "private":true,
+            "link":"/api/v1/apps/36500,
+            "status":{
+                "webos":"pending",
+                "ios":"pending",
+                "blackberry":"pending",
+                "android":"pending",
+                "symbian":"pending",
+                "winphone":"pending"
+            },
+            "error":{},
+            "phonegap_version":"2.9.0",
+            "hydrates":false,
+            "build_count":null
+        }
 
 #### Updating a file-based application
 
@@ -423,14 +419,14 @@ If the application has been created from a file upload, you can
 include a new `index.html`, zip file, or tar.gz file as the `file`
 parameter in your request to update the contents.
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -X PUT -F file=@/Users/alunny/new/index.html https://build.phonegap.com/api/v1/apps/8</strong></pre>
+        $ curl -u andrew.lunny@nitobi.com -X PUT -F file=@/Users/alunny/new/index.html https://build.phonegap.com/api/v1/apps/8
 
 #### Updating a repo-based application
 
 To update an application from a remote repository, simply add the
 `pull` field to your `data` hash, and set it to `true`:
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"pull":"true"}' https://build.phonegap.com/api/v1/apps/8</strong></pre>
+        $ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"pull":"true"}' https://build.phonegap.com/api/v1/apps/8
 
 PhoneGap Build will then attempt to download the new code from your
 remote repository, and rebuild your app for all supported platforms.
@@ -448,7 +444,7 @@ files in your application package and specify their use in your
 The response will have a `201` created status, and the application
 will be queued for building.
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -f icon=@icon.png https://build.phonegap.com/api/v1/apps/8/icon</strong></pre>
+        $ curl -u andrew.lunny@nitobi.com -f icon=@icon.png https://build.phonegap.com/api/v1/apps/8/icon
 
 ### POST https://build.phonegap.com/api/v1/apps/:id/build
 
@@ -459,12 +455,12 @@ The builds will use the most current app contents, as well as the
 selected signing keys. The response will have a `202` (accepted)
 status.
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -X POST -d '' https://build.phonegap.com/api/v1/apps/12/build</strong></pre>
+        $ curl -u andrew.lunny@nitobi.com -X POST -d '' https://build.phonegap.com/api/v1/apps/12/build
 
 To choose which platforms to build, include those as a JSON encoded
 parameter in your post:
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -X POST -d 'data={"platforms":["android","webos"]}' https://build.phonegap.com/api/v1/apps/12/build</strong></pre>
+        $ curl -u andrew.lunny@nitobi.com -X POST -d 'data={"platforms":["android","webos"]}' https://build.phonegap.com/api/v1/apps/12/build
 
 Once the builds are queued, you will want to watch the results of `GET
 /api/v1/apps/:id` to see when each platform's status changes from
@@ -474,7 +470,7 @@ Once the builds are queued, you will want to watch the results of `GET
 
 A simpler URL for the case of building a single platform:
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -X POST -d '' https://build.phonegap.com/api/v1/apps/12/build/android</strong></pre>
+        $ curl -u andrew.lunny@nitobi.com -X POST -d '' https://build.phonegap.com/api/v1/apps/12/build/android
 
 ### POST https://build.phonegap.com/api/v1/apps/:id/collaborators
 
@@ -496,40 +492,40 @@ and the collaboration is listed as pending.
 A JSON representation of the affected app is returned after the
 collaboration has been added.
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -d 'data={"email":"newguy@nitobi.com","role":"dev"}' https://build.phonegap.com/api/v1/apps/12/collaborators</strong></pre>
-    {
-        "id":12,
-        "title":"App With Collaborators",
-        "collaborators":{
-            "link":"/api/v1/apps/9/collaborators",
-            "pending":[
-                {
-                    "person":"newguy@nitobi.com",
-                    "role":"developer"
-                },
-                {
-                    "person":"nobody@nitobi.com",
-                    "role":"tester"
-                }
-            ],
-            "active":[
-                {
-                    "person":"admin@nitobi.com",
-                    "role":"admin",
-                    "id":9,
-                    "link":"/api/v1/apps/9/collaborators/9"
-                },
-                {
-                    "person":"foo@bar.com",
-                    "role":"developer",
-                    "id":13,
-                    "link":"/api/v1/apps/9/collaborators/13"
-                }
-            ]
-        },
-        "package":"app.with.collaborators",
-        ...
-    }
+        $ curl -u andrew.lunny@nitobi.com -d 'data={"email":"newguy@nitobi.com","role":"dev"}' https://build.phonegap.com/api/v1/apps/12/collaborators
+        {
+            "id":12,
+            "title":"App With Collaborators",
+            "collaborators":{
+                "link":"/api/v1/apps/9/collaborators",
+                "pending":[
+                    {
+                        "person":"newguy@nitobi.com",
+                        "role":"developer"
+                    },
+                    {
+                        "person":"nobody@nitobi.com",
+                        "role":"tester"
+                    }
+                ],
+                "active":[
+                    {
+                        "person":"admin@nitobi.com",
+                        "role":"admin",
+                        "id":9,
+                        "link":"/api/v1/apps/9/collaborators/9"
+                    },
+                    {
+                        "person":"foo@bar.com",
+                        "role":"developer",
+                        "id":13,
+                        "link":"/api/v1/apps/9/collaborators/13"
+                    }
+                ]
+            },
+            "package":"app.with.collaborators",
+            ...
+        }
 
 ### PUT https://build.phonegap.com/api/v1/apps/:id/collaborators/:id
 
@@ -540,40 +536,40 @@ If you are not the owner of an app, you will receive a `401`
 unauthorized response. You cannot change the email of a collaborator
 at present; trying to do so will return a `400` status.
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -d 'data={"role":"tester"}' -X PUT https://build.phonegap.com/api/v1/apps/12/collaborators/13</strong></pre>
-    {
-        "id":13,
-        "person":"foo@bar.com",
-        "role":"tester",
-        "app":{
-            "id":12,
-            "download":{},
-            "title":"My App",
-            "role":"admin",
-            "icon":{
-                "filename":null,
-                "link":"/api/v1/apps/12/icon"
+        $ curl -u andrew.lunny@nitobi.com -d 'data={"role":"tester"}' -X PUT https://build.phonegap.com/api/v1/apps/12/collaborators/13
+        {
+            "id":13,
+            "person":"foo@bar.com",
+            "role":"tester",
+            "app":{
+                "id":12,
+                "download":{},
+                "title":"My App",
+                "role":"admin",
+                "icon":{
+                    "filename":null,
+                    "link":"/api/v1/apps/12/icon"
+                },
+                "version":null,
+                "package":null,
+                "description":null,
+                "debug":null,
+                "link":"/api/v1/apps/12",
+                "status":{
+                  "ios":"pending",
+                  "webos":"pending",
+                  "blackberry":"pending",
+                  "android":"pending",
+                  "symbian":"pending",
+                  "winphone":"pending"
+                },
+                "phonegap_version":"2.9.0",
+                "hydrates":false,
+                "build_count":null,
+                "error":{}
             },
-            "version":null,
-            "package":null,
-            "description":null,
-            "debug":null,
-            "link":"/api/v1/apps/12",
-            "status":{
-              "ios":"pending",
-              "webos":"pending",
-              "blackberry":"pending",
-              "android":"pending",
-              "symbian":"pending",
-              "winphone":"pending"
-            },
-            "phonegap_version":"2.9.0",
-            "hydrates":false,
-            "build_count":null,
-            "error":{}
-        },
-        "link":"/api/v1/apps/12/collaborators/13"
-    }
+            "link":"/api/v1/apps/12/collaborators/13"
+        }
 
 ### POST https://build.phonegap.com/api/v1/keys/:platform
 
@@ -595,21 +591,17 @@ Signing](/docs/ios-builds) documentation.
 
 A sample post would look like this:
 
-<pre><strong>
-$ curl -u andrew.lunny@nitobi.com
--F cert=@My_Certificate.p12 -F profile=@MyDevices.mobileprovision
--F 'data={"title":"Developer Cert","password":"12345678"}'
-https://build.phonegap.com/api/v1/keys/ios</strong></pre>
-     {
-        "title":"Developer Cert",
-        "default":false,
-        "id":11,
-        "link":"/api/v1/keys/ios/11",
-        "provision":"meandmyteam.mobileprovision",
-        "cert_name":"My_Certificate.p12",
-        "role":"developer",
-        "locked":false
-     }
+        $ curl -u andrew.lunny@nitobi.com -F cert=@My_Certificate.p12 -F profile=@MyDevices.mobileprovision -F 'data={"title":"Developer Cert","password":"12345678"}' https://build.phonegap.com/api/v1/keys/ios
+         {
+            "title":"Developer Cert",
+            "default":false,
+            "id":11,
+            "link":"/api/v1/keys/ios/11",
+            "provision":"meandmyteam.mobileprovision",
+            "cert_name":"My_Certificate.p12",
+            "role":"developer",
+            "locked":false
+         }
 
 If you omit the `password` parameter, your key will be _locked_ after
 the upload completes. You won't be able to build with it until you
@@ -631,20 +623,15 @@ documentation.
 
 A sample post would look like this:
 
-<pre><strong>
-$ curl -u andrew.lunny@nitobi.com
--F keystore=@android.keystore
--F 'data={"title":"Android Key","alias":"release",
-"key_pw":"90123456","keystore_pw":"78901234"}'
-https://build.phonegap.com/api/v1/keys/android</strong></pre>
-    {
-        "title":"Android Key",
-        "default":false,
-        "id":2,
-        "alias":"release",
-        "link":"/api/v1/keys/android/2",
-        "locked":false
-    }
+        $ curl -u andrew.lunny@nitobi.com -F keystore=@android.keystore -F 'data={"title":"Android Key","alias":"release", "key_pw":"90123456","keystore_pw":"78901234"}' https://build.phonegap.com/api/v1/keys/android
+        {
+            "title":"Android Key",
+            "default":false,
+            "id":2,
+            "alias":"release",
+            "link":"/api/v1/keys/android/2",
+            "locked":false
+        }
 
 If you omit one or both of the `key_pw` and `keystore_pw` parameters,
 your key will be _locked_ after the upload. You won't be able to build
@@ -664,18 +651,14 @@ Keys](/docs/blackberry-keys) documentation.
 
 A sample post would look like this:
 
-<pre><strong>
-$ curl -u andrew.lunny@nitobi.com
--F db=@sigtool.db -F csk=@sigtool.csk
--F 'data={"title":"My BB Key","password":"78901234"}'
-https://build.phonegap.com/api/v1/keys/blackberry</strong></pre>
-    {
-        "title":"My BB Key",
-        "default":false,
-        "id":2,
-        "link":"/api/v1/keys/blackberry/2",
-        "locked":false
-    }
+        $ curl -u andrew.lunny@nitobi.com -F db=@sigtool.db -F csk=@sigtool.csk -F 'data={"title":"My BB Key","password":"78901234"}' https://build.phonegap.com/api/v1/keys/blackberry
+        {
+            "title":"My BB Key",
+            "default":false,
+            "id":2,
+            "link":"/api/v1/keys/blackberry/2",
+            "locked":false
+        }
 
 If you omit the `password` parameter, your key will be _locked_ after
 the upload completes. You won't be able to build with it until you
@@ -695,79 +678,67 @@ try to build with that key.
 
 #### iOS Example
 
-<pre><strong>
-$ curl -u andrew.lunny@nitobi.com 
--d 'data={"password":"password1"}'
--X PUT
-https://build.phonegap.com/api/v1/keys/ios/11</strong></pre>
-     {
-        "title":"Developer Cert",
-        "default":false,
-        "id":11,
-        "link":"/api/v1/keys/ios/11",
-        "provision":"meandmyteam.mobileprovision",
-        "cert_name":"My_Certificate.p12",
-        "role":"developer",
-        "locked":false
-     }
+        $ curl -u andrew.lunny@nitobi.com -d 'data={"password":"password1"}' -X PUT https://build.phonegap.com/api/v1/keys/ios/11
+         {
+            "title":"Developer Cert",
+            "default":false,
+            "id":11,
+            "link":"/api/v1/keys/ios/11",
+            "provision":"meandmyteam.mobileprovision",
+            "cert_name":"My_Certificate.p12",
+            "role":"developer",
+            "locked":false
+         }
 
 #### Android Example
 
-<pre><strong>
-$ curl -u andrew.lunny@nitobi.com 
--d 'data={"key_pw":"password1","keystore_pw":"password2"}'
--X PUT
-https://build.phonegap.com/api/v1/keys/android/2</strong></pre>
-    {
-        "title":"Android Key",
-        "default":false,
-        "id":2,
-        "alias":"release",
-        "link":"/api/v1/keys/android/2",
-        "locked":false
-    }
+        $ curl -u andrew.lunny@nitobi.com -d 'data={"key_pw":"password1","keystore_pw":"password2"}' -X PUT https://build.phonegap.com/api/v1/keys/android/2
+        {
+            "title":"Android Key",
+            "default":false,
+            "id":2,
+            "alias":"release",
+            "link":"/api/v1/keys/android/2",
+            "locked":false
+        }
 
 #### BlackBerry Example
 
-<pre><strong>
-$ curl -u andrew.lunny@nitobi.com 
--d 'data={"password":"password1"}'
--X PUT
-https://build.phonegap.com/api/v1/keys/blackberry/2</strong></pre>
-    {
-        "title":"My BB Key",
-        "default":false,
-        "id":2,
-        "link":"/api/v1/keys/blackberry/2",
-        "locked":false
-    }
+        $ curl -u andrew.lunny@nitobi.com -d 'data={"password":"password1"}' -X PUT https://build.phonegap.com/api/v1/keys/blackberry/2
+        {
+            "title":"My BB Key",
+            "default":false,
+            "id":2,
+            "link":"/api/v1/keys/blackberry/2",
+            "locked":false
+        }
 
 ### DELETE https://build.phonegap.com/api/v1/apps/:id
 
 Delete your application from PhoneGap Build - will return either a
 `202` (accepted) status, or `404` (if the app cannot be found).
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v1/apps/8</strong></pre>
-    {
-        "success":"app 8 deleted"
-    }
+        $ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v1/apps/8
+        {
+            "success":"app 8 deleted"
+        }
 
 ### DELETE https://build.phonegap.com/api/v1/apps/:id/collaborators/:id
 
 Remove a collaborator from a project that you own.
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v1/apps/12/collaborators/13</strong></pre>
-    {
-        "success":"foo@bar.com removed from app 9"
-    }
+        $ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v1/apps/12/collaborators/13
+        {
+            "success":"foo@bar.com removed from app 9"
+        }
 
 ### DELETE https://build.phonegap.com/api/v1/keys/:platform/:id
 
 Delete a signing key from PhoneGap Build - will return either a `202`
 (accepted) status, or `404` (if the key cannot be found).
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v1/keys/android/8</strong></pre>
-    {
-        "success":"android key 8 deleted"
-    }
+        $ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v1/keys/android/8
+        {
+            "success":"android key 8 deleted"
+        }
 

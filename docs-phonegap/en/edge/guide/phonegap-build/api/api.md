@@ -22,30 +22,30 @@ over HTTPS, or token authentication.
 When using basic authentication, use your PhoneGap Build credentials
 (username and password) to authenticate each request, in this way:
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/me</strong></pre>
-    {
-        "created_at":"2010-10-12T19:10:16Z",
-        "updated_at":"2010-11-29T19:58:00Z",
-        "username":"alunny",
-        "email":"andrew.lunny@nitobi.com"
-    }
+        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/me
+        {
+            "created_at":"2010-10-12T19:10:16Z",
+            "updated_at":"2010-11-29T19:58:00Z",
+            "username":"alunny",
+            "email":"andrew.lunny@nitobi.com"
+        }
 
 To use token authentication, use basic auth to post to `/token` with
 your token request. You will receive a token as a response.
 
-<pre><strong>$ curl -u andrew.lunny@nitobi.com -X POST -d "" https://build.phonegap.com/token</pre></strong>
-    {
-        "token":"ASTRINGTOKEN"
-    }
+        $ curl -u andrew.lunny@nitobi.com -X POST -d "" https://build.phonegap.com/token</pre></strong>
+        {
+            "token":"ASTRINGTOKEN"
+        }
 
 You can then pass this token as a parameter for any call that you
 make:
 
-<pre><strong>$ curl https://build.phonegap.com/api/v1/me?auth_token=ASTRINGTOKEN</strong></pre>
-    {
-        "username":"alunny",
-        "email":"andrew.lunny@nitobi.com"
-    }
+        $ curl https://build.phonegap.com/api/v1/me?auth_token=ASTRINGTOKEN
+        {
+            "username":"alunny",
+            "email":"andrew.lunny@nitobi.com"
+        }
 
 Both forms of authentication are supported. All unauthenticated
 requests return a `401` (unauthorized) status code.
@@ -70,15 +70,15 @@ All successful requests return either a JSON-encoded string or a
 binary file. All failing requests return a JSON-encoded string of the
 following form (with an appropriate status code):
 
-    {
-        "error":"some error message"
-    }
+        {
+            "error":"some error message"
+        }
 
 When using the API, check the status code returned; if it's not 200,
 check the error field on the parsed response, a la:
 
-    if (res.status != 200)
-        console.log(JSON.parse(res.body).error)
+        if (res.status != 200)
+            console.log(JSON.parse(res.body).error)
 
 As is standard in HTTP, a 4xx status indicates an error with the
 request, while a 5xx status indicates an error on our servers. Please
@@ -91,11 +91,11 @@ JSONP access is available for PhoneGap Build developers: just add a
 `callback` parameter to your requests, and the JSONP response body
 will be wrapped in that function:
 
-<pre><strong>$ curl https://build.phonegap.com/api/v1/me?auth_token=ASTRINGTOKEN&callback=exec</strong></pre>
-    exec({
-        "username":"alunny",
-        "email":"andrew.lunny@nitobi.com"
-    })
+        $ curl https://build.phonegap.com/api/v1/me?auth_token=ASTRINGTOKEN&callback=exec
+        exec({
+            "username":"alunny",
+            "email":"andrew.lunny@nitobi.com"
+        })
 
 This allows you to access the PhoneGap Build API through regular old
 `<script>` tags. [More information about
