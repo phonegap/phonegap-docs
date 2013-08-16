@@ -258,7 +258,9 @@ XREF -->
 __NOTE:__ PhoneGap&nbsp;Build does _not_ allow you to compile custom
 plugin interfaces to native components, as discussed in the Plugin
 Development Guide. The CLI-based workflow described in The
-Command-line Interface supports this feature.
+Command-line Interface supports this feature. PhoneGap&nbsp;Build also
+does not support the CLI's _merges_ feature that allows you to target
+files for specific platforms.
 
 <!--
 
