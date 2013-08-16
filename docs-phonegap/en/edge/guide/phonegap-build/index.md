@@ -25,7 +25,8 @@ PhoneGap apps for you remotely, making downloadable packages available
 in a simple web interface at
 [build.phonegap.com](http://build.phonegap.com). If you use
 PhoneGap&nbsp;Build, you don't need to install and maintain local SDK
-tools, and can expect to update projects smoothly.
+tools for several mobile platforms, and can expect to update projects
+smoothly.
 
 PhoneGap&nbsp;Build offers three basic development options:
 
@@ -38,7 +39,8 @@ PhoneGap&nbsp;Build offers three basic development options:
 
 * You can link the `phonegap` command-line tool to your
   PhoneGap&nbsp;Build account. Its `remote` option allows you to
-  compile projects remotely in a single command.
+  compile projects on the PhoneGap&nbsp;Build site in a single
+  command.
 
 This guide provides an overview of the first two options, with basic
 details on how to set up an account, link it to a code repository,
@@ -47,10 +49,8 @@ them wirelessly onto a device.  Whichever option you choose, the CLI
 offers the easiest way to set up the project's required top-level
 `www` project directory, with its `config.xml` package specification
 and its `index.html` home page.  See The Command-line Interface for
-information on how to use the CLI to generate a new project.  See the
-Build Applications Remotely section for details on how to use the
-CLI's `remote` command to compile your local project in
-PhoneGap&nbsp;Build.
+information on how to use the CLI to generate a new project, and for
+details on how to build local projects remotely from the command line.
 
 <!-- Q: is CLI's `login` command required once per project? -->
 
@@ -106,13 +106,14 @@ top-level `www` directory, then send an archive:
 
 Once you upload the `hello.zip` archive, the site displays metadata
 from the app's `config.xml` file, specified by the `<name>`,
-`<description>`, and `<icon>` elements.  At this point, it is __Ready
-to Build__:
+`<description>`, and `<icon>` elements, and the `<widget version=""/>`
+attribute.  At this point, it is __Ready to Build__:
 
 ![](img/guide/phonegap-build/pgbuild_listapp.png)
 
-Once you build the app, the site compiles each platform and makes
-downloads available once they're done:
+Once you build the app, the site compiles each platform, which may
+take a couple of minutes, and makes downloads available once they're
+done:
 
 ![](img/guide/phonegap-build/pgbuild_builtapp.png)
 
@@ -129,6 +130,16 @@ Note that you may have to change device settings to allow you to
 install apps in this manner, outside of the customary app-store
 interface.
 
+If you replace the `icon.png` file and make a few changes to the app's
+metadata in the `config.xml`, they're reflected on the site the next
+time you upload the code:
+
+![](img/guide/phonegap-build/pgbuild_modapp.png)
+
+Those changes also reflect when you re-install onto a device:
+
+![](img/guide/phonegap-build/pgbuild_onAndroidMod.png)
+
 As you can see, the interface is very easy to use. After you have
 built an app, clicking on the name or icon allows you to rebuild
 each platform independently:
@@ -138,8 +149,6 @@ each platform independently:
 To delete an app from the PhoneGap&nbsp;Build site after initially
 building it, scroll to the bottom of the __Settings__ tab, which
 otherwise displays the app's basic metadata.
-
-See Collaborating and Testing for information 
 
 ## Building from a Repository
 
@@ -249,7 +258,9 @@ XREF -->
 __NOTE:__ PhoneGap&nbsp;Build does _not_ allow you to compile custom
 plugin interfaces to native components, as discussed in the Plugin
 Development Guide. The CLI-based workflow described in The
-Command-line Interface supports this feature.
+Command-line Interface supports this feature. PhoneGap&nbsp;Build also
+does not support the CLI's _merges_ feature that allows you to target
+files for specific platforms.
 
 <!--
 

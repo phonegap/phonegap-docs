@@ -42,17 +42,16 @@ Build service to compile apps for the following platforms remotely:
 * WebOS
 * Symbian
 
- In contrast to
-PhoneGap Build, local builds support BlackBerry 10.  The WebOS and
-Symbian platforms are _only_ available when building remotely. The
+Unlike PhoneGap Build, local builds support BlackBerry 10.  The WebOS
+and Symbian platforms are _only_ available when building remotely. The
 following platforms are only available when building locally:
 
 * Windows Phone 8
 * Windows 8
 
-See the Platform Support table for an overview of all available
-options. See Build Applications Remotely below for details on PhoneGap
-Build.
+See the Overview section's _Platform Support_ table for an overview of
+all available options. See below for details on how to use PhoneGap
+Build to build remotely.
 
 If building locally, you need to run the command-line interface from
 the same machine that supports the platform's SDK. The CLI supports
@@ -335,7 +334,8 @@ means there's no need to maintain SDK tools on your system, and it
 also involves a different way to install apps onto your device, with
 no emulator testing available.  PhoneGap Build also supports
 additional platforms (Symbian and WebOS) that can only be compiled
-remotely. (See the Platform Support table for details.)
+remotely. (See the Overview section's _Platform Support_ table for
+details.)
 
 First, you need an account on the
 [PhoneGap Build](https://build.phonegap.com) site.
@@ -366,10 +366,11 @@ remotely. For example:
         $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
         $ phonegap remote build ios
 
-Since in the remote build environment no SDK is present that would
-allow you to run an emulator or tether a device, the `install` and
-`run` commands simply generate a QRCode in the PhoneGap Build
-interface:
+Since the remote build environment has no SDK that would allow you to
+run an emulator or tether a device, the `install` and `run` commands
+simply generate a QR code in the PhoneGap Build interface. Use a QR
+reader to scan this image, and the app installs over the air onto iOS,
+Android, or BlackBerry devices:
 
         $ phonegap remote install ios
         # ...or...
