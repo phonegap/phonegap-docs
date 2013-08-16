@@ -366,10 +366,11 @@ remotely. For example:
         $ phonegap local plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
         $ phonegap remote build ios
 
-Since in the remote build environment no SDK is present that would
-allow you to run an emulator or tether a device, the `install` and
-`run` commands simply generate a QRCode in the PhoneGap Build
-interface:
+Since the remote build environment has no SDK that would allow you to
+run an emulator or tether a device, the `install` and `run` commands
+simply generate a QR code in the PhoneGap Build interface. Use a QR
+reader to scan this image, and the app installs over the air onto iOS,
+Android, or BlackBerry devices:
 
         $ phonegap remote install ios
         # ...or...
