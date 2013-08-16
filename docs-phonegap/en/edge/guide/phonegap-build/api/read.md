@@ -24,16 +24,15 @@ This section details read methods for version 1 of the API. See The
 PhoneGap Build API for an overview, or The PhoneGap Build Write API
 for write methods.
 
-Please note that example responses have been formatted for increased
-legibility; actual JSON responses will not have significant
-whitespace.
+Please note that example responses are formatted for the sake of
+legibility. Actual JSON responses will have no significant whitespace.
 
-### GET https://build.phonegap.com/api/v1/me
+## GET https://build.phonegap.com/api/v1/me
 
 Get a JSON-encoded representation of the authenticated user, as well
 as a listing of associated resources.
 
-This should be the starting point for applications traversing the
+This should be the starting point for applications that traverse the
 PhoneGap Build API. It is aliased to
 `https://build.phonegap.com/api/v1`:
 
@@ -98,7 +97,7 @@ PhoneGap Build API. It is aliased to
             "link": "/api/v1/me"
         }
 
-### GET https://build.phonegap.com/api/v1/apps
+## GET https://build.phonegap.com/api/v1/apps
 
 Get a JSON-encoded representation of the authenticated user's apps.
 
@@ -182,7 +181,7 @@ collaborators:
             "link":"/api/v1/apps"
         }
 
-### GET https://build.phonegap.com/api/v1/apps/:id
+## GET https://build.phonegap.com/api/v1/apps/:id
 
 Get a JSON-encoded representation of a particular app, if the
 authenticated user has permission to access it.
@@ -191,12 +190,12 @@ In addition to the fields provided in the list of all apps, this
 detail view includes:
 
 * `keys`: all of the keys that the app is currently being built
-  with. This will include the owner's default key for a platform, if
+  with. This include the owner's default key for a platform, if
   selected
 
 * `collaborators`: each person who has access to this app, along with
-  their role, if the authenticated user is the owner of the
-  app. Collaborators who are registered with PhoneGap Build are listed
+  their role, if the authenticated user is the owner of the app.
+  Collaborators who are registered with PhoneGap Build are listed
   under `active`; collaborators you have invited who have not yet
   created an account are listed as `pending`:
 
@@ -262,35 +261,34 @@ detail view includes:
         }
 
 If the app does not exist, or you do not have access to it, an error
-message is returned with status code `404`:
+message returns with status code `404`:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/520394
         {
             "error":"app #54 not available"
         }
 
-### GET https://build.phonegap.com/api/v1/apps/:id/icon
+## GET https://build.phonegap.com/api/v1/apps/:id/icon
 
-Get the main icon associated with an app - this is either the biggest
-icon specified in your `config.xml` file, or an icon you have uploaded
+Get the main icon associated with an app, either the biggest icon
+specified in your `config.xml` file, or an icon you have uploaded
 through the API or the PhoneGap Build web interface.
 
-In the successful case, this API method will return a 302 redirect to
-the icon file - the actual body of the response will point to the
-resource in question:
+If successful, this API call returns a `302` redirect to the icon
+file, and the body of the response references the URL for the file:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2/icon
         {
             "location":""http://s3.amazonaws.com/build.phonegap.com/some-long-guid/icon.png"
         }
 
-If your api client can follow redirects, you can save the response as
-a `png` file (with curl, this is done through the `-L` option):
+If your API client can follow redirects, you can save the response as
+a `png` file. This example uses curl's `-L` option:
 
         $ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2/icon > ~/my-icon.png
 
-If there's no icon available, an error message is returned with status
-code 404:
+If no icon ais vailable, an error message returns with status code
+404:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/52/icon
 
@@ -298,27 +296,26 @@ code 404:
             "error":"No icon available for app #52"
         }
 
-### GET https://build.phonegap.com/api/v1/apps/:id/:platform
+## GET https://build.phonegap.com/api/v1/apps/:id/:platform
 
-Download the app package for the given platform; available platforms
+Download the app package for the given platform. Available platforms
 are `android`, `blackberry`, `ios`, `symbian`, `webos` and `winphone`.
 
-In the successful case, this API method will return a 302 redirect to
-the application binary - the actual body of the response will point to
-the resource's correct location:
+If successful, this API method returns a `302` redirect to the
+application binary, and the body of the response references the file's
+URL:
 
         $ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/50/android
         {
             "location":""http://s3.amazonaws.com/build.phonegap.com/some-long-guid/app.apk"
         }
 
-If your api client can follow redirects, you can save the response
+If your API client can follow redirects, you can save the response
 directly:
 
         $ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/50/android > app_50.apk
 
-If you are downloading directly, be sure you have the right extension
-for the file you're downloading:
+When downloading, be sure you have the right file extension:
 
 * `apk` for Android
 * `ipa` for iOS
@@ -327,21 +324,21 @@ for the file you're downloading:
 * `wgz` for Symbian
 * `xap` for Windows Phone
 
-If the app package (for the specified platform) is unavailable, an
-error message is returned with status code `404`:
+If the app package is unavailable for the specified platform, an error
+message returns with status code `404`:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/52/android
         {
             "error":"app #52 download unavailable for android"
         }
 
-### GET https://build.phonegap.com/api/v1/keys
+## GET https://build.phonegap.com/api/v1/keys
 
 Get a JSON-encoded list of all the signing keys associated with your
 account.
 
-This returns a short listing of all the associated keys--it's very
-similar to the list you'll see when requesting `/api/v1/me`
+This returns a short listing of all the associated keys, very similar
+to the list you see when requesting `/api/v1/me`:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys
         {
@@ -390,7 +387,7 @@ similar to the list you'll see when requesting `/api/v1/me`
             "link":"/api/v1/keys"
         }
 
-### GET https://build.phonegap.com/api/v1/keys/:platform
+## GET https://build.phonegap.com/api/v1/keys/:platform
 
 Get a JSON-encoded list of all the signing keys associated with your
 account, for a specific platform. That platform can be one of `ios`,
@@ -442,7 +439,7 @@ account, for a specific platform. That platform can be one of `ios`,
             "link":"/api/v1/keys/blackberry"
         }
 
-### GET https://build.phonegap.com/api/v1/keys/:platform/:id
+## GET https://build.phonegap.com/api/v1/keys/:platform/:id
 
 Get a JSON-encoded representation of a single signing key:
 
@@ -477,7 +474,7 @@ Get a JSON-encoded representation of a single signing key:
             "locked":true
         }
 
-If the requested key is not available, then a 404 status is returned,
+If the requested key is not available, then a `404` status returns,
 along with the error message as JSON:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/ios/8989898
