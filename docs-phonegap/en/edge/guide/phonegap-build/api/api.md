@@ -18,7 +18,9 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 ---
 
-# API v1 Overview
+# The PhoneGap Build API
+
+## API v1 Overview
 
 The Adobe® PhoneGap™ Build API allows programmatic access to creating,
 building, updating and downloading PhoneGap apps, using the PhoneGap

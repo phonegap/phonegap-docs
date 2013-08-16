@@ -20,8 +20,6 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # API v0
 
-<section class="module">
-
 ## Version 0
 
 Version 0 (v0) of the API is a preview release for the beta version of
@@ -39,9 +37,6 @@ credentials (the present author favors OAuth 2).
 
 All unauthenticated requests return a `401` (unauthorized) status code.
 
-</section>
-<section class="module">
-
 ## JSON
 
 All successful requests return either a JSON-encoded string or a
@@ -56,11 +51,7 @@ check the error field on the parsed response, a la:
         if (res.status != 200)
             console.log(JSON.parse(res.body).error)
 
-</section>
-
 # API Docs
-
-<section class="module">
 
 ## Read API
 
@@ -162,9 +153,6 @@ To get a specific platform's keys use
 
 If the app does not exist or belongs to another user, an error message
 is returned with status code `404`:
-
-</section>
-<section class="module">
 
 ## Write API
 
@@ -308,4 +296,3 @@ Delete the app. Sad to see you go :(
 
 Again, `404` error if the app cannot be found.
 
-</section>
