@@ -147,8 +147,6 @@ If you need lower-level details, use the `-V` (verbose) option:
 
         $ phonegap -V build ios
 
-<!-- need list of clobber subdirs -->
-
 ## Test the App on an Emulator or Device
 
 While PhoneGap applications are implemented as web pages, you can't
@@ -337,23 +335,20 @@ additional platforms (Symbian and WebOS) that can only be compiled
 remotely. (See the Overview section's _Platform Support_ table for
 details.)
 
-First, you need an account on the
-[PhoneGap Build](https://build.phonegap.com) site.
-Then use the `login` command to associate each app you work on with
-the account. Here are two minor variations of the same command:
+First, you need an account on the [PhoneGap
+Build](https://build.phonegap.com) site.  Then use the `login` command
+to associate your command-line environment with the account. Here are
+two minor variations of the same command:
 
         $ phonegap remote login -u iamreallyadog@gmail.com -p mYpASSw0RD
         $ phonegap remote login --username iamreallyadog@gmail.com --password mYpASSw0RD
 
-<!-- login for each app? -->
-
-If you don't first run this command, you will be prompted for account
-details wach time you build a remote application.  Use the
-corresponding `logout` command to dissociate the app with the account:
+If you don't first run this command, you are prompted for account
+details the first time you build a remote application. Credentials are
+stored indefinitely for each login.  Use the corresponding `logout`
+command to dissociate the account with the local environment:
 
         $ phonegap remote logout
-
-<!-- implicit logout? -->
 
 To compile your app remotely, prefix the `build` command with the
 additional `remote` command:
