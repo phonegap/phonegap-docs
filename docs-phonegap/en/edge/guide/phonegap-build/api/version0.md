@@ -23,16 +23,12 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 Version 0 (v0) of the API is a preview release for the beta version of
 PhoneGap Build. Although available for existing clients, it will not
 receive any further updates. If you are developing a new application
-to access PhoneGap Build, see The PhoneGap Build API.
+accessing PhoneGap Build, see version 1 of The PhoneGap Build API.
 
 ### Authentication
 
-v0 currently authenticates through HTTPS with basic authentication. We
-are investigating other authentication options, particularly for
-allowing users to authorize apps/dev tools with their PhoneGap Build
-credentials (the present author favors OAuth 2).
-
-All unauthenticated requests return a `401` (unauthorized) status code.
+Version 0 authenticates through HTTPS with basic authentication.  All
+unauthenticated requests return a `401` (unauthorized) status code.
 
 ## JSON
 
