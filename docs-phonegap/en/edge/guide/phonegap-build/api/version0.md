@@ -25,26 +25,22 @@ PhoneGap Build. Although available for existing clients, it will not
 receive any further updates. If you are developing a new application
 accessing PhoneGap Build, see version 1 of The PhoneGap Build API.
 
-### Authentication
-
 Version 0 authenticates through HTTPS with basic authentication.  All
 unauthenticated requests return a `401` (unauthorized) status code.
 
 ## JSON
 
-All successful requests return either a JSON-encoded string or a
-binary file. All failing requests return a JSON-encoded string of the
-following form (with an appropriate status code):
+Successful requests return either a JSON-encoded string or a binary
+file. Failed requests return a JSON-encoded string of the following
+form, with an appropriate status code:
 
         {"error":"some error message"}
 
 When using the API, check the status code returned; if it's not 200,
-check the error field on the parsed response, a la:
+check the error field on the parsed response:
 
         if (res.status != 200)
             console.log(JSON.parse(res.body).error)
-
-
 
 ## Read API
 
@@ -81,8 +77,8 @@ Get a JSON-encoded representation of the authenticated user's apps:
 
 ### GET https://build.phonegap.com/api/v0/apps/:id
 
-Get a JSON-encoded representation of a single app (belonging to the
-authenticated user):
+Get a JSON-encoded representation of a single app that belongs to the
+authenticated user:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/50
         {"created_at":"2010-11-09T20:36:58Z","title":"alunny's Amazing App",
@@ -94,7 +90,7 @@ authenticated user):
          "desc":"An Amazing app by alunny"}
 
 If the app does not exist or belongs to another user, an error message
-is returned with status code `404`:
+returns with status code `404`:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/54
         {"error":"app #54 not available"}
@@ -105,57 +101,56 @@ Get the icon file of an app:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/50/icon &gt; icon.png
 
-If there's no icon available, an error message is returned with status
-code `404`:
+If no icon is available, an error message returns with status code
+`404`:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/52/icon
         {"error":"No icon available for app #52"}
 
 ### GET https://build.phonegap.com/api/v0/apps/:id/:platform
 
-Download the app package for the given platform; available platforms
-right now are `android`, `blackberry`, `symbian` and `webos`.
-
-The request actually returns a redirect to the app package
-itself--ensure your API client follows redirects to download the app:
+Download the app package for the given platform, either `android`,
+`blackberry`, `symbian` or `webos`.  The request actually returns a
+redirect to the app package itself, so make sure your API client
+follows redirects to download the app:
 
         $ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/50/android &gt; app_50.apk
 
-If the app package (for the specified platform) is unavailable, an
-error message is returned with status code `404`:
+If the app package is unavailable for the specified platform, an error
+message returns with status code `404`:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/52/android
         {"error":"App #52 for android error"}
 
 ### GET https://build.phonegap.com/api/v0/keys/
 
-Get a list of signing keys that have been uploaded to build
+Get a list of signing keys that have been uploaded to build:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/keys/
         {"ios":[{"title":"Test Key","updated_at":"2011-07-07T15:51:23-07:00",
         "id":2,"mobile_provision":"test.mobileprovision",
         "cert_name":"Certificates.p12"}],"blackberry":[],"android":[]}
 
-If no keys have been uploaded the following will be returned
+The following returns if no keys have been uploaded:
 
         {"ios":[],"blackberry":[],"android":[]}
 
-To get a specific platform's keys use
+Get a specific platform's keys:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/keys/:platform
 
 If the app does not exist or belongs to another user, an error message
-is returned with status code `404`:
+returns with status code `404`:
 
 ## Write API
 
 ### POST https://build.phonegap.com/api/v0/apps
 
-Create a new app. Requires a title parameter to be passed, and either
-the URL of a public git/svn repository, or an `index.html` or project
-zip file to be sent.
+Create a new app. Requires a `title` parameter, and either the URL of
+a public git or svn repository, or an `index.html` or project zip
+file.
 
-With a repo_url:
+With a repository's URL:
 
         $ curl -u andrew.lunny@nitobi.com -d 'data={"title":"New App","repo":"http://github.com/alunny/phonegap-start.git"}' https://build.phonegap.com/api/v0/apps
         {"created_at":"2010-11-29T21:13:26Z","title":"alunny's Amazing App",
@@ -166,8 +161,7 @@ With a repo_url:
         "package":"com.alunny.amazing","person_id":1,
         "desc":"An Amazing app by alunny"}
 
-With a file (note that if you're using curl, you'll want the `-F`
-option, not `-d`):
+With a file (using `curl -F`, not `curl -d`):
 
         $ curl -F file=@index.html -F 'data={"title":"Another App"}' -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps
         {"created_at":"2010-11-29T21:52:32Z","title":"Another App",
@@ -176,19 +170,18 @@ option, not `-d`):
         "webos_status":"pending","id":56,"icon":null,"version":null,
         "package":null,"person_id":1,"desc":null}
 
-Again, JSON errors if anything goes wrong:
+Again, JSON errors result if anything goes wrong:
 
         $ curl -u andrew.lunny@nitobi.com -d 'data={"title":"New App"}' https://build.phonegap.com/api/v0/apps
         {"error":"Need either a repo url or a file"}
 
-An error with the request returns status code `400` (bad request) -
-the JSON string details what changes have to be made. If status code
-`500` is returned, an internal error has occurred - please contact us
-about this request.
+Any errors with the request return a `400` status code. Status codes
+of `500` indicate an internal error; contact the [PhoneGap&nbsp;Build
+team](http://build.phonegap.com).
 
 ### POST https://build.phonegap.com/api/v0/apps/:id/:icon
 
-Set an icon file for the given app:
+Set an app's icon file:
 
         $ curl -F file=@icon.png -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/56/icon
         {"created_at":"2010-11-29T21:52:32Z","title":"Another App",
@@ -197,16 +190,12 @@ Set an icon file for the given app:
         "webos_status":"webos complete","id":56,"icon":"icon.png",
         "version":null,"package":null,"person_id":1,"desc":null}
 
-A JSON error with status code `400` is returned if there is an error
-in the request.
-
 ### POST https://build.phonegap.com/api/v0/apps/:id/push
 
-Update the current app from its source repo - designed, among other
-things, to work with [Github's post-receive
-hooks](http://help.github.com/post-receive-hooks/)
-functionality. Right now, the post data is ignored - I'm including
-some dummy data so curl agrees to set a Content-Length header:
+Update the current app from its source repo, using [Github's
+post-receive hooks](http://help.github.com/post-receive-hooks/)
+functionality. In the example below, the post data is ignored, but is
+present for `curl` to agree to set a `Content-Length` header:
 
         $ curl -X POST -d data=dummy -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/55/push
         {"created_at":"2010-11-29T21:13:26Z","title":"alunny's Amazing App",
@@ -217,16 +206,16 @@ some dummy data so curl agrees to set a Content-Length header:
         "package":"com.alunny.amazing","person_id":1,
         "desc":"An Amazing app by alunny"}
 
-If the app is not associated with a repository, status code `400` is
-returned. If the app cannot be found, status code `404` is
-returned. If there is an internal error, `500` is returned:
+If the app is not associated with a repository, a `400` status code
+results. If the app can't be found, a `404` status code results. If
+there is an internal error, `500` results:
 
         $ curl -X POST -d data=dummy -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/56/push
         {"error":"app #56 is not repo backed"}
 
 ### PUT https://build.phonegap.com/api/v0/apps/:id
 
-Update the meta-data associated with your app:
+Update the app's metadata:
 
         $ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"title":"New Title"}' https://build.phonegap.com/api/v0/apps/56
         {"created_at":"2010-11-29T21:52:32Z","title":"New Title",
@@ -235,7 +224,7 @@ Update the meta-data associated with your app:
         "webos_status":"pending","id":56,"icon":"icon.png","version":null,
         "package":null,"person_id":1,"desc":null}
 
-Status code `400` is returned if the post data cannot be parsed.
+Status code `400` returns if the post data cannot be parsed.
 
 ### POST https://build.phonegap.com/api/v0/keys/:platform
 
@@ -243,13 +232,12 @@ Upload a key for application signing
 
 #### IOS Example
 
-The password field is optional if the key requires one.
-
-The following example:
+The password field is optional if the key requires one.  The following
+example:
 
         $ curl -F profile_file=@example.mobileprovision -F cert_file=@example.p12 -F 'data={"title":"Example Key", "password":"test"}' -u andrew.lunny@nitobi.com http://build.phonegap.com/api/v0/keys/ios/</pre></strong>
 
-Will produce a response similar to:
+produces a response similar to:
 
         {"title":"Example Key","updated_at":"2011-07-08T10:27:01-07:00",
         "id":3,"cert_name":"example.p12","mobile_provision":"example.mobileprovision"}
@@ -260,7 +248,7 @@ The following example:
 
         $ curl -F key_file=@example.keystore -F 'data={"title":"Example Key","alias":"example alias", "key_pw":"test", "keystore_pw":"test"}' -u andrew.lunny@nitobi.com http://build.phonegap.com/api/v0/keys/android/</pre></strong>
 
-Will produce a response similar to:
+produces a response similar to:
 
         {"title":"Example Key","updated_at":"2011-07-08T14:07:09-07:00","id":1}
 
@@ -270,19 +258,18 @@ The following example:
 
         curl -F csk_file=@example.csk -F db_'data={"title":"example key", "password":"test"}' -u andrew.lunny@nitobi.com http://build.phonegap.com/api/v0/keys/blackberry/</pre></strong>
 
-Will produce a response similar to:
+produces a response similar to:
 
         {"title":"example key","updated_at":"2011-07-08T10:48:18-07:00","id":1}
 
 If the app does not exist or belongs to another user, an error message
-is returned with status code `404`:
+returns with status code `404`:
 
 ### DELETE https://build.phonegap.com/api/v0/apps/:id
 
-Delete the app. Sad to see you go :(
+Delete the app:
 
         $ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v0/apps/56
         {"success":"app #56 destroyed"}
 
 Again, `404` error if the app cannot be found.
-

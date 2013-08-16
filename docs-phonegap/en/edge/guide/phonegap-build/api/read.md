@@ -24,8 +24,6 @@ This section details read methods for version 1 of the API. See The
 PhoneGap Build API for an overview, or The PhoneGap Build Write API
 for write methods.
 
-
-
 Please note that example responses have been formatted for increased
 legibility; actual JSON responses will not have significant
 whitespace.
