@@ -177,7 +177,7 @@ Again, JSON errors result if anything goes wrong:
 
 Any errors with the request return a `400` status code. Status codes
 of `500` indicate an internal error; contact the [PhoneGap&nbsp;Build
-team](http://build.phonegap.com).
+team](http://community.phonegap.com).
 
 ### POST https://build.phonegap.com/api/v0/apps/:id/:icon
 
