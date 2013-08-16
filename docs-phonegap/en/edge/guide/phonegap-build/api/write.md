@@ -96,7 +96,7 @@ new one.
 To create a file-backed application, set the `create_method` parameter
 to `file`, and include a zip file, a tar.gz file, or an index.html
 file in the multipart body of your post, with the parameter name
-`file`.
+`file`:
 
         $ curl -F file=@/Users/alunny/index.html -u andrew.lunny@nitobi.com -F 'data={"title":"API V1 App","package":"com.alunny.apiv1","version":"0.1.0","create_method":"file"}' https://build.phonegap.com/api/v1/apps
         {
@@ -158,7 +158,7 @@ URL of the repository.
 
 The URL has to be publicly accessible: PhoneGap Build will not
 authenticate against your repository. If you wish to keep your code
-private, use one of the other `create_method` options.
+private, use one of the other `create_method` options:
 
         $ curl -u andrew.lunny@nitobi.com -d 'data={"title":"API V1 App","repo":"https://github.com/alunny/phonegap-start.git","create_method":"remote_repo"}' https://build.phonegap.com/api/v1/apps
         {
@@ -437,7 +437,7 @@ unlocking it:
 
 If the application has been created from a file upload, you can
 include a new `index.html`, zip file, or tar.gz file as the `file`
-parameter in your request to update the contents.
+parameter in your request to update the contents:
 
         $ curl -u andrew.lunny@nitobi.com -X PUT -F file=@/Users/alunny/new/index.html https://build.phonegap.com/api/v1/apps/8
 
@@ -462,7 +462,7 @@ files in your application package and specify their use in your
 [config.xml file](/docs/config-xml).
 
 The response will have a `201` created status, and the application
-will be queued for building.
+will be queued for building:
 
         $ curl -u andrew.lunny@nitobi.com -f icon=@icon.png https://build.phonegap.com/api/v1/apps/8/icon
 
@@ -473,7 +473,7 @@ discarded, while new ones are queued.
 
 The builds will use the most current app contents, as well as the
 selected signing keys. The response will have a `202` (accepted)
-status.
+status:
 
         $ curl -u andrew.lunny@nitobi.com -X POST -d '' https://build.phonegap.com/api/v1/apps/12/build
 
@@ -510,7 +510,7 @@ app. If she is not registered, a `202` (accepted) status is returned,
 and the collaboration is listed as pending.
 
 A JSON representation of the affected app is returned after the
-collaboration has been added.
+collaboration has been added:
 
         $ curl -u andrew.lunny@nitobi.com -d 'data={"email":"newguy@nitobi.com","role":"dev"}' https://build.phonegap.com/api/v1/apps/12/collaborators
         {
@@ -554,7 +554,7 @@ PhoneGap Build, to `dev` or `tester`.
 
 If you are not the owner of an app, you will receive a `401`
 unauthorized response. You cannot change the email of a collaborator
-at present; trying to do so will return a `400` status.
+at present; trying to do so will return a `400` status:
 
         $ curl -u andrew.lunny@nitobi.com -d 'data={"role":"tester"}' -X PUT https://build.phonegap.com/api/v1/apps/12/collaborators/13
         {
@@ -736,7 +736,7 @@ try to build with that key.
 ### DELETE https://build.phonegap.com/api/v1/apps/:id
 
 Delete your application from PhoneGap Build - will return either a
-`202` (accepted) status, or `404` (if the app cannot be found).
+`202` (accepted) status, or `404` (if the app cannot be found):
 
         $ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v1/apps/8
         {
@@ -745,7 +745,7 @@ Delete your application from PhoneGap Build - will return either a
 
 ### DELETE https://build.phonegap.com/api/v1/apps/:id/collaborators/:id
 
-Remove a collaborator from a project that you own.
+Remove a collaborator from a project that you own:
 
         $ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v1/apps/12/collaborators/13
         {
@@ -755,7 +755,7 @@ Remove a collaborator from a project that you own.
 ### DELETE https://build.phonegap.com/api/v1/keys/:platform/:id
 
 Delete a signing key from PhoneGap Build - will return either a `202`
-(accepted) status, or `404` (if the key cannot be found).
+(accepted) status, or `404` (if the key cannot be found):
 
         $ curl -u andrew.lunny@nitobi.com -X DELETE https://build.phonegap.com/api/v1/keys/android/8
         {

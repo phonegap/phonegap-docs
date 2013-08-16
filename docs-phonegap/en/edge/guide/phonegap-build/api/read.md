@@ -36,7 +36,7 @@ as a listing of associated resources.
 
 This should be the starting point for applications traversing the
 PhoneGap Build API. It is aliased to
-`https://build.phonegap.com/api/v1`.
+`https://build.phonegap.com/api/v1`:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/me
         {
@@ -105,7 +105,7 @@ Get a JSON-encoded representation of the authenticated user's apps.
 
 API clients can follow the `link` attribute for each app to get
 further details, including the associated signing keys and
-collaborators.
+collaborators:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps
         {
@@ -199,7 +199,7 @@ detail view includes:
   their role, if the authenticated user is the owner of the
   app. Collaborators who are registered with PhoneGap Build are listed
   under `active`; collaborators you have invited who have not yet
-  created an account are listed as `pending`.
+  created an account are listed as `pending`:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2
         {
@@ -286,7 +286,7 @@ resource in question:
         }
 
 If your api client can follow redirects, you can save the response as
-a `png` file (with curl, this is done through the `-L` option).
+a `png` file (with curl, this is done through the `-L` option):
 
         $ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2/icon > ~/my-icon.png
 
@@ -395,7 +395,7 @@ similar to the list you'll see when requesting `/api/v1/me`
 
 Get a JSON-encoded list of all the signing keys associated with your
 account, for a specific platform. That platform can be one of `ios`,
-`android`, or `blackberry`.
+`android`, or `blackberry`:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/ios
         {
@@ -445,7 +445,7 @@ account, for a specific platform. That platform can be one of `ios`,
 
 ### GET https://build.phonegap.com/api/v1/keys/:platform/:id
 
-Get a JSON-encoded representation of a single signing key.
+Get a JSON-encoded representation of a single signing key:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/ios/8
         {

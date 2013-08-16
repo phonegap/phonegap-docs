@@ -18,9 +18,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 ---
 
-# API v0
-
-## Version 0
+# The PhoneGap API, Version 0
 
 Version 0 (v0) of the API is a preview release for the beta version of
 PhoneGap Build. Although we are keeping this release online for
@@ -51,13 +49,13 @@ check the error field on the parsed response, a la:
         if (res.status != 200)
             console.log(JSON.parse(res.body).error)
 
-# API Docs
+
 
 ## Read API
 
 ### GET https://build.phonegap.com/api/v0/me
 
-Get a JSON-encoded representation of the authenticated user.
+Get a JSON-encoded representation of the authenticated user:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/me
         {"created_at":"2010-10-12T19:10:16Z","updated_at":"2010-11-29T19:58:00Z",
@@ -65,7 +63,7 @@ Get a JSON-encoded representation of the authenticated user.
 
 ### GET https://build.phonegap.com/api/v0/apps
 
-Get a JSON-encoded representation of the authenticated user's apps.
+Get a JSON-encoded representation of the authenticated user's apps:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps
         [{"created_at":"2010-11-09T20:36:58Z","title":"alunny's Amazing App",
@@ -89,7 +87,7 @@ Get a JSON-encoded representation of the authenticated user's apps.
 ### GET https://build.phonegap.com/api/v0/apps/:id
 
 Get a JSON-encoded representation of a single app (belonging to the
-authenticated user).
+authenticated user):
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/50
         {"created_at":"2010-11-09T20:36:58Z","title":"alunny's Amazing App",
@@ -108,7 +106,7 @@ is returned with status code `404`:
 
 ### GET https://build.phonegap.com/api/v0/apps/:id/:icon
 
-Get the icon file of an app.
+Get the icon file of an app:
 
         $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/50/icon &gt; icon.png
 
@@ -124,7 +122,7 @@ Download the app package for the given platform; available platforms
 right now are `android`, `blackberry`, `symbian` and `webos`.
 
 The request actually returns a redirect to the app package
-itself--ensure your API client follows redirects to download the app.
+itself--ensure your API client follows redirects to download the app:
 
         $ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/50/android &gt; app_50.apk
 
@@ -215,7 +213,7 @@ Update the current app from its source repo - designed, among other
 things, to work with [Github's post-receive
 hooks](http://help.github.com/post-receive-hooks/)
 functionality. Right now, the post data is ignored - I'm including
-some dummy data so curl agrees to set a Content-Length header.
+some dummy data so curl agrees to set a Content-Length header:
 
         $ curl -X POST -d data=dummy -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/55/push
         {"created_at":"2010-11-29T21:13:26Z","title":"alunny's Amazing App",

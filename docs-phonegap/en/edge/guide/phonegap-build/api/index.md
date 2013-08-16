@@ -53,7 +53,7 @@ When using basic authentication, use your PhoneGap Build credentials
         }
 
 To use token authentication, use basic auth to post to `/token` with
-your token request. You will receive a token as a response.
+your token request. You will receive a token as a response:
 
         $ curl -u andrew.lunny@nitobi.com -X POST -d "" https://build.phonegap.com/token</pre></strong>
         {
