@@ -29,11 +29,24 @@ file uploads. API requests should have the content type
 `multipart/form-data`, and bodies of JSON requests should be named
 `data`.
 
+The API's write interface includes the following:
+
+* POST https://build.phonegap.com/api/v1/apps
+* PUT https://build.phonegap.com/api/v1/apps/:id
+* POST https://build.phonegap.com/api/v1/apps/:id/icon
+* POST https://build.phonegap.com/api/v1/apps/:id/build
+* POST https://build.phonegap.com/api/v1/apps/:id/build/:platform
+* POST https://build.phonegap.com/api/v1/apps/:id/collaborators
+* PUT https://build.phonegap.com/api/v1/apps/:id/collaborators/:id
+* POST https://build.phonegap.com/api/v1/keys/:platform
+* PUT https://build.phonegap.com/api/v1/keys/:platform/:id
+* DELETE https://build.phonegap.com/api/v1/apps/:id
+* DELETE https://build.phonegap.com/api/v1/apps/:id/collaborators/:id
+* DELETE https://build.phonegap.com/api/v1/keys/:platform/:id
+
 ## POST https://build.phonegap.com/api/v1/apps
 
-Create a new app.
-
-### Required parameters
+Creates a new app. Required parameters:
 
 * __title__: You must specify a title for your app. Any title
   specified in your package's `config.xml` takes precedence.
@@ -45,7 +58,7 @@ Create a new app.
 
   * __remote_repo__: You have a remote repository with your app content
 
-### Optional parameters
+Optional parameters:
 
 * __package__: Sets your app's package identifier. This can be
   modified after the app's creation, or in your `config.xml` file.
@@ -488,7 +501,7 @@ A simpler URL to build for a single platform:
 Add a collaborator to work with you on a given application. You must
 be the app's owner/admin to do so.
 
-### Required parameters
+Required parameters:
 
 * __email__: The email address of your new collaborator.
 
