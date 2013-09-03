@@ -21,12 +21,31 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 # The PhoneGap Build API, Version 0
 
 Version 0 (v0) of the API is a preview release for the beta version of
-PhoneGap Build. Although available for existing clients, it will not
-receive any further updates. If you are developing a new application
-accessing PhoneGap Build, see version 1 of The PhoneGap Build API.
+PhoneGap Build. Although available for legacy applications, it will
+not receive any further updates. If you are developing a new
+application accessing PhoneGap Build, see version 1 of The PhoneGap
+Build API.
 
 Version 0 authenticates through HTTPS with basic authentication.  All
 unauthenticated requests return a `401` (unauthorized) status code.
+
+The read API features:
+
+* GET https://build.phonegap.com/api/v0/me
+* GET https://build.phonegap.com/api/v0/apps
+* GET https://build.phonegap.com/api/v0/apps/:id
+* GET https://build.phonegap.com/api/v0/apps/:id/:icon
+* GET https://build.phonegap.com/api/v0/apps/:id/:platform
+* GET https://build.phonegap.com/api/v0/keys/
+
+The write API features:
+
+* POST https://build.phonegap.com/api/v0/apps
+* POST https://build.phonegap.com/api/v0/apps/:id/:icon
+* POST https://build.phonegap.com/api/v0/apps/:id/push
+* PUT https://build.phonegap.com/api/v0/apps/:id
+* POST https://build.phonegap.com/api/v0/keys/:platform
+* DELETE https://build.phonegap.com/api/v0/apps/:id
 
 ## JSON
 

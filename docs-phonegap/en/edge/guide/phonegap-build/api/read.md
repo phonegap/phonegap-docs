@@ -27,6 +27,17 @@ for write methods.
 Please note that example responses are formatted for the sake of
 legibility. Actual JSON responses will have no significant whitespace.
 
+The API's read interface includes the following:
+
+* GET https://build.phonegap.com/api/v1/me
+* GET https://build.phonegap.com/api/v1/apps
+* GET https://build.phonegap.com/api/v1/apps/:id
+* GET https://build.phonegap.com/api/v1/apps/:id/icon
+* GET https://build.phonegap.com/api/v1/apps/:id/:platform
+* GET https://build.phonegap.com/api/v1/keys
+* GET https://build.phonegap.com/api/v1/keys/:platform
+* GET https://build.phonegap.com/api/v1/keys/:platform/:id
+
 ## GET https://build.phonegap.com/api/v1/me
 
 Get a JSON-encoded representation of the authenticated user, as well
