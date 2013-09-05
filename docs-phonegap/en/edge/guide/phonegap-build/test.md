@@ -18,5 +18,70 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 ---
 
-# Collaborating and Testing
+# Remote Collaboration and Testing
 
+This section shows how to add other developers to work on a remotely
+compiled PhoneGap Build project, and how to grant different access
+privileges to application developers and testers. It shows how to use
+support for _Hydration_ and other techniques to automatically push the
+latest version of an app to all your testers.
+
+## Adding Collaborators
+
+To add a collaborator from within the [PhoneGap Build
+interface](http://build.phonegap.com), make sure the application has
+first been built, as described in the section on PhoneGap Build.
+
+1. Under the __Apps__ tab, press the name of the app.
+
+2. In the resulting panel, select the __Collaborators__ tab.
+
+3. Press __Add a Collaborator__, supplying an email address, and
+   specifying a role.
+
+![](img/guide/phonegap-build/pgbuild_collab_add.png)
+
+The recipient may need to set up a PhoneGap Build account, keyed
+either to an AdobeID or a GitHub account.  Any recipient who accepts
+the invitation can view the same application in the PhoneGap Build
+interface. Each role brings different privileges:
+
+* Testers can only download the app.
+
+* Developers can modify the code or rebuild the app. They may delete
+  the app, manage signing keys, or add other collaborators.
+
+At any point, you may __Edit__ to change the role, or __Delete__ the
+collaborator from the project.
+
+## Using Hydration to Make Testing Easier
+
+Ordinarily after rebuilding an app, anyone testing the app would have
+to re-install the new version, either via USB cable or by re-scanning
+the QR code to download the new version.  The Hydration tool,
+supported by PhoneGap Build, prevents you from having to do this.
+Hydration works works using a compiled application that serves as a
+wrapper for your PhoneGap app. When the wrapper detects a new version
+of the app on the PhoneGap Build site, it prompts you to install and
+run the new version:
+
+![](img/guide/phonegap-build/pgbuild_hydrate.png)
+
+Because the wrapper app updates the PhoneGap app dynamically at
+run-time, you may expect significantly less compilation time up front.
+
+To enable Hydration, select the name of the app from the __Apps__ tab
+listing.  Then select the __Settings__ tab when viewing the app's
+details.  Within the __Basic__ settings panel, select __Enable
+Hydration__:
+
+![](img/guide/phonegap-build/pgbuild_hydrate_enable.png)
+
+Once enabled, the next build produces the hydrated version of the app.
+Following installation, it updates itself. When rebuilding an app with
+Hydration disabled, it has to be re-installed conventionally.
+
+__NOTE__: The build process produces a new wrapper app if there are
+changes to a project's basic settings, including: name, version,
+version code, icons, splash screens, preferences, features, and access
+tags.
