@@ -18,7 +18,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 ---
 
-# Common Errors
+# Remote Build Errors
 
 At Adobe&reg; PhoneGap&trade; Build, we do our best to take any
 package you submit and build a cross-platform mobile application from
