@@ -72,6 +72,10 @@ install the appropriate app package directly onto their devices:
 
 ![](img/guide/phonegap-build/pgbuild_collab_share.png)
 
+Once you rebuild an app with __only approved collaborators can
+download this app__ enabled, this page is only accessible to the
+collaborators you have specified.
+
 ## Using Hydration to Make Testing Easier
 
 Ordinarily after rebuilding an app, anyone testing the app would have
