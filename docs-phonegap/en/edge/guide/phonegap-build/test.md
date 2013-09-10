@@ -82,7 +82,7 @@ Ordinarily after rebuilding an app, anyone testing the app would have
 to re-install the new version, either via USB cable or by re-scanning
 the QR code to download the new version.  The Hydration tool,
 supported by PhoneGap Build, prevents you from having to do this.
-Hydration works works using a compiled application that serves as a
+Hydration works using a compiled application that serves as a
 wrapper for your PhoneGap app. When the wrapper detects a new version
 of the app on the PhoneGap Build site, it prompts you to install and
 run the new version:
