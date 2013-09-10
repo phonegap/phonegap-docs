@@ -60,10 +60,10 @@ advanced options:
   grant access rights to software testers, with the option for them to
   automatically download the latest version of the app.
 
-<!--
-
 * Remote Debugging Tools shows how to configure PhoneGap Build's
   debugging options, or use a custom debug server.
+
+<!--
 
 * Common Errors shows how to overcome several problems you may
   encounter when compiling a PhoneGap project remotely.
