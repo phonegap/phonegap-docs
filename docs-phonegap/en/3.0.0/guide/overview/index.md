@@ -20,7 +20,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # Overview
 
-PhoneGap is an web-based mobile development framework, based on the
+PhoneGap is a web-based mobile development framework, based on the
 open-source Cordova project. PhoneGap allows you to use standard web
 technologies such as HTML5, CSS3, and JavaScript for cross-platform
 development, avoiding each mobile platforms' native development
