@@ -63,12 +63,8 @@ advanced options:
 * Remote Debugging Tools shows how to configure PhoneGap Build's
   debugging options, or use a custom debug server.
 
-<!--
-
-* Common Errors shows how to overcome several problems you may
+* Remote Build Errors shows how to overcome several problems you may
   encounter when compiling a PhoneGap project remotely.
-
--->
 
 * The PhoneGap Build API details how an application can communicate
   with the PhoneGap Build service to compile PhoneGap projects.
