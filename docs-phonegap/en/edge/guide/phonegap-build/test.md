@@ -21,10 +21,11 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 # Remote Collaboration and Testing
 
 This section shows how to add other developers to work on a remotely
-compiled PhoneGap Build project, and how to grant different access
-privileges to application developers and testers. It shows how to use
-support for _Hydration_ and other techniques to automatically push the
-latest version of an app to all your testers.
+compiled PhoneGap Build project, how to grant different access
+privileges to application developers and testers, and how to share the
+app more widely. It shows how to use support for _Hydration_ and other
+techniques to automatically push the latest version of an app to all
+your testers.
 
 ## Adding Collaborators
 
@@ -53,6 +54,23 @@ interface. Each role brings different privileges:
 
 At any point, you may __Edit__ to change the role, or __Delete__ the
 collaborator from the project.
+
+## Publicly Shared Apps
+
+If you wish, you can share an app more widely outside your specified
+set of testers. Within the app's __Settings__ panel, make sure the
+following check box is _not_ selected:
+
+![](img/guide/phonegap-build/pgbuild_collab_check.png)
+
+Then when you rebuild the app, a public link appears near the QR code:
+
+![](img/guide/phonegap-build/pgbuild_collab_link.png)
+
+It links to a publicly available page on which mobile users can
+install the appropriate app package directly onto their devices:
+
+![](img/guide/phonegap-build/pgbuild_collab_share.png)
 
 ## Using Hydration to Make Testing Easier
 
