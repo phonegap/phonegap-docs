@@ -52,7 +52,7 @@ and its `index.html` home page.  See The Command-line Interface for
 information on how to use the CLI to generate a new project, and for
 details on how to build local projects remotely from the command line.
 
-Once you have set up your PhoneGap Build account and generated
+Once you have set up your PhoneGap&nbsp;Build account and generated
 projects as described below, see the following sections for more
 advanced options:
 
@@ -60,14 +60,14 @@ advanced options:
   grant access rights to software testers, with the option for them to
   automatically download the latest version of the app.
 
-* Remote Debugging Tools shows how to configure PhoneGap Build's
+* Remote Debugging Tools shows how to configure PhoneGap&nbsp;Build's
   debugging options, or use a custom debug server.
 
 * Remote Build Errors shows how to overcome several problems you may
   encounter when compiling a PhoneGap project remotely.
 
-* The PhoneGap Build API details how an application can communicate
-  with the PhoneGap Build service to compile PhoneGap projects.
+* The PhoneGap&nbsp;Build API details how an application can communicate
+  with the PhoneGap&nbsp;Build service to compile PhoneGap projects.
 
 ## Adding an App
 
