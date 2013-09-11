@@ -66,7 +66,7 @@ advanced options:
 * Remote Build Errors shows how to overcome several problems you may
   encounter when compiling a PhoneGap project remotely.
 
-* The PhoneGap&nbsp;Build API details how an application can communicate
+* The PhoneGap Build API details how an application can communicate
   with the PhoneGap&nbsp;Build service to compile PhoneGap projects.
 
 ## Adding an App
