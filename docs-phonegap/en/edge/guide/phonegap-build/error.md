@@ -37,7 +37,7 @@ apps for unfamiliar mobile platforms.
 
 * __PhoneGap version not supported:__ Compilation fails if you specify
   in your `config.xml` file a higher `phonegap-version` number than
-  the PhoneGap Build service currently supports.
+  the PhoneGap&nbsp;Build service currently supports.
   <!-- XREF: config.xml -->
 
 * __Invalid File/Directory name:__ Mobile filesystems often reject
@@ -45,32 +45,32 @@ apps for unfamiliar mobile platforms.
   or Chinese characters.
 
 * __App remains pending on all platforms for over ten minutes:__ This
-  probably means there is a problem with the PhoneGap Build server.
+  probably means there is a problem with the PhoneGap&nbsp;Build server.
   Please contact the team at
   [community.phonegap.com](http://community.phonegap.com).
 
 ## Plugin Errors
 
 Plugins are bits of code that extend an app's capabilities past the
-PhoneGap API's standard features.  PhoneGap Build allows you to
+PhoneGap API's standard features.  PhoneGap&nbsp;Build allows you to
 compile apps using an approved set of plugins, listed on the site's
 [Plugins](http://build.phonegap.com/plugins) tab.  Unlike the local
-CLI workflow described in The Command-line Interface, PhoneGap Build
+CLI workflow described in The Command-line Interface, PhoneGap&nbsp;Build
 requires plugins to be specified in the app's `config.xml` file.  See
 Plugin Development Guide for an overview. This section details
-problems that may arise due to PhoneGap Build's unique way of handling
+problems that may arise due to PhoneGap&nbsp;Build's unique way of handling
 plugins.
 
-* __Plugin File Exists:__ For PhoneGap Build to compile plugins, you
+* __Plugin File Exists:__ For PhoneGap&nbsp;Build to compile plugins, you
   need to link to the plugin's JavaScript file using a `<script>` tag
   within the `index.html` file, but _without_ supplying the file in
-  the app package. PhoneGap Build injects plugin code dynamically, and
+  the app package. PhoneGap&nbsp;Build injects plugin code dynamically, and
   compilation may fail if the linked plugin script is included in the
   app package.  (This problem, caused by a migration from
   `pluginstall` to `plugman` installation software) may also result in
   a more general __Plugin error__.)
 
-* __Plugin not supported:__ Compilation fails if PhoneGap Build does
+* __Plugin not supported:__ Compilation fails if PhoneGap&nbsp;Build does
   not support a plugin, or plugin version, specified in the
   `config.xml` file.  See the site's
   [Plugins](http://build.phonegap.com/plugins) tab for a list of
@@ -92,28 +92,28 @@ plugins.
 * __Certificate not found:__ Build fails if you submit your app
   without an associated signing certificate and keychain pair. Make
   sure you add the key to your
-  [PhoneGap Build account](http://build.phonegap.com/people/edit) and
+  [PhoneGap&nbsp;Build account](http://build.phonegap.com/people/edit) and
   associate that key with your app on the app's main editing page.
 
-* __Unable to import certificate:__ If PhoneGap Build is unable to
+* __Unable to import certificate:__ If PhoneGap&nbsp;Build is unable to
   import the certificate you provide along with your password into its
   keychain, it is unable to sign the app, and build fails.  Please try
   uploading your certificate again, making sure that you supply the
   correct credentials.
 
-* __Certificate doesn't match profile:__ PhoneGap Build is unable to
+* __Certificate doesn't match profile:__ PhoneGap&nbsp;Build is unable to
   build a signed app if the identity listed in your profile does not
   match the one in the certificate. This may occur if you upload a
   developer profile along with a distribution certificate, or vice
   versa.  Try using a regenerated provisioning profile that matches
   your certificate.
 
-* __Provisioning Profile expired:__ PhoneGap Build is unable to sign
+* __Provisioning Profile expired:__ PhoneGap&nbsp;Build is unable to sign
   the app using the supplied profile and certificate, because the
   provisioning profile has expired.  Upload a regenerated provisioning
   profile from the Apple Developer Portal.
 
-* __Unable to read provisioning profile:__ PhoneGap Build is unable to
+* __Unable to read provisioning profile:__ PhoneGap&nbsp;Build is unable to
   read or parse the provisioning profile.  Check that the
   `mobileprovision` file is valid, otherwise regenerate it from the
   Apple Developer Portal.
@@ -146,7 +146,7 @@ plugins.
 ## BlackBerry Errors
 
 * __Signing Timeout:__ To run on a device, all BlackBerry builds have
-  to be signed by RIM's signing servers. While PhoneGap Build attempts
+  to be signed by RIM's signing servers. While PhoneGap&nbsp;Build attempts
   to sign every BlackBerry build, there are intermittent problems due to 
   unresponsive servers. Rebuilding the app should fix the problem.
 

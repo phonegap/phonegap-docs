@@ -21,7 +21,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 # Remote Debugging Tools
 
 This section shows how to use standard Web Inspector tools available
-from the [https://build.phonegap.com](PhoneGap Build site) to debug
+from the [https://build.phonegap.com](PhoneGap&nbsp;Build site) to debug
 PhoneGap apps while they are running on your device.  See the PhoneGap
 Build section for details on how to provide the site with project
 code, and how to get the resulting compiled apps onto your device.
