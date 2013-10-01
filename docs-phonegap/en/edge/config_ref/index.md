@@ -27,15 +27,18 @@ Web Apps (Widgets)](http://www.w3.org/TR/widgets/) specification, and
 extended to specify core Cordova API features, plugins, and
 platform-specific settings.
 
-This section details configuration settings that apply when developing
-locally in the PhoneGap CLI (described in The Command-line Interface),
-or when using SDKs along with other platform-specific command-line
-tools (detailed in Platform Guides). For projects using PhoneGap Build
-or the CLI's _remote_ option, the configuration settings listed below
-do not apply.  Instead, see Configuring PhoneGap Build Projects.
+This section details configuration settings that apply to many
+different workflows PhoneGap makes possible: when developing locally
+in the PhoneGap CLI (described in The Command-line Interface), when
+using SDKs along with other platform-specific command-line tools
+(detailed in Platform Guides), or when compiling projects remotely
+using PhoneGap Build or the CLI's _remote_ option. In addition to core
+configuration elements listed below, some preferences apply when
+working in the CLI and platform-specific tools, while others work in
+PhoneGap Build. (See PhoneGap Build Preferences for the latter.)
 
-For projects created with the Cordova CLI, the `config.xml` file can
-be found in the top-level `www` directory:
+For projects created with the Cordova CLI and PhoneGap Build, the
+`config.xml` file can be found in the top-level `www` directory:
 
         app/www/config.xml
 
