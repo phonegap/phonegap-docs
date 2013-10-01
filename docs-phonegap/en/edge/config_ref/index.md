@@ -99,11 +99,23 @@ platforms:
   reverse-domain identifier, and the `version` its full version number
   expressed in major/minor/patch notation.
 
+  __NOTE__: for Android projects compiled with PhoneGap Build, an
+  additional `versionCode` attribute allows you to express the version
+  number as an integer. See the
+  [Android documentation](http://developer.android.com/guide/publishing/versioning.html)
+  for details.
+
 - The `<name>` element specifies the app's formal name, as it appears
   on the device's home screen and within app-store interfaces.
 
+  __NOTE__: for BlackBerry projects compiled with PhoneGap Build, use
+  only Latin characters.
+
 - The `<description>` and `<author>` elements specify metadata and
   contact information that may appear within app-store listings.
+
+  __NOTE__: for BlackBerry projects compiled with PhoneGap Build, keep
+  the description to a reasonable length.
 
 - The optional `<content>` element defines your application's starting
   page in the top-level web assets directory. The default value is

@@ -19,3 +19,11 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # PhoneGap Build Configuration
 
+This section details configuration options available when using
+PhoneGap Build to compile an application, or when using the _remote_
+CLI option described in The Command-line Interface.  For overall
+configuration options, see The config.xml File.  For information on
+how to configure an app's graphics, see Icons and Splash Screens.
+
+## 
+
