@@ -25,6 +25,22 @@ CLI option described in The Command-line Interface.  For overall
 configuration options, see The config.xml File.  For information on
 how to configure an app's graphics, see Icons and Splash Screens.
 
+## Specifying Features
+
+## Specifying Platforms
+
+By default, PhoneGap Build builds applications for every platform it
+can.  Specify the optional `<gap:platform>` element if you only want
+to make certain platforms available. The following shows available
+values:
+
+        <gap:platform name="ios" />
+        <gap:platform name="android" />
+        <gap:platform name="webos" />
+        <gap:platform name="symbian" />
+        <gap:platform name="blackberry" />
+        <gap:platform name="winphone" />
+
 ## Setting the PhoneGap Version
 
 PhoneGap Build allows you to control which version of PhoneGap to use
@@ -36,4 +52,8 @@ __2.2.0__, __2.3.0__, __2.5.0__, __2.7.0__, or the default __2.9.0__:
 
 All PhoneGap versions prior to __2.0.0__ are deprecated. Specifying an
 unsupported version number prevents the project from building.
+
+## Android Preferences
+
+## iOS Preferences
 
