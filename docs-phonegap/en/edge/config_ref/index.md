@@ -145,7 +145,10 @@ The following global preferences apply to all platforms:
 ## Multi-platform Preferences
 
 The following preferences apply to more than one platform, but not to
-all of them:
+all of them. These preferences apply when working in the CLI and in
+SDKs and associated command-line tools. (For projects compiled with
+PhoneGap Build or the CLI's _remote_ option, see PhoneGap Build
+Preferences.)
 
 - `DisallowOverscroll` (boolean, defaults to `false`): set to `true`
   if you don't want the interface to display any feedback when users
