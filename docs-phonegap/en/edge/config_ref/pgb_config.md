@@ -17,5 +17,5 @@ license: Licensed to the Apache Software Foundation (ASF) under one
          under the License.
 ---
 
-# PhoneGap Build Preferences
+# PhoneGap Build Configuration
 
