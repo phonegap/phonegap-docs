@@ -25,8 +25,6 @@ CLI option described in The Command-line Interface.  For overall
 configuration options, see The config.xml File.  For information on
 how to configure an app's graphics, see Icons and Splash Screens.
 
-## Specifying Features
-
 ## Specifying Platforms
 
 By default, PhoneGap Build builds applications for every platform it

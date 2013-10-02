@@ -191,55 +191,55 @@ The most recent version of PhoneGap implements basic device APIs using
 a system of added _plugins_. The version used in PhoneGap&nbsp;Build
 ([2.9.0](http://docs.phonegap.com/en/2.9.0)) uses a somewhat different
 system based on project settings. To enable device APIs for projects
-compiled with PhoneGap&nbsp;Build, place any of the following `<feature/>`
+compiled with PhoneGap&nbsp;Build, place any of the following `<gap:plugin/>`
 elements in the project's top-level `config.xml` file:
 
 * Basic device information (Device API):
 
-        <feature name="Device" value="org.apache.cordova.core.Device"/>
+        <gap:plugin name="Device" value="org.apache.cordova.core.Device"/>
 
 * Network Connection and Battery Events:
 
-        <feature name="NetworkStatus" value="org.apache.cordova.core.NetworkManager" />
-        <feature name="Battery" value="org.apache.cordova.core.BatteryListener" />
+        <gap:plugin name="NetworkStatus" value="org.apache.cordova.core.NetworkManager" />
+        <gap:plugin name="Battery" value="org.apache.cordova.core.BatteryListener" />
 
 * Accelerometer, Compass, and Geolocation:
 
-        <feature name="Accelerometer" value="org.apache.cordova.core.AccelListener" />
-        <feature name="Compass" value="org.apache.cordova.core.CompassListener" />
-        <feature name="Geolocation" value="org.apache.cordova.core.GeoBroker" />
+        <gap:plugin name="Accelerometer" value="org.apache.cordova.core.AccelListener" />
+        <gap:plugin name="Compass" value="org.apache.cordova.core.CompassListener" />
+        <gap:plugin name="Geolocation" value="org.apache.cordova.core.GeoBroker" />
 
 * Camera, Media playback and Capture:
 
-        <feature name="Camera" value="org.apache.cordova.core.CameraLauncher" />
-        <feature name="Media" value="org.apache.cordova.core.AudioHandler" />
-        <feature name="Capture" value="org.apache.cordova.core.Capture" />
+        <gap:plugin name="Camera" value="org.apache.cordova.core.CameraLauncher" />
+        <gap:plugin name="Media" value="org.apache.cordova.core.AudioHandler" />
+        <gap:plugin name="Capture" value="org.apache.cordova.core.Capture" />
 
 * Access files on device or network (File API):
 
-        <feature name="File" value="org.apache.cordova.core.FileUtils" />
-        <feature name="FileTransfer" value="org.apache.cordova.core.FileTransfer" />
+        <gap:plugin name="File" value="org.apache.cordova.core.FileUtils" />
+        <gap:plugin name="FileTransfer" value="org.apache.cordova.core.FileTransfer" />
 
 * Notification via dialog box or vibration:
 
-        <feature name="Notification" value="org.apache.cordova.core.Notification" />
-        <feature name="Vibration" value="org.apache.cordova.core.Vibration" />
+        <gap:plugin name="Notification" value="org.apache.cordova.core.Notification" />
+        <gap:plugin name="Vibration" value="org.apache.cordova.core.Vibration" />
 
 * Contacts:
 
-        <feature name="Contacts" value="org.apache.cordova.core.ContactManager" />
+        <gap:plugin name="Contacts" value="org.apache.cordova.core.ContactManager" />
 
 * Globalization:
 
-        <feature name="Globalization" value="org.apache.cordova.core.globalization" />
+        <gap:plugin name="Globalization" value="org.apache.cordova.core.globalization" />
 
 * Splashscreen:
 
-        <feature name="SplashScreen" value="org.apache.cordova.core.SplashScreen" />
+        <gap:plugin name="SplashScreen" value="org.apache.cordova.core.SplashScreen" />
 
 * Open new browser windows (InAppBrowser):
 
-        <feature name="InAppBrowser" value="org.apache.cordova.core.InAppBrowser" />
+        <gap:plugin name="InAppBrowser" value="org.apache.cordova.core.InAppBrowser" />
 
 See Configuration Reference for information about other application
 settings you can modify in the `config.xml` file.
