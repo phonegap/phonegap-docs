@@ -102,7 +102,7 @@ image:
         blackberry/screen-225.png
         windows-phone/screen-portrait.jpg
 
-## Configuring Icons for PhoneGap Build
+## Configuring Images for PhoneGap Build
 
 By default, PhoneGap Build generates icons based on the root
 application directory's `icon.png` file. Otherwise, adding `<icon>`
@@ -128,6 +128,68 @@ target platforms. For example:
 If the `gap:platform` attribute is not specified, the referenced file
 is copied to _all_ platforms, unnecessarily increasing the size of the
 application package.
+
+The following example defines icons and splash screens for low,
+medium, high, and extra-high resolution screens on Android devices:
+
+        <icon src="icons/android/ldpi.png"  gap:platform="android" gap:density="ldpi"  />
+        <icon src="icons/android/mdpi.png"  gap:platform="android" gap:density="mdpi"  />
+        <icon src="icons/android/hdpi.png"  gap:platform="android" gap:density="hdpi"  />
+        <icon src="icons/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+        <gap:splash src="splash/android/ldpi.png"  gap:platform="android" gap:density="ldpi"  />
+        <gap:splash src="splash/android/mdpi.png"  gap:platform="android" gap:density="mdpi"  />
+        <gap:splash src="splash/android/hdpi.png"  gap:platform="android" gap:density="hdpi"  />
+        <gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+
+The following defines iOS icons for _classic_, _retina_, _iPad_, and
+_retina iPad_ displays:
+
+        <icon src="icons/ios/icon.png"          gap:platform="ios" width="57"  height="57"  />
+        <icon src="icons/ios/icon-72.png"       gap:platform="ios" width="72"  height="72"  />
+        <icon src="icons/ios/icon_at_2x.png"    gap:platform="ios" width="114" height="114" />
+        <!-- retina iPad -->
+        <icon src="icons/ios/icon-72_at_2x.png" gap:platform="ios" width="144" height="144" />
+
+The following defines iOS splash screens for _classic_, _retina_,
+_iPhone 5_, and _iPad_ displays. Standard iPads have two different
+splash screens for portrait and landscape orientation. Retina iPads
+have two additional splash screens: retina portrait and retina
+landscape. The following defines splash screens for each type of
+screen:
+
+        <gap:splash src="splash/ios/Default.png"                 gap:platform="ios" width="320"  height="480"  />
+        <gap:splash src="splash/ios/Default_at_2x.png"           gap:platform="ios" width="640"  height="960"  />
+        <gap:splash src="splash/ios/Default_iphone5.png"         gap:platform="ios" width="640"  height="1136" />
+        <gap:splash src="splash/ios/Default-Landscape.png"       gap:platform="ios" width="1024" height="748"  />
+        <gap:splash src="splash/ios/Default-Portrait.png"        gap:platform="ios" width="768"  height="1004" />
+        <!-- retina iPad -->
+        <gap:splash src="splash/ios/Default-Landscape_at_2x.png" gap:platform="ios" width="2048" height="1496" />
+        <gap:splash src="splash/ios/Default-Portrait_at_2x.png"  gap:platform="ios" width="1536" height="2008" />
+
+The following specifies icons and splash screens for BlackBerry
+devices.  Note that BlackBerry icons __must be smaller__ than
+16K. BlackBerry also defines an optional hover state that allows a
+separate icon to display when users roll a trackpad cursor over the
+icon image. By default, the non-hover icon displays for the hover
+state.
+
+        <icon src="icons/bb/icon.png"          gap:platform="blackberry" />
+        <icon src="icons/bb/icon_hover.png"    gap:platform="blackberry" gap:state="hover"/>
+        <gap:splash src="splash/bb/splash.png" gap:platform="blackberry" />
+
+The WebOS platform supports a default icon and a miniature icon that
+is used for notifications:
+
+        <icon src="icons/webos/icon.png"     gap:platform="webos" />
+        <icon src="icons/webos/miniicon.png" gap:platform="webos" gap:role="mini" />
+
+PhoneGap Build supports two kinds of Windows Phone icons, a regular
+icon and a background tile image. It also supports a single splash
+screen image that, unlike other platforms, should be in _jpg_ format:
+
+        <icon src="icons/winphone/icon.png"          gap:platform="winphone" />
+        <icon src="icons/winphone/tileicon.png"      gap:platform="winphone" gap:role="background" />
+        <gap:splash src="splash/winphone/splash.jpg" gap:platform="winphone" />
 
 ## Splash Screens for the Android Platform
 
