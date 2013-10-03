@@ -55,3 +55,46 @@ unsupported version number prevents the project from building.
 
 ## iOS Preferences
 
+The following preferences apply to iOS projects on PhoneGap Build:
+
+- `target-device` (`handset`, `tablet`, or default `universal`)
+  targets an interface for a specific class of device. For example,
+  setting it to `handset` assigns to smaller interface to the larger
+  screen.
+
+        <preference name="target-device" value="handset" />
+
+  <!-- CLARIFY EXACTLY WHAT THIS DOES -->
+
+- `prerendered-icon` (boolean, default `false`) prevents iOS from
+  applying its default gloss effect to the app's home screen icon.
+
+        <preference name="prerendered-icon" value="true" />
+
+- `ios-statusbarstyle` (`black-opaque`, `black-translucent`, or
+  `default`) controls the appearance of the status bar at the top of
+  the screen, which appears gray by default. Note that the PhoneGap
+  webview does not extend beneath the status bar, so
+  `black-translucent` appears the same as `black-opaque`.
+
+        <preference name="ios-statusbarstyle" value="black-opaque" />
+
+- `detect-data-types` (boolean, default is `true`) controls whether
+  text patterns such as phone numbers and dates are automatically
+  converted into links handled by various iOS services.
+
+        <preference name="detect-data-types" value="false" />
+
+  <!-- (ios only) Controls whether certain data types (such as phone
+       numbers and dates) are automatically turned into links by the
+       system. Defaults to "true" (as does the system web view). In
+       preference to this, try using meta-tags: And use
+       detect-data-types if meta tags don't work for you.  -->
+
+- `exit-on-suspend` (boolean, default is `false`) allows the app to
+  terminate when paused, for example when the user presses the home
+  button to switch to another application.
+
+        <preference name="exit-on-suspend" value="true" />
+
+## BlackBerry Preferences
