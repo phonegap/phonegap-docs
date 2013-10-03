@@ -39,6 +39,14 @@ available values:
         <gap:platform name="blackberry" />
         <gap:platform name="winphone" />
 
+<!--
+
+## Specifying Application Features
+
+## Specifying Plugins
+
+-->
+
 ## Specifying the PhoneGap Version
 
 PhoneGap Build allows you to control which version of PhoneGap to use
@@ -182,4 +190,6 @@ not specify any behavior. For details, see
 
 The `config.xml` file may contain any number of `<gap:url-scheme>`
 elements. Each must feature at least one child `<scheme>` element.
+
+## Custom Debug Server
 
