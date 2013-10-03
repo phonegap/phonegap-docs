@@ -125,85 +125,38 @@ and
 [Apple Safari](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/DebuggingYourWebsite/DebuggingYourWebsite.html)
 provides a good overview.
 
-<!--
+## Configuring a Custom Debug Server
 
- # Using a Custom Debug Server
+To enable debugging, PhoneGap Build relies on a tool called Weinre,
+which runs on a `debug.build.phonegap.com` server by default.  This
+section shows how to run it on your own local server. Setting it up
+on a public server is possible, but requires additional setup outside
+the scope of this section.
 
-Adobe&reg; PhoneGap&trade; Build allows users to use their own debug
-server with the Build service.
-
-Build uses a tool called Weinre to enable remote debugging of
-mobile apps.
-
-This guide provides information on setting up your own local server.
-
-The pre-requisites for running Weinre are that you need to have `npm`
-installed.
-
-Once you've installed Weinre you will only be able to use the local
-server within your own network unless you plan to host it on a
-publicly accessible location. This will require additional setup that
-is outside the scope of this guide.
-
- ## Setting up Weinre
-
- ### Get Weinre
-
-Once you have `npm` installed, obtaining and installing Weinre is as
-simple as running the following command in a terminal.
+You must have the `npm` utility already installed. Then run the
+following to install Weinre:
 
         sudo npm -g install weinre
 
-That's it! Now you're ready to run your very own Weinre instance.
+The following gets Weinre up and running, and displays details on the
+debug server:
 
- ### Start Weinre
-
-To start your new local Weinre instance run the following command:
-
-        weinre
-
-You will now see output like the following:
-
-        Hardeeps-MacBook-Air:~ hardeep$ weinre
+        $ weinre
         2013-07-01T20:03:34.890Z weinre: starting server at http://localhost:8080
 
-Weinre is now up and running! If you are running this behind a router
-that uses NAT you will need to find your IP address. You will use this
-IP when specifying your configuration with Build.
-
- ## Using a Local Weinre Instance with Build
-
-Obtain the ip address of your machine running Weinre. This can be done
-on Windows by running `ipconfig` or on OSX/Linux by running
-`ifconfig`.
-
-Now you're ready to use your local server with Build. Using the
-[config.xml](/docs/config-xml) specify the following. Change the
-domain param value to the ip address you found earlier, and the key
-param value to a unique identifier.
+The application needs to be made aware of the debug server.  To obtain
+the IP address of the machine running Weinre, run `ipconfig` on
+Windows or `ifconfig` on OSX/Linux. Then add the following, along with
+the IP address and a unique key, to the app's `config.xml` file:
 
         <feature name="debug-server" required="true">
-          <param name="domain" value="http://localhost:8080"/>
+          <param name="domain" value="[ IP number ]"/>
           <param name="key" value="[ a unique id for your app ]"/>
         </feature>
 
-That's it! You can now upload this to Build, install it on your
-device, and debug using your local Wienre server.
+You can now use your local server to debug an app.  If your router
+runs NAT, you may need to access the server via the `8080` port:
+`http://[ip address]:8080`.
 
- ## Common Issues
-
-__I can't connect to my Local Server__
-
-First of all make sure that your server is running. Chances are if
-you're using the default configuration you can visit
-http://localhost:8080 and it should be responding.
-
-If this works it's most likely the IP address you're providing to
-Build; please verify that it is correct. A google search such as
-`windows [version] find ip address` or `OSX [version] find ip address`
-will help you find articles on getting the right ip.
-
-Assuming that you're using a router running NAT verify that you can
-visit it within your network by visiting http://[ip address]:8080.
-
--->
+For more configuration options, see The config.xml File and PhoneGap
+Build Configuration.
