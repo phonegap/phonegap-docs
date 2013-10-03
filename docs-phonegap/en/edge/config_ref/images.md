@@ -20,40 +20,10 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 # Icons and Splash Screens
 
 This section shows how to configure an app's icon and optional splash
-screen for various platforms, either when compiling projects remotely
-using PhoneGap Build, when working in the PhoneGap CLI (described in
-The Command-line Interface), or when using local platform-specific SDK
-tools (detailed in the Platform Guides).
-
-## Configuring Icons for PhoneGap Build
-
-By default, PhoneGap Build generates icons based on the root
-application directory's `icon.png` file. Otherwise, adding `<icon>`
-elements to the top-level `config.xml` file allows you to specify a
-different default filename, or platform-specific icons.  The `width`
-and `height` attributes are optional:
-
-        <icon src="app.png" width="128" height="128"/>
-
-Likewise, the default splash screen must be named `splash.png` and
-must reside in the root of your application folder in _png_
-format. Otherwise, use the custom `gap:splash` tag to specify a
-different filename:
-
-        <gap:splash src="app_splash.png" />
-
-The `gap:platform` attribute specifies custom splash screens for
-target platforms. For example:
-
-        <gap:splash src="splash/ios/Default-568h@2x~iphone.png"
-                gap:platform="ios" width="320" height="480" />
-
-If the `gap:platform` attribute is not specified, the referenced file
-is copied to _all_ platforms, unnecessarily increasing the size of the
-application package.
-
-The sections below provide details on images required for each
-platform.
+screen for various platforms, either when working in the PhoneGap CLI
+(described in The Command-line Interface), when using local
+platform-specific SDK tools (detailed in the Platform Guides), or when
+compiling projects remotely using PhoneGap Build.
 
 ## Configuring Icons in the CLI
 
@@ -132,11 +102,38 @@ image:
         blackberry/screen-225.png
         windows-phone/screen-portrait.jpg
 
-The following sections detail how to set up splash screens when
-working with SDKs and related command-line tools described in Platform
-Guides.
+## Configuring Icons for PhoneGap Build
+
+By default, PhoneGap Build generates icons based on the root
+application directory's `icon.png` file. Otherwise, adding `<icon>`
+elements to the top-level `config.xml` file allows you to specify a
+different default filename, or platform-specific icons.  The `width`
+and `height` attributes are optional:
+
+        <icon src="app.png" width="128" height="128"/>
+
+Likewise, the default splash screen must be named `splash.png` and
+must reside in the root of your application folder in _png_
+format. Otherwise, use the custom `gap:splash` tag to specify a
+different filename:
+
+        <gap:splash src="app_splash.png" />
+
+The `gap:platform` attribute specifies custom splash screens for
+target platforms. For example:
+
+        <gap:splash src="splash/ios/Default-568h@2x~iphone.png"
+                gap:platform="ios" width="320" height="480" />
+
+If the `gap:platform` attribute is not specified, the referenced file
+is copied to _all_ platforms, unnecessarily increasing the size of the
+application package.
 
 ## Splash Screens for the Android Platform
+
+This section provides details on image locations, relevant only when
+compiling projects directly in the Android SDK along with
+associated platform-specific command-line tools.
 
 Place [9-patch image](https://developer.android.com/tools/help/draw9patch.html)
 files in the Android project's `res/drawable` directory. The size for
@@ -165,24 +162,28 @@ splash screen once the app receives the `deviceready` event, call the
 
 ## Splash Screens for the iOS Platform
 
+This section provides details on image locations, relevant only when
+compiling projects directly in the Xcode along with associated
+platform-specific command-line tools.
+
 Copy your splash screen images into the iOS project's
 `Resources/splash` directory. Only add the images for the devices you
 want to support, such as iPad or iPhone. The size of each image should
 be:
 
-- Default-568h@2x~iphone.png (640x1136 pixels)
-- Default-Landscape@2x~ipad.png (2048x1496 pixels)
-- Default-Landscape~ipad.png (1024x748 pixels)
-- Default-Portrait@2x~ipad.png (1536x2008 pixels)
-- Default-Portrait~ipad.png (768x1004 pixels)
-- Default@2x~iphone.png (640x960 pixels)
-- Default~iphone.png (320x480 pixels)
+- `Default-568h@2x~iphone.png` (640&times;1136 pixels)
+- `Default-Landscape@2x~ipad.png` (2048&times;1496 pixels)
+- `Default-Landscape~ipad.png` (1024&times;748 pixels)
+- `Default-Portrait@2x~ipad.png` (1536&times;2008 pixels)
+- `Default-Portrait~ipad.png` (768&times;1004 pixels)
+- `Default@2x~iphone.png` (640&times;960 pixels)
+- `Default~iphone.png` (320&times;480 pixels)
 
 ## Splash Screens for the BlackBerry 10 Platform
 
 Copy your splash screen images into the project's
 `res/screen/blackberry10` directory. The file names should be:
 
-- splash-1280x768.png (1280x768 pixels)
-- splash-720x720.png (720x720 pixels)
-- splash-768x1280.png (768x1280 pixels)
+- `splash-1280x768.png` (1280&times;768 pixels)
+- `splash-720x720.png` (720&times;720 pixels)
+- `splash-768x1280.png` (768&times;1280 pixels)
