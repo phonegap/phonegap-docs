@@ -193,3 +193,14 @@ elements. Each must feature at least one child `<scheme>` element.
 
 ## Custom Debug Server
 
+The `debug-server` feature allows you to use a custom Weinre instance
+for your application. By default, PhoneGap Build uses
+`http://debug.build.phonegap.com`, but you can change this by adding
+markup such as the following to your `config.xml`:
+
+        <feature name="debug-server" required="true">
+           <param name="domain" value="http://debug.custom.com"/>
+           <param name="key" value="some_unique_key"/>
+        </feature>
+
+See Remote Debugging Tools for more information.
