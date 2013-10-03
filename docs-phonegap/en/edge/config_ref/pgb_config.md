@@ -27,10 +27,10 @@ how to configure an app's graphics, see Icons and Splash Screens.
 
 ## Specifying Platforms
 
-By default, PhoneGap Build builds applications for every platform it
-can.  Specify the optional `<gap:platform>` element if you only want
-to make certain platforms available. The following shows available
-values:
+By default, PhoneGap Build generates applications for every platform
+it can.  Specify the optional `<gap:platform>` element if you only
+want to make certain platforms available. The following shows
+available values:
 
         <gap:platform name="ios" />
         <gap:platform name="android" />
