@@ -32,7 +32,9 @@ different workflows PhoneGap makes possible: when developing locally
 in the PhoneGap CLI (described in The Command-line Interface), when
 using SDKs along with other platform-specific command-line tools
 (detailed in Platform Guides), or when compiling projects remotely
-using PhoneGap Build or the CLI's _remote_ option. In addition to core
+using PhoneGap Build or the CLI's _remote_ option.
+(See Introducing PhoneGap Build.)
+In addition to core
 configuration elements listed below, some preferences apply when
 working in the CLI and platform-specific tools, while others work in
 PhoneGap Build. (See PhoneGap Build Configuration for the latter.)

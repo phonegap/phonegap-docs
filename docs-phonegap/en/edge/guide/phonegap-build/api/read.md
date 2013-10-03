@@ -22,7 +22,8 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 This section details read methods for version 1 of the API. See The
 PhoneGap Build API for an overview, or The PhoneGap Build Write API
-for write methods.
+for write methods. (For an overview of remote builds, see Introducing
+PhoneGap Build.)
 
 Please note that example responses are formatted for the sake of
 legibility. Actual JSON responses will have no significant whitespace.

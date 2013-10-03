@@ -23,7 +23,8 @@ This section shows how to configure an app's icon and optional splash
 screen for various platforms, either when working in the PhoneGap CLI
 (described in The Command-line Interface), when using local
 platform-specific SDK tools (detailed in the Platform Guides), or when
-compiling projects remotely using PhoneGap Build.
+compiling projects remotely using PhoneGap Build (see Introducing
+PhoneGap Build).
 
 ## Configuring Icons in the CLI
 

@@ -21,7 +21,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 # Remote Debugging Tools
 
 This section shows how to use standard Web Inspector tools available
-from the [https://build.phonegap.com](PhoneGap&nbsp;Build site) to debug
+from the [https://build.phonegap.com](PhoneGap Build site) to debug
 PhoneGap apps while they are running on your device.  See the PhoneGap
 Build section for details on how to provide the site with project
 code, and how to get the resulting compiled apps onto your device.
@@ -35,7 +35,7 @@ __Settings__ tab, then select the __Enable debugging__ check box:
 Once the debugging option is selected and you build the project, the
 __Debug__ button appears along with other options to update code and
 rebuild the project. When you preview the app on the device, perhaps
-by scanning the QR code as described in the PhoneGap Build section,
+by scanning the QR code as described in Introducing PhoneGap Build,
 pressing __Debug__ opens a web page that allows you to communicate
 with the app as it runs on the device:
 
