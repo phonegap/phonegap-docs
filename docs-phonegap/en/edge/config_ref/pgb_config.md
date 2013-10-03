@@ -149,3 +149,14 @@ Build:
         <preference name="exit-on-suspend" value="true" />
 
 ## BlackBerry Preferences
+
+The following preference applies to BlackBerry projects compiled with
+PhoneGap Build:
+
+- `disable-cursor` (boolean, default is `false`) prevents a mouse or
+  icon cursor from displaying. Corresponds to the `<rim:navigation/>`
+  element detailed in 
+  [BlackBerry's documentation](https://developer.blackberry.com/html5/documentation/rim_navigation_element_1582456_11.html).
+
+        <preference name="disable-cursor" value="true" />
+
