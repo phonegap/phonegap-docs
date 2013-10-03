@@ -53,9 +53,60 @@ unsupported version number prevents the project from building.
 
 ## Android Preferences
 
+The following preferences affect how Android apps compiled with
+PhoneGap Build run:
+
+- `splash-screen-duration` controls the duration for which the splash
+  screen remains visible. Default value is `5000` milliseconds.
+
+        <preference name="splash-screen-duration" value="10000"/>
+
+  __NOTE:__ Use the Splashscreen API to control visibility for other
+  supporting platforms, calling `navigator.splashscreen.hide()` in the
+  `deviceready` callback.
+
+- `android-windowSoftInputMode` controls the main window's appearance
+  when the keyboard appears. For details and a list of possible
+  values, see
+  [Android's documentation](http://developer.android.com/guide/topics/manifest/activity-element.html#wsoft).
+
+        <preference name="android-windowSoftInputMode" value="stateVisible" />
+
+The following preferences affect how Android projects compile on
+PhoneGap Build. They correspond to the `usesSdk` attributes in the
+`AndroidManifest.xml` file, for which details are available in
+[Android's documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html).
+
+- `android-minSdkVersion` specifies the minimum Android SDK version
+  used to compile the project. Defaults to `7`, corresponding to
+  Android 2.1.
+
+        <preference name="android-minSdkVersion" value="10" />
+
+- `android-maxSdkVersion` specifies the maximum Android SDK version
+  used to compile the project.  By default, this value is not set.
+
+        <preference name="android-maxSdkVersion" value="15" />
+
+- `android-targetSdkVersion` specifies an integer corresponding to the
+  API Level the application targets. Unset by default, in which case the
+  default value matches that of `minSdkVersion`.
+
+        <preference name="android-targetSdkVersion" value="12" />
+
+- `android-installLocation` controls where an app can be installed.
+  The default of `internalOnly` matches that of the Android SDK.
+  Values of `auto` or `preferExternal` allow the app to be installed
+  on an SD card, which can lead to unexpected behavior.  For details,
+  see
+  [Android's documentation](http://developer.android.com/guide/appendix/install-location.html).
+
+        <preference name="android-installLocation" value="auto" />
+
 ## iOS Preferences
 
-The following preferences apply to iOS projects on PhoneGap Build:
+The following preferences apply to iOS projects compiled with PhoneGap
+Build:
 
 - `target-device` (`handset`, `tablet`, or default `universal`)
   targets an interface for a specific class of device. For example,

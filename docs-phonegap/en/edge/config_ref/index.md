@@ -189,7 +189,7 @@ Preferences.)
 
         <preference name="HideKeyboardFormAccessoryBar" value="true"/>
 
-  Applies to iOS and BlackBerry. 
+  Applies to iOS and BlackBerry.
 
   __NOTE:__ For BlackBerry, valid values are `enable` or `disable`.
 

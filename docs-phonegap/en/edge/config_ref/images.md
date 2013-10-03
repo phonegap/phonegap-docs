@@ -136,7 +136,7 @@ The following sections detail how to set up splash screens when
 working with SDKs and related command-line tools described in Platform
 Guides.
 
-## Splash Screens for the Android Platform 
+## Splash Screens for the Android Platform
 
 Place [9-patch image](https://developer.android.com/tools/help/draw9patch.html)
 files in the Android project's `res/drawable` directory. The size for
@@ -163,7 +163,7 @@ this example the splash screen displays for 10 seconds. To dismiss the
 splash screen once the app receives the `deviceready` event, call the
 `navigator.splashscreen.hide()` method.
 
-## Splash Screens for the iOS Platform 
+## Splash Screens for the iOS Platform
 
 Copy your splash screen images into the iOS project's
 `Resources/splash` directory. Only add the images for the devices you
@@ -178,7 +178,7 @@ be:
 - Default@2x~iphone.png (640x960 pixels)
 - Default~iphone.png (320x480 pixels)
 
-## Splash Screens for the BlackBerry 10 Platform 
+## Splash Screens for the BlackBerry 10 Platform
 
 Copy your splash screen images into the project's
 `res/screen/blackberry10` directory. The file names should be:
