@@ -39,16 +39,16 @@ values:
         <gap:platform name="blackberry" />
         <gap:platform name="winphone" />
 
-## Setting the PhoneGap Version
+## Specifying the PhoneGap Version
 
 PhoneGap Build allows you to control which version of PhoneGap to use
 when compiling a project remotely. Set the `phonegap-version`
-preference to any of the following values: __2.0.0__, __2.1.0__,
-__2.2.0__, __2.3.0__, __2.5.0__, __2.7.0__, or the default __2.9.0__:
+preference to any of the following values: __2.5.0__, __2.7.0__,
+__2.9.0__, or the default __3.0.0__:
 
         <preference name="phonegap-version" value="2.9.0" />
 
-All PhoneGap versions prior to __2.0.0__ are deprecated. Specifying an
+All PhoneGap versions prior to __2.5.0__ are deprecated. Specifying an
 unsupported version number prevents the project from building.
 
 ## Android Preferences
