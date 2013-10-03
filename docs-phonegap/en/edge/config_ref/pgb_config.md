@@ -160,3 +160,26 @@ PhoneGap Build:
 
         <preference name="disable-cursor" value="true" />
 
+## Custom URL Schemes
+
+The iOS platform allows you to register
+[custom URL schemes](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html#//apple_ref/doc/uid/TP40007072-CH7-SW50)
+to field navigation links from other applications. The following
+example defines two:
+
+        <gap:url-scheme name="com.acme.myscheme" role="None">
+          <scheme>pgbr</scheme>
+          <scheme>pgbw</scheme>
+        </gap:url-scheme>
+
+The optional `name` attribute defaults to the current application's
+`id` set by the `config.xml` file's `<widget>` element.
+
+The optional `role` attribute declares how the app might be able to
+handle data resulting from the link. The default value of `None` does
+not specify any behavior. For details, see
+[Apple's documentation](https://developer.apple.com/library/ios/documentation/general/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-101685-TPXREF107).
+
+The `config.xml` file may contain any number of `<gap:url-scheme>`
+elements. Each must feature at least one child `<scheme>` element.
+
