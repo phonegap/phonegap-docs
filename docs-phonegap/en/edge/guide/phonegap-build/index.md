@@ -281,3 +281,6 @@ directly, depending on which platform you're using:
   directly from the web; you will need to use Microsoft's tools
 
 -->
+
+
+<!-- does EDIT APP allow the UI to override config.xml? -->

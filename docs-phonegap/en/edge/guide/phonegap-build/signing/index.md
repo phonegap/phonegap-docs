@@ -59,4 +59,79 @@ your keystore, and aligns it using the `zipalign` tool.  All
 subsequent Android builds use your default selected key, and are ready
 for release.
 
-<!-- ## iOS Signing -->
+## iOS Signing
+
+The process to configure iOS release builda is slightly different than
+for other platforms.  All iOS builds need to be signed by a developer
+certificate and a provisioning profile, which is tied to your Apple
+developer account and the device on which you do your testing.
+
+__NOTE:__ Since PhoneGap Build uses Apple's standard development
+process to build applications, you will need to sign up for their
+developer program to build iOS applications on PhoneGap Build. You
+will also need a Mac to configure your certificate and provisioning
+profile.
+
+If you don't have a default certificate/profile pair attached to your
+account, PhoneGap Build alerts you that iOS builds cannot be
+completed:
+
+![](img/guide/phonegap-build/signing/ios-key-required.png)
+
+Your key consists of two files: a _certificate_ and a _provisioning
+profile_.  Apple provides [extensive
+documentation](http://developer.apple.com/) to help you set up your
+environment locally. The best approach is to ensure you can build an
+iOS application to your iOS device locally, to be sure that both your
+certificate and your provisioning profile are set up correctly for
+code signing.
+
+Once your keys are set up, you can upload them to PhoneGap Build. For
+the provisioning profile, you need a file with a `mobileprovision`
+extension that looks like this:
+
+![](img/guide/phonegap-build/signing/team-provisioning-profile.png)
+
+Make sure this provisioning profile is correctly paired with the set
+of devices you wish to test on.
+
+When you create your profile, you need to specify associated
+application IDs. These must correspond to each app's package name, or
+apps won't build correctly.  Packages are declared in the `config.xml`
+file as the `widget` element's `id` attribute. (See The config.xml
+File for details.) For example:
+
+        <widget id="com.example.hello" version="0.0.1">
+
+Note that Apple appends a _Bundle Seed ID_, or _App ID Prefix_, to the
+provisioning profile when you generate it through the iOS Developer
+Center.  To ensure compatibility with other platforms, do not include
+this prefix in the `config.xml`; only include the reverse domain-style
+identifier, such as `com.domainname.appname`.
+
+To prepare your certificate, you need to open the __Keychain Access__
+utility to identify the certificate that you use for iOS
+development. Control-click on the certificate and select __Export...__
+
+![](img/guide/phonegap-build/signing/keychain-export.png)
+
+Save the certificate in a location you can remember, and enter a
+password. This is the same password you need to supply to PhoneGap
+Build.
+
+![](img/guide/phonegap-build/signing/keychain-password.png)
+
+Return to the PhoneGap Build site and navigate to the app's main page
+that lists its details. Select the __Add a Key...__ option from the
+iOS platform's signing key popup. Fill out the form, specifying your
+p12 certificate file and your mobileprovision file, then enter the
+password associated with your certificate.
+
+![](img/guide/phonegap-build/signing/ios-key-form.png)
+
+Once you add your key, PhoneGap Build attempts to rebuild the
+application for iOS and generate a link to the resulting _.ipa_
+file. You can use iTunes to install the _.ipa_ file directly on your
+provisioned iOS device, or you can scan the QR code to install it over
+the air.
+
