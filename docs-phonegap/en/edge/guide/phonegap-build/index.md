@@ -253,8 +253,8 @@ elements in the project's top-level `config.xml` file:
 
         <gap:plugin name="InAppBrowser" value="org.apache.cordova.core.InAppBrowser" />
 
-See Configuration Reference for information about other application
-settings you can modify in the `config.xml` file.
+See The config.xml File for information about other application
+settings you can configure.
 <!-- XREF
 See the Application Development Guide for more information on how to
 use all these features.

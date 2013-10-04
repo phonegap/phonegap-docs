@@ -83,7 +83,7 @@ Optional parameters:
   complete.
 
 * __phonegap_version__: Which version of PhoneGap your app uses. See
-  the Configuration Reference for details on which are supported,
+  the The config.xml File for details on which are supported,
   and which one is currently the default.
 
 * __hydrates__: Builds your app with hydration enabled, as described
@@ -464,7 +464,7 @@ Sets an icon file for a given app. Send a `png` file as your post's
 If you want different icons for different resolutions, you should
 _not_ use this API method. Instead, include the different icon files
 in your application package and specify their use in your `config.xml`
-file, as detailed in the Configuration Reference.
+file, as detailed in the The config.xml File.
 
 The response has a `201` created status, and the application is queued
 for building:
