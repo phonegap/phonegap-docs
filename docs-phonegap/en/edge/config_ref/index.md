@@ -37,7 +37,7 @@ using PhoneGap Build or the CLI's _remote_ option.
 In addition to core
 configuration elements listed below, some preferences apply when
 working in the CLI and platform-specific tools, while others work in
-PhoneGap Build. (See PhoneGap Build Configuration for the latter.)
+PhoneGap Build. (See Configuring Remote Builds for the latter.)
 
 For projects created with the Cordova CLI and PhoneGap Build, the
 `config.xml` file can be found in the top-level `www` directory:

@@ -17,7 +17,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
          under the License.
 ---
 
-# PhoneGap Build Configuration
+# Configuring Remote Builds
 
 This section details configuration options available when using
 PhoneGap Build to compile an application, or when using the _remote_
