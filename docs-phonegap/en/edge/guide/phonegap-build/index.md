@@ -63,8 +63,20 @@ advanced options:
 * Remote Debugging Tools shows how to configure PhoneGap Build's
   debugging options, or use a custom debug server.
 
+<!--
 * Remote Build Errors shows how to overcome several problems you may
   encounter when compiling a PhoneGap project remotely.
+-->
+
+* Configuring Remote Builds details config.xml options that are only
+  available for PhoneGap Build.
+
+* Signing Apps in PhoneGap Build shows the tools PhoneGap Build offers
+  to help you sign Android and iOS builds so that they are ready to
+  submit to the Android Market and the iTunes store.
+
+* Upgrading to PhoneGap 3.0 shows how to adapt projects to PhoneGap
+  Build's latest PhoneGap back end.
 
 * The PhoneGap Build API details how an application can communicate
   with the PhoneGap Build service to compile PhoneGap projects.
