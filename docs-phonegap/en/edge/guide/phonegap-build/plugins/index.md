@@ -110,3 +110,24 @@ necessary.
 
 ## Contributing Plugins
 
+PhoneGap Build currently supports plugins for iOS and Android. To make
+your plugin available to other PhoneGap users, make sure you structure
+the code package and specify the `plugin.xml` manifest as discussed in
+Application Plugins, and detailed more thoroughly in the Plugin
+Specification. Plugin code needs to be stored in a github code
+repository.
+
+Once your plugin is ready for release, submit it to PhoneGap Build by
+navigating to
+[build.phonegap.com/plugins](https://build.phonegap.com/plugins) and
+selecting the __Submit Plugin__ tab. There you specify the name of the
+plugin's github repository, and optionally the development branch.
+
+To be hosted on PhoneGap Build, the plugin must add value for other
+users. Apps must be able to build and run properly. A source code
+review should not turn up problems such as security risks or compiler
+warnings. If there are any such concerns, the PhoneGap Build team will
+contact you to help resolve the problem.  If you're worried that your
+plugin may not be accepted, please
+[contact the team](http://community.phonegap.com/nitobi)
+while you're developing.
