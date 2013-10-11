@@ -29,9 +29,9 @@ your testers.
 
 ## Adding Collaborators
 
-To add a collaborator from within the [PhoneGap&nbsp;Build
+To add a collaborator from within the [PhoneGap Build
 interface](http://build.phonegap.com), make sure the application has
-first been built, as described in the section on PhoneGap Build.
+first been built, as described in Introducing PhoneGap Build.
 
 1. Under the __Apps__ tab, press the name of the app.
 
@@ -42,9 +42,9 @@ first been built, as described in the section on PhoneGap Build.
 
 ![](img/guide/phonegap-build/pgbuild_collab_add.png)
 
-The recipient may need to set up a PhoneGap&nbsp;Build account, keyed
+The recipient may need to set up a PhoneGap Build account, keyed
 either to an AdobeID or a GitHub account.  Any recipient who accepts
-the invitation can view the same application in the PhoneGap&nbsp;Build
+the invitation can view the same application in the PhoneGap Build
 interface. Each role brings different privileges:
 
 * Testers can only download the app.
@@ -81,10 +81,10 @@ the collaborators you have specified.
 Ordinarily after rebuilding an app, anyone testing the app would have
 to re-install the new version, either via USB cable or by re-scanning
 the QR code to download the new version.  The Hydration tool,
-supported by PhoneGap&nbsp;Build, prevents you from having to do this.
+supported by PhoneGap Build, prevents you from having to do this.
 Hydration works using a compiled application that serves as a
 wrapper for your PhoneGap app. When the wrapper detects a new version
-of the app on the PhoneGap&nbsp;Build site, it prompts you to install and
+of the app on the PhoneGap Build site, it prompts you to install and
 run the new version:
 
 ![](img/guide/phonegap-build/pgbuild_hydrate.png)

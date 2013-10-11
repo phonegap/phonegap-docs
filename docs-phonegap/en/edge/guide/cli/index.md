@@ -327,7 +327,9 @@ button.
 By default, building an application generates files in various
 subdirectories within `platforms`, and relies on locally installed SDK
 tools.  As an alternative, you may be able to build the application
-remotely using Adobe's PhoneGap Build service. This development path
+remotely using Adobe's PhoneGap Build service.
+(See Introducing PhoneGap Build.)
+This development path
 means there's no need to maintain SDK tools on your system, and it
 also involves a different way to install apps onto your device, with
 no emulator testing available.  PhoneGap Build also supports

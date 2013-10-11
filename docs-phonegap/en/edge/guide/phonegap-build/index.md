@@ -18,28 +18,28 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 ---
 
-# PhoneGap Build
+# Introducing PhoneGap Build
 
 Adobe&reg; PhoneGap&trade; Build is a web service that compiles
 PhoneGap apps for you remotely, making downloadable packages available
 in a simple web interface at
 [build.phonegap.com](http://build.phonegap.com). If you use
-PhoneGap&nbsp;Build, you don't need to install and maintain local SDK
+PhoneGap Build, you don't need to install and maintain local SDK
 tools for several mobile platforms, and can expect to update projects
 smoothly.
 
-PhoneGap&nbsp;Build offers three basic development options:
+PhoneGap Build offers three basic development options:
 
 * You can upload your project files directly through the
-  PhoneGap&nbsp;Build website.
+  PhoneGap Build website.
 
-* You can link your PhoneGap&nbsp;Build account to your GitHub
+* You can link your PhoneGap Build account to your GitHub
   account, either public or private, then dynamically pull in remote
   code repositories.
 
 * You can link the `phonegap` command-line tool to your
-  PhoneGap&nbsp;Build account. Its `remote` option allows you to
-  compile projects on the PhoneGap&nbsp;Build site in a single
+  PhoneGap Build account. Its `remote` option allows you to
+  compile projects on the PhoneGap Build site in a single
   command.
 
 This guide provides an overview of the first two options, with basic
@@ -52,7 +52,7 @@ and its `index.html` home page.  See The Command-line Interface for
 information on how to use the CLI to generate a new project, and for
 details on how to build local projects remotely from the command line.
 
-Once you have set up your PhoneGap&nbsp;Build account and generated
+Once you have set up your PhoneGap Build account and generated
 projects as described below, see the following sections for more
 advanced options:
 
@@ -60,14 +60,26 @@ advanced options:
   grant access rights to software testers, with the option for them to
   automatically download the latest version of the app.
 
-* Remote Debugging Tools shows how to configure PhoneGap&nbsp;Build's
+* Remote Debugging Tools shows how to configure PhoneGap Build's
   debugging options, or use a custom debug server.
 
+<!--
 * Remote Build Errors shows how to overcome several problems you may
   encounter when compiling a PhoneGap project remotely.
+-->
+
+* Configuring Remote Builds details config.xml options that are only
+  available for PhoneGap Build.
+
+* Signing Apps in PhoneGap Build shows the tools PhoneGap Build offers
+  to help you sign Android and iOS builds so that they are ready to
+  submit to the Android Market and the iTunes store.
+
+* Upgrading to PhoneGap 3.0 shows how to adapt projects to PhoneGap
+  Build's latest PhoneGap back end.
 
 * The PhoneGap Build API details how an application can communicate
-  with the PhoneGap&nbsp;Build service to compile PhoneGap projects.
+  with the PhoneGap Build service to compile PhoneGap projects.
 
 ## Adding an App
 
@@ -139,7 +151,7 @@ each platform independently:
 
 ![](img/guide/phonegap-build/pgbuild_appdetails.png)
 
-To delete an app from the PhoneGap&nbsp;Build site after initially
+To delete an app from the PhoneGap Build site after initially
 building it, scroll to the bottom of the __Settings__ tab, which
 otherwise displays the app's basic metadata.
 
@@ -179,7 +191,7 @@ push it to your GitHub repository:
         $ git commit -am "modified app"
         $ git push
 
-On the PhoneGap&nbsp;Build site, press __Update Code__ to pull the
+On the PhoneGap Build site, press __Update Code__ to pull the
 latest master branch, and __Rebuild All__ to generate application
 packages from the updated code.
 
@@ -188,58 +200,58 @@ packages from the updated code.
 <!-- NOTE: VERSION-specific content -->
 
 The most recent version of PhoneGap implements basic device APIs using
-a system of added _plugins_. The version used in PhoneGap&nbsp;Build
+a system of added _plugins_. The version used in PhoneGap Build
 ([2.9.0](http://docs.phonegap.com/en/2.9.0)) uses a somewhat different
 system based on project settings. To enable device APIs for projects
-compiled with PhoneGap&nbsp;Build, place any of the following `<feature/>`
+compiled with PhoneGap Build, place any of the following `<gap:plugin/>`
 elements in the project's top-level `config.xml` file:
 
 * Basic device information (Device API):
 
-        <feature name="Device" value="org.apache.cordova.core.Device"/>
+        <gap:plugin name="Device" value="org.apache.cordova.core.Device"/>
 
 * Network Connection and Battery Events:
 
-        <feature name="NetworkStatus" value="org.apache.cordova.core.NetworkManager" />
-        <feature name="Battery" value="org.apache.cordova.core.BatteryListener" />
+        <gap:plugin name="NetworkStatus" value="org.apache.cordova.core.NetworkManager" />
+        <gap:plugin name="Battery" value="org.apache.cordova.core.BatteryListener" />
 
 * Accelerometer, Compass, and Geolocation:
 
-        <feature name="Accelerometer" value="org.apache.cordova.core.AccelListener" />
-        <feature name="Compass" value="org.apache.cordova.core.CompassListener" />
-        <feature name="Geolocation" value="org.apache.cordova.core.GeoBroker" />
+        <gap:plugin name="Accelerometer" value="org.apache.cordova.core.AccelListener" />
+        <gap:plugin name="Compass" value="org.apache.cordova.core.CompassListener" />
+        <gap:plugin name="Geolocation" value="org.apache.cordova.core.GeoBroker" />
 
 * Camera, Media playback and Capture:
 
-        <feature name="Camera" value="org.apache.cordova.core.CameraLauncher" />
-        <feature name="Media" value="org.apache.cordova.core.AudioHandler" />
-        <feature name="Capture" value="org.apache.cordova.core.Capture" />
+        <gap:plugin name="Camera" value="org.apache.cordova.core.CameraLauncher" />
+        <gap:plugin name="Media" value="org.apache.cordova.core.AudioHandler" />
+        <gap:plugin name="Capture" value="org.apache.cordova.core.Capture" />
 
 * Access files on device or network (File API):
 
-        <feature name="File" value="org.apache.cordova.core.FileUtils" />
-        <feature name="FileTransfer" value="org.apache.cordova.core.FileTransfer" />
+        <gap:plugin name="File" value="org.apache.cordova.core.FileUtils" />
+        <gap:plugin name="FileTransfer" value="org.apache.cordova.core.FileTransfer" />
 
 * Notification via dialog box or vibration:
 
-        <feature name="Notification" value="org.apache.cordova.core.Notification" />
-        <feature name="Vibration" value="org.apache.cordova.core.Vibration" />
+        <gap:plugin name="Notification" value="org.apache.cordova.core.Notification" />
+        <gap:plugin name="Vibration" value="org.apache.cordova.core.Vibration" />
 
 * Contacts:
 
-        <feature name="Contacts" value="org.apache.cordova.core.ContactManager" />
+        <gap:plugin name="Contacts" value="org.apache.cordova.core.ContactManager" />
 
 * Globalization:
 
-        <feature name="Globalization" value="org.apache.cordova.core.globalization" />
+        <gap:plugin name="Globalization" value="org.apache.cordova.core.globalization" />
 
 * Splashscreen:
 
-        <feature name="SplashScreen" value="org.apache.cordova.core.SplashScreen" />
+        <gap:plugin name="SplashScreen" value="org.apache.cordova.core.SplashScreen" />
 
 * Open new browser windows (InAppBrowser):
 
-        <feature name="InAppBrowser" value="org.apache.cordova.core.InAppBrowser" />
+        <gap:plugin name="InAppBrowser" value="org.apache.cordova.core.InAppBrowser" />
 
 See Configuration Reference for information about other application
 settings you can modify in the `config.xml` file.
@@ -248,10 +260,10 @@ See the Application Development Guide for more information on how to
 use all these features.
 XREF -->
 
-__NOTE:__ PhoneGap&nbsp;Build does _not_ allow you to compile custom
+__NOTE:__ PhoneGap Build does _not_ allow you to compile custom
 plugin interfaces to native components, as discussed in the Plugin
 Development Guide. The CLI-based workflow described in The
-Command-line Interface supports this feature. PhoneGap&nbsp;Build also
+Command-line Interface supports this feature. PhoneGap Build also
 does not support the CLI's _merges_ feature that allows you to target
 files for specific platforms.
 
@@ -281,3 +293,6 @@ directly, depending on which platform you're using:
   directly from the web; you will need to use Microsoft's tools
 
 -->
+
+
+<!-- does EDIT APP allow the UI to override config.xml? -->
