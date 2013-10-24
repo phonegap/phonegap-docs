@@ -17,8 +17,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
          under the License.
 ---
 
-Storage
-==========
+# Storage
 
 > Provides access to the device's storage options.
 
@@ -39,21 +38,18 @@ Cordova provides access to both interfaces for the minority of devices
 that don't already support them. Otherwise the built-in
 implementations apply.
 
-Methods
--------
+## Methods
 
 - openDatabase
 
-Arguments
----------
+## Arguments
 
 - database_name
 - database_version
 - database_displayname
 - database_size
 
-Objects
--------
+## Objects
 
 - Database
 - SQLTransaction
@@ -71,7 +67,7 @@ If you are using the older set of Cordova tools that precede the CLI,
 the following platform-specific configuration settings are still
 required:
 
-* Android (in `app/res/xml/config.xml`)
+* Android (in `res/xml/config.xml`)
 
         <feature name="Storage">
             <param name="android-package" value="org.apache.cordova.Storage" />

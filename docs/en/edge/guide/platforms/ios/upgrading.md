@@ -25,9 +25,32 @@ created with an older set of command-line tools that precede the
 `cordova` CLI utility. See The Command-line Interface for information
 how to update the version of the CLI.
 
-__NOTE:__ Xcode 4.5 is required. To submit to the Apple App Store, you
-must use the latest shipped version of the iOS SDK, which is iOS 6.
-The iOS 6 SDK requires Xcode 4.5.
+__NOTE:__ Xcode 4.6 is required, Xcode 5 is recommended. Currently, to submit to the
+Apple App Store, you should use the latest shipped version of the iOS SDK, which is iOS 7.
+iOS 7 SDK is not required yet, but this may change quickly.
+
+## Upgrading 3.0.0 projects to 3.1.0 ##
+
+For non-CLI projects, run:
+
+        bin/update path/to/project
+        
+For CLI projects, run: 
+
+        1. Update the `cordova` CLI version - see The Command-line Interface 
+        2. Run `cordova platform update ios`
+        
+### iOS 7 Issues
+
+	1. Remove the values "width=device-width, height=device-height" from your meta tag 
+	"viewport" attribute in your index.html file, see https://issues.apache.org/jira/browse/CB-4323
+	2. Update your media, media-capture and splashscreen core plugins for iOS 7 support
+	
+### Xcode 5 Issues	
+
+	1. Update your Project Settings if Xcode 5 prompts you to do so (in the Issues Navigator)
+	2. Update your "Compiler for C/C++/Objective-C" setting, under the "Build Settings" 
+	tab, "Build Options" section. Choose "Default compiler (Apple LLVM 5.0)"
 
 ## Upgrade to the CLI (3.0.0) from 2.9.0 ##
 
@@ -46,7 +69,7 @@ The iOS 6 SDK requires Xcode 4.5.
    inside the `platforms\ios` directory.
 
 5. Copy your `config.xml` into the `www` directory, and remove any plugin
-   definitions. Modify settings here instead of the platform folder.
+   definitions. Modify settings here instead of the platform directory.
 
 6. Use the cordova CLI tool to install any plugins you need. Note that
    the CLI handles all core APIs as plugins, so they may need to be
@@ -56,7 +79,7 @@ The iOS 6 SDK requires Xcode 4.5.
 
 ## Upgrading 2.9.0 projects to 3.0.0 ##
 
-1. Download and extract the Cordova 3.0.0 source to a permanent folder location on your hard drive, for example to `~/Documents/Cordova-3.0.0`.
+1. Download and extract the Cordova 3.0.0 source to a permanent directory location on your hard drive, for example to `~/Documents/Cordova-3.0.0`.
 
 2. Quit Xcode if it is running.
 
@@ -72,12 +95,12 @@ The iOS 6 SDK requires Xcode 4.5.
 
 __NOTE:__ Starting with Cordova 3.0.0, projects do not come with any
 plugins, you will have to install the ones you require for your
-project using the `plugman` CLI utility. See Using Plugman to Manage
-Plugins.
+project using the `plugman` command-line utility. See Using Plugman to
+Manage Plugins.
 
 ## Upgrading 2.8.0 projects to 2.9.0 ##
 
-1. Download and extract the Cordova 2.9.0 source to a permanent folder location on your hard drive, for example to `~/Documents/Cordova-2.9.0`.
+1. Download and extract the Cordova 2.9.0 source to a permanent directory location on your hard drive, for example to `~/Documents/Cordova-2.9.0`.
 
 2. Quit Xcode if it is running.
 
@@ -93,7 +116,7 @@ Plugins.
 
 ## Upgrading 2.7.0 projects to 2.8.0 ##
 
-1. Download and extract the Cordova 2.8.0 source to a permanent folder location on your hard drive, for example to `~/Documents/Cordova-2.8.0`.
+1. Download and extract the Cordova 2.8.0 source to a permanent directory location on your hard drive, for example to `~/Documents/Cordova-2.8.0`.
 
 2. Quit Xcode if it is running.
 
@@ -132,7 +155,7 @@ Plugins.
 
 ## Upgrading 2.6.0 projects to 2.7.0 ##
 
-1. Download and extract the Cordova 2.7.0 source to a permanent folder location on your hard drive, for example to `~/Documents/Cordova-2.7.0`.
+1. Download and extract the Cordova 2.7.0 source to a permanent directory location on your hard drive, for example to `~/Documents/Cordova-2.7.0`.
 
 2. Quit Xcode if it is running.
 
@@ -152,7 +175,7 @@ Plugins.
 
 ## Upgrading 2.5.0 projects to 2.6.0 ##
 
-1. Download and extract the Cordova 2.6.0 source to a permanent folder location on your hard drive, for example to `~/Documents/Cordova-2.6.0`.
+1. Download and extract the Cordova 2.6.0 source to a permanent directory location on your hard drive, for example to `~/Documents/Cordova-2.6.0`.
 
 2. Quit Xcode if it is running.
 
@@ -178,7 +201,7 @@ Plugins.
 
 ## Upgrading 2.4.0 projects to 2.5.0 ##
 
-1. Download and extract the Cordova 2.5.0 source to a permanent folder location on your hard drive, for example to `~/Documents/Cordova-2.5.0`.
+1. Download and extract the Cordova 2.5.0 source to a permanent directory location on your hard drive, for example to `~/Documents/Cordova-2.5.0`.
 
 2. Quit Xcode if it is running.
 
@@ -204,7 +227,7 @@ Plugins.
 
 ## Upgrading 2.3.0 projects to 2.4.0 ##
 
-1. Download and extract the Cordova 2.4.0 source to a permanent folder location on your hard drive, for example to `~/Documents/Cordova-2.4.0`.
+1. Download and extract the Cordova 2.4.0 source to a permanent directory location on your hard drive, for example to `~/Documents/Cordova-2.4.0`.
 
 2. Quit Xcode if it is running.
 
@@ -230,7 +253,7 @@ Plugins.
 
 ## Upgrading 2.2.0 projects to 2.3.0 ##
 
-1. Download and extract the Cordova 2.3.0 source to a permanent folder location on your hard drive, for example to `~/Documents/Cordova-2.3.0`.
+1. Download and extract the Cordova 2.3.0 source to a permanent directory location on your hard drive, for example to `~/Documents/Cordova-2.3.0`.
 
 2. Quit Xcode if it is running.
 
@@ -264,7 +287,7 @@ You can get this by accessing the `userAgent` property off the main view-control
 
 ## Upgrading 2.1.0 projects to 2.2.0 ##
 
-1. Download and extract the Cordova 2.2.0 source to a permanent folder location on your hard drive, for example to `~/Documents/Cordova-2.2.0`.
+1. Download and extract the Cordova 2.2.0 source to a permanent directory location on your hard drive, for example to `~/Documents/Cordova-2.2.0`.
 
 2. Quit Xcode if it is running.
 
@@ -288,13 +311,13 @@ You can get this by accessing the `userAgent` property off the main view-control
 
         `update_cordova_subproject path/to/your/project/xcodeproj`
 
-__NOTE:__ In 2.2.0, the `bin/create` script copy in the `CordovaLib` sub-project into your project. To have the same kind of setup, just copy in the right `CordovaLib` into your project folder, and update the `CordovaLib` sub-project location (relative to the project) in the Xcode File Inspector.
+__NOTE:__ In 2.2.0, the `bin/create` script copy in the `CordovaLib` sub-project into your project. To have the same kind of setup, just copy in the right `CordovaLib` into your project directory, and update the `CordovaLib` sub-project location (relative to the project) in the Xcode File Inspector.
 
 ## Upgrading 2.0.0 projects to 2.1.0 ##
 
 With Cordova 2.1.0, `CordovaLib` has been upgraded to use __Automatic Reference Counting (ARC)__. You don't need to upgrade to __ARC__ to use CordovaLib, but if you want to upgrade your project to use __ARC__, please use the Xcode migration wizard from the menu: __Edit &rarr; Refactor &rarr; Convert to Objective-C ARC...__, de-select libCordova.a, then run the wizard to completion.
 
-1. Download and extract the Cordova 2.1.0 source to a permanent folder location on your hard drive, for example to `~/Documents/Cordova-2.1.0`.
+1. Download and extract the Cordova 2.1.0 source to a permanent directory location on your hard drive, for example to `~/Documents/Cordova-2.1.0`.
 
 2. Quit Xcode if it is running.
 
@@ -443,7 +466,7 @@ __NOTE:__ 1.9.0 supports the new `BackupWebStorage` boolean `Cordova.plist` sett
 
 If you intend on using the Capture API, you will need the new __iPad retina-display__ assets:
 
-1.  Copy the `Resources/Capture.bundle` item from the new project into your project folder, over-writing your existing `Resources/Capture.bundle` item.
+1.  Copy the `Resources/Capture.bundle` item from the new project into your project directory, over-writing your existing `Resources/Capture.bundle` item.
 
 2.  In your project, select the `Capture.bundle` item into your Project Navigator in Xcode, type the __Delete__ key, then select __Remove Reference__ from the resulting dialog.
 
@@ -467,7 +490,7 @@ If you intend on using the Capture API, you will need the new __iPad retina-disp
 
 3. Create a new project. You will need some of the assets from this new project.
 
-4. Copy these files from the new project into your 1.5.0-based project folder on disk, replacing any old files (backup your files first from step 2 above):
+4. Copy these files from the new project into your 1.5.0-based project directory on disk, replacing any old files (backup your files first from step 2 above):
 
         AppDelegate.h
         AppDelegate.m
@@ -580,7 +603,7 @@ If you intend on using the Capture API, you will need the new __iPad retina-disp
 
 3. Create a new project. You will need some of the assets from this new project.
 
-4. Copy the `MainViewController.m` file from the new project into your 1.4.0-based project folder on disk, replacing the old file (backup your files first from step 2 above).
+4. Copy the `MainViewController.m` file from the new project into your 1.4.0-based project directory on disk, replacing the old file (backup your files first from step 2 above).
 
 5. Add the `MainViewController.m` file into your Xcode project.
 
@@ -596,7 +619,7 @@ If you intend on using the Capture API, you will need the new __iPad retina-disp
 
 3. Create a new project. You will need some of the assets from this new project.
 
-4. Copy these files from the new project into your 1.3.0-based project folder on disk, replacing any old files (backup your files first from step 2 above):
+4. Copy these files from the new project into your 1.3.0-based project directory on disk, replacing any old files (backup your files first from step 2 above):
 
         AppDelegate.h
         AppDelegate.m
@@ -623,7 +646,7 @@ If you intend on using the Capture API, you will need the new __iPad retina-disp
 
 3. Create a new project. You will need some of the assets from this new project.
 
-4. Copy these files from the new project into your 1.2.0-based project folder on disk, replacing any old files (backup your files first from step 2 above):
+4. Copy these files from the new project into your 1.2.0-based project directory on disk, replacing any old files (backup your files first from step 2 above):
 
         AppDelegate.h
         AppDelegate.m
@@ -650,7 +673,7 @@ If you intend on using the Capture API, you will need the new __iPad retina-disp
 
 3. Create a new project. You will need some of the assets from this new project.
 
-4. Copy these files from the new project into your 1.1.0-based project folder on disk, replacing any old files (backup your files first from step 2 above):
+4. Copy these files from the new project into your 1.1.0-based project directory on disk, replacing any old files (backup your files first from step 2 above):
 
         AppDelegate.h
         AppDelegate.m
@@ -677,7 +700,7 @@ If you intend on using the Capture API, you will need the new __iPad retina-disp
 
 3. Create a new project. You will need some of the assets from this new project.
 
-4. Copy these files from the new project into your 1.0.0-based project folder on disk, replacing any old files (backup your files first from step 2 above):
+4. Copy these files from the new project into your 1.0.0-based project directory on disk, replacing any old files (backup your files first from step 2 above):
 
         AppDelegate.h
         AppDelegate.m
@@ -704,7 +727,7 @@ If you intend on using the Capture API, you will need the new __iPad retina-disp
 
 3. Create a new project. You will need some of the assets from this new project.
 
-4. Copy these files from the new project into your 0.9.6-based project folder on disk, replacing any old files (backup your files first from step 2 above):
+4. Copy these files from the new project into your 0.9.6-based project directory on disk, replacing any old files (backup your files first from step 2 above):
 
         AppDelegate.h
         AppDelegate.m

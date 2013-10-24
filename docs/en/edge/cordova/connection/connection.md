@@ -17,18 +17,15 @@
          under the License.
 ---
 
-Connection
-==========
+# Connection
 
 > The `connection` object, exposed via `navigator.connection`,  provides information about the device's cellular and wifi connection.
 
-Properties
-----------
+## Properties
 
 - connection.type
 
-Constants
----------
+## Constants
 
 - Connection.UNKNOWN
 - Connection.ETHERNET
@@ -45,8 +42,10 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
-        $ cordova plugin rm org.apache.cordova.core.network-information
+        $ cordova plugin add org.apache.cordova.network-information
+        $ cordova plugin ls
+        [ 'org.apache.cordova.network-information' ]
+        $ cordova plugin rm org.apache.cordova.network-information
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
@@ -55,13 +54,11 @@ platform-specific configuration settings described below:
 
         (in app/res/xml/config.xml)
         <feature name="NetworkStatus">
-            <param name="android-package" value="org.apache.cordova.NetworkManager" />
+            <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
         </feature>
 
         (in app/AndroidManifest.xml)
-        <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
 * BlackBerry WebWorks
 
@@ -70,7 +67,7 @@ platform-specific configuration settings described below:
             <param name="blackberry-package" value="org.apache.cordova.network.Network" />
         </feature>
 
-* iOS (in `config.xml`)
+* iOS (in the named application directory's `config.xml`)
 
         <feature name="NetworkStatus">
             <param name="ios-package" value="CDVConnection" />

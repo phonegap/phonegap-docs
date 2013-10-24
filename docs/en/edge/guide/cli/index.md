@@ -42,6 +42,8 @@ platform's SDK. The CLI supports the following combinations:
 * BlackBerry 10   (Mac, Linux, Windows)
 * Windows Phone 7 (Windows)
 * Windows Phone 8 (Windows)
+* Windows 8       (Windows)
+* Firefox OS      (Mac, Linux, Windows)
 
 On the Mac, the command-line is available via the _Terminal_
 application. On the PC, it's available as _Command Prompt_ under
@@ -104,14 +106,17 @@ SDK.  Run any of these from a Mac:
         $ cordova platform add ios
         $ cordova platform add android
         $ cordova platform add blackberry10
+        $ cordova platform add firefoxos
 
 Run any of these from a Windows machine, where _wp_ refers to
 different versions of the Windows Phone operating system:
 
         $ cordova platform add wp7
         $ cordova platform add wp8
+        $ cordova platform add windows8
         $ cordova platform add android
         $ cordova platform add blackberry10
+        $ cordova platform add firefoxos
 
 Run this to check your current set of platforms:
 
@@ -211,7 +216,7 @@ the device, and perhaps add a USB driver depending on your development
 environmnent.
 See Platform Guides for details on each platform's requirements.
 
-## Add Features
+## Add Plugin Features
 
 When you build and view a new project, the default application that
 appears doesn't do very much. You can modify the app in many ways to
@@ -227,7 +232,9 @@ one of Cordova's basic device-level features
 <!-- XREF
 discussed in the Application Development Guide and
 XREF -->
-detailed in the API Reference.
+detailed in the API Reference. A list of these plugins, including additional plugins provided by the community, can be found at  [http://plugins.cordova.io/](http://plugins.cordova.io/). You can use the CLI to search for plugins from this registry:
+
+        $ cordova plugin search <term1 term2 term3>
 
 The `cordova plugin add` command requires you to specify the
 repository for the plugin code.  Here are examples of features you
@@ -235,70 +242,114 @@ might add:
 
 * Basic device information (Device API):
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git
+        $ cordova plugin add org.apache.cordova.device
 
 * Network Connection and Battery Events:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-battery-status.git
+        $ cordova plugin add org.apache.cordova.network-information
+        $ cordova plugin add org.apache.cordova.battery-status
 
 * Accelerometer, Compass, and Geolocation:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-motion.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-orientation.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-geolocation.git
+        $ cordova plugin add org.apache.cordova.device-motion
+        $ cordova plugin add org.apache.cordova.device-orientation
+        $ cordova plugin add org.apache.cordova.geolocation
 
 * Camera, Media playback and Capture:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-camera.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media-capture.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media.git    
+        $ cordova plugin add org.apache.cordova.camera
+        $ cordova plugin add org.apache.cordova.media-capture
+        $ cordova plugin add org.apache.cordova.media
 
 * Access files on device or network (File API):
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-file-transfer.git
+        $ cordova plugin add org.apache.cordova.file
+        $ cordova plugin add org.apache.cordova.file-transfer
 
 * Notification via dialog box or vibration:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-vibration.git
+        $ cordova plugin add org.apache.cordova.dialogs
+        $ cordova plugin add org.apache.cordova.vibration
 
 * Contacts:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-contacts.git
+        $ cordova plugin add org.apache.cordova.contacts
 
 * Globalization:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-globalization.git
+        $ cordova plugin add org.apache.cordova.globalization
 
 * Splashscreen:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-splashscreen.git
+        $ cordova plugin add org.apache.cordova.splashscreen
 
 * Open new browser windows (InAppBrowser):
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
+        $ cordova plugin add org.apache.cordova.inappbrowser
 
 * Debug console:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-console.git
+        $ cordova plugin add org.apache.cordova.console
 
 Use `plugin ls` (or `plugin list`, or `plugin` by itself) to view
 currently installed plugins. Each displays by its identifier:
 
         $ cordova plugin ls    # or 'plugin list'
-        [ 'org.apache.cordova.core.console' ]
+        [ 'org.apache.cordova.console' ]
 
 To remove a plugin, refer to it by the same identifier that appears in
 the listing. For example, here is how you would remove support for a
 debug console from a release version:
 
-        $ cordova plugin rm org.apache.cordova.core.console        
-        $ cordova plugin remove org.apache.cordova.core.console    # same
+        $ cordova plugin rm org.apache.cordova.console
+        $ cordova plugin remove org.apache.cordova.console    # same
 
 You can batch-remove or add plugins by specifying more than one
-argument for each command.
+argument for each command:
+
+        $ cordova plugin add org.apache.cordova.console org.apache.cordova.device
+
+## Advanced Plugin Options
+
+When adding a plugin, several options allow you to specify from where
+to fetch the plugin. The examples above use a well-known
+`registry.cordova.io` registry, and the plugin is specified by the
+`id`:
+
+        $ cordova plugin add org.apache.cordova.console
+
+The `id` may also include the plugin's version number, appended after
+an `@` character. The `latest` version is an alias for the most recent
+version. For example:
+
+        $ cordova plugin add org.apache.cordova.console@latest
+        $ cordova plugin add org.apache.cordova.console@0.2.1
+
+If the plugin is not registered at `registry.cordova.io` but is located in
+another git repository, you can specify an alternate URL:
+
+        $ cordova plugin add https://github.com/apache/cordova-plugin-console.git
+
+The git example above fetches the plugin from the end of the master
+branch, but an alternate git-ref such as a tag or branch can be
+appended after a `#` character:
+
+        $ cordova plugin add https://github.com/apache/cordova-plugin-console.git#r0.2.0
+
+If the plugin (and its `plugin.xml` file) is in a subdirectory within
+the git repo, you can specify it with a `:` character. Note that the
+`#` character is still needed:
+
+        $ cordova plugin add https://github.com/someone/aplugin.git#:/my/sub/dir
+
+You can also combine both the git-ref and the subdirectory:
+
+        $ cordova plugin add https://github.com/someone/aplugin.git#r0.0.1:/my/sub/dir
+
+Alternately, specify a local path to the plugin directory that
+contains the `plugin.xml` file:
+
+        $ cordova plugin add ../my_plugin_dir
 
 ## Customize Each Platform
 
@@ -340,6 +391,30 @@ graphic into the iOS interface, stored in
 instead capture `backbutton` events from the corresponding hardware
 button.
 
+## Help Commands
+
+If at any point you get stuck, Cordova has a couple global "help" commands.
+
+The first, `help` will print out a list of all available actions that Cordova can do
+
+    $ cordova help
+
+The second, `info` will print out useful information, such as installed platforms, node.js version, etc.., that are helpful for submitting bug reports and getting help.  It will also create an info.txt file at the base of your project. __Note: Currently iOS and Android platforms are output__
+
+    $ cordova info
+
+## Updating the App
+
+When a new version of Cordova is released, you should update your 
+`cordova` utility by following the Updating Cordova section below.
+Once you have updated Cordova, you can update the Cordova resources that
+your project uses by typing:
+
+        $ cordova platform update <PLATFORM>
+This will replace the old cordova resources with new ones for the
+specified PLATFORM. You should do this for every platform that you
+are developing for. 
+
 ## Updating Cordova
 
 After installing the `cordova` utility, you can always
@@ -349,7 +424,7 @@ update it to the latest version by running the following command:
 
 Use this syntax to install a specific version:
 
-        $ sudo npm install -g cordova@3.0.0
+        $ sudo npm install -g cordova@3.1.0
 
 Run `cordova -v` to see the currently running version.  Run the `npm
 info` command for a longer listing that includes the current version

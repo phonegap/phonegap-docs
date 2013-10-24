@@ -19,47 +19,35 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # Android Configuration
 
-The `config.xml` file controls various Cordova settings. These apply
-across the application, and per CordovaWebView instance.
+The `config.xml` file controls an app's basic settings that apply
+across each application and CordovaWebView instance. This section
+details preferences that only apply to Android builds. See The
+config.xml File for information on global configuration options.
 
-## `<preference>`
+- `KeepRunning` (boolean, defaults to `true`): Determines whether the
+  application stays running in the background even after a `pause`
+  event fires.
 
-Various other preferences (as `<preference>` tags) default on not
-breaking existing apps. The available preferences are:
+        <preference name="KeepRunning" value="false"/>
 
-* `useBrowserHistory` (boolean, defaults to `true`): set to `false` if you
-  want to use the history shim that was used to work around the
-  hashtag error present in Android 3.x prior to the history fix.
-  (Note: This setting will be deprecated in April 2013)
+- `LoadUrlTimeoutValue` (number, default is `20000`): When loading a
+  page, the amount of time to wait before throwing a timeout error.
+  This example specifies 10 seconds rather than 20:
 
-* `loadingDialog`: Display a native loading dialog when loading the
-  app. The value's format is _Title, Message_
+        <preference name="LoadUrlTimeoutValue" value="10000"/>
 
-* `loadingPageDialog`: Display a native loading dialog when loading
-  sub-pages. The value's format is _Title, Message_
+- `SplashScreen`: The name of the file minus its extension in the
+  `res/drawable` directory.  Various assets must share this common
+  name in various subdirectories.
 
-* `errorUrl`: Set the error page for your application. Should be
-  located in your Android project in `file://android_asset/www/`
+        <preference name="SplashScreen" value="splash"/>
 
-* `backgroundColor`: Set the background color for your application.
-  Supports a four-byte hex value, with the first byte representing
-  alpha value, and the following three bytes with standard RGB
-  values. For example, `0x00000000` is black.
+- `SplashScreenDelay` (number, defaults to `5000`): The amount of
+  time the splash screen image displays.
 
-* `loadUrlTimeoutValue`: How much time Cordova should wait before
-  throwing a timeout error on the application.
+        <preference name="SplashScreenDelay" value="10000"/>
 
-* `keepRunning` (boolean, defaults to `true`): Determines whether
-  Cordova stays running in the background.
-
-* `splashscreen`: The name of the file minus its extension in the
-  `res/drawable` directory.  If you have multiple assets, they all
-  must share this common name in their respective directories.
-
-* `disallowOverscroll` (boolean, defaults to `false`): set to `true` to
-  disable the glow when a user scrolls beyond the edge of the webview.
-
-## `<plugin>`
-
-Android supports using `<feature>` as analogues to `<plugin>` elements.
-
+- `InAppBrowserStorageEnabled` (boolean, defaults to `true`): Controls
+  whether pages opened within an InAppBrowser can access the same
+  localStorage and WebSQL storage as pages opened with the default
+  browser.

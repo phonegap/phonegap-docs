@@ -17,19 +17,16 @@ license: Licensed to the Apache Software Foundation (ASF) under one
          under the License.
 ---
 
-Globalization
-======
+# Globalization
 
 Obtains information and performs operations specific to the user's
 locale and timezone.
 
-Objects
--------
+## Objects
 
 - GlobalizationError
 
-Methods
--------
+## Methods
 
 - globalization.getPreferredLanguage
 - globalization.getLocaleName
@@ -44,8 +41,7 @@ Methods
 - globalization.getNumberPattern
 - globalization.getCurrencyPattern
 
-Variable Scope
---------------
+## Variable Scope
 
 The `globalization` object is a child of the `navigator` object, and
 therefore has global scope.
@@ -59,16 +55,18 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-globalization.git
-        $ cordova plugin rm org.apache.cordova.core.globalization
+        $ cordova plugin add org.apache.cordova.globalization
+        $ cordova plugin ls
+        [ 'org.apache.cordova.globalization' ]
+        $ cordova plugin rm org.apache.cordova.globalization
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
 
-* Android (in `app/res/xml/config.xml`)
+* Android (in `res/xml/config.xml`)
 
         <feature name="Globalization">
-            <param name="android-package" value="org.apache.cordova.Globalization" />
+            <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
         </feature>
 
 Some platforms may support this feature without requiring any special

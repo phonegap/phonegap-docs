@@ -17,8 +17,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
          under the License.
 ---
 
-Geolocation
-===========
+# Geolocation
 
 > The `geolocation` object provides access to location data based on the device's GPS sensor or inferred from network signals.
 
@@ -48,22 +47,19 @@ above, as well as obtaining the user's permission (e.g., by presenting
 choices for __OK__ and __No Thanks__).  For more information, please
 see the Privacy Guide.
 
-Methods
--------
+## Methods
 
 - geolocation.getCurrentPosition
 - geolocation.watchPosition
 - geolocation.clearWatch
 
-Arguments
----------
+## Arguments
 
 - geolocationSuccess
 - geolocationError
 - geolocationOptions
 
-Objects (Read-Only)
--------------------
+## Objects (Read-Only)
 
 - Position
 - PositionError
@@ -75,8 +71,10 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-geolocation.git
-        $ cordova plugin rm org.apache.cordova.core.geolocation
+        $ cordova plugin add org.apache.cordova.geolocation
+        $ cordova plugin ls
+        [ 'org.apache.cordova.geolocation' ]
+        $ cordova plugin rm org.apache.cordova.geolocation
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
@@ -85,13 +83,12 @@ platform-specific configuration settings described below:
 
         (in app/res/xml/config.xml)
         <feature name="Geolocation">
-            <param name="android-package" value="org.apache.cordova.GeoBroker" />
+            <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
         </feature>
 
         (in app/AndroidManifest.xml)
         <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
         <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-        <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
 * BlackBerry WebWorks
 
@@ -105,7 +102,7 @@ platform-specific configuration settings described below:
             <rim:permit>read_geolocation</rim:permit>
         </rim:permissions>
 
-* iOS (in `config.xml`)
+* iOS (in the named application directory's `config.xml`)
 
         <feature name="Geolocation">
             <param name="ios-package" value="CDVLocation" />

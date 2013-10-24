@@ -17,13 +17,11 @@ license: Licensed to the Apache Software Foundation (ASF) under one
          under the License.
 ---
 
-Notification
-============
+# Notification
 
 > Visual, audible, and tactile device notifications.
 
-Methods
--------
+## Methods
 
 - `notification.alert`
 - `notification.confirm`
@@ -37,10 +35,13 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-vibration.git
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs.git
-        $ cordova plugin rm org.apache.cordova.core.dialogs
-        $ cordova plugin rm org.apache.cordova.core.vibration
+        $ cordova plugin add org.apache.cordova.dialogs
+        $ cordova plugin add org.apache.cordova.vibration
+        $ cordova plugin ls
+        [ 'org.apache.cordova.dialogs',
+          'org.apache.cordova.vibration' ]
+        $ cordova plugin rm org.apache.cordova.dialogs
+        $ cordova plugin rm org.apache.cordova.vibration
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
@@ -49,7 +50,10 @@ platform-specific configuration settings described below:
 
         (in app/res/xml/config.xml)
         <feature name="Notification">
-            <param name="android-package" value="org.apache.cordova.Notification" />
+            <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+        </feature>
+        <feature name="Vibration">
+            <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
         </feature>
 
         (in app/AndroidManifest.xml)
@@ -65,7 +69,7 @@ platform-specific configuration settings described below:
         (in www/config.xml)
         <feature id="blackberry.ui.dialog" />
 
-* iOS (in `config.xml`)
+* iOS (in the named application directory's `config.xml`)
 
         <feature name="Notification">
             <param name="ios-package" value="CDVNotification" />

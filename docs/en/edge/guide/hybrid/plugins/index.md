@@ -19,59 +19,137 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # Plugin Development Guide
 
-A Cordova plugin bridges a bit of functionality between the WebView
-powering a Cordova application and the native platform the Cordova
-application is running on. Plugins are composed of a single JavaScript
-interface used across all platforms, and native implementations
-following platform-specific Plugin interfaces that the JavaScript
-calls into. All of the core Cordova APIs are implemented using this
-architecture.
+A _plugin_ is a package of injected code that allows the Cordova webview within
+which your app renders to communicate with the native platform on
+which it runs.  Plugins provide access to device and platform
+functionality that is ordinarily unavailable to web-based apps.  All
+the main Cordova API features are implemented as plugins, and many
+others are available that enable features such as bar code scanners,
+NFC communication, or to tailor calendar interfaces.
 
-This guide steps the process of writing a simple Echo Plugin that
-passes a string from JavaScript and sends it into the native
-environment for the supported platforms. The native code then returns
-the same string back to the callbacks inside the plugin's JavaScript.
+Plugins comprise a single JavaScript interface along with
+corresponding native code libraries for each supported platform.  This
+section steps through a simple _echo_ plugin that passes a string from
+JavaScript to the native platform and back, one that you can use as a
+model to build far more complex features.  This section discusses the
+basic plugin structure and the outward-facing JavaScript interface.
+For each corresponding native interface, see the list at the end of
+this section.
 
-This guide provides enough overview on which you can build to write
-more complex plugins.
+In addition to these instructions, when preparing to write a plugin it
+is best to look over
+[existing plugins](https://github.com/apache/cordova-android/tree/master/framework/src/org/apache/cordova)
+for guidance.
 
-## JavaScript
+## Building a Plugin
 
-The entry point for any plugin is JavaScript. The reason developers use
-Cordova is so they can use and write JavaScript, not Objective-C,
-not Java, not C#. The JavaScript interface for your plugin is the
-front-facing and arguably most important part of your Cordova plugin.
+Application developers use the CLI's `plugin add` command (discussed
+in The Command-line Interface) to apply a plugin to a project. The
+argument to that command is the URL for a _git_ repository containing
+the plugin code.  This example implements Cordova's Device API:
 
-You can structure your plugin's JavaScript however you like. The one
-thing you _must_ use to communicate between the Cordova JavaScript
-and native environments is the `cordova.exec` function. Here is an example:
+        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git
 
-        cordova.exec(function(winParam) {}, function(error) {}, "service",
-                     "action", ["firstArgument", "secondArgument", 42,
-                     false]);
+The plugin repository must feature a top-level `plugin.xml` manifest
+file. There are many ways to configure this file, details for which
+are available in the Plugin Specification. This abbreviated version of
+the `Device` plugin provides a simple example to use as a model:
 
-The parameters are detailed below:
+        <?xml version="1.0" encoding="UTF-8"?>
+        <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+                id="org.apache.cordova.device" version="0.2.3">
+            <name>Device</name>
+            <description>Cordova Device Plugin</description>
+            <license>Apache 2.0</license>
+            <keywords>cordova,device</keywords>
+            <js-module src="www/device.js" name="device">
+                <clobbers target="device" />
+            </js-module>
+            <platform name="ios">
+                <config-file target="config.xml" parent="/*">
+                    <feature name="Device">
+                        <param name="ios-package" value="CDVDevice"/>
+                    </feature>
+                </config-file>
+                <header-file src="src/ios/CDVDevice.h" />
+                <source-file src="src/ios/CDVDevice.m" />
+            </platform>
+        </plugin>
 
-* `function(winParam) {}`: Success function callback. Assuming your
-  `exec` call completes successfully, this function is invoked
-  (optionally with any parameters you pass back to it).
+The top-level `plugin` tag's `id` attribute uses the same
+reverse-domain format to identify the plugin package as the apps to
+they're added.  The `js-module` tag specifies the path to the common
+JavaScript interface.  The `platform` tag specifies a corresponding
+set of native code, for the `ios` platform in this case.  The
+`config-file` tag encapsulates a `feature` tag that is injected into
+the platform-specific `config.xml` file to make the platform aware of
+the additional code library.  The `header-file` and `source-file` tags
+specify the path to the library's component files.
 
-* `function(error) {}`: Error function callback. If the operation does
-  not complete successfully, this function is invoked (optionally with
-  an error parameter).
+## Validating a Plugin
 
-* `"service"`: The service name to call into on the native side. This
-  is mapped to a native class, about which more information is
+You can use the `plugman` utility to check whether the plugin installs
+correctly for each platform.  Install `plugman` with the following
+[node](http://nodejs.org/) command:
+
+        $ npm install -g plugman
+
+You need an valid app source directory, such as the top-level `www`
+directory included in a default CLI-generated project as described in
+The Command-line Interface.  Make sure the app's `index.html` home
+page reference the name of the plugin's JavaScript interface, as if it
+were in the same source directory:
+
+        <script src="myplugin.js"></script>
+
+Then run a command such as the following to test whether iOS
+dependencies load properly:
+
+        $ plugman -platform ios /path/to/my/project/www /path/to/my/plugin
+
+For details on `plugman` options, see Using Plugman to Manage Plugins.
+For information on how to actually _debug_ plugins, see each
+platform's native interface listed at the bottom of this page.
+
+## The JavaScript Interface
+
+The JavaScript provides the front-facing interface, making it perhaps
+the most important part of the plugin.  You can structure your
+plugin's JavaScript however you like, but you need to call
+`cordova.exec` to communicate with the native platform, using the
+following syntax:
+
+        cordova.exec(function(winParam) {},
+                     function(error) {},
+                     "service",
+                     "action",
+                     ["firstArgument", "secondArgument", 42, false]);
+
+Here is how each parameter works:
+
+- `function(winParam) {}`: A success callback function. Assuming your
+  `exec` call completes successfully, this function executes along
+  with any parameters you pass to it.
+
+- `function(error) {}`: An error callback function. If the operation
+  does not complete successfully, this function executes with an
+  optional error parameter.
+
+- `"service"`: The service name to call on the native side. This
+  corresponds to a native class, for which more information is
   available in the native guides listed below.
 
-* `"action"`: The action name to call into. This is picked up by the
-  native class receiving the `exec` call, and, depending on the
-  platform, essentially maps to a class's method.  The native guides
-  listed below provide details.
+- `"action"`: The action name to call on the native side. This
+  generally corresponds to the native class method. See the native
+  guides listed below.
 
-* `[/* arguments */]`: Arguments to pass into the native environment.
+- `[/* arguments */]`: An array of arguments to pass into the native
+  environment.
 
-### Echo Plugin JavaScript Example
+## Sample JavaScript
+
+This example shows one way to implement the plugin's JavaScript
+interface:
 
         window.echo = function(str, callback) {
             cordova.exec(callback, function(err) {
@@ -79,46 +157,47 @@ The parameters are detailed below:
             }, "Echo", "echo", [str]);
         };
 
-Let's dive into this. The plugin attaches itself to `window`,
-specifically to the `echo` function. Plugin users would then use it as
-follows:
+In this example, the plugin attaches itself to the `window` object as
+the `echo` function, which plugin users would call as follows:
 
         window.echo("echome", function(echoValue) {
             alert(echoValue == "echome"); // should alert true.
         });
 
-First, let's take a look at the last three arguments to the `exec`
-function. We will be calling the `Echo` "service", requesting the `echo`
-"action", and passing an array of arguments containing the echo string,
-which is the first parameter into the `window.echo` function.
+Look at the last three arguments to the `cordova.exec` function. The
+first calls the `Echo` _service_, a class name. The second requests
+the `echo` _action_, a method within that class. The third is an array
+of arguments containing the echo string, which is the `window.echo`
+function's the first parameter.
 
 The success callback passed into `exec` is simply a reference to the
-callback function that `window.echo` takes. We do a bit more for the
-error callback: if the native side fires off the error callback, we
-simply invoke the success callback and pass into it a "default"
-string.
+callback function `window.echo` takes. If the native platform fires
+the error callback, it simply calls the success callback and passes it
+a default string.
 
-## Plugin Specification
-
-Cordova has a plugin specification available to enable automated
-installation of the plugin for Android, iOS, BlackBerry 10 and Windows
-Phone platforms. By structuring your plugin in a particular way and
-adding a `plugin.xml` manifest file, you can enable users to install
-your plugin via the command-line tooling.
-
-- Plugin Specification
-
-## Native
+## Native Interfaces
 
 Once you define JavaScript for your plugin, you need to complement it
-with at least one native implementation. Details to do so for each
-platform are listed below.  These guides continue to build on the
-simple Echo Plugin example discussed above.
+with at least one native implementation. Details for each platform are
+listed below, and each builds on the simple Echo Plugin example above:
 
 - Android Plugins
+- iOS Plugins
 - BlackBerry Plugins
 - BlackBerry 10 Plugins
-- iOS Plugins
 - Windows Phone Plugins
 
-The Tizen platform currently does not support plugins.
+The Tizen platform does not support plugins.
+
+## Publishing plugins
+
+Once you developed your plugin, you might want to publish it and share it with the community. You can publish your plugin to the cordova registry (based on [npmjs](https://github.com/isaacs/npmjs.org)) or to any other npmjs based registry. Users will be able to install it automatically using either plugman or cordova-cli.
+
+To publish a plugin you need to use the plugman tool and go through the following steps:
+
+    $ plugman adduser # that is if you don't have an account yet
+    $ plugman publish /path/to/your/plugin
+    
+That is it!
+
+Other registry-based commands are available and `plugman --help` will give you a list of what commands are available and how to use them.

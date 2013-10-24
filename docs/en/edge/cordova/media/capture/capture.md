@@ -17,8 +17,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
          under the License.
 ---
 
-Capture
-=======
+# Capture
 
 > Provides access to the device's audio, image, and video capture capabilities.
 
@@ -37,8 +36,7 @@ provide just-in-time notice and obtain permission from the user prior
 to accessing the camera or microphone.  For more information, please
 see the Privacy Guide.
 
-Objects
--------
+## Objects
 
 - Capture
 - CaptureAudioOptions
@@ -50,16 +48,14 @@ Objects
 - MediaFile
 - MediaFileData
 
-Methods
--------
+## Methods
 
 - capture.captureAudio
 - capture.captureImage
 - capture.captureVideo
 - MediaFile.getFormatData
 
-Scope
------
+## Scope
 
 The `capture` object is assigned to the `navigator.device` object, and
 therefore has global scope.
@@ -67,8 +63,7 @@ therefore has global scope.
     // The global capture object
     var capture = navigator.device.capture;
 
-Properties
-----------
+## Properties
 
 - __supportedAudioModes__: The audio recording formats supported by the device. (ConfigurationData[])
 
@@ -76,8 +71,7 @@ Properties
 
 - __supportedVideoModes__: The recording video resolutions and formats supported by the device. (ConfigurationData[])
 
-Methods
--------
+## Methods
 
 - `capture.captureAudio`: Launch the device's audio recording application to record audio clips.
 
@@ -85,8 +79,7 @@ Methods
 
 - `capture.captureVideo`: Launch the device's video recorder application to record videos.
 
-Supported Platforms
--------------------
+## Supported Platforms
 
 - Android
 - BlackBerry WebWorks (OS 5.0 and higher)
@@ -100,8 +93,11 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media-capture.git
-        $ cordova plugin rm org.apache.cordova.core.media-capture
+        $ cordova plugin add org.apache.cordova.media-capture
+        $ cordova plugin ls
+        [ 'org.apache.cordova.file',
+          'org.apache.cordova.media-capture']
+        $ cordova plugin rm org.apache.cordova.media-capture
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
@@ -109,13 +105,17 @@ platform-specific configuration settings described below:
 * Android
 
         (in app/res/xml/plugins.xml)
+        <feature name="File">
+            <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        </feature>
         <feature name="Capture">
-            <param name="android-package" value="org.apache.cordova.Capture" />
+            <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
         </feature>
 
         (in app/AndroidManifest.xml)
-        <uses-permission android:name="android.permission.RECORD_AUDIO" />
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.RECORD_AUDIO" />
+        <uses-permission android:name="android.permission.RECORD_VIDEO" />
 
 * BlackBerry WebWorks
 
@@ -128,7 +128,7 @@ platform-specific configuration settings described below:
         <feature id="blackberry.system"  required="true" version="1.0.0.0" />
         <feature id="blackberry.io.file" required="true" version="1.0.0.0" />
 
-* iOS (in `config.xml`)
+* iOS (in the named application directory's `config.xml`)
 
         <feature name="Capture">
             <param name="ios-package" value="CDVCapture" />

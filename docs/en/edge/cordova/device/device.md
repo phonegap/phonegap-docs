@@ -17,29 +17,26 @@
          under the License.
 ---
 
-Device
-======
+# Device
 
 > The `device` object describes the device's hardware and software.
 
-Properties
-----------
+## Properties
 
-- device.name
+- device.model
 - device.cordova
 - device.platform
 - device.uuid
 - device.version
-- device.model
+- device.name
 
-Variable Scope
---------------
+## Variable Scope
 
 Since `device` is assigned to the `window` object, it is implicitly in the global scope.
 
     // These reference the same `device`
-    var phoneName = window.device.name;
-    var phoneName = device.name;
+    var phoneModel = window.device.model;
+    var phoneModel = device.model;
 
 ## Accessing the Feature
 
@@ -47,8 +44,10 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git
-        $ cordova plugin rm org.apache.cordova.core.device
+        $ cordova plugin add org.apache.cordova.device
+        $ cordova plugin ls
+        [ 'org.apache.cordova.device' ]
+        $ cordova plugin rm org.apache.cordova.device
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
@@ -57,11 +56,8 @@ platform-specific configuration settings described below:
 
         (in app/res/xml/config.xml)
         <feature name="Device">
-            <param name="android-package" value="org.apache.cordova.Device" />
+            <param name="android-package" value="org.apache.cordova.device.Device" />
         </feature>
-
-        (in app/AndroidManifest.xml)
-        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
 * BlackBerry WebWorks
 

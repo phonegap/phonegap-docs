@@ -19,75 +19,105 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # iOS Configuration
 
-The `config.xml` settings file controls various Cordova settings.
-This is application wide, and not set per CDVViewController instance.
-The `config.xml` file is located in your `<project folder>/<appname>`
-directory.
+The `config.xml` file controls an app's basic settings that apply
+across each application and CordovaWebView instance. This section
+details preferences that only apply to iOS builds. See The config.xml
+File for information on global configuration options.
 
-## `<preference>`
+- `EnableViewportScale` (boolean, defaults to `false`): Set to `true`
+  to allow a viewport meta tag to either disable or restrict the range
+  of user scaling, which is enabled by default.
 
-Various preferences (as `<preference>` tags) default on not breaking
-existing apps. The available preferences are:
+        <preference name="EnableViewportScale" value="true"/>
 
-* `DisallowOverscroll` (boolean, defaults to `false`): set to `true` if
-  you don't want the WebView to rubber-band.
+  Place a viewport such as the following in the HTML to disable
+  scaling and fit content flexibly within the rendering WebView:
 
-* `TopActivityIndicator` (string, defaults to `gray`): this is the top
-  spinning throbber in the status/battery bar, valid values are
+        <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' />
+
+- `MediaPlaybackRequiresUserAction` (boolean, defaults to `false`):
+  Set to `true` to prevent HTML5 videos or audios from playing
+  automatically with the `autoplay` attribute or via JavaScript.
+
+        <preference name="MediaPlaybackRequiresUserAction" value="true"/>
+
+- `AllowInlineMediaPlayback` (boolean, defaults to `false`): Set to
+  `true` to allow HTML5 media playback to appear _inline_ within the
+  screen layout, using browser-supplied controls rather than native
+  controls. For this to work, add the `webkit-playsinline` attribute
+  to any `<video>` elements.
+
+        <preference name="AllowInlineMediaPlayback" value="true"/>
+
+- `BackupWebStorage` (string, either `none`, `local`, or the default
+  `cloud`): Set to `cloud` to allow web storage data to backup via
+  iCloud. Set to `local` to allow only local backups via iTunes
+  sync. Set to `none` prevent web storage backups.
+
+        <preference name="BackupWebStorage" value="local"/>
+
+- `TopActivityIndicator` (string, defaults to `gray`): Controls the
+  appearance of the small spinning icon in the status bar that
+  indicates significant processor activity.  Valid values are
   `whiteLarge`, `white`, and `gray`.
 
-* `EnableLocation` (boolean, defaults to `false`): set to `true`, to
-  initialize the Geolocation plugin at start-up (so the fix on your
-  location can be more accurate) __DEPRECATED__: please set the
-  `onload` attribute of the `Geolocation` plugin to `true`
-  instead.
+        <preference name="TopActivityIndicator" value="white"/>
 
-* `EnableViewportScale` (boolean, defaults to `false`): set to `true` to
-  prevent viewport scaling through a meta tag.
+- `FadeSplashScreen` (boolean, defaults to `true`): Set to `false` to
+  prevent the splash screen from fading in and out when its display
+  state changes.
 
-* `AutoHideSplashScreen` (boolean, defaults to `true`): set to `false` to
-  control when the splashscreen is hidden through a JavaScript API.
+        <preference name="FadeSplashScreen" value="false"/>
 
-* `FadeSplashScreen` (boolean, defaults to `true`): set to `false` to
-  prevent the splash-screen to fade in and out when showing or hiding
-  it.
+- `FadeSplashScreenDuration` (float, defaults to `2`): Specifies the
+  number of seconds for the splash screen fade effect to execute.
 
-* `FadeSplashScreenDuration` (float, defaults to 2): The splash-screen
-  Fade duration in seconds.
+        <preference name="FadeSplashScreenDuration" value="4"/>
 
-* `ShowSplashScreenSpinner` (boolean, defaults to `true`): set to `false`
+- `ShowSplashScreenSpinner` (boolean, defaults to `true`): Set to `false`
   to hide the splash-screen spinner.
 
-* `MediaPlaybackRequiresUserAction` (boolean, defaults to `false`): set
-  to true to not allow autoplayed HTML5 video.
+        <preference name="ShowSplashScreenSpinner" value="false"/>
 
-* `AllowInlineMediaPlayback` (boolean, defaults to `false`): set to
-  true to allow inline HTML5 media playback, also, the video element
-  in the HTML document must also include the webkit-playsinline
-  attribute.
+- `KeyboardDisplayRequiresUserAction` (boolean, defaults to `true`):
+  Set to `false` to allow the keyboard to appear when calling
+  `focus()` on form inputs.
 
-* `BackupWebStorage` (string, defaults to `cloud`): valid values are
-  `none`, `cloud` and `local`. Set to `cloud` to allow the web
-  storage data to be backed up to iCloud, and set to `local` to only
-  allow local backups (iTunes sync). Set to `none` to not allow any
-  backups of web storage.
+        <preference name="KeyboardDisplayRequiresUserAction" value="false"/>
 
-* `KeyboardDisplayRequiresUserAction` (boolean, defaults to `true`):
-  set to false to open the keyboard when form elements get focus via
-  the JavaScript focus() call.
+- `SuppressesIncrementalRendering` (boolean, defaults to `false`): Set
+  to `true` to wait until all content has been received before it
+  renders to the screen.
 
-* `SuppressesIncrementalRendering` (boolean, defaults to `false`): set
-  to true to wait until all new view content has been received
-  before it is rendered.
+        <preference name="SuppressesIncrementalRendering" value="true"/>
 
-* `HideKeyboardFormAccessoryBar` (boolean, defaults to `false`): set to
-  true to hide the additional toolbar that is on top of the
-  keyboard. This toolbar features the __Prev__, __Next__, and __Done__
-  buttons.
+- `GapBetweenPages` (float, defaults to `0`): The size of the gap, in points, between pages.
 
-* `KeyboardShrinksView` (boolean, defaults to `false`): set to `true` to
-  shrink the WebView when the keyboard comes up. The WebView shrinks
-  instead of the viewport shrinking and the page scrollable. This
-  applies to apps that position their elements relative to the bottom
-  of the WebView. This is the default behaviour on Android, and makes
-  a lot of sense when building apps as opposed to webpages.
+        <preference name="GapBetweenPages" value="0"/>
+
+- `PageLength` (float, defaults to `0`): The size of each page, in points, in the 
+  direction that the pages flow. When PaginationMode is right to left or left to right, 
+  this property represents the width of each page. When PaginationMode is topToBottom 
+  or bottomToTop, this property represents the height of each page. The default value 
+  is 0, which means the layout uses the size of the viewport to determine the dimensions
+  of the page.
+
+        <preference name="PageLength" value="0"/>
+
+- `PaginationBreakingMode` (string, defaults to `page`): Valid values are `page` and 
+  `column`.The manner in which column- or page-breaking occurs. This property 
+  determines whether certain CSS properties regarding column- and page-breaking are 
+  honored or ignored. When this property is set to `column`,  the content respects
+  the CSS properties related to column-breaking in place of page-breaking.
+
+        <preference name="PaginationBreakingMode" value="page"/>
+
+- `PaginationMode` (string, defaults to `unpaginated`): Valid values are `unpaginated`,
+  `leftToRight`, `topToBottom`, `bottomToTop`, and `rightToLeft`. This property determines 
+  whether content in the web view is broken up into pages that fill the view one screen 
+  at a time, or shown as one long scrolling view. If set to a paginated form, this 
+  property toggles a paginated layout on the content, causing the web view to use the 
+  values of PageLength and GapBetweenPages to relayout its content.
+
+        <preference name="PaginationMode" value="unpaginated"/>
+

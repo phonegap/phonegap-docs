@@ -17,8 +17,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
          under the License.
 ---
 
-Media
-=====
+# Media
 
 > The `Media` object provides the ability to record and play back audio files on a device.
 
@@ -29,8 +28,7 @@ specification for media capture, and is provided for convenience only.
 A future implementation will adhere to the latest W3C specification
 and may deprecate the current APIs.
 
-Parameters
-----------
+## Parameters
 
 - __src__: A URI containing the audio content. _(DOMString)_
 
@@ -40,8 +38,7 @@ Parameters
 
 - __mediaStatus__: (Optional) The callback that executes to indicate status changes. _(Function)_
 
-Constants
----------
+## Constants
 
 The following constants are reported as the only parameter to the
 `mediaStatus` callback:
@@ -52,8 +49,7 @@ The following constants are reported as the only parameter to the
 - `Media.MEDIA_PAUSED`   = 3;
 - `Media.MEDIA_STOPPED`  = 4;
 
-Methods
--------
+## Methods
 
 - `media.getCurrentPosition`: Returns the current position within an audio file.
 
@@ -75,16 +71,14 @@ Methods
 
 - `media.stop`: Stop playing an audio file.
 
-Additional ReadOnly Parameters
----------------------
+## Additional ReadOnly Parameters
 
 - __position__: The position within the audio playback, in seconds.
     - Not automatically updated during play; call `getCurrentPosition` to update.
 
 - __duration__: The duration of the media, in seconds.
 
-Supported Platforms
--------------------
+## Supported Platforms
 
 - Android
 - BlackBerry WebWorks (OS 5.0 and higher)
@@ -99,7 +93,10 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-media.git    
+        $ cordova plugin add org.apache.cordova.media 
+        $ cordova plugin ls
+        [ 'org.apache.cordova.media' ]
+        $ cordova plugin rm org.apache.cordova.media 
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
@@ -108,7 +105,7 @@ platform-specific configuration settings described below:
 
         (in app/res/xml/config.xml)
         <feature name="Media">
-            <param name="android-package" value="org.apache.cordova.AudioHandler" />
+            <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
         </feature>
 
         (in app/AndroidManifest.xml)
@@ -123,7 +120,7 @@ platform-specific configuration settings described below:
             <param name="blackberry-package" value="org.apache.cordova.media.MediaCapture" />
         </feature>
 
-* iOS (in `config.xml`)
+* iOS (in the named application directory's `config.xml`)
 
         <feature name="Media">
             <param name="ios-package" value="CDVSound" />

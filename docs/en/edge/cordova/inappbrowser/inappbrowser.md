@@ -17,20 +17,20 @@ license: Licensed to the Apache Software Foundation (ASF) under one
          under the License.
 ---
 
-InAppBrowser
-============
+# InAppBrowser
 
-> The `InAppBrowser` is a web browser that displays in the app when calling `window.open`.
+> The `InAppBrowser` is a web browser view that displays when calling `window.open()`, or when opening a link formed as `<a target="_blank">`.
 
     var ref = window.open('http://apache.org', '_blank', 'location=yes');
 
-Description
------------
+__NOTE:__ The InAppBrowser window behaves like a standard web browser,
+and cannot access Cordova APIs.
+
+## Description
 
 The object returned from a call to `window.open`.
 
-Methods
-----------
+## Methods
 
 - addEventListener
 - removeEventListener
@@ -45,19 +45,21 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
-        $ cordova plugin rm org.apache.cordova.core.inappbrowser
+        $ cordova plugin add org.apache.cordova.inappbrowser
+        $ cordova plugin ls
+        [ 'org.apache.cordova.inappbrowser' ]
+        $ cordova plugin rm org.apache.cordova.inappbrowser
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
 
-* Android (in `app/res/xml/config.xml`)
+* Android (in `res/xml/config.xml`)
 
         <feature name="InAppBrowser">
-            <param name="android-package" value="org.apache.cordova.InAppBrowser" />
+            <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
         </feature>
 
-* iOS (in `config.xml`)
+* iOS (in the named application directory's `config.xml`)
 
         <feature name="InAppBrowser">
             <param name="ios-package" value="CDVInAppBrowser" />
@@ -70,8 +72,7 @@ platform-specific configuration settings described below:
 Some platforms may support this feature without requiring any special
 configuration.  See Platform Support for an overview.
 
-addEventListener
-================
+# addEventListener
 
 > Adds a listener for an event from the `InAppBrowser`.
 
@@ -88,22 +89,19 @@ addEventListener
 
 - __callback__: the function that executes when the event fires. The function is passed an `InAppBrowserEvent` object as a parameter.
 
-Supported Platforms
--------------------
+## Supported Platforms
 
 - Android
 - BlackBerry
 - iOS
 - Windows Phone 7 and 8
 
-Quick Example
--------------
+## Quick Example
 
     var ref = window.open('http://apache.org', '_blank', 'location=yes');
     ref.addEventListener('loadstart', function() { alert(event.url); });
 
-Full Example
-------------
+## Full Example
 
     <!DOCTYPE html>
     <html>
@@ -133,8 +131,7 @@ Full Example
       </body>
     </html>
 
-removeEventListener
-===================
+# removeEventListener
 
 > Removes a listener for an event from the `InAppBrowser`.
 
@@ -152,24 +149,21 @@ removeEventListener
 - __callback__: the function to execute when the event fires.
 The function is passed an `InAppBrowserEvent` object.
 
-Supported Platforms
--------------------
+## Supported Platforms
 
 - Android
 - BlackBerry
 - iOS
 - Windows Phone 7 and 8
 
-Quick Example
--------------
+## Quick Example
 
     var ref = window.open('http://apache.org', '_blank', 'location=yes');
     var myCallback = function() { alert(event.url); }
     ref.addEventListener('loadstart', myCallback);
     ref.removeEventListener('loadstart', myCallback);
 
-Full Example
-------------
+## Full Example
 
     <!DOCTYPE html>
     <html>
@@ -222,8 +216,7 @@ Full Example
       </body>
     </html>
 
-close
-=====
+# close
 
 > Closes the `InAppBrowser` window.
 
@@ -231,22 +224,19 @@ close
 
 - __ref__: reference to the `InAppBrowser` window _(InAppBrowser)_
 
-Supported Platforms
--------------------
+## Supported Platforms
 
 - Android
 - BlackBerry
 - iOS
 - Windows Phone 7 and 8
 
-Quick Example
--------------
+## Quick Example
 
     var ref = window.open('http://apache.org', '_blank', 'location=yes');
     ref.close();
 
-Full Example
-------------
+## Full Example
 
     <!DOCTYPE html>
     <html>
@@ -276,8 +266,7 @@ Full Example
       </body>
     </html>
 
-show
-=====
+# show
 
 > Displays an InAppBrowser window that was opened hidden. Calling this has no effect if the InAppBrowser was already visible.
 
@@ -285,21 +274,18 @@ show
 
 - __ref:__ reference to the InAppBrowser window (`InAppBrowser`)
 
-Supported Platforms
--------------------
+## Supported Platforms
 
 - Android
 - BlackBerry
 - iOS
 
-Quick Example
--------------
+## Quick Example
 
     var ref = window.open('http://apache.org', '_blank', 'hidden=yes');
     ref.show();
 
-Full Example
-------------
+## Full Example
 
     <!DOCTYPE html>
     <html>
@@ -332,8 +318,7 @@ Full Example
       </body>
     </html>
 
-executeScript
-=============
+# executeScript
 
 > Injects JavaScript code into the `InAppBrowser` window
 
@@ -352,23 +337,20 @@ executeScript
       the return value of the last statement, or the last expression
       evaluated.
 
-Supported Platforms
--------------------
+## Supported Platforms
 
 - Android
 - BlackBerry
 - iOS
 
-Quick Example
--------------
+## Quick Example
 
     var ref = window.open('http://apache.org', '_blank', 'location=yes');
     ref.addEventListener('loadstop', function() {
         ref.executeSript({file: "myscript.js"});
     });
 
-Full Example
-------------
+## Full Example
 
     <!DOCTYPE html>
     <html>
@@ -392,7 +374,7 @@ Full Example
                 code: "var img=document.querySelector('#header img'); img.src='http://cordova.apache.org/images/cordova_bot.png';"
             }, function() {
                 alert("Image Element Successfully Hijacked");
-            }
+            });
         }
 
         function iabClose(event) {
@@ -414,8 +396,7 @@ Full Example
       </body>
     </html>
 
-insertCSS
-=========
+# insertCSS
 
 > Injects CSS into the `InAppBrowser` window.
 
@@ -429,23 +410,20 @@ insertCSS
 
 - __callback__: the function that executes after the CSS is injected.
 
-Supported Platforms
--------------------
+## Supported Platforms
 
 - Android
 - BlackBerry
 - iOS
 
-Quick Example
--------------
+## Quick Example
 
     var ref = window.open('http://apache.org', '_blank', 'location=yes');
     ref.addEventListener('loadstop', function() {
         ref.insertCSS({file: "mystyles.css"});
     });
 
-Full Example
-------------
+## Full Example
 
     <!DOCTYPE html>
     <html>
@@ -491,14 +469,12 @@ Full Example
       </body>
     </html>
 
-InAppBrowserEvent
-=================
+# InAppBrowserEvent
 
 The object that is passed to the callback function from an
 `addEventListener` call on an `InAppBrowser` object.
 
-Properties
-----------
+## Properties
 
 - __type__: the eventname, either `loadstart`, `loadstop`, `loaderror`, or `exit`. _(String)_
 

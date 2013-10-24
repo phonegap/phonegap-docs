@@ -26,6 +26,10 @@ license: Licensed to the Apache Software Foundation (ASF) under one
             <span>Start here if you are new to Cordova.</span>
         </li>
         <li>
+            <h2>Platform Support</h2>
+            <span>Compatibility table for all major features.</span>
+        </li>
+        <li>
             <h2>The Command-line Interface</h2>
             <span>Create, build, and deploy from the command-line.</span>
         </li>
@@ -34,8 +38,12 @@ license: Licensed to the Apache Software Foundation (ASF) under one
             <span>Set up each SDK and update projects</span>
         </li>
         <li>
-            <h2>Configuration Reference</h2>
+            <h2>The config.xml File</h2>
             <span>Customize the features of your app.</span>
+        </li>
+        <li>
+            <h2>Icons and Splash Screens</h2>
+            <span>Customize the app's displaying images.</span>
         </li>
         <li>
             <h2>Embedding WebViews</h2>
@@ -50,8 +58,8 @@ license: Licensed to the Apache Software Foundation (ASF) under one
             <span>Learn about important mobile privacy issues.</span>
         </li>
         <li>
-            <h2>Domain Whitelist Guide</h2>
-            <span>Grant an application access to external domains.</span>
+            <h2>Whitelist Guide</h2>
+            <span>Grant an application access to external resources.</span>
         </li>
         <li>
             <h2><a href="_index.html">Keyword Index</a></h2>

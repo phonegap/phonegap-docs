@@ -17,8 +17,7 @@
          under the License.
 ---
 
-Camera
-======
+# Camera
 
 > The `camera` object provides access to the device's default camera application.
 
@@ -34,8 +33,7 @@ obtaining the user's permission (e.g., by presenting choices for
 __OK__ and __No Thanks__).  For more information, please see the
 Privacy Guide.
 
-Methods
--------
+## Methods
 
 - camera.getPicture
 - camera.cleanup
@@ -46,8 +44,10 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-camera.git
-        $ cordova plugin rm org.apache.cordova.core.camera
+        $ cordova plugin add org.apache.cordova.camera
+        $ cordova plugin ls
+        [ 'org.apache.cordova.camera' ]
+        $ cordova plugin rm org.apache.cordova.camera
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
@@ -56,7 +56,7 @@ platform-specific configuration settings described below:
 
         (in app/res/xml/config.xml)
         <feature name="Camera">
-            <param name="android-package" value="org.apache.cordova.CameraLauncher" />
+            <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
         </feature>
 
         (in app/AndroidManifest)
@@ -71,12 +71,11 @@ platform-specific configuration settings described below:
 
         (in www/config.xml)
         <feature id="blackberry.media.camera" />
-
         <rim:permissions>
             <rim:permit>use_camera</rim:permit>
         </rim:permissions>
 
-* iOS (in `config.xml`)
+* iOS (in the named application directory's `config.xml`)
 
         <feature name="Camera">
             <param name="ios-package" value="CDVCamera" />

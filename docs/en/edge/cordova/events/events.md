@@ -17,13 +17,11 @@
          under the License.
 ---
 
-Events
-======
+# Events
 
 > Cordova lifecycle events.
 
-Event Types
------------
+## Event Types
 
 - deviceready
 - pause
@@ -49,8 +47,10 @@ to battery status are enabled by default.  Use the CLI's `plugin`
 command, described in The Command-line Interface, to enable or disable
 battery events:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-battery-status.git
-        $ cordova plugin rm org.apache.cordova.core.battery-status
+        $ cordova plugin add org.apache.cordova.battery-status
+        $ cordova plugin ls
+        [ 'org.apache.cordova.battery-status' ]
+        $ cordova plugin rm org.apache.cordova.battery-status
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
@@ -59,11 +59,8 @@ platform-specific configuration settings described below:
 
         (in app/res/xml/config.xml)
         <feature name="Battery">
-            <param name="android-package" value="org.apache.cordova.BatteryListener" />
+            <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener" />
         </feature>
-
-        (in app/AndroidManifest.xml)
-        <uses-permission android:name="android.permission.BROADCAST_STICKY" />
 
 * BlackBerry WebWorks
 
@@ -77,7 +74,7 @@ platform-specific configuration settings described below:
         <feature id="blackberry.app.event"    required="true" version="1.0.0.0" />
         <feature id="blackberry.system.event" required="true" version="1.0.0.0" />
 
-* iOS (in `config.xml`)
+* iOS (in the named application directory's `config.xml`)
 
         <feature name="Battery">
             <param name="ios-package" value="CDVBattery" />

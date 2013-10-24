@@ -17,8 +17,7 @@
          under the License.
 ---
 
-Contacts
-========
+# Contacts
 
 > The `contacts` object provides access to the device contacts database.
 
@@ -39,22 +38,19 @@ clear and easy-to-understand user experience surrounding the use of
 contact data will help avoid user confusion and perceived misuse of
 contact data.  For more information, please see the Privacy Guide.
 
-Methods
--------
+## Methods
 
 - contacts.create
 - contacts.find
 
-Arguments
----------
+## Arguments
 
 - contactFields
 - contactSuccess
 - contactError
 - contactFindOptions
 
-Objects
--------
+## Objects
 
 - Contact
 - ContactName
@@ -70,8 +66,10 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-contacts.git
-        $ cordova plugin rm org.apache.cordova.core.contacts
+        $ cordova plugin add org.apache.cordova.contacts
+        $ cordova plugin ls
+        [ 'org.apache.cordova.contacts' ]
+        $ cordova plugin rm org.apache.cordova.contacts
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
@@ -80,13 +78,13 @@ platform-specific configuration settings described below:
 
         (in app/res/xml/config.xml)
         <feature name="Contacts">
-            <param name="android-package" value="org.apache.cordova.ContactManager" />
+            <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
         </feature>
 
         (in app/AndroidManifest.xml)
-        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-        <uses-permission android:name="android.permission.READ_CONTACTS" />
-        <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+            <uses-permission android:name="android.permission.READ_CONTACTS" />
+            <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+            <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
 * BlackBerry WebWorks
 
@@ -101,15 +99,14 @@ platform-specific configuration settings described below:
         <feature id="blackberry.pim.Address" required="true" version="1.0.0.0" />
         <feature id="blackberry.pim.Contact" required="true" version="1.0.0.0" />
 
-* iOS (in `config.xml`)
+* iOS (in the named application directory's `config.xml`)
 
         <feature name="Contacts">
             <param name="ios-package" value="CDVContacts" />
         </feature>
 
-* Windows Phone
+* Windows Phone (in `Properties/WPAppManifest.xml`)
 
-        (in Properties/WPAppManifest.xml)
         <Capabilities>
             <Capability Name="ID_CAP_CONTACTS" />
         </Capabilities>

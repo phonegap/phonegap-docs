@@ -17,13 +17,11 @@
          under the License.
 ---
 
-Compass
-=======
+# Compass
 
 > Obtains the direction that the device is pointing.
 
-Methods
--------
+## Methods
 
 - compass.getCurrentHeading
 - compass.watchHeading
@@ -31,8 +29,7 @@ Methods
 - compass.watchHeadingFilter (obsolete)
 - compass.clearWatchFilter   (obsolete)
 
-Arguments
----------
+## Arguments
 
 - compassSuccess
 - compassError
@@ -45,19 +42,26 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-orientation.git
-        $ cordova plugin rm org.apache.cordova.core.device-orientation
+        $ cordova plugin add org.apache.cordova.device-orientation
+        $ cordova plugin ls
+        [ 'org.apache.cordova.device-orientation' ]
+        $ cordova plugin rm org.apache.cordova.device-orientation
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
 
-* Android (in `app/res/xml/config.xml`)
+* Android
 
+        (in `app/res/xml/config.xml`)
         <feature name="Compass">
-            <param name="android-package" value="org.apache.cordova.CompassListener" />
+            <param name="android-package" value="org.apache.cordova.deviceorientation.CompassListener" />
         </feature>
+        
+        (in app/AndroidManifest)
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-* iOS (in `config.xml`)
+* iOS (in the named application directory's `config.xml`)
 
         <feature name="Compass">
             <param name="ios-package" value="CDVLocation" />

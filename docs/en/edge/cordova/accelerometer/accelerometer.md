@@ -17,27 +17,23 @@
          under the License.
 ---
 
-Accelerometer
-=============
+# Accelerometer
 
 > Captures device motion in the _x_, _y_, and _z_ direction.
 
-Methods
--------
+## Methods
 
 - accelerometer.getCurrentAcceleration
 - accelerometer.watchAcceleration
 - accelerometer.clearWatch
 
-Arguments
----------
+## Arguments
 
 - accelerometerSuccess
 - accelerometerError
 - accelerometerOptions
 
-Objects (Read-Only)
--------------------
+## Objects (Read-Only)
 
 - Acceleration
 
@@ -47,16 +43,18 @@ As of version 3.0, Cordova implements device-level APIs as _plugins_.
 Use the CLI's `plugin` command, described in The Command-line
 Interface, to add or remove this feature for a project:
 
-        $ cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-device-motion.git
-        $ cordova plugin rm org.apache.cordova.core.device-motion
+        $ cordova plugin add org.apache.cordova.device-motion
+        $ cordova plugin ls
+        [ 'org.apache.cordova.device-motion' ]
+        $ cordova plugin rm org.apache.cordova.device-motion
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
 
-* Android (in `app/res/xml/config.xml`)
+* Android (in `res/xml/config.xml`)
 
         <feature name="Accelerometer">
-            <param name="android-package" value="org.apache.cordova.AccelListener" />
+            <param name="android-package" value="org.apache.cordova.devicemotion.AccelListener" />
         </feature>
 
 * BlackBerry WebWorks
@@ -70,7 +68,7 @@ platform-specific configuration settings described below:
         <feature id="blackberry.system"  required="true" version="1.0.0.0" />
         <feature id="org.apache.cordova" required="true" version="1.0.0" />
 
-* iOS (in `config.xml`)
+* iOS (in the named application directory's `config.xml`)
 
         <feature name="Accelerometer">
             <param name="ios-package" value="CDVAccelerometer" />

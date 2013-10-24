@@ -30,6 +30,10 @@ target. The tools described here are typically available in the
 top-level `bin` directory, otherwise consult the __README__ file for
 more detailed directions.
 
+For information on the low-level command-line interface that enables
+plugins, see Using Plugman to Manage Plugins. See Application Plugins
+for an overview.
+
 ## Windows Phone
 
 The Windows Phone command-line tools support creating, building, and
@@ -37,7 +41,7 @@ running new projects. Commands must be run from a cmd or powershell
 prompt.
 
 The WP8 repo now includes code for building both WP7 + WP8 apps.  The
-repo has subfolders for each: wp7/ and wp8/
+repo has subdirectories for each: `wp7/` and `wp8/`.
 
 ## Create a project
 
