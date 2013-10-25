@@ -49,9 +49,8 @@ following platforms are only available when building locally:
 * Windows Phone 8
 * Windows 8
 
-See the Overview section's _Platform Support_ table for an overview of
-all available options. See below for details on how to use PhoneGap
-Build to build remotely.
+See Platform Support for an overview of all available options. See
+below for details on how to use PhoneGap Build to build remotely.
 
 If building locally, you need to run the command-line interface from
 the same machine that supports the platform's SDK. The CLI supports
@@ -192,7 +191,7 @@ emulator, even if a device is connected.  Likewise, adding the `-d`
 (or `--device`) option forces it to try to install onto the device,
 without falling back to the emulator in case it fails to install.
 
-## Add Features
+## Add Plugin Features
 
 When you build and view a new project, the default application that
 appears doesn't do very much. You can modify the app in many ways to
@@ -281,6 +280,48 @@ for a debug console from a final release version:
 
 You can batch-remove or add plugins by specifying more than one
 argument for each command.
+
+## Advanced Plugin Options
+
+When adding a plugin, several options allow you to specify from where
+to fetch the plugin. The examples above use a well-known
+`registry.cordova.io` registry, from where the plugin is specified by
+its `id`:
+
+        $ phonegap local plugin add org.apache.cordova.console
+
+The `id` may also include the plugin's version number, appended after
+an `@` character. The `latest` version is an alias for the most recent
+version. For example:
+
+        $ phonegap local plugin add org.apache.cordova.console@latest
+        $ phonegap local plugin add org.apache.cordova.console@0.2.1
+
+If the plugin is not registered at `registry.cordova.io` but is located in
+another git repository, you can specify an alternate URL:
+
+        $ phonegap local plugin add https://github.com/apache/cordova-plugin-console.git
+
+The git example above fetches the plugin from the end of the master
+branch, but an alternate git-ref such as a tag or branch can be
+appended after a `#` character:
+
+        $ phonegap local plugin add https://github.com/apache/cordova-plugin-console.git#r0.2.0
+
+If the plugin (and its `plugin.xml` file) is in a subdirectory within
+the git repo, you can specify it with a `:` character. Note that the
+`#` character is still needed:
+
+        $ phonegap local plugin add https://github.com/someone/aplugin.git#:/my/sub/dir
+
+You can also combine both the git-ref and the subdirectory:
+
+        $ phonegap local plugin add https://github.com/someone/aplugin.git#r0.0.1:/my/sub/dir
+
+Alternately, specify a local path to the plugin directory that
+contains the `plugin.xml` file:
+
+        $ phonegap local plugin add ../my_plugin_dir
 
 ## Customize Each Platform
 
