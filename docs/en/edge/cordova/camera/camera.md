@@ -21,12 +21,12 @@
 
 > The `camera` object provides access to the device's default camera application.
 
-__Important privacy note:__ Collection and use of images from a
+__WARNING__: Collection and use of images from a
 device's camera raises important privacy issues.  Your app's privacy
 policy should discuss how the app uses the camera and whether the
 images recorded are shared with any other parties.  In addition, if
 the app's use of the camera is not apparent in the user interface, you
-should provide a just-in-time notice prior to your app accessing the
+should provide a just-in-time notice before the app accesses the
 camera (if the device operating system doesn't do so already).  That
 notice should provide the same information noted above, as well as
 obtaining the user's permission (e.g., by presenting choices for
@@ -41,7 +41,7 @@ Privacy Guide.
 ## Accessing the Feature
 
 As of version 3.0, Cordova implements device-level APIs as _plugins_.
-Use the CLI's `plugin` command, described in The Command-line
+Use the CLI's `plugin` command, described in The Command-Line
 Interface, to add or remove this feature for a project:
 
         $ cordova plugin add org.apache.cordova.camera
@@ -51,6 +51,16 @@ Interface, to add or remove this feature for a project:
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
+
+* Amazon Fire OS
+
+        (in app/res/xml/config.xml)
+        <feature name="Camera">
+            <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+        </feature>
+
+        (in app/AndroidManifest)
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 * Android
 
@@ -71,6 +81,7 @@ platform-specific configuration settings described below:
 
         (in www/config.xml)
         <feature id="blackberry.media.camera" />
+
         <rim:permissions>
             <rim:permit>use_camera</rim:permit>
         </rim:permissions>

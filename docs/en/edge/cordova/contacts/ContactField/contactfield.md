@@ -51,8 +51,9 @@ string.
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
-- BlackBerry WebWorks (OS 5.0 and higher)
+- BlackBerry WebWorks 5.0+
 - iOS
 - Windows Phone 7 and 8
 - Windows 8
@@ -141,7 +142,7 @@ string.
 
 - __pref__: Not supported, returning `false`.
 
-## BlackBerry WebWorks (OS 5.0 and higher) Quirks
+## BlackBerry WebWorks 5.0+ Quirks
 
 - __type__: Partially supported.  Used for phone numbers.
 

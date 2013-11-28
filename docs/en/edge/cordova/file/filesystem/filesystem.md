@@ -36,8 +36,9 @@ that represents the file system's root directory.
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
-- BlackBerry WebWorks (OS 5.0 and higher)
+- BlackBerry WebWorks 5.0+
 - iOS
 - Windows Phone 7 and 8
 - Windows 8
@@ -77,8 +78,8 @@ that represents the file system's root directory.
             console.log(fileSystem.root.name);
         }
 
-        function fail(evt) {
-            console.log(evt.target.error.code);
+        function fail(error) {
+            console.log(error.code);
         }
 
         </script>

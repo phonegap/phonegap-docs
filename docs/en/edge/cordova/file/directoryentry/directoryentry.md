@@ -33,7 +33,7 @@ specification.
 
 - __fullPath__: The full absolute path from the root to the `DirectoryEntry`. _(DOMString)_
 
-__NOTE:__ The following attribute is defined by the W3C specification,
+__NOTE__: The following attribute is defined by the W3C specification,
 but is _not_ supported:
 
 - __filesystem__: The file system on which the `DirectoryEntry` resides. _(FileSystem)_
@@ -66,8 +66,9 @@ The following methods can be invoked on a `DirectoryEntry` object:
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
-- BlackBerry WebWorks (OS 5.0 and higher)
+- BlackBerry WebWorks 5.0+
 - iOS
 - Windows Phone 7 and 8
 - Windows 8
@@ -76,7 +77,7 @@ The following methods can be invoked on a `DirectoryEntry` object:
 
 Look up metadata about a directory.
 
-__Parameters:__
+__Parameters__:
 
 - __successCallback__: A callback function to execute with a `Metadata` object. _(Function)_
 
@@ -100,7 +101,7 @@ __Quick Example__
 Sets a directory's extended attributes, or metadata. _Currently works
 only on iOS._
 
-__Parameters:__
+__Parameters__:
 
 - __successCallback__: A callback that executes when the metadata is successfully set. _(Function)_
 
@@ -149,8 +150,8 @@ __Quick Example__
             fileSystem.root.getDirectory(subFolder, {create: true, exclusive: false}, onGetDirectoryWin, onGetDirectoryFail);
         }
 
-        var onFSFail = function(evt) {
-            console.log(evt.target.error.code);
+        var onFSFail = function(error) {
+            console.log(error.code);
         }
 
         window.requestFileSystem(localFileSystem, 0, onFSWin, onFSFail);
@@ -173,7 +174,7 @@ Move a directory to a different location on the file system. An error results if
 Moving a directory on top of an existing empty directory attempts to
 delete and replace that directory.
 
-__Parameters:__
+__Parameters__:
 
 - __parent__: The parent directory to which to move the directory. _(DirectoryEntry)_
 
@@ -213,7 +214,7 @@ Copy a directory to a different location on the file system.  An error results i
 
 Directory copies are always recursive, and copy all contents of the directory.
 
-__Parameters:__
+__Parameters__:
 
 - __parent__: The parent directory to which to copy the directory. _(DirectoryEntry)_
 
@@ -261,7 +262,7 @@ Deletes a directory. An error results if the app attempts to:
 
 - delete the root directory of a filesystem.
 
-__Parameters:__
+__Parameters__:
 
 - __successCallback__: A callback that executes after the directory is deleted.  Invoked with no parameters. _(Function)_
 
@@ -284,7 +285,7 @@ __Quick Example__
 
 Look up the parent `DirectoryEntry` containing the directory.
 
-__Parameters:__
+__Parameters__:
 
 - __successCallback__: A callback that is passed the directory's parent `DirectoryEntry`. _(Function)_
 
@@ -318,7 +319,7 @@ Creates or looks up an existing directory.  An error results if the app attempts
 
 - create a directory whose immediate parent does not yet exist.
 
-__Parameters:__
+__Parameters__:
 
 - __path__: The path to the directory to be looked up or created.  Either an absolute path, or a relative path from this `DirectoryEntry`. _(DOMString)_
 
@@ -347,7 +348,7 @@ Creates or looks up a file.  An error results if the app attempts to:
 
 - create a file whose immediate parent does not yet exist.
 
-__Parameters:__
+__Parameters__:
 
 - __path__: The path to the file to be looked up or created.  Either an absolute path, or a relative path from this `DirectoryEntry`. _(DOMString)_
 
@@ -373,12 +374,12 @@ __Quick Example__
 ## removeRecursively
 
 Deletes a directory and all of its contents.  In the event of an error (such as trying to delete
-a directory containing a file that cannot be removed), some of the contents of the directory may
+a directory containing a file that can't be removed), some of the contents of the directory may
 be deleted.   An error results if the app attempts to:
 
 - delete the root directory of a filesystem.
 
-__Parameters:__
+__Parameters__:
 
 - __successCallback__: A callback that executes after the `DirectoryEntry` has been deleted.  Invoked with no parameters. _(Function)_
 

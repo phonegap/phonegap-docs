@@ -33,7 +33,7 @@ specification.
 
 - __fullPath__: The full absolute path from the root to the `FileEntry`. _(DOMString)_
 
-__NOTE:__ The following attribute is defined by the W3C specification,
+__NOTE__: The following attribute is defined by the W3C specification,
 but is _not_ supported:
 
 - __filesystem__: The file system on which the `FileEntry` resides. _(FileSystem)_
@@ -60,8 +60,9 @@ but is _not_ supported:
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
-- BlackBerry WebWorks (OS 5.0 and higher)
+- BlackBerry WebWorks 5.0+
 - iOS
 - Windows Phone 7 and 8
 - Windows 8
@@ -70,7 +71,7 @@ but is _not_ supported:
 
 Look up metadata about a file.
 
-__Parameters:__
+__Parameters__:
 
 - __successCallback__: A callback that is passed a `Metadata` object. _(Function)_
 
@@ -95,9 +96,9 @@ Set metadata on a file.
 
 __Currently works only on iOS.__
 
-- this will set the extended attributes of a file.
+- This sets the extended attributes of a file.
 
-__Parameters:__
+__Parameters__:
 
 - __successCallback__: A callback that executes when the metadata is set. _(Function)_
 
@@ -146,8 +147,8 @@ __Quick Example__
             fileSystem.root.getFile(filePath, {create: true, exclusive: false}, onGetFileWin, onGetFileFail);
         }
 
-        var onFSFail = function(evt) {
-            console.log(evt.target.error.code);
+        var onFSFail = function(error) {
+            console.log(error.code);
         }
 
         window.requestFileSystem(localFileSystem, 0, onFSWin, onFSFail);
@@ -167,7 +168,7 @@ results if the app attempts to:
 In addition, moving a file on top of an existing file attempts to
 delete and replace that file.
 
-__Parameters:__
+__Parameters__:
 
 - __parent__: The parent directory to which to move the file. _(DirectoryEntry)_
 
@@ -203,7 +204,7 @@ the app attempts to:
 
 - copy a file into its parent if a name different from its current one is not provided.
 
-__Parameters:__
+__Parameters__:
 
 - __parent__: The parent directory to which to copy the file. _(DirectoryEntry)_
 
@@ -246,7 +247,7 @@ __Quick Example__
 
 Deletes a file.
 
-__Parameters:__
+__Parameters__:
 
 - __successCallback__: A callback that executes after the file has been deleted.  Invoked with no parameters. _(Function)_
 
@@ -269,7 +270,7 @@ __Quick Example__
 
 Look up the parent `DirectoryEntry` containing the file.
 
-__Parameters:__
+__Parameters__:
 
 - __successCallback__: A callback that is passed the file's parent `DirectoryEntry`. _(Function)_
 
@@ -292,7 +293,7 @@ __Quick Example__
 
 Create a `FileWriter` object associated with the file represented by the `FileEntry`.
 
-__Parameters:__
+__Parameters__:
 
 - __successCallback__: A callback that is passed a `FileWriter` object. _(Function)_
 
@@ -316,7 +317,7 @@ __Quick Example__
 Return a `File` object that represents the current state of the file
 that this `FileEntry` represents.
 
-__Parameters:__
+__Parameters__:
 
 - __successCallback__: A callback that is passed a `File` object. _(Function)_
 

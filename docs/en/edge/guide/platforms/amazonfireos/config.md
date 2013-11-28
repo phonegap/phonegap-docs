@@ -17,18 +17,16 @@ license: Licensed to the Apache Software Foundation (ASF) under one
          under the License.
 ---
 
-# Android Configuration
+# Amazon Fire OS Configuration
 
 The `config.xml` file controls an app's basic settings that apply
 across each application and CordovaWebView instance. This section
-details preferences that only apply to Android builds. See The
+details preferences that only apply to  Amazon Fire OS builds. See The
 config.xml File for information on global configuration options.
 
 - `KeepRunning` (boolean, defaults to `true`): Determines whether the
   application stays running in the background even after a `pause`
-  event fires. Note: setting this to false will not kill the app after
-  a pause event, it will only halt execution of code in the cordova
-  webview while the app is in the background.
+  event fires.
 
         <preference name="KeepRunning" value="false"/>
 

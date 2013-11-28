@@ -59,7 +59,7 @@ example:
 
 - Post the data to a remote server
 
-__NOTE:__ Photo resolution on newer devices is quite good. Photos
+__NOTE__: Photo resolution on newer devices is quite good. Photos
 selected from the device's gallery are not downscaled to a lower
 quality, even if a `quality` parameter is specified.  To avoid common
 memory problems, set `Camera.destinationType` to `FILE_URI` rather
@@ -67,12 +67,19 @@ than `DATA_URL`.
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
-- BlackBerry WebWorks (OS 5.0 and higher)
+- BlackBerry WebWorks 5.0+
 - iOS
 - Tizen
 - Windows Phone 7 and 8
 - Windows 8
+
+## Amazon Fire OS Quirks
+
+Amazon Fire OS uses intents to launch the camera activity on the device to capture
+images, and on phones with low memory, the Cordova activity may be killed.  In this
+scenario, the image may not appear when the cordova activity is restored.
 
 ## Android Quirks
 
@@ -93,7 +100,7 @@ displays:
 
 ## Windows Phone 7 Quirks
 
-Invoking the native camera application while your device is connected
+Invoking the native camera application while the device is connected
 via Zune does not work, and triggers an error callback.
 
 ## Tizen Quirks
@@ -172,7 +179,7 @@ Take a photo and retrieve the image's file location:
           smallImage.style.display = 'block';
 
           // Show the captured photo
-          // The inline CSS rules are used to resize the image
+          // The in-line CSS rules are used to resize the image
           //
           smallImage.src = "data:image/jpeg;base64," + imageData;
         }
@@ -192,7 +199,7 @@ Take a photo and retrieve the image's file location:
           largeImage.style.display = 'block';
 
           // Show the captured photo
-          // The inline CSS rules are used to resize the image
+          // The in-line CSS rules are used to resize the image
           //
           largeImage.src = imageURI;
         }

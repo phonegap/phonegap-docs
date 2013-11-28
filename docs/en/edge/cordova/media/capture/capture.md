@@ -21,13 +21,13 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 > Provides access to the device's audio, image, and video capture capabilities.
 
-__Important privacy note:__ Collection and use of images, video, or
+__WARNING__: Collection and use of images, video, or
 audio from the device's camera or microphone raises important privacy
 issues.  Your app's privacy policy should discuss how the app uses
 such sensors and whether the data recorded is shared with any other
 parties.  In addition, if the app's use of the camera or microphone is
 not apparent in the user interface, you should provide a just-in-time
-notice prior to your app accessing the camera or microphone (if the
+notice before the app accesses the camera or microphone (if the
 device operating system doesn't do so already). That notice should
 provide the same information noted above, as well as obtaining the
 user's permission (e.g., by presenting choices for __OK__ and __No
@@ -81,8 +81,9 @@ therefore has global scope.
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
-- BlackBerry WebWorks (OS 5.0 and higher)
+- BlackBerry WebWorks 5.0+
 - iOS
 - Windows Phone 7 and 8
 - Windows 8
@@ -90,7 +91,7 @@ therefore has global scope.
 ## Accessing the Feature
 
 As of version 3.0, Cordova implements device-level APIs as _plugins_.
-Use the CLI's `plugin` command, described in The Command-line
+Use the CLI's `plugin` command, described in The Command-Line
 Interface, to add or remove this feature for a project:
 
         $ cordova plugin add org.apache.cordova.media-capture
@@ -102,9 +103,24 @@ Interface, to add or remove this feature for a project:
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
 
+* Amazon Fire OS
+
+        (in app/res/xml/config.xml)
+        <feature name="File">
+            <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        </feature>
+        <feature name="Capture">
+            <param name="android-package" value="org.apache.cordova.mediacapture.Capture" />
+        </feature>
+
+        (in app/AndroidManifest.xml)   
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.RECORD_AUDIO" />
+        <uses-permission android:name="android.permission.RECORD_VIDEO" />
+
 * Android
 
-        (in app/res/xml/plugins.xml)
+        (in app/res/xml/config.xml)
         <feature name="File">
             <param name="android-package" value="org.apache.cordova.file.FileUtils" />
         </feature>

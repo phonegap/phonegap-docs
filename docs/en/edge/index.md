@@ -30,12 +30,16 @@ license: Licensed to the Apache Software Foundation (ASF) under one
             <span>Compatibility table for all major features.</span>
         </li>
         <li>
-            <h2>The Command-line Interface</h2>
+            <h2>The Command-Line Interface</h2>
             <span>Create, build, and deploy from the command-line.</span>
         </li>
         <li>
             <h2>Platform Guides</h2>
             <span>Set up each SDK and update projects</span>
+        </li>
+        <li>
+         <h2>Using Plugman to Manage Plugins</h2>
+            <span>Using Plugman to manage Plugins without the CLI</span>
         </li>
         <li>
             <h2>The config.xml File</h2>

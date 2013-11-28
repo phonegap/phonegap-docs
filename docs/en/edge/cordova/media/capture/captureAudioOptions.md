@@ -34,13 +34,17 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
     navigator.device.capture.captureAudio(captureSuccess, captureError, options);
 
-## Android Quirks
+## Amazon Fire OS Quirks
 
 - The `duration` parameter is not supported.  Recording lengths cannot be limited programmatically.
+
+## Android Quirks
+
+- The `duration` parameter is not supported.  Recording lengths can't be limited programmatically.
 
 ## BlackBerry WebWorks Quirks
 
-- The `duration` parameter is not supported.  Recording lengths cannot be limited programmatically.
+- The `duration` parameter is not supported.  Recording lengths can't be limited programmatically.
 
 ## iOS Quirks
 

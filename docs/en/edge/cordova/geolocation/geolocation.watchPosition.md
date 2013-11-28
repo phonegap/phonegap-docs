@@ -48,8 +48,9 @@ there is an error, the `geolocationError` callback executes with a
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
-- BlackBerry WebWorks (OS 5.0 and higher)
+- BlackBerry WebWorks 5.0+
 - iOS
 - Tizen
 - Windows Phone 7 and 8

@@ -44,8 +44,9 @@ available to callback functions in requests for the current position.
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
-- BlackBerry WebWorks (OS 5.0 and higher)
+- BlackBerry WebWorks 5.0+
 - iOS
 - Tizen
 - Windows Phone 7 and 8
@@ -119,6 +120,10 @@ available to callback functions in requests for the current position.
         <div id="myDiv"></div>
       </body>
     </html>
+
+##  Amazon Fire OS Quirks
+
+__altitudeAccuracy__: Not supported by Android devices, returning `null`.
 
 ## Android Quirks
 

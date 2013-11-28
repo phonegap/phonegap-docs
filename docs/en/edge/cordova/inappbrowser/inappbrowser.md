@@ -23,8 +23,8 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
     var ref = window.open('http://apache.org', '_blank', 'location=yes');
 
-__NOTE:__ The InAppBrowser window behaves like a standard web browser,
-and cannot access Cordova APIs.
+__NOTE__: The InAppBrowser window behaves like a standard web browser,
+and can't access Cordova APIs.
 
 ## Description
 
@@ -42,7 +42,7 @@ The object returned from a call to `window.open`.
 ## Accessing the Feature
 
 As of version 3.0, Cordova implements device-level APIs as _plugins_.
-Use the CLI's `plugin` command, described in The Command-line
+Use the CLI's `plugin` command, described in The Command-Line
 Interface, to add or remove this feature for a project:
 
         $ cordova plugin add org.apache.cordova.inappbrowser
@@ -52,6 +52,12 @@ Interface, to add or remove this feature for a project:
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
+
+* Amazon Fire OS (in `res/xml/config.xml`)
+
+        <feature name="InAppBrowser">
+            <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+        </feature>
 
 * Android (in `res/xml/config.xml`)
 
@@ -91,6 +97,7 @@ configuration.  See Platform Support for an overview.
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
 - BlackBerry
 - iOS
@@ -151,6 +158,7 @@ The function is passed an `InAppBrowserEvent` object.
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
 - BlackBerry
 - iOS
@@ -206,7 +214,7 @@ The function is passed an `InAppBrowserEvent` object.
              iabRef = window.open('http://apache.org', '_blank', 'location=yes');
              iabRef.addEventListener('loadstart', iabLoadStart);
              iabRef.addEventListener('loadstop', iabLoadStop);
-             iabRef.removeEventListener('loaderror', iabLoadError);
+             iabRef.addEventListener('loaderror', iabLoadError);
              iabRef.addEventListener('exit', iabClose);
         }
 
@@ -226,6 +234,7 @@ The function is passed an `InAppBrowserEvent` object.
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
 - BlackBerry
 - iOS
@@ -272,10 +281,11 @@ The function is passed an `InAppBrowserEvent` object.
 
     ref.show();
 
-- __ref:__ reference to the InAppBrowser window (`InAppBrowser`)
+- __ref__: reference to the InAppBrowser window (`InAppBrowser`)
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
 - BlackBerry
 - iOS
@@ -339,6 +349,7 @@ The function is passed an `InAppBrowserEvent` object.
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
 - BlackBerry
 - iOS
@@ -412,6 +423,7 @@ The function is passed an `InAppBrowserEvent` object.
 
 ## Supported Platforms
 
+- Amazon Fire OS
 - Android
 - BlackBerry
 - iOS
@@ -444,10 +456,10 @@ The function is passed an `InAppBrowserEvent` object.
         //
         function changeBackgroundColor() {
             iabRef.insertCSS({
-                code: "body { background: #ffff00"
+                code: "body { background: #ffff00; }"
             }, function() {
                 alert("Styles Altered");
-            }
+            });
         }
 
         function iabClose(event) {

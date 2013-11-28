@@ -39,7 +39,7 @@
 ## Accessing the Feature
 
 As of version 3.0, Cordova implements device-level APIs as _plugins_.
-Use the CLI's `plugin` command, described in The Command-line
+Use the CLI's `plugin` command, described in The Command-Line
 Interface, to add or remove this feature for a project:
 
         $ cordova plugin add org.apache.cordova.network-information
@@ -49,6 +49,16 @@ Interface, to add or remove this feature for a project:
 
 These commands apply to all targeted platforms, but modify the
 platform-specific configuration settings described below:
+
+* Amazon Fire OS
+
+        (in app/res/xml/config.xml)
+        <feature name="NetworkStatus">
+            <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+        </feature>
+
+        (in app/AndroidManifest.xml)
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 * Android
 

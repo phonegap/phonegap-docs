@@ -18,14 +18,15 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 ---
 
-# The Command-line Interface
+# The Command-Line Interface
 
 This guide shows you how to create applications and deploy them to
 various native mobile platforms using the `cordova` command-line
 interface (CLI). This tool allows you to create new projects, build
-them on different platforms, and run them within an emulator. You can
-also use the CLI to initialize project code, after which you use
-various platforms' SDKs to develop them further.
+them on different platforms, and run on real devices or within emulators. The CLI
+is the main tool to use for the cross-platform workflow (See the Overview for a description
+of the various workflows.)  However, you can also use the CLI to initialize project code, after
+which you use various platforms' SDKs and shell tools for continued development.
 
 ## Prerequisites
 
@@ -38,6 +39,7 @@ the command-line interface from the same machine that supports the
 platform's SDK. The CLI supports the following combinations:
 
 * iOS             (Mac)
+* Amazon Fire OS  (Mac, Linux, Windows)
 * Android         (Mac, Linux)
 * BlackBerry 10   (Mac, Linux, Windows)
 * Windows Phone 7 (Windows)
@@ -57,7 +59,7 @@ To install the `cordova` command-line tool, follow these steps:
 
 1. Download and install [Node.js](http://nodejs.org/). Following
    installation, you should be able to invoke `node` or `npm` on your
-   command line.
+   command line. 
 
 1. Install the `cordova` utility. In Unix, prefixing the additional
    `sudo` command may be necessary to install development utilities in
@@ -69,6 +71,12 @@ To install the `cordova` command-line tool, follow these steps:
    platform SDKs.  Following installation, you should be able to run
    `cordova` on the command line.
 
+   **NOTE**: The `-g` flag above tells npm to install cordova globally. 
+   You may need to add the npm directory to your PATH in order to invoke
+   globally installed npm modules. On Windows, npm can usually be found at
+   `C:\Users\username\AppData\Roaming\npm` and on Unix at
+   `/usr/local/share/npm`.
+   
 ## Create the App
 
 Go to the directory where you maintain your source code, and run a
@@ -76,8 +84,8 @@ command such as the following:
 
         $ cordova create hello com.example.hello HelloWorld
 
-It may take some time for the command to complete, so be patient. Run
-the `cordova -d` to see information about progress.
+It may take some time for the command to complete, so be patient. Running
+the command with the ` -d` option displays information about its progress.
 
 The first argument specifies a _hello_ directory to be generated
 for your project. Its `www` subdirectory houses your application's
@@ -104,6 +112,7 @@ machine supports each SDK, and whether you have already installed each
 SDK.  Run any of these from a Mac:
 
         $ cordova platform add ios
+        $ cordova platform add amazon-fireos
         $ cordova platform add android
         $ cordova platform add blackberry10
         $ cordova platform add firefoxos
@@ -114,6 +123,7 @@ different versions of the Windows Phone operating system:
         $ cordova platform add wp7
         $ cordova platform add wp8
         $ cordova platform add windows8
+        $ cordova platform add amazon-fireos
         $ cordova platform add android
         $ cordova platform add blackberry10
         $ cordova platform add firefoxos
@@ -127,23 +137,34 @@ Run this to check your current set of platforms:
 Run either of the following synonymous commands to remove a platform:
 
         $ cordova platform remove blackberry10
+        $ cordova platform rm amazon-fireos
         $ cordova platform rm android
 
 Running commands to add or remove platforms affects the contents of
 the project's _platforms_ directory, where each specified platform
 appears as a subdirectory. The _www_ source directory is reproduced
 within each platform's subdirectory, appearing for example in
-`platforms/ios/www` or `platforms/android/assets/www`.  By default,
-each platform's configuration file is set up to be able to access all
-of Cordova's APIs.
+`platforms/ios/www` or `platforms/android/assets/www`. Because the CLI
+constantly copies over files from the source _www_ folder, you should only
+edit these files and not the ones located under the _platforms_ subdirectories.
+If you use version control software, you should add this source _www_ folder, 
+along with the _merges_ folder, to your version control system. (More information
+about the _merges_ folder can be found in the Customize Each Platform section below.)
 
-If you wish, you can use an SDK at this point to open the project you
-created. However, any edits you make to the project within an SDK
-affect the derivative set of assets, not the original cross-platform
-source files. Use this approach if you simply want to initialize a
-project.
-(See the Platform Guides for information on how to develop applications within each SDK.)
-Read on if you wish to use command-line tools for the entire
+**WARNING**: When using the CLI to build your application, you are strongly discouraged
+from editing any files in the `/platforms/` folder unless you know what you are doing
+or are specifically told otherwise in documentation. This is because the files in the 
+`/platforms/` direcotry will be overwritten on prepare or plugin reinstallation. 
+
+If you wish at this point, you can use an SDK such as Eclipse or Xcode
+to open the project you created. You will need to open the derivative set of assets
+from the `/platforms/` directory to develop with an SDK. This is because
+the SDK specific metadata files are stored within the appropriate `/platform/` subdirectory.
+(See the Platform Guides for information on how to develop applications within each IDE.)
+Use this approach if you simply want to initialize a project using the CLI and 
+then switch to an SDK for native work.
+
+Read on if you wish to use the cross-platform workflow approach (the CLI) for the entire
 development cycle.
 
 ## Build the App
@@ -153,9 +174,6 @@ application whose home page is the project's `www/index.html` file.
 Edit this application however you want, but any initialization should
 be specified as part of the `deviceready` event handler, referenced by
 default from `www/js/index.js`.
-<!-- XREF
-(See the Application Development Guide for details.)
-XREF -->
 
 Run the following command to iteratively build the project:
 
@@ -191,6 +209,9 @@ specific platform's emulator:
 Some mobile platforms emulate a particular device by default, such as
 the iPhone for iOS projects. For other platforms, you may need to
 first associate a device with an emulator.
+
+Note: Emulator support is currently not available for Amazon Fire OS
+
 (See the Platform Guides for details.)
 For example, you may first run the `android` command to launch the
 Android SDK, then run a particular device image, which launches it
@@ -211,7 +232,7 @@ app directly:
 
 Before running this command, you need to set up the device for
 testing, following procedures that vary for each platform. In
-Android's case, you would have to enable a __USB debugging__ option on
+Android and Amazon Fire OS devices, you would have to enable a __USB debugging__ option on
 the device, and perhaps add a USB driver depending on your development
 environmnent.
 See Platform Guides for details on each platform's requirements.
@@ -227,18 +248,32 @@ add plugins that provide access to core Cordova APIs.
 A _plugin_ is a bit of add-on code that provides an interface to
 native components. You can design your own plugin interface, for
 example when designing a hybrid app that mixes a Cordova WebView with
-native components. (See Embedding WebViews and Plugin Development Guide for details.)  More commonly, you would add a plugin to enable
+native components. (See Embedding WebViews and Plugin Development
+Guide for details.)  More commonly, you would add a plugin to enable
 one of Cordova's basic device-level features
-<!-- XREF
-discussed in the Application Development Guide and
-XREF -->
-detailed in the API Reference. A list of these plugins, including additional plugins provided by the community, can be found at  [http://plugins.cordova.io/](http://plugins.cordova.io/). You can use the CLI to search for plugins from this registry:
+detailed in the API Reference. A list of these plugins, including
+additional plugins provided by the community, can be found at
+[plugins.cordova.io](http://plugins.cordova.io/). You can use
+the CLI to search for plugins from this registry. For example,
+searching for `bar` and `code` produces a single result that matches
+both terms as case-insensitive substrings:
 
-        $ cordova plugin search <term1 term2 term3>
+        $ cordova plugin search bar code
+
+        com.phonegap.plugins.barcodescanner - Scans Barcodes
+
+Searching for only the `bar` term yields and additional result:
+
+        org.apache.cordova.statusbar - Cordova StatusBar Plugin
 
 The `cordova plugin add` command requires you to specify the
-repository for the plugin code.  Here are examples of features you
-might add:
+repository for the plugin code.  Please note that when you follow the 
+Web Project Dev workflow and use the CLI, the CLI will take care of adding
+the plugin code to the appropriate place for each platform. (If you are following the
+Native Project Dev Workflow, you will have to add plugins using Plugman (guide link here),
+multiple times for each platform.)
+
+Here are examples of how you might use the CLI to add features to the app:
 
 * Basic device information (Device API):
 
@@ -351,7 +386,7 @@ contains the `plugin.xml` file:
 
         $ cordova plugin add ../my_plugin_dir
 
-## Customize Each Platform
+## Using _merges_ to Customize Each Platform
 
 While Cordova allows you to easily deploy an app for many different
 platforms, sometimes you need to add customizations.  In that case,
@@ -364,7 +399,7 @@ assets to deploy on specific platforms. Each platform-specific
 subdirectory within `merges` mirrors the directory structure of the
 `www` source tree, allowing you to override or add files as needed.
 For example, here is how you might uses `merges` to boost the default
-font size for Android devices:
+font size for Android and Amazon Fire OS devices:
 
 * Edit the `www/index.html` file, adding a link to an additional CSS
   file, `overrides.css` in this case:
@@ -393,32 +428,29 @@ button.
 
 ## Help Commands
 
-If at any point you get stuck, Cordova has a couple global "help" commands.
-
-The first, `help` will print out a list of all available actions that Cordova can do
+Cordova features a couple of global commands, which may help you if
+you get stuck or experience a problem.  The `help` command displays
+all available Cordova commands and their syntax:
 
     $ cordova help
+    $ cordova        # same
 
-The second, `info` will print out useful information, such as installed platforms, node.js version, etc.., that are helpful for submitting bug reports and getting help.  It will also create an info.txt file at the base of your project. __Note: Currently iOS and Android platforms are output__
+The `info` command produces a listing of potentially useful details,
+such as currently installed platforms and plugins, SDK versions for
+each platform, and versions of the CLI and `node.js`:
 
     $ cordova info
 
-## Updating the App
+It both presents the information to screen and captures the output in
+a local `info.txt` file.
 
-When a new version of Cordova is released, you should update your 
-`cordova` utility by following the Updating Cordova section below.
-Once you have updated Cordova, you can update the Cordova resources that
-your project uses by typing:
+__NOTE__: Currently, only details on iOS and Android platforms are
+available.
 
-        $ cordova platform update <PLATFORM>
-This will replace the old cordova resources with new ones for the
-specified PLATFORM. You should do this for every platform that you
-are developing for. 
+## Updating Cordova and Your Project
 
-## Updating Cordova
-
-After installing the `cordova` utility, you can always
-update it to the latest version by running the following command:
+After installing the `cordova` utility, you can always update it to
+the latest version by running the following command:
 
         $ sudo npm update -g cordova
 
@@ -426,7 +458,7 @@ Use this syntax to install a specific version:
 
         $ sudo npm install -g cordova@3.1.0
 
-Run `cordova -v` to see the currently running version.  Run the `npm
+Run `cordova -v` to see which version is currently running.  Run the `npm
 info` command for a longer listing that includes the current version
 along with other available version numbers:
 
@@ -440,3 +472,15 @@ Where applicable, further details about upgrading to 3.0 are available
 in the Platform Guides.  Once you upgrade to the `cordova`
 command-line interface and use `npm update` to stay current, the more
 time-consuming procedures described there are no longer relevant.
+
+Cordova 3.0+ may still require various changes to
+project-level directory structures and other dependencies. After you
+run the `npm` command above to update Cordova itself, you may need to
+ensure your project's resources conform to the latest version's
+requirements. Run a command such as the following for each platform
+you're building:
+
+        $ cordova platform update android
+        $ cordova platform update ios
+        ...etc.
+
