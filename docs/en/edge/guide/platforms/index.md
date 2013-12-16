@@ -37,6 +37,13 @@ configuration options, instructions to add plugins, how to upgrade
 each platform, and platform-specific command-line tools that serve as
 a lower-level alternative to the `cordova` command-line utility.
 
+## Amazon Fire OS
+
+* Amazon Fire OS Platform Guide
+* Amazon Fire OS Configuration
+* Amazon Fire OS WebViews
+* Amazon Fire OS Plugins
+
 ## Android
 
 * Android Platform Guide
@@ -46,19 +53,13 @@ a lower-level alternative to the `cordova` command-line utility.
 * Android Command-line Tools
 * Upgrading Android
 
-## BlackBerry
-
-* BlackBerry Platform Guide
-* BlackBerry Configuration
-* BlackBerry Command-line Tools
-* Upgrading BlackBerry
-
 ## BlackBerry 10
 
 * BlackBerry 10 Platform Guide
 * BlackBerry 10 Configuration
 * BlackBerry 10 Plugins
 * BlackBerry 10 Command-line Tools
+* Upgrading BlackBerry 10
 
 ## iOS
 
