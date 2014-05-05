@@ -52,7 +52,7 @@ You need the following:
 - A 64-bit version of Windows 8 Pro, either an installation disk or an
   _ISO_ disk image file. An evaluation version is available on the
   [Microsoft Developer Network](http://msdn.microsoft.com/en-US/evalcenter/jj554510).
-  The Pro version is necessary to run the device emulator,
+  The Pro version is necessary to run the device emulator.
 
 - The [Windows Phone SDK](https://dev.windowsphone.com/en-us/downloadsdk).
 
@@ -255,7 +255,7 @@ location or to simulate sequences of movements:
 
 Before testing your application on a device, the device must be
 registered. Consult [Microsoft's
-documentation](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402565(v=vs.105).aspx)
+documentation][1]
 for details on how to deploy and test on Windows Phone 8. Also, make
 sure the phone is connected to the computer, and the screen is
 unlocked.
@@ -317,3 +317,4 @@ implement the same set of APIs. You can run a Windows Phone 7 app on a
 Windows Phone 8 device, but not the other way around: Windows Phone 8
 apps do _not_ run on Windows Phone 7 devices.
 
+[1]: http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402565(v=vs.105).aspx

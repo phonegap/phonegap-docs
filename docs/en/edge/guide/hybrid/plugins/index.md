@@ -20,7 +20,7 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 # Plugin Development Guide
 
 A _plugin_ is a package of injected code that allows the Cordova webview within
-which your app renders to communicate with the native platform on
+which the app renders to communicate with the native platform on
 which it runs.  Plugins provide access to device and platform
 functionality that is ordinarily unavailable to web-based apps.  All
 the main Cordova API features are implemented as plugins, and many
@@ -105,7 +105,7 @@ were in the same source directory:
 Then run a command such as the following to test whether iOS
 dependencies load properly:
 
-        $ plugman -platform ios /path/to/my/project/www /path/to/my/plugin
+         $ plugman install --platform ios --project /path/to/my/project/www --plugin /path/to/my/plugin
 
 For details on `plugman` options, see Using Plugman to Manage Plugins.
 For information on how to actually _debug_ plugins, see each

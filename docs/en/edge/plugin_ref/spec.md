@@ -200,7 +200,7 @@ platform-specific web assets, as described below. Attributes include:
   relative to the `www` directory.
   Assets can be targeted to subdirectories, for example:
 
-    <asset src="www/new-foo.js" target="js/experimental/foo.js" />
+        <asset src="www/new-foo.js" target="js/experimental/foo.js" />
 
   creates the `js/experimental` directory within the `www` directory,
   unless already present, then copies the `new-foo.js` file and
@@ -532,7 +532,7 @@ plugman's scope.  Examples:
     <info>
     You need to install __Google Play Services__ from the `Android Extras` section using the Android SDK manager (run `android`).
 
-    You need to add the following line to your `local.properties`
+    You need to add the following line to the `local.properties`:
         
     android.library.reference.1=PATH_TO_ANDROID_SDK/sdk/extras/google/google_play_services/libproject/google-play-services_lib
     </info>
