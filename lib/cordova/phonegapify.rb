@@ -42,6 +42,9 @@ class PhoneGapify
     content.gsub!('Cordova](http://phonegap.com/download)',                 '[PhoneGap](http://phonegap.com/download)')
     content.gsub!('Apache Cordova](http://phonegap.com/download)',          '[PhoneGap](http://phonegap.com/download)')
 
+    # lazy workaround to unintended URL changes
+    content.gsub!('plugins.phonegap.com',                                   'plugins.cordova.io')
+
     File.open(filename, 'w') { |file| file.write content }
 
     return content
