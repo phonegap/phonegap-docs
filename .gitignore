@@ -6,3 +6,5 @@ TAGS
 ,*
 _*
 *~
+.vagrant/
+Gemfile.lock
