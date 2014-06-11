@@ -24,7 +24,7 @@ IOS プラグインは拡張する客観的 C クラスとして実装され、 
 
 プラグインの JavaScript の部分を使用して、 `cordova.exec` メソッドは次のように。
 
-        exec(<successFunction>, <failFunction>, <service>, <action>, [<args>]);
+        exec (< successFunction > < failFunction >, < サービス > < アクション > [< 引数 >]);
     
 
 これからの要求をマーシャ リングします、 `UIWebView` iOS ネイティブ側を効果的に呼び出して、 `action` 法、 `service` に渡された引数を持つクラス、 `args` 配列。
@@ -166,7 +166,7 @@ JavaScript 呼び出し火災ネイティブ側に要求するプラグインお
 
 ## IOS のプラグインのデバッグ
 
-Objective-C 側デバッグ、Xcode の組み込みのデバッガーが必要です。 Javascript は、iOS の 5.0 使用できます[Weinre、Apache コルドバ プロジェクト][3]や[iWebInspector、サード パーティ製ユーティリティ][4]。 Ios 6, iOS の内 6 シミュレータを実行しているアプリをサファリ 6.0 を添付できます。
+Objective-C 側デバッグ、Xcode の組み込みのデバッガーが必要です。 Javascript は、iOS の 5.0 使用できます[Weinre、Apache コルドバ プロジェクト][3]や[iWebInspector、サード パーティ製ユーティリティ][4]。 Ios 6, iOS の内 6 シミュレータを実行しているアプリにサファリ 6.0 を添付できます。
 
  [3]: https://github.com/apache/cordova-weinre
  [4]: http://www.iwebinspector.com/

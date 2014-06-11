@@ -16,37 +16,97 @@ license: Licensed to the Apache Software Foundation (ASF) under one or more cont
 
 # BlackBerry 10 プラットフォーム ガイド
 
-このガイドは、開発環境にビルドおよび配置のブラックベリー 10 デバイス Cordova アプリを設定する方法を示します。 以前のバージョンのブラックベリー、ブラックベリーのプラットホームのガイドで説明されている、コマンド ライン ツールの異なるセットを使用する必要があります。
+このガイドはブラックベリー 10 デバイス用 Cordova アプリを展開する SDK 環境を設定する方法を示します。 以前のバージョンの BlackBerry の異なる SDK 環境と BlackBerry プラットフォーム ガイドで説明されている、コマンド ライン ツールのセットを使用する必要があります。 ブラックベリー 10 の開発、またはコマンド ライン ツールのプラットフォーム中心の狭いセットのクロス プラットフォーム コルドバ CLI を使用するかどうかに関係なく SDK をインストールする必要があります。 2 つの開発パスの比較の概要を参照してください。 それぞれ詳細については、コマンド ライン インターフェイスとブラックベリー 10 シェル ツールのガイドを参照してください。
 
 ## 要件
 
 開発環境は、Windows、Mac および Linux で利用できます。
 
-開発者が使用する、 `cordova` 、ブラックベリーのネイティブ SDK と共にユーティリティ。 インストールする方法については、コマンド ライン インターフェイスを参照してください `cordova` 、プロジェクトを追加し、ビルドおよび各プラットフォームの配置。
+開発者を使用する必要があります、 `cordova` ブラックベリー WebWorks SDK またはブラックベリー ネイティブ SDK と共にユーティリティ。 インストールする方法については、コマンド ライン インターフェイスを参照してください `cordova` 、プロジェクトを追加し、ビルドおよび各プラットフォームの配置。
+
+ブラックベリー 10 デバイス シミュレーター:
+
+*   プロセッサ: インテルデュアルコア 2.0 GHz/AMD Athlon 4200 + またはより高い
+*   ディスクの空き容量: 10 ギガバイト 
+*   RAM メモリ: 4 GB 
+*   仮想化： 次のいずれか。 
+    *   **インテル バーチャライゼーション ・ テクノロジー**(VT、VT-x、vmx) → [Intel VT-x 対応のプロセッサ一覧][1]
+    *   **AMD の仮想化**（AMD-V、SVM）(2006 年 5 月以来すべての AMD の Cpu を含む AMD-V Sempron を除く)。
+
+ [1]: http://ark.intel.com/products/virtualizationtechnology
+
+要件についての詳細： [BB10 シミュレータ要件][2].
+
+ [2]: http://developer.blackberry.com/devzone/develop/simulator/simulator_systemrequirements.html
+
+## ブラックベリー WebWorks SDK をインストールします。
+
+ダウンロードして[developer.blackberry.com][3]からブラックベリー WebWorks SDK をインストールします。
+
+ [3]: https://developer.blackberry.com/html5/download/
+
+インストーラーは、あなたのパスにコマンド ライン ツールを追加します。お使いの OS に応じて新しいターミナル ・ ウィンドウを開いたり、再ログインする必要があります。
 
 ## ブラックベリーのネイティブ SDK をインストールします。
 
-ブラックベリーのネイティブ SDK は、 [developer.blackberry.com][1]から利用可能なです。 インストール直後は、そのコマンド ライン ツールをシステム パスに追加する必要があります。
+ネイティブのプラグインを開発するときの例のためのネイティブ コードをコンパイルする必要がある場合は、ブラックベリーのネイティブ SDK をインストールする必要があります。
 
- [1]: http://developer.blackberry.com/native/download/
+ネイティブ SDK は、ブラックベリーを得るためにダウンロードし、 [developer.blackberry.com][4]から利用できるブラックベリーのための IDE をインストールするブラックベリーのネイティブ SDK のインストール、IDE を使用して。 インストール直後は、そのコマンド ライン ツールをシステム パスに追加する必要があります。
+
+ [4]: http://developer.blackberry.com/native/download/
 
 Windows:
 
 *   **私のコンピューター → プロパティ → 詳細設定 → 環境変数**に行く.
 
-*   ネイティブ SDK のインストール ディレクトリ パスに追加、たとえば。
+*   ネイティブ SDK は、インストール ディレクトリのパスに追加、たとえば。
     
-    ;C:\bbndk\host\_10\_2\_0\_132\darwin\x86\usr\bin\
+        ;C:\bbndk\host_10_1_0_132\win32\x86\usr\bin\
+        
 
 Mac および Linux:
 
 *   編集、 `~/.bash_profile` ネイティブ SDK のインストール先に応じて、次のような行を追加するファイル。
     
-    $ export PATH=${PATH}:/Applications/Momentics.app/host\_10\_2\_0\_15/darwin/x86/usr/bin/
+        $ export PATH=${PATH}:/Applications/bbndk/host_10_1_0_132/darwin/x86/usr/bin/
+        
+    
+    または 10.2 ネイティブ SDK:
+    
+        $ export PATH=${PATH}:/Applications/Momentics.app/host_10_2_0_15/darwin/x86/usr/bin/
+        
 
 *   現在のセッションで変更を適用するのには、次を実行します。
     
-    $ ソース ~/.bash_profile
+        $ ソース ~/.bash_profile
+        
+
+得た場合は、環境問題、コマンド ・ ラインからネイティブ SDK を使用して、実行、適切なプラットフォーム用のファイル、インストール先のパス内にある：
+
+*   Windows → MS-DOS シェル。
+    
+        C:\> \bbndk\bbndk-env_xx_xx_xx_xxxx.bat
+        
+
+*   Windows → git bash シェル。
+    
+        $ `\bbndk\bbndk-env_xx_xx_xx_xxxx.bat`
+        
+
+*   Linux の → ルート ユーザーとしてインストールされています。
+    
+        $ `./opt/bbndk/bbndk-env_xx_xx_xx_xxxx.sh`
+        
+
+*   Linux の → 非ルートユーザとしてインストールされています。
+    
+        $ `./home/username/bbndk/bbndk-env_xx_xx_xx_xxxx.sh`
+        
+
+*   Mac:
+    
+        $ `/Developer/SDKs/bbndk/bbndk-env_xx_xx_xx_xxxx.sh`
+        
 
 ## 署名を設定します。
 
@@ -67,59 +127,100 @@ Mac および Linux:
 
 使用の `cordova` コマンド ライン インターフェイスで説明されているように、新しいプロジェクトを設定するユーティリティ。たとえば、ソース コード ディレクトリ: で
 
-    $ cordova create hello com.example.hello
-    $ cd hello
-    $ cordova platform add blackberry10
-    $ cordova build
+        $ cordova create hello com.example.hello
+        $ cd hello
+        $ cordova platform add blackberry10
+        $ cordova build
     
 
 ## エミュレーターへの展開します。
 
 デバイス エミュレーターを実行する場合は、ダウンロードして、ブラックベリー 10 シミュレータをインストールします。
 
-*   [ダウンロード][1]
-*   [はじめに][2]
+*   [ダウンロード][4]
+*   [はじめに][5]
 
- [2]: http://developer.blackberry.com/devzone/develop/simulator/blackberry_10_simulator_start.html
+ [5]: http://developer.blackberry.com/devzone/develop/simulator/blackberry_10_simulator_start.html
 
 デバイスまたはエミュレーターでアプリケーションをテストする前に開発モードを有効にする必要があります。
 
 エミュレーター イメージを起動し、ホーム画面から**設定**を選択します。
 
-![][3]
+![][6]
 
- [3]: img/guide/platforms/blackberry10/bb_home.png
+ [6]: img/guide/platforms/blackberry10/bb_home.png
 
 移動し、**セキュリティとプライバシー → 開発モード**セクションし、オプションを有効にします。
 
-![][4]
+![][7]
 
- [4]: img/guide/platforms/blackberry10/bb_devel.png
+ [7]: img/guide/platforms/blackberry10/bb_devel.png
+
+コマンド ライン ユーティリティのセットを追加、プロジェクトの BlackBerry 10 プラットフォームを設定するときに含められます。 この場合、プロジェクトの最上位ディレクトリから呼び出される、次のコマンドは、 *emu*上に表示される IP アドレスを持つという名前のターゲットを関連付けます。
+
+*   Windows:
+    
+        $ platforms\blackberry10\cordova\target.bat add emu 169.254.0.1 -t simulator
+        
+
+*   Mac の/Linux: 上
+    
+        $ platforms/blackberry10/cordova/target add emu 169.254.0.1 -t simulator
+        
 
 その後、実行、 `emulate` アプリケーションを表示するコマンド。
 
-    $ cordova emulate blackberry10 --devicepass <password>
+        $ cordova emulate blackberry10
     
 
 ## デバイスへの配置します。
 
-デバイスへの配備をお使いのコンピューターに接続されているし、開発モードが有効になってを確認します。
+デバイスへの配備をお使いのコンピューターに接続されていることを確認します。 開発モードを有効にして上記のエミュレーター desribed として IP アドレスを取得します。 ピンを取得する必要があります、下の**設定**アプリケーション**→ についてハードウェア**:
+
+![][8]
+
+ [8]: img/guide/platforms/blackberry10/bb_pin.png
+
+名前に関連付ける IP アドレス、デバイスのパスワードと PIN とターゲット コマンド ライン ユーティリティを実行します。
+
+*   Windows:
+    
+        $ platforms\blackberry10\cordova\target.bat add mydevice 169.254.0.1 -t device --password 123456 --pin FFFF972E
+        
+
+*   Mac の/Linux: 上
+    
+        $ platforms/blackberry10/cordova/target add mydevice 169.254.0.1 -t device --password 123456 --pin FFFF972E
+        
+
+場所：
+
+*   `--password`デバイスのロックを解除するパスワードを指します。
+
+*   `--pin`デバイス**の設定**アプリケーションから取得した PIN を指します。
 
 その後、実行、 `run` アプリケーションを表示するコマンド。
 
-    $ cordova run blackberry10 --devicepass <password>
+        blackberry10 を実行 $ コルドバ
     
 
-デバッグ トークンがまだない場合、デバイスの設定、エラー メッセージされたらパスワードを入力するときにアプリケーションに署名するお使いのコンピューターの構成を定義しています。
+デバッグ トークンがまだ設定されていないデバイスの場合、エラー メッセージはキーに署名するための登録時に指定したパスワードでスクリプトを実行するプラットフォームを使用するよう指示します。
 
-    $ cordova run blackberry10 --devicepass <password> --keystorepass <signing password>
+*   Windows:
     
+        $ platforms\blackberry10\cordova\run.bat --device --keystorepass mysecret
+        
+
+*   Mac の/Linux: 上
+    
+        $ platforms/blackberry10/cordova/run --device --keystorepass mysecret
+        
 
 ## WebInspector とデバッグ
 
-デバイスまたはエミュレーター上でのデバッグ、アプリケーションの内部状態を表示するリモート WebInspector を実行ことがあります。 プロンプトは標準の web ブラウザーを使ってアプリを接続することができます URL を表示します。 詳細については、[デバッグ使用 WebInspector][5]を参照してください。.
+デバイスまたはエミュレーター上でのデバッグ、アプリケーションの内部状態を表示するリモート WebInspector を実行ことがあります。 プロンプトは、標準の web ブラウザーでアプリケーションを接続することができます URL を表示します。 詳細については、[デバッグ使用 WebInspector][9]を参照してください。.
 
- [5]: http://developer.blackberry.com/html5/documentation/web_inspector_overview_1553586_11.html
+ [9]: http://developer.blackberry.com/html5/documentation/web_inspector_overview_1553586_11.html
 
 ## リリース バージョンをビルド
 
@@ -140,11 +241,13 @@ Mac および Linux:
 
 *   Windows:
     
-    $ platforms\blackberry10\cordova\target.bat add emu 192.168.2.24 -t simulator
+        $ platforms\blackberry10\cordova\build.bat --release --keystorepass mysecret
+        
 
 *   Mac の/Linux: 上
     
-    $ platforms/blackberry10/cordova/target add emu 192.168.2.24 -t simulator
+        $ platforms/blackberry10/cordova/build --release --keystorepass mysecret
+        
 
 ターゲットが定義されたら、実行するコマンドを使用する提供できます `--target` :
 

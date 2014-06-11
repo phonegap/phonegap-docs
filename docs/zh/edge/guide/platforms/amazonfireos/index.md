@@ -1,83 +1,113 @@
 ---
 
-許可證： 下一個或多個參與者授權合約許可向阿帕奇軟體基金會 (ASF)。 請參閱分散式與此工作為版權的擁有權有關的其他資訊的通知檔。 ASF 許可證，此檔到你根據 Apache 許可證，2.0 版 （"許可證"） ；您不可能使用此檔除了符合許可證。 您可能會獲得在許可證的副本
+许可证： 下一个或多个参与者许可协议许可向阿帕奇软件基金会 (ASF)。 请参阅分布式与此工作为版权的所有权有关的其他信息的通知文件。 ASF 许可证，此文件到你根据 Apache 许可证，2.0 版 （"许可证"） ；您不可能使用此文件除了符合许可证。 您可能会获得在许可证的副本
 
-           HTTP://www.apache.org/licenses/LICENSE-2.0 除非適用的法律要求或書面同意，否則按照該許可證分發的軟體分發上"按原樣"的基礎，而不擔保或條件的任何種類的明示或暗示。  請參閱許可證規定的許可權和限制的特定語言
+           http://www.apache.org/licenses/LICENSE-2.0 除非适用的法律要求或书面同意，否则按照该许可证分发的软件分发上"按原样"的基础，而不担保或条件的任何种类的明示或暗示。  请参阅许可证规定的权限和限制的特定语言
     
 
-## 根據許可證。
+## 根据许可证。
 
-# 亞馬遜火 OS 平臺指南
+# 亚马逊火 OS 平台指南
 
-本指南介紹如何設置您的 SDK 開發環境部署亞馬遜火 OS 的設備，如 Kindle 火 HDX 科爾多瓦應用軟體。
+本指南介绍如何设置您的 SDK 开发环境部署亚马逊火 OS 的设备，如 Kindle 火 HDX 科尔多瓦应用软件。
 
-請參閱下列特定于平臺的詳細資訊：
+请参阅下列特定于平台的详细信息：
 
-*   亞馬遜火 OS 配置
-*   亞馬遜火 OS WebViews
-*   亞馬遜火 OS 外掛程式
+*   亚马逊火 OS 配置
+*   亚马逊火 OS WebViews
+*   亚马逊火 OS 插件
 
-## 要求和支援
+## 简介
 
-亞馬遜火 os 開發科爾多瓦的應用程式需要 Android SDK 和亞馬遜 web 視圖 SDK。檢查的要求這些 Sdk 在下面的連結：
+通过针对亚马逊火 OS 平台，科尔多瓦开发人员可以创建利用先进的 web 引擎集成的 Kindle 消防设备的混合 web 应用程序。 亚马逊 web 视图 API (AWV) 是独有的火 OS 铬派生的 web 运行时。 为 web 视图使用的 Android 设备附带的投递更换，AWV 使成为可能，更好地执行功能更强大的混合 web 应用程序通过创建为一个更快的 JavaScript 引擎 (V8)、 远程调试和 Kindle 消防设备包括加速 2D 画布的硬件优化提供支持和不支持的 Android 的 HTML5 功能的访问内置的 web 视图如: CSS 除垢，表单验证，getUserMedia，IndexedDB、 网络工作者、 WebSockets 和 WebGL。
 
-*   [Android SDK 系統][1]
+关于亚马逊 web 视图 API 的详细信息，请参阅亚马逊开发人员门户[HTML5 混合应用程序页][1]。 有关获取开始和其他的问题支持问题，请参见亚马逊开发人员门户[论坛-HTML5 混合应用程序][2].
 
-*   [亞馬遜 web 視圖 SDK][2]
+ [1]: https://developer.amazon.com/public/solutions/platforms/android-fireos/docs/building-and-testing-your-hybrid-app
+ [2]: http://forums.developer.amazon.com/forums/category.jspa?categoryID=41
 
- [1]: http://developer.android.com/sdk/
- [2]: https://developer.amazon.com/sdk/fire/IntegratingAWV.html#installawv
+## 要求和支持
 
-## 安裝
+亚马逊火 os 开发科尔多瓦的应用程序需要安装的各种支持文件，包括 android 系统的发展，以及亚马逊 web 视图 SDK 所需的一切。 请检查下面的列表中所需的安装：
 
-### Android SDK
+*   命令行界面
+*   [Android SDK][3]
+*   [Apache Ant][4]
+*   [亚马逊 web 视图 SDK][1]
 
-從[developer.android.com/sdk][1]安裝 Android SDK。 你可能會出現一個選擇在哪裡安裝 SDK，否則移動下載 `adt-bundle` 樹到無論您存儲的開發工具。
+ [3]: http://developer.android.com/sdk/
+ [4]: http://ant.apache.org
 
-科爾多瓦命令列工具來工作，您需要包括 SDK 的 `tools` 和 `platform-tools` 的路徑環境中目錄。
+## 安装
 
-關於 Mac、 Linux 或其他 unix 平臺，您可以使用文字編輯器來創建或修改 `~/.bash_profile` 檔中，添加行，如下，根據 SDK 的安裝位置：
+### Android SDK 和 Apache Ant
 
-    匯出路徑 = ${路徑}：/開發/adt-捆綁/sdk/平臺-工具：/開發/adt-捆綁/sdk/工具
+从[developer.android.com/sdk][3]安装 Android SDK。 你可能会出现一个选择在哪里安装 SDK，否则移动下载 `adt-bundle` 树到无论您存储的开发工具。
+
+你需要在运行 Android SDK 管理器 （ `android` 从命令行） 开始您的科尔多瓦项目前至少一次。 一定要安装最新版本的 Android SDK 工具和 SDK 平台**具体 API 级别为 19**。 请关于亚马逊开发人员门户如何设置您的开发环境为 Kindle 火 OS 设备的详细信息，参阅[您的开发环境设置][5]。
+
+ [5]: https://developer.amazon.com/public/resources/development-tools/ide-tools/tech-docs/01-setting-up-your-development-environment
+
+Apache Ant 生成工具[下载蚂蚁二进制分发][6]，解压缩到您以后可以引用的目录的安装。 请参阅[Ant 手册][7]为更多的信息。
+
+ [6]: http://ant.apache.org/bindownload.cgi
+ [7]: http://ant.apache.org/manual/index.html
+
+对于科尔多瓦的命令行工具来工作，您需要包括 Android SDK 的 `tools` 、 `platform-tools` 和 `apache-ant/bin` 目录路径环境中的。
+
+#### Mac/Linux 路径
+
+关于 Mac、 Linux 或其他 unix 平台，您可以使用文本编辑器来创建或修改 `~/.bash_profile` 文件中，添加行，如下，依据的 SDK 和 Ant 安装位置：
+
+    导出路径 = ${路径}：/开发/adt-捆绑/sdk/平台-工具：/开发/adt-捆绑/sdk/工具：/发展/阿帕奇-ant/bin
     
 
-這暴露了 SDK 工具在新打開的終端視窗。否則運行這使它們在當前會話中可用：
+这暴露了 SDK 工具在新打开的终端窗口。否则运行这使它们在当前会话中可用：
 
     元源 ~/.bash_profile
     
 
-若要修改路徑上 Windows 7 的環境：
+#### Windows 路径
 
-*   在桌面的左下角的**開始**功能表上按一下，在**電腦**上，按右鍵，然後按一下**屬性**.
+若要修改路径在 Windows 上的环境：
 
-*   在左側列中，按一下**高級系統設置**。
+*   在桌面的左下角的**开始**菜单上单击，在**计算机**上，右键单击，然后单击**属性**.
 
-*   在結果對話方塊中，按下**環境變數**.
+*   在左侧列中，单击**高级系统设置**。
 
-*   選擇**PATH**變數，然後按**編輯**.
+*   在结果对话框中，按下**环境变量**.
 
-*   將以下內容追加到基於例如安裝 SDK 的位置的路徑：
+*   选择**PATH**变量，然后按**编辑**.
+
+*   将以下内容追加到哪里你安装了 SDK 和蚂蚁，例如基于的路径：
     
-        ;C:\Development\adt-bundle\sdk\platform-tools ；C:\Development\adt-bundle\sdk\tools
+        ;C:\Development\adt-bundle\sdk\platform-tools;C:\Development\adt-bundle\sdk\tools;C:\Development\apache-ant\bin
         
 
-*   將值保存並關閉這兩個對話方塊。
+*   将值保存并关闭这两个对话框。
 
-您可能還需要啟用 JAVA 和螞蟻打開一個命令提示符並鍵入 `java` ，然後還鍵入 `ant` 。將追加到該路徑無法運行的日期為准：
-
-    ;%JAVA_HOME%\bin;%ANT_HOME%\bin
+*   您还将需要启用 Java。 打开一个命令提示符并键入 `java` ，如果它没有运行，追加到您的路径以及 Java 二进制文件的位置。 请确保已安装 JDK 目录指向的 %JAVA\_HOME%。 您可能必须添加 JAVA\_HOME 环境变量分别。
     
+        ； %JAVA_HOME%\bin
+        
 
-### 亞馬遜 web 視圖 SDK
+### 亚马逊 web 视图 SDK
 
-從[亞馬遜開發人員門戶][2]下載亞馬遜 web 視圖 SDK.
+若要创建使用目标亚马逊火 OS 平台的科尔多瓦应用程序，您需要下载、 解压和安装亚马逊 web 视图 SDK 的支持文件。 此步骤将只需要去做为第一次亚马逊火 OS 项目，或如果您升级科尔多瓦。
 
-*   創建 `libs/` 中的資料夾 `~/.cordova/lib/amazon-fireos/cordova/3.1.0/` 資料夾。
-*   添加 `awv_interface.jar` 從下載 SDK 進行`~/.cordova/lib/amazon-fireos/cordova/3.1.0/libs/`
+*   从[亚马逊开发人员门户][1]下载亚马逊 web 视图 SDK.
 
-## 在 SDK 中打開的專案
+*   复制 `awv_interface.jar` 从下载 SDK 到科尔多瓦的工作目录：
+    
+    **Mac/Linux:** `~/.cordova/lib/amazon-fireos/cordova/[cordova_release]/framework/libs/`
+    
+    **Windows:** `%USERPROFILE%\.cordova\lib\amazon-fireos\cordova\[cordova_release]\framework\libs`
 
-使用 `cordova` 實用程式設置了一個新的專案，如所述在科爾多瓦命令列介面。例如，在原始程式碼中的目錄：
+***注：***由于科尔多瓦的需求安装过程中， `~/.cordova/lib/amazon-fireos` 平台目录将不会创建，直到您将该平台添加到您的第一个项目。
+
+## 为亚马逊火 OS 创建新项目
+
+使用 `cordova` 实用程序设置了一个新的项目，如所述在科尔多瓦的命令行界面。例如，在源代码中的目录：
 
     $ cordova create hello com.example.hello "HelloWorld"
     $ cd hello
@@ -85,43 +115,67 @@
     $ cordova build
     
 
-一旦創建了，這裡是如何使用 SDK 來修改它：
+***注：***首次亚马逊 fireos 平台安装在您系统上，它将到科尔多瓦的工作目录，下载相应的文件，但然后将失败，因为它缺少 AWV SDK 的支持文件 （见上文）。 按照上面的说明来安装 `awv_interface.jar` ，删除，然后重新将亚马逊 fireos 平台添加到您的项目。 这一步将只需要为第一次亚马逊火 OS 项目做。
 
-*   啟動**Eclipse**應用程式。
+## 将部署到设备
 
-*   選擇**新建專案**功能表項目。
+要将应用程序推直接到设备，请确保您的设备上的[Android 开发者网站][8]，所述上启用 USB 调试和使用一个迷你 USB 电缆，将其插入您的系统。
 
-*   從結果對話方塊中，選擇**從現有代碼的 Android 專案**並按**下一步**： ![][3]
+ [8]: http://developer.android.com/tools/device.html
 
-*   定位到 `hello` ，或無論你創建目錄的專案，然後到 `platforms/amazon-fireos` 子目錄。
+从命令行，可以将应用程序推送到设备：
+
+    $ 科尔多瓦运行亚马逊 fireos
+    
+
+交替内日食，右键单击该项目并选择**作为 → 运行 Android 应用程序**.
+
+**注**： 目前，对于亚马逊 web 视图基于应用程序测试通过模拟器不支持，另外，亚马逊 web 视图 API 才可用火 OS 的设备上。 有关详细信息，请参阅[亚马逊 web 视图 API SDK][1]文档。
+
+### 运行标志
+
+运行命令接受作为科尔多瓦的命令行界面文档中指定的可选参数、 火 OS 还接受额外 `--debug` 将启用远程 web 调试铬的开发人员工具的旗子。
+
+若要使用的开发工具，请输入：
+
+    $ cordova run --debug amazon-fireos
+    
+
+这将使正在运行的客户端上的工具。你可以连接到客户端的端口转发使用 Android 调试桥 （亚银） 指的应用程序的包名。
+
+例如：
+
+    亚行转发 tcp:9222 localabstract:com.example.helloworld.devtools
+    
+
+然后，可以使用通过铬基于浏览器 DevTools 导航到：`http://localhost:9222`.
+
+### 可选的 Eclipse 支持
+
+创建后，您可以使用附带的 Android 的 SDK，修改项目的日食。 要注意是否您继续使用科尔多瓦的命令行工具，通过 Eclipse 所做的修改将被覆盖。
+
+*   启动**Eclipse**应用程序。
+
+*   选择**新建项目**菜单项。
+
+*   从结果对话框中，选择**从现有代码的 Android 项目**并按**下一步**： ![][9]
+
+*   定位到 `hello` ，或无论你创建目录的项目，然后到 `platforms/amazon-fireos` 子目录。
+
+*   Eclipse 将显示你你好、 你好-CorddovaLib-2 项目要添加。添加两个。
 
 *   按**完成**.
 
- [3]: img/guide/platforms//eclipse_new_project.png
+ [9]: img/guide/platforms//eclipse_new_project.png
 
-一旦日食視窗將打開，一個紅色的**X**可能似乎表明未解決的問題。如果是這樣，執行這些額外的步驟：
+一旦日食窗口将打开，一个红色的**X**可能似乎表明未解决的问题。如果是这样，执行这些额外的步骤：
 
-*   按右鍵專案目錄。
+*   右键单击项目目录。
 
-*   在出現的**屬性**對話方塊中，選擇**Android**從功能窗格。
+*   在出现的**属性**对话框中，选择**Android**从导航窗格。
 
-*   為專案生成目標，選擇您已安裝的最高的 Android API 級別。
+*   项目的生成目标，请选择最高的 Android API 级别 （目前 API 级别 19），安装了。
 
-*   按一下**確定**.
+*   单击**确定**.
 
-*   從**專案**功能表中選擇**清潔**。這應該更正該專案中的所有錯誤。
-
-## 將部署到設備
-
-要將應用程式推直接到設備，請確保您的設備上的[Android 開發者網站][4]，所述上啟用 USB 調試和使用一個迷你 USB 電纜，將其插入您的系統。
-
- [4]: http://developer.android.com/tools/device.html
-
-從命令列，可以將應用程式推送到設備：
-
-    $ cordova run amazon-fireos
-    
-
-交替內日食，按右鍵該專案並選擇**作為 → 運行 Android 應用程式**.
-
-**注**： 目前，通過模擬程式測試不支援對於亞馬遜 web 視圖基於的應用程式。
+*   从**项目**菜单中选择**清洁**。这应该更正该项目中的所有错误。
