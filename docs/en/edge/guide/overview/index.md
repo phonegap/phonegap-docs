@@ -20,14 +20,16 @@ license: Licensed to the Apache Software Foundation (ASF) under one
 
 # Overview
 
-Cordova is an open-source mobile development framework. It allows you
+Apache Cordova is an open-source mobile development framework. It allows you
 to use standard web technologies such as HTML5, CSS3, and JavaScript
 for cross-platform development, avoiding each mobile platforms' native
 development language.  Applications execute within wrappers targeted
 to each platform, and rely on standards-compliant API bindings to
-access each device's sensors, data, and network status.
+access each device's sensors, data, and network status. 
 
-Use Cordova if you are:
+Apache Cordova graduated in October 2012 as a top level project within the Apache Software Foundation (ASF). Through the ASF, future Cordova development will ensure open stewardship of the project. It will always remain free and open source under the Apache License, Version 2.0.  Visit [cordova.apache.org](http://cordova.apache.org) for more information.
+
+Use Apache Cordova if you are:
 
 * a mobile developer and want to extend an application across more
   than one platform, without having to re-implement it with each
@@ -43,7 +45,7 @@ Use Cordova if you are:
 
 ## Basic Components
 
-Cordova applications rely on a common `config.xml` file that provides
+Apache Cordova applications rely on a common `config.xml` file that provides
 information about the app and specifies parameters affecting how it
 works, such as whether it responds to orientation shifts. This file
 adheres to the W3C's
@@ -62,10 +64,13 @@ within a larger, hybrid application that mixes the WebView with native
 application components. (See Embedding WebViews for details.)
 
 A _plugin_ interface is available for Cordova and native components to
-communicate with each other. As of version 3.0, plugins provide
+communicate with each other. This enables you to invoke native code
+from JavaScript. As of version 3.0, plugins provide
 bindings to standard device APIs.  Third-party plugins provide
 additional bindings to features not necessarily available on all
-platforms. You can also develop your own plugins, as described in
+platforms. You can find these third-party plugins in the
+[plugin registry](http://plugins.cordova.io) and use them in your
+application. You can also develop your own plugins, as described in the
 Plugin Development Guide. Plugins may be necessary, for example, to
 communicate between Cordova and custom native components.
 
@@ -86,8 +91,9 @@ task, they each offer advantages:
   subdirectories for each mobile platform, makes any necessary
   configuration changes for each, runs build scripts to generate
   application binaries. The CLI also provides a common interface to
-  apply plugins to your app.  (For details on the CLI, see The
-  Command-Line Interface.)
+  apply plugins to your app. For more details on the CLI, see The
+  Command-Line Interface. Unless you have a need for the platform-centered
+  workflow, the cross-platform workflow is recommended.
 
 - __Platform-centered workflow__: Use this workflow if you want to
   focus on building an app for a single platform and need to be able
@@ -103,8 +109,8 @@ task, they each offer advantages:
   higher-level tool means separate build cycles and plugin
   modifications for each platform. Still, this workflow allows you
   greater access to development options provided by each SDK, and is
-  essential for complex hybrid apps.  (See the various Platform Guides
-  for details on each platform's available shell utilities.)
+  essential for complex hybrid apps. See the various Platform Guides
+  for details on each platform's available shell utilities.
 
 When first starting out, it may be easiest to use the cross-platform
 workflow to create an app, as described in The Command-line Interface.
@@ -125,3 +131,18 @@ you need to switch to the platform-centered shell tools, which ignore
 the cross-platform source code, and instead relies on the
 platform-specific source code.
 
+## Installing Cordova
+
+The installation of Cordova will differ depending on the workflow above
+you choose:
+
+  * Cross-platform workflow: see The Command-Line Interface.
+
+  * Platform-centered workflow: see the Platform Guides.
+
+After installing Cordova, it is recommended that you review the Platform Guides
+for the mobile platforms that you will be developing for. It is also
+recommended that you also review the Privacy Guide, Security Guide, and
+Next Steps. For configuring Cordova, see The config.xml File.
+For accessing native function on a device from JavaScript, refer
+to the Plugin APIs. And refer to the other included guides as necessary.
