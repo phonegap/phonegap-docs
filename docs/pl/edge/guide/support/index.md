@@ -203,7 +203,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-device-motion/blob/dev/doc/index.md">Akcelerometr</a>
+          <a href="https://github.com/apache/cordova-plugin-device-motion/blob/master/doc/index.md">Akcelerometr</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -239,7 +239,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-camera/blob/dev/doc/index.md">Aparat</a>
+          <a href="https://github.com/apache/cordova-plugin-camera/blob/master/doc/index.md">Aparat</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -275,7 +275,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-media-capture/blob/dev/doc/index.md">Przechwytywania</a>
+          <a href="https://github.com/apache/cordova-plugin-media-capture/blob/master/doc/index.md">Przechwytywania</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -311,7 +311,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-device-orientation/blob/dev/doc/index.md">Kompas</a>
+          <a href="https://github.com/apache/cordova-plugin-device-orientation/blob/master/doc/index.md">Kompas</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -348,7 +348,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-network-information/blob/dev/doc/index.md">Połączenie</a>
+          <a href="https://github.com/apache/cordova-plugin-network-information/blob/master/doc/index.md">Połączenie</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -384,7 +384,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-contacts/blob/dev/doc/index.md">Kontakty</a>
+          <a href="https://github.com/apache/cordova-plugin-contacts/blob/master/doc/index.md">Kontakty</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -420,7 +420,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-device/blob/dev/doc/index.md">Urządzenia</a>
+          <a href="https://github.com/apache/cordova-plugin-device/blob/master/doc/index.md">Urządzenia</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -492,7 +492,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-file/blob/dev/doc/index.md">Plik</a>
+          <a href="https://github.com/apache/cordova-plugin-file/blob/master/doc/index.md">Plik</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -528,7 +528,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-geolocation/blob/dev/doc/index.md">Geolocation</a>
+          <a href="https://github.com/apache/cordova-plugin-geolocation/blob/master/doc/index.md">Geolocation</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -564,7 +564,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-globalization/blob/dev/doc/index.md">Globalizacja</a>
+          <a href="https://github.com/apache/cordova-plugin-globalization/blob/master/doc/index.md">Globalizacja</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -600,7 +600,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-inappbrowser/blob/dev/doc/index.md">InAppBrowser</a>
+          <a href="https://github.com/apache/cordova-plugin-inappbrowser/blob/master/doc/index.md">InAppBrowser</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -637,7 +637,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-media/blob/dev/doc/index.md">Media</a>
+          <a href="https://github.com/apache/cordova-plugin-media/blob/master/doc/index.md">Media</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -673,7 +673,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-dialogs/blob/dev/doc/index.md">Powiadomienia</a>
+          <a href="https://github.com/apache/cordova-plugin-dialogs/blob/master/doc/index.md">Powiadomienia</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
@@ -709,7 +709,7 @@ Poniżej przedstawiono zestaw narzędzi i urządzeń interfejsów API dostępne 
       
       <tr>
         <th>
-          <a href="https://github.com/apache/cordova-plugin-splashscreen/blob/dev/doc/index.md">Ekranu powitalnego</a>
+          <a href="https://github.com/apache/cordova-plugin-splashscreen/blob/master/doc/index.md">Ekranu powitalnego</a>
         </th>
         
         <td data-col="amazon-fireos" class="y">
