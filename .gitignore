@@ -1,10 +1,5 @@
+# OS X
 .DS_Store
-tmp/
-public/
-release/
-TAGS
-,*
-_*
-*~
-.vagrant/
-Gemfile.lock
+
+# node.js
+/node_modules
