@@ -1,5 +1,8 @@
 # OS X
 .DS_Store
 
-# node.js
+# Node.js
 /node_modules
+
+# Docpad
+/out
