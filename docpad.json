@@ -1,0 +1,12 @@
+{
+  "srcPath": ".",
+  "documentsPaths": [
+    "docs"
+  ],
+  "filesPaths": [
+    "static"
+  ],
+  "layoutsPaths": [
+    "layouts"
+  ]
+}
