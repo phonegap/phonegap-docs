@@ -1,12 +1,31 @@
 {
   "srcPath": ".",
   "documentsPaths": [
-    "docs"
+    "docs",
+    "assets"
   ],
   "filesPaths": [
     "static"
   ],
   "layoutsPaths": [
     "layouts"
-  ]
+  ],
+  "plugins": {
+    "stylus": {
+      "stylusLibraries": {
+        "nib": true
+      },
+      "styleusOptions": {
+        "compress": true,
+        "include css": true
+      }
+    }
+  },
+  "environments": {
+    "development": {
+      "stylusOptions": {
+        "compress": false
+      }
+    }
+  }
 }

@@ -1,5 +1,17 @@
+- var styles = getBlock('styles')
+
+//- user styles and scripts
+- styles.add(['/styles/index.css'])
+
 doctype html
-html(lang="en")
+html(lang='en')
+
+  head
+
+    //- styles
+    != styles.toHTML()
+
   body
+
     h1 Jade Template
     != content
