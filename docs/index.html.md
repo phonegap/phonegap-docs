@@ -1,7 +1,3 @@
----
-layout: "default"
----
-
 # PhoneGap Docs
 
 A search box may be here
