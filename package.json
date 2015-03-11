@@ -4,6 +4,7 @@
   "description": "The official PhoneGap documentation.",
   "dependencies": {
     "docpad": "6.73.5",
+    "docpad-plugin-jade": "2.9.0",
     "docpad-plugin-marked": "2.3.0"
   },
   "main": "node_modules/docpad/bin/docpad-server",
