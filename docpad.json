@@ -5,7 +5,7 @@
     "assets"
   ],
   "filesPaths": [
-    "static"
+    "public"
   ],
   "layoutsPaths": [
     "layouts"
