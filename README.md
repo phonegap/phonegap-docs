@@ -14,6 +14,10 @@ npm install
 npm start
 ```
 
+This will start a local server in development mode. The server will generate
+all of the documentation to `/out` and watch for file changes. When a file is
+changed, LiveReload will regenerate the file and refresh your browser.
+
 ## Directory Structure
 
 ```
@@ -27,6 +31,8 @@ npm start
  |__ docs/        # Markdown documents rendered to /out/**/*.html
  |
  |__ layouts/     # Layouts and view templates
+ |
+ |__ out/         # Outputted static website
  |
  |__ public/      # Static assets copied to /out/**/*
  |

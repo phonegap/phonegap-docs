@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
   "srcPath": ".",
   "documentsPaths": [
@@ -28,6 +30,20 @@ module.exports = {
       }
     }
   },
+  "watchOptions": {
+    /**
+     * Improve livereload responsiveness on OS X.
+     */
+    "preferredMethods": ["watch", "watchFile"]
+  },
+  "ignorePaths": [
+    /**
+     * Ignore output directory to prevent watch triggering
+     * when outPath is written. This happens because srcPath
+     * is the rootPath instead of a subdirectory.
+     */
+    path.join(process.cwd(), "out")
+  ],
   "collections": {
     /**
      * Set default layout for all markdown documents.

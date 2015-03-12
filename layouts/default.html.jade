@@ -1,3 +1,5 @@
+- var meta = getBlock('meta')
+- var scripts = getBlock('scripts')
 - var styles = getBlock('styles')
 
 //- user styles and scripts
@@ -8,6 +10,9 @@ html(lang='en')
 
   head
 
+    //- meta
+    != meta.toHTML()
+
     //- styles
     != styles.toHTML()
 
@@ -15,3 +20,6 @@ html(lang='en')
 
     h1 Jade Template
     != content
+
+    //- scripts
+    != scripts.toHTML()
