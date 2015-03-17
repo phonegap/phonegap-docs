@@ -1,4 +1,7 @@
-##PhoneGap CLI Quick Start
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+
+#PhoneGap CLI Quick Start
 
 1. Install the PhoneGap CLI
 
@@ -28,8 +31,7 @@
 		[phonegap] ctrl-c to stop the server
 		[phonegap]
 
-	
-	The CLI starts a tiny web server to serve your project from your computer so the PhoneGap Developer App can connect to it. 
+	<div class="alert alert-info">The CLI starts a tiny web server to serve your project from your computer so the PhoneGap Developer App can connect to it. </div>
 
 5. Connect to the server IP address from the [PhoneGap Developer App](http://app.phonegap.com) on your mobile device 
 
@@ -37,11 +39,13 @@
 
 6. Start coding!
 
-Now you can freely add, edit, and remove files from your project. Every saved change will automatically update the preview displayed in the PhoneGap Developer App.
+    Now you can freely add, edit, and remove files from your project. Every saved change will automatically update the preview displayed in the PhoneGap Developer App.
 
-<img src="images/phonegap-app-developer-workflow-v2.gif" width="500" height="397"/>
-	 
-<div class="tip">**Tip:** You can also use hidden touch gestures from the PhoneGap Developer app for additional control:</div>
+  <img src="images/phonegap-app-developer-workflow-v2.gif" width="500" height="397"/>
 
+   <div class="alert alert-info"><span class="label label-success">Tip:</span> You can use hidden touch gestures from the PhoneGap Developer app for additional control:
+     
           3-finger tap to the home page
           4-finger tap to force the served app to update
+</div>
+
