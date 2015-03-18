@@ -1,0 +1,47 @@
+body {
+
+}
+@media only screen and (min-width: 64.0625em) {
+    .path-item .circlenumber {
+        position: absolute;
+        left: 0;
+    }
+}
+@media only screen and (max-width: 64.063em) and (min-width: 0) {
+    .path-item .circlenumber {
+        left: -12px;
+    }
+}
+.step {
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #0b4f69;
+  width: 35px;
+  height: 35px;
+  position: relative;
+  margin-top: -5px;
+  margin-right: 18px;
+  margin-bottom: 5px;
+  margin-left: 0.83333rem;
+  z-index: 2;
+}
+.callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+.callout-info {
+  border-left-color: #5bc0de;
+}
+
+.callout-warning {
+    border-left-color: #f0ad4e;
+}
+.callout-tip {
+    border-left-color: #754799;
+}
+.callout-success {
+    border-left-color: #209940;
+}
