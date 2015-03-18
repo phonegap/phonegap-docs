@@ -1,2 +1,34 @@
+// Future adventurers: In an attempt to avoid building dragons, we will use [BEM](https://en.bem.info/) for css class naming and organization.
+// base
 body
-  background-color: #ef
+  background #FFF
+main
+  display flex
+  align-items stretch
+  height 100%
+  width 100%
+
+// header
+.site-header
+  height 60px
+  width 100%
+  background #CCC
+  display block
+    &__nav
+      background #333
+
+// sidebar (sidenav)
+.sidebar
+  background #F2F2F2
+  display block
+  width 300px
+
+// footer
+.site-footer
+  background #333
+  height 260px
+
+// content
+.content
+  background #FFF
+  width 100%

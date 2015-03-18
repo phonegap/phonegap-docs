@@ -15,7 +15,8 @@ module.exports = {
   "plugins": {
     "stylus": {
       "stylusLibraries": {
-        "nib": true
+        "nib": false,
+        "autoprefixer-stylus": true
       },
       "styleusOptions": {
         "compress": true,

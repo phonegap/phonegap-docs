@@ -3,6 +3,7 @@
 - var styles = getBlock('styles')
 
 //- user styles and scripts
+- styles.add(['/styles/normalize.css'])
 - styles.add(['/styles/index.css'])
 
 doctype html
@@ -17,9 +18,11 @@ html(lang='en')
     != styles.toHTML()
 
   body
-
-    h1 Jade Template
-    != content
+    header.site-header
+    main
+      aside.sidebar test
+      .content!= content
+    footer.site-footer
 
     //- scripts
     != scripts.toHTML()
