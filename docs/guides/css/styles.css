@@ -45,3 +45,14 @@ body {
 .callout-success {
     border-left-color: #209940;
 }
+.btn {
+
+}
+.btn-large {
+    height: 150px;
+    width: 150px;
+    font-size: 30px;
+}
+.btn-group {
+    padding: 220px;
+}
