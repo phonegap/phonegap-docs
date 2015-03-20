@@ -3,6 +3,8 @@
 
 ###PhoneGap Desktop App Quick Start
 
+1. Install 
+
 1. Download the [PhoneGap Desktop App](https://github.com/phonegap/phonegap-app-desktop/releases) to your desktop, install, and launch.
 
 2. Click the **+** sign to create a new project or add an existing one to the workspace
