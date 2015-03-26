@@ -1,16 +1,15 @@
 <link href="../css/styles.css" rel="stylesheet">
 <link href="../css/bootstrap.css" rel="stylesheet">
 
-###Part 2: Install the PhoneGap Developer App to your device
+##Step 2: Install the PhoneGap Developer App<hr>
 
-The PhoneGap Developer app allows you to test and preview the PhoneGap mobile app projects you develop on your device quickly without having to hassle with any other installs.
+The *PhoneGap Developer App* allows you to test and preview the PhoneGap mobile app projects you build on a device quickly without having to hassle with any other installs.
 
 1. Locate the free PhoneGap Developer mobile app from one of the following app marketplaces and install it to your mobile device.
 
 	- [iTunes](https://itunes.apple.com/app/id843536693)
 	- [Google Play](https://play.google.com/store/apps/details?id=com.adobe.phonegap.app)
 	- [Windows Phone Store](http://www.windowsphone.com/en-us/store/app/phonegap-developer/5c6a2d1e-4fad-4bf8-aaf7-71380cc84fe3)
-
 
 2. Once installed, click on the app icon <img src="../images/dev-app-icon.png" width="50" height="50" align="middle"/> to open it. You should see a screen that looks like below:
 

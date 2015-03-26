@@ -1,17 +1,17 @@
 <link href="../css/styles.css" rel="stylesheet">
 <link href="../css/bootstrap.css" rel="stylesheet">
 
-###PhoneGap CLI - Creating a Project
-
+##Step 3: Create a Project
+<hr>
 There are multiple ways to create a PhoneGap mobile app project using the CLI. You can use a shortcut, which will create a default project based on a Hello World app with a project name and identifier set to the default Hello World project. You can also specify your own name and identifier to replace in the generated Hello World project by specifiying them as parameters on the project. 
 
 1. In this step, we're going to create the default Hello World project with the PhoneGap CLI, but specify a name and identifier to make it unique. 
    <br><br>To create a project with an id and name, use the command shown below with your own values:
 
 	  	$ phonegap create path/to/appSample "org.myapp.sample" "appSample" 
-You could also specify the `--` with the parameters to explicitly identify them as shown below:
+You could also specify `--` with the parameters to explicitly identify them as shown below:
 		$ phonegap create path/to/appSample --id "org.myapp.sample" --name "appSample" 
-  <div class="callout callout-info"><button class="btn-info">i</button> Each of the `create` command options is documented in the help text and can be accessed with `$ phonegap create help`.</div>
+  <div class="callout callout-info"><button class="btn-info">i</button> Each of the `create` command options is documented in the help text and can be accessed with `$ phonegap create help`. To access general help from the CLI, type `-h` or `help` with any command.</div>
 2. Verify that you see output like the following in your console after you run the command:
 
 		Creating a new cordova project with name "appSample" and id "org.myapp.sample" at location "path/to/appSample"

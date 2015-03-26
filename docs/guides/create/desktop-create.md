@@ -1,12 +1,12 @@
 <link href="../css/styles.css" rel="stylesheet">
 <link href="../css/bootstrap.css" rel="stylesheet">
 
-###PhoneGap Desktop App - Creating a Project
-
-
-Now let's get our feet wet and create our first PhoneGap project. This project will become a mobile app with the ability to run on multiple devices and across operating systems in minutes with just a few simple steps.
+##Step 3: Create a Project
 <hr>
-####Hello World
+
+Now let's get our feet wet and create our first PhoneGap project. This project will become a mobile app with the ability to run on multiple devices and across operating systems with just a few simple steps.
+<hr>
+####Default Hello World
 The PhoneGap desktop tools include a default Hello World project for beginners to start with. It's proven to be the quickest and easiest way to understand the basics of building a mobile PhoneGap app so let's start there:
 
 1. Click the plus sign and select Create new PhoneGap project as shown below:
@@ -18,9 +18,9 @@ The PhoneGap desktop tools include a default Hello World project for beginners t
  
 	<div class="callout callout-info"><button class="btn-info">i</button> Be aware that the ID field is also known as the *package identifier* for Android and the *bundle identifier* for iOS.</div>
 
-	Once the information has been entered, click the green *Create Project* button.
+	Once the information has been entered, click the green *Create project* button.
 
-3.  Now you should be presented with a view like below, with your new project shown and a green play button next to it. Also note the green bar at the bottom with a server address, we'll need this in our next step. 
+3.  You should now see a view like below, with your new project shown and a green play button next to it. Also note the green bar at the bottom with a server address, we'll need this in our next step. 
 
       <img src="../images/desktop-app-create.jpg" width="350" height="500"/>
 
