@@ -15,12 +15,9 @@ The *PhoneGap Developer App* allows you to preview and test the PhoneGap mobile 
 2. Once installed, click on the app icon <img src="../images/dev-app-icon.png" width="50" height="50" align="middle"/> to open it. You should see a screen that looks like below:
 
       <img src="../images/dev-app-main.jpg"/>
-
+3. At this point installation is as far as we need to go until we have an app to preview.
 <hr>
 Congratulations! You have completed the installation and can now move on to the fun part, creating your first mobile PhoneGap app. Click the Step 3 button below to get started!  
 
 <hr>
-<a href="cli-install.html"><button class="btn-prev"><- Step 1: Install CLI</button></a><a href="../create/cli-create.html"><button class="btn-next">Step 3: Create a PhoneGap Project -></button></a>
-<br><hr>
 <a href="desktop-install.html"><button class="btn-prev"><- Step 1: Install Desktop App</button></a><a href="../create/desktop-create.html"><button class="btn-next">Step 3: Create a PhoneGap Project -></button></a>
-<br><hr>

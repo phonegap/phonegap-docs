@@ -2,7 +2,7 @@
 <link href="../css/bootstrap.css" rel="stylesheet">
 <div class="sidebar"></div>
 
-#PhoneGap User's Guide
+#PhoneGap Getting Started Guide
 <hr>
 In this guide we'll cover everything you need to know to get PhoneGap up and running so you can start building awesome mobile apps. The fastest way to get started using PhoneGap is to install one of the PhoneGap desktop tools and pair it with the *PhoneGap Developer App* installed on your mobile devices.              
    

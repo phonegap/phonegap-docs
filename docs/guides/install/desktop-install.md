@@ -28,4 +28,4 @@
 <hr>
 You're now ready to move on to the next step and create your first mobile app project!
 <hr>
-<a href="install-guide.html"><button class="btn-prev"><- Step 0: Choose Desktop Tool</button></a><a href="developer-install.html"><button class="btn-next">Step 2: Install Developer App -></button></a>
+<a href="install-guide.html"><button class="btn-prev"><- Step 0: Choose a Desktop Tool</button></a><a href="developer-install.html"><button class="btn-next">Step 2: Install the Developer App -></button></a>

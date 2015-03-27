@@ -4,7 +4,10 @@
 
 ##Step 3: Create a PhoneGap Project
 <hr>
-There are multiple ways to create a PhoneGap mobile app project using the CLI. You can use a shortcut, which will create a default project based on a Hello World app with a project name and identifier set to the default Hello World project. You can also specify your own name and identifier to replace in the generated Hello World project by specifiying them as parameters on the project. 
+### Hello PhoneGap
+There are multiple ways to create a PhoneGap mobile app project using the CLI. You can use a very simple shortcut command which will create a default project based on a Hello World app with a project name and identifier set to the defaults by running `$ phonegap create myApp`. 
+
+This will create a folder named *myApp* in the current path location with a default project name of "Hello World" and id "com.phonegap.helloworld". However, you can also specify your own name and identifier to ensure the project is unique but still have the advantage of using the default Hello World code by specifying a couple extra attributes at create time.
 
 1. In this step, we're going to create the default Hello World project with the PhoneGap CLI, but specify a name and identifier to make it unique. 
    <br><br>To create a project with an id and name, use the command shown below with your own values:
@@ -18,7 +21,8 @@ You could also specify `--` with the parameters to explicitly identify them as s
 		Creating a new cordova project with name "appSample" and id "org.myapp.sample" at location "path/to/appSample"
 
 		Using custom www assets from https://github.com/phonegap/phonegap-app-hello-world/archive/master.tar.gz`
-		
+
+	This output makes it clear that we have created a new project with our own unique name and id but using the Hello World default PhoneGap project as the content.		
 3. Change into the new project directory with the `cd` command:
 
 		$ cd path/to/appSample
@@ -26,8 +30,10 @@ You could also specify `--` with the parameters to explicitly identify them as s
 4. Check to be sure you see the following set of files and folders shown below:
 
 		config.xml	  hooks		platforms	plugins		www
+5. `cd` into the *www* folder and look around at the files and subfolders in there, this is the content of your app, with the entry point being the **index.html** file. 
+ <div class="alert alert-warning">**NOTE:** Details about the rest of the files and folders created in the root project  will be covered in guides further along. For now just focus on the *www* folder and its contents since that is the essence of your app.</div>
 
 <hr>
 Congratulations! You've created your own uniquely named version of the default PhoneGap Hello World project. In the next step we'll learn how we can make it available for preview by the PhoneGap Developer App on your mobile device with one simple command!
 <hr>
-<a href="../install/developer-install.html"><button class="btn-prev"><- Step 2: Install the PhoneGap Developer App</button></a><a href="../run/cli-serve.html"><button class="btn-next">Step 4: Preview the App -></button></a>
+<a href="../install/developer-install.html"><button class="btn-prev"><- Step 2: Install the PhoneGap Developer App</button></a><a href="../run/cli-serve.html"><button class="btn-next">Step 4: Run your App! -></button></a>
