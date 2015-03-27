@@ -1,20 +1,22 @@
 <link href="../css/styles.css" rel="stylesheet">
 <link href="../css/bootstrap.css" rel="stylesheet">
+<div class="sidebar"></div>
 
 #PhoneGap User's Guide
 <hr>
 In this guide we'll cover everything you need to know to get PhoneGap up and running so you can start building awesome mobile apps. The fastest way to get started using PhoneGap is to install one of the PhoneGap desktop tools and pair it with the *PhoneGap Developer App* installed on your mobile devices.              
-   <div class="callout callout-info"><button class="btn-info">i</button> The PhoneGap desktop tools are used to **create** your mobile app projects, while the PhoneGap Developer App runs on your mobile device to **preview** and **test** the apps you create. </div>
+   
+<div class="alert alert-warning">**NOTE:** The PhoneGap desktop tools are used to **create** your mobile app projects, while the PhoneGap Developer App runs on your mobile device to **preview** and **test** the apps you create. </div>
 
 ##Step 0: Choose a Desktop Tool
 Two desktop tools are available to choose from when creating PhoneGap projects, the *PhoneGap Command Line Interface (CLI)* tool and the *PhoneGap Desktop App*. 
-    <div class="callout callout-help"> <button class="btn-help">Tip</button> If you're typically more comfortable using command line tools then choose the **PhoneGap CLI** option, otherwise choose the **PhoneGap Desktop App**. Both tools use the same underlying libraries and will allow you to quickly create and preview your app. </div>
+    <div class="alert alert-info">**TIP:** If you're typically more comfortable using command line tools then choose the **PhoneGap CLI** option, otherwise choose the **PhoneGap Desktop App**. Both tools use the same underlying libraries and will allow you to quickly create and preview your app. </div>
 
 Select one of the following options based on your personal preference.  You will be taken through the rest of the guide based on your selected option.
 
 * ####[PhoneGap Command Line Interface (CLI)](cli-install.html)
 
-* ####[PhoneGap Desktop App](desktop-install.html)
+* ####[PhoneGap Desktop App (GUI)](desktop-install.html)
 
 
 

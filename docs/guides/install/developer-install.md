@@ -1,11 +1,12 @@
 <link href="../css/styles.css" rel="stylesheet">
 <link href="../css/bootstrap.css" rel="stylesheet">
+<div class="sidebar"></div>
 
 ##Step 2: Install the PhoneGap Developer App<hr>
 
-The *PhoneGap Developer App* allows you to test and preview the PhoneGap mobile app projects you build on a device quickly without having to hassle with any other installs.
+The *PhoneGap Developer App* allows you to preview and test the PhoneGap mobile app projects you build on multiple devices across different platforms without having to install and set up each platform SDK.  All you need to do is install the app to the devices you would like to preview your own apps on and go through the next couple quick steps in this guide to see exactly how it works.
 
-1. Locate the free PhoneGap Developer mobile app from one of the following app marketplaces and install it to your mobile device.
+1. Locate the free PhoneGap Developer mobile app from one of the following app marketplaces and install it to your mobile device:
 
 	- [iTunes](https://itunes.apple.com/app/id843536693)
 	- [Google Play](https://play.google.com/store/apps/details?id=com.adobe.phonegap.app)
@@ -16,10 +17,10 @@ The *PhoneGap Developer App* allows you to test and preview the PhoneGap mobile 
       <img src="../images/dev-app-main.jpg"/>
 
 <hr>
-Congratulations! You have completed the installation and can now move on to the fun part, creating a mobile app! Hit the **Next** button below to get started. 
-<hr>
-<!--TODO: Use history to determine where this came from and return to that page for the previous button (could be cli.html or desktop.html)-->
-<a href="cli-install.html"><button class="btn">CLI Previous</button></a><a href="../create/cli-create.html"><button class="btn" style="float:right">CLI Next</button></a>
+Congratulations! You have completed the installation and can now move on to the fun part, creating your first mobile PhoneGap app. Click the Step 3 button below to get started!  
 
+<hr>
+<a href="cli-install.html"><button class="btn-prev"><- Step 1: Install CLI</button></a><a href="../create/cli-create.html"><button class="btn-next">Step 3: Create a PhoneGap Project -></button></a>
 <br><hr>
-<a href="desktop-install.html"><button class="btn">Previous</button></a><a href="../create/desktop-create.html"><button class="btn" style="float:right">Next</button></a>
+<a href="desktop-install.html"><button class="btn-prev"><- Step 1: Install Desktop App</button></a><a href="../create/desktop-create.html"><button class="btn-next">Step 3: Create a PhoneGap Project -></button></a>
+<br><hr>

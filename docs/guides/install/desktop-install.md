@@ -1,13 +1,14 @@
 <link href="../css/styles.css" rel="stylesheet">
 <link href="../css/bootstrap.css" rel="stylesheet">
+<div class="sidebar"></div>
 
 ## Step 1: Install the PhoneGap Desktop App
 <hr>
 
 
 1. Download the installer for your operating system:
-   	- [Mac OSX](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.3/PhoneGapDesktop.dmg)	
-   	- [Windows](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.3/PhoneGapSetup.exe)
+    - [Mac OSX](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.3/PhoneGapDesktop.dmg)	
+    - [Windows](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.3/PhoneGapSetup.exe)
 2. Double click the downloaded file to run the installer.
 3. Accept the license agreement that is shown as below:<br>
     <img src="../images/license-agreement.jpg" width="500" height="397"/>
@@ -18,7 +19,7 @@
 
      <img src="../images/drag-to-apps-folder.jpg" width="500" height="397"/>
 
-	On Windows, drag the PhoneGap folder to the desired location on your desktop.
+	On Windows, drag the PhoneGap folder to your desired location.
     
 5. That's it! Click on the app icon  <img src="../images/dev-app-icon.png" width="50" height="50" align="middle"/>and get started!
 
@@ -27,4 +28,4 @@
 <hr>
 You're now ready to move on to the next step and create your first mobile app project!
 <hr>
-<a href="install-guide.html"><button class="btn">Previous</button></a><a href="developer-install.html"><button class="btn" style="float:right">Next</button></a>
+<a href="install-guide.html"><button class="btn-prev"><- Step 0: Choose Desktop Tool</button></a><a href="developer-install.html"><button class="btn-next">Step 2: Install Developer App -></button></a>

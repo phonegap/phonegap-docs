@@ -1,4 +1,15 @@
+body {
+    margin-left: 250px;
 
+}
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 4000px;
+    background-color: #0b4f69;
+}
 p h1 h2 h3 h4 {
     font-family: "Helvetica Neue", Arial;
     margin-left: 20px;
@@ -53,6 +64,23 @@ p h1 h2 h3 h4 {
 }
 .btn {
 
+}
+.btn-next {
+    float: right;
+    background-color: #238fb8;
+    color: white;
+    margin-bottom: 7px;
+    border-radius: 8px;
+    border-style: solid;
+
+}
+.btn-prev {
+    float: left;
+    background-color: #238fb8;
+    color: white;
+    margin-bottom: 7px;
+    border-radius: 8px;
+    border-style: solid;
 }
 .btn-large {
     height: 150px;
