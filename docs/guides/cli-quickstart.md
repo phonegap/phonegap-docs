@@ -1,7 +1,7 @@
 <link href="css/styles.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet">
 
-#PhoneGap CLI Quick Start
+###PhoneGap CLI Quick Start
 
 1. Install the PhoneGap CLI
 

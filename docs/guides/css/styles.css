@@ -1,6 +1,20 @@
 body {
+    margin-left: 250px;
 
 }
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 4000px;
+    background-color: #0b4f69;
+}
+p h1 h2 h3 h4 {
+    font-family: "Helvetica Neue", Arial;
+    margin-left: 20px;
+}
+
 @media only screen and (min-width: 64.0625em) {
     .path-item .circlenumber {
         position: absolute;
@@ -40,8 +54,71 @@ body {
     border-left-color: #f0ad4e;
 }
 .callout-tip {
-    border-left-color: #754799;
+    border-left-color: #349981;
+}
+.callout-help {
+    border-left-color: #994992;
 }
 .callout-success {
     border-left-color: #209940;
+}
+.btn {
+
+}
+.btn-next {
+    float: right;
+    background-color: #238fb8;
+    color: white;
+    margin-bottom: 7px;
+    border-radius: 8px;
+    border-style: solid;
+
+}
+.btn-prev {
+    float: left;
+    background-color: #238fb8;
+    color: white;
+    margin-bottom: 7px;
+    border-radius: 8px;
+    border-style: solid;
+}
+.btn-large {
+    height: 150px;
+    width: 150px;
+    font-size: 30px;
+}
+.btn-group {
+    padding: 220px;
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
+.btn-info {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+    background-color: #006699;
+    color: white;
+}
+
+.btn-help {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+    background-color: #994992;
+    color: white;
 }

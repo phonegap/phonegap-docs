@@ -1,7 +1,9 @@
 <link href="css/styles.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet">
 
-#PhoneGap Desktop App Quick Start
+###PhoneGap Desktop App Quick Start
+
+1. Install 
 
 1. Download the [PhoneGap Desktop App](https://github.com/phonegap/phonegap-app-desktop/releases) to your desktop, install, and launch.
 

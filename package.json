@@ -12,6 +12,8 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
+    "build": "node_modules/docpad/bin/docpad generate",
+    "build-prod": "NODE_ENV=production npm run build",
     "start": "node_modules/docpad/bin/docpad run"
   }
 }

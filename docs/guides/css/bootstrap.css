@@ -11,7 +11,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+  /*margin: inherit;*/
 }
 article,
 aside,
@@ -24,7 +24,7 @@ hgroup,
 main,
 menu,
 nav,
-section,
+section,ler
 summary {
   display: block;
 }
