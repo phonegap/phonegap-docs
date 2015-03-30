@@ -22,7 +22,16 @@ module.exports = {
         "compress": true,
         "include css": true
       }
-    }
+    },
+    "browsersync": {
+      "open": true,
+      "ghostMode": {
+          "clicks": true,
+          "location": true,
+          "forms": true,
+          "scroll": true
+        }
+      }
   },
   "environments": {
     "development": {
@@ -30,12 +39,6 @@ module.exports = {
         "compress": false
       }
     }
-  },
-  "watchOptions": {
-    /**
-     * Improve livereload responsiveness on OS X.
-     */
-    "preferredMethods": ["watch", "watchFile"]
   },
   "ignorePaths": [
     /**

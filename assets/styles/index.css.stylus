@@ -1,34 +1,115 @@
 // Future adventurers: In an attempt to avoid building dragons, we will use [BEM](https://en.bem.info/) for css class naming and organization.
-// base
-body
-  background #FFF
-main
-  display flex
-  align-items stretch
-  height 100%
-  width 100%
 
-// header
+$header-bg = #27A1C5;
+
+// Mobile first and default mediaquery
+//Base Styles
+:root
+  font-size 16px
+body
+  font-family 'adobe-clean', Helvetica, Arial, sans-serif
+.bounds
+  max-width 1230px
+  position relative
+  margin 0 auto
+  padding 0 20px
+  box-sizing border-box
+a
+  text-decoration none
+  &:hover
+    text-decoration underline
+
+//Header
 .site-header
+  color white
   height 60px
   width 100%
-  background #CCC
+  background $header-bg
   display block
-    &__nav
-      background #333
+  margin-bottom 30px
+  .bounds
+    display flex
+    justify-content space-between
+    align-items center
+    height 100%
+  a
+    color white
+    &:hover
+      text-decoration none
+.site-header__logo
+  h1
+    font-size 1.8rem
+    margin 0
+    padding 0
+    font-weight 200
+  img
+    vertical-align middle
+    margin-right .8rem
+    width 2rem
+    height auto
+  span
+    position relative
+    top .125rem
+.site-header__nav
+  display none
+  ul
+    margin 0
+    padding 0
+    display flex
+    flex-direction column
+    list-style none
 
-// sidebar (sidenav)
-.sidebar
-  background #F2F2F2
-  display block
-  width 300px
+@media (min-width: 800px)
+  .site-header
+    height 100px
+    margin-bottom 50px
+  .site-header__nav
+    display block
+    ul
+      flex-direction row
+      li
+        padding 10px
+        margin 0 4px
+  .site-header__logo
+    h1
+      font-size 2.25rem
+    img
+      margin-right 1rem
+      width 2.5rem
+    span
+      top .125rem
 
-// footer
-.site-footer
-  background #333
-  height 260px
 
-// content
-.content
-  background #FFF
-  width 100%
+// // base
+// body
+//   background #FFF
+// main
+//   display flex
+//   align-items stretch
+//   height 100%
+//   width 100%
+//
+// // header
+// .site-header
+//   height 60px
+//   width 100%
+//   background #CCC
+//   display block
+//     &__nav
+//       background #333
+//
+// // sidebar (sidenav)
+// .sidebar
+//   background #F2F2F2
+//   display block
+//   width 300px
+//
+// // footer
+// .site-footer
+//   background #333
+//   height 260px
+//
+// // content
+// .content
+//   background #FFF
+//   width 100%

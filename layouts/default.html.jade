@@ -1,28 +1,34 @@
-- var meta = getBlock('meta')
-- var scripts = getBlock('scripts')
-- var styles = getBlock('styles')
-
-//- user styles and scripts
-- styles.add(['/styles/normalize.css'])
-- styles.add(['/styles/index.css'])
-
 doctype html
 html(lang='en')
 
   head
 
-    //- meta
-    != meta.toHTML()
+    block meta
+      meta(name="viewport", content="initial-scale=1.0")
+    block styles
+      link(href='/styles/normalize.css', rel='stylesheet')
+      link(href='/styles/index.css', rel='stylesheet')
 
-    //- styles
-    != styles.toHTML()
 
   body
     header.site-header
+      .bounds
+        .site-header__logo
+          h1
+            a(href="/")
+              img(src="/images/phonegaplogo.svg")
+              span Adobe PhoneGap
+        nav.site-header__nav
+          ul
+            li: a(href="#") Products
+            li: a(href="#") Get Started
+            li: a(href="#") Docs &amp; Resources
+            li: a(href="#") App Showcase
+            li: a(href="#") Blog
     main
-      aside.sidebar test
-      .content!= content
+      .bounds
+        aside.sidebar test
+        .content!= content
     footer.site-footer
 
-    //- scripts
-    != scripts.toHTML()
+    block scripts
