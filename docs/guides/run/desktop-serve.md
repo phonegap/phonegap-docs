@@ -14,9 +14,9 @@ The PhoneGap Desktop App starts a small web server to host your project and retu
      <img src="../images/desktop-app-create.jpg" width="350" height="500"/>
 
 2. Go to your mobile device where the PhoneGap Developer App is running, enter the server address on the main screen and tap **Connect**. 
-   <div class="alert alert-info"> **TIP:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
-   
- <img src="../images/dev-app-enter-add.jpg" width="250" height="523">
+  <div class="alert alert-info"> **TIP:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value shown the first time the app is run is a sample, will default to the last one entered upon next run.</div>
+     
+   <img src="../images/dev-app-enter-add.jpg" width="250" height="523">
    
   A connection is created between your mobile device and the computer where the app is running. Once connected, you should see the app running as shown in the second screenshot below:
    
