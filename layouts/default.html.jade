@@ -11,24 +11,13 @@ html(lang='en')
 
 
   body
-    header.site-header
-      .bounds
-        .site-header__logo
-          h1
-            a(href="/")
-              img(src="/images/phonegaplogo.svg")
-              span Adobe PhoneGap
-        nav.site-header__nav
-          ul
-            li: a(href="#") Products
-            li: a(href="#") Get Started
-            li: a(href="#") Docs &amp; Resources
-            li: a(href="#") App Showcase
-            li: a(href="#") Blog
+    block site-header
+      include ./includes/site-header.jade
     main
       .bounds
         aside.sidebar test
         .content!= content
-    footer.site-footer
+    block site-footer
+      include ./includes/site-footer.jade
 
     block scripts

@@ -1,6 +1,7 @@
 // Future adventurers: In an attempt to avoid building dragons, we will use [BEM](https://en.bem.info/) for css class naming and organization.
 
-$header-bg = #27A1C5;
+$header-bg = #27A1C5
+$footer-bg = #003252
 
 // Mobile first and default mediaquery
 //Base Styles
@@ -59,6 +60,114 @@ a
     flex-direction column
     list-style none
 
+// Site Footer
+.site-footer
+  background $footer-bg
+  color white
+  p, li
+    line-height 1.75rem
+  a
+    color white
+    &:hover
+      color white
+  .bounds
+    padding-top 50px
+    padding-bottom 30px
+  h2
+    font-size 1.125rem
+    font-weight 200
+    color #c4c4c4
+    text-transform uppercase
+    margin 0 0 1rem
+  hr
+    border 0
+    height 1px
+    background #001835
+    margin 43px 0
+.site-footer__lists
+  display flex
+  flex-wrap wrap
+  max-width 636px
+  justify-content space-between
+  flex-grow 1
+.site-footer__list
+  display block
+  min-width 190px
+  margin 0 0 2.25rem
+  ul
+    list-style none
+    margin 0
+    padding 0
+.site-footer__top
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+.site-footer__messages
+  max-width 414px
+  order 0
+  h2
+    font-weight normal
+    font-size 1.5rem
+    margin-bottom 1.25rem
+    a
+      display block
+      position relative
+      color #27a1c5
+      &:before
+        content url('../images/arrow-right.svg')
+        position relative
+        left 0
+        top 0
+        width 1.5rem
+        height 1.125rem
+        margin-right .5rem
+        transition left .2s ease
+      &:hover
+        color #27a1c5
+        text-decoration none
+        &:before
+          left .3rem
+.site-footer__message
+  margin-bottom 3rem
+.subscribe
+  display flex
+  flex-wrap wrap
+  align-items center
+  h2
+    width 100%
+.subscribe__description
+  flex-grow 1
+  max-width 556px
+.subscribe__form
+  flex-grow 1
+  display flex
+.subscribe__form__text-input
+  background #64889B
+  border none
+  height 2.75rem
+  box-sizing border-box
+  padding .875rem 1rem
+  border-radius 4px
+  vertical-align top
+  flex-grow 1
+  margin-right 10px
+  &::placeholder
+    color #003351
+.subscribe__form__submit
+  text-transform uppercase
+  font-size 1.0625rem
+  height 2.75rem
+  box-sizing border-box
+  padding .875rem 1rem
+  border-radius 4px
+  background #1BA1C7
+  border none
+  vertical-align top
+.site-footer__copyright
+  font-size .75rem
+  line-height .875rem
+  a, a:hover
+    text-decoration underline
 @media (min-width: 800px)
   .site-header
     height 100px
@@ -78,6 +187,18 @@ a
       width 2.5rem
     span
       top .125rem
+  .site-footer
+    .bounds
+      padding-top 70px
+      padding-bottom 30px
+    h2
+      margin 0 0 1.5rem
+  .site-footer__list
+    margin 0 0 2.5rem
+  .site-footer__messages
+    order 2
+    h2
+      margin-bottom 1.25rem
 
 
 // // base
