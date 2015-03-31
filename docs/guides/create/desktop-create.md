@@ -1,6 +1,6 @@
 <link href="../css/styles.css" rel="stylesheet">
 <link href="../css/bootstrap.css" rel="stylesheet">
-<div class="sidebar"></div>
+
 
 ##Step 3: Create a PhoneGap Project
 <hr>
@@ -15,12 +15,10 @@ The PhoneGap desktop tools include a default Hello World project for beginners t
 	<img src="../images/desktop-app-plus-sm.png"/>
 2. You will be presented with a screen to enter information about your project. Enter the path on your local hard drive to create the project, a designated name and optional *identifier*. Once the information has been entered, click the green *Create project* button.
 
-
       <img src="../images/desktop-app-create-info2.jpg" width="504" height="500"/>
  
 	<div class="alert alert-warning">**NOTE:** Be aware that the ID field is also known as the *package identifier* for Android and the *bundle identifier* for iOS.</div>
 
-	
 3.  You should now see a view like below, with your new project shown and marked with a left green sidebar, a green play button next to it and a green bar at the bottom with a server address indicating it's the active project and running. 
     
    <img src="../images/desktop-app-create.jpg" width="350" height="500"/>

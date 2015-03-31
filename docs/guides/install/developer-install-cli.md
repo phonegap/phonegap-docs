@@ -1,6 +1,5 @@
 <link href="../css/styles.css" rel="stylesheet">
 <link href="../css/bootstrap.css" rel="stylesheet">
-<div class="sidebar"></div>
 
 ##Step 2: Install the PhoneGap Developer App<hr>
 
@@ -12,7 +11,7 @@ The *PhoneGap Developer App* allows you to preview and test the PhoneGap mobile 
 	- [Google Play](https://play.google.com/store/apps/details?id=com.adobe.phonegap.app)
 	- [Windows Phone Store](http://www.windowsphone.com/en-us/store/app/phonegap-developer/5c6a2d1e-4fad-4bf8-aaf7-71380cc84fe3)
 
-2. Once installed, click on the app icon <img src="../images/dev-app-icon.png" width="50" height="50" align="middle"/> to open it. You should see a screen that looks like the one below:
+2. Once installed, click on the app icon <img src="../images/desktop-app-icon.jpg" width="50" height="50" align="middle"/> to open it. You should see a screen that looks like the one below:
 
       <img src="../images/dev-app-main.jpg"/>
 3. At this point installation is as far as we need to go until we have an app to preview.

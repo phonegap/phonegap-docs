@@ -1,6 +1,6 @@
 <link href="../css/styles.css" rel="stylesheet">
 <link href="../css/bootstrap.css" rel="stylesheet">
-<div class="sidebar"></div>
+
 
 ## Step 4:  Run your App! 
 <hr>
@@ -38,7 +38,9 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
 5. Now check your mobile device where your PhoneGap Developer app is running and you will see your app reload and automatically display the new text!
    
  <img src="../images/dev-app-code-update.jpg" width="250" height="523" />
-6. Continue making updates to your project as desired and get familiar with how it all works. In the next step we'll cover configuring your app.
+ <img src="../images/phonegap-app-developer-workflow-v2.gif" width="500" height="397"/>
+
+Continue making updates to your project as desired and get familiar with how it all works. In the next step we'll cover configuring your app.
 <hr>
 
 <a href="../create/cli-create.html"><button class="btn-prev"><- Step 3: Create your App</button></a><a href="../config/config.html"><button class="btn-next">Step 5: Configuration -></button></a>
