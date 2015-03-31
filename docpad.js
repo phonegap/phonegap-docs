@@ -49,6 +49,21 @@ module.exports = {
     path.join(process.cwd(), "out")
   ],
   "collections": {
+    installGuides: function () {
+      var installGuides = this.getCollection("html")
+        .findAllLive({relativeOutDirPath:/guides[\/\\]install/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+      return installGuides;
+    },
+    createGuides: function () {
+      var createGuides = this.getCollection("html")
+        .findAllLive({relativeOutDirPath:/guides[\/\\]create/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+      return createGuides;
+    },
+    runGuides: function () {
+      var runGuides = this.getCollection("html")
+        .findAllLive({relativeOutDirPath:/guides[\/\\]run/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+      return runGuides;
+    },
     /**
      * Set default layout for all markdown documents.
      */

@@ -2,6 +2,7 @@
 
 $header-bg = #27A1C5
 $footer-bg = #003252
+$content-maxwidth = 584px
 
 // Mobile first and default mediaquery
 //Base Styles
@@ -9,6 +10,8 @@ $footer-bg = #003252
   font-size 16px
 body
   font-family 'adobe-clean', Helvetica, Arial, sans-serif
+  color rgba(0, 0, 0, 0.8)
+  line-height 1.75rem
 .bounds
   max-width 1230px
   position relative
@@ -16,10 +19,15 @@ body
   padding 0 20px
   box-sizing border-box
 a
+  color #27a1c5
   text-decoration none
   &:hover
     text-decoration underline
-
+h2
+  text-transform uppercase
+  margin 0 0 1rem
+  font-size 1.125rem
+  font-weight 200
 //Header
 .site-header
   color white
@@ -64,8 +72,6 @@ a
 .site-footer
   background $footer-bg
   color white
-  p, li
-    line-height 1.75rem
   a
     color white
     &:hover
@@ -74,11 +80,7 @@ a
     padding-top 50px
     padding-bottom 30px
   h2
-    font-size 1.125rem
-    font-weight 200
     color #c4c4c4
-    text-transform uppercase
-    margin 0 0 1rem
   hr
     border 0
     height 1px
@@ -168,7 +170,64 @@ a
   line-height .875rem
   a, a:hover
     text-decoration underline
+// Main Content
+main
+  .bounds
+    display flex
+    align-items stretch
+    height 100%
+    width 100%
+    margin-bottom 30px
+.content
+  background #FFF
+  h1,h2,h3,h4,h5,p,li
+    max-width $content-maxwidth
+  img
+    max-width 100%
+    height auto
+// Content Elements
+.alert--warning, .alert--info
+  max-width $content-maxwidth
+  box-sizing border-box
+  padding 15px 20px 10px
+  border-radius 4px
+  margin 10px 0
+.alert--warning
+  background rgba(242,180,43,0.2)
+.alert--info
+  background rgba(21,72,142,0.1)
+article.page
+  margin-bottom 4rem
+  h2
+    font-size 1.5rem
+.page__navigation
+  display flex
+  justify-content space-between
+
+//Sidebar
+.sidebar
+  display none
+  width 250px
+  margin-right 50px
+  position relative
+.sidebar__content
+  position fixed
+  width 250px
+  border-right 1px solid #CCC
+.sidebar__list
+  h2
+    margin-bottom .5rem
+  ul
+    list-style none
+    margin 0 0 3rem
+    padding 0 0 0 1rem
+    a
+      color #003252
+
+
 @media (min-width: 800px)
+  h2
+    margin 0 0 1.5rem
   .site-header
     height 100px
     margin-bottom 50px
@@ -191,46 +250,14 @@ a
     .bounds
       padding-top 70px
       padding-bottom 30px
-    h2
-      margin 0 0 1.5rem
   .site-footer__list
     margin 0 0 2.5rem
   .site-footer__messages
     order 2
     h2
       margin-bottom 1.25rem
-
-
-// // base
-// body
-//   background #FFF
-// main
-//   display flex
-//   align-items stretch
-//   height 100%
-//   width 100%
-//
-// // header
-// .site-header
-//   height 60px
-//   width 100%
-//   background #CCC
-//   display block
-//     &__nav
-//       background #333
-//
-// // sidebar (sidenav)
-// .sidebar
-//   background #F2F2F2
-//   display block
-//   width 300px
-//
-// // footer
-// .site-footer
-//   background #333
-//   height 260px
-//
-// // content
-// .content
-//   background #FFF
-//   width 100%
+  .sidebar
+    display block
+  main
+    .bounds
+      margin-bottom 50px
