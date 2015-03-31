@@ -1,10 +1,9 @@
+# OS X
 .DS_Store
-tmp/
-public/
-release/
-TAGS
-,*
-_*
-*~
-.vagrant/
-Gemfile.lock
+
+# Node.js
+/node_modules
+npm-debug.log
+
+# Docpad
+/out

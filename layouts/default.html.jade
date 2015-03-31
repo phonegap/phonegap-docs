@@ -1,0 +1,30 @@
+- var scripts = getBlock('scripts')
+- var styles = getBlock('styles')
+
+doctype html
+html(lang='en')
+
+  head
+
+    block meta
+      meta(name="viewport", content="initial-scale=1.0")
+    block styles
+      != styles.toHTML()
+      link(href='/styles/normalize.css', rel='stylesheet')
+      link(href='/styles/index.css', rel='stylesheet')
+
+
+  body
+    block site-header
+      include ./includes/site-header.jade
+    main
+      .bounds
+        block main
+          .content
+            block content
+              != content
+    block site-footer
+      include ./includes/site-footer.jade
+
+    block scripts
+      != scripts.toHTML()
