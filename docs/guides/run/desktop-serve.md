@@ -23,7 +23,9 @@ The PhoneGap Desktop App starts a small web server to host your project and retu
 
 
     
-  <div class="alert alert-info"> **TIP:** Gestures can be used while you're previewing your app. To return to the main screen use a 3-finger tap and a 4-finger tap will force refresh your app. </div>
+  <div class="alert alert-info"> **TIP:** Gestures can be used while you're previewing your app. 
+	  - 3 finger returns to the main screen - 4 finger tap causes a refresh.
+  </div>
   
   <hr>
 #### Video Example
