@@ -1,6 +1,7 @@
 ---
 title: "Run your App!"
 ---
+
 You can use the *PhoneGap Developer App* paired with the PhoneGap CLI to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
 
 The PhoneGap CLI starts a small web server to host your project and returns the server address for you to use from the PhoneGap Developer App running on your mobile device.
@@ -14,12 +15,11 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
 		[phonegap]
 		[phonegap] ctrl-c to stop the server
 		[phonegap]
+
 2. Now go to your mobile device where the PhoneGap Developer App is running, enter the server address on the main screen and tap **Connect**.
    <div class="alert--info"> **TIP:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
 
     <img src="/images/dev-app-enter-add.jpg" width="250" height="523">
-
-    A connection is created between your mobile device and the computer where the app is running. Once connected, you should see the app running as shown in the second screenshot below:
 
    <img src="/images/dev-app-success.jpg" width="250" height="523" align="left"><img src="/images/dev-app-preview.jpg" width="250" height="523">
 
@@ -33,6 +33,9 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
   <img src="/images/editor.jpg" width="500" height="260">
 
 5. Now check your mobile device where your PhoneGap Developer app is running and you will see your app reload and automatically display the new text!
-
+  
  <img src="/images/dev-app-code-update.jpg" width="250" height="523" />
+ <img src="/images/phonegap-app-developer-workflow-v2.gif" width="500" height="397"/>
+
+
 6. Continue making updates to your project as desired and get familiar with how it all works. In the next step we'll cover configuring your app.
