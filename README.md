@@ -16,7 +16,7 @@ npm start
 
 This will start a local server in development mode. The server will generate
 all of the documentation to `/out` and watch for file changes. When a file is
-changed, LiveReload will regenerate the file and refresh your browser.
+changed, BrowserSync will regenerate the file and refresh your browser.
 
 ## Directory Structure
 

@@ -1,0 +1,18 @@
+aside.sidebar
+  .sidebar__content
+    nav.sidebar__list
+      h2: a(href="/guides/install/#") Install
+      ul
+        each guide in getCollection("installGuides").toJSON()
+          li: a(href="/guides/install/#"+guide.basename)!=guide.title
+    nav.sidebar__list
+      h2: a(href="/guides/create/#") Create
+      ul
+        each guide in getCollection("createGuides").toJSON()
+          li: a(href="/guides/create/#"+guide.basename)!=guide.title
+    nav.sidebar__list
+      h2: a(href="/guides/run/#") Run
+      ul
+        each guide in getCollection("runGuides").toJSON()
+          li: a(href="/guides/run/#"+guide.basename)!=guide.title
+  

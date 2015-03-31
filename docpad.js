@@ -15,13 +15,23 @@ module.exports = {
   "plugins": {
     "stylus": {
       "stylusLibraries": {
-        "nib": true
+        "nib": false,
+        "autoprefixer-stylus": true
       },
       "styleusOptions": {
         "compress": true,
         "include css": true
       }
-    }
+    },
+    "browsersync": {
+      "open": true,
+      "ghostMode": {
+          "clicks": true,
+          "location": true,
+          "forms": true,
+          "scroll": true
+        }
+      }
   },
   "environments": {
     "development": {
@@ -29,12 +39,6 @@ module.exports = {
         "compress": false
       }
     }
-  },
-  "watchOptions": {
-    /**
-     * Improve livereload responsiveness on OS X.
-     */
-    "preferredMethods": ["watch", "watchFile"]
   },
   "ignorePaths": [
     /**
@@ -45,6 +49,21 @@ module.exports = {
     path.join(process.cwd(), "out")
   ],
   "collections": {
+    installGuides: function () {
+      var installGuides = this.getCollection("html")
+        .findAllLive({relativeOutDirPath:/guides[\/\\]install/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+      return installGuides;
+    },
+    createGuides: function () {
+      var createGuides = this.getCollection("html")
+        .findAllLive({relativeOutDirPath:/guides[\/\\]create/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+      return createGuides;
+    },
+    runGuides: function () {
+      var runGuides = this.getCollection("html")
+        .findAllLive({relativeOutDirPath:/guides[\/\\]run/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+      return runGuides;
+    },
     /**
      * Set default layout for all markdown documents.
      */
