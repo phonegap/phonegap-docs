@@ -1,18 +1,23 @@
 aside.sidebar
   .sidebar__content
     nav.sidebar__list
-      h2: a(href="/guides/install/#") Install
+      h2: a(href="/guides/start/#") Getting Started
       ul
-        each guide in getCollection("installGuides").toJSON()
-          li: a(href="/guides/install/#"+guide.basename)!=guide.title
+          each guide in getCollection("startGuides").toJSON()
+              li: a(href="/guides/start/#"+guide.basename)!=guide.title
     nav.sidebar__list
-      h2: a(href="/guides/create/#") Create
-      ul
-        each guide in getCollection("createGuides").toJSON()
-          li: a(href="/guides/create/#"+guide.basename)!=guide.title
+        h2: a(href="/guides/cli/#") PhoneGap CLI
+        ul
+            each guide in getCollection("cliGuides").toJSON()
+                li: a(href="/guides/cli/#"+guide.basename)!=guide.title
     nav.sidebar__list
-      h2: a(href="/guides/run/#") Run
-      ul
-        each guide in getCollection("runGuides").toJSON()
-          li: a(href="/guides/run/#"+guide.basename)!=guide.title
-  
+        h2: a(href="/guides/desktop/#") PhoneGap Desktop
+        ul
+            each guide in getCollection("desktopGuides").toJSON()
+                li: a(href="/guides/desktop/#"+guide.basename)!=guide.title
+      nav.sidebar__list
+          h2: a(href="/guides/configure/#") Configure
+          ul
+              each guide in getCollection("configGuides").toJSON()
+                  li: a(href="/guides/configure/#"+guide.basename)!=guide.title
+

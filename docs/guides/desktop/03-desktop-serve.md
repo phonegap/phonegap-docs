@@ -1,12 +1,13 @@
 ---
-title: "Run your App!"
+title: "Run your App"
 ---
 
 You can use the *PhoneGap Developer App* paired with the *PhoneGap Desktop App* to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
 
-The PhoneGap Desktop App starts a small web server to host your project and returns the server address for you to use from the PhoneGap Developer App running on your mobile device.
+The PhoneGap Desktop App starts a small web server to host your project and returns the server address for you to use from the PhoneGap Developer App running on your mobile device. It's started automatically upon
+project creation, but you can also hit the play button to start a project that's currently inactive.
 
-###Pair and Preview
+### Preview on a Device
 1. In the previous step we created a project and ensured it was running by looking for the green 'play' button to be highlighted and a green bar showing the server address it's running on at the bottom of the PhoneGap Desktop App. <br><br>The screenshot is shown again below for reference. Locate the specific server address for your project before moving to the next step.
 
      <img src="/images/desktop-app-create.jpg" width="350" height="500"/>

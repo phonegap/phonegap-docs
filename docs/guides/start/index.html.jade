@@ -1,9 +1,8 @@
 ---
-title: "Run"
+title: "Getting Started"
 layout: "subpage"
-prev: /guides/create/index.html
 ---
-each guide in getCollection("runGuides").toJSON()
+each guide in getCollection("startGuides").toJSON()
   article.page(id=guide.basename)
     h2!= guide.title
     section!= guide.contentRenderedWithoutLayouts

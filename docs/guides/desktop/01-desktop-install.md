@@ -1,5 +1,5 @@
 ---
-title: "Desktop App"
+title: "Install"
 ---
 Download the installer for your operating system:
 
@@ -48,6 +48,6 @@ Download the installer for your operating system:
 
    ![](/images/win-desktop6.jpg)
 
-7. That's it! Click on the app icon  ![](//images/desktop-app-icon.jpg) and get started!
+7. That's it! Click on the PhoneGap Desktop application icon  ![](/images/desktop-app-icon.jpg) and get started!
 
    ![](/images/desktop-app-run.jpg)

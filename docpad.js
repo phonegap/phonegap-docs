@@ -49,21 +49,31 @@ module.exports = {
     path.join(process.cwd(), "out")
   ],
   "collections": {
-    installGuides: function () {
-      var installGuides = this.getCollection("html")
-        .findAllLive({relativeOutDirPath:/guides[\/\\]install/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-      return installGuides;
-    },
-    createGuides: function () {
-      var createGuides = this.getCollection("html")
-        .findAllLive({relativeOutDirPath:/guides[\/\\]create/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-      return createGuides;
-    },
-    runGuides: function () {
-      var runGuides = this.getCollection("html")
-        .findAllLive({relativeOutDirPath:/guides[\/\\]run/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-      return runGuides;
-    },
+      startGuides: function () {
+          var startGuides = this.getCollection("html")
+              .findAllLive({relativeOutDirPath:/guides[\/\\]start/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+          return startGuides;
+      },
+      cliGuides: function () {
+          var cliGuides = this.getCollection("html")
+              .findAllLive({relativeOutDirPath:/guides[\/\\]cli/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+          return cliGuides;
+      },
+      desktopGuides: function () {
+          var desktopGuides = this.getCollection("html")
+              .findAllLive({relativeOutDirPath:/guides[\/\\]desktop/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+          return desktopGuides;
+      },
+      devGuides: function () {
+          var devGuides = this.getCollection("html")
+              .findAllLive({relativeOutDirPath:/guides[\/\\]developer/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+          return devGuides;
+      },
+      configGuides: function () {
+          var configGuides = this.getCollection("html")
+              .findAllLive({relativeOutDirPath:/guides[\/\\]configure/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+          return configGuides;
+      },
     /**
      * Set default layout for all markdown documents.
      */

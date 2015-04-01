@@ -1,9 +1,9 @@
 ---
-title: "Install"
+title: "CLI Getting Started Guide"
 layout: "subpage"
-next: /guides/create/index.html
+next: /guides/configure/index.html
 ---
-each guide in getCollection("installGuides").toJSON()
+each guide in getCollection("cliGuides").toJSON()
   article.page(id=guide.basename)
     h2!= guide.title
     section!= guide.contentRenderedWithoutLayouts

@@ -1,5 +1,5 @@
 ---
-title: "Command Line Interface"
+title: "Install"
 ---
 ###Requirements
 
@@ -12,10 +12,10 @@ title: "Command Line Interface"
 1. Install the [PhoneGap CLI](https://www.npmjs.com/package/phonegap) via `npm` with the following command from the Terminal app (Mac) or Command Prompt (Win).
 `$ npm install -g phonegap`
 
- <div class="alert--info">**QUICK TIPS**
+ <div class="alert--info">**TIPS**
 
- - The `$` symbol is used throughout this guide to indicate the command prompt, it should not be typed.
- - `npm` is the node package manager and installed with node.js. The `npm` command fetches the necessary dependencies for the PhoneGap CLI to run on your local machine. It creates a *node_modules* folder with the necessary code needed to run the CLI. The `-g` flag specifies that folder to be installed at the global location so it can be accessed from anywhere on your machine (defaults to */usr/local/lib/node_modules/phonegap* on Mac).
+ 1. The `$` symbol is used throughout this guide to indicate the command prompt, it should not be typed.
+ 2. `npm` is the node package manager and installed with node.js. The `npm` command fetches the necessary dependencies for the PhoneGap CLI to run on your local machine. It creates a *node_modules* folder with the necessary code needed to run the CLI. The `-g` flag specifies that folder to be installed at the global location so it can be accessed from anywhere on your machine (defaults to */usr/local/lib/node_modules/phonegap* on Mac).
 
  </div>
 
@@ -33,4 +33,4 @@ title: "Command Line Interface"
          ...
   ```
 
-<div class="alert--info">**TIP:** You can access the PhoneGap CLI usage text at any time by adding the keyword `help`, `-h` or `--h` with any phonegap command i.e.: `phonegap create help`,`phonegap serve -h`.</div>
+<div class="alert--info">**TIP:** You can access the PhoneGap CLI usage text at any time by adding the keyword `help`, `-h` or `--h` with any phonegap command i.e.: `phonegap create help`, `phonegap serve -h`.</div>
