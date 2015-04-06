@@ -224,7 +224,18 @@ article.page
     a
       color #003252
 
-
+.video-wrapper
+  position relative
+  padding-bottom 56.25%
+  padding-top 25px
+  height 0
+  max-width $content-maxwidth
+  iframe
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
 @media (min-width: 800px)
   h2
     margin 0 0 1.5rem
