@@ -18,7 +18,7 @@ module.exports = {
         "nib": false,
         "autoprefixer-stylus": true
       },
-      "styleusOptions": {
+      "stylusOptions": {
         "compress": true,
         "include css": true
       }
@@ -31,7 +31,7 @@ module.exports = {
           "forms": true,
           "scroll": true
         }
-      }
+      },
   },
   "environments": {
     "development": {
@@ -66,7 +66,7 @@ module.exports = {
       },
       devGuides: function () {
           var devGuides = this.getCollection("html")
-              .findAllLive({relativeOutDirPath:/guides[\/\\]developer/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+              .findAllLive({relativeOutDirPath:/guides[\/\\]develop/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
           return devGuides;
       },
       configGuides: function () {

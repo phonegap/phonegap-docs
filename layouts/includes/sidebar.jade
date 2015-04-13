@@ -15,9 +15,13 @@ aside.sidebar
         ul
             each guide in getCollection("desktopGuides").toJSON()
                 li: a(href="/guides/desktop/#"+guide.basename)!=guide.title
-      nav.sidebar__list
+    nav.sidebar__list
           h2: a(href="/guides/configure/#") Configure
           ul
               each guide in getCollection("configGuides").toJSON()
                   li: a(href="/guides/configure/#"+guide.basename)!=guide.title
-
+    nav.sidebar__list
+        h2: a(href="/guides/develop/#") Develop
+        ul
+            each guide in getCollection("devGuides").toJSON()
+                li: a(href="/guides/develop/#"+guide.basename)!=guide.title
