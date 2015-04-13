@@ -37,5 +37,7 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
  <img src="/images/dev-app-code-update.jpg" width="250" height="523" />
  <img src="/images/phonegap-app-developer-workflow-v2.gif" width="500" height="397"/>
 
+6.  Continue making updates to your project to get familiar with this workflow. 
 
-6. Continue making updates to your project as desired and get familiar with how it all works. In the next step we'll cover configuring your app.
+At this point you should check out [this guide](../develop/01-hello-app-explained.html) explaining important details about the default Hello PhoneGap application and mobile application development tips with PhoneGap in general.
+
