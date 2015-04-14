@@ -29,8 +29,9 @@ project creation, but you can also hit the play button to start a project that's
 
 #### Video Example
 
-
-   <img src="/images/pg-dev-desktop.gif" width="600" height="340" />
+<div class="video-wrapper">
+  <iframe src="https://www.youtube.com/embed/pggw-9b8RVY" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ### Making Updates
 3. Now let's make an update to some code to see how easy it is to test a change. Using your favorite text editor, open up the **index.html** file located within the **www** folder of your project; for instance *~/appSample/www/index.html*
@@ -44,12 +45,7 @@ project creation, but you can also hit the play button to start a project that's
 
  <img src="/images/dev-app-code-update.jpg" width="250" height="523" />
 
+6.  Continue making updates to your project to get familiar with this workflow. 
 
-#### Video Example
+At this point you should check out [this guide](../develop/01-hello-app-explained.html) explaining important details about the default Hello PhoneGap application and mobile application development tips with PhoneGap in general.
 
-<img src="/images/phonegap-app-developer-workflow-v2.gif" width="500" height="397"/>
-
-Continue making updates to your project as desired and get familiar with how it all works. In the next step we'll cover configuring your app.
-
- <img src="/images/dev-app-code-update.jpg" width="250" height="523" />
-6. Continue making updates to your project as desired and get familiar with how it all works. In the next step we'll cover configuring your app.

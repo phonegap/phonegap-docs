@@ -1,0 +1,9 @@
+---
+title: "Developer Guides"
+layout: "subpage"
+//next: /guides/developer/index.html
+---
+each guide in getCollection("devGuides").toJSON()
+  article.page(id=guide.basename)
+    h2!= guide.title
+    section!= guide.contentRenderedWithoutLayouts
