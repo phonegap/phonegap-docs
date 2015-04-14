@@ -1,0 +1,9 @@
+---
+title: "Configuration Tutorials"
+layout: "tutorialspage"
+next: /tutorials/debug/index.html
+---
+each tutorial in getCollection("configTutes").toJSON()
+    article.page(id=tutorial.basename)
+        h2!= tutorial.title
+        section!= tutorial.contentRenderedWithoutLayouts

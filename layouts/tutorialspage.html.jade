@@ -1,0 +1,24 @@
+extends ./default.html.jade
+
+block append styles
+  link(href='/styles/github-highlight.css', rel='stylesheet')
+
+block prepend main
+  include ./includes/tutesidebar.jade
+
+block prepend content
+  h1!= document.title
+
+block append content
+  - if(document.next || document.prev)
+  .page__navigation
+    -if(document.prev)
+      - var prev = getCollection("html").findOne({url:document.prev}).toJSON();
+      a.page__navigation--next(href=prev.url)!= "Previous: "+prev.title
+    -else
+      .prev &nbsp;
+    -if(document.next)
+      - var next = getCollection("html").findOne({url:document.next}).toJSON();
+      a.page__navigation--next(href=next.url)!= "Next: "+next.title
+    -else
+      .prev &nbsp;

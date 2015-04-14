@@ -1,0 +1,9 @@
+---
+title: "Debugging Tutorials"
+layout: "tutorialspage"
+next: /tutorials/develop/index.html
+---
+each tute in getCollection("debugTutes").toJSON()
+  article.page(id=tute.basename)
+    h2!= tute.title
+    section!= tute.contentRenderedWithoutLayouts

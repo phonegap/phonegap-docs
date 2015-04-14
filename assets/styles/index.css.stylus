@@ -219,7 +219,8 @@ article.page
     margin-bottom .5rem
   ul
     list-style none
-    margin 0 0 3rem
+    // Reduced to help tutorials sidebar page
+    margin 0 0 1rem
     padding 0 0 0 1rem
     a
       color #003252

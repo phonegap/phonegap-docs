@@ -1,7 +1,12 @@
 ---
 title: "PhoneGap Developer App"
 ---
-The PhoneGap Developer App allows you to preview and test the PhoneGap mobile apps you build on multiple devices across different platforms without the need to install and set up each platform SDK.*  You simply install the app to the devices you want to preview your apps on by following these steps below:
+The PhoneGap Developer App is a wrapper application that runs on your devices and allows you to preview and test the PhoneGap mobile 
+apps you build on multiple devices across platforms without the need to install and set up each platform SDK.* It also automatically 
+builds in all of the PhoneGap core API plugins which allow access to the native device features without you having to add them to get 
+started, providing an instant sandbox for you to try PhoneGap mobile development. 
+
+Let's get started by installing PhoneGap Developer to a device to prepare for previewing what we'll create in the next step:
 
 1. Locate the free PhoneGap Developer mobile app from one of the following app marketplaces and install it to your mobile device:
 
@@ -13,6 +18,10 @@ The PhoneGap Developer App allows you to preview and test the PhoneGap mobile ap
 
 	![](/images/dev-app-main.jpg)
 
-3. Once installed, move on to the next section where you will install a desktop tool that can be used to create and serve an app for the PhoneGap Developer app to preview.
+3. Once you've verified your installation, move on to the next section where you will install a desktop tool to create and serve your 
+first mobile application for the PhoneGap Developer app to preview.
 
-* The platform SDK's refer to the software development kits Apple, Google and Microsoft provide for building applications for their platforms (iOS, Android and Windows respectively). The details for getting started with the different platform SDKs to build PhoneGap apps are also available [here](http://docs.phonegap.com/en/edge/guide_platforms_index.md.html#Platform%20Guides) if you would start with that path directly instead. 
+<div class="alert--warning">**Note:**The platform SDK's refer to the software development kits Apple, Google and Microsoft provide to build applications for their platforms (iOS, Android and Windows respectively). 
+ When you're ready to take your mobile application development further or decide you want to build for each platform locally yourself, you can find the specific instructions for each platform 
+ in the [getting started guides](http://docs.phonegap.com/en/edge/guide_platforms_index.md.html#Platform%20Guides).</div> 
+ 
