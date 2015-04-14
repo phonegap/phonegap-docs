@@ -1,0 +1,8 @@
+---
+title: "CLI Getting Started Guide"
+layout: "subpage"
+---
+each guide in getCollection("cliGuides").toJSON()
+  article.page(id=guide.basename)
+    h2!= guide.title
+    section!= guide.contentRenderedWithoutLayouts

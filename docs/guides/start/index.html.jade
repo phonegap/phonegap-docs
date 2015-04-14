@@ -1,0 +1,8 @@
+---
+title: "Getting Started"
+layout: "subpage"
+---
+each guide in getCollection("startGuides").toJSON()
+  article.page(id=guide.basename)
+    h2!= guide.title
+    section!= guide.contentRenderedWithoutLayouts
