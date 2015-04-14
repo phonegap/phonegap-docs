@@ -11,10 +11,16 @@
     "docpad-plugin-marked": "2.3.0",
     "docpad-plugin-stylus": "2.9.0"
   },
+  "devDependencies": {
+    "fs-extra": "0.18.0",
+    "jasmine-node": "1.14.5",
+    "npm": "2.7.6"
+  },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
     "build": "node_modules/docpad/bin/docpad generate",
     "build-prod": "NODE_ENV=production npm run build",
-    "start": "node_modules/docpad/bin/docpad run"
+    "start": "node_modules/docpad/bin/docpad run",
+    "test": "jasmine-node --color spec"
   }
 }
