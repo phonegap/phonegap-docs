@@ -2,6 +2,11 @@
 
 > Available for your viewing pleasure at [docs.phonegap.com](http://docs.phonegap.com/).
 
+## Under Development
+
+This repository is currently undergoing a major update. At the moment, it is
+not published live to docs.phonegap.com. In the future it will be!
+
 ## Installation
 
 ```bash
