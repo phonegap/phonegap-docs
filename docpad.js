@@ -31,7 +31,7 @@ module.exports = {
           "forms": true,
           "scroll": true
         }
-      },
+      }
   },
   "environments": {
     "development": {
@@ -64,15 +64,31 @@ module.exports = {
               .findAllLive({relativeOutDirPath:/guides[\/\\]desktop/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
           return desktopGuides;
       },
-      devGuides: function () {
-          var devGuides = this.getCollection("html")
-              .findAllLive({relativeOutDirPath:/guides[\/\\]develop/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-          return devGuides;
+
+      configTutes: function () {
+          var configTutes = this.getCollection("html")
+              .findAllLive({relativeOutDirPath:/tutorials[\/\\]configure/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+          return configTutes;
       },
-      configGuides: function () {
-          var configGuides = this.getCollection("html")
-              .findAllLive({relativeOutDirPath:/guides[\/\\]configure/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-          return configGuides;
+      devTutes: function () {
+          var devTutes = this.getCollection("html")
+              .findAllLive({relativeOutDirPath:/tutorials[\/\\]develop/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+          return devTutes;
+      },
+      debugTutes: function () {
+          var debugTutes = this.getCollection("html")
+              .findAllLive({relativeOutDirPath:/tutorials[\/\\]debug/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+          return debugTutes;
+      },
+      optTutes: function () {
+          var optTutes = this.getCollection("html")
+              .findAllLive({relativeOutDirPath:/tutorials[\/\\]optimize/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+          return optTutes;
+      },
+      distribTutes: function () {
+          var distribTutes = this.getCollection("html")
+              .findAllLive({relativeOutDirPath:/tutorials[\/\\]distribute/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
+          return distribTutes;
       },
     /**
      * Set default layout for all markdown documents.

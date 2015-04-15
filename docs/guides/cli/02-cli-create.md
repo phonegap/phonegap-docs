@@ -1,6 +1,5 @@
 ---
 title: "Create a Project"
-layout: "subpage"
 ---
 ### Default Hello World
 The CLI has many variations of commands available for creating a project, the simplest is:

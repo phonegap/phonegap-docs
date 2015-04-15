@@ -1,11 +1,14 @@
 ---
 title: "Hello PhoneGap Explained"
+layout: "tutorialspage"
+next: /tutorials/develop/01-tools-frameworks.html
 ---
 
-Now that we'e installed the tools necessary to create and preview the default PhoneGap application, it is worth stopping to take a moment to look through the default application and point out some important details. 
+Now that we've installed the tools necessary to create and preview the default PhoneGap application, it's worth stopping to take a moment to look through the default application and point out some important details. 
 
 ### viewport
-At the top of the index.html file you will see a `viewport` meta tag. This is used to indicate how much of the screen should be used by the application content and specify how it should scale. Scaling refers to the zoom level, where `initial-scale` indicates the desired zoom upon load, the `maximum-scale`, `minimum-scale` values control the least and most allowed and `user-scalable` properties control whether a user should be allowed to scale it at all. 
+Open the index.html file and notice the `viewport` meta element. This is used to indicate how much of the screen should be used by the application content and specify how it should scale. Scaling refers to the zoom level, where `initial-scale` indicates the desired zoom upon load, the `maximum-scale`, `minimum-scale` values control the least and most allowed and `user-scalable` properties control whether a user should be allowed to
+ control the scale or zoom factor (via pinch gesture for instance).  
 
 In the default application the settings are configured to load the content at 100% (`initial-scale=1`) allow no user scaling (`user-scalable=no`), and use the maximum width and height of the device.
 
@@ -38,3 +41,24 @@ The other important Cordova-specific thing to point out is the `deviceready` eve
 	document.addEventListener('deviceready', this.onDeviceReady, false);
 	
 In the index.js file you'll see that the `onDeviceReady` function then calls a `receivedEvent` function to visually display that the device is now ready. It does this by setting the CSS `display` attribute to `none` on the initial `<p>` element that was shown and instead shows the Device is Ready element in index.html by setting its `display` attribute to `block`.
+ 
+ 
+### more `<meta/>` tags 
+Some other meta tags included in the default project are explained here as well.
+   
+####format-detection
+	<meta name="format-detection" content="telephone=no" />
+
+This meta tag represents an Apple feature to recognize a telephone number and make an automatic link from it providing implicit click-to-call support. However, too many numbers tend to get selected with this enabled including some addresses, ISBN numbers and other numeric data, so the recommendation is to set it to no to disable it and use
+ the `tel:` scheme (per RFC 3966) in the URL instead. See [this link](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html) for more details on this and other meta tags supported by Apple. 
+  
+  
+####msapplication-tap-highlight
+
+	<meta name="msapplication-tap-highlight" content="no" />
+  
+This meta tag allows you to disable the grey tap highlight on Windows Phone 8 and greater. This property is similar to the `-webkit-tap-highlight-color` in iOS Safari 
+except an HTML meta element rather than a CSS property. 
+
+***TODO: Add illustrations for above***
+
