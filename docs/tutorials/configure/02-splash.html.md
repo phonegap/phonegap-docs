@@ -1,7 +1,7 @@
 ---
 title: "Adding Custom Splash Screens"
 layout: "tutorialspage"
-next: /tutorials/configure/03-config-elements.html
+next: /tutorials/configure/03-config-elements
 ---
 
 ## Splash Screen Configuration

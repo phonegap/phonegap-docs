@@ -1,7 +1,7 @@
 ---
 title: "Security: Whitelist Guide"
 layout: "tutorialspage"
-next: /tutorials/configure/01-icons.html
+next: /tutorials/configure/01-icons
 ---
 
 ## Configuring your Whitelist

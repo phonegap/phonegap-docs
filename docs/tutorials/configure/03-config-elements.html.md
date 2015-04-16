@@ -1,7 +1,7 @@
 ---
 title: "Config.xml Elements"
 layout: "tutorialspage"
-next: /tutorials/configure/04-using-hooks.html
+next: /tutorials/configure/04-using-hooks
 ---
 
 ## Config.xml File Properties

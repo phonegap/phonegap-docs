@@ -1,7 +1,7 @@
 ---
 title: "Hello PhoneGap Explained"
 layout: "tutorialspage"
-next: /tutorials/develop/01-tools-frameworks.html
+next: /tutorials/develop/01-tools-frameworks
 ---
 
 Now that we've installed the tools necessary to create and preview the default PhoneGap application, it's worth stopping to take a moment to look through the default application and point out some important details. 

@@ -1,7 +1,7 @@
 ---
 title: "Using Hooks"
 layout: "tutorialspage"
-next: /tutorials/configure/05-whitelist.html
+next: /tutorials/configure/05-whitelist
 ---
 
 Hooks are scripts (snippets of code) that the CLI executes at certain points in your application build process. They allow you to extend the 

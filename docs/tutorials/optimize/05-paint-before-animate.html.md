@@ -1,7 +1,7 @@
 ---
 title: "Performance Tip: Paint before Animate"
 layout: "tutorialspage"
-next: /tutorials/optimize/06-image-handling.html
+next: /tutorials/optimize/06-image-handling
 ---
 
 ####Problem: 

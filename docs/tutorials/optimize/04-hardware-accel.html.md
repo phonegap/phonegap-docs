@@ -1,7 +1,7 @@
 ---
 title: "Performance Tip: Hardware Acceleration"
 layout: "tutorialspage"
-next: /tutorials/optimize/05-paint-before-animate.html
+next: /tutorials/optimize/05-paint-before-animate
 ---
 
 Devices have a separate GPU that can be tapped by invoking a CSS transform on them. 

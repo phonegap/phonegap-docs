@@ -1,7 +1,7 @@
 ---
 title: "Adding Custom Icons"
 layout: "tutorialspage"
-next: /tutorials/configure/02-splash.html
+next: /tutorials/configure/02-splash
 ---
 
 ## Icon Configuraiton

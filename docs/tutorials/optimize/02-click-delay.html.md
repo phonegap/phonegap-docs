@@ -1,7 +1,7 @@
 ---
 title: "Performance Tip: Managing Click Delay"
 layout: "tutorialspage"
-next: /tutorials/optimize/03-min-reflows.html
+next: /tutorials/optimize/03-min-reflows
 ---
 
 In this section you'll learn about concepts and tips you should be aware of to increase the performance of your mobile hybrid application.

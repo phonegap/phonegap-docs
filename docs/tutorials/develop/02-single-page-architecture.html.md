@@ -1,7 +1,7 @@
 ---
 title: "Single Page Application"
 layout: "tutorialspage"
-next: /tutorials/develop/03-plugin-discovery.html
+next: /tutorials/develop/03-plugin-discovery
 ---
 
 ####Overview

@@ -1,7 +1,7 @@
 ---
 title: "Performance Tip: Image Handling"
 layout: "tutorialspage"
-next: /tutorials/optimize/01-genl-perf-tips.html
+next: /tutorials/optimize/01-genl-perf-tips
 ---
 
 ## Serve Images at Desired Resolution

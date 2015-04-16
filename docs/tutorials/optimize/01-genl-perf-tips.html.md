@@ -1,7 +1,7 @@
 ---
 title: "Performance Optimization Tips"
 layout: "tutorialspage"
-next: /tutorials/optimize/02-click-delay.html
+next: /tutorials/optimize/02-click-delay
 ---
 
 You can build your hybrid mobile applications to look and feel just like native apps by being aware of some important concepts and reap the benefits of both. 

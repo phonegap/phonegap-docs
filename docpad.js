@@ -13,6 +13,9 @@ module.exports = {
     "layouts"
   ],
   "plugins": {
+    "cleanurls": {
+      "static": true
+    },
     "stylus": {
       "stylusLibraries": {
         "nib": false,

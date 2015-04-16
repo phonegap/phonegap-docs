@@ -1,7 +1,7 @@
 ---
 title: "Package for Release / Codesign"
 layout: "tutorialspage"
-next: /tutorials/distribute/02-submit.html
+next: /tutorials/distribute/02-submit
 ---
 
 ## Creating Release Builds
