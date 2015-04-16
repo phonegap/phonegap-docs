@@ -39,5 +39,5 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
 
 6.  Continue making updates to your project to get familiar with this workflow. 
 
-At this point you should check out [this guide](../develop/01-hello-app-explained.html) explaining important details about the default Hello PhoneGap application and mobile application development tips with PhoneGap in general.
+At this point you should check out [this guide](../develop/01-hello-app-explained) explaining important details about the default Hello PhoneGap application and mobile application development tips with PhoneGap in general.
 
