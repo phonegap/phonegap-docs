@@ -4,24 +4,24 @@ aside.sidebar
       h2: a(href="/tutorials/configure/#") Configure
       ul
           each tutorial in getCollection("configTutes").toJSON()
-              li: a(href="/tutorials/configure/"+tutorial.basename+".html")!=tutorial.title
+              li: a(href="/tutorials/configure/"+tutorial.basename)!=tutorial.title
     nav.sidebar__list
         h2: a(href="/tutorials/develop/#") Develop
         ul
             each tutorial in getCollection("devTutes").toJSON()
-                li: a(href="/tutorials/develop/"+tutorial.basename+".html")!=tutorial.title
+                li: a(href="/tutorials/develop/"+tutorial.basename)!=tutorial.title
     nav.sidebar__list
       h2: a(href="/tutorials/debug/#") Debug
       ul
           each tutorial in getCollection("debugTutes").toJSON()
-              li: a(href="/tutorials/debug/"+tutorial.basename+".html")!=tutorial.title
+              li: a(href="/tutorials/debug/"+tutorial.basename)!=tutorial.title
     nav.sidebar__list
         h2: a(href="/tutorials/optimize/#") Optimize
         ul
             each tutorial in getCollection("optTutes").toJSON()
-                li: a(href="/tutorials/optimize/"+tutorial.basename+".html")!=tutorial.title
+                li: a(href="/tutorials/optimize/"+tutorial.basename)!=tutorial.title
     nav.sidebar__list
         h2: a(href="/tutorials/distribute/#") Distribute
         ul
             each tutorial in getCollection("distribTutes").toJSON()
-                li: a(href="/tutorials/distribute/"+tutorial.basename+".html")!=tutorial.title
+                li: a(href="/tutorials/distribute/"+tutorial.basename)!=tutorial.title
