@@ -1,28 +1,46 @@
 ---
-title: "Performance Tip: Managing Click Delay"
+title: "Managing Click Delay"
 layout: "tutorialspage"
 next: /tutorials/optimize/03-min-reflows
 ---
-
-In this section you'll learn about concepts and tips you should be aware of to increase the performance of your mobile hybrid application.
  
-<div class="alert--warning">**Note:** Some UI frameworks handle one or more of the following tips so you may not need to specifically implement them depending on your setup.</div>  
- 
-####Problem
+##Problem
 
-When beginning mobile development, you may notice that your app feels a bit sluggish when you tap on the screen. This is because the mobile web browser is trying to interpret touch commands to map them to old-style *click* events. The browser receives a *touchstart* event first, then it listens to see if the finger is going to move to scroll or release to become a tap before it fires the click event your app is listening for. These same browser engines also have a *double-tap-to-zoom* function so then there’s the issue of distinguishing between a *tap* and *double tap*. 
+When beginning mobile development, you may notice that your app feels sluggish when tapping UI elements on the screen. This is due to a 
+click delay caused by mobile web browsers supporting a *double tap to zoom* event. Once the first tap is interpreted, the browser 
+ waits 300ms for a 2nd tap to determine if the user is trying to zoom. This handling was implemented in the browsers long before
+ Responsive Design and pinch to zoom were a thing, and though it's being handled now in some browsers, it's not across the board and still
+ needs to be handled.
 
-The total lag introduced by the browser trying to interpret the *touch* event to *click* event mapping is about 300ms. 300ms may not sound like a lot but it’s more than enough to make an app feel noticeable lag. 
+## Solutions
 
-####Solution
+There are different solutions to consider for handling this click delay depending on how many platforms you need to support and what you're most 
+comfortable with. The options are:
 
-Use a **touch-to-click** polyfill like [FastClick](	</platform>). FastClick is a library you can implement to take the incoming touch events and maps them to the click event without the 300ms delay. An example of one way to use it is shown below, see their documentation for more details. 
+#### 1. FastClick Library (Cross Browser Support)
+[FastClick](http://ftlabs.github.io/fastclick/) is a **touch-to-click** polyfill library you can implement to take the incoming touch events and 
+map them to the click event without the 300ms delay, such as: 
+        
+        window.addEventListener('load', function() {
+                FastClick.attach(document.body);
+        }, false);
 
-	window.addEventListener('load', function() {
-    		FastClick.attach(document.body);
-	}, false);
+See their [documentation](http://ftlabs.github.io/fastclick/) for specific details on how to implement it. 
+
+#### 2. Viewport `meta` tag (Chrome and Firefox)
+The click delay can be disabled on Chrome and Firefox by using a viewport `meta` tag with the width set to the device width, such as:
+
+        <meta name="viewport" content="width=device-width">
+
+#### 3. `touch-action` CSS property (Internet Explorer, Chrome and Firefox)
+There's a [`touch-action` CSS property]((https://msdn.microsoft.com/en-us/library/windows/apps/hh767313.aspx)) supported by some of the 
+browsers that will eliminate the click delay when the value is set to `none` or `manipulation`. Be sure to check the browsers and versions that
+support it [here](http://caniuse.com/#feat=css-touch-action). 
 
 
-Use a UI framework with built-in handling for this issue. Some also fix this issue for you out of the box such as [Ionic](http://ionicframework.com) and [OnsenUI](http://onsenui.io).
-
-
+<div class="alert--info">**Tip:** Some UI frameworks have built-in handling for this and you may not need to worry about implementing a solution. Be sure to check 
+ the documentation if you're using one. Some which do have it built in at the moment are [Ionic Framework](http://ionicframework.com/docs/api/page/tap/), 
+ [Onsen UI](http://onsen.io/) and [Kendo UI Mobile](http://demos.telerik.com/kendo-ui/mobile-listview/index).</div>
+  
+  
+  **TODO: Add an example video of the issue**
