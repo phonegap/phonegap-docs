@@ -5,7 +5,7 @@
   "dependencies": {
     "autoprefixer-stylus": "^0.5.0",
     "docpad": "6.73.5",
-    "docpad-plugin-browsersync": "2.0.6",
+    "docpad-plugin-browsersync": "./vendor/docpad-plugin-browsersync",
     "docpad-plugin-cleanurls": "2.7.0",
     "docpad-plugin-highlightjs": "2.3.0",
     "docpad-plugin-jade": "2.9.0",
