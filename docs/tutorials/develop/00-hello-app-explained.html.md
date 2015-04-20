@@ -1,5 +1,5 @@
 ---
-title: "Hello PhoneGap Explained"
+title: "Hello PhoneGap - Explained"
 layout: "tutorialspage"
 next: /tutorials/develop/01-tools-frameworks
 ---
@@ -10,7 +10,7 @@ Now that we've installed the tools necessary to create and preview the default P
 Open the index.html file and notice the `viewport` meta element. This is used to indicate how much of the screen should be used by the application content and specify how it should scale. Scaling refers to the zoom level, where `initial-scale` indicates the desired zoom upon load, the `maximum-scale`, `minimum-scale` values control the least and most allowed and `user-scalable` properties control whether a user should be allowed to
  control the scale or zoom factor (via pinch gesture for instance).  
 
-In the default application the settings are configured to load the content at 100% (`initial-scale=1`) allow no user scaling (`user-scalable=no`), and use the maximum width and height of the device.
+In the default application the settings are configured to load the content at 100%, (`initial-scale=1`) allow no user scaling (`user-scalable=no`), and use the maximum width and height of the device.
 
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, 
 	width=device-width, height=device-height, target-densitydpi=device-dpi" />
@@ -35,6 +35,8 @@ specific to this default application and used to add simple logic around determi
         
 This calls the `initialize` function on the app variable defined in the index.js file under the **js** folder. Open that now before moving on. 
 
+
+
 ### deviceready
 The other important Cordova-specific thing to point out is the `deviceready` event. This event signals that Cordova's device APIs have loaded and are ready to access. If you don't rely on this event and only then start making calls to Cordova APIs then you could end up in a situation where the native code is not yet fully loaded and not available. Applications typically attach an event listener with `document.addEventListener` once the HTML document's DOM has loaded as shown below and in the default Hello application:
 
@@ -42,6 +44,7 @@ The other important Cordova-specific thing to point out is the `deviceready` eve
 	
 In the index.js file you'll see that the `onDeviceReady` function then calls a `receivedEvent` function to visually display that the device is now ready. It does this by setting the CSS `display` attribute to `none` on the initial `<p>` element that was shown and instead shows the Device is Ready element in index.html by setting its `display` attribute to `block`.
  
+![](images/desktop-app-run.jpg) 
  
 ### more `<meta/>` tags 
 Some other meta tags included in the default project are explained here as well.
