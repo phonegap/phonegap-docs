@@ -1,7 +1,7 @@
 ---
 title: "Image Handling"
 layout: "tutorialspage"
-next: /tutorials/optimize/01-genl-perf-tips.html
+next: /tutorials/optimize/01-genl-perf-tips
 ---
 
 Image optimization should be done for any mobile hybrid application you're creating, yet the details of how to do it are often unknown
