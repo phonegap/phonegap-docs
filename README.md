@@ -1,4 +1,4 @@
-# PhoneGap Documentation
+# PhoneGap Documentation [![Travis Badge](https://travis-ci.org/phonegap/phonegap-docs.svg)](https://travis-ci.org/phonegap/phonegap-docs/)
 
 > Available for your viewing pleasure at [docs.phonegap.com](http://docs.phonegap.com/).
 
