@@ -1,3 +1,8 @@
-# Distribute Tutorials
+---
+title: Distribute Guides
+url: guides/distribute
+layout: subpage
+order: 5
+---
 
-Coming soon...
+Distribute Guides content here

@@ -1,9 +1,0 @@
----
-title: "Development Tutorials"
-layout: "tutorialspage"
-next: /tutorials/distribute
----
-each tute in getCollection("devTutes").toJSON()
-  article.page(id=tute.basename)
-    h2!= tute.title
-    section!= tute.contentRenderedWithoutLayouts

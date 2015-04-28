@@ -1,8 +1,0 @@
----
-title: "Desktop App Getting Started Guide"
-layout: "subpage"
----
-each guide in getCollection("desktopGuides").toJSON()
-  article.page(id=guide.basename)
-    h2!= guide.title
-    section!= guide.contentRenderedWithoutLayouts
