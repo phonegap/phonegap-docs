@@ -211,7 +211,7 @@ article.page
   margin-right 50px
   position relative
 .sidebar__content
-  position fixed
+  //position fixed
   width 250px
   border-right 1px solid #CCC
 .sidebar__list
