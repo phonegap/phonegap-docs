@@ -1,9 +1,7 @@
+---
+title: Docs Home
+url: /guides
+---
 # PhoneGap Docs
 
-A search box may be here
-
-<a href="guides/start"><h3>Getting Started Guide</h3></a>
-<a href="tutorials/configure/01-icons"><h3>Tutorials</h3></a>
-<a href="refs/"><h3>References</h3></a>
-
-
+Homepage content here
