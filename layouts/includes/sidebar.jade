@@ -6,7 +6,7 @@ aside.sidebar
           if index > 0
             | </ul>
           | <h#{guide.relativePath.split('/').length}> 
-          a(href="/#{guide.url}")=guide.title + ' ' + guide.relativePath.split('/').length
+          a(href="/#{guide.url}")=guide.title
           | </h#{guide.relativePath.split('/').length}>
           | <ul>
         else
