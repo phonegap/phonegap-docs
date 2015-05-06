@@ -52,50 +52,13 @@ module.exports = {
     path.join(process.cwd(), "out")
   ],
   "collections": {
-      startGuides: function () {
-          var startGuides = this.getCollection("html")
-              .findAllLive({relativeOutDirPath:/guides[\/\\]start/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-          return startGuides;
-      },
-      cliGuides: function () {
-          var cliGuides = this.getCollection("html")
-              .findAllLive({relativeOutDirPath:/guides[\/\\]cli/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-          return cliGuides;
-      },
-      desktopGuides: function () {
-          var desktopGuides = this.getCollection("html")
-              .findAllLive({relativeOutDirPath:/guides[\/\\]desktop/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-          return desktopGuides;
-      },
-
-      configTutes: function () {
-          var configTutes = this.getCollection("html")
-              .findAllLive({relativeOutDirPath:/tutorials[\/\\]configure/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-          return configTutes;
-      },
-      devTutes: function () {
-          var devTutes = this.getCollection("html")
-              .findAllLive({relativeOutDirPath:/tutorials[\/\\]develop/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-          return devTutes;
-      },
-      debugTutes: function () {
-          var debugTutes = this.getCollection("html")
-              .findAllLive({relativeOutDirPath:/tutorials[\/\\]debug/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-          return debugTutes;
-      },
-      optTutes: function () {
-          var optTutes = this.getCollection("html")
-              .findAllLive({relativeOutDirPath:/tutorials[\/\\]optimize/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-          return optTutes;
-      },
-      distribTutes: function () {
-          var distribTutes = this.getCollection("html")
-              .findAllLive({relativeOutDirPath:/tutorials[\/\\]distribute/, relativeBase:/^((?!index).)*$/},[{ filename: 1 }])
-          return distribTutes;
-      },
     /**
      * Set default layout for all markdown documents.
      */
+    navItems: function() {
+      return this.getCollection('html')
+      .findAllLive({}, [{ fullPath:1 }]);
+    },
     docs: function() {
       return this.getCollection('documents')
         .findAllLive({ extension: 'md' }, [{ filename: -1 }])

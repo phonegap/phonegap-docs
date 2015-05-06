@@ -1,17 +1,14 @@
 aside.sidebar
   .sidebar__content
     nav.sidebar__list
-      h2: a(href="/guides/start/#") Getting Started
-      ul
-          each guide in getCollection("startGuides").toJSON()
-              li: a(href="/guides/start/#"+guide.basename)!=guide.title
-    nav.sidebar__list
-        h2: a(href="/guides/cli/#") PhoneGap CLI
-        ul
-            each guide in getCollection("cliGuides").toJSON()
-                li: a(href="/guides/cli/#"+guide.basename)!=guide.title
-    nav.sidebar__list
-        h2: a(href="/guides/desktop/#") PhoneGap Desktop
-        ul
-            each guide in getCollection("desktopGuides").toJSON()
-                li: a(href="/guides/desktop/#"+guide.basename)!=guide.title
+      each guide, index in getCollection("navItems").toJSON()
+        if guide.filename == '0-index.html.md'
+          if index > 0
+            | </ul>
+          | <h#{guide.relativePath.split('/').length}> 
+          a(href="/#{guide.url}")=guide.title
+          | </h#{guide.relativePath.split('/').length}>
+          | <ul>
+        else
+          li: a(href="/#{guide.url}")=guide.title
+      | </ul>
