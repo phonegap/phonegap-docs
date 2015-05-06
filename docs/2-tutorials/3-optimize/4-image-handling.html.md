@@ -1,6 +1,6 @@
 ---
 title: Image Handling
-url: guides/optimize/image-handling
+url: optimize/image-handling
 layout: subpage
 ---
 

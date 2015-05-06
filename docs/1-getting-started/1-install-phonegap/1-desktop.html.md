@@ -1,6 +1,6 @@
 ---
 title: Step 1: Install PhoneGap Desktop
-url: guides/getting-started/1-install-phonegap/desktop
+url: getting-started/1-install-phonegap/desktop
 layout: subpage
 tab: Desktop
 ---
@@ -55,4 +55,3 @@ Start by downloading the installer for your operating system:
 7. That's it! Click on the PhoneGap Desktop application icon  ![](/images/desktop-app-icon.jpg) and get started!
 
    ![](/images/desktop-app-run.jpg)
-

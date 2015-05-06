@@ -1,6 +1,6 @@
 ---
 title: Android Packaging and Provisioning 
-url: guides/distribute/packaging-provisioning/android
+url: distribute/packaging-provisioning/android
 layout: subpage
 tab: Android
 ---

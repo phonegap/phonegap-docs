@@ -1,6 +1,6 @@
 ---
 title: Pluggable Webviews
-url: guides/develop/pluggable-webviews
+url: develop/pluggable-webviews
 layout: subpage
 ---
 

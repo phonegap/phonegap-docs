@@ -1,6 +1,6 @@
 ---
 title: Push Notifications
-url: guides/develop/push-notifications
+url: develop/push-notifications
 layout: subpage
 ---
 

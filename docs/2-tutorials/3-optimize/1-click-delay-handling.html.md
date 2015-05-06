@@ -1,6 +1,6 @@
 ---
 title: Click Delay Handling
-url: guides/optimize/click-delay-handling
+url: optimize/click-delay-handling
 layout: subpage
 ---
 

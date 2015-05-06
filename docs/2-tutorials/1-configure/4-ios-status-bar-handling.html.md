@@ -1,6 +1,6 @@
 ---
 title: iOS Status Bar Handling
-url: guides/configure/ios-status-bar-handling
+url: configure/ios-status-bar-handling
 layout: subpage
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Distribute Guides
-url: guides/distribute
+url: distribute
 layout: subpage
 ---
 

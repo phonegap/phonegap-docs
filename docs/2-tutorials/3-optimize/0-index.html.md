@@ -1,6 +1,6 @@
 ---
 title: Optimize Guide
-url: guides/optimize
+url: optimize
 layout: subpage
 ---
 

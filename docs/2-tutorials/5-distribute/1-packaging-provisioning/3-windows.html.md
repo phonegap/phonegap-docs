@@ -1,6 +1,6 @@
 ---
 title: Windows Packaging and Provisioning
-url: guides/distribute/packaging-provisioning/windows
+url: distribute/packaging-provisioning/windows
 layout: subpage
 tab: Windows
 ---

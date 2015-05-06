@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-url: guides/getting-started
+url: getting-started
 layout: subpage
 ---
 

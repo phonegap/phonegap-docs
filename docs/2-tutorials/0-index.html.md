@@ -1,6 +1,6 @@
 ---
 title: Tutorials
-url: guides/tutorials
+url: tutorials
 layout: subpage
 ---
 

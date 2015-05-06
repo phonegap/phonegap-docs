@@ -1,6 +1,6 @@
 ---
 title: Splash Screens
-url: guides/configure/splash-screens
+url: configure/splash-screens
 layout: subpage
 ---
 

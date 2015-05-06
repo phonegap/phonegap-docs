@@ -1,6 +1,6 @@
 ---
 title: In A Browser
-url: guides/debug/in-a-browser
+url: debug/in-a-browser
 layout: subpage
 ---
 

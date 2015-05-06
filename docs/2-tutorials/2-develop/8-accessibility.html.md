@@ -1,6 +1,6 @@
 ---
 title: Accessibility
-url: guides/develop/accessibility
+url: develop/accessibility
 layout: subpage
 ---
 

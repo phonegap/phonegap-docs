@@ -1,6 +1,6 @@
 ---
 title: Icons
-url: guides/configure/icons
+url: configure/icons
 layout: subpage
 ---
 

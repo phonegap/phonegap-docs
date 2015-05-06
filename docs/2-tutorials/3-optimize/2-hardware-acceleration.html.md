@@ -1,6 +1,6 @@
 ---
 title: Hardware Acceleration
-url: guides/optimize/hardware-acceleration
+url: optimize/hardware-acceleration
 layout: subpage
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Debug Guides
-url: guides/debug
+url: debug
 layout: subpage
 ---
 

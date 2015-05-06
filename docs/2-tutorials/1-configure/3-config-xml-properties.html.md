@@ -1,6 +1,6 @@
 ---
 title: Config.xml Properties
-url: guides/configure/config-xml-properties
+url: configure/config-xml-properties
 layout: subpage
 ---
 

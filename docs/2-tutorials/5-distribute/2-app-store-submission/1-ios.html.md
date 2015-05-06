@@ -1,6 +1,6 @@
 ---
 title: Apple App Store Submission
-url: guides/distribute/app-store-submission/ios
+url: distribute/app-store-submission/ios
 layout: subpage
 tab: iOS
 ---

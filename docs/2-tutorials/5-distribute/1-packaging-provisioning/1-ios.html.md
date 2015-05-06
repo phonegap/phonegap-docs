@@ -1,6 +1,6 @@
 ---
 title: iOS Packaging and Provisioning
-url: guides/distribute/packaging-provisioning/ios
+url: distribute/packaging-provisioning/ios
 layout: subpage
 tab: iOS
 ---

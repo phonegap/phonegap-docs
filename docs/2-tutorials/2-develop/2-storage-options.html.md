@@ -1,6 +1,6 @@
 ---
 title: Storage Options
-url: guides/develop/storage-options
+url: develop/storage-options
 layout: subpage
 ---
 

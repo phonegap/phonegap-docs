@@ -1,6 +1,6 @@
 ---
 title: Minimize Reflows
-url: guides/optimize/minimize-reflows
+url: optimize/minimize-reflows
 layout: subpage
 ---
 

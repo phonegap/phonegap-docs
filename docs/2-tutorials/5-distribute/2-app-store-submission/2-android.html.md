@@ -1,6 +1,6 @@
 ---
 title: Google Play Store Submission
-url: guides/distribute/app-store-submission/android
+url: distribute/app-store-submission/android
 layout: subpage
 tab: Android
 ---

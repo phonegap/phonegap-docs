@@ -1,6 +1,6 @@
 ---
 title: Configure Guides
-url: guides/configure
+url: configure
 layout: subpage
 ---
 

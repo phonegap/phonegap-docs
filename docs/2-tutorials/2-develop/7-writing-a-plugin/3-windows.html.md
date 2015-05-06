@@ -1,6 +1,6 @@
 ---
 title: Writing a Windows Phone Plugin
-url: guides/develop/writing-a-plugin/windows
+url: develop/writing-a-plugin/windows
 layout: subpage
 tab: Windows
 ---

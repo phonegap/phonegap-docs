@@ -1,6 +1,6 @@
 ---
 title: Remote on Device
-url: guides/debug/remote-on-device
+url: debug/remote-on-device
 layout: subpage
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Using Hooks
-url: guides/configure/using-hooks
+url: configure/using-hooks
 layout: subpage
 order: 5
 ---

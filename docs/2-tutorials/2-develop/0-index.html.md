@@ -1,6 +1,6 @@
 ---
 title: Develop Guides
-url: guides/develop
+url: develop
 layout: subpage
 ---
 

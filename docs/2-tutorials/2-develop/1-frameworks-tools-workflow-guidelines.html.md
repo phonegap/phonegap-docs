@@ -1,6 +1,6 @@
 ---
 title: Frameworks/Tools/Workflow Guidelines
-url: guides/develop/frameworks-tools-workflow-guidelines
+url: develop/frameworks-tools-workflow-guidelines
 layout: subpage
 ---
 

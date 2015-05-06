@@ -1,6 +1,6 @@
 ---
 title: Hello World Explained
-url: guides/develop/hello-world-explained
+url: develop/hello-world-explained
 layout: subpage
 ---
 
