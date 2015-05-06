@@ -34,16 +34,7 @@ which will be used for all platforms.
 For each platform you can also define a pixel-perfect icons set to fit 
 different screen resolutions.
 
-Amazon Fire OS
-
-         <platform name="amazon-fireos">
-                  <icon src="res/android/ldpi.png" density="ldpi" />
-                  <icon src="res/android/mdpi.png" density="mdpi" />
-                  <icon src="res/android/hdpi.png" density="hdpi" />
-                  <icon src="res/android/xhdpi.png" density="xhdpi" />
-         </platform>
-
-Android
+#### Android
 
          <platform name="android">
                   <icon src="res/android/ldpi.png" density="ldpi" />
@@ -52,23 +43,9 @@ Android
                   <icon src="res/android/xhdpi.png" density="xhdpi" />
          </platform>
 
-Blackberry10
+<div class="alert-info">**TIP:** See this [Android Developer Iconography Guide](http://developer.android.com/design/style/iconography.html) for more details.</div>
 
-         <platform name="blackberry10">
-                  <icon src="res/bb10/icon-86.png" />
-                  <icon src="res/bb10/icon-150.png" />
-         </platform>
-
-See BlackBerry's documentation for targeting multiple sizes and locales.
-[http://developer.blackberry.com/html5/documentation/icon_element.html]
-
-Firefox OS
-
-         <platform name="firefoxos">
-                  <icon src="res/ff/logo.png" width="60" height="60" />
-         </platform>
-
-iOS
+#### iOS
 
          <platform name="ios">
                   <!-- iOS 8.0+ -->
@@ -99,13 +76,7 @@ iOS
                   <icon src="res/ios/icon-50@2x.png" width="100" height="100" />
          </platform>
 
-Tizen
-
-         <platform name="tizen">
-                  <icon src="res/tizen/icon-128.png" width="128" height="128" />
-         </platform>
-        
-Windows Phone8
+#### Windows Phone8
 
          <platform name="wp8">
                   <icon src="res/wp/ApplicationIcon.png" width="99" height="99" />
@@ -113,7 +84,7 @@ Windows Phone8
                   <icon src="res/wp/Background.png" width="159" height="159" />
          </platform>
 
-Windows8
+#### Windows8
 
          <platform name="windows8">
                   <icon src="res/windows8/logo.png" width="150" height="150" />

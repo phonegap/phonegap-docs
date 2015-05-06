@@ -12,9 +12,10 @@ In the top-level `config.xml` file (not the one in `platforms`), add configurati
 
 # Example configuration 
 
-Please notice that the value of the "src" attribute is relative to the project directory and not to the www directory.
-You can name the source image whatever you like. The internal name in the app are determined by Cordova.
+Please notice that the value of the "src" attribute is relative to the project directory and not to the *www* directory.
+You can name the source image whatever you like. The internal names in the app are determined by Cordova.
 
+### Android
     <platform name="android">
         <!-- you can use any density that exists in the Android project -->
         <splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/>
@@ -27,7 +28,13 @@ You can name the source image whatever you like. The internal name in the app ar
         <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
         <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
     </platform>
+    
+ Android also has a property that can be added to the config.xml to delay the splash screen (value in milliseconds):
+    <preference name="SplashScreenDelay" value="10000"/>
+    
+<div class="alert--info">**TIP** See the [Android Developer documentation](http://developer.android.com/guide/practices/screens_support.html) for details about the screen sizes and densities.</div>
 
+### iOS
     <platform name="ios">
         <!-- images are determined by width and height. The following are supported -->
         <splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
@@ -41,6 +48,8 @@ You can name the source image whatever you like. The internal name in the app ar
         <splash src="res/screen/ios/Default-736h.png" width="1242" height="2208"/>
         <splash src="res/screen/ios/Default-Landscape-736h.png" width="2208" height="1242"/>
     </platform>
+    
+<div class="alert--info">**TIP** See the [iOS Developer documentation] https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LaunchImages.html</div>
 
     <platform name="wp8">
         <!-- images are determined by width and height. The following are supported -->
@@ -52,28 +61,10 @@ You can name the source image whatever you like. The internal name in the app ar
         <splash src="res/screen/windows8/splashscreen.png" width="620" height="300"/>
     </platform>
 
-    <platform name="blackberry10">
-        <!-- Add a rim:splash element for each resolution and locale you wish -->
-        <!-- http://developer.blackberry.com/html5/documentation/rim_splash_element.html -->
-        <rim:splash src="res/screen/windows8/splashscreen.png"/>
-    </platform>
+   
+### Splash Screen Plugin
+  There's also a [splash screen plugin](https://github.com/apache/cordova-plugin-splashscreen) available to allow for further 
+  control over how the splash screen is displayed.  
 
-
-    <preference name="SplashScreenDelay" value="10000" />
-
-# Supported platforms 
-
-As of now (Cordova 3.5.0 July 2014) the following platforms support splash screens.
-
-    android
-    ios
-    wp8
-    windows8
-    blackberry10
-
-# Splashscreen Plugin
-
-  Apache Cordova also offers special splash screen plugin which could be used to programmatically display and hide a splash screen during application launch
-  https://github.com/apache/cordova-plugin-splashscreen
-
+  
 
