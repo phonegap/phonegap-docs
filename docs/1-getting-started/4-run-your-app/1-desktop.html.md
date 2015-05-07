@@ -20,12 +20,14 @@ project creation, but you can also hit the play button to start a project that's
 2. Go to your mobile device where the PhoneGap Developer App is running, enter the server address on the main screen and tap **Connect**.
    <div class="alert--info"> **TIP:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
 
-  ![](/images/dev-app-center-add.jpg)
+ 
+  <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
+  
 
   A connection is created between your mobile device and the computer where the app is running. Once connected, you should see the app running as shown in the second screenshot below:
 
-  ![](/images/dev-app-success.jpg)
-  ![](/images/dev-app-preview.jpg)
+  <img class="mobile-image" src="/images/dev-app-success.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-preview.jpg"/
 
   <div class="alert--info"> **TIP:** Gestures can be used while you're previewing your app.
 	  - 3 finger returns to the main screen - 4 finger tap causes a refresh.
@@ -47,8 +49,8 @@ project creation, but you can also hit the play button to start a project that's
     ![](/images/editor.jpg)
 
 5. Now check your mobile device where your PhoneGap Developer app is running and you will see your app reload and automatically display the new text!
-
-    ![](/images/dev-app-code-update.jpg)
+    
+    <img class="mobile-image" src="dev-app-code-update.jpg"/>
 
 6.  Continue making updates to your project to get familiar with this workflow. 
 

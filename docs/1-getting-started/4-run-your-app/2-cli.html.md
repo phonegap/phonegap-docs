@@ -25,10 +25,10 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
 2. Now go to your mobile device where the PhoneGap Developer App is running, enter the server address on the main screen and tap **Connect**.
    <div class="alert--info"> **TIP:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
 
-    ![](/images/dev-app-enter-add.jpg)
-    ![](/images/dev-app-success.jpg)
-    ![](/images/dev-app-preview.jpg)    
-
+     <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
+     <img class="mobile-image" src="/images/dev-app-success.jpg"/>
+     <img class="mobile-image" src="/images/dev-app-preview.jpg"/>
+    
    <div class="alert--info"> **TIP:** Gestures can be used while you're previewing your app. To return to the main screen use a 3-finger tap, to force a refresh of your app use a 4-finger tap.</div>
 
 ### Making Updates
