@@ -3,6 +3,7 @@ title: Google Play Store Submission
 url: distribute/app-store-submission/android
 layout: subpage
 tab: Android
+write: false
 ---
 
 ### Google Play Publisher Account Details

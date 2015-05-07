@@ -2,6 +2,7 @@
 title: Icons
 url: configure/icons
 layout: subpage
+write: false
 ---
 
 ## Icon Configuration

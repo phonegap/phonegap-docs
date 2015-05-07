@@ -2,6 +2,7 @@
 title: Remote on Device
 url: debug/remote-on-device
 layout: subpage
+write: false
 ---
 
 Remote debugging is the process of debugging an application running on a device from your computer, either over a network or via USB.

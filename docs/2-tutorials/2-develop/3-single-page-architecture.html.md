@@ -2,6 +2,7 @@
 title: Single Page Architecture
 url: develop/single-page-architecture
 layout: subpage
+write: false
 ---
 
 ####Overview

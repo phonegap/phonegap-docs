@@ -2,6 +2,7 @@
 title: Config.xml Properties
 url: configure/config-xml-properties
 layout: subpage
+write: false
 ---
 
 ## Config.xml File Properties

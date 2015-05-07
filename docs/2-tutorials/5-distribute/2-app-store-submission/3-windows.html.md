@@ -3,6 +3,7 @@ title: Windows Phone Store Submission
 url: distribute/app-store-submission/windows
 layout: subpage
 tab: Windows
+write: false
 ---
 
 ### Windows Phone Dev Center Program Details

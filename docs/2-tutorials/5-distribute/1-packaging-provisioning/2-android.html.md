@@ -3,6 +3,7 @@ title: Android Packaging and Provisioning
 url: distribute/packaging-provisioning/android
 layout: subpage
 tab: Android
+write: false
 ---
 
 

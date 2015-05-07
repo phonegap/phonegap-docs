@@ -2,6 +2,7 @@
 title: Using Hooks
 url: configure/using-hooks
 layout: subpage
+write: false
 order: 5
 ---
 

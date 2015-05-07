@@ -2,6 +2,7 @@
 title: Hardware Acceleration
 url: optimize/hardware-acceleration
 layout: subpage
+write: false
 ---
 
 Hardware acceleration refers to offloading some processing from the CPU to the GPU (Graphics Processing Unit) to make your application run faster. The

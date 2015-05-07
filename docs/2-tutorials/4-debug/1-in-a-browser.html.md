@@ -2,6 +2,7 @@
 title: In A Browser
 url: debug/in-a-browser
 layout: subpage
+write: false
 ---
 
 In our Getting Started documentation we show how you can quickly test out your applications on an iOS, Android or Windows device using the PhoneGap Developer App. This is a great way to try out your application and see how it feels in terms of handling taps, gestures, scrolling and lays out in the UI on your device. Currently however you can not use that method for actually debugging your application with breakpoints and more advanced features. For that you'll want to start using other tools available. We recommend you start locally from your computer and move on to remote debugging on the device once you start debugging mobile-specific features.

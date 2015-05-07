@@ -2,6 +2,7 @@
 title: Click Delay Handling
 url: optimize/click-delay-handling
 layout: subpage
+write: false
 ---
 
 ##Problem

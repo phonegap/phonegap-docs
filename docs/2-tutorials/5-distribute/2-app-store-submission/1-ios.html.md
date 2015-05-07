@@ -3,6 +3,7 @@ title: Apple App Store Submission
 url: distribute/app-store-submission/ios
 layout: subpage
 tab: iOS
+write: false
 ---
 
 ### Apple Developer Account Details

@@ -2,6 +2,7 @@
 title: Minimize Reflows
 url: optimize/minimize-reflows
 layout: subpage
+write: false
 ---
 
 ### Problem:

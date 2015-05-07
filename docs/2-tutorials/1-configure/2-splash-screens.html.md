@@ -2,6 +2,7 @@
 title: Splash Screens
 url: configure/splash-screens
 layout: subpage
+write: false
 ---
 
 ## Splash Screen Configuration
