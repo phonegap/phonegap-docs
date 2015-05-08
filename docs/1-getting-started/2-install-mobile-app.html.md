@@ -3,7 +3,7 @@ title: Step 2: Install Mobile App
 url: getting-started/2-install-mobile-app
 layout: subpage
 tab: CLI
-next: docs/1-getting-started/3-create-your-app/desktop.html.md
+next: 1-getting-started/3-create-your-app/1-desktop.html.md
 ---
 
 The PhoneGap Developer App is a wrapper application that runs on your devices and allows you to preview and test the PhoneGap mobile

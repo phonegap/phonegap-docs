@@ -3,7 +3,7 @@ title: Step 3: Create Your App
 url: getting-started/3-create-your-app/desktop
 layout: subpage
 tab: Desktop
-next: docs/1-getting-started/4-run-your-app/desktop.html.md
+next: 1-getting-started/4-run-your-app/1-desktop.html.md
 ---
 
 Now let's get our feet wet and create our first PhoneGap project. This project will become a mobile app with the ability to run on multiple devices and across operating systems in just a few simple steps.

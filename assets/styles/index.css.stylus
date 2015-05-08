@@ -3,6 +3,7 @@
 $header-bg = #27A1C5
 $footer-bg = #003252
 $content-maxwidth = 584px
+$light-weight = 300
 
 // Mobile first and default mediaquery
 //Base Styles
@@ -12,6 +13,7 @@ body
   font-family 'adobe-clean', Helvetica, Arial, sans-serif
   color rgba(0, 0, 0, 0.8)
   line-height 1.75rem
+  -webkit-font-smoothing antialiased
 .bounds
   max-width 1230px
   position relative
@@ -27,7 +29,7 @@ h2
   text-transform uppercase
   margin 0 0 1rem
   font-size 1.125rem
-  font-weight 300
+  font-weight $light-weight
 //Header
 .site-header
   color white
@@ -50,7 +52,7 @@ h2
     font-size 1.8rem
     margin 0
     padding 0
-    font-weight 300
+    font-weight $light-weight
   img
     vertical-align middle
     margin-right .8rem
@@ -211,10 +213,28 @@ article.page
   margin-bottom 4rem
   h2
     font-size 1.5rem
-.page__navigation
-  display flex
-  justify-content space-between
-
+.next-block
+  display block
+  border 2px solid #C4C4C4
+  height 180px
+  font-size 2rem
+  font-weight $light-weight
+  border-radius 5px
+  position relative
+  &:before
+    content "next step..."
+    color white
+    background #C4C4C4
+    height 100%
+    border-radius-left 5px
+    display inline-block
+    box-sizing border-box
+    font-size 4rem
+    width 220px
+    line-height 3rem
+    padding 30px 20px 20px 42px
+    margin-right 30px
+    vertical-align center
 //Sidebar
 .sidebar
   display none

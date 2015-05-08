@@ -3,7 +3,7 @@ title: Step 1: Install PhoneGap Desktop
 url: getting-started/1-install-phonegap/desktop
 layout: subpage
 tab: Desktop
-next: docs/1-getting-started/2-install-mobile-app.html.md
+next: 1-getting-started/2-install-mobile-app.html.md
 ---
 
 Start by downloading the installer for your operating system:

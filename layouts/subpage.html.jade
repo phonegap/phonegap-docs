@@ -2,5 +2,5 @@ extends ./default.html.jade
 
 block append content
   -if(document.next)
-    - var next = getCollection("html").findOne({url:document.next}).toJSON();
-    a.page__navigation--next(href=next.url)!= "Next Step: "+next.title
+    - var next = getCollection("html").findOne({relativePath:document.next}).toJSON()
+      a.next-block(href="/#{next.url}")!=next.title

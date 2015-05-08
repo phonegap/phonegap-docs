@@ -3,7 +3,7 @@ title: Step 4: Run Your App
 url: getting-started/4-run-your-app/cli
 layout: subpage
 tab: CLI
-next: docs/1-getting-started/5-perfect-your-app.html.md
+next: 1-getting-started/5-perfect-your-app.html.md
 ---
 
 

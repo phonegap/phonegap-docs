@@ -3,7 +3,7 @@ title: Step 1: Install PhoneGap CLI
 url: getting-started/1-install-phonegap/cli
 layout: subpage
 tab: CLI
-next: docs/1-getting-started/2-install-mobile-app.html.md
+next: 1-getting-started/2-install-mobile-app.html.md
 ---
 
 ###Requirements

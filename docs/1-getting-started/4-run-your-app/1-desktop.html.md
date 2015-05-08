@@ -3,7 +3,7 @@ title: Step 4: Run Your App
 url: getting-started/4-run-your-app/desktop
 layout: subpage
 tab: Desktop
-next: docs/1-getting-started/5-perfect-your-app.html.md
+next: 1-getting-started/5-perfect-your-app.html.md
 ---
 
 You can use the *PhoneGap Developer App* paired with the *PhoneGap Desktop App* to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
@@ -51,7 +51,7 @@ project creation, but you can also hit the play button to start a project that's
 
 5. Now check your mobile device where your PhoneGap Developer app is running and you will see your app reload and automatically display the new text!
 
-    <img class="mobile-image" src="dev-app-code-update.jpg"/>
+    <img class="mobile-image" src="/images/dev-app-code-update.jpg"/>
 
 6.  Continue making updates to your project to get familiar with this workflow.
 
