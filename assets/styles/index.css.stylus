@@ -185,6 +185,12 @@ main
   img
     max-width 100%
     height auto
+  .mobile-image
+    max-width 50%
+    position relative
+    margin-left auto
+    margin-right auto
+    display block
 // Content Elements
 $alert
   max-width $content-maxwidth
