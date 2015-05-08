@@ -1,15 +1,6 @@
 extends ./default.html.jade
 
 block append content
-  - if(document.next || document.prev)
-  .page__navigation
-    -if(document.prev)
-      - var prev = getCollection("html").findOne({url:document.prev}).toJSON();
-      a.page__navigation--next(href=prev.url)!= "Previous Step: "+prev.title
-    -else
-      .prev &nbsp;
-    -if(document.next)
-      - var next = getCollection("html").findOne({url:document.next}).toJSON();
-      a.page__navigation--next(href=next.url)!= "Next Step: "+next.title
-    -else
-      .prev &nbsp;
+  -if(document.next)
+    - var next = getCollection("html").findOne({url:document.next}).toJSON();
+    a.page__navigation--next(href=next.url)!= "Next Step: "+next.title

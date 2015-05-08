@@ -3,12 +3,13 @@ title: Step 2: Install Mobile App
 url: getting-started/2-install-mobile-app
 layout: subpage
 tab: CLI
+next: docs/1-getting-started/3-create-your-app/desktop.html.md
 ---
 
-The PhoneGap Developer App is a wrapper application that runs on your devices and allows you to preview and test the PhoneGap mobile 
-apps you build on multiple devices across platforms without the need to install and set up each platform SDK.* It also automatically 
-builds in all of the PhoneGap core API plugins which allow access to the native device features without you having to add them to get 
-started, providing an instant sandbox for you to try PhoneGap mobile development. 
+The PhoneGap Developer App is a wrapper application that runs on your devices and allows you to preview and test the PhoneGap mobile
+apps you build on multiple devices across platforms without the need to install and set up each platform SDK.* It also automatically
+builds in all of the PhoneGap core API plugins which allow access to the native device features without you having to add them to get
+started, providing an instant sandbox for you to try PhoneGap mobile development.
 
 Let's get started by installing PhoneGap Developer to a device to prepare for previewing what we'll create in the next step:
 
@@ -22,10 +23,9 @@ Let's get started by installing PhoneGap Developer to a device to prepare for pr
 
 	![](/images/dev-app-main.jpg)
 
-3. Once you've verified your installation, move on to the next section where you will install a desktop tool to create and serve your 
+3. Once you've verified your installation, move on to the next section where you will install a desktop tool to create and serve your
 first mobile application for the PhoneGap Developer app to preview.
 
-<div class="alert--warning">**Note:**The platform SDK's refer to the software development kits Apple, Google and Microsoft provide to build applications for their platforms (iOS, Android and Windows respectively). 
- When you're ready to take your mobile application development further or decide you want to build for each platform locally yourself, you can find the specific instructions for each platform 
- in the [getting started guides](http://docs.phonegap.com/en/edge/guide_platforms_index.md.html#Platform%20Guides).</div> 
- 
+<div class="alert--warning">**Note:**The platform SDK's refer to the software development kits Apple, Google and Microsoft provide to build applications for their platforms (iOS, Android and Windows respectively).
+ When you're ready to take your mobile application development further or decide you want to build for each platform locally yourself, you can find the specific instructions for each platform
+ in the [getting started guides](http://docs.phonegap.com/en/edge/guide_platforms_index.md.html#Platform%20Guides).</div>

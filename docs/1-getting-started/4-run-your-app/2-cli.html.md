@@ -3,6 +3,7 @@ title: Step 4: Run Your App
 url: getting-started/4-run-your-app/cli
 layout: subpage
 tab: CLI
+next: docs/1-getting-started/5-perfect-your-app.html.md
 ---
 
 
@@ -12,7 +13,7 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
 
 ### Preview on a Device
 <div class="alert--warning">**NOTE:** Ensure you're on the same network on both your computer and the device before beginning.</div>
- 
+
 1. `cd` into the project directory created in the previous step and type `$ phonegap serve`. You will receive the server address the app is being hosted on in the output received in the console (`192.168.1.11:3000` in this example):
 
 		$ phonegap serve
@@ -28,7 +29,7 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
      <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
      <img class="mobile-image" src="/images/dev-app-success.jpg"/>
      <img class="mobile-image" src="/images/dev-app-preview.jpg"/>
-    
+
    <div class="alert--info"> **TIP:** Gestures can be used while you're previewing your app. To return to the main screen use a 3-finger tap, to force a refresh of your app use a 4-finger tap.</div>
 
 ### Making Updates
@@ -41,8 +42,7 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
 5. Now check your mobile device where your PhoneGap Developer app is running and you will see your app reload and automatically display the new text!
   ![](/images/dev-app-code-update.jpg)
   ![](/images/phonegap-app-developer-workflow-v2.gif)
- 
-6.  Continue making updates to your project to get familiar with this workflow. 
+
+6.  Continue making updates to your project to get familiar with this workflow.
 
 At this point you should check out [this guide](../develop/01-hello-app-explained) explaining important details about the default Hello PhoneGap application and mobile application development tips with PhoneGap in general.
-

@@ -3,6 +3,7 @@ title: Step 1: Install PhoneGap CLI
 url: getting-started/1-install-phonegap/cli
 layout: subpage
 tab: CLI
+next: docs/1-getting-started/2-install-mobile-app.html.md
 ---
 
 ###Requirements
@@ -38,4 +39,3 @@ tab: CLI
   ```
 
 <div class="alert--info">**TIP:** You can access the PhoneGap CLI usage text at any time by adding the keyword `help`, `-h` or `--h` with any phonegap command i.e.: `phonegap create help`, `phonegap serve -h`.</div>
-

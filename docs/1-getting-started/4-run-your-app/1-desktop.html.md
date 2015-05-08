@@ -3,6 +3,7 @@ title: Step 4: Run Your App
 url: getting-started/4-run-your-app/desktop
 layout: subpage
 tab: Desktop
+next: docs/1-getting-started/5-perfect-your-app.html.md
 ---
 
 You can use the *PhoneGap Developer App* paired with the *PhoneGap Desktop App* to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
@@ -20,9 +21,9 @@ project creation, but you can also hit the play button to start a project that's
 2. Go to your mobile device where the PhoneGap Developer App is running, enter the server address on the main screen and tap **Connect**.
    <div class="alert--info"> **TIP:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
 
- 
+
   <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
-  
+
 
   A connection is created between your mobile device and the computer where the app is running. Once connected, you should see the app running as shown in the second screenshot below:
 
@@ -49,11 +50,9 @@ project creation, but you can also hit the play button to start a project that's
     ![](/images/editor.jpg)
 
 5. Now check your mobile device where your PhoneGap Developer app is running and you will see your app reload and automatically display the new text!
-    
+
     <img class="mobile-image" src="dev-app-code-update.jpg"/>
 
-6.  Continue making updates to your project to get familiar with this workflow. 
+6.  Continue making updates to your project to get familiar with this workflow.
 
 At this point you should check out [this guide](../develop/01-hello-app-explained) explaining important details about the default Hello PhoneGap application and mobile application development tips with PhoneGap in general.
-
-
