@@ -237,6 +237,8 @@ article.page
     height 100%
 code, kbd, pre, samp
   font-family "source-code-pro", monospace
+  max-width $content-maxwidth
+  overflow scroll
 @media (min-width: 800px)
   h2
     margin 0 0 1.5rem
