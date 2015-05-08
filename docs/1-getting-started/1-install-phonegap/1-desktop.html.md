@@ -14,13 +14,13 @@ Start by downloading the installer for your operating system:
 
 2. Double click the downloaded file to run the installer.
 3. Accept the license agreement that is shown as below:<br>
-    ![](/images/license-agreement.jpg)
+    ![](/images/license-agreement.png)
 
 4. Move the app to its final location
 
 	On a Mac, drag and drop the PhoneGap app to the Applications folder as shown below:
 
-     ![](/images/drag-to-apps-folder.jpg)
+     ![](/images/drag-to-apps-folder.png)
 
 	On Windows, drag the PhoneGap folder to your desired location.
 
