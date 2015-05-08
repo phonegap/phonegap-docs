@@ -186,7 +186,7 @@ main
     max-width 100%
     height auto
 // Content Elements
-.alert--warning, .alert--info
+$alert
   max-width $content-maxwidth
   box-sizing border-box
   padding 15px 20px 10px
@@ -194,8 +194,13 @@ main
   margin 10px 0
 .alert--warning
   background rgba(242,180,43,0.2)
+  @extends $alert
 .alert--info
   background rgba(21,72,142,0.1)
+  @extends $alert
+.alert--tip
+  background rgba(21, 203, 51, 0.16)
+  @extends $alert
 article.page
   margin-bottom 4rem
   h2
