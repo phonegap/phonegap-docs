@@ -20,8 +20,10 @@ html(lang='en')
     main
       .bounds
         block main
+          include ./includes/sidebar.jade
           .content
             block content
+              h1!= document.title
               != content
     block site-footer
       include ./includes/site-footer.jade

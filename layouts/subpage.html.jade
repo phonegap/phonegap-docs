@@ -1,14 +1,5 @@
 extends ./default.html.jade
 
-block append styles
-  link(href='/styles/zenburn-highlight.css', rel='stylesheet')
-
-block prepend main
-  include ./includes/sidebar.jade
-
-block prepend content
-  h1!= document.title
-
 block append content
   - if(document.next || document.prev)
   .page__navigation
