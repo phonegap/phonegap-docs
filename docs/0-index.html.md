@@ -1,6 +1,6 @@
 ---
 title: Docs Home
-url: /guides
+url: /
 ---
 # PhoneGap Docs
 
