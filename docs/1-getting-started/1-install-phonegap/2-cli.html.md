@@ -26,6 +26,7 @@ next: 1-getting-started/2-install-mobile-app.html.md
 
   <div class="alert--warning">**OS X Users:** You may need to prefix this command with `sudo` to allow installation to restricted directories and type the following instead: `$ sudo npm install -g phonegap`<br><br>
   **Windows 8 Users:** If you just installed Node.js, be sure to start the *Node.js Command Prompt* application specifically.</div>
+
 2. Test to ensure the PhoneGap CLI is properly installed by typing `phonegap` on the command line to ensure you see the following output `help` text display:
   ``` bash
   $ phonegap
