@@ -2,7 +2,11 @@
 title: Step 3: Create Your App
 url: getting-started/3-create-your-app/cli
 layout: subpage
-tab: CLI
+tabs:
+  - label: Desktop
+    url: getting-started/3-create-your-app/desktop
+  - label: CLI
+    url: getting-started/3-create-your-app/cli
 next: 1-getting-started/4-run-your-app/2-cli.html.md
 ---
 
@@ -13,8 +17,8 @@ The CLI has many variations of commands available for creating a project, the si
 
 	$ phonegap create myApp
 
-This will create a folder named **myApp** in the current path location with a default project name of *Hello World* and id of *com.phonegap.helloworld*. However, you can also 
-specify your own name and identifier to ensure the project is unique but still have the advantage of using the default Hello World code by specifying 
+This will create a folder named **myApp** in the current path location with a default project name of *Hello World* and id of *com.phonegap.helloworld*. However, you can also
+specify your own name and identifier to ensure the project is unique but still have the advantage of using the default Hello World code by specifying
  those attributes at create time.
 
 ### Create with an ID and Name

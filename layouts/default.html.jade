@@ -24,6 +24,8 @@ html(lang='en')
           include ./includes/sidebar.jade
           .content
             block content
+              -if(document.tabs)
+                include ./includes/tabs.jade
               h1!= document.title
               != content
     block site-footer

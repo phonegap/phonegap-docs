@@ -1,0 +1,6 @@
+nav.tabs: ul
+  each tab, index in document.tabs
+    -if(tab.url == document.url)
+      li.tabs__item--current!=tab.label
+    -else
+      li.tabs__item: a(href="/#{tab.url}")!=tab.label    

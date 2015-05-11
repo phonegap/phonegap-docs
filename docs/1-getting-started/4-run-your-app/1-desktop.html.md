@@ -2,7 +2,11 @@
 title: Step 4: Run Your App
 url: getting-started/4-run-your-app/desktop
 layout: subpage
-tab: Desktop
+tabs:
+  - label: Desktop
+    url: getting-started/4-run-your-app/desktop
+  - label: CLI
+    url: getting-started/4-run-your-app/cli
 next: 1-getting-started/5-going-further.html.md
 ---
 
@@ -25,15 +29,15 @@ project creation, but you can also hit the play button to start a project that's
   <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
 
 
-  You should see the connection occur followed by a success message as shown below. If you receive an error of any kind, ensure 
-   once again that you are connected to the same network on both your  and computer. You could also check the 
+  You should see the connection occur followed by a success message as shown below. If you receive an error of any kind, ensure
+   once again that you are connected to the same network on both your  and computer. You could also check the
    [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap)
-   list for further help. 
+   list for further help.
 
   <img class="mobile-image" src="/images/dev-app-success.jpg"/>
-  
+
   Once the PhoneGap Developer app loads connects and loads your mobile application, it should be displayed for preview as shown below:  
-   
+
   <img class="mobile-image" src="/images/dev-app-preview.jpg"/>
 
   <div class="alert--tip"> **TIP:** Gestures can be used while you're previewing your app. A 3 finger tap will return you to the main screen, a 4 finger tap will cause a refresh.

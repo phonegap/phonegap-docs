@@ -1,8 +1,12 @@
 ---
-title: Step 1: Install PhoneGap Desktop
+title: "Step 1: Install PhoneGap Desktop"
 url: getting-started/1-install-phonegap/desktop
 layout: subpage
-tab: Desktop
+tabs:
+  - label: Desktop
+    url: getting-started/1-install-phonegap/desktop
+  - label: CLI
+    url: getting-started/1-install-phonegap/cli
 next: 1-getting-started/2-install-mobile-app.html.md
 ---
 
@@ -21,7 +25,7 @@ Start by downloading the installer for your operating system:
 
 	On a Mac, drag and drop the PhoneGap app to the Applications folder as shown below:
 
-     ![](/images/drag-to-apps-folder.png)	
+     ![](/images/drag-to-apps-folder.png)
 
 5. That's it! Click on the app icon ![](/images/desktop-app-icon.jpg) and get started!
 

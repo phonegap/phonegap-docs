@@ -2,7 +2,11 @@
 title: Step 3: Create Your App
 url: getting-started/3-create-your-app/desktop
 layout: subpage
-tab: Desktop
+tabs:
+  - label: Desktop
+    url: getting-started/3-create-your-app/desktop
+  - label: CLI
+    url: getting-started/3-create-your-app/cli
 next: 1-getting-started/4-run-your-app/1-desktop.html.md
 ---
 

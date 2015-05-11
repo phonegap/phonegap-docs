@@ -1,8 +1,12 @@
 ---
-title: Step 1: Install the PhoneGap CLI
+title: "Step 1: Install the PhoneGap CLI"
 url: getting-started/1-install-phonegap/cli
 layout: subpage
-tab: CLI
+tabs:
+  - label: Desktop
+    url: getting-started/1-install-phonegap/desktop
+  - label: CLI
+    url: getting-started/1-install-phonegap/cli
 next: 1-getting-started/2-install-mobile-app.html.md
 ---
 
