@@ -1,14 +1,25 @@
 aside.sidebar
   .sidebar__content
     nav.sidebar__list
-      each guide, index in getCollection("navItems").toJSON()
-        if guide.filename == '0-index.html.md'
-          if index > 0
-            | </ul>
-          | <h#{guide.relativePath.split('/').length}> 
-          a(href="/#{guide.url}")=guide.title
-          | </h#{guide.relativePath.split('/').length}>
-          | <ul>
-        else
-          li: a(href="/#{guide.url}")=guide.title
-      | </ul>
+      h2 Getting Started
+      ul
+        li: a(href="/getting-started/1-install-phonegap/desktop") Step 1: Install PhoneGap
+        li: a(href="/getting-started/2-install-mobile-app") Step 2: Install Mobile App
+        li: a(href="/getting-started/3-create-your-app/desktop") Step 3: Create Your App
+        li: a(href="/getting-started/4-run-your-app/desktop") Step 4: Run Your App
+        li: a(href="/getting-started/5-going-further") Step 5: Going Further
+      h2 Tutorials
+      h3 Developer Guides
+      ul
+        li: a(href="/develop/hello-world-explained") Hello World Explained
+      //- each guide, index in getCollection("navItems").toJSON()
+      //-   if guide.filename == '0-index.html.md'
+      //-     if index > 0
+      //-       | </ul>
+      //-     | <h#{guide.relativePath.split('/').length}> 
+      //-     a(href="/#{guide.url}")=guide.title
+      //-     | </h#{guide.relativePath.split('/').length}>
+      //-     | <ul>
+      //-   else
+      //-     li: a(href="/#{guide.url}")=guide.title
+      //- | </ul>

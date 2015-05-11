@@ -202,11 +202,7 @@ main
     margin 0
     padding 0
   .tabs__item
-    position relative
-    top 1px
-    margin 0 65px 0 0
     display inline-block
-    padding-bottom 12px
     &--current
       position relative
       top 1px
@@ -214,6 +210,16 @@ main
       display inline-block
       padding-bottom 12px
       border-bottom 2px solid #232323
+    a
+      position relative
+      top 1px
+      margin 0 65px 0 0
+      padding-bottom 10px
+      color #999
+      &:hover
+        text-decoration none
+        border-bottom 2px solid #999
+
 // Content Elements
 $alert
   max-width $content-maxwidth
@@ -265,16 +271,32 @@ article.page
 .sidebar__content
   width 250px
   border-right 1px solid #CCC
+  padding-right: 10px;
+  box-sizing: border-box;
 .sidebar__list
+  h1
+    font-size 1.125rem
+    font-weight bold
+    border-bottom 1px solid #999
   h2
+    font-size 1.125rem
     margin-bottom .5rem
+    border-bottom 1px solid #E7E7E7
+    font-weight regular
+    a
+      color #1692b2
+  h3
+    font-size 0.875rem
+    text-transform uppercase
+    a
+      color #003351
   ul
     list-style none
     // Reduced to help tutorials sidebar page
     margin 0 0 1rem
     padding 0 0 0 1rem
     a
-      color #003252
+      color #1692b2
 .video-wrapper
   position relative
   padding-bottom 56.25%
