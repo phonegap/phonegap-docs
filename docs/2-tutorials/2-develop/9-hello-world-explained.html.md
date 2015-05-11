@@ -16,33 +16,54 @@ In the default application the settings are configured to load the content at 10
 	width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
 ### cordova.js
-In the index.html file you'll a script tag pointing to a cordova.js file:
+In the **index.html** file (located within your project root's ***www*** folder) you'll a script tag pointing to a `cordova.js` file like below:
 
   `<script type="text/javascript" src="cordova.js"></script>`
 
 
-The `cordova.js` file is the PhoneGap (based on the open-source Cordova project, hence the name) library and what's used to specifically access the native device hardware (camera, contacts, GPS etc) from JavaScript in our PhoneGap apps. Including this file reference ensures the Cordova APIs to access those features are all available.
+The **cordova.js** file is the PhoneGap (based on the open-source Cordova project, hence the name) library and what's used to specifically access the native device hardware (camera, contacts, GPS etc) from JavaScript in our PhoneGap apps. Including this file reference ensures the Cordova APIs to access those features are all available.
 
-You may notice that there isn't a cordova.js file however, anywhere in the folder. That's because the right version for the platform is injected for you at runtime by the Developer app or the PhoneGap CLI if you're building your projects using the CLI. You simply need to ensure the reference is available.
+You may notice that there isn't a **cordova.js** file however located anywhere in the folder. That's because the right version for the platform is injected for you at runtime by the Developer app or the PhoneGap CLI if you're building your projects using the CLI. You simply need to ensure the reference is available.
 
 ### index.js
-The index.js file another JavaScript file referred to in another script tag in the index.html. This file is not required in your applications, but is
+The **index.js** file is another JavaScript file referred to in another script tag in the index.html. This file is not required in your applications, but is
 specific to this default application and used to add simple logic around determining when the Cordova library has loaded and is ready to be used. More information on that follows in the next section. Notice that the index.html contains a line to call an `initialize` function via an `app` variable right before the closing HTML body tag:
 
     <script type="text/javascript">
         app.initialize();
     </script>
 
-This calls the `initialize` function on the app variable defined in the index.js file under the **js** folder. Open that now before moving on.
+This calls the `initialize` function on the app variable defined in the index.js file under the **www/js** folder. Open that now before moving on.
 
 ### deviceready
-The other important Cordova-specific thing to point out is the `deviceready` event. This event signals that Cordova's device APIs have loaded and are ready to access. If you don't rely on this event and only then start making calls to Cordova APIs then you could end up in a situation where the native code is not yet fully loaded and not available. Applications typically attach an event listener with `document.addEventListener` once the HTML document's DOM has loaded as shown below and in the default Hello application:
+The other important Cordova-specific feature to point out is the `deviceready` event. This event signals that Cordova's device APIs have loaded and are ready to access. If you don't rely on this event and only then start making calls to Cordova APIs then you could end up in a situation where the native code is not yet fully loaded and not available. Applications typically attach an event listener with `document.addEventListener` once the HTML document's DOM has loaded as shown below and in the default Hello application:
 
     document.addEventListener('deviceready', this.onDeviceReady, false);
 
-In the index.js file you'll see that the `onDeviceReady` function then calls a `receivedEvent` function to visually display that the device is now ready. It does this by setting the CSS `display` attribute to `none` on the initial `<p>` element that was shown and instead shows the Device is Ready element in index.html by setting its `display` attribute to `block`.
+In the index.js file you'll see that the `onDeviceReady` function then calls a `receivedEvent` function to visually display that the device is now ready. It does this by setting the CSS `display` attribute to `none` on the initial `<p>` element that was shown and instead shows the *Device is Ready* element in index.html by setting its `display` attribute to `block`.
+Below is the relevant code snippet from the index.js followed by the index.html block. 
+  
+#### index.js    
+    onDeviceReady: function() {
+        app.receivedEvent('deviceready');
+    },
+      // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+        
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+        
+        console.log('Received Event: ' + id);
+    }
 
-  ![](/images/desktop-app-run.jpg)
+#### index.html
+    <div id="deviceready" class="blink">
+        <p class="event listening">Connecting to Device</p>
+        <p class="event received">Device is Ready</p>
+    </div>
 
 ### more `<meta/>` tags
 Some other meta tags included in the default project are explained here as well.
@@ -60,5 +81,5 @@ This meta tag represents an Apple feature to recognize a telephone number and ma
 This meta tag allows you to disable the grey tap highlight on Windows Phone 8 and greater. This property is similar to the `-webkit-tap-highlight-color` in iOS Safari
     except an HTML meta element rather than a CSS property.
     
-***TODO: Add illustrations for above***
+
 

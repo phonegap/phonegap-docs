@@ -21,13 +21,11 @@ Start by downloading the installer for your operating system:
 
 	On a Mac, drag and drop the PhoneGap app to the Applications folder as shown below:
 
-     ![](/images/drag-to-apps-folder.png)
-
-	On Windows, drag the PhoneGap folder to your desired location.
+     ![](/images/drag-to-apps-folder.png)	
 
 5. That's it! Click on the app icon ![](/images/desktop-app-icon.jpg) and get started!
 
-  ![](/images/desktop-app-run.jpg)
+  ![](/images/desktop-app-run.png)
 
 #### Windows Installation
 1. Double click the downloaded file to run the installer to run the PhoneGap Desktop Setup Wizard.  
@@ -55,4 +53,4 @@ Start by downloading the installer for your operating system:
 
 7. That's it! Click on the PhoneGap Desktop application icon  ![](/images/desktop-app-icon.jpg) and get started!
 
-   ![](/images/desktop-app-run.jpg)
+   ![](/images/desktop-app-run.png)
