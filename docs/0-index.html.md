@@ -1,6 +1,7 @@
 ---
 title: PhoneGap Documentation
 url: /
+layout: subpage
 next: 1-getting-started/1-install-phonegap/1-desktop.html.md
 ---
 <div style="display:flex;align-items:stretch;">
