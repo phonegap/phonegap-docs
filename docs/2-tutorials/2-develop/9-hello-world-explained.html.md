@@ -7,7 +7,7 @@ layout: subpage
 Now that we've installed the tools necessary to create and preview the default PhoneGap application, it's worth stopping to take a moment to look through the default application and point out some important details.
 
 ### viewport
-Open the index.html file and notice the `viewport` meta element. This is used to indicate how much of the screen should be used by the application content and specify how it should scale. Scaling refers to the zoom level, where `initial-scale` indicates the desired zoom upon load, the `maximum-scale`, `minimum-scale` values control the least and most allowed and `user-scalable` properties control whether a user should be allowed to
+Open the **index.html** file (located within your project root's ***www*** folder) and notice the `viewport` meta element. This is used to indicate how much of the screen should be used by the application content and specify how it should scale. Scaling refers to the zoom level, where `initial-scale` indicates the desired zoom upon load, the `maximum-scale`, `minimum-scale` values control the least and most allowed and `user-scalable` properties control whether a user should be allowed to
 control the scale or zoom factor (via pinch gesture for instance).
 
 In the default application the settings are configured to load the content at 100%, (`initial-scale=1`) allow no user scaling (`user-scalable=no`), and use the maximum width and height of the device.
@@ -16,12 +16,12 @@ In the default application the settings are configured to load the content at 10
 	width=device-width, height=device-height, target-densitydpi=device-dpi" />
 
 ### cordova.js
-In the **index.html** file (located within your project root's ***www*** folder) you'll a script tag pointing to a `cordova.js` file like below:
+In the **index.html** file you'll notice a script tag pointing to a `cordova.js` file like below:
 
-  `<script type="text/javascript" src="cordova.js"></script>`
+    <script type="text/javascript" src="cordova.js"></script>
 
 
-The **cordova.js** file is the PhoneGap (based on the open-source Cordova project, hence the name) library and what's used to specifically access the native device hardware (camera, contacts, GPS etc) from JavaScript in our PhoneGap apps. Including this file reference ensures the Cordova APIs to access those features are all available.
+The **cordova.js** file is the PhoneGap (powered by the open-source Apache Cordova project, hence the name) library and what's used to specifically access the native device hardware (camera, contacts, GPS etc) from JavaScript in our PhoneGap apps. Including this file reference ensures the Cordova APIs to access those features are all available.
 
 You may notice that there isn't a **cordova.js** file however located anywhere in the folder. That's because the right version for the platform is injected for you at runtime by the Developer app or the PhoneGap CLI if you're building your projects using the CLI. You simply need to ensure the reference is available.
 

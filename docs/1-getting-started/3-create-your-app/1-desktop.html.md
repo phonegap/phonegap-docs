@@ -24,4 +24,4 @@ The PhoneGap desktop tools include a default Hello World project for beginners t
 
    ![](/images/desktop-app-create.png)
 
-   <div class="alert--info">**NOTE:** The server address shown for your project at the bottom in the green bar will be used in the next step so make note of it or keep it open. </div>
+   <div class="alert--tip">**TIP:** The server address shown for your project at the bottom in the green bar will be used in the next step so make note of it or keep it open. </div>

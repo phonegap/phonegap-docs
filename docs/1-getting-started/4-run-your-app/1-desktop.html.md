@@ -3,10 +3,10 @@ title: Step 4: Run Your App
 url: getting-started/4-run-your-app/desktop
 layout: subpage
 tab: Desktop
-next: 1-getting-started/5-perfect-your-app.html.md
+next: 1-getting-started/5-going-further.html.md
 ---
 
-You can use the *PhoneGap Developer App* paired with the *PhoneGap Desktop App* to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
+You can use the **PhoneGap Developer App** paired with the **PhoneGap Desktop App** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
 
 The PhoneGap Desktop App starts a small web server to host your project and returns the server address for you to use from the PhoneGap Developer App running on your mobile device. It's started automatically upon
 project creation, but you can also hit the play button to start a project that's currently inactive.
@@ -25,10 +25,16 @@ project creation, but you can also hit the play button to start a project that's
   <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
 
 
-  A connection is created between your mobile device and the computer where the app is running. Once connected, you should see the app running as shown in the second screenshot below:
+  You should see the connection occur followed by a success message as shown below. If you receive an error of any kind, ensure 
+   once again that you are connected to the same network on both your  and computer. You could also check the 
+   [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap)
+   list for further help. 
 
   <img class="mobile-image" src="/images/dev-app-success.jpg"/>
-  <img class="mobile-image" src="/images/dev-app-preview.jpg"/
+  
+  Once the PhoneGap Developer app loads connects and loads your mobile application, it should be displayed for preview as shown below:  
+   
+  <img class="mobile-image" src="/images/dev-app-preview.jpg"/>
 
   <div class="alert--tip"> **TIP:** Gestures can be used while you're previewing your app. A 3 finger tap will return you to the main screen, a 4 finger tap will cause a refresh.
   </div>
