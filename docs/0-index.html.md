@@ -14,7 +14,7 @@ that is both in-depth and easy to follow.
 </p>
 
 <p style="color:#111111;font-size:1.1rem;line-height:1.7rem;">
-We didn't want to keep you waiting for all the good stuff, so we’ve published
+We didn't want to keep you waiting for all the good stuff, so we've published
 some key resources to get you going. If you are new to PhoneGap, we recommend
 beginning by working through our <a href="/getting-started">Getting Started Guide</a>.
 We've also put together a helpful <a href="/tutorials">tutorial</a> on extending our
