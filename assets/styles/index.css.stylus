@@ -40,7 +40,8 @@ h2
   margin-bottom 30px
   .bounds
     display flex
-    justify-content space-between
+    // justify-content space-between
+    justify-content flex-start
     align-items center
     height 100%
   a
@@ -328,8 +329,9 @@ code, kbd, pre, samp
         padding 10px
         margin 0 4px
   .site-header__logo
+    margin-right: 40px;
     h1
-      font-size 2.25rem
+      font-size 1.6875rem
     img
       margin-right 1rem
       width 2.5rem
