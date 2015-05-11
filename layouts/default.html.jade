@@ -5,9 +5,12 @@ doctype html
 html(lang='en')
 
   head
-
+    title=document.title +" | PhoneGap Docs"
     block meta
       meta(name="viewport", content="initial-scale=1.0")
+      script(src="//use.typekit.net/exp7awb.js")
+      script(type='text/javascript').
+        try{Typekit.load();}catch(e){}
     block styles
       != styles.toHTML()
       link(href='/styles/zenburn-highlight.css', rel='stylesheet')
@@ -33,6 +36,3 @@ html(lang='en')
 
     block scripts
       != scripts.toHTML()
-      script(src="//use.typekit.net/exp7awb.js")
-      script(type='text/javascript').
-        try{Typekit.load();}catch(e){}

@@ -271,8 +271,8 @@ article.page
 .sidebar__content
   width 250px
   border-right 1px solid #CCC
-  padding-right: 10px;
-  box-sizing: border-box;
+  padding-right 10px
+  box-sizing border-box
 .sidebar__list
   h1
     font-size 1.125rem
