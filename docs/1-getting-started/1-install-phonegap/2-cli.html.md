@@ -10,7 +10,11 @@ tabs:
 next: 1-getting-started/2-install-mobile-app.html.md
 ---
 
+The PhoneGap CLI provides a command line interface for creating PhoneGap applications. It's an alternative to using the
+[PhoneGap Desktop App](/getting-started/1-install-phonegap/desktop) and built for those who prefer working at the command line. 
+
 ###Requirements
+There are a few simple requirements you'll need prior to installing the PhoneGap CLI:
 
 - [node.js](http://nodejs.org/) - a JavaScript runtime to build your JavaScript code
 - [ios-sim](https://github.com/phonegap/ios-sim#installation) - an iOS simulator for iOS development (Mac only)

@@ -10,28 +10,31 @@ tabs:
 next: 1-getting-started/2-install-mobile-app.html.md
 ---
 
-Start by downloading the installer for your operating system:
+The PhoneGap Desktop application provides a drag and drop interface for creating PhoneGap applications. It's an alternative to using the
+[PhoneGap CLI](/getting-started/1-install-phonegap/cli) and built for those who prefer a more visual user interface 
+over a command line interface approach.  
 
-- [Mac OSX](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.3/PhoneGapDesktop.dmg)
-- [Windows](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.3/PhoneGapSetup.exe)
+Get stated using [PhoneGap Desktop](https://github.com/phonegap/phonegap-app-desktop/releases) by downloading the latest installer 
+for your operating system and continuing with the instructions below:
 
-#### Mac OS X Instructions
+- [Mac OSX](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.5/PhoneGapDesktop.dmg)
+- [Windows](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.5/PhoneGapSetup.exe)
 
-2. Double click the downloaded file to run the installer.
-3. Accept the license agreement that is shown as below:<br>
+### Mac OS X Instructions
+
+2. Double-click the downloaded file to run the installer.
+3. Accept the license agreement:<br>
     ![](/images/license-agreement.png)
 
-4. Move the app to its final location
+4. Drag and drop the app into the **Applications** folder:
+	
+   ![](/images/drag-to-apps-folder.png)
 
-	On a Mac, drag and drop the PhoneGap app to the Applications folder as shown below:
-
-     ![](/images/drag-to-apps-folder.png)
-
-5. That's it! Click on the app icon ![](/images/desktop-app-icon.jpg) and get started!
+5. That's it! Now simply click on the app icon ![](/images/desktop-app-icon.jpg) to get started building mobile apps!
 
   ![](/images/desktop-app-run.png)
 
-#### Windows Installation
+### Windows Installation
 1. Double click the downloaded file to run the installer to run the PhoneGap Desktop Setup Wizard.  
 ![](/images/win-desktop1.png)
 
@@ -55,6 +58,6 @@ Start by downloading the installer for your operating system:
 
    ![](/images/win-desktop6.jpg)
 
-7. That's it! Click on the PhoneGap Desktop application icon  ![](/images/desktop-app-icon.jpg) and get started!
+7. That's it! Now simply click on the PhoneGap Desktop application icon ![](/images/desktop-app-icon.jpg) to get started building mobile apps!
 
    ![](/images/desktop-app-run.png)
