@@ -15,7 +15,7 @@ body
   line-height 1.75rem
   -webkit-font-smoothing antialiased
 .bounds
-  max-width 1230px
+  max-width 966px
   position relative
   margin 0 auto
   padding 0 20px
@@ -182,6 +182,7 @@ main
     width 100%
     margin-bottom 30px
 .content
+  margin 0 auto
   background #FFF
   h1,h2,h3,h4,h5,p,li
     max-width $content-maxwidth
@@ -315,7 +316,7 @@ code, kbd, pre, samp
   max-width $content-maxwidth
   overflow scroll
   border-radius 4px
-@media (min-width: 800px)
+@media (min-width: 820px)
   h2
     margin 0 0 1.5rem
   .site-header
@@ -352,3 +353,5 @@ code, kbd, pre, samp
   main
     .bounds
       margin-bottom 50px
+  .content
+    margin 0
