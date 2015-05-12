@@ -262,7 +262,7 @@ article.page
     line-height 3rem
     padding 30px 20px 20px 42px
     margin-right 30px
-    vertical-align center
+    vertical-align middle
 //Sidebar
 .sidebar
   display none
