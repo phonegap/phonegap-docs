@@ -4,10 +4,7 @@ url: /
 layout: subpage
 next: 1-getting-started/1-install-phonegap/1-desktop.html.md
 ---
-<div style="display:flex;align-items:stretch;">
-
-<div style="width:450px">
-
+<img style="float:right; width: 50%; max-width: 250px;" src="/images/excited_robit.svg">
 <p style="color:#888888;font-size:1.35rem;line-height:1.9rem;">
 Welcome to the new version of the PhoneGap Docs! We're working on putting together
 a comprehensive resource that covers all things PhoneGap and mobile app development,
@@ -22,11 +19,4 @@ We've also put together a helpful <a href="/tutorials">tutorial</a> on extending
 "Hello World" example app. These should get you going, and keep your eyes for new material
 to come soon.
 </p>
-
-</div>
-
-<div style="width:250px;padding-left:25px;">
-<img src="/images/excited_robit.svg">
-</div>
-
-</div>
+<div style="clear: both; margin-bottom: 20px;"></div>
