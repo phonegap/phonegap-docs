@@ -15,9 +15,10 @@ The PhoneGap Desktop application provides a drag and drop interface for creating
 over a command line interface approach.  
 
 <div class="alert--info">**NOTE:** The getting started steps vary based on the initial PhoneGap tool you install here in step 1. For the rest of the steps be sure to choose either the **Desktop** or **CLI** tab at the top accordingly.</div>
-Select your operating system to continue:
 
-<a href="#mac"><h3>Mac OS X</h3></a>   <a href="#win"><h3>Windows</h3></a> 
+Select your operating system to continue:  
+- <a href="#mac">__Mac OS X__</a> 
+- <a href="#win">__Windows__</a>  
 
 <a name="mac"></a>
 ### Mac OS X Installation
@@ -30,7 +31,8 @@ Select your operating system to continue:
 4. Drag and drop the application into the **Applications** folder on your Mac as prompted:
 ![](/images/drag-to-apps-folder.png)
     
-5. Next simply open the application (shown here) and proceed to [step 2](/getting-started/2-install-mobile-app) where you will install an app to your mobile device for previewing the apps you build.
+5. Next simply open the application and proceed to [Step 2](/getting-started/2-install-mobile-app) where you will 
+install the __PhoneGap Developer App__ to your mobile device for previewing the apps you build. 
 ![](/images/desktop-app-open.png)
 
 
@@ -62,5 +64,7 @@ Select your operating system to continue:
 
   ![](/images/win-desktop6.jpg)
 
-8. Next simply open the application (shown here) and proceed to next step below where you will install an app to your mobile device for previewing the apps you build.
-![](/images/desktop-app-open.png)
+8. Next simply open the application and proceed to next step below where you will install the __PhoneGap Developer App__ 
+to your mobile device for previewing the apps you build.
+
+  ![](/images/desktop-app-open.png)
