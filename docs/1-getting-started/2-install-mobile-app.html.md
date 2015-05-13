@@ -23,7 +23,7 @@ an easy way for developers to get started creating and testing their PhoneGap ap
 
  <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
 
-3. Once installed, move on to the next step where you will create your first PhoneGap app using the tool you selected in step 1!
+3. Once installed, move on to the next step where you will create your first PhoneGap app using the tool you selected in step 1.
 
   <div class="alert--info">**NOTE:** The platform SDK's mentioned above refer to the software development kits Apple, Google and Microsoft provide to build applications for their platforms (iOS, Android and Windows respectively).
  When you're ready to take your mobile application development further or decide you want to build for each platform locally yourself, you can find the specific instructions for each platform
