@@ -14,7 +14,7 @@ The PhoneGap Desktop application provides a drag and drop interface for creating
 [PhoneGap CLI](/getting-started/1-install-phonegap/cli) and built for those who prefer a more visual user interface
 over a command line interface approach.  
 
-Get stated using [PhoneGap Desktop](https://github.com/phonegap/phonegap-app-desktop/releases) by downloading the latest installer
+Get started using [PhoneGap Desktop](https://github.com/phonegap/phonegap-app-desktop/releases) by downloading the latest installer
 for your operating system and continuing with the instructions below:
 
 - [Mac OSX](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.5/PhoneGapDesktop.dmg)
