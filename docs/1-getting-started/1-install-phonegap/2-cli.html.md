@@ -10,8 +10,12 @@ tabs:
 next: 1-getting-started/2-install-mobile-app.html.md
 ---
 
-The PhoneGap CLI provides a command line interface for creating PhoneGap applications. It's an alternative to using the
-[PhoneGap Desktop App](/getting-started/1-install-phonegap/desktop) and built for those who prefer working at the command line.
+The PhoneGap CLI provides a command line interface for creating PhoneGap applications as an alternative to using the
+[PhoneGap Desktop App](/getting-started/1-install-phonegap/desktop) for those who prefer working at the command line. 
+
+<div class="alert--tip">**TIP:** The PhoneGap CLI currently has some additional features over the PhoneGap Desktop
+for building, running and packaging your PhoneGap applications on multiple platforms. If you're comfortable using a
+CLI this option may be best going forward.</div>
 
 ###Requirements
 There are a few simple requirements you'll need prior to installing the PhoneGap CLI:
@@ -32,7 +36,7 @@ There are a few simple requirements you'll need prior to installing the PhoneGap
    <div class="alert--warning">**OS X Users:** You may need to prefix this command with `sudo` to allow installation to restricted directories and type the following instead: `$ sudo npm install -g phonegap`<br><br>
   **Windows 8 Users:** If you just installed Node.js, be sure to start the *Node.js Command Prompt* application specifically.</div>
 
-2. Test to ensure the PhoneGap CLI is properly installed by typing `phonegap` on the command line to ensure you see the following output `help` text display:
+2. Test to ensure the PhoneGap CLI is properly installed by typing `phonegap` on the command line. You should see the following `help` text output displayed:
 
         $ phonegap
         Usage: phonegap [options] [commands]
