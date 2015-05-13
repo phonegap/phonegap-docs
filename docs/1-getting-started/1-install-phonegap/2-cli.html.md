@@ -10,7 +10,7 @@ tabs:
 next: 1-getting-started/2-install-mobile-app.html.md
 ---
 
-The PhoneGap CLI provides a command line interface for creating PhoneGap applications as an alternative to using the
+The PhoneGap CLI provides a command line interface for creating PhoneGap apps as an alternative to using the
 [PhoneGap Desktop App](/getting-started/1-install-phonegap/desktop) for those who prefer working at the command line. 
 The PhoneGap CLI currently has some additional features over the PhoneGap Desktop
 for building, running and packaging your PhoneGap applications on multiple platforms. If you're comfortable using a
