@@ -10,7 +10,11 @@ tabs:
 next: 1-getting-started/4-run-your-app/1-desktop.html.md
 ---
 
-Now let's dig in and create our first PhoneGap project using the PhoneGap Desktop application we [installed previously](/getting-started/1-install-phonegap/desktop). This project will become a PhoneGap mobile application with the ability to run on multiple devices and across operating systems in just a few simple steps.
+Now that you've installed [PhoneGap Desktop](/getting-started/1-install-phonegap/desktop) or the [PhoneGap CLI](/getting-started/1-install-phonegap/cli) 
+to your computer and the [PhoneGap Developer App](getting-started/2-install-mobile-app) to your mobile devices, you're ready to get started creating 
+a PhoneGap app. This project will become a PhoneGap mobile application with the ability to run on multiple devices and across operating systems 
+in just a few simple steps.
+
 
 ###Default Hello World
 The PhoneGap desktop tools include a default Hello World project for beginners to start with. It's proven to be the quickest and easiest way to understand the basics of building a mobile PhoneGap app so let's start there:
@@ -24,7 +28,7 @@ The PhoneGap desktop tools include a default Hello World project for beginners t
 
 	<div class="alert--warning">Be aware that the ID field is also known as the *package identifier* for Android and the *bundle identifier* for iOS.</div>
 
-3.  You should now see a view like below, with your new project shown and marked with a left green sidebar, a green play button next to it and a green bar at the bottom with a server address indicating it's the active project and running.
+3. You should now see a view like below, with your new project shown and marked with a left green sidebar, a green play button next to it and a green bar at the bottom with a server address indicating it's the active project and running.
 
    ![](/images/desktop-app-create.png)
 
