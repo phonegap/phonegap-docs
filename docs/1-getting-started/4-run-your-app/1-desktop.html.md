@@ -10,15 +10,17 @@ tabs:
 next: 1-getting-started/5-going-further.html.md
 ---
 
-You can use the **PhoneGap Developer App** paired with the **PhoneGap Desktop App** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
+You can use the **PhoneGap Developer App** paired with **PhoneGap Desktop** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
 
-The PhoneGap Desktop App starts a small web server to host your project and returns the server address for you to use from the PhoneGap Developer App running on your mobile device. It's started automatically upon
-project creation, but you can also hit the play button to start a project that's currently inactive.
+**PhoneGap Desktop** starts a small web server to host your project and returns a server address you can then enter into the **PhoneGap Developer** 
+app running on your mobile device. It's started automatically upon project creation, but you can also manually start any project that's inactive 
+by clicking the green play (** &gt; **) button next to it.
 
 ### Preview on a Device
 <div class="alert--warning">Double check to ensure you're running your device and computer on the same network before continuing. </div>
 
-1. In the previous step we created a project and ensured it was running by looking for the green 'play' button to be highlighted and a green bar showing the server address it's running on at the bottom of the PhoneGap Desktop App. <br><br>The screenshot is shown again below for reference. Locate the specific server address for your project before moving to the next step.
+1. In the previous step we created a project and ensured it was running by looking for the green play button to be highlighted and a green bar 
+showing the server address it's running on at the bottom of the PhoneGap Desktop. <br><br>The screenshot is shown again below for reference. Locate the specific server address for your project before moving to the next step.
 
      ![](/images/desktop-app-create.png)
 
@@ -30,9 +32,9 @@ project creation, but you can also hit the play button to start a project that's
 
 
   You should see the connection occur followed by a success message as shown below. If you receive an error of any kind, ensure
-   once again that you are connected to the same network on both your  and computer. You could also check the
-   [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap)
-   list for further help.
+   once again that you are connected to the same network on both your device and computer. You could also check the
+   [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and 
+   [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap) list for further help.
 
   <img class="mobile-image" src="/images/dev-app-success.jpg"/>
 
