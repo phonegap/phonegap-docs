@@ -67,4 +67,4 @@ install the __PhoneGap Developer App__ to your mobile device for previewing the 
 8. Next simply open the application and proceed to next step below where you will install the __PhoneGap Developer App__ 
 to your mobile device for previewing the apps you build.
 
-  ![](/images/desktop-app-open.png)
+  ![](/images/win-desktop-app.jpg)
