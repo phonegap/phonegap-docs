@@ -12,11 +12,11 @@ next: 1-getting-started/4-run-your-app/2-cli.html.md
 
 Now that you've installed [PhoneGap Desktop](/getting-started/1-install-phonegap/desktop) and/or the [PhoneGap CLI](/getting-started/1-install-phonegap/cli) 
 to your computer and the [PhoneGap Developer App](getting-started/2-install-mobile-app) to your mobile devices, you're ready to create 
-a PhoneGap app. This project will become a PhoneGap mobile application with the ability to run on multiple devices and across operating systems 
+your first PhoneGap project. This project will be a PhoneGap mobile app with the ability to run on multiple devices and across operating systems 
 in just a few simple steps.
 
 ###Create Default PhoneGap Project
-The PhoneGap CLI has a a default Hello World project for beginners to start with. It's proven to be the quickest and easiest way to understand the 
+The PhoneGap CLI has a default Hello World project for beginners to start with. It's proven to be the quickest and easiest way to understand the 
 basics of building a mobile PhoneGap app so let's start by creating the default project with the CLI.
 
 1. Enter the following command from your terminal:
@@ -39,12 +39,15 @@ basics of building a mobile PhoneGap app so let's start by creating the default 
 
 3. Change into the new project directory with the `cd` command:
 
-		$ cd myApp
+		$ cd myApp/
 
 4. Check to be sure you see the following set of files and folders shown below:
 
 		config.xml	  hooks		platforms	plugins		www
 		
 5. `cd` into the ***www*** folder and look around at the files and subfolders in there, this is the content of your app, with the entry point being the **index.html** file.
+
+        $ cd www/
+
  <div class="alert--tip">**TIP:** Details about the rest of the files and folders created in the root project  will be covered in guides further along. For now just focus 
  on the ***www*** folder and its contents.</div>
