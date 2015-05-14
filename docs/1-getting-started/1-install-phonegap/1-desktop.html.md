@@ -17,8 +17,8 @@ over a command line interface approach.
 <div class="alert--info">**NOTE:** The getting started steps vary based on the initial PhoneGap tool you install here in step 1. For the rest of the steps be sure to choose either the **Desktop** or **CLI** tab at the top accordingly.</div>
 
 Select your operating system to continue:  
-- <a href="#mac">__Mac OS X__</a> 
-- <a href="#win">__Windows__</a>  
+- <a href="#mac">Mac OS X</a>
+- <a href="#win">Windows</a>
 
 <a name="mac"></a>
 ### Mac OS X Installation
