@@ -16,7 +16,7 @@ We didn't want to keep you waiting for all the good stuff, so we've published
 some key resources to get you going. If you are new to PhoneGap, we recommend
 beginning by working through our <a href="/getting-started">Getting Started Guide</a>.
 We've also put together a helpful <a href="/tutorials">tutorial</a> on extending our
-"Hello World" example app. These should get you going, and keep your eyes for new material
-to come soon.
+"Hello World" example app. These should get you going, and keep your eyes peeled
+for new material to come soon.
 </p>
 <div style="clear: both; margin-bottom: 20px;"></div>
