@@ -14,7 +14,7 @@ that is both in-depth and easy to follow.
 <p style="color:#111111;font-size:1.1rem;line-height:1.7rem;">
 We didn't want to keep you waiting for all the good stuff, so we've published
 some key resources to get you going. If you are new to PhoneGap, we recommend
-beginning by working through our <a href="/getting-started">Getting Started Guide</a>.
+beginning by working through our <a href="/getting-started/1-install-phonegap/desktop">Getting Started Guide</a>.
 We've also put together a helpful <a href="/develop/hello-world-explained">tutorial</a> on extending our
 "Hello World" example app. These should get you going, and keep your eyes peeled
 for new material to come soon.
