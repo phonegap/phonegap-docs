@@ -299,6 +299,8 @@ article.page
     padding 0 0 0 1rem
     a
       color #1692b2
+      &.current
+        color #ee3551
 .video-wrapper
   position relative
   padding-bottom 56.25%
