@@ -56,8 +56,8 @@ h2
     font-weight $light-weight
   img
     vertical-align middle
-    margin-right .8rem
-    width 2rem
+    margin-right 0.75rem
+    width 1.875rem
     height auto
   span
     position relative
@@ -322,7 +322,7 @@ code, kbd, pre, samp
   h2
     margin 0 0 1.5rem
   .site-header
-    height 100px
+    height 72px
     margin-bottom 50px
   .site-header__nav
     display block
@@ -335,9 +335,6 @@ code, kbd, pre, samp
     margin-right: 40px;
     h1
       font-size 1.6875rem
-    img
-      margin-right 1rem
-      width 2.5rem
     span
       top .125rem
   .site-footer
