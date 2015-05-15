@@ -3,7 +3,7 @@ title: "Step 1: Install PhoneGap"
 url: getting-started/1-install-phonegap/cli
 layout: subpage
 tabs:
-  - label: Desktop
+  - label: Desktop App
     url: getting-started/1-install-phonegap/desktop
   - label: CLI
     url: getting-started/1-install-phonegap/cli

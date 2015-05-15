@@ -3,7 +3,7 @@ title: Step 4: Run Your App
 url: getting-started/4-run-your-app/cli
 layout: subpage
 tabs:
-  - label: Desktop
+  - label: Desktop App
     url: getting-started/4-run-your-app/desktop
   - label: CLI
     url: getting-started/4-run-your-app/cli

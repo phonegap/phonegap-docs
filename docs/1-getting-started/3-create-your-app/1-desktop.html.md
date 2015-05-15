@@ -3,16 +3,16 @@ title: Step 3: Create Your App
 url: getting-started/3-create-your-app/desktop
 layout: subpage
 tabs:
-  - label: Desktop
+  - label: Desktop App
     url: getting-started/3-create-your-app/desktop
   - label: CLI
     url: getting-started/3-create-your-app/cli
 next: 1-getting-started/4-run-your-app/1-desktop.html.md
 ---
 
-Now that you've installed [PhoneGap Desktop](/getting-started/1-install-phonegap/desktop) and/or the [PhoneGap CLI](/getting-started/1-install-phonegap/cli) 
+Now that you've installed [PhoneGap Desktop](/getting-started/1-install-phonegap/desktop) and/or the [PhoneGap CLI](/getting-started/1-install-phonegap/cli)
 to your computer and the [PhoneGap Developer App](getting-started/2-install-mobile-app) to your mobile devices, you're ready to create  
-your first PhoneGap project. This project will be a PhoneGap mobile app with the ability to run on multiple devices and across operating systems 
+your first PhoneGap project. This project will be a PhoneGap mobile app with the ability to run on multiple devices and across operating systems
 in just a few simple steps.
 
 

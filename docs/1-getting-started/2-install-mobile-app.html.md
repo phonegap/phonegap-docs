@@ -2,16 +2,15 @@
 title: Step 2: Install Mobile App
 url: getting-started/2-install-mobile-app
 layout: subpage
-tab: CLI
 next: 1-getting-started/3-create-your-app/1-desktop.html.md
 ---
 
 The [PhoneGap Developer App](http://app.phonegap.com) is a mobile app that runs on devices and allows you to preview and test the PhoneGap mobile
-apps you build across platforms without additional platform SDK setup. It automatically provides access to the PhoneGap core API's 
-providing instant access to the native device features without having to install any plugins or compile anything locally. It's meant to provide 
+apps you build across platforms without additional platform SDK setup. It automatically provides access to the PhoneGap core API's
+providing instant access to the native device features without having to install any plugins or compile anything locally. It's meant to provide
 an easy way for developers to get started creating and testing their PhoneGap applications quickly with minimal setup.  
 
-### Install PhoneGap Developer 
+### Install PhoneGap Developer
 
 1. Locate the free PhoneGap Developer app from one of the following supported app marketplaces and install it to your mobile device:
 
@@ -19,7 +18,7 @@ an easy way for developers to get started creating and testing their PhoneGap ap
 	- [Google Play](https://play.google.com/store/apps/details?id=com.adobe.phonegap.app)
 	- [Windows Phone Store](http://www.windowsphone.com/en-us/store/app/phonegap-developer/5c6a2d1e-4fad-4bf8-aaf7-71380cc84fe3)
 
-2. Once installed, tap the PhoneGap Developer app icon from your home screen to open it: 
+2. Once installed, tap the PhoneGap Developer app icon from your home screen to open it:
 
  <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
 

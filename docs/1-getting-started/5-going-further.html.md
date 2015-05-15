@@ -2,7 +2,6 @@
 title: Step 5: Going Further
 url: getting-started/5-going-further
 layout: subpage
-tab: CLI
 ---
 
 ### Build, Package and Distribute for Production
