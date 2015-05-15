@@ -92,12 +92,12 @@ h2
 .site-footer__lists
   display flex
   flex-wrap wrap
-  max-width 636px
+  max-width 520px
   justify-content space-between
   flex-grow 1
 .site-footer__list
   display block
-  min-width 190px
+  min-width 170px
   margin 0 0 2.25rem
   ul
     list-style none
@@ -108,7 +108,7 @@ h2
   flex-wrap wrap
   justify-content space-between
 .site-footer__messages
-  max-width 414px
+  max-width 400px
   order 0
   h2
     font-weight normal
