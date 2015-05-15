@@ -1,6 +1,7 @@
 ---
 title: "Step 1: Install PhoneGap"
 url: getting-started/1-install-phonegap/cli
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/1-getting-started/1-install-phonegap/2-cli.html.md
 layout: subpage
 tabs:
   - label: Desktop App
@@ -11,7 +12,7 @@ next: 1-getting-started/2-install-mobile-app.html.md
 ---
 
 The PhoneGap CLI provides a command line interface for creating PhoneGap apps as an alternative to using the
-[PhoneGap Desktop App](/getting-started/1-install-phonegap/desktop) for those who prefer working at the command line. 
+[PhoneGap Desktop App](/getting-started/1-install-phonegap/desktop) for those who prefer working at the command line.
 The PhoneGap CLI currently has some additional features over the PhoneGap Desktop
 for building, running and packaging your PhoneGap applications on multiple platforms. If you're comfortable using a
 CLI this option may be best going forward.

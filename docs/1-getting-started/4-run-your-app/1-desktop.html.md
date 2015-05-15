@@ -2,6 +2,7 @@
 title: Step 4: Run Your App
 url: getting-started/4-run-your-app/desktop
 layout: subpage
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/1-getting-started/4-run-your-app/1-desktop.html.md
 tabs:
   - label: Desktop App
     url: getting-started/4-run-your-app/desktop
@@ -12,14 +13,14 @@ next: 1-getting-started/5-going-further.html.md
 
 You can use the **PhoneGap Developer App** paired with **PhoneGap Desktop** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
 
-**PhoneGap Desktop** starts a small web server to host your project and returns a server address you can then enter into the **PhoneGap Developer** 
-app running on your mobile device. It's started automatically upon project creation, but you can also manually start any project that's inactive 
+**PhoneGap Desktop** starts a small web server to host your project and returns a server address you can then enter into the **PhoneGap Developer**
+app running on your mobile device. It's started automatically upon project creation, but you can also manually start any project that's inactive
 by clicking the green play (** &gt; **) button next to it.
 
 ### Preview on a Device
 <div class="alert--warning">Double check to ensure you're running your device and computer on the same network before continuing. </div>
 
-1. In the previous step we created a project and ensured it was running by looking for the green play button to be highlighted and a green bar 
+1. In the previous step we created a project and ensured it was running by looking for the green play button to be highlighted and a green bar
 showing the server address it's running on at the bottom of the PhoneGap Desktop. <br><br>The screenshot is shown again below for reference. Locate the specific server address for your project before moving to the next step.
 
      ![](/images/desktop-app-create.png)
@@ -33,7 +34,7 @@ showing the server address it's running on at the bottom of the PhoneGap Desktop
 
   You should see the connection occur followed by a success message as shown below. If you receive an error of any kind, ensure
    once again that you are connected to the same network on both your device and computer. You could also check the
-   [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and 
+   [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and
    [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap) list for further help.
 
   <img class="mobile-image" src="/images/dev-app-success.jpg"/>
