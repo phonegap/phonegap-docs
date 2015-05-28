@@ -44,6 +44,21 @@ changed, BrowserSync will regenerate the file and refresh your browser.
  |__ docpad.json  # Configuration
 ```
 
+## Deployment
+
+### Production
+
+Each commit to the `master` branch is deployed to http://docs.phonegap.com.
+
+### Staging
+
+Each commit to the `stage` branch is deployed to http://stage.docs.phonegap.com.
+
+Commits to `master` do _not_ need to be staged. Staging is intended to test
+work that may cause issues in production, in particle design focused changes.
+For this reason, the staging branch is mutable. Feel free to delete it or force
+push over its history.
+
 ## FAQ
 
 ### Generator error from the "next" article returning a null object.
