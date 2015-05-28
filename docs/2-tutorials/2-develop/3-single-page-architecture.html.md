@@ -9,7 +9,7 @@ write: false
 Single Page Architecture (aka Single Page Applications or SPA's) is a concept many developers building HTML5 apps are likely familiar with, however it's worth mentioning for those that may not be as it is currently
  considered a hybrid mobile app best practice.
 
-The reason it's popular for mobile development specifically is the resulting native-like fluid user experience that can be attained using this architecture since the .
+The reason it's popular for mobile development specifically is the resulting native-like fluid user experience that can be attained using this architecture since the 
 UI can be redrawn without requiring a server roundtrip to retrieve HTML. State changes occur via JavaScript using templates and DOM manipulation and the logic stays on the client side.
 
 ![](/images/spa.png)

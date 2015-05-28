@@ -47,25 +47,25 @@ install the __PhoneGap Developer App__ to your mobile device for previewing the 
 
 3. Accept the license agreement:
 
-  ![](/images/win-desktop2.jpg)
+  ![](/images/win-desktop2.png)
 
 4. Select the desired destination for the application and click *Next*:
 
-  ![](/images/win-desktop3.jpg)
+  ![](/images/win-desktop3.png)
 
 5. Select the desired location for the shortcut and click *Next*:
 
-  ![](/images/win-desktop4.jpg)
+  ![](/images/win-desktop4.png)
 
 6. Click *Install* to begin the installation:
 
-  ![](/images/win-desktop5.jpg)
+  ![](/images/win-desktop5.png)
 
 7. Click *Finish* to close the Setup Wizard:
 
-  ![](/images/win-desktop6.jpg)
+  ![](/images/win-desktop6.png)
 
 8. Next simply open the application and proceed to next step below where you will install the __PhoneGap Developer App__
 to your mobile device for previewing the apps you build.
 
-  ![](/images/win-desktop-app.jpg)
+  ![](/images/win-desktop-app.png)
