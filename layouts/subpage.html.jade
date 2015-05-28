@@ -3,6 +3,8 @@ extends ./default.html.jade
 block append content
   -if(document.next)
     - var next = getCollection("html").findOne({relativePath:document.next}).toJSON()
-      a.next-block(href="/#{next.url}")!=next.title
+      .next-step
+        .label next step&hellip;
+        a.next-block(href="/#{next.url}")!=next.title
   -if(document.github_url)
     a.github-page(href=document.github_url) Edit this page on GitHub

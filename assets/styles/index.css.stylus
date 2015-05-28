@@ -246,28 +246,31 @@ article.page
   margin-bottom 4rem
   h2
     font-size 1.5rem
-.next-block
+.next-step
   display block
   border 2px solid #C4C4C4
-  height 180px
-  font-size 2rem
+  height 100px
+  font-size 1.5rem
   font-weight $light-weight
   border-radius 5px
-  position relative
-  &:before
-    content "next step..."
+  display flex
+  flex-align center
+  .label
     color white
     background #C4C4C4
     height 100%
     border-radius-left 5px
-    display inline-block
+    display block
     box-sizing border-box
-    font-size 4rem
-    width 220px
-    line-height 3rem
-    padding 30px 20px 20px 42px
-    margin-right 30px
-    vertical-align middle
+    font-size 2rem
+    width 120px
+    line-height 1.8rem
+    padding 20px 20px 20px 28px
+    margin-right 20px
+  .next-block
+    padding-top 20px
+    &:hover
+      text-decoration none
 //Sidebar
 .sidebar
   display block
@@ -463,3 +466,28 @@ code, kbd, pre, samp
           box-shadow none
   .mobile-docs-header
     display none
+  .next-step
+    display block
+    border 2px solid #C4C4C4
+    height 180px
+    font-size 2rem
+    font-weight $light-weight
+    border-radius 5px
+    display flex
+    flex-align center
+    .label
+      color white
+      background #C4C4C4
+      height 100%
+      border-radius-left 5px
+      display block
+      box-sizing border-box
+      font-size 4rem
+      width 220px
+      line-height 3rem
+      padding 30px 20px 20px 42px
+      margin-right 30px
+    .next-block
+      padding-top 50px
+      &:hover
+        text-decoration none
