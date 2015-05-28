@@ -32,38 +32,40 @@ h2
   font-weight $light-weight
 //Header
 .site-header
-  color white
   height 60px
   width 100%
-  background $header-bg
+  background rgba(255,255,255,0.95)
   display block
-  margin-bottom 30px
+  margin-bottom 0
   .bounds
     display flex
-    // justify-content space-between
-    justify-content flex-start
+    justify-content space-between
     align-items center
     height 100%
+    padding 0 20px 0 10px
   a
-    color white
+    color #999
     &:hover
       text-decoration none
 .site-header__logo
   h1
-    font-size 1.8rem
+    // font-size 1.8rem
+    font-size 1.0625rem
     margin 0
     padding 0
-    font-weight $light-weight
-  img
+    font-weight normal
+  img, svg
     vertical-align middle
-    margin-right 0.75rem
-    width 1.875rem
+    margin-right 0.125rem
+    width 1.25rem
     height auto
+  path
+    fill currentColor
   span
     position relative
     top .125rem
 .site-header__nav
-  display none
+  display block
   ul
     margin 0
     padding 0
@@ -181,6 +183,8 @@ main
     height 100%
     width 100%
     margin-bottom 30px
+    box-sizing border-box
+    padding-top 55px
 .content
   margin 0 auto
   background #FFF
@@ -266,41 +270,80 @@ article.page
     vertical-align middle
 //Sidebar
 .sidebar
-  display none
-  width 250px
+  display block
+  width 100%
   margin-right 50px
-  position relative
+  position absolute
+  background #2fa0c3
+  left 0
+  top 0
+  max-height 45px
+  overflow hidden
+  transition max-height 0.5s ease-in-out, box-shadow 0.5s ease-in-out
+  z-index 10
+  box-shadow 0 2px 5px rgba(0,0,0,0)
+  &.open
+    max-height 400px
+    box-shadow 0 3px 8px rgba(0,0,0,0.8)
 .sidebar__content
-  width 250px
-  border-right 1px solid #CCC
-  padding-right 10px
   box-sizing border-box
 .sidebar__list
+  color #003252
   h1
     font-size 1.125rem
     font-weight bold
-    border-bottom 1px solid #999
+    box-sizing border-box
+    padding 0 10px
   h2
     font-size 1.125rem
     margin-bottom .5rem
-    border-bottom 1px solid #E7E7E7
     font-weight regular
+    box-sizing border-box
+    padding 0 10px
     a
       color #1692b2
   h3
     font-size 0.875rem
     text-transform uppercase
+    box-sizing border-box
+    padding 0 10px
     a
       color #003351
   ul
     list-style none
     // Reduced to help tutorials sidebar page
     margin 0 0 1rem
-    padding 0 0 0 1rem
+    padding 0
     a
-      color #1692b2
+      color white
+      display block
+      width 100%
+      box-sizing border-box
+      padding 0 20px
       &.current
-        color #ee3551
+        background #40aed0
+        border-top 1px solid #018bad
+        border-bottom 1px solid #018bad
+        box-shadow 0 1px 0 #56c0e2
+.mobile-docs-header
+  display block
+  height 45px
+  padding 7px 10px
+  box-sizing border-box
+  text-align right
+.mobile-docs-toggle
+  background transparent
+  border 1px solid white
+  height 30px
+  color white
+  font-size 1rem
+  border-radius 4px
+  text-align center
+  padding 0 13px
+  outline none
+.open .mobile-docs-toggle
+  background white
+  color #2fa0c3
 .video-wrapper
   position relative
   padding-bottom 56.25%
@@ -322,8 +365,14 @@ code, kbd, pre, samp
   h2
     margin 0 0 1.5rem
   .site-header
+    color white
+    background $header-bg
     height 72px
     margin-bottom 50px
+    a
+      color #fff
+    .bounds
+      justify-content flex-start
   .site-header__nav
     display block
     ul
@@ -335,8 +384,11 @@ code, kbd, pre, samp
     margin-right: 40px;
     h1
       font-size 1.6875rem
+      font-weight $light-weight
     span
       top .125rem
+    img, svg
+      margin-right: .75rem;
   .site-footer
     .bounds
       padding-top 70px
@@ -347,10 +399,67 @@ code, kbd, pre, samp
     order 2
     h2
       margin-bottom 1.25rem
-  .sidebar
-    display block
   main
     .bounds
+      display flex
+      align-items stretch
+      height 100%
+      width 100%
       margin-bottom 50px
+      padding-top 0
   .content
     margin 0
+  //Sidebar
+  .sidebar
+    display block
+    width 250px
+    margin-right 50px
+    position relative
+    background none
+    left none
+    top none
+    height auto
+    overflow auto
+    box-shadow none
+    max-height none
+    transition none
+    &.open
+      box-shadow none
+      max-height none
+  .sidebar__content
+    width 250px
+    border-right 1px solid #CCC
+    padding-right 10px
+    box-sizing border-box
+  .sidebar__list
+    h1
+      font-size 1.125rem
+      font-weight bold
+      border-bottom 1px solid #999
+    h2
+      font-size 1.125rem
+      margin-bottom .5rem
+      border-bottom 1px solid #E7E7E7
+      font-weight regular
+      a
+        color #1692b2
+    h3
+      font-size 0.875rem
+      text-transform uppercase
+      a
+        color #003351
+    ul
+      list-style none
+      // Reduced to help tutorials sidebar page
+      margin 0 0 1rem
+      padding 0 0 0 1rem
+      a
+        color #1692b2
+        &.current
+          color #ee3551
+          background transparent
+          border-top none
+          border-bottom none
+          box-shadow none
+  .mobile-docs-header
+    display none
