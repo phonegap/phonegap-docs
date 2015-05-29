@@ -21,7 +21,7 @@ In the **index.html** file you'll notice a script tag pointing to a `cordova.js`
     <script type="text/javascript" src="cordova.js"></script>
 
 
-The **cordova.js** file is the PhoneGap (powered by the open-source Apache Cordova project, hence the name) library and what's used to specifically access the native device hardware (camera, contacts, GPS etc) from JavaScript in our PhoneGap apps. Including this file reference ensures the Cordova APIs to access those features are all available.
+The **cordova.js** file is the PhoneGap (powered by the open-source Apache Cordova project, hence the name) library and what's used to specifically access the native device hardware (camera, contacts, GPS etc) from JavaScript in our PhoneGap apps. Including this file reference ensures the Cordova APIs have access to those features and are available.
 
 You may notice that there isn't a **cordova.js** file however located anywhere in the folder. That's because the right version for the platform is injected for you at runtime by the Developer app or the PhoneGap CLI if you're building your projects using the CLI. You simply need to ensure the reference is available.
 
