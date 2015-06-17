@@ -12,6 +12,10 @@ aside.sidebar
       h3 Developer Guides
       ul
         li: a(href="/develop/hello-world-explained" class=document.url === 'develop/hello-world-explained'? "current" : "") Hello World Explained
+      h2 References
+      ul
+        li: a(href="/plugin-apis" class=document.url === 'plugin-apis'? "current" : "") Plugin APIs
+
       //- each guide, index in getCollection("navItems").toJSON()
       //-   if guide.filename == '0-index.html.md'
       //-     if index > 0
