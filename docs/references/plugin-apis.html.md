@@ -10,10 +10,15 @@ layout: subpage
   - [Battery Status](https://github.com/apache/cordova-plugin-battery-status)
   - [Camera](https://github.com/apache/cordova-plugin-camera)
   - [Contacts](https://github.com/apache/cordova-plugin-contacts)
-  - [Dialogs (notification)](https://github.com/apache/cordova-plugin-dialogs)
   - [Device Info](https://github.com/apache/cordova-plugin-device)  
   - [Device Motion (accelerometer)](https://github.com/apache/cordova-plugin-device-motion)  
-  - [Device Orientation (compass)](https://github.com/apache/cordova-plugin-device-orientation)  
+  - [Device Orientation (compass)](https://github.com/apache/cordova-plugin-device-orientation)
+  - [Dialogs (notification)](https://github.com/apache/cordova-plugin-dialogs)    
+  - [File](https://github.com/apache/cordova-plugin-file)
+  - [File Transfer](https://github.com/apache/cordova-plugin-file-transfer)
+  - [Geolocation](https://github.com/apache/cordova-plugin-geolocation)
+  - [Globalization](https://github.com/apache/cordova-plugin-globalization)
+  - [InAppBrowser](https://github.com/apache/cordova-plugin-inappbrowser)
   - [Media Capture](https://github.com/apache/cordova-plugin-media-capture)
   - [Network Information](https://github.com/apache/cordova-plugin-network-information)
   - [Splash Screen](https://github.com/apache/cordova-plugin-splashscreen)
@@ -29,5 +34,3 @@ click [this link](http://node-modules.com/search?u=cordova&q=camera+ecosystem%3A
  
  
     
-
-  
