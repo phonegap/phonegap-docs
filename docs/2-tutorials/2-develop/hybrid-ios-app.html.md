@@ -175,27 +175,27 @@ left to align it as shown below:
              self = [super initWithCoder:aDecoder];
              self.bookmarks = [[NSMutableArray alloc]init];
              return self;
-        }
+         }
         
   * Update the `numberOfSectionsInTableView` method to return 1 instead of 0:
       
          - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
             return 1;
-        }
+         }
          
   * For `numberOfRowsInSection`, return the current count of the `bookmarks` array:   
          
-         - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+          - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
             return [self.bookmarks count];
-         }
+          }
 
   * Lastly, uncomment and update the `cellForRowAtIndexPath` to contain the following code:
 
          - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {      
-          UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell1" forIndexPath:indexPath];        
-          cell.textLabel.text=[self.bookmarks objectAtIndex:indexPath.row];        
-          return cell;
-        }
+           UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell1" forIndexPath:indexPath];        
+           cell.textLabel.text=[self.bookmarks objectAtIndex:indexPath.row];        
+           return cell;
+         }
 
 ###Run it!
 Now stop and run your application in the emulator or on your iPhone. You should see a blank table now for the Native **History** view as shown here:
