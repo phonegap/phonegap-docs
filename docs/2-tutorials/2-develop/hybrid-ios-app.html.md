@@ -162,15 +162,14 @@ left to align it as shown below:
 8. We are now done working with the Storyboard and UI. In this step we’ll need to add some code handling for this new table by updating the 
 `MyTableViewController` header and class. 
 
-  We’ll use an array to manage the items for the table and name the array variable bookmarks.  To support the new array variable, we’ll first 
+  We will use an array to manage the items for the table and name the array variable bookmarks.  To support the new array variable, we’ll first 
   need to define it as a property in the `MyTableViewController.h` header file. 
 
     @property (nonatomic,strong) NSMutableArray* bookmarks;
 
   Next open the **MyTableViewController.m** class and make the following changes:
 
-  Add this new method above the `viewDidLoad` method to initialize the bookmarks array:
-
+  * Add this new method above the `viewDidLoad` method to initialize the bookmarks array:
         
          - (instancetype)initWithCoder:(NSCoder *)aDecoder {
              self = [super initWithCoder:aDecoder];
@@ -178,22 +177,19 @@ left to align it as shown below:
              return self;
         }
         
-
-  Update the `numberOfSectionsInTableView` method to return 1 instead of 0:
-
+  * Update the `numberOfSectionsInTableView` method to return 1 instead of 0:
       
          - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
             return 1;
         }
-      
-    
-  For `numberOfRowsInSection`, return the current count of the `bookmarks` array:
-    
+         
+  * For `numberOfRowsInSection`, return the current count of the `bookmarks` array:   
+         
          - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
             return [self.bookmarks count];
-        }
+         }
 
-  Lastly, uncomment and update the `cellForRowAtIndexPath` to contain the following code:
+  * Lastly, uncomment and update the `cellForRowAtIndexPath` to contain the following code:
 
          - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {      
           UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell1" forIndexPath:indexPath];        
