@@ -38,7 +38,7 @@ on iOS so you can receive log messages):
 ###Lesson 2: Set up the Storyboard
 1. Open the `HybridIOSApp.xcodeproj` file in Xcode (requires Mac OS). This is the base native project we’re extending.
 
-2. Create an iOS storyboard to lay out each screen as a ‘scene’. Ensure you have the `Classes` folder of your `HybridIOSApp` 
+2. Create an iOS storyboard to lay out each screen as a 'scene'. Ensure you have the `Classes` folder of your `HybridIOSApp` 
 project selected and use the Xcode **File -> New** menu to create a storyboard file and name it `Main.storyboard`.
  
  ![](../../images/new-storyboard.jpg)
@@ -83,7 +83,7 @@ Ensure you have both View Controllers selected then go to **Editor-> Embed In-> 
 
   ![](../../images/tabbar.png)
 
-10. Now we’ll need to set an entry point for our app to know what to display first. We’ll set the `TabBarController` to be the entry point 
+10. Now we'll need to set an entry point for our app to know what to display first. We’ll set the `TabBarController` to be the entry point 
 by clicking on the *Attribute Inspector* tab and checking the box next to *Is Initial View Controller* like below. When the box is checked 
 you’ll see an arrow added to the screen into the `TabBarController`. 
    
@@ -92,7 +92,7 @@ you’ll see an arrow added to the screen into the `TabBarController`.
 11. The storyboard entry point set in the previous step will not take effect quite yet as we still have code that exists to programmatically 
 set the entry point as well that needs to be removed. Open **AppDelegate.m** and search for `didFinishLaunchingWithOptions`. 
  This method is the point where any final customization or final tweaks can be done before displaying the app. 
- Since we’re using a storyboard and have already set an entry point into the `TabBarController` there, we don’t need to use the current 
+ Since we're using a storyboard and have already set an entry point into the `TabBarController` there, we don’t need to use the current 
  code in this method to set the `rootViewController`. You can completely remove everything within this method, leaving it empty:
 
         (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
@@ -109,7 +109,7 @@ set the entry point as well that needs to be removed. Open **AppDelegate.m** and
 
   ![](../../images/cordova-title.jpg)
 
-  For the native view we’ll simply set the *System Item* to a built-in value of *History* since this view will represent a history of bookmarked 
+  For the native view we'll simply set the *System Item* to a built-in value of *History* since this view will represent a history of bookmarked 
   items of sorts. Setting this value will automatically set the icon and title for us in the tab so we only need to fill in that value. 
   See the screenshot in the next step for the result:
 
@@ -120,8 +120,8 @@ Hello Cordova app and the native view is currently blank. We will change that in
 
 
 ###Lesson 3: Adding to the Native View
-In this lesson we’ll set up a table in our native view to allow for items to be added to it and displayed when a button is clicked from the Cordova WebView. 
-To set up our native view to display a table, we’ll also need to define a custom `UITableViewController` class for our logic. 
+In this lesson we'll set up a table in our native view to allow for items to be added to it and displayed when a button is clicked from the Cordova WebView. 
+To set up our native view to display a table, we'll also need to define a custom `UITableViewController` class for our logic. 
 
 1. Go to **File -> New -> File -> Cocoa Touch Class**
 
@@ -131,12 +131,12 @@ To set up our native view to display a table, we’ll also need to define a cust
 
    ![](../../images/table-view-controller-name.png)
 
-3. Next we’ll need to use the new `TableViewController` class we created by setting it as our native View Controller from within the Storyboard of our native view. 
+3. Next we'll need to use the new `TableViewController` class we created by setting it as our native View Controller from within the Storyboard of our native view. 
 Ensure the native scene is selected and change the View Controller class to `MyTableViewController` (or to the value you named it in the above) in the *Identity Inspector*.
 
    ![](../../images/table-view-controller-class.png)
 
-4. Since there’s still nothing visible from a UI perspective in the native view, we’ll need to add the actual Table control itself that the `MyTableViewController` 
+4. Since there’s still nothing visible from a UI perspective in the native view, we'll need to add the actual Table control itself that the `MyTableViewController` 
 class will manage. This control is represented by a `UITableView` class and will replace the current default `UIView` there (denoted by the *View* 
 object in the *Document Outline*). Delete the current View In the *Document Outline* located under Native View by selecting it and pressing delete. 
 Now drag a *Table View* component from the *Object Library* into the Native View. The result should look like the following:
@@ -159,10 +159,10 @@ left to align it as shown below:
 
  ![](../../images/title.jpg)
 	
-8. We are now done working with the Storyboard and UI. In this step we’ll need to add some code handling for this new table by updating the 
+8. We are now done working with the Storyboard and UI. In this step we'll need to add some code handling for this new table by updating the 
 `MyTableViewController` header and class. 
 
-  We will use an array to manage the items for the table and name the array variable bookmarks.  To support the new array variable, we’ll first 
+  We will use an array to manage the items for the table and name the array variable bookmarks.  To support the new array variable, we'll first 
   need to define it as a property in the `MyTableViewController.h` header file. 
 
     @property (nonatomic,strong) NSMutableArray* bookmarks;
@@ -202,7 +202,7 @@ Now stop and run your application in the emulator or on your iPhone. You should 
 
 <img class="mobile-image" src="../../images/running-empty.png"/>
 
-In the next lesson we’ll show how you can add items to this table from a WebView button control by communication via a plugin.
+In the next lesson we'll show how you can add items to this table from a WebView button control by communication via a plugin.
 
 ###Troubleshoot
 If you have any errors upon run, double check your code updates above against the sample project and ensure your Storyboard matches. You should also 
