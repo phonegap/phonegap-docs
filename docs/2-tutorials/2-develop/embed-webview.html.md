@@ -29,7 +29,7 @@ project used from the CLI when you add the iOS platform.
 	`$ cordova-ios/bin/create HybridIOSApp org.sample.hybridiosapp HybridIOSApp`
 	
 3. From the console in the root project, use [plugman](https://github.com/apache/cordova-plugman) to add any desired plugins to your project. 
-If you don’t have plugman, you can install it via npm. (You should add the [Cordova console plugin](https://github.com/apache/cordova-plugin-console) at minimum 
+If you don't have plugman, you can install it via npm. (You should add the [Cordova console plugin](https://github.com/apache/cordova-plugin-console) at minimum 
 on iOS so you can receive log messages):
 
     `$ plugman install --platform ios --project . --plugin cordova-plugin-console`
