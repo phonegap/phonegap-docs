@@ -1,10 +1,16 @@
 ---
-title: Embedding the WebView
-url: develop/embed-webview
+title: "Embedded the Webview for iOS"
+url: develop/1-embed-webview/ios
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/2-tutorials/2-develop/1-embed-webview/1-ios.html.md
 layout: subpage
+tabs:
+  - label: iOS
+    url: develop/1-embed-webview/ios
+  - label: Android
+    url: develop/1-embed-webview/android
 ---
 
-##iOS
+##Creating Apps with Cordova and iOS Native Components
 
 Before getting started you should read [this blog post](http://phonegap.com/blog/2015/03/12/mobile-choices-post1/) about choosing a mobile strategy. 
 As a quick refresher, native hybrid mobile apps include a blend of native controls and one or more webviews. One common use case implemented in many popular 
@@ -24,11 +30,17 @@ project used from the CLI when you add the iOS platform.
 
 1. Begin by cloning or downloading the zip file for the base [cordova-ios](https://github.com/apache/cordova-ios) project.
 
-2. Create a raw cordova-ios project by running the following command:
+2. Open a terminal window and `cd` into the directory *containing* the cordova-ios base project from above. So for instance 
+if it was downloaded to `userxyz/cordova-ios` then you'll want to run the `create` command from `userxyz`.
+ Create a new Cordova iOS project by running the following command: 
 	
 	`$ cordova-ios/bin/create HybridIOSApp org.sample.hybridiosapp HybridIOSApp`
+
+3. `cd` into the newly created project:
+
+    `$ cd HybridIOSApp`
 	
-3. From the console in the root project, use [plugman](https://github.com/apache/cordova-plugman) to add any desired plugins to your project. 
+3. Use [plugman](https://github.com/apache/cordova-plugman) to add any desired plugins to your project. 
 If you don't have plugman, you can install it via npm. (You should add the [Cordova console plugin](https://github.com/apache/cordova-plugin-console) at minimum 
 on iOS so you can receive log messages):
 
@@ -41,53 +53,53 @@ on iOS so you can receive log messages):
 2. Create an iOS storyboard to lay out each screen as a 'scene'. Ensure you have the `Classes` folder of your `HybridIOSApp` 
 project selected and use the Xcode **File -> New** menu to create a storyboard file and name it `Main.storyboard`.
  
- ![](../../images/new-storyboard.jpg)
+ ![](../../../images/new-storyboard.jpg)
 
 3. Set the main interface for the project to the Storyboard just created. This new storyboard file created in the previous step will serve as the 
 main interface for your application, so before going further you need to update the project properties to point to it. Select the project root 
 in the *Project Navigator* on the left and the first tab General, should be selected. Set **Devices** to iPhone if not already set, then set the 
 **Main Interface** drop down to the `Main.storyboard` file you created. The screenshot below outlines all of this in red.
 
-    ![](../../images/main-interface.jpg)
+    ![](../../../images/main-interface.jpg)
 
 4.  Now go back to the storyboard and create a scene by dragging a View Controller in from the *Object Library* panel on the right. 
 (If it's not already opened, toggle it from the Xcode main menu bar under **View -> Utilities**).  The right arrow below shows where to drag it from. 
 Once it's dragged in, you should see it in the *Document Outline* view as shown below. If that outline is not showing, toggle it using the button 
 pointed to with the red arrows below. You will need to use it throughout this guide.
 
-    ![](../../images/view-controller.jpg)
+    ![](../../../images/view-controller.jpg)
     
 5. Next we'll need to set the View Controller class to `MainViewController`, which is the Cordova-enabled View Controller class created in your 
 base project and provides the access to the PhoneGap APIs. To do this, ensure the new View Controller is selected and then open the 
 *Identity Inspector* panel (circled below) and change the class name to `MainViewController`. 
 
-   ![](../../images/main-view-controller.jpg)
+   ![](../../../images/main-view-controller.jpg)
 
 6. In the *Attributes Inspector* tab (circled in red), set the View Controller title to **Cordova**. This will display in the *Document Outline* 
 for the view and helps better keep track of which view we're working on.
 
-   ![](../../images/cordova-title.jpg)
+   ![](../../../images/cordova-title.jpg)
 
 7. Next let's add one more View Controller to our storyboard to represent a Native View scene. Leave the default class set to `UIViewController` 
 since it's representing a native view scene. Set the title in the *Attributes Inspector* tab to **Native**.
 
-   ![](../../images/native-title.png)
+   ![](../../../images/native-title.png)
    
 8. Now let's put some navigation into our app by adding a `TabBarController` to allow users to switch between the cordova and native views from tabs at the 
 bottom of the application. Our two View Controllers for Native and Cordova views can be embedded into this `TabBarController` via the Xcode *Editor* menu. 
 Ensure you have both View Controllers selected then go to **Editor-> Embed In-> Tab Bar Controller**. 
 
-   ![](../../images/embed-in.png)
+   ![](../../../images/embed-in.png)
 
 9. You will see that a new `TabBarController` is now placed on the screen and connected to your View Controllers automatically.
 
-  ![](../../images/tabbar.png)
+  ![](../../../images/tabbar.png)
 
 10. Now we'll need to set an entry point for our app to know what to display first. We'll set the `TabBarController` to be the entry point 
 by clicking on the *Attribute Inspector* tab and checking the box next to *Is Initial View Controller* like below. When the box is checked 
 you'll see an arrow added to the screen into the `TabBarController`. 
    
-   ![](../../images/initial-view.jpg)
+   ![](../../../images/initial-view.jpg)
    
 11. The storyboard entry point set in the previous step will not take effect quite yet as we still have code that exists to programmatically 
 set the entry point as well that needs to be removed. Open **AppDelegate.m** and search for `didFinishLaunchingWithOptions`. 
@@ -102,18 +114,18 @@ set the entry point as well that needs to be removed. Open **AppDelegate.m** and
 
 12. In each of the scenes in the *Document Outline* view you will notice an **Item** object which represents the tab displayed for each view. 
 
-  ![](../../images/items-change.jpg)
+  ![](../../../images/items-change.jpg)
 13. Change the name and icon to represent something more meaningful for each of them in the *Attribute Inspector*. For the Cordova view, set the name to 
   Cordova and then choose a cordova logo for the Cordova view tab in the drop-down. Since the default logos are already included in the Resources folder from the cordova-ios 
   project, you can easily select one from the drop-down. Choose the *icon-40.png* size.
 
-  ![](../../images/cordova-title.jpg)
+  ![](../../../images/cordova-title.jpg)
 
   For the native view we'll simply set the *System Item* to a built-in value of *History* since this view will represent a history of bookmarked 
   items of sorts. Setting this value will automatically set the icon and title for us in the tab so we only need to fill in that value. 
   See the screenshot in the next step for the result:
 
-  ![](../../images/native-title.png)
+  ![](../../../images/native-title.png)
 
 13. Now run the app and you will see the two buttons at the bottom and can toggle between views with them. The Cordova view shows the default 
 Hello Cordova app and the native view is currently blank. We will change that in the next lesson. 
@@ -125,39 +137,39 @@ To set up our native view to display a table, we'll also need to define a custom
 
 1. Go to **File -> New -> File -> Cocoa Touch Class**
 
-   ![](../../images/cocoa-touch-class.png)
+   ![](../../../images/cocoa-touch-class.png)
 
 2. Name it to `MyTableViewController` and ensure the `UITableViewController` subclass is selected and save into **Classes** folder. 
 
-   ![](../../images/table-view-controller-name.png)
+   ![](../../../images/table-view-controller-name.png)
 
 3. Next we'll need to use the new `TableViewController` class we created by setting it as our native View Controller from within the Storyboard of our native view. 
 Ensure the native scene is selected and change the View Controller class to `MyTableViewController` (or to the value you named it in the above) in the *Identity Inspector*.
 
-   ![](../../images/table-view-controller-class.png)
+   ![](../../../images/table-view-controller-class.png)
 
 4. Since there's still nothing visible from a UI perspective in the native view, we'll need to add the actual Table control itself that the `MyTableViewController` 
 class will manage. This control is represented by a `UITableView` class and will replace the current default `UIView` there (denoted by the *View* 
 object in the *Document Outline*). Delete the current View In the *Document Outline* located under Native View by selecting it and pressing delete. 
 Now drag a *Table View* component from the *Object Library* into the Native View. The result should look like the following:
 
-  ![](../../images/tableview.jpg)
+  ![](../../../images/tableview.jpg)
 
 5. While we have our `TableView` selected, let's also change the row height to pad it a bit and make it easier to read. Change the *Row Height* to 70 
 as shown here:
 
-  ![](../../images/row-height.jpg)
+  ![](../../../images/row-height.jpg)
 
 6. Now add a *Table View Cell* component on to the `TableView` by dragging it from the *Object Library*. You will see a new element on the 
 Table View titled Prototype Cells. Name the Table View Cell to **Cell1** by setting the Identifier in the *Attribute Inspector* tab.
 The name will change in the *Document Outline* as shown below:
 
-  ![](../../images/cell-title.jpg)
+  ![](../../../images/cell-title.jpg)
 
 7. Next drag a Label on to the Table Cell View (*Cell1*) to represent the title of the item added. Name the new label **Title** and drag it 
 over to the left to align it as shown below:
 
- ![](../../images/title.jpg)
+ ![](../../../images/title.jpg)
 	
 8. We are now done working with the Storyboard and UI. In this step we'll need to add some code handling for this new table by updating the 
 `MyTableViewController` header and class. 
@@ -200,7 +212,7 @@ over to the left to align it as shown below:
 ###Run it!
 Now stop and run your application in the emulator or on your iPhone. You should see a blank table now for the Native **History** view as shown here:
 
-<img class="mobile-image" src="../../images/running-empty.png"/>
+<img class="mobile-image" src="../../../images/running-empty.png"/>
 
 In the next lesson we'll show how you can add items to this table from a WebView button control by communication via a plugin.
 
@@ -209,12 +221,12 @@ If you have any errors upon run, double check your code updates above against th
 specifically check to ensure your Native View Controller outlets look the same as in this screenshot below and the **View -> Table View** is shown 
 as an Outlet. 
 
- ![](../../images/troubleshoot.jpg)
+ ![](../../../images/troubleshoot.jpg)
 
 Also check to ensure the scheme and target device you're trying to run are properly set up in the top bar as shown here. 
 Your app name should be set as the scheme, and the iPhone 6 simulator or your own device:
 
-  ![](../../images/target.png)
+  ![](../../../images/target.png)
 
 
 ###Lesson 4: Web to Native Communication 
@@ -370,7 +382,7 @@ plugin and how to reference it. Open the **config.xml** file located in the proj
 5. Run your app now and ensure you can enter text into the input field on the Cordova screen, click the *Add a bookmark* button and see it added into your 
 native view. Keep adding items and see them added into your native table view!
 
-    ![](../../images/running-final.png)
+    ![](../../../images/running-final.png)
     
   
 <div class="alert--info">The full [sample project](https://github.com/phonegap/phonegap-sample-hybrid-ios) for this guide can be found in the [PhoneGap GitHub repository](https://github.com/phonegap/phonegap-sample-hybrid-ios) 
