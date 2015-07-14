@@ -1,5 +1,5 @@
 ---
-title: "Embedded the Webview for iOS"
+title: "Embedded the Webview"
 url: develop/1-embed-webview/ios
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/2-tutorials/2-develop/1-embed-webview/1-ios.html.md
 layout: subpage
