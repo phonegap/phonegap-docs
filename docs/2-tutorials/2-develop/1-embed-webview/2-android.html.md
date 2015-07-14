@@ -12,7 +12,7 @@ tabs:
 
 ##Creating Apps with Cordova and Android Native Components  
 
-In this guide we’ll walk through the basic steps needed to create a native hybrid Android app that has elements of both native Android components 
+In this guide we'll walk through the basic steps needed to create a native hybrid Android app that has elements of both native Android components 
 and a Cordova webview. For more information about why you might choose this approach, read [this blog post](http://phonegap.com/blog/2015/03/12/mobile-choices-post1/).
 
 ###Requirements: 
@@ -27,9 +27,9 @@ further reference use.
 
 
 ###Step 1: Create a Base Cordova Project
-Most developers use the PhoneGap or Cordova CLI to create their projects, however for this type of project it’s not recommended since we are only 
+Most developers use the PhoneGap or Cordova CLI to create their projects, however for this type of project it's not recommended since we are only 
 working with the Android platform project specifically and we don't want to rebuild or overwrite the platform level code each time we run. Instead 
-we’ll use the [cordova-android](https://github.com/apache/cordova-android) project itself. (This is the same project used from the CLI when you add the 
+we'll use the [cordova-android](https://github.com/apache/cordova-android) project itself. (This is the same project used from the CLI when you add the 
 Android platform).
 
 1. Begin by cloning or downloading the zip file for the [cordova-android](https://github.com/apache/cordova-android) Apache Cordova project for Android. 
