@@ -107,7 +107,7 @@ Paste in the following content to represent a simple list view. We'll use this l
 Now we need a native `Activity` class to represent the logic behind this view.  Based on the android docs, 
 an activity is a single, focused thing a user can do. Almost all activities interact with the user, so the `Activity` class takes care of creating 
 a window for your UI. Create a new Java Class called `MyListActivity` in your project's `java/<package-name>` folder at the same level as the 
-`MainActivity`. In the sample case it's under `org.sample.hybridandroidapp`. Class and paste in the following below the `package` declaration and save it.
+`MainActivity` class. In the sample case it's under `org.sample.hybridandroidapp`. Paste in the following below the `package` declaration and save it.
 
 
 	import android.app.ListActivity;
@@ -116,33 +116,32 @@ a window for your UI. Create a new Java Class called `MyListActivity` in your pr
 	import android.widget.ArrayAdapter;
 	import java.util.ArrayList;
 	
-	public class MyListActivity extends ListActivity {	
-		ArrayList<String> list = new ArrayList<String>();
-	
-		/** Called when the activity is first created. */
-		@Override
-		public void onCreate(Bundle savedInstanceState) {
-			super.onCreate(savedInstanceState);
-	
-			/** Setting a custom layout for the list activity */
-			setContentView(R.layout.activity_list);
-	
-			Intent intent = this.getIntent();
-	
-			if (intent.hasExtra("items")) {
-				list = intent.getExtras().getStringArrayList("items");
-			}
-			/** The adapter to manage the data for the list **/
-			ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
-	
-			/** Setting the adapter to the ListView */
-			setListAdapter(adapter);
-	
-			intent.putStringArrayListExtra("items",list); //Save off the list to be passed back in result
-			setResult(RESULT_OK, intent);
-		}
-	
-	}
+	public class MyListActivity extends ListActivity {
+    
+        ArrayList<String> list = new ArrayList<String>();
+    
+        /** Called when the activity is first created. */
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+    
+            /** Setting a custom layout for the list activity */
+            setContentView(R.layout.activity_list);
+    
+            Intent intent = this.getIntent();
+    
+            if (intent.hasExtra("items")) {
+                list = intent.getExtras().getStringArrayList("items");
+            }
+            /** The adapter to manage the data for the list **/
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
+    
+            /** Setting the adapter to the ListView */
+            setListAdapter(adapter);
+    
+            setResult(RESULT_OK, intent);
+        }  
+    }
 	
   Note the line `setContentView(R.layout.activity_list);`. 
   This is the line where we specify the layout view to associate with this `Activity`.  
@@ -154,25 +153,11 @@ In this step we'll add our new `Activity` to the `AndroidManifest.xml`. Open the
 an &lt;activity&gt; element for `MyListActivity` in the &lt;application&gt; element as shown below, right below the 
 `MainActivity` declaration.
 
-	<application android:icon="@drawable/icon" android:label="@string/app_name"
-            android:hardwareAccelerated="true" android:supportsRtl="true">
-            <activity android:name="MainActivity"
-                    android:label="@string/activity_name"
-                    android:launchMode="singleTop"
-                    android:theme="@android:style/Theme.Black.NoTitleBar"
-                    android:windowSoftInputMode="adjustResize"
-                    android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale">
-                <intent-filter android:label="@string/launcher_name">
-                    <action android:name="android.intent.action.MAIN" />
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
-            </activity>
-            <activity
-                android:name=".MyListActivity"
-                android:label="MyListActivity">
-            </activity>
-        </application>
-
+		<activity
+			android:name=".MyListActivity"
+			android:label="MyListActivity">
+		</activity>
+    
 
 ###Step 7: Cordova to Native Communication
 
@@ -197,53 +182,63 @@ In this section we'll use a custom plugin to communicate between the native and 
         function HybridBridge() {
         
         }
-        HybridBridge.prototype.addItem = function(item, successCallback, errorCallback) {
-            exec(successCallback, errorCallback, "HybridBridge", "addItem", [item]);
+        HybridBridge.prototype.addItem = function(item, classname, successCallback, errorCallback) {
+            exec(successCallback, errorCallback, "HybridBridge", "addItem", [item, classname]);
         };
         
         module.exports = new HybridBridge();
     
-3. Now navigate into the `src` folder and create the Java interface in a file named `HybridBridge.java` and insert the following code below the `package`
- statement:
+3. Now create folders to reflect your Java package as subdirectories of the `src` folder (`src/org/sample/hybrid`). Navigate into `src/org/sample/hybrid` 
+and create the Java interface for the plugin in a file named `HybridBridge.java`. Insert the following code:
+ 
+		package org.sample.hybrid;
 			
-		import org.apache.cordova.CallbackContext;
-		import org.apache.cordova.CordovaPlugin;
-		import org.json.JSONArray;
-		import org.json.JSONException;
-		import org.sample.hybridandroidapp.MyListActivity; //Needs to match yours if your package is different
-		
-		import java.util.ArrayList;
-			
-		public class HybridBridge extends CordovaPlugin {
-			public ArrayList itemsList = new ArrayList();
-			public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-				try {
-					if (action.equals("addItem")) {
-						String item = args.getString(0);
-						Context context = cordova.getActivity().getApplicationContext();
-						Intent intent = new Intent(context,MyListActivity.class);
-						itemsList.add(item);
-						intent.putStringArrayListExtra("items", itemsList);
-						cordova.startActivityForResult((CordovaPlugin)this,intent,1);
-						callbackContext.success();
-						return true;
-					}
-					callbackContext.error("Invalid action");
-					return false;
-				} catch(Exception e) {
-					System.err.println("Exception: " + e.getMessage());
-					callbackContext.error(e.getMessage());
-					return false;
+		import android.content.Context;
+        import android.content.Intent;
+        
+        import org.apache.cordova.CallbackContext;
+        import org.apache.cordova.CordovaPlugin;
+        import org.json.JSONArray;
+        import org.json.JSONException;
+        
+        import java.util.ArrayList;
+        
+        public class HybridBridge extends CordovaPlugin {
+            public ArrayList itemsList = new ArrayList();
+            public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+                try {
+                    if (action.equals("addItem")) {
+                        String item = args.getString(0);
+                        String className = args.getString(1);
+                        Context context = cordova.getActivity().getApplicationContext();
+                        Intent intent = new Intent(context,Class.forName(className));
+                        itemsList.add(item);
+                        intent.putStringArrayListExtra("items", itemsList);
+                        cordova.startActivityForResult(this,intent,1);
+                        callbackContext.success();
+                        return true;
+                    }
+                    callbackContext.error("Invalid action");
+                    return false;
+                } catch(Exception e) {
+                    System.err.println("Exception: " + e.getMessage());
+                    callbackContext.error(e.getMessage());
+                    return false;
+                }
+            }
+            public void onActivityResult(int requestCode, int resultCode, Intent data) {
+				// Handle a result here if one set in the Activity class started
+				System.out.println("Activity Result: " + resultCode); //-1 is RESULT_OK
+				if (resultCode==Activity.RESULT_OK) {
+					System.out.println("All good!");
 				}
-			}
-			public void onActivityResult(int requestCode, int resultCode, Intent data) {
-				itemsList = data.getStringArrayListExtra("items");
-			}    
-		}
+			}     
+        }
 
- <div class="alert--info">**NOTE:** `MyListActivity` is going to refer to the specific `Activity` class you want to start here. In this sample
-	we're using the `MyListActivity` class but you could use this plugin for any other `Activity` you want to start and return a result for as well. 
-	Ensure you update the package in the `import` statement for it if yours is different.</div>  
+ <div class="alert--info">**NOTE:** The `execute` function will create an android `Intent` for the fully qualified name of the `Activity` class 
+ specified in the parameter. In our sample we will pass in the name of our List Activity class: "org.sample.hybridandroidapp.MyListActivity" and
+  the code will resolve it to the class to be started. The code also adds the latest item to the `ArrayList` of items being managed for that view 
+  and passes in the updated list as an extra to be accessed from the `Intent`.</div>  
 
 4. Cordova plugins use a `plugin.xml` file to describe their metadata so they can be added via plugman and submitted to the registry
   for others to use. In the root of your **HybridBridgePlugin** folder create a file named `plugin.xml` with the following text, replacing
