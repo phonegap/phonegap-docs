@@ -39,7 +39,7 @@ showing the server address it's running on at the bottom of the PhoneGap Desktop
 
   <img class="mobile-image" src="/images/dev-app-success.jpg"/>
 
-  Once the PhoneGap Developer app loads connects and loads your mobile application, it should be displayed for preview as shown below:  
+  Once the PhoneGap Developer app connects, it will load and display your application as shown below:  
 
   <img class="mobile-image" src="/images/dev-app-preview.jpg"/>
 
