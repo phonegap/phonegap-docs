@@ -23,13 +23,16 @@ The PhoneGap desktop tools include a default Hello World project for beginners t
 1. Click the plus sign and select **Create new PhoneGap project** as shown below:
 
 	![](/images/desktop-app-plus.png)
-2. You will be presented with a screen to enter information about your project. Choose the path on your local hard drive where you want to create the project, a designated name and an optional *identifier*. Once the information has been entered, click the green **Create project** button.
+2. You will be presented with a screen to enter information about your project. Choose the path on your local hard drive where you want to 
+create the project, a designated name and an optional *identifier*. Once the information has been entered, click the green **Create project** button.
 
-      ![](/images/desktop-app-create-info.png)
+    ![](/images/desktop-app-create-info.png)
 
 	<div class="alert--warning">Be aware that the ID field is also known as the *package identifier* for Android and the *bundle identifier* for iOS.</div>
 
-3. You should now see a view like below, with your new project shown and marked with a left green sidebar, a green play button next to it and a green bar at the bottom with a server address indicating it's the active project and running.
+3. You should now see a view like below, with your new project shown and marked with a left green border, a green play button next to it and a 
+green bar at the bottom. You should also see a server address indicating it's running and the active project. Only one project will be active and running
+at any time.
 
    ![](/images/desktop-app-create.png)
 
