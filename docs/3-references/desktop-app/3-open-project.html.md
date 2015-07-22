@@ -3,7 +3,6 @@ title: Open an Existing Project
 url: references/desktop-app/open-project
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/open-project.html.md
 layout: subpage
-chapter: 3-references/desktop-app/3-open-project.html.md
 ---
 
 There are multiple ways to open an existing project in PhoneGap Desktop, similar to project creation. Once your project is loaded into 

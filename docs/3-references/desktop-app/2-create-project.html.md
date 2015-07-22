@@ -3,7 +3,6 @@ title: Create a Project
 url: references/desktop-app/create-project
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/create-project.html.md
 layout: subpage
-chapter: 3-references/desktop-app/3-open-project.html.md
 ---
 
 There are multiple ways to create a project using PhoneGap Desktop; via the **Plus (+)** button, from the **File** menu or by drag 
