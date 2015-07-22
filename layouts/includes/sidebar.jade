@@ -22,17 +22,6 @@ aside.sidebar
               each page in subPages
                 li: a(href="/#{page.url}" class=document.url === page.url? "current" : "")!=page.title
 
-                //ul.expand(style='display:none')
-
-        //li: a(href="/references/desktop-app/install/mac" class=document.url === 'references/desktop-app/install/mac'? "current " : "") Installation
-          //li: a(href="/references/desktop-app/create-project" class=document.url === 'references/desktop-app/create-project'? "current " : "") Create a Project
-          //li: a(href="/references/desktop-app/open-project" class=document.url === 'references/desktop-app/open-project'? "current " : "") Open a Project
-          //li: a(href="/references/desktop-app/active-vs-inactive" class=document.url === 'references/desktop-app/active-vs-inactive'? "current" : "") Active vs Inactive Projects
-          //li: a(href="/references/desktop-app/pair-with-dev-app" class=document.url === 'references/desktop-app/pair-with-dev-app'? "current" : "") Pair with Developer App
-          //li: a(href="/references/desktop-app/remove-project" class=document.url === 'references/desktop-app/remove-project'? "current" : "") Remove a Project
-          //li: a(href="/references/desktop-app/edit-settings" class=document.url === 'references/desktop-app/edit-settings'? "current" : "") Edit Settings
-          //li: a(href="/references/desktop-app/edit-settings" class=document.url === 'references/desktop-app/update-version'? "current" : "") Update Version
-          //li: a(href="/references/desktop-app/troubleshoot-faq" class=document.url === 'references/desktop-app/troubleshoot-faq'? "current" : "") Troubleshooting
 
       //- each guide, index in getCollection("navItems").toJSON()
       //-   if guide.filename == '0-index.html.md'
