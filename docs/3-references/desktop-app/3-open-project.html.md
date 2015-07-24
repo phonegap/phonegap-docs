@@ -21,20 +21,20 @@ out by [pairing it](/references/desktop-app/pair-with-dev-app) with the **PhoneG
 2. **Using the File Menu**
   
   Click **File -> Open Project** in the menu bar to open an existing project. 
-  ![File Open Project](/images/docs-file-menu.png)
+   ![File Open Project](/images/docs-file-menu.png)
 
 3. **Using Drag & Drop**
   
   Drag a file or folder anywhere onto the PhoneGap Desktop's interface and it will also trigger the dialog below. Choose 
   **Add existing PhoneGap project**. 
-  ![Add New Project Dialog](/images/docs-open-existing.png)
+   ![Add New Project Dialog](/images/docs-open-existing.png)
 
 ### Select Existing Project
 After choosing one of the methods above, you will be prompted with a file selection dialog. Choose the root project
  folder for the existing PhoneGap project you wish to open in PhoneGap Desktop. It will immediately be set as the active project and
  started on the local web server. 
    
-  ![Add New Project Dialog](/images/opened-existing-project.png)
+   ![Add New Project Dialog](/images/opened-existing-project.png)
 
 ### Next Steps
 Once you've selected the folder that contains a valid existing project, it will be added to the list of projects displayed in PhoneGap Desktop's 

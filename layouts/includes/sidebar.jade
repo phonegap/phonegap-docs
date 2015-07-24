@@ -16,6 +16,12 @@ aside.sidebar
       h2 References
       ul
         li: a(href="/plugin-apis" class=document.url === 'plugin-apis'? "current" : "") Plugin APIs
+        li: a(href="/references/desktop-app" class=document.url === 'references/desktop-app'? "current" : "") PhoneGap Desktop
+            - var subPages = [{title:"Install", url:"references/desktop-app/install/mac"},{title:"Create a Project", url:"references/desktop-app/create-project"},{title:"Open a Project", url:"references/desktop-app/open-project"},{title:"Active vs Inactive", url:"references/desktop-app/active-vs-inactive"},{title:"Preview your App", url:"references/desktop-app/pair-with-dev-app"},{title:"Remove a Project", url:"references/desktop-app/remove-project"},{title:"Update Version", url:"references/desktop-app/7-update-version/mac"},{title:"Edit Settings", url:"references/desktop-app/edit-settings"},{title:"View Server Log", url:"references/desktop-app/view-server-log"},{title:"Troubleshoot", url:"references/desktop-app/troubleshoot-faq"}]
+            ul
+              each page in subPages
+                li: a(href="/#{page.url}" class=document.url === page.url? "current" : "")!=page.title
+
 
       //- each guide, index in getCollection("navItems").toJSON()
       //-   if guide.filename == '0-index.html.md'
