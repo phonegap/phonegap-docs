@@ -1,5 +1,5 @@
 ---
-title: Pairing with Developer App
+title: Preview your App
 url: references/desktop-app/pair-with-dev-app
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/pair-with-dev-app.html.md
 layout: subpage
