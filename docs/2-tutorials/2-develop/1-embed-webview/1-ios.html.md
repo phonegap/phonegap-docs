@@ -10,7 +10,7 @@ tabs:
     url: develop/1-embed-webview/android
 ---
 
-##Creating Apps with Cordova and iOS Native Components
+##Creating Apps with PhoneGap and iOS Native Components
 
 Before getting started you should read [this blog post](http://phonegap.com/blog/2015/03/12/mobile-choices-post1/) about choosing a mobile strategy. 
 As a quick refresher, native hybrid mobile apps include a blend of native controls and one or more webviews. One common use case implemented in many popular 
