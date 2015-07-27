@@ -10,7 +10,7 @@ tabs:
     url: develop/1-embed-webview/android
 ---
 
-##Creating Apps with Cordova and Android Native Components  
+##Creating Apps with PhoneGap and Android Native Components  
 
 In this guide we'll walk through the basic steps needed to create a native hybrid Android app that has elements of both native Android components 
 and a Cordova webview. For more information about why you might choose this approach, read [this blog post](http://phonegap.com/blog/2015/03/12/mobile-choices-post1/).
