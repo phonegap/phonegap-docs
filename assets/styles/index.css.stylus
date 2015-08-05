@@ -2,7 +2,8 @@
 
 $header-bg = #27A1C5
 $footer-bg = #003252
-$content-maxwidth = 858px
+$content-maxwidth = 584px
+$code-maxwidth = 858px
 $light-weight = 300
 
 // Mobile first and default mediaquery
@@ -352,7 +353,7 @@ article.page
   padding-bottom 56.25%
   padding-top 25px
   height 0
-  max-width $content-maxwidth
+  max-width $code-maxwidth
   iframe
     position absolute
     top 0
@@ -361,7 +362,7 @@ article.page
     height 100%
 code, kbd, pre, samp
   font-family "source-code-pro", monospace
-  max-width $content-maxwidth
+  max-width $code-maxwidth
   overflow scroll
   border-radius 4px
 @media (min-width: 820px)
