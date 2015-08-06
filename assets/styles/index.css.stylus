@@ -2,8 +2,8 @@
 
 $header-bg = #27A1C5
 $footer-bg = #003252
-$content-maxwidth = 858px
-$code-maxwidth = 858px
+$content-maxwidth = 700px
+$code-maxwidth = 700px
 $light-weight = 300
 
 // Mobile first and default mediaquery
