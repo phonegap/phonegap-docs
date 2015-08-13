@@ -1,7 +1,7 @@
 ---
 title: Viewing the Server Log
 url: references/desktop-app/view-server-log
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/view-server-log.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/9-view-server-log.html.md
 layout: subpage
 ---
 

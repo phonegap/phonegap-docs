@@ -1,7 +1,7 @@
 ---
 title: Create a Project
 url: references/desktop-app/create-project
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/create-project.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/2-create-project.html.md
 layout: subpage
 ---
 

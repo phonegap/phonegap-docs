@@ -1,7 +1,7 @@
 ---
 title: Open an Existing Project
 url: references/desktop-app/open-project
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/open-project.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/3-open-project.html.md
 layout: subpage
 ---
 

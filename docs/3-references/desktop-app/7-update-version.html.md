@@ -1,7 +1,7 @@
 ---
 title: Updating the PhoneGap Desktop Version
 url: references/desktop-app/update-version
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/update-version.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/7-update-version.html.md
 layout: subpage
 ---
 
