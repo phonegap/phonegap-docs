@@ -22,7 +22,8 @@ The sections covered in this reference include:
 
 - [Installation Steps](developer-app/install/ios)
 - [Previewing an app](developer-app/preview)
-- [Supported Gestures](developer-app/preview)
 - [Viewing the Server Log](developer-app/view-server-log)
 - [Updating PhoneGap Developer Version](developer-app/update-version)
+- [Debugging](developer-app/debugging)
+- [Custom Builds](developer-app/custom-build)
 - [FAQ/Troubleshoot](developer-app/troubleshoot-faq)

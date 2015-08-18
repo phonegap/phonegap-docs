@@ -21,5 +21,6 @@ layout: subpage
 1. Tap on the **Store** icon from the home screen to open the Windows Store.
 2. Look for the 3 dots menu and tap on it, then select ***Settings****.
 3. Tap or click App updates.
-4. Tap on the switch next to **Update apps automatically** to auto-update all apps, otherwise click the ***check for updates*** button.
+4. Tap on the switch next to **Update apps automatically** to auto-update all apps, otherwise click the ***check for updates*** button and install
+the latest update if a new version is available. 
  
