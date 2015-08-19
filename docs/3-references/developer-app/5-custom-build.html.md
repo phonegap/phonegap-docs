@@ -5,9 +5,9 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/reference
 layout: subpage
 ---
 
-The PhoneGap Developer App is an open source project, so you are free to clone it and create your own custom build. This may be useful if you 
- want to add your own 3rd party plugins or specific settings and distribute it to a team of testers for instance. This would also allow for the 
- use of more remote debugging tools when you're running it locally rather than being flagged as a release build. 
+The PhoneGap Developer App is an open source project so you are free to clone it and create your own custom build. This may be useful if you 
+ want to add your own 3rd party plugins or specific settings and distribute it to a team of testers for instance. You could also use this option
+ to allow the use of more remote debugging tools when you're running it locally rather than being flagged as a release build. 
 
 Below are the steps to take to create your custom build for Mac and Windows. 
 
@@ -62,10 +62,10 @@ list of archives in the Xcode Organizer window as shown below.
      
      ![Xcode Organizer](/images/xcode-organizer.png)
      
-     <div class='alert--warning'>If the **Archive** menu item appears disabled then double check to ensure you have your actual iOS device selected
-      as the active *scheme*. It will not be selectable if a simulator is currently set.</div> 
+ <div class='alert--warning'>If the **Archive** menu item appears disabled then double check to ensure you have your actual iOS device selected
+   as the active *scheme*. It will not be selectable if a simulator is currently set.</div> 
 
-     <div class='alert--tip'>You can manually open the Organizer window by clicking **Window -> Organizer** in the Xcode menu as well.</div>
+ <div class='alert--tip'>You can manually open the Organizer window by clicking **Window -> Organizer** in the Xcode menu as well.</div>
 
 2. Once you locate the PhoneGap archive in the Xcode Organizer, you'll need to choose it for Export. Select the archive and click the **Export**
 button in the right-hand menu. You'll be prompted with the following dialog where you can choose the type of distribution you desire:     
@@ -80,7 +80,7 @@ checks have been made, you'll be prompted to save to your file system. It will b
  submitting your application to the app store. **
 
 
-<div class="alert--tip">If you are stuck in the packaging or provisioning process, check out [this page](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html)
+  <div class="alert--tip">If you are stuck in the packaging or provisioning process, check out [this page](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html)
  for specific details on the process.</div> 
      
 ## Windows
@@ -107,6 +107,6 @@ to set your own unique apo bundle id within the root `&lt;widget&gt;` element.
  
         $ phonegap build wp8 --release
     
-  Your newly built *.xap app bundle will be created in the platforms folder under **platforms/wp8/Bin/Release/<your-bundle-id>.xap**
+  Your newly built *.xap app bundle will be created in the platforms folder under **phonegap-app-developer/platforms/wp8/Bin/Release/<your-bundle-id>.xap**
       
       

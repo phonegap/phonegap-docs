@@ -1,5 +1,5 @@
 ---
-title: PhoneGap Developer App Reference
+title: PhoneGap Developer App Reference Guide
 url: /references/developer-app
 layout: subpage
 ---

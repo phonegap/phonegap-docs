@@ -18,9 +18,8 @@ layout: subpage
 3. The list shown will indicate which apps have updates available and allow you to update PhoneGap Developer if a new version is available. 
 
 ###Windows Phone
-1. Tap on the **Store** icon from the home screen to open the Windows Store.
-2. Look for the 3 dots menu and tap on it, then select ***Settings****.
-3. Tap or click App updates.
-4. Tap on the switch next to **Update apps automatically** to auto-update all apps, otherwise click the ***check for updates*** button and install
-the latest update if a new version is available. 
+1. Open the Windows Store by tapping on the icon from the home screen. 
+2. Tap the 3 dots menu on the lower right, then choose *settings* from the drop-down.
+3. Look for the App updates section and tap on the switch next to **Update apps automatically** to allow auto-update for all of your apps. Otherwise
+ click the ***check for updates*** button and install the latest update if a new version is available. 
  
