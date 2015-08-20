@@ -12,7 +12,7 @@ simply connect PhoneGap Developer to the IP address of your app being served fro
  
  ![Pairing](/images/phonegap-developer-app-pairing.png)
     
-<div class="alert--info">**Note:** See our [getting-started/1-install-phonegap/desktop](Getting Started guides) for a step 
+<div class="alert--info">**Note:** See our [Getting Started Guide](getting-started/1-install-phonegap/desktop) for a step 
 by step walkthrough of how to do this from scratch.</div>     
 
 ### Supported Platforms
