@@ -7,11 +7,12 @@ layout: subpage
 ### Overview
 The PhoneGap Developer App runs on your mobile device and is used to preview the PhoneGap apps you're building quickly on a device. You
 simply connect PhoneGap Developer to the IP address of your app being served from either the PhoneGap Desktop app or the PhoneGap CLI
- running from a computer on the same network. 
+ running from a computer on the same network. The PhoneGap Developer app is like a sandbox type of environment with a pre-installed set of plugins
+ available to use immediately as well without worrying about installing them. For a list of the plugins currently included, see the [FAQ](references/developer-app/troubleshoot-faq).  
  
  ![Pairing](/images/phonegap-developer-app-pairing.png)
     
-<div class="alert--info">See our [http://docs.phonegap.com/getting-started/1-install-phonegap/desktop/](Getting Started guides) for a step 
+<div class="alert--info">**Note:** See our [getting-started/1-install-phonegap/desktop](Getting Started guides) for a step 
 by step walkthrough of how to do this from scratch.</div>     
 
 ### Supported Platforms
@@ -25,5 +26,5 @@ The sections covered in this reference include:
 - [Viewing the Server Log](developer-app/view-server-log)
 - [Updating PhoneGap Developer Version](developer-app/update-version)
 - [Debugging](developer-app/debugging)
-- [Custom Builds](developer-app/custom-build)
+- [Custom Builds](developer-app/custom-build/ios)
 - [FAQ/Troubleshoot](developer-app/troubleshoot-faq)
