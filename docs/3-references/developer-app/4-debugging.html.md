@@ -64,7 +64,10 @@ the pairing process (ie: 192.168.1.20:3000).
   ![](/images/weinre-demo.png)      
   
   <img class="mobile-image" src="/images/weinre-inspect.png"/>
-    
+     
+ #### Video Demo
+ ![](/images/win-custom-build.gif)
+         
   
 ### Custom Builds
 The other option for debugging is to create your own [custom build](references/developer-app/custom-build) of the PhoneGap Developer App 

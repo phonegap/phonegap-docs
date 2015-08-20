@@ -5,7 +5,7 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/reference
 layout: subpage
 ---
 
-The PhoneGap Developer App is an open source project so you are free to clone it and create your own custom build. This may be useful if you 
+Since the PhoneGap Developer App is an open source project, you can easily use it to create your own custom builds. This may be useful if you 
  want to add your own 3rd party plugins or specific settings and distribute it to a team of testers for instance. You could also use this option
  to allow the use of more remote debugging tools when you're running it locally rather than being flagged as a release build. 
 
@@ -82,7 +82,14 @@ checks have been made, you'll be prompted to save to your file system. It will b
 
   <div class="alert--tip">If you are stuck in the packaging or provisioning process, check out [this page](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html)
  for specific details on the process.</div> 
-     
+ 
+ #### Video Demo
+ In this short video we are running a locally built version of the PhoneGap Developer app on iOS with the addition of a 3rd party Social Sharing 
+ plugin built into it for sending text messages and some visual updates to the color and label of the wrapper to show that it's a custom build.  
+
+ ![](/images/ios-custom-build.gif)
+ 
+      
 ## Windows
 1. Open the command line application and clone the [PhoneGap Developer app repo](https://github.com/phonegap/phonegap-app-developer) git 
  project with the following command:
@@ -109,4 +116,10 @@ to set your own unique apo bundle id within the root `&lt;widget&gt;` element.
     
   Your newly built *.xap app bundle will be created in the platforms folder under **phonegap-app-developer/platforms/wp8/Bin/Release/<your-bundle-id>.xap**
       
+ #### Video Demo
+In this short video we are running a locally built version of the PhoneGap Developer app on a Windows Phone with the addition of a 3rd party Social 
+Sharing plugin built into it for sending text messages and some visual updates to the color and label of the wrapper to show that it's a custom build.  
+
+ ![](/images/win-custom-build.gif)
+
       

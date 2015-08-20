@@ -36,7 +36,7 @@ layout: subpage
   - [Adobe Mobile Services](https://github.com/Adobe-Marketing-Cloud/mobile-services)
 
  <div class='alert--warning'>If you're using a plugin in your project that is not shown in this list, it will not work with the PhoneGap Developer 
- App out of the box. You would need to create your own custom build of the [PhoneGap Developer app](https://github.com/phonegap/phonegap-app-developer/)
+ App out of the box. However, you can create your own [custom build of the PhoneGap Developer app](references/developer-app/custom-build)
  locally and include any other plugins there. We recommend always checking for the existence of any plugin in your code first before using it 
  to avoid errors in testing in general.</div>  
  
@@ -64,12 +64,11 @@ layout: subpage
    1. Using [Weinre](https://www.npmjs.com/package/weinre)  
    2. Running your own custom build of PhoneGap Developer App (as opposed to the app marketplace version)
 
- Keep in mind, the assumed audience for the PhoneGap Developer app is typically beginner-level or just getting started with PhoneGap. For 
- more complete control over your debugging environment you should plan to use the full featured [PhoneGap CLI](https://www.npmjs.com/package/phonegap).  
+ Check out the [debugging section](references/developer-app/debugging) for more details.   
 
 4. *PhoneGap Developer App hangs on `DOWNLOADING...` for iOS*
 
- *Currently if you enter the wrong IP Address (or an invalid one) to connect to, it will hang on the DOWNLOADING phase and you will need to exit and
- restart the app to try again. See the [bug being tracked here](https://github.com/phonegap/phonegap-app-developer/issues/338) for more details.*
+ Currently if you enter the wrong IP Address (or an invalid one) to connect to, it will hang on the DOWNLOADING phase and you will need to exit and
+ restart the app to try again. See the [bug being tracked here](https://github.com/phonegap/phonegap-app-developer/issues/338) for more details.
     
 
