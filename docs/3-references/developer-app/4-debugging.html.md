@@ -18,7 +18,7 @@ Since the PhoneGap Developer app is a production version app downloaded from the
 You can run weinre on your local machine and use it to debug your application being served from either the PhoneGap Desktop App or
 the PhoneGap CLI. 
 
-1. Install weinre using npm (requires [Node.js](nodejs.org)
+1. Install weinre using npm (requires [Node.js](http://nodejs.org))
     
         $ sudo npm install -g weinre
 
@@ -73,10 +73,10 @@ the pairing process (ie: http://192.168.1.20:3000).
          
   
 ## Creating Custom Builds
-The other option for debugging is to create your own [custom build](/references/developer-app/custom-build) of the PhoneGap Developer App 
+The other option for debugging is to create your own [custom build](/references/developer-app/custom-build/ios) of the PhoneGap Developer App 
 (as opposed to the app marketplace version). This option can be used for debugging using other Remote Debugging tools found in Safari, Chrome 
 and others developers may be more comfortable with. You could also include any other plugins or change settings overall to fit your testing needs. 
-See the [guide](/references/developer-app/custom-build) for more details. 
+See the [guide](/references/developer-app/custom-build/ios) for more details. 
  
 
 
