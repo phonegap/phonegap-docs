@@ -36,7 +36,7 @@ layout: subpage
   - [Adobe Mobile Services](https://github.com/Adobe-Marketing-Cloud/mobile-services)
 
  <div class='alert--warning'>If you're using a plugin in your project that is not shown in this list, it will not work with the PhoneGap Developer 
- App out of the box. However, you can create your own [custom build of the PhoneGap Developer app](/references/developer-app/custom-build)
+ App out of the box. However, you can create your own [custom build of the PhoneGap Developer app](/references/developer-app/custom-build/ios)
  locally and include any other plugins there. We recommend always checking for the existence of any plugin in your code first before using it 
  to avoid errors in testing in general.</div>  
  
