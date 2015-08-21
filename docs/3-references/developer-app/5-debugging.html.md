@@ -69,7 +69,7 @@ the pairing process (ie: http://192.168.1.20:3000).
   <img class="mobile-image" src="/images/weinre-inspect.png"/>
      
  #### Video Demo
- ![](/images/win-custom-build.gif)
+ ![](/images/weinre-demo-video.gif)
          
   
 ## Creating Custom Builds
