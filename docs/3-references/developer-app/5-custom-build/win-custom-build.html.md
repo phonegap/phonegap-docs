@@ -40,5 +40,8 @@ to set your own unique apo bundle id within the root `widget` element.
  In this short video we are running a locally built version of the PhoneGap Developer app on a Windows Phone with the addition of a 3rd party Social
  Sharing plugin built into it for sending text messages and some visual updates to the color and label of the wrapper to show that it's a custom build.
 
- ![](/images/win-custom-build.gif)
+<div class="video-wrapper">
+  <iframe src="https://www.youtube.com/embed/_IfMzntPAus" frameborder="0" allowfullscreen></iframe>
+</div>
+
 
