@@ -17,7 +17,7 @@ The PhoneGap CLI is supported on Mac and Windows.
 ### Guide Sections
 The sections covered in this reference include:
 
-- [Installation](/references/phonegap-cli/install/ios)
+- [Installation](/references/phonegap-cli/install)
 - [Create an app](/references/phonegap-cli/create)
 - [Using with PhoneGap Build](/references/phonegap-cli/remote-usage)
 - [Serving an App](/references/phonegap-cli/serve)

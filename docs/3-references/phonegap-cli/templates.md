@@ -5,15 +5,12 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/reference
 layout: subpage
 ---
 
-Create projects from an existing project template and list templates available.
-
-### Usage 
-    phonegap template [command]
-    phonegap recipe [command]
+Use the `template list` commands to get a listing of the templates available for use when creating your applications with the `create` command. 
+Some templates available include a `blank` template, a `hello-world` template or one based on jQuery Mobile. Once you choose a template, specify
+ it using the `--template` (or the alias `--recipe`) option followed by the name of the template.  
   
-###Commands
-
-    list   list available app templates     
+###Usage
+    phonegap template list
 
 ###Examples
 

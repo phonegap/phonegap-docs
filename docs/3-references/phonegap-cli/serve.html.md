@@ -5,15 +5,15 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/reference
 layout: subpage
 ---
 
-  Serves the application on a local web server.
-
-  The intended receiver is the PhoneGap Developer App running on a mobile device, but any
-  browser can consume the content.
+  The `serve` command is used to start up a local web server for hosting the application for the
+  PhoneGap Developer app (or any browser) to consume.
 
 ###Usage 
-    phonegap serve [options]
+    phonegap serve [options]   
 
 ###Options
+  Some options are available for specifically setting the port to use, to enable/disable auto reload
+  and to enable a local tunnel for providing public access as outlined below. 
 
       --port, -p <n>       port for web server (default: 3000)
       --autoreload         enable app refresh on file changes (default: true)
@@ -22,7 +22,7 @@ layout: subpage
 
 ###Alias
 
-    phonegap app
+    $ phonegap app
 
 ###Examples
 

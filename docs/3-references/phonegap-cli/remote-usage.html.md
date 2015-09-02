@@ -5,12 +5,13 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/reference
 layout: subpage
 ---
 
-
-The PhoneGap remote commands are used for executing commands against the PhoneGap Build service in the cloud rather than relying on a locally 
+The PhoneGap `remote` commands are used for executing commands against the PhoneGap Build service in the cloud rather than relying on a locally 
 installed SDK for each platform. 
 
 ###Usage 
-      $ phonegap remote [command]
+      phonegap remote [command]
+
+Use the commands below in conjunction with the `remote` command to perform the specific ations outlined below.    
 
 ###Commands
 
@@ -29,10 +30,11 @@ installed SDK for each platform.
       $ phonegap remote logout
   
 
-### Notes
+<div class="alert--info">
 - You'll need to have an existing [PhoneGap Build](http://build.phonegap.com) account to use these commands. You'll be prompted to enter your credentials after running the 
 `$ phonegap remote login` command. If you have an Adobe ID you can use that as well.  
 
 - The `phonegap remote run` command will execute both the `build` and `install` commands automatically and is the quickest path to building your app
  with the PhoneGap Build cloud service. The result is a QR code that can be scanned by your mobile device directly from the terminal. The app 
  loads wirelessly on your mobile device and you will be prompted to install it. 
+</div>

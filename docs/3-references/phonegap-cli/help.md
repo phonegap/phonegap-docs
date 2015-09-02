@@ -5,14 +5,15 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/reference
 layout: subpage
 ---
 
- You can use the PhoneGap CLI to get general or specific help in various ways. You can use it as a command with any combination of 
-  other commands to list out help for that command or use the `-h` or --h` options before or after a command. 
+You can use the PhoneGap CLI to get general or specific help in various ways. You can use it as a command with any combination of 
+other commands to list out help for that command or use the `-h` or `--h` options before or after a command. 
 
 ###Usage 
     
-    $ phonegap help             Displays the full help text
-    $ phonegap help <command>   Displays help text for a specific command
-    $ phonegap help <command>   Displays help text for a specific command
+    phonegap help             Displays the full help text
+    phonegap help <command>   Displays help text for a specific command
+    phonegap help <command>   Displays help text for a specific command
+
 
 ###Examples
 
