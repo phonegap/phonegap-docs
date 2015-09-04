@@ -1,7 +1,7 @@
 ---
-title: Template
-url: references/phonegap-cli/template-list
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/template.html.md
+title: Template List
+url: references/phonegap-cli/templates
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/templates.html.md
 layout: subpage
 ---
 
@@ -14,6 +14,6 @@ Some templates available include a `blank` template, a `hello-world` template or
 
 ###Examples
 
-  $ phonegap template list
-  $ phonegap create myApp --template hello-world
-  $ phonegap create myApp --recipe hello-world
+      $ phonegap template list
+      $ phonegap create myApp --template hello-world
+      $ phonegap create myApp --recipe hello-world

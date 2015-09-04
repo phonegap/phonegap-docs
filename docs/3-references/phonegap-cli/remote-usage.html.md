@@ -30,7 +30,7 @@ Use the commands below in conjunction with the `remote` command to perform the s
       $ phonegap remote logout
   
 
-<div class="alert--info">
+<div class="alert--info">**NOTE:**
 - You'll need to have an existing [PhoneGap Build](http://build.phonegap.com) account to use these commands. You'll be prompted to enter your credentials after running the 
 `$ phonegap remote login` command. If you have an Adobe ID you can use that as well.  
 

@@ -5,9 +5,9 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/reference
 layout: subpage
 ---
  
-To update your PhoneGap CLI version, run the following command:
+To update your PhoneGap CLI to the latest version, run the following command:
     
       $ npm update -g phonegap
 
 <div class="alert--info">**NOTE:** If you get an `Error: EACCES` when running any of the commands here, try prefixing it with `sudo`, such as:
-    `$ sudo npm install -g phonegap@latest` </div>
+    `$ sudo npm install -g phonegap` </div>

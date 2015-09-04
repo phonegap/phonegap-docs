@@ -13,7 +13,7 @@ layout: subpage
     phonegap create [options] <path> [id [name [config]]]
 
 You can specify some options when creating your project, including a template to use as a base project or an existing project
-to copy from or symbolically link to on your hard drive. Use the [`template list`](/references/phonegap-cli/template) 
+to copy from or symbolically link to on your hard drive. Use the `template list` 
   command to view the templates currently available. 
 
 ### Options
