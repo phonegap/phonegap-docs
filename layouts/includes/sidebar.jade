@@ -27,15 +27,10 @@ aside.sidebar
             each page in subPages
               li: a(href="/#{page.url}" class=document.url === page.url ? "current" : "")!=page.title
 
+        li: a(href="/references/phonegap-cli" class=document.url === 'references/phonegap-cli' ? "current" : "") PhoneGap CLI
+          - var subPages = [{title:"Installing the CLI", url:"references/phonegap-cli/install"},{title:"Help Commands", url:"references/phonegap-cli/help"},{title:"Create an App", url:"references/phonegap-cli/create"},{title:"Serve", url:"references/phonegap-cli/serve"},{title:"Using Templates", url:"references/phonegap-cli/templates"},{title:"Using PhoneGap Build", url:"references/phonegap-cli/remote-usage"},{title:"Cordova Commands", url:"references/phonegap-cli/cordova"},{title:"Update Version", url:"references/phonegap-cli/update"}]
+          ul
+            each page in subPages
+              li: a(href="/#{page.url}" class=document.url === page.url ? "current" : "")!=page.title
 
-      //- each guide, index in getCollection("navItems").toJSON()
-      //-   if guide.filename == '0-index.html.md'
-      //-     if index > 0
-      //-       | </ul>
-      //-     | <h#{guide.relativePath.split('/').length}> 
-      //-     a(href="/#{guide.url}")=guide.title
-      //-     | </h#{guide.relativePath.split('/').length}>
-      //-     | <ul>
-      //-   else
-      //-     li: a(href="/#{guide.url}")=guide.title
-      //- | </ul>
+

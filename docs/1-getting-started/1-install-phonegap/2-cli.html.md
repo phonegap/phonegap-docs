@@ -23,8 +23,8 @@ CLI this option may be best going forward.
 There are a few simple requirements you'll need prior to installing the PhoneGap CLI:
 
 - [node.js](http://nodejs.org/) - a JavaScript runtime to build your JavaScript code
-- [ios-sim](https://github.com/phonegap/ios-sim#installation) - an iOS simulator for iOS development (Mac only)
-- [git](http://git-scm.com) - used in the background by the CLI to download assets. It comes pre-installed on some operating systems, to see if you already have it installed, type `git` from the command line.
+- [git](http://git-scm.com) - used in the background by the CLI to download assets. It comes pre-installed on some operating systems. 
+   To see if you already have it installed, type `git` from the command line.
 
 ###Install Steps
 
@@ -32,7 +32,8 @@ There are a few simple requirements you'll need prior to installing the PhoneGap
     <br>
          $ npm install -g phonegap@latest
 
-   <div class="alert--tip">**TIPS:** 1) The `$` symbol is used throughout this guide to indicate the command prompt, it should not be typed. 2) `npm` is the node package manager and installed with node.js. The `npm` command fetches the necessary dependencies for the PhoneGap CLI to run on your local machine. It creates a *node_modules* folder with the necessary code needed to run the CLI. The `-g` flag specifies that folder to be installed at the global location so it can be accessed from anywhere on your machine (defaults to */usr/local/lib/node_modules/phonegap* on Mac).
+   <div class="alert--tip">**TIPS:** 1) The `$` symbol is used throughout this guide to indicate the command prompt, it should not be typed. 2) `npm` is the node package manager and installed with node.js. The `npm` command fetches the 
+   necessary dependencies for the PhoneGap CLI to run on your local machine. It creates a *node_modules* folder with the necessary code needed to run the CLI. The `-g` flag specifies that folder to be installed at the global location so it can be accessed from anywhere on your machine (defaults to */usr/local/lib/node_modules/phonegap* on Mac).
    </div>
 
    <div class="alert--warning">**OS X Users:** You may need to prefix this command with `sudo` to allow installation to restricted directories and type the following instead: `$ sudo npm install -g phonegap@latest`<br><br>
