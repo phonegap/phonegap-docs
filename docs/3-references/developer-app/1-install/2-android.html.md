@@ -3,6 +3,7 @@ title: Android Device Installation
 url: references/developer-app/install/android
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/developer-app/1-install/2-android.html.md
 layout: subpage
+expand: dev-app
 tabs:
   - label: Mac
     url: references/developer-app/install/ios

@@ -3,6 +3,7 @@ title: Updating PhoneGap Developer Version
 url: references/developer-app/update-version
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/developer-app/update-version.html.md
 layout: subpage
+expand: dev-app
 ---
 
 ###iOS

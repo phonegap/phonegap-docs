@@ -3,6 +3,7 @@ title: Creating an App
 url: references/phonegap-cli/create
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/create.html.md
 layout: subpage
+expand: cli
 ---
 
 

@@ -3,6 +3,7 @@ title: Using cordova Commands
 url: references/phonegap-cli/cordova
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/cordova.html.md
 layout: subpage
+expand: cli
 ---
 
 There are some cases where the PhoneGap CLI and Cordova CLI have similar commands but behave differently. The PhoneGap `serve` command is

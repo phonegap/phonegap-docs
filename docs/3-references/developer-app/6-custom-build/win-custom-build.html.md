@@ -3,6 +3,7 @@ title: Custom Windows Phone Build
 url: references/developer-app/custom-build/win
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/developer-app/5-custom-build/win-custom-build.html.md
 layout: subpage
+expand: dev-app
 tabs:
    - label: iOS
      url: references/developer-app/custom-build/ios

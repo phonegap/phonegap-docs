@@ -3,6 +3,7 @@ title: Installing the CLI
 url: references/phonegap-cli/install
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/install.html.md
 layout: subpage
+expand: cli
 ---
 
 There are a few basic requirements you'll need prior to installing the PhoneGap CLI:

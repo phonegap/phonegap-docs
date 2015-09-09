@@ -3,11 +3,12 @@ title: Mac Installation
 url: references/desktop-app/install/mac
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/1-install/1-mac.html.md
 layout: subpage
+expand: desktop
 tabs:
 - label: Mac
   url: references/desktop-app/install/mac
 - label: Win
-  url: references/desktop-app/install/win
+  url: references/desktop-app/install/win  
 ---
 
 

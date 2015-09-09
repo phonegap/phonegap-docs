@@ -2,6 +2,7 @@
 title: PhoneGap Developer App Reference Guide
 url: /references/developer-app
 layout: subpage
+expand: dev-app
 ---
 
 ### Overview

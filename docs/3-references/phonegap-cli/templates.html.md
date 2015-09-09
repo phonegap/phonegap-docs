@@ -3,6 +3,7 @@ title: Templates
 url: references/phonegap-cli/templates
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/templates.html.md
 layout: subpage
+expand: cli
 ---
 
 Use the `template list` command to get a listing of the templates available for creating your applications with the `create` command. 

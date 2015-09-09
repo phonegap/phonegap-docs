@@ -3,6 +3,7 @@ title: Use with PhoneGap Build
 url: references/phonegap-cli/remote-usage
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/remote-usage.html.md
 layout: subpage
+expand: cli
 ---
 
 The PhoneGap `remote` commands are used for executing commands against the PhoneGap Build service in the cloud rather than relying on a locally 

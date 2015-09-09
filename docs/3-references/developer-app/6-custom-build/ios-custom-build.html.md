@@ -3,6 +3,7 @@ title: Custom iOS Build
 url: references/developer-app/custom-build/ios
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/developer-app/5-custom-build/ios-custom-build.html.md
 layout: subpage
+expand: dev-app
 tabs:
    - label: iOS
      url: references/developer-app/custom-build/ios

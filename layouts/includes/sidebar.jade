@@ -17,20 +17,7 @@ aside.sidebar
       ul
         li: a(href="/plugin-apis" class=document.url === 'plugin-apis'? "current" : "") Plugin APIs
         li: a(href="/references/desktop-app" class=document.url === 'references/desktop-app'? "current" : "") PhoneGap Desktop
-            - var subPages = [{title:"Install", url:"references/desktop-app/install/mac"},{title:"Create a Project", url:"references/desktop-app/create-project"},{title:"Open a Project", url:"references/desktop-app/open-project"},{title:"Active vs Inactive", url:"references/desktop-app/active-vs-inactive"},{title:"Preview your App", url:"references/desktop-app/pair-with-dev-app"},{title:"Remove a Project", url:"references/desktop-app/remove-project"},{title:"Update Version", url:"references/desktop-app/7-update-version/mac"},{title:"Edit Settings", url:"references/desktop-app/edit-settings"},{title:"View Server Log", url:"references/desktop-app/view-server-log"},{title:"Troubleshoot", url:"references/desktop-app/troubleshoot-faq"}]
-            ul
-              each page in subPages
-                li: a(href="/#{page.url}" class=document.url === page.url? "current" : "")!=page.title
         li: a(href="/references/developer-app" class=document.url === 'references/developer-app' ? "current" : "") PhoneGap Developer
-          - var subPages = [{title:"Install", url:"references/developer-app/install/ios"},{title:"Preview an App", url:"references/developer-app/previewing-app"},{title:"Supported Gestures", url:"references/developer-app/gestures"},{title:"Update Version", url:"references/developer-app/update-version"},{title:"Debugging", url:"references/developer-app/debugging"},{title:"Custom Builds", url:"references/developer-app/custom-build/ios"},{title:"FAQ/Troubleshoot", url:"references/developer-app/troubleshoot-faq"}]
-          ul
-            each page in subPages
-              li: a(href="/#{page.url}" class=document.url === page.url ? "current" : "")!=page.title
-
         li: a(href="/references/phonegap-cli" class=document.url === 'references/phonegap-cli' ? "current" : "") PhoneGap CLI
-          - var subPages = [{title:"Installing the CLI", url:"references/phonegap-cli/install"},{title:"Help Commands", url:"references/phonegap-cli/help"},{title:"Create an App", url:"references/phonegap-cli/create"},{title:"Serve", url:"references/phonegap-cli/serve"},{title:"Using Templates", url:"references/phonegap-cli/templates"},{title:"Using PhoneGap Build", url:"references/phonegap-cli/remote-usage"},{title:"Cordova Commands", url:"references/phonegap-cli/cordova"},{title:"Update Version", url:"references/phonegap-cli/update"}]
-          ul
-            each page in subPages
-              li: a(href="/#{page.url}" class=document.url === page.url ? "current" : "")!=page.title
 
 
