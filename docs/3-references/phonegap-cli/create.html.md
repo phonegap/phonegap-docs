@@ -1,5 +1,5 @@
 ---
-title: Create an App
+title: Creating an App
 url: references/phonegap-cli/create
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/create.html.md
 layout: subpage
@@ -24,7 +24,7 @@ to copy from or symbolically link to on your hard drive. Use the `template list`
       --copy-from, -src <path>  create project using a copy of the www folder from an existing project
       --link-to <path>          symlink/shortcut to the www folder of another project without copying
 
-### Config 
+#### Config Parameter
 The `[config]` parameter allows you to pass a JSON string with configuration parameters some plugins may specifically rely on. 
 They are injected into the `<path>/.cordova/config.json` file.
 
@@ -39,5 +39,5 @@ They are injected into the `<path>/.cordova/config.json` file.
       $ phonegap create path/to/myApp --id "com.example.app" --name "My App" --copy-from ~/myOtherApp
       $ phonegap create path/to/myApp --link-to ../myOtherApp
 
-<div class="alert--info">**Note:** Check out the [template](/references/phonegap-cli/template) guide for more details on how to
+<div class="alert--info">**Note:** Check out the [templates](/references/phonegap-cli/templates) guide for more details on how to
 create applications based on templates. </div> 

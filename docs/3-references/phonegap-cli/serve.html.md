@@ -1,5 +1,5 @@
 ---
-title: Serve
+title: Serving an App
 url: references/phonegap-cli/serve
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/serve.html.md
 layout: subpage
@@ -12,8 +12,8 @@ layout: subpage
     phonegap serve [options]   
 
 ###Options
-  Some options are available for specifically setting the port to use, to enable/disable auto reload, 
-  and to enable a local tunnel for providing public access as outlined below. 
+  Some options are available for specifically setting the port to use, to enable or disable auto reload, 
+  or to setup a local tunnel for public access as shown below. 
 
       --port, -p <n>       port for web server (default: 3000)
       --autoreload         enable app refresh on file changes (default: true)

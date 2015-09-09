@@ -1,5 +1,5 @@
 ---
-title: Installing the CLI 
+title: Installing the CLI
 url: references/phonegap-cli/install
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/install.html.md
 layout: subpage
@@ -20,25 +20,25 @@ Run the following command to install the latest version of the PhoneGap CLI:
 ####Installing a Specific Version
 You can install a specific version of the [PhoneGap CLI](https://www.npmjs.com/package/phonegap) via `npm` by specifying the version number after the `@` symbol:
          
-        $ npm install -g phonegap@5.1.1
+    $ npm install -g phonegap@5.1.1
                  
 <div class="alert--tip">**TIP:** To get a listing of the PhoneGap CLI versions available, you can run `$ npm info phonegap`</div>
 
 
-<div class="alert--info">**NOTE:** If you get an `Error: EACCES` when running any of the commands here, try prefixing it with `sudo`, such as:
-    `$ sudo npm install -g phonegap@` </div>
+<div class="alert--warning">If you get an `EACCES` error when running any of the commands here, try prefixing it with `sudo`, such as:
+    `$ sudo npm install -g phonegap` </div>
     
 
-# PhoneGap CLI Usage
+### PhoneGap CLI Use Cases
 The PhoneGap CLI can be used for different stages of development and with other tools offered by the PhoneGap team. The multiples use cases are outlined below
-and will determine any other dependencies you may need to install. 
+and will determine any other dependencies that may need to be installed. 
 
 ### 1 - Paired with the PhoneGap Developer App
 
 Use the PhoneGap CLI to simply `create` and `serve` your PhoneGap apps for the [PhoneGap Developer App](/references/developer-app) 
    to consume as shown in the [Getting Started Guides](/getting-started/3-create-your-app/cli). 
    
-   <div class="alert--info">**NOTE:** No additional SDK's are needed other than a browser or the PhoneGap Developer app on your mobile
+   <div class="alert--tip">**TIP:** No additional SDK's are needed other than a browser or the PhoneGap Developer app on your mobile
  device for previewing your apps. You can use this approach for developing a large part of your apps since the PhoneGap Developer app 
  already includes most common plugins and you can tweak your HTML/JS as needed per platform. Once you're ready to move on to configuring, building
  and packaging your app outside of the PhoneGap Developer app sandbox however, you'll need to move on to one of the two options below.</div> 
@@ -47,7 +47,7 @@ Use the PhoneGap CLI to simply `create` and `serve` your PhoneGap apps for the [
 Use the PhoneGap CLI to create and configure your apps locally, then build and package them in the [PhoneGap Build](http://build.phonegap.com)
  cloud service. 
  
- <div class="alert--info">**NOTE:** The `remote` command is used From the PhoneGap CLI to interface with PhoneGap Build once your project has been configured. 
+ <div class="alert--info">**NOTE:** The `remote` command is used from the PhoneGap CLI to interface with PhoneGap Build once your project has been configured. 
  The [Remote Usage Guide](/references/phonegap-cli/remote-usage) provides the details for this command. For details on how to specifically configure your apps 
  for PhoneGap Build. Check out [their docs located here](http://docs.build.phonegap.com/).  </div> 
 
