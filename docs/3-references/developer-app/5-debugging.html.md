@@ -3,6 +3,7 @@ title: Debugging
 url: references/developer-app/debugging
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/developer-app/debugging.html.md
 layout: subpage
+expand: dev-app
 ---
 
 The intended audience for the PhoneGap Developer app is typically beginner-level and just getting started with PhoneGap. For 

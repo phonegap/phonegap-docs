@@ -3,6 +3,7 @@ title: Update PhoneGap Desktop on Mac
 url: references/desktop-app/7-update-version/mac
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/7-update-version/1-mac.html.md
 layout: subpage
+expand: desktop
 tabs:
 - label: Mac
   url: references/desktop-app/7-update-version/mac

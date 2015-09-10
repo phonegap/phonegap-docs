@@ -3,6 +3,7 @@ title: Gestures
 url: references/developer-app/gestures
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/developer-app/gestures.html.md
 layout: subpage
+expand: dev-app
 ---
 
 There are a couple of supported gestures you should be aware of when using the PhoneGap Developer app. 

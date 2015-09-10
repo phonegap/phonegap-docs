@@ -27,7 +27,14 @@ html(lang='en')
     main
       .bounds
         block main
-          include ./includes/sidebar.jade
+          if(document.expand=='cli')
+            include ./includes/cli-menu.jade
+          else if(document.expand=='dev-app')
+            include ./includes/dev-app-menu.jade
+          else if(document.expand=='desktop')
+            include ./includes/desktop-menu.jade
+          else
+            include ./includes/sidebar.jade
           .content
             block content
               -if(document.tabs)

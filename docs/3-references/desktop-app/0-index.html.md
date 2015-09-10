@@ -1,7 +1,8 @@
 ---
 title: PhoneGap Desktop Reference
-url: /references/desktop-app
+url: references/desktop-app
 layout: subpage
+expand: desktop
 ---
 
 ### Overview
@@ -17,7 +18,7 @@ PhoneGap Desktop is currently available for [Mac and Windows](https://github.com
 ### Guide Sections
 The sections covered in this reference include:
 
-- [Installation Steps](desktop-app/1-install/mac)
+- [Installation Steps](desktop-app/install/mac)
 - [Creating a Project](desktop-app/create-project)
 - [Opening an Existing Project](desktop-app/open-project)
 - [Previewing your App](desktop-app/pair-with-dev-app)

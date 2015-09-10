@@ -3,6 +3,7 @@ title: Edit Settings
 url: references/desktop-app/edit-settings
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/8-edit-settings.html.md
 layout: subpage
+expand: desktop
 ---
 
 You can use the settings dialog to change user configurable settings for PhoneGap Desktop. 

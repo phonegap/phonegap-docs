@@ -3,6 +3,7 @@ title: Updating the PhoneGap Desktop Version
 url: references/desktop-app/update-version
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/7-update-version.html.md
 layout: subpage
+expand: desktop
 ---
 
 PhoneGap Desktop will automatically prompt you when a new version is available with the following dialog:

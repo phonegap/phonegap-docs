@@ -3,6 +3,7 @@ title: Preview your App
 url: references/desktop-app/pair-with-dev-app
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/5-pair-with-dev-app.html.md
 layout: subpage
+expand: desktop
 ---
 
 You can use the **PhoneGap Developer App** paired with **PhoneGap Desktop** to immediately preview your app on a device without installing platform SDKs,

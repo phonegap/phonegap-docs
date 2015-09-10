@@ -27,4 +27,4 @@ an easy way for developers to get started creating and testing their PhoneGap ap
 
   <div class="alert--info">**NOTE:** The platform SDKs mentioned above refer to the software development kits Apple, Google and Microsoft provide to build applications for their platforms (iOS, Android and Windows respectively).
  When you're ready to take your mobile application development further or decide you want to build for each platform locally yourself, you can find the specific instructions for each platform
- in the [getting started guides](http://docs.phonegap.com/en/edge/guide_platforms_index.md.html#Platform%20Guides). </div>
+ in the [PhoneGap Platform Installation Guides](http://docs.phonegap.com/en/edge/guide_platforms_index.md.html#Platform%20Guides). </div>

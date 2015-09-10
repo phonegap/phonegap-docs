@@ -3,6 +3,7 @@ title: FAQ / Troubleshooting
 url: references/developer-app/troubleshoot-faq
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/developer-app/10-troubleshoot-faq.html.md
 layout: subpage
+expand: dev-app
 ---
 
 1. *Which plugins are supported by the PhoneGap Developer app?*

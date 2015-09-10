@@ -3,6 +3,7 @@ title: Remove a Project
 url: references/desktop-app/remove-project
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/6-remove-project.html.md
 layout: subpage
+expand: desktop
 ---
 
 Removing a project in PhoneGap Desktop simply unloads it from the list of projects, it doesn't actually delete any files from 

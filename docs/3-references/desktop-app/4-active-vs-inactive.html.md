@@ -3,6 +3,7 @@ title: Active vs Inactive Projects
 url: references/desktop-app/active-vs-inactive
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/4-active-vs-inactive.html.md
 layout: subpage
+expand: desktop
 ---
 
 
