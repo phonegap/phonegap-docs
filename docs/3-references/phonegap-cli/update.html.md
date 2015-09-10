@@ -7,8 +7,10 @@ expand: cli
 ---
  
 To update your PhoneGap CLI to the latest version, run the following command:
-    
-      $ npm update -g phonegap
+
+```bash
+$ npm update -g phonegap
+```
 
 <div class="alert--info">**NOTE:** If you get an `Error: EACCES` when running any of the commands here, try prefixing it with `sudo`, such as:
     `$ sudo npm install -g phonegap` </div>

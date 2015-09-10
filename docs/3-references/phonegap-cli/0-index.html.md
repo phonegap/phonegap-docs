@@ -1,6 +1,6 @@
 ---
 title: PhoneGap CLI Reference Guide
-url: /references/phonegap-cli
+url: references/phonegap-cli
 layout: subpage
 expand: cli
 ---

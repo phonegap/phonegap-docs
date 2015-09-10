@@ -11,10 +11,14 @@ Some templates available include a `blank` template, a `hello-world` template or
  it using the `--template` (or the alias `--recipe`) option followed by the name of the template.  
   
 ###Usage
-    phonegap template list
+```bash
+phonegap template list
+```    
 
 ###Examples
 
-      $ phonegap template list
-      $ phonegap create myApp --template hello-world
-      $ phonegap create myApp --recipe hello-world
+```bash
+$ phonegap template list
+$ phonegap create myApp --template hello-world
+$ phonegap create myApp --recipe hello-world
+```

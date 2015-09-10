@@ -15,13 +15,16 @@ You can check if it's already installed by typing `git` from the command line.
 
 ### Install via npm
 Run the following command to install the latest version of the PhoneGap CLI:
- 
-    $ npm install -g phonegap
+
+```bash 
+$ npm install -g phonegap
+```    
         
 ####Installing a Specific Version
 You can install a specific version of the [PhoneGap CLI](https://www.npmjs.com/package/phonegap) via `npm` by specifying the version number after the `@` symbol:
-         
-    $ npm install -g phonegap@5.1.1
+```bash         
+$ npm install -g phonegap@5.1.1
+```
                  
 <div class="alert--tip">**TIP:** To get a listing of the PhoneGap CLI versions available, you can run `$ npm info phonegap`</div>
 

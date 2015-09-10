@@ -10,26 +10,29 @@ The PhoneGap `remote` commands are used for executing commands against the Phone
 installed SDK for each platform. 
 
 ###Usage 
-      phonegap remote [command]
+```bash
+phonegap remote [command]
+```
 
 Use the commands below in conjunction with the `remote` command to perform the specific ations outlined below.    
 
 ###Commands
-
-      login                login to PhoneGap Build (requires an account and your credentials)
-      logout               logout of PhoneGap Build
-      build <platform>     build a specific platform
-      install <platform>   install a specific platform (returns a generated QR code in the terminal)
-      run <platform>       build and install a specific platform
+```bash
+login                login to PhoneGap Build (requires an account and your credentials)
+logout               logout of PhoneGap Build
+build <platform>     build a specific platform
+install <platform>   install a specific platform (returns a generated QR code in the terminal)
+run <platform>       build and install a specific platform
+```
 
 ###Examples
-
-      $ phonegap remote login
-      $ phonegap remote build ios
-      $ phonegap remote install android
-      $ phonegap remote run ios
-      $ phonegap remote logout
-  
+```bash
+$ phonegap remote login
+$ phonegap remote build ios
+$ phonegap remote install android
+$ phonegap remote run ios
+$ phonegap remote logout
+```  
 
 <div class="alert--info">**NOTE:** You'll need to have an existing [PhoneGap Build](http://build.phonegap.com) account to use these commands. You'll be prompted to enter your credentials after running the 
 `$ phonegap remote login` command. An Adobe ID can be used as well.  

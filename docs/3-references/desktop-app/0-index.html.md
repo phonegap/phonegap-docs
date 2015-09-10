@@ -1,6 +1,6 @@
 ---
 title: PhoneGap Desktop Reference
-url: /references/desktop-app
+url: references/desktop-app
 layout: subpage
 expand: desktop
 ---

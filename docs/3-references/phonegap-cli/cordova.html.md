@@ -15,10 +15,12 @@ prefix to that command. The Cordova CLI version of a command will automatically 
 PhoneGap CLI without having to specifically type `cordova`.   
   
 ###Usage
-    phonegap cordova <command>
+```bash
+phonegap cordova <command>
+```
 
 ###Example
-
-    $ phonegap cordova serve
-  
+```bash
+$ phonegap cordova serve
+```  
   

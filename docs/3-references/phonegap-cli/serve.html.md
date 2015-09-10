@@ -10,25 +10,31 @@ expand: cli
   PhoneGap Developer app (or any browser) to consume.
 
 ###Usage 
-    phonegap serve [options]   
+```bash
+phonegap serve [options]
+```       
 
 ###Options
   Some options are available for specifically setting the port to use, to enable or disable auto reload, 
   or to setup a local tunnel for public access as shown below. 
 
-      --port, -p <n>       port for web server (default: 3000)
-      --autoreload         enable app refresh on file changes (default: true)
-      --no-autoreload      disable app refresh on file changes
-      --localtunnel        enable a local tunnel for public access (default: false)
+```bash
+--port, -p <n>       port for web server (default: 3000)
+--autoreload         enable app refresh on file changes (default: true)
+--no-autoreload      disable app refresh on file changes
+--localtunnel        enable a local tunnel for public access (default: false)
+```
 
 ###Alias
-
-    $ phonegap app
+```bash
+$ phonegap app
+```    
 
 ###Examples
-
-    $ phonegap serve
-    $ phonegap serve --port 1337
-    $ phonegap serve --no-autoreload
-    $ phonegap serve --localtunnel
-    $ phonegap app
+```bash
+$ phonegap serve
+$ phonegap serve --port 1337
+$ phonegap serve --no-autoreload
+$ phonegap serve --localtunnel
+$ phonegap app
+```    
