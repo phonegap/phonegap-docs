@@ -11,7 +11,7 @@ var fs = require('fs-extra'),
  * Configure Jasmine.
  */
 
-jasmine.getEnv().defaultTimeoutInterval = (1000 * 60);
+jasmine.getEnv().defaultTimeoutInterval = (1000 * 60) * 2;
 
 /**
  * Specification.
