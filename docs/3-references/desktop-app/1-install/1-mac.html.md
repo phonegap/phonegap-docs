@@ -12,7 +12,7 @@ tabs:
 ---
 
 
-1. Download the latest [Mac OS X Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.10/PhoneGapDesktop.dmg).
+1. Download the latest [Mac OS X Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.11/PhoneGapDesktop.dmg).
 
 2. Double-click the downloaded file to run the installer. You will initially be prompted with a license agreement to accept:
 ![](/images/license-agreement.png)
