@@ -43,7 +43,7 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
   <img class="mobile-image" src="/images/dev-app-success.jpg"/>
 
 
- Once the PhoneGap Developer app loads connects and loads your mobile application, it should be displayed for preview as shown below:
+ Once the PhoneGap Developer app connects and loads your mobile application, it should be displayed for preview as shown below:
 
  <img class="mobile-image" src="/images/dev-app-preview.jpg"/>
 
