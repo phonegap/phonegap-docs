@@ -105,12 +105,8 @@ you'll see an arrow added to the screen into the `TabBarController`.
 set the entry point as well that needs to be removed. Open **AppDelegate.m** and search for `didFinishLaunchingWithOptions`. 
  This method is the point where any final customization or final tweaks can be done before displaying the app. 
  Since we're using a storyboard and have already set an entry point into the `TabBarController` there, we don't need to use the current 
- code in this method to set the `rootViewController`. You can completely remove everything within this method, leaving it empty:
-
-        (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
-        {
-     
-        }
+ code in this method to set the `rootViewController` so go ahead and completely remove it. 
+        
 
 12. In each of the scenes in the *Document Outline* view you will notice an **Item** object which represents the tab displayed for each view. 
 
