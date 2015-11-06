@@ -33,7 +33,7 @@ Select your operating system to continue:
 ![](/images/drag-to-apps-folder.png)
 
 5. Next simply open the application and proceed to [Step 2](/getting-started/2-install-mobile-app) where you will
-install the __PhoneGap Developer App__ to your mobile device for previewing the apps you build. 
+install the __PhoneGap Developer App__ to your mobile device for previewing the apps you build.
 ![](/images/desktop-app-open.png)
 
 
