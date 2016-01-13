@@ -14,10 +14,13 @@ html(lang='en')
         try{Typekit.load();}catch(e){}
       script(src="https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.2.0/sizzle.min.js")
       script(src="/scripts/main.js")
+      script(src="http://phonegap.github.io/scripts/home.js")
+      script(src="http://phonegap.github.io/scripts/mobile_nav.js")
     block styles
       != styles.toHTML()
       link(href='/styles/zenburn-highlight.css', rel='stylesheet')
       link(href='/styles/normalize.css', rel='stylesheet')
+      link(href='http://phonegap.github.io/styles/main.css', rel='stylesheet')
       link(href='/styles/index.css', rel='stylesheet')
 
 

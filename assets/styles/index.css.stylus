@@ -6,177 +6,9 @@ $content-maxwidth = 700px
 $code-maxwidth = 700px
 $light-weight = 300
 
-// Mobile first and default mediaquery
-//Base Styles
-:root
-  font-size 16px
-body
-  font-family 'adobe-clean', Helvetica, Arial, sans-serif
-  color rgba(0, 0, 0, 0.8)
-  line-height 1.75rem
-  -webkit-font-smoothing antialiased
-.bounds
-  max-width 1240px
-  position relative
-  margin 0 auto
-  padding 0 20px
-  box-sizing border-box
-a
-  color #27a1c5
-  text-decoration none
-  &:hover
-    text-decoration underline
-h2
-  text-transform uppercase
-  margin 0 0 1rem
-  font-size 1.125rem
-  font-weight $light-weight
-//Header
-.site-header
-  height 60px
-  width 100%
-  background rgba(255,255,255,0.95)
-  display block
-  margin-bottom 0
-  .bounds
-    display flex
-    justify-content space-between
-    align-items center
-    height 100%
-    padding 0 20px 0 10px
-  a
-    color #999
-    &:hover
-      text-decoration none
-.site-header__logo
-  h1
-    // font-size 1.8rem
-    font-size 1.0625rem
-    margin 0
-    padding 0
-    font-weight normal
-  img, svg
-    vertical-align middle
-    margin-right 0.125rem
-    width 1.25rem
-    height auto
-  path
-    fill currentColor
-  span
-    position relative
-    top .125rem
-.site-header__nav
-  display block
-  ul
-    margin 0
-    padding 0
-    display flex
-    flex-direction column
-    list-style none
-
-// Site Footer
-.site-footer
-  background $footer-bg
-  color white
-  a
-    color white
-    &:hover
-      color white
-  .bounds
-    padding-top 50px
-    padding-bottom 30px
-  h2
-    color #c4c4c4
-  hr
-    border 0
-    height 1px
-    background #001835
-    margin 43px 0
-.site-footer__lists
-  display flex
-  flex-wrap wrap
-  max-width 520px
-  justify-content space-between
-  flex-grow 1
-.site-footer__list
-  display block
-  min-width 170px
-  margin 0 0 2.25rem
-  ul
-    list-style none
-    margin 0
-    padding 0
-.site-footer__top
-  display flex
-  flex-wrap wrap
-  justify-content space-between
-.site-footer__messages
-  max-width 400px
-  order 0
-  h2
-    font-weight normal
-    font-size 1.5rem
-    margin-bottom 1.25rem
-    a
-      display block
-      position relative
-      color #27a1c5
-      &:before
-        content url('../images/arrow-right.svg')
-        position relative
-        left 0
-        top 0
-        width 1.5rem
-        height 1.125rem
-        margin-right .5rem
-        transition left .2s ease
-      &:hover
-        color #27a1c5
-        text-decoration none
-        &:before
-          left .3rem
-.site-footer__message
-  margin-bottom 3rem
-.subscribe
-  display flex
-  flex-wrap wrap
-  align-items center
-  h2
-    width 100%
-.subscribe__description
-  flex-grow 1
-  max-width 556px
-.subscribe__form
-  flex-grow 1
-  display flex
-.subscribe__form__text-input
-  background #64889B
-  border none
-  height 2.75rem
-  box-sizing border-box
-  padding .875rem 1rem
-  border-radius 4px
-  vertical-align top
-  flex-grow 1
-  margin-right 10px
-  &::placeholder
-    color #003351
-.subscribe__form__submit
-  text-transform uppercase
-  font-size 1.0625rem
-  height 2.75rem
-  box-sizing border-box
-  padding .875rem 1rem
-  border-radius 4px
-  background #1BA1C7
-  border none
-  vertical-align top
-.site-footer__copyright
-  font-size .75rem
-  line-height .875rem
-  a, a:hover
-    text-decoration underline
 // Main Content
+body::before
+  display none
 main
   .bounds
     display flex
@@ -284,7 +116,7 @@ article.page
   max-height 45px
   overflow hidden
   transition max-height 0.5s ease-in-out, box-shadow 0.5s ease-in-out
-  z-index 10
+  z-index 1
   box-shadow 0 2px 5px rgba(0,0,0,0)
   &.open
     max-height 400px
@@ -366,43 +198,10 @@ code, kbd, pre, samp
   overflow scroll
   border-radius 4px
 @media (min-width: 820px)
+  body
+    padding-top 180px
   h2
     margin 0 0 1.5rem
-  .site-header
-    color white
-    background $header-bg
-    height 72px
-    margin-bottom 50px
-    a
-      color #fff
-    .bounds
-      justify-content flex-start
-  .site-header__nav
-    display block
-    ul
-      flex-direction row
-      li
-        padding 10px
-        margin 0 4px
-  .site-header__logo
-    margin-right: 40px;
-    h1
-      font-size 1.6875rem
-      font-weight $light-weight
-    span
-      top .125rem
-    img, svg
-      margin-right: .75rem;
-  .site-footer
-    .bounds
-      padding-top 70px
-      padding-bottom 30px
-  .site-footer__list
-    margin 0 0 2.5rem
-  .site-footer__messages
-    order 2
-    h2
-      margin-bottom 1.25rem
   main
     .bounds
       display flex
