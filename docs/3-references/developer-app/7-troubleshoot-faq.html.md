@@ -84,22 +84,29 @@ expand: dev-app
     $ ping your.phones.ip.address
     ```
 
-  If you are able unable to ping your phone, this is most likely due to a network issue. You might be on a network where connected devices are set to not talk to each other. 
+  If you are able unable to ping your phone, this is most likely due to a network issue. You might be on a network where connected devices are set to not talk to each other.
 
   If you are able to ping your phone and still unable to download, then your issue might be a firewall,  
-  the port you are trying to serve is blocked, serving a zip is not allowed on your network, or a zip error has occured on device. To diagnose these problems, first try opening the browser on the computer you are serving the PhoneGap project from. Then, type the ip address from the `phonegap serve` command and append `/__api__/appzip` to the url so it looks like this:
+  the port you are trying to serve is blocked, serving a zip is not allowed on your network, or a zip error has occured on device. To diagnose these problems, first try opening the browser on the computer you are serving the PhoneGap project from. Then, type the ip address from the `phonegap serve` command and append `/__api__/appzip` to the url so it looks something like this:
 
+    ```
     http://127.0.0.1:3000/__api__/appzip
+    ```
 
   That should start the zip download of your project onto your machine. Once you download the zip, try 
-  unzipping its contents and see if it actually matches the contents of your `www/`. If you are unable to unzip the file provided, it might be due to the contents of your `www/`. For example, there are known issues when trying to serve a project that has a lot of files. Try to reduce the amount of files in your project.
+  unzipping its contents and see if it actually matches the contents of your `www/`. If you are unable to unzip the file provided, it might be due to the contents of your `www/`. For example, there are known issues when trying to serve a project that has a lot of files or that is large in size. Try to reduce the amount of files/size of your project.
 
-  If no download happens at all, make sure that the `phonegap` module has firewall access like so:
+  If no download happens at all, make sure that NodeJS has firewall access. On Windows, it will prompt you for permission to allow NodeJS to have access:
 
-    screen cap of how to fix the firewall/allow security access on windows/osx
+  <img class="mobile-image" src="/images/node_js_allow_firewall.png">
+
+  If no prompt appears, you can go into your Windows Firewall settings and under Allowed Apps, you can see if NodeJS has firewall access or not. If there is no entry for NodeJS, find where NodeJS is installed on your system and add it by using the "Allow another app". 
+
+  <img class="mobile-image" src="/images/node_js_firewall_allowed_apps.png">
 
   Next, ensure that the port you are trying to `phonegap serve` from is open. You will have to configure 
   this in your router/network settings. If you can't open the port through your network settings, you can try configuring to serve on a different port that you have access to:
+
     ```
     $ phonegap serve --port 1337
     ```
@@ -120,9 +127,3 @@ expand: dev-app
     // lineNumber: what line error occurs on
     window.onerror = function (err, fileName, lineNumber) { };
   ```
-
-
-
-
-
- 
