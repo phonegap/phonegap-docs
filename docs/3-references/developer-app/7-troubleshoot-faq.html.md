@@ -6,7 +6,7 @@ layout: subpage
 expand: dev-app
 ---
 
-1. *Which plugins are supported by the PhoneGap Developer app?*
+### Which plugins are supported by the PhoneGap Developer app?
 
  The PhoneGap Developer App supports all of the PhoneGap core plugins as well as some other popular plugins to allow you to easily test with
  them in your app on a mobile device. Below is a list of supported plugins at the time of this writing however you can get the latest list at
@@ -41,7 +41,7 @@ expand: dev-app
  locally and include any other plugins there. We recommend always checking for the existence of any plugin in your code first before using it
  to avoid errors in testing in general.</div>  
 
-2. *What is Autoreload?*
+### What is Autoreload?
 
  Autoreload is a feature that will automatically refresh your previewed app
  when a file changes in the `www/` directory. This allows you to immediately
@@ -59,7 +59,7 @@ expand: dev-app
     $ phonegap serve --no-autoreload
     ```
 
-3. *How can I debug my apps remotely?*
+### How can I debug my apps remotely?
 
   We are working on ways to make debugging easier with the PhoneGap Developer app, but for now there are two ways it can be done:
    1. Using [Weinre](https://www.npmjs.com/package/weinre)  
@@ -67,12 +67,12 @@ expand: dev-app
 
  Check out the [debugging section](/references/developer-app/debugging) for more details.   
 
-4. *PhoneGap Developer App hangs on `DOWNLOADING...` for iOS*
+### PhoneGap Developer App hangs on `DOWNLOADING...` for iOS
 
  Currently if you enter the wrong IP address (or an invalid one) to connect to, it will hang on the DOWNLOADING phase and you will need to exit and
  restart the app to try again. See the [bug being tracked here](https://github.com/phonegap/phonegap-app-developer/issues/338) for more details.
 
-5. *PhoneGap Developer App is unable to download from the server*
+### PhoneGap Developer App is unable to download from the server
 
   The Phonegap Developer App may encounter a download error for one of the following reasons:
 
