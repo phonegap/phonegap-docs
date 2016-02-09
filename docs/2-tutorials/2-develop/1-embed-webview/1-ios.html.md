@@ -13,10 +13,210 @@ tabs:
 ##Creating Apps with PhoneGap and iOS Native Components
 
 Before getting started you should read [this blog post](http://phonegap.com/blog/2015/03/12/mobile-choices-post1/) about choosing a mobile strategy. 
-As a quick refresher, native hybrid mobile apps include a blend of native controls and one or more webviews. One common use case implemented in many popular 
+As a quick refresher, the type of app we're referring to here includes a blend of native controls and one or more webviews. One common use case implemented in many popular 
 apps (Instagram, Basecamp) is to use native controls to provide the navigation and page transitions, with the main content wrapped in embedded Cordova webviews. 
-However, you could combine the native and WebView components in many different ways to achieve your needs. This guide is meant as a reference to help you start 
+However, you could combine the native and webview components in many different ways to achieve your needs. This guide is meant as a reference to help you start 
 that journey.
+
+The picture below helps denote the differences between a traditional PhoneGap hybrid app (left) and a native hybrid app approach (right):
+
+
+   ![](/images/hybrid-apps.png)
+
+# Options
+There are some different options available to achieve this mixed native iOS and WebView approach and this guide will cover two of them. The first
+is the recommended approach as it uses the popular iOS [CocoaPods](https://cocoapods.org/) approach and is ultimately easier to set up and get started with, 
+(even if you've never heard of or used CocoaPods). The 2nd manual approach is an option for those who do not want to use a [CocoaPods](https://cocoapods.org/) approach and would like to use a more raw solution or have more control 
+over the dependency setup. Choose from one of these options below to continue:
+- <a href="#pods">CocoaPods Approach (recommended)</a>
+- <a href="#manual">Manual Approach</a>
+
+<a name="pods"></a>
+### Option 1: Combining iOS Native and WebView Components with CocoaPods 
+[CocoaPods](https://cocoapods.org/) is a dependency manager for building iOS projects, similar to how `npm` is used for node.js projects. To continue this analogy, a `Podfile` is used
+ to specify those dependencies similar to how the `package.json` is used for `npm`. Since CocoaPods is built on [Ruby](https://www.ruby-lang.org/en/documentation/installation/),
+ you install it using the Ruby `gem` command (you may or may not need `sudo` depending on your permissions) shown below:
+ 
+    $ sudo gem install cocoapods
+  
+Once you have CocoaPods installed, you'll need a native iOS project to work with. Open Xcode and follow the steps below: 
+
+1. Create a Native iOS Project in Xcode. Go to **File->New->Project** and select an iOS project template. In this example we'll choose the 
+*Single View Controller* project template for simplicity. 
+   ![](/images/step1.png)
+
+2. Go back to the command line, `cd` into the root of the new iOS project from above and create  a `Podfile` to manage your dependencies. The easiest way to
+ create one is to use the `pod init` command, which creates a base one to start with. 
+
+  Type `pod init` now and make sure you see your newly created `Podfile` after you hit enter:
+  
+        $ pod init
+ 
+  Open it and replace the contents with those from [this `Podfile` sample](https://github.com/phonegap/phonegap-webview-ios/blob/master/Podfile_sample) from the
+    reference application. Only copy the contents prior to the `target` specification lines. The targets should already be set to the name of your project automatically 
+    if you used the `pod init` (see this [demo video](https://www.youtube.com/watch?v=M6Q6ak7UfvQ) for help if needed).
+
+        # Define a global platform for your project
+        platform :ios, '8.0'
+        
+        # CordovaLib Dependency Pod
+        pod 'Cordova'
+        
+        # Cordova Core Plugin Dependency Pod References
+        
+        pod 'CordovaPlugin-console'
+        pod 'cordova-plugin-camera'
+        pod 'cordova-plugin-contacts'
+        pod 'cordova-plugin-device'
+        pod 'cordova-plugin-device-orientation'
+        pod 'cordova-plugin-device-motion'
+        pod 'cordova-plugin-globalization'
+        pod 'cordova-plugin-geolocation'
+        pod 'cordova-plugin-file'
+        pod 'cordova-plugin-media-capture'
+        pod 'cordova-plugin-network-information'
+        pod 'cordova-plugin-splashscreen'
+        pod 'cordova-plugin-inappbrowser'
+        pod 'cordova-plugin-file-transfer'
+        pod 'cordova-plugin-statusbar'
+        pod 'cordova-plugin-vibration'
+        
+        # The following includes the PhoneGap iOS Platform Project Template for a quick start
+        pod 'phonegap-ios-template'
+        
+        # Change the target value to the name of your native Xcode project
+        target 'YourNativeProj' do
+        
+        end
+        
+        target 'YourNativeProjTests' do
+        
+        end
+        
+        target 'YourNativeProjUITests' do
+        
+        end
+ 
+   <div class="alert--info">**Note:** The `Cordova` CocoaPod is specified first and contains all of the `CordovaLib` core classes. The sample Podfile 
+   also specifies a number of plugin dependencies to make those available for use in your apps.  Lastly, the `phonegap-ios-template` refers to a PhoneGap sample app 
+   `CocoaPod` that's included to help you get started quickly. The sample app uses the plugins listed in this `Podfile` sample so you can test them out 
+   easily as well.</div> 
+        
+3. Next, run `pod install` from the command line to install the Cordova dependencies defined above:        
+       
+  ![](/images/step-install.png)        
+
+4. Close the Xcode project you created in step 1. From now on you'll need to use the Xcode workspace file that's been created for your project instead with all of the dependencies added. 
+5. Open the newly created `.xcworkspace` file created from the `pod install`. Ensure you see the new `Pods` folder in the Xcode Workspace for your 
+project and that it has all the Cordova dependencies as shown below: 
+
+  ![](/images/pods-workspace.png)
+       
+6. Now you can start using Cordova in your native project. To do so, open the `Main.storyboard` file and change the 
+Custom Class value from the default `ViewController` to`CDVViewController` in the *Identity Inspector*. The `CDVViewController` is a Cordova-specific ViewController. 
+
+ ![](/images/step-vc.png)
+
+7. Run your app now from Xcode. The [PhoneGap iOS sample app](https://github.com/phonegap/phonegap-webview-ios) that was included in the CocoaPod dependencies
+will be run by default (see <a href="#how">the explanation section</a> for exactly how this works).   
+
+    <img class="mobile-image" src="/images/template-run.png"/>    
+ 
+ The sample app CocoaPod folder is outlined in the project below to point it out specifically. When you're ready to start using your own code for the webview, 
+ simply replace the contents in the `www` folder with your own app content and it will be linked up and ready to go.
+ 
+ ![](/images/ios-template.png)
+  
+<a name="how"></a>
+### How Does this Work?  
+If you're wondering how this all just automatically works and the sample app is loaded, it's due to the way the CocoaPod for the `phonegap-webview-ios` 
+template was configured. The [`.podspec`](https://github.com/phonegap/phonegap-webview-ios/blob/master/phonegap-ios-template.podspec) is a file that 
+configures a CocoaPod, and in the definition for the `phonegap-ios-template`, a `resources` attribute is set that points to the files within the `resources` 
+folder (which is the `www` and `config.xml` for the sample app). The `podspec` is shown below for reference: 
+
+    Pod::Spec.new do |s|
+    
+      s.name               = "phonegap-ios-template"
+      s.version            = "0.1.4"
+      s.summary            = "PhoneGap sample template project for iOS."
+    
+      s.description        = <<-DESC "A PhoneGap sample project to get started quickly with an embedded webview in a native iOS project."
+                             DESC
+      s.license            = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
+      s.homepage           = "https://github.com/phonegap/phonegap-webview-ios"
+      s.author             = { "The Adobe PhoneGap Team" => "" }
+      s.social_media_url   = "http://twitter.com/phonegap"
+      s.source             = { :git => "https://github.com/phonegap/phonegap-webview-ios.git", :tag => "0.1.4" }
+      s.resources          = "resources/*"
+    
+    end
+
+Xcode will copy files and folders marked as `resources` into the target app bundle at runtime by producing special build instructions for it. For instance, 
+the build script generated by Xcode for a project including this CocoaPod generates these lines: 
+
+    if [[ "$CONFIGURATION" == "Debug" ]]; then
+      install_resource "phonegap-ios-template/resources/config.xml"
+      install_resource "phonegap-ios-template/resources/www"
+    fi
+    if [[ "$CONFIGURATION" == "Release" ]]; then
+      install_resource "phonegap-ios-template/resources/config.xml"
+      install_resource "phonegap-ios-template/resources/www"
+    fi
+
+The `.app` bundle file created after your app has been run shows the end result if you display the contents:
+ 
+ ![](/images/app-file.png)
+ 
+The [`CDVViewController`](https://github.com/apache/cordova-ios/blob/master/CordovaLib/Classes/Public/CDVViewController.m) class that was set in the Storyboard scans your project for the 
+existence of a `www` folder and index.html file by default as shown from the snippet here:
+    
+     if(self.wwwFolderName == nil){
+         self.wwwFolderName = @"www";
+     }
+     if(delegate.startPage && self.startPage == nil){
+         self.startPage = delegate.startPage;
+     }
+     if (self.startPage == nil) {
+         self.startPage = @"index.html";
+     }
+     
+  Since the template app `www` etc was included in the app bundle, it's found and used it by default.
+
+  <div class="alert--tip">**Tip:** The default folder and start page values can be overridden in the config.xml &lt;content&gt; tag or in your own custom 
+  class extending `CDVViewController`.  If you want to use multiple Cordova webviews in your native app, you would want to have a custom `ViewController` class for each
+  with those set to different folders and start pages. </div>
+
+   
+<div class="alert--warning">**Warning:** Be careful to ensure you don't delete the `www` folder itself since it's pre-wired as a folder reference in Xcode and if deleted
+ the pre-wiring will be broken.</div>    
+
+Check out this short [Demo Video](https://www.youtube.com/watch?v=M6Q6ak7UfvQ) that shows the above process in entirety for further reference.
+
+####Custom ViewController
+The `CDVViewController` was used directly in this example for simplicity. In your own apps you'll likely want to extend that class to customize
+your Cordova webview further by changing the size of the viewport for instance, if you're displaying it along with other native components in a view since it
+defaults to full screen by default. The [PhoneGap iOS project template](https://github.com/apache/cordova-ios/tree/master/bin/templates/project/__PROJECT_NAME__/) is a good example to look at for how to extend it since it does so in the [`MainViewController` class and header file here](https://github.com/apache/cordova-ios/tree/master/bin/templates/project/__PROJECT_NAME__/Classes). You can simply
+copy those into your project and reference `MainViewController` instead for the ViewController class name in your Storyboard and customize it accordingly. For example, to change
+the initial size of the viewport, you can change the bounds within your custom ViewController `viewWillAppear` method, such as:
+
+    - (void)viewWillAppear:(BOOL)animated
+    {
+        CGRect viewBounds = self.view.bounds;
+        CGRect webViewBound = CGRectMake(viewBounds.origin.x,
+                                         viewBounds.origin.y + 40,
+                                         viewBounds.size.width,
+                                         viewBounds.size.height - 40);
+        
+        self.webView.frame = webViewBound;
+        self.webView.backgroundColor = [UIColor clearColor];
+    
+        [super viewWillAppear:animated];
+    }
+
+
+<a name="manual"></a>
+### Option 2: Combining iOS Native and WebView Components from Scratch
+In this section we'll cover the manual approach to combining iOS native components with Cordova webview components. 
 
 ###Reference App
 We'll use this [sample application](https://github.com/phonegap/phonegap-sample-hybrid-ios) for reference throughout the tutorial. It contains two views; 
@@ -53,53 +253,53 @@ on iOS so you can receive log messages):
 2. Create an iOS storyboard to lay out each screen as a 'scene'. Ensure you have the `Classes` folder of your `HybridIOSApp` 
 project selected and use the Xcode **File -> New** menu to create a storyboard file and name it `Main.storyboard`.
  
- ![](../../../images/new-storyboard.jpg)
+ ![](/images/new-storyboard.jpg)
 
 3. Set the main interface for the project to the Storyboard just created. This new storyboard file created in the previous step will serve as the 
 main interface for your application, so before going further you need to update the project properties to point to it. Select the project root 
 in the *Project Navigator* on the left and the first tab General, should be selected. Set **Devices** to iPhone if not already set, then set the 
 **Main Interface** drop down to the `Main.storyboard` file you created. The screenshot below outlines all of this in red.
 
-    ![](../../../images/main-interface.jpg)
+    ![](/images/main-interface.jpg)
 
 4.  Now go back to the storyboard and create a scene by dragging a View Controller in from the *Object Library* panel on the right. 
 (If it's not already opened, toggle it from the Xcode main menu bar under **View -> Utilities**).  The right arrow below shows where to drag it from. 
 Once it's dragged in, you should see it in the *Document Outline* view as shown below. If that outline is not showing, toggle it using the button 
 pointed to with the red arrows below. You will need to use it throughout this guide.
 
-    ![](../../../images/view-controller.jpg)
+    ![](/images/view-controller.jpg)
     
 5. Next we'll need to set the View Controller class to `MainViewController`, which is the Cordova-enabled View Controller class created in your 
 base project and provides the access to the PhoneGap APIs. To do this, ensure the new View Controller is selected and then open the 
 *Identity Inspector* panel (circled below) and change the class name to `MainViewController`. 
 
-   ![](../../../images/main-view-controller.jpg)
+   ![](/images/main-view-controller.jpg)
 
 6. In the *Attributes Inspector* tab (circled in red), set the View Controller title to **Cordova**. This will display in the *Document Outline* 
 for the view and helps better keep track of which view we're working on.
 
-   ![](../../../images/cordova-title.jpg)
+   ![](/images/cordova-title.jpg)
 
 7. Next let's add one more View Controller to our storyboard to represent a Native View scene. Leave the default class set to `UIViewController` 
 since it's representing a native view scene. Set the title in the *Attributes Inspector* tab to **Native**.
 
-   ![](../../../images/native-title.png)
+   ![](/images/native-title.png)
    
 8. Now let's put some navigation into our app by adding a `TabBarController` to allow users to switch between the cordova and native views from tabs at the 
 bottom of the application. Our two View Controllers for Native and Cordova views can be embedded into this `TabBarController` via the Xcode *Editor* menu. 
 Ensure you have both View Controllers selected then go to **Editor-> Embed In-> Tab Bar Controller**. 
 
-   ![](../../../images/embed-in.png)
+   ![](/images/embed-in.png)
 
 9. You will see that a new `TabBarController` is now placed on the screen and connected to your View Controllers automatically.
 
-  ![](../../../images/tabbar.png)
+  ![](/images/tabbar.png)
 
 10. Now we'll need to set an entry point for our app to know what to display first. We'll set the `TabBarController` to be the entry point 
 by clicking on the *Attribute Inspector* tab and checking the box next to *Is Initial View Controller* like below. When the box is checked 
 you'll see an arrow added to the screen into the `TabBarController`. 
    
-   ![](../../../images/initial-view.jpg)
+   ![](/images/initial-view.jpg)
    
 11. The storyboard entry point set in the previous step will not take effect quite yet as we still have code that exists to programmatically 
 set the entry point as well that needs to be removed. Open **AppDelegate.m** and search for `didFinishLaunchingWithOptions`. 
@@ -110,18 +310,18 @@ set the entry point as well that needs to be removed. Open **AppDelegate.m** and
 
 12. In each of the scenes in the *Document Outline* view you will notice an **Item** object which represents the tab displayed for each view. 
 
-  ![](../../../images/items-change.jpg)
+  ![](/images/items-change.jpg)
 13. Change the name and icon to represent something more meaningful for each of them in the *Attribute Inspector*. For the Cordova view, set the name to 
   Cordova and then choose a cordova logo for the Cordova view tab in the drop-down. Since the default logos are already included in the Resources folder from the cordova-ios 
   project, you can easily select one from the drop-down. Choose the *icon-40.png* size.
 
-  ![](../../../images/cordova-title.jpg)
+  ![](/images/cordova-title.jpg)
 
   For the native view we'll simply set the *System Item* to a built-in value of *History* since this view will represent a history of bookmarked 
   items of sorts. Setting this value will automatically set the icon and title for us in the tab so we only need to fill in that value. 
   See the screenshot in the next step for the result:
 
-  ![](../../../images/native-title.png)
+  ![](/images/native-title.png)
 
 13. Now run the app and you will see the two buttons at the bottom and can toggle between views with them. The Cordova view shows the default 
 Hello Cordova app and the native view is currently blank. We will change that in the next lesson. 
@@ -133,39 +333,39 @@ To set up our native view to display a table, we'll also need to define a custom
 
 1. Go to **File -> New -> File -> Cocoa Touch Class**
 
-   ![](../../../images/cocoa-touch-class.png)
+   ![](/images/cocoa-touch-class.png)
 
 2. Name it to `MyTableViewController` and ensure the `UITableViewController` subclass is selected and save into **Classes** folder. 
 
-   ![](../../../images/table-view-controller-name.png)
+   ![](/images/table-view-controller-name.png)
 
 3. Next we'll need to use the new `TableViewController` class we created by setting it as our native View Controller from within the Storyboard of our native view. 
 Ensure the native scene is selected and change the View Controller class to `MyTableViewController` (or to the value you named it in the above) in the *Identity Inspector*.
 
-   ![](../../../images/table-view-controller-class.png)
+   ![](/images/table-view-controller-class.png)
 
 4. Since there's still nothing visible from a UI perspective in the native view, we'll need to add the actual Table control itself that the `MyTableViewController` 
 class will manage. This control is represented by a `UITableView` class and will replace the current default `UIView` there (denoted by the *View* 
 object in the *Document Outline*). Delete the current View In the *Document Outline* located under Native View by selecting it and pressing delete. 
 Now drag a *Table View* component from the *Object Library* into the Native View. The result should look like the following:
 
-  ![](../../../images/tableview.jpg)
+  ![](/images/tableview.jpg)
 
 5. While we have our `TableView` selected, let's also change the row height to pad it a bit and make it easier to read. Change the *Row Height* to 70 
 as shown here:
 
-  ![](../../../images/row-height.jpg)
+  ![](/images/row-height.jpg)
 
 6. Now add a *Table View Cell* component on to the `TableView` by dragging it from the *Object Library*. You will see a new element on the 
 Table View titled Prototype Cells. Name the Table View Cell to **Cell1** by setting the Identifier in the *Attribute Inspector* tab.
 The name will change in the *Document Outline* as shown below:
 
-  ![](../../../images/cell-title.jpg)
+  ![](/images/cell-title.jpg)
 
 7. Next drag a Label on to the Table Cell View (*Cell1*) to represent the title of the item added. Name the new label **Title** and drag it 
 over to the left to align it as shown below:
 
- ![](../../../images/title.jpg)
+ ![](/images/title.jpg)
 	
 8. We are now done working with the Storyboard and UI. In this step we'll need to add some code handling for this new table by updating the 
 `MyTableViewController` header and class. 
@@ -208,7 +408,7 @@ over to the left to align it as shown below:
 ###Run it!
 Now stop and run your application in the emulator or on your iPhone. You should see a blank table now for the Native **History** view as shown here:
 
-<img class="mobile-image" src="../../../images/running-empty.png"/>
+<img class="mobile-image" src="/images/running-empty.png"/>
 
 In the next lesson we'll show how you can add items to this table from a WebView button control by communication via a plugin.
 
@@ -217,12 +417,12 @@ If you have any errors upon run, double check your code updates above against th
 specifically check to ensure your Native View Controller outlets look the same as in this screenshot below and the **View -> Table View** is shown 
 as an Outlet. 
 
- ![](../../../images/troubleshoot.jpg)
+ ![](/images/troubleshoot.jpg)
 
 Also check to ensure the scheme and target device you're trying to run are properly set up in the top bar as shown here. 
 Your app name should be set as the scheme, and the iPhone 6 simulator or your own device:
 
-  ![](../../../images/target.png)
+  ![](/images/target.png)
 
 
 ###Lesson 4: Web to Native Communication 
@@ -378,7 +578,7 @@ plugin and how to reference it. Open the **config.xml** file located in the proj
 5. Run your app now and ensure you can enter text into the input field on the Cordova screen, click the *Add a bookmark* button and see it added into your 
 native view. Keep adding items and see them added into your native table view!
 
-    ![](../../../images/running-final.png)
+    ![](/images/running-final.png)
     
   
 <div class="alert--info">The full [sample project](https://github.com/phonegap/phonegap-sample-hybrid-ios) for this guide can be found in the [PhoneGap GitHub repository](https://github.com/phonegap/phonegap-sample-hybrid-ios) 
