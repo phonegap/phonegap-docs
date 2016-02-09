@@ -24,7 +24,7 @@ Select your operating system to continue:
 <a name="mac"></a>
 ### Mac OS X Installation
 
-1. Download the latest [Mac OS X Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.11/PhoneGapDesktop.dmg).
+1. Download the latest [Mac OS X Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.2.1/PhoneGapDesktop.dmg).
 
 2. Double-click the downloaded file to run the installer. You will initially be prompted with a license agreement to accept:
 ![](/images/license-agreement.png)
@@ -33,14 +33,14 @@ Select your operating system to continue:
 ![](/images/drag-to-apps-folder.png)
 
 5. Next simply open the application and proceed to [Step 2](/getting-started/2-install-mobile-app) where you will
-install the __PhoneGap Developer App__ to your mobile device for previewing the apps you build. 
+install the __PhoneGap Developer App__ to your mobile device for previewing the apps you build.
 ![](/images/desktop-app-open.png)
 
 
 <a name="win"></a>
 ### Windows Installation
 
-1. Download the latest [Windows Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.11/PhoneGapSetup.exe).
+1. Download the latest [Windows Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.2.1/PhoneGapSetup-win32.exe).
 2. Double click the downloaded file to run the installer. You will be prompted with the PhoneGap Desktop Setup Wizard:  
 
   ![](/images/win-desktop1.png)

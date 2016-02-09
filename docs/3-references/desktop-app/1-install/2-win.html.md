@@ -11,7 +11,7 @@ tabs:
     url: references/desktop-app/install/win
 ---
 
-1. Download the latest [Windows Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.1.11/PhoneGapSetup.exe).
+1. Download the latest [Windows Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.2.1/PhoneGapSetup-win32.exe).
 2. Double click the downloaded file to run the installer. You will be prompted with the PhoneGap Desktop Setup Wizard:  
 
   ![](/images/win-desktop1.png)
@@ -36,4 +36,4 @@ tabs:
 
   ![](/images/win-desktop6.png)
 
-8. PhoneGap Desktop is now installed and ready to run. 
+8. PhoneGap Desktop is now installed and ready to run.
