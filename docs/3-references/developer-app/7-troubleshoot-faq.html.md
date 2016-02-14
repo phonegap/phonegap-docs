@@ -143,6 +143,8 @@ expand: dev-app
     1. Locate NodeJS on your system
 
   <img class="mobile-image" src="/images/node_js_firewall_allowed_apps.png">
+  
+  On Mac OSX, the firewall is in `System Preferences > Security & Privacy` ([Apple's firewall documentation](https://support.apple.com/kb/PH21748?viewlocale=en_US&locale=en_US)).
 
   Fifth, the network firewall may be blocking the port used by `phonegap serve`.
   If you have access to your router/network settings, then you open the port
