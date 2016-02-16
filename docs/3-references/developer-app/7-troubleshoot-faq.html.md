@@ -13,7 +13,7 @@ expand: dev-app
  any time by checking the [GitHub repo](https://github.com/phonegap/phonegap-app-developer/tree/master/plugins).  
 
   - [Battery Status](https://www.npmjs.com/package/cordova-plugin-battery-status)
-  - [Bluetooth](http://evothings.com/doc/plugins/com.megster.cordova.bluetoothserial/index.html)
+  - [Bluetooth](https://github.com/don/cordova-plugin-ble-central)
   - [Camera](https://www.npmjs.com/package/cordova-plugin-camera)
   - [Console](https://www.npmjs.com/package/cordova-plugin-console)
   - [Contacts](https://www.npmjs.com/package/cordova-plugin-contacts)
