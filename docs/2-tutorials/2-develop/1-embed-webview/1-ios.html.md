@@ -39,11 +39,16 @@ over the dependency setup. Choose from one of these options below to continue:
  
     $ sudo gem install cocoapods
   
-Once you have CocoaPods installed, you'll need a native iOS project to work with. Open Xcode and follow the steps below: 
+Once you have CocoaPods installed, you'll need a native iOS project to work with.  
 
-1. Create a Native iOS Project in Xcode. Go to **File->New->Project** and select an iOS project template. In this example we'll choose the 
-*Single View Controller* project template for simplicity. 
+1. Open an existing native iOS project or create a new native iOS project. 
+To create a new project in Xcode, go to **File->New->Project** and select an iOS project template. In this example we'll choose the *Single View Controller* project template for simplicity.
+ 
    ![](/images/step1.png)
+   
+  <div class="alert--info">**Note:** Your native project can be either *Objective-C* or *Swift* based and the instructions below are the same for both.
+  Once you want to refer specifically to Cordova-based classes from your Swift classes however, you will need some further instructions which can be found in 
+  the <a href="#swift">Swift section</a>.</div> 
 
 2. Go back to the command line, `cd` into the root of the new iOS project from above and create  a `Podfile` to manage your dependencies. The easiest way to
  create one is to use the `pod init` command, which creates a base one to start with. 
@@ -106,7 +111,9 @@ Once you have CocoaPods installed, you'll need a native iOS project to work with
        
   ![](/images/step-install.png)        
 
-4. Close the Xcode project you created in step 1. From now on you'll need to use the Xcode workspace file that's been created for your project instead with all of the dependencies added. 
+4. Close the Xcode project you created in step 1. From now on you'll need to use the Xcode workspace file that's been created for your project instead with all of the 
+dependencies added. 
+
 5. Open the newly created `.xcworkspace` file created from the `pod install`. Ensure you see the new `Pods` folder in the Xcode Workspace for your 
 project and that it has all the Cordova dependencies as shown below: 
 
@@ -192,12 +199,12 @@ existence of a `www` folder and index.html file by default as shown from the sni
 
 Check out this short [Demo Video](https://www.youtube.com/watch?v=M6Q6ak7UfvQ) that shows the above process in entirety for further reference.
 
-####Custom ViewController
+#### Custom ViewController
 The `CDVViewController` was used directly in this example for simplicity. In your own apps you'll likely want to extend that class to customize
 your Cordova webview further by changing the size of the viewport for instance, if you're displaying it along with other native components in a view since it
 defaults to full screen by default. The [PhoneGap iOS project template](https://github.com/apache/cordova-ios/tree/master/bin/templates/project/__PROJECT_NAME__/) is a good example to look at for how to extend it since it does so in the [`MainViewController` class and header file here](https://github.com/apache/cordova-ios/tree/master/bin/templates/project/__PROJECT_NAME__/Classes). You can simply
 copy those into your project and reference `MainViewController` instead for the ViewController class name in your Storyboard and customize it accordingly. For example, to change
-the initial size of the viewport, you can change the bounds within your custom ViewController `viewWillAppear` method, such as:
+the initial size of the viewport, you can change the bounds within your custom ViewController `viewWillAppear` method, such as (where the value 40 is an arbitrary offset for demonstration purposes):
 
     - (void)viewWillAppear:(BOOL)animated
     {
@@ -212,6 +219,60 @@ the initial size of the viewport, you can change the bounds within your custom V
     
         [super viewWillAppear:animated];
     }
+
+<a name="swift"></a>
+### Swift-based Projects
+As mentioned above, you can use Swift-based projects with Cordova using the same CocoaPods approach just described. You will need to add a bridging header 
+file when you want to start extending or using the Cordova classes (written in Objective-C) to allow you to communicate with Objective-C classes from your 
+Swift classes. 
+ 
+To set up a bridge header from Xcode:
+
+1. Go to **File->New->File->Header File**, choose a name, and save it to the root of your Xcode project.  
+2. Next you need to ensure the bridge header file name is set in the build settings for the project. To do so, click on the root of the project in the 
+navigator. Then in the 
+**Build Settings** tab, look for the **Swift Compiler - Code Generation** section and enter your header file name for *Objective-C bridging header*. An example is shown below:
+
+ ![](/images/bridge-header.png)
+
+3. Now go back to your bridge header file and import the header files for the Cordova classes you wish to use in your project. For example:
+
+        #ifndef bridge_header_h
+        #define bridge_header_h
+        
+        #import "CDVViewController.h"
+        
+        #endif /* bridge_header_h */
+
+4. Once the headers have been added to your bridging file, you can starting using them in your Swift code directly. For instance, in 
+a `ViewController.swift` file you might use something like the following to extend the `CDVViewController` class and resize the webview frame:
+         
+        import UIKit
+        class SecondViewController: CDVViewController {
+
+            override func viewDidLoad() {
+                 super.viewDidLoad()
+                // Do any additional setup after loading the view, typically from a nib.
+            }
+        
+            override func didReceiveMemoryWarning() {
+                super.didReceiveMemoryWarning()
+                // Dispose of any resources that can be recreated.
+            }
+            override func viewWillAppear(animated: Bool) {                    
+             super.viewWillAppear(true);             
+             self.webView.frame = CGRectMake(
+                 self.view.bounds.origin.x,
+                 self.view.bounds.origin.y+40,
+                 self.view.bounds.width,
+                 self.view.bounds.height-40)
+            }                  
+        }          
+
+See this [video](https://www.youtube.com/watch?v=eTV-tNzWxGc) to understand how to use Cordova in a Swift-based project with a live demonstration. 
+
+### More Resources
+- [InstaSnap Sample Hybrid App](https://github.com/imhotep/InstaSnap) - another sample hybrid iOS app with step by step instructions used for a PhoneGap Day 2016 workshop.  
 
 
 <a name="manual"></a>
