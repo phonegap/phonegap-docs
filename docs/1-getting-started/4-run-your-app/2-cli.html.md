@@ -1,5 +1,5 @@
 ---
-title: Step 4: Run Your App
+title: Step 4: Preview Your App
 url: getting-started/4-run-your-app/cli
 layout: subpage
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/1-getting-started/4-run-your-app/2-cli.html.md
