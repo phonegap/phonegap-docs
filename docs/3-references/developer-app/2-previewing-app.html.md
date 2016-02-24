@@ -14,8 +14,8 @@ The following steps can be taken to preview your apps on your mobile device usin
 <div class="alert--warning">Double check to ensure you're running your device and computer on the same network before continuing. </div>
 
 ### Steps
-1. From your computer, *serve* the app you want to preview on your mobile device using either [PhoneGap Desktop](/getting-started/4-run-your-app/desktop) 
-or the [PhoneGap CLI](/getting-started/4-run-your-app/cli) and note the IP address. 
+1. From your computer, *serve* the app you want to preview on your mobile device using either [PhoneGap Desktop](/getting-started/4-preview-your-app/desktop) 
+or the [PhoneGap CLI](/getting-started/4-preview-your-app/cli) and note the IP address. 
 
 2. Open the **PhoneGap Developer** app installed on your mobile device, enter the IP address noted above and tap  **Connect**.
 

@@ -8,7 +8,7 @@ tabs:
     url: getting-started/3-create-your-app/desktop
   - label: CLI
     url: getting-started/3-create-your-app/cli
-next: 1-getting-started/4-run-your-app/2-cli.html.md
+next: 1-getting-started/4-preview-your-app/2-cli.html.md
 ---
 
 Now that you've installed [PhoneGap Desktop](/getting-started/1-install-phonegap/desktop) and/or the [PhoneGap CLI](/getting-started/1-install-phonegap/cli)

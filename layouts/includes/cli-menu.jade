@@ -4,7 +4,7 @@ aside.sidebar
          button.mobile-docs-toggle Docs Menu
       nav.sidebar__list
          h2 Getting Started
-         - var pages = [{title:"Step 1: Install PhoneGap", url:"getting-started/1-install-phonegap/desktop"},{title:"Step 2: Install Mobile App", url:"getting-started/2-install-mobile-app"},{title:"Step 3: Create Your App", url:"getting-started/3-create-your-app/desktop"},{title:"Step 4: Preview Your App", url:"getting-started/4-run-your-app/desktop"},{title:"Step 5: Going Further", url:"getting-started/5-going-further"}]
+         - var pages = [{title:"Step 1: Install PhoneGap", url:"getting-started/1-install-phonegap/desktop"},{title:"Step 2: Install Mobile App", url:"getting-started/2-install-mobile-app"},{title:"Step 3: Create Your App", url:"getting-started/3-create-your-app/desktop"},{title:"Step 4: Preview Your App", url:"getting-started/4-preview-your-app/desktop"},{title:"Step 5: Going Further", url:"getting-started/5-going-further"}]
          ul
             each page in pages
                li: a(href="/#{page.url}" class=document.url === page.url? "current" : "")!=page.title

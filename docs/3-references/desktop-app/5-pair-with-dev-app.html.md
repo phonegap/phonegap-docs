@@ -48,4 +48,4 @@ Locate the server address it's currently running on in the footer of the app as 
 </div>
 
 
-See the [Getting Started Docs](/getting-started/4-run-your-app/desktop) for more details.  
+See the [Getting Started Docs](/getting-started/4-preview-your-app/desktop) for more details.  
