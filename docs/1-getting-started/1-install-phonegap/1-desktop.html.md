@@ -21,7 +21,7 @@ Select your operating system to continue:
 - <a href="#mac">Mac OS X</a>
 - <a href="#win">Windows</a>
 
-<a name="mac"></a>
+<a class="anchor" id="mac"></a>
 ### Mac OS X Installation
 
 1. Download the latest [Mac OS X Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.2.3/PhoneGapDesktop.dmg).
@@ -37,7 +37,7 @@ install the __PhoneGap Developer App__ to your mobile device for previewing the 
 ![](/images/desktop-app-open.png)
 
 
-<a name="win"></a>
+<a class="anchor" id="win"></a>
 ### Windows Installation
 
 1. Download the latest [Windows Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.2.3/PhoneGapSetup-win32.exe).

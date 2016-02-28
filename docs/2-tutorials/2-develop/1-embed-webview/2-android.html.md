@@ -12,29 +12,29 @@ tabs:
 
 ##Creating Apps with PhoneGap and Android Native Components  
 
-In this guide we'll walk through the basic steps needed to create a native hybrid Android app that has elements of both native Android components 
+In this guide we'll walk through the basic steps needed to create a native hybrid Android app that has elements of both native Android components
 and a Cordova webview. For more information about why you might choose this approach, read [this blog post](http://phonegap.com/blog/2015/03/12/mobile-choices-post1/).
 
-###Requirements: 
-- [Android Studio](http://developer.android.com/tools/studio/index.html) 
+###Requirements:
+- [Android Studio](http://developer.android.com/tools/studio/index.html)
 - [Plugman](https://github.com/apache/cordova-plugman)
 
 ###Reference App
-We'll use this [sample application](https://github.com/phonegap/phonegap-sample-hybrid-android) for reference throughout the tutorial. It contains two views; 
-a Cordova view and a native view. The final sample app will have a button on the Cordova webview that will add an item to a list in the native view 
+We'll use this [sample application](https://github.com/phonegap/phonegap-sample-hybrid-android) for reference throughout the tutorial. It contains two views;
+a Cordova view and a native view. The final sample app will have a button on the Cordova webview that will add an item to a list in the native view
 to show how to communicate between the web and native views. The sample also uses a couple other Cordova plugins to show how they're installed and for
 further reference use.
 
 
 ###Step 1: Create a Base Cordova Project
-Most developers use the PhoneGap or Cordova CLI to create their projects, however for this type of project it's not recommended since we are only 
-working with the Android platform project specifically and we don't want to rebuild or overwrite the platform level code each time we run. Instead 
-we'll use the [cordova-android](https://github.com/apache/cordova-android) project itself. (This is the same project used from the CLI when you add the 
+Most developers use the PhoneGap or Cordova CLI to create their projects, however for this type of project it's not recommended since we are only
+working with the Android platform project specifically and we don't want to rebuild or overwrite the platform level code each time we run. Instead
+we'll use the [cordova-android](https://github.com/apache/cordova-android) project itself. (This is the same project used from the CLI when you add the
 Android platform).
 
-1. Begin by cloning or downloading the zip file for the [cordova-android](https://github.com/apache/cordova-android) Apache Cordova project for Android. 
-Run the following command to execute the `create` script from the directory containing the [cordova-android](https://github.com/apache/cordova-android) 
-base project you cloned or unzipped locally to create the default **Hello Cordova** project. (If you unzipped into your user directory then you should 
+1. Begin by cloning or downloading the zip file for the [cordova-android](https://github.com/apache/cordova-android) Apache Cordova project for Android.
+Run the following command to execute the `create` script from the directory containing the [cordova-android](https://github.com/apache/cordova-android)
+base project you cloned or unzipped locally to create the default **Hello Cordova** project. (If you unzipped into your user directory then you should
  run it from there).
 
     	$ cordova-android/bin/create HybridAndroidApp org.sample.hybridandroidapp
@@ -57,36 +57,36 @@ base project you cloned or unzipped locally to create the default **Hello Cordov
 we're not using a CLI specifically. While still on the command line, `cd` into the root project created above:
 
 		$ cd HybridAndroidApp
- 
- Now add plugins using `plugman` from the command line of the root project with the syntax below. For this sample app we'll add the following 
+
+ Now add plugins using `plugman` from the command line of the root project with the syntax below. For this sample app we'll add the following
  set of plugins:
-	
+
 		$ plugman install --platform android --project . --plugin cordova-plugin-whitelist		
 		$ plugman install --platform android --project . --plugin cordova-plugin-device		
 		$ plugman install --platform android --project . --plugin nl.x-services.plugins.toast
 
 ###Step 3: Import the project into Android Studio
-Go to **File -> Import Project** and select the root **HybridAndroidApp** project created above. Allow the Gradle Sync to occur by clicking Ok in 
+Go to **File -> Import Project** and select the root **HybridAndroidApp** project created above. Allow the Gradle Sync to occur by clicking Ok in
  the dialog that pops up:
- 
+
  ![](../../../images/gradle-ok.png)
 
- <div class="alert--warning">Stop and run the app now to ensure you see the default Hello Cordova app running and the DEVICE READY message 
+ <div class="alert--warning">Stop and run the app now to ensure you see the default Hello Cordova app running and the DEVICE READY message
  before moving on.</div>
 
 ###Step 4: Create a layout for a native view
-Next create a layout resource file to represent a native list view. The layout resource is an xml file that defines how a view will look. It 
-will be used in the `MyListActivity.java` Class created in the next step. 
+Next create a layout resource file to represent a native list view. The layout resource is an xml file that defines how a view will look. It
+will be used in the `MyListActivity.java` Class created in the next step.
 
-To create a layout, right click on the **res** folder in the project navigator on the left and then select the **New -> Android Resource Directory** 
-option. In the dialog popup, select **layout** for the Directory name and Resource type and leave Source set to **main**. 
- 
+To create a layout, right click on the **res** folder in the project navigator on the left and then select the **New -> Android Resource Directory**
+option. In the dialog popup, select **layout** for the Directory name and Resource type and leave Source set to **main**.
+
  ![](../../../images/res-folder.png)
- 
+
  ![](../../../images/layout-folder.png)
 
-Now right click on the new **layout** folder in the project navigator and select **New -> Layout Resource** file. Put in a name of `activity_list` and leave the Root element 
-and Directory name as is. 
+Now right click on the new **layout** folder in the project navigator and select **New -> Layout Resource** file. Put in a name of `activity_list` and leave the Root element
+and Directory name as is.
 
  ![](../../../images/layout-resource.png)
 
@@ -102,11 +102,11 @@ Paste in the following content to represent a simple list view. We'll use this l
 			android:layout_height="wrap_content"
 		/>		
 	</LinearLayout>
-	
+
 ###Step 5: Create a Native List Activity
-Now we need a native `Activity` class to represent the logic behind this view.  Based on the android docs, 
-an activity is a single, focused thing a user can do. Almost all activities interact with the user, so the `Activity` class takes care of creating 
-a window for your UI. Create a new Java Class called `MyListActivity` in your project's `java/<package-name>` folder at the same level as the 
+Now we need a native `Activity` class to represent the logic behind this view.  Based on the android docs,
+an activity is a single, focused thing a user can do. Almost all activities interact with the user, so the `Activity` class takes care of creating
+a window for your UI. Create a new Java Class called `MyListActivity` in your project's `java/<package-name>` folder at the same level as the
 `MainActivity` class. In the sample case it's under `org.sample.hybridandroidapp`. Paste in the following below the `package` declaration and save it.
 
 
@@ -115,57 +115,57 @@ a window for your UI. Create a new Java Class called `MyListActivity` in your pr
 	import android.os.Bundle;
 	import android.widget.ArrayAdapter;
 	import java.util.ArrayList;
-	
+
 	public class MyListActivity extends ListActivity {
-    
+
         ArrayList<String> list = new ArrayList<String>();
-    
+
         /** Called when the activity is first created. */
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-    
+
             /** Setting a custom layout for the list activity */
             setContentView(R.layout.activity_list);
-    
+
             Intent intent = this.getIntent();
-    
+
             if (intent.hasExtra("items")) {
                 list = intent.getExtras().getStringArrayList("items");
             }
             /** The adapter to manage the data for the list **/
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
-    
+
             /** Setting the adapter to the ListView */
             setListAdapter(adapter);
-    
+
             setResult(RESULT_OK, intent);
         }  
     }
-	
-  Note the line `setContentView(R.layout.activity_list);`. 
+
+  Note the line `setContentView(R.layout.activity_list);`.
   This is the line where we specify the layout view to associate with this `Activity`.  
 
 ###Step 6: Add to the AndroidManifest.xml
 
 In this step we'll add our new `Activity` to the `AndroidManifest.xml`. Open the
-`AndroidManifest.xml` in the root of your project (or it may be listed in Android Studio under a **manifests** folder depending on your view) and insert 
-an &lt;activity&gt; element for `MyListActivity` in the &lt;application&gt; element as shown below, right below the 
+`AndroidManifest.xml` in the root of your project (or it may be listed in Android Studio under a **manifests** folder depending on your view) and insert
+an &lt;activity&gt; element for `MyListActivity` in the &lt;application&gt; element as shown below, right below the
 `MainActivity` declaration.
 
 		<activity
 			android:name=".MyListActivity"
 			android:label="MyListActivity">
 		</activity>
-    
+
 
 ###Step 7: Cordova to Native Communication
 
 ###Hybrid Plugin
 In this section we'll use a custom plugin to communicate between the native and cordova views. You can go through the steps below to create your
  own plugin, or install or clone it from [here](https://github.com/hollyschinsky/HybridBridgePlugin.git) for use or if you want to skip the plugin
- creation process for now and move on to [Step 8](#step8). 
- 	
+ creation process for now and move on to [Step 8](#step8).
+
   <div class="alert--tip">**TIP:** To directly install it to your project, use the following command from your hybrid android root:    	
     	  	`$ plugman install --platform android --plugin https://github.com/hollyschinsky/HybridBridgePlugin.git --project .`    
   </div>	  	
@@ -173,36 +173,36 @@ In this section we'll use a custom plugin to communicate between the native and 
 
 ####Plugin Create Steps (Optional) 	
 1. Create a new folder somewhere outside of your hybrid android project named **HybridBridgePlugin** with two subdirectories named `src` and `www`. 	
-	
+
 2. Next, navigate into the `www/js` folder and create a JavaScript file for the plugin interface named `HybridBridge.js`. Insert the following code:
-	
+
 		var exec = require('cordova/exec'),
             cordova = require('cordova');
-        
+
         function HybridBridge() {
-        
+
         }
         HybridBridge.prototype.addItem = function(item, classname, successCallback, errorCallback) {
             exec(successCallback, errorCallback, "HybridBridge", "addItem", [item, classname]);
         };
-        
+
         module.exports = new HybridBridge();
-    
-3. Now create folders to reflect your Java package as subdirectories of the `src` folder (`src/org/sample/hybrid`). Navigate into `src/org/sample/hybrid` 
+
+3. Now create folders to reflect your Java package as subdirectories of the `src` folder (`src/org/sample/hybrid`). Navigate into `src/org/sample/hybrid`
 and create the Java interface for the plugin in a file named `HybridBridge.java`. Insert the following code:
- 
+
 		package org.sample.hybrid;
-			
+
 		import android.content.Context;
         import android.content.Intent;
-        
+
         import org.apache.cordova.CallbackContext;
         import org.apache.cordova.CordovaPlugin;
         import org.json.JSONArray;
         import org.json.JSONException;
-        
+
         import java.util.ArrayList;
-        
+
         public class HybridBridge extends CordovaPlugin {
             public ArrayList itemsList = new ArrayList();
             public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -235,39 +235,39 @@ and create the Java interface for the plugin in a file named `HybridBridge.java`
 			}     
         }
 
- <div class="alert--info">**NOTE:** The `execute` function will create an android `Intent` for the fully qualified name of the `Activity` class 
+ <div class="alert--info">**NOTE:** The `execute` function will create an android `Intent` for the fully qualified name of the `Activity` class
  specified in the parameter. In our sample we will pass in the name of our List Activity class: "org.sample.hybridandroidapp.MyListActivity" and
-  the code will resolve it to the class to be started. The code also adds the latest item to the `ArrayList` of items being managed for that view 
+  the code will resolve it to the class to be started. The code also adds the latest item to the `ArrayList` of items being managed for that view
   and passes in the updated list as an extra to be accessed from the `Intent`.</div>  
 
 4. Cordova plugins use a `plugin.xml` file to describe their metadata so they can be added via plugman and submitted to the registry
   for others to use. In the root of your **HybridBridgePlugin** folder create a file named `plugin.xml` with the following text, replacing
-  with your own plugin details, GitHub repo etc. 
-    
+  with your own plugin details, GitHub repo etc.
+
 		<?xml version="1.0" encoding="UTF-8"?>
 		<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 			  xmlns:android="http://schemas.android.com/apk/res/android"
 			  id="cordova-plugin-hybrid"
 			  version="1.0.0">	  
 		  <name>HybridBridge</name>
-	  
+
 		  <description>
 			  Simple hybrid bridge example
 		  </description>
-	  
+
 		  <author>Your Name</author>
-	  
+
 		  <license>MIT</license>	  
 		  <keywords>Hybrid, Embedded </keywords>
-	  		 
+
 		  <engines>
 			  <engine name="cordova" version=">=3.0.0"/>
 		  </engines>
-	  
+
 		  <js-module src="www/HybridBridge.js" name="HybridBridge">
 			  <clobbers target="HybridBridge" />
 		  </js-module>
-	  
+
 		  <!-- android -->
 		  <platform name="android">
 			  <config-file target="res/xml/config.xml" parent="/*">
@@ -278,31 +278,31 @@ and create the Java interface for the plugin in a file named `HybridBridge.java`
 			  <source-file src="src/android/org/sample/hybrid/HybridBridge.java" target-dir="src/org/sample/hybrid"/>
 		  </platform>	  
 	 	</plugin>	  
-  
+
   <div class="alert--info">There are also optional `repo` and `issue` elements that can also be included if you upload your plugin to a repo and  
        helps you share it with others.
-          
+
            		<repo>https://github.com/hollyschinsky/HybridBridgePlugin.git</repo>
               	<issue>https://github.com/hollyschinsky/HybridBridgePlugin/issues</issue>
   </div>      
-  
+
    Your final plugin structure should look like the following:
 	  ![](../../../images/plugin-structure.png)
 
-4. Now, open your terminal and cd into the root of your hybrid android project. Install your new plugin with the following syntax and using the 
- path to your own hybrid plugin after the `--plugin` option: 
+4. Now, open your terminal and cd into the root of your hybrid android project. Install your new plugin with the following syntax and using the
+ path to your own hybrid plugin after the `--plugin` option:
 
 	  	$ plugman install --platform android --plugin ~/HybridBridgePlugin --project .
 
 	If you have any issues with the above you can install the sample plugin directly with the following command:
-	
+
 	  	$ plugman install --platform android --plugin https://github.com/hollyschinsky/HybridBridgePlugin.git --project .
 
-<a name="step8">
+<a class="anchor" id="step8">
 ###Step 8: Use the Hybrid Plugin
-</a> 
+</a>
 1. Open `<project-root>/assets/www/index.html` and modify the `app div` block to include the new `input` and `button` HTML elements shown below:
- 
+
 		<div class="app">
 			<h1>Apache Cordova</h1>
 			<div id="deviceready" class="blink">
@@ -332,7 +332,7 @@ and create the Java interface for the plugin in a file named `HybridBridge.java`
 			app.receivedEvent('deviceready');
 		 },
    Next, still in `index.js`, define the handlers for each of the buttons registered above directly below the `receivedEvent` function:
-   
+
 		addItem: function() {
 		   console.log("Plugin ADD ITEM CALLED " + HybridBridge);
 		   var item = document.getElementById("bookmark").value;
@@ -351,22 +351,22 @@ and create the Java interface for the plugin in a file named `HybridBridge.java`
 		   var url = "http://phonegap.com"
 		   window.open(url)
 		}
-	  
-	
-###Step 9: Run it! 
+
+
+###Step 9: Run it!
  Run it now from Android Studio and choose either an emulator or device target. Here it is running in a Nexus 5 emulator. Enter text and
  click Add Item to ensure it's working correctly. Click the other buttons to display device info, show a toast message etc, taking advantage
- of the other plugins added to the project. 
-	
- 
-  ![](../../../images/hybrid-android-run.png) 
-  	
+ of the other plugins added to the project.
+
+
+  ![](../../../images/hybrid-android-run.png)
+
 ###Step 10: Troubleshooting
- If you run into any issues, start by checking logcat (the device console for Android) to look for errors. You can use the `logcat` window 
+ If you run into any issues, start by checking logcat (the device console for Android) to look for errors. You can use the `logcat` window
  from Android Studio or run it from the command line with:
- 	
+
  	$ adb logcat
- 	
+
  <div class="alert--tip">**TIP:** You can search the output specifically for `INFO:CONSOLE` to filter the search further and locate your errors.</div>
- 
- You could also compare your code to the sample project located [here](https://github.com/phonegap/phonegap-sample-hybrid-android). 
+
+ You could also compare your code to the sample project located [here](https://github.com/phonegap/phonegap-sample-hybrid-android).
