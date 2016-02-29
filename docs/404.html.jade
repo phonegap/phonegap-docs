@@ -1,0 +1,46 @@
+---
+layout: null
+dynamic: true
+---
+- var scripts = getBlock('scripts')
+- var styles = getBlock('styles')
+
+doctype html
+html(lang='en')
+
+  head
+    title PhoneGap Docs 404
+    block meta
+      meta(name="viewport", content="initial-scale=1.0")
+      script(src="//use.typekit.net/exp7awb.js")
+      script(src="//assets.adobedtm.com/659ec8ada5450db95675e43beaaae92399591a11/satelliteLib-46e65db5bb0c375f8f64619be31cc9b29acf4867.js")
+      script(type='text/javascript').
+        try{Typekit.load();}catch(e){}
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.2.0/sizzle.min.js")
+      script(src="/scripts/main.js")
+      script(src="http://phonegap.com/scripts/home.js")
+      script(src="http://phonegap.com/scripts/mobile_nav.js")
+    block styles
+      != styles.toHTML()
+      link(href='/styles/zenburn-highlight.css', rel='stylesheet')
+      link(href='/styles/normalize.css', rel='stylesheet')
+      link(href='http://phonegap.com/styles/main.css', rel='stylesheet')
+
+  body.no-subheader
+    block site-header
+      include ../layouts/includes/site-header.jade
+    .page-content
+      .wrapper
+        .four-oh-four
+          h1.four-oh-four-title 404
+          p.four-oh-four-description Sorry, the page you are looking for does not exist.
+          .four-oh-four-image
+            img(src='http://phonegap.com/images/landspeeder_white_border.png', alt='Landspeeder')
+          a.button--cta(href='/getstarted/') Speed to the homepage
+    block site-footer
+      include ../layouts/includes/site-footer.jade
+
+    block scripts
+      != scripts.toHTML()
+
+    include ../layouts/includes/analytics.jade
