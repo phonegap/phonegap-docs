@@ -197,6 +197,25 @@ code, kbd, pre, samp
   max-width $code-maxwidth
   overflow scroll
   border-radius 4px
+.sub-footer__block
+  max-width 300px
+  h3
+    font-size 1.125rem
+    text-transform uppercase
+    font-weight normal
+    margin-bottom 5px
+.sub-footer__more-link
+  font-size .875rem
+  text-transform uppercase
+.sub-footer__blocks
+  display block
+.sub-footer__block
+  position relative
+  margin 0 auto
+@media (min-width: 900px)
+  .sub-footer__blocks
+    display flex
+    justify-content space-between
 @media (min-width: 820px)
   body
     padding-top 180px
