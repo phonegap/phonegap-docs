@@ -18,13 +18,13 @@ PhoneGap Desktop is currently available for [Mac and Windows](https://github.com
 ### Guide Sections
 The sections covered in this reference include:
 
-- [Installation Steps](desktop-app/install/mac)
-- [Creating a Project](desktop-app/create-project)
-- [Opening an Existing Project](desktop-app/open-project)
-- [Previewing your App](desktop-app/pair-with-dev-app)
-- [Removing a Project](desktop-app/remove-project)
-- [Active vs Inactive Projects](desktop-app/active-vs-inactive)
-- [Viewing the Server Log](desktop-app/view-server-log)
-- [Updating Software Version](desktop-app/7-update-version/mac)
-- [Editing Settings](desktop-app/edit-settings)
-- [Troubleshooting/FAQ](desktop-app/troubleshoot-faq)
+- [Installation Steps](/references/desktop-app/install/mac)
+- [Creating a Project](/references/desktop-app/create-project)
+- [Opening an Existing Project](/references/desktop-app/open-project)
+- [Previewing your App](/references/desktop-app/pair-with-dev-app)
+- [Removing a Project](/references/desktop-app/remove-project)
+- [Active vs Inactive Projects](/references/desktop-app/active-vs-inactive)
+- [Viewing the Server Log](/references/desktop-app/view-server-log)
+- [Updating Software Version](/references/desktop-app/7-update-version/mac)
+- [Editing Settings](/references/desktop-app/edit-settings)
+- [Troubleshooting/FAQ](/references/desktop-app/troubleshoot-faq)
