@@ -1,7 +1,7 @@
 ---
 title: Use with PhoneGap Build
 url: references/phonegap-cli/remote-usage
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/remote-usage.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/remote-usage.html.md
 layout: subpage
 expand: cli
 ---
@@ -14,7 +14,7 @@ installed SDK for each platform.
 phonegap remote [command]
 ```
 
-Use the commands below in conjunction with the `remote` command to perform the specific ations outlined below.    
+Use the commands below in conjunction with the `remote` command to perform the specific actions outlined below.    
 
 ###Commands
 ```bash
