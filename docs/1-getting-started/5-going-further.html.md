@@ -13,7 +13,7 @@ building, packaging and distributing your mobile application.
 
 There are two choices available for building and packaging your applications:
 
-1. Build and package locally using the [PhoneGap CLI](http://docs.phonegap.com/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface)
+1. Build and package locally using the [PhoneGap CLI](http://docs.phonegap.com/references/phonegap-cli/)
 2. Use [PhoneGap Build](http://build.phonegap.com) cloud service for simplifying the build and app packaging process
 
 Which you choose will depend on how comfortable you are working with a command line environment and more closely with the native SDK's and tools versus
