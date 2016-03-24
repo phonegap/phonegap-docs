@@ -38,6 +38,14 @@ html(lang='en')
             include ./includes/desktop-menu.jade
           else if(document.expand=='browser-support')
             include ./includes/browser-support-menu.jade
+          else if(document.expand=='build')
+            include ./includes/build-menu.jade
+          else if(document.expand=='build-configuring')
+            include ./includes/build-configuring-menu.jade
+          else if(document.expand=='build-signing')
+            include ./includes/build-signing-menu.jade
+          else if(document.expand=='build-developer')
+            include ./includes/build-developer-menu.jade
           else
             include ./includes/sidebar.jade
           .content
