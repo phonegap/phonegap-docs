@@ -11,12 +11,37 @@ tabs:
 next: 1-getting-started/5-going-further.html.md
 ---
 
+The PhoneGap CLI has a `serve` command for starting a small web server to host your project to be consumed by the PhoneGap Developer App or any browser.  
 
-You can use the **PhoneGap Developer App** paired with the **PhoneGap CLI** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
 
-The PhoneGap CLI starts a small web server to host your project and returns the server address for you to use from the PhoneGap Developer App running on your mobile device.
+### Preview in a Desktop Browser
+You can preview and test out your apps in your desktop browser first to get started most quickly. PhoneGap will default to supporting 
+the browser when you invoke the `serve` command.  The browser platform will automatically be added in this case and you'll be able to 
+test your app with the `deviceready` event fired and support for the core plugins. In many cases the data you receive from the core 
+plugins will simply be mock data or just handle any errors that would otherwise be thrown, but you can still get your development 
+started quickly with this option and flesh out bugs quickly with your favorite debugging tools. For instance, if you're using a framework
+like AngularJS or React, there are several Chrome plugins to help you debug more easily before you move to your device. Once you are 
+
+To preview your app in the browser, following these steps:
+ 
+1. `cd` into the project created in the step 3 (or any PhoneGap project root) 
+
+2. Serve it using the CLI `serve` command:
+
+  `$ phonegap serve`
+
+3. Open your browser to the IP address the app was served on. You can find it in the console output of the `serve` command. 
+
+4. You can now use your favorite browser debugging tools to help you develop quickly. 
+
+  ![](/images/browser-debug.png)
+
+<div class="alert--tip">You can specifically disable browser support using the `--no-browser` option with the `serve` command.</div>
 
 ### Preview on a Device
+You can use the **PhoneGap Developer App** paired with the **PhoneGap CLI** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
+The PhoneGap CLI starts a small web server to host your project and returns the server address for you to pair with from the PhoneGap Developer App running on your mobile device.
+
 <div class="alert--warning">Double check to ensure you're running your device and computer on the same network before continuing. </div>
 
 1. `cd` into the project directory created in the previous step and type `$ phonegap serve`. You will receive the server address the app is being hosted on in the output received in the console (`192.168.1.11:3000` in this example):
