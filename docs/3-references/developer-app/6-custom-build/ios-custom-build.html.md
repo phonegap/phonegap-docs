@@ -27,7 +27,7 @@ Since the PhoneGap Developer App is an open source project, you could also use i
     
         $ npm install        
  
-3. Next, `cd` into the `www` folder (`<your-path>/phonegap-app-developer/www`) and open the **config.xml** file. Within the root `widget`
+3. Next, from the main project folder (`<your-path>/phonegap-app-developer`) open the **config.xml** file. Within the root `widget`
 element, modify the `id` attribute to set your own unique app bundle id.
  
         <?xml version='1.0' encoding='utf-8'?>
