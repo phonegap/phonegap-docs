@@ -28,7 +28,7 @@ $ phonegap -v
 
    ---------------------------------------
    |                                     |
-   |   Update available 6.0.3 → 6.0.4    |
+   |   Update available 6.0.3 -> 6.0.4   |
    |   Run npm i -g phonegap to update   |
    |                                     |
    ---------------------------------------
