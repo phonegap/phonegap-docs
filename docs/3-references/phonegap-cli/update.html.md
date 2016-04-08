@@ -36,6 +36,6 @@ To disable the update notifier, you can do one of the following:
 
 1. Use the `--no-update-notifer` flag with any PhoneGap command.
     * For example, `phonegap run ios --no-update-notifier`
-2. Disable the update notifier by altering the configuration file.
+2. Disable the update notifier by altering the configuration file.  
     i. Open `~/.config/configstore/update-notifier-phonegap.json`  
     ii. Set the property `"optOut": true`
