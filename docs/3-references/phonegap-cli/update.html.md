@@ -26,12 +26,12 @@ $ phonegap -v
 6.0.3
 
 
-   ╭------------------------------------╮
-   |                                     │
-   │   Update available 6.0.3 → 6.0.4    │
-   │   Run npm i -g phonegap to update   │
-   │                                     │
-   ╰------------------------------------╯
+   ---------------------------------------
+   |                                     |
+   |   Update available 6.0.3 → 6.0.4    |
+   |   Run npm i -g phonegap to update   |
+   |                                     |
+   ---------------------------------------
 ```
 
 <div class="alert--info">**NOTE:** This notification will only be displayed once every 24 hours.</div>
