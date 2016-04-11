@@ -36,6 +36,8 @@ html(lang='en')
             include ./includes/dev-app-menu.jade
           else if(document.expand=='desktop')
             include ./includes/desktop-menu.jade
+          else if(document.expand=='browser-support')
+            include ./includes/browser-support-menu.jade
           else
             include ./includes/sidebar.jade
           .content
