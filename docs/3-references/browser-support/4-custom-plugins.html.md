@@ -14,14 +14,13 @@ To support the browser in your own plugins, follow the [Cordova Plugin Developme
 and ensure you've defined the `browser` platform handling in your `plugin.xml` mapping. You will define your JavaScript files 
 to implement your specific `browser` platform handling code in the `src/browser`
 path in your plugin root. For instance:
+
+  <img class="mobile-image" src="/images/browser-support/custom-plugin.png"/>
   
- ![](/images/browser-support/browser-folder.png)
-
-
 You'll need to ensure you name these browser platform-specific JS files with different names then the client-side implementation included in the `www` by default. Most of the Apache Cordova plugins add the word `Proxy` to the
  class. You can take a look at any of the [Apache Cordova core plugins](/plugin-apis/) for specific examples. 
  
-For instance, by taking a look at the Apache Cordova Camera Plugin's [plugin.xml](https://github.com/apache/cordova-plugin-camera/blob/master/plugin.xml), 
+For instance, by taking a look at the Apache Cordova Camera [plugin.xml](https://github.com/apache/cordova-plugin-camera/blob/master/plugin.xml), 
 you will see how the `CameraProxy.js` class is defined with the following:
  
     <!-- browser -->
@@ -37,6 +36,6 @@ you will see how the `CameraProxy.js` class is defined with the following:
         </js-module>
     </platform>
             
-<div class="info">The `<runs/>` element is required to tell Cordova to initialize the module.</div>            
+<div class="alert--tip">**Tip:** The `<runs/>` element is required to tell Cordova to initialize the module.</div>            
             
 <div class="alert--info">**Note:** Browser Support for the PhoneGap Desktop App will be released in the very near future.</div>            

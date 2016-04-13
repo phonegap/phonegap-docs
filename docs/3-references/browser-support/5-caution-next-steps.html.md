@@ -14,8 +14,7 @@ are listed below:
 and between platforms. You should refer to the [Can I Use](http://caniuse.com) site for specific details of which features your 
 apps use and what is supported.
 
-![](/images/browser-support/caniuse.png)
-
+   ![](/images/browser-support/caniuse.png)   
 - The browser does not have a soft keyboard to test with so you cannot test the effect it might have on the UI/screen layout when 
 using form controls/input fields.
 - Certain devices may support hardware features that cannot be tested in a desktop browser.
@@ -23,7 +22,6 @@ using form controls/input fields.
 - The application is being served from an IP address rather than a filesystem affecting the way security is handled.
 - Performance testing your apps for things like low battery, poor network coverage, low available memory etc, or interrupt testing for 
  situations like incoming/outgoing calls, texts, notifications cannot be properly tested in the browser.
-
 
 
 ### Development/Testing Options:
