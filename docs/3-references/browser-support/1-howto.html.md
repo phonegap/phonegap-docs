@@ -5,33 +5,35 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/reference
 layout: subpage
 expand: browser-support
 ---
+
+Ensure you're using the latest version of the PhoneGap CLI by running: 
  
-PhoneGap makes it easy to use the browser support by adding it automatically as an additional platform target 
- when you `serve` your apps from the [PhoneGap CLI](/references/phonegap-cli/serve/):
+     $ npm update -g phonegap@latest
+
+Next, PhoneGap makes it easy to use the browser target by adding it automatically as an additional platform  when you `serve` your apps from the [PhoneGap CLI](/references/phonegap-cli/serve/):
  
     $ phonegap serve
- 
- ![](/images/browser-support/serve-command.png)
-
-<div class="alert--note">**Note:** Be sure to grab the latest version of the PhoneGap CLI if you don't have it already via `npm update -g phonegap@latest`</div>
     
 You will see a local IP address in the console output which you can open directly in your browser (or via `localhost:portNumber`) and start debugging. You
 can also start making edits to your source code as needed and see them pushed immediately to your browser due to the live reload feature also supported.  
 
+ ![](/images/browser-support/serve-command.png)
+ 
  ![](/images/browser-support/chrome-debug.png)
  
-<div class="alert--tip">**TIP:** You can pass a port number to serve your app on specifically using the `--port` parameter such as: `phonegap serve --port 3009`.</div>
+<div class="alert--tip">**TIP:** You can also pass a port number to use specifically when serving your app using the `--port` parameter. 
+For example `phonegap serve --port 3002`.</div>
   
 The browser platform support ensures the `deviceready` event is fired in the browser and allows you to use all of the core plugins without 
 disrupting your development. Each [Apache Cordova core plugin](http://docs.phonegap.com/plugin-apis/) has this additional `browser` platform 
 target specifically supported which will often contain 
-a [Proxy class](https://github.com/apache/cordova-plugin-device/tree/master/src/browser) that will return mock 
+a [Proxy class](https://github.com/apache/cordova-plugin-device/tree/master/src/browser) to return mock 
 data ([cordova-plugin-device-motion](https://github.com/apache/cordova-plugin-device-motion/blob/master/src/browser/AccelerometerProxy.js) 
- for instance), or simply fail silently ensuring your app continues to execute. 
+ for instance) or simply fail silently ensuring your app continues to execute. 
  
  ![](/images/browser-support/chrome-debug-deviceready.png)
  
-Some of the core plugins use JavaScript API's that are actually supported in the Desktop browser natively, and in those cases the plugin will defer to use
+Some of the core plugins use JavaScript API's that are already supported in the Desktop browser natively, and in those cases the plugin will defer to use
  them. For instance, `cordova-plugin-geolocation` uses an API that is already supported in Chrome, Safari and Firefox. 
  
  <div class="alert--tip">**TIP:** Check the [Can I Use](http://caniuse.com) site to see which JavaScript APIs are currently supported by a 
