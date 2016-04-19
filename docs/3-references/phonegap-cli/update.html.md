@@ -1,11 +1,11 @@
 ---
 title: Updating the CLI Version
 url: references/phonegap-cli/update
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/phonegap-cli/update.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/update.html.md
 layout: subpage
 expand: cli
 ---
- 
+
 ### Manually Update
 
 To update your PhoneGap CLI to the latest version, run the following command:

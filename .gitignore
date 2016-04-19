@@ -9,3 +9,6 @@ npm-debug.log
 /out
 
 .idea
+
+tmp
+Gemfile.lock
