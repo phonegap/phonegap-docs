@@ -5,7 +5,7 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-referen
 layout: subpage
 expand: dev-app
 tabs:
-  - label: Mac
+  - label: iOS
     url: references/developer-app/install/ios
   - label: Android
     url: references/developer-app/install/android

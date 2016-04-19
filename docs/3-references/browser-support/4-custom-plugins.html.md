@@ -6,9 +6,9 @@ layout: subpage
 expand: browser-support
 ---
 
-With the browser platform target support in PhoneGap, you also have the ability to write code targeting it specifically 
-when writing your own custom plugins. Some plugins will be easier to support it than others depending on what native feature they're exposing by allowing you to specify 
-mock data or simply returning a console message. It's up to the plugin author to determine what's desired in that case. 
+With the browser platform target support in PhoneGap, you also have the ability to write code handling for it specifically 
+when developing your own custom plugins. Some plugins will be easier to support it than others depending on what native feature they're exposing by allowing you to specify 
+mock data or simply returning a console message. It's up to the plugin author to determine what's most desired in that case. 
 
 To support the browser in your own plugins, follow the [Cordova Plugin Development docs](https://cordova.apache.org/docs/en/latest/plugin_ref/spec.html) on the Official Apache Cordova site 
 and ensure you've defined the `browser` platform handling in your `plugin.xml` mapping. You will define your JavaScript files 
@@ -37,5 +37,4 @@ you will see how the `CameraProxy.js` class is defined with the following:
     </platform>
             
 <div class="alert--tip">**Tip:** The `<runs/>` element is required to tell Cordova to initialize the module.</div>            
-            
-<div class="alert--info">**Note:** Browser Support for the PhoneGap Desktop App will be released in the very near future.</div>            
+                        

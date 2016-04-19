@@ -17,7 +17,7 @@ and packaging PhoneGap applications for multiple platforms. The use cases for th
 2. Paired with PhoneGap Build
 3. Standalone
 
-More details about these use cases can be found in the [Installation guide]((/references/phonegap-cli/install). 
+More details about these use cases can be found in the [Installation guide](/references/phonegap-cli/install). 
     
 ### Supported Platforms
 The PhoneGap CLI is supported on Mac and Windows.  

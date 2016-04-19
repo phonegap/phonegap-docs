@@ -11,11 +11,22 @@ tabs:
 next: 1-getting-started/5-going-further.html.md
 ---
 
-You can use the **PhoneGap Developer App** paired with **PhoneGap Desktop** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
+You can use the **PhoneGap Developer App** paired with **PhoneGap Desktop** to immediately preview your app on a device without 
+installing platform SDKs, registering devices, or compiling code.
 
 **PhoneGap Desktop** starts a small web server to host your project and returns a server address you can then enter into the **PhoneGap Developer**
-app running on your mobile device. It's started automatically upon project creation, but you can also manually start any project that's inactive
-by clicking the green play (** &gt; **) button next to it.
+app running on your mobile device or in your desktop browser. The project is served automatically upon project creation, but you can also manually 
+start any project that's inactive by clicking the green play (** &gt; **) button next to it.
+
+### Preview in a Desktop Browser
+You can leverage your desktop browser to preview and test yours apps first to speed up your initial development process. For instance, 
+if you're using a framework like Angular or React, there are tools available for specifically debugging those frameworks in the browser 
+that can be quite helpful before moving over to a device. Recently PhoneGap began supporting the browser platform as a target automatically 
+to help you test with the `deviceready` event and Apache Cordova core plugins more easily in an environment you're already familiar with.  
+  
+  ![](/images/browser-support/browser-debug.png)
+
+<div class="alert--info">Refer to the [PhoneGap Browser Support Reference guide](/references/browser-support) for specific details.</div>
 
 ### Preview on a Device
 <div class="alert--warning">Double check to ensure you're running your device and computer on the same network before continuing. </div>
@@ -29,7 +40,7 @@ showing the server address it's running on at the bottom of the PhoneGap Desktop
    <div class="alert--info"> **NOTE:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
 
 
-  <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-enter-add.png"/>
 
 
   You should see the connection occur followed by a success message as shown below. If you receive an error of any kind, ensure

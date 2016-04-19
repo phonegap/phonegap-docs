@@ -18,7 +18,6 @@ The browser platform includes the ability to use any of the [Apache Cordova core
    support for the core plugins so you're not hung up on errors as a result of not running natively.   
    
 <div class="alert--info">**Note:** Check the plugin documentation for specific notes on the browser platform support for that particular plugin.</div> 
-
  
 Some of the core plugins use JavaScript API's that are actually supported in the Desktop browser natively, and in those cases the plugin will defer to use
  them. For instance, `cordova-plugin-geolocation` uses an API that is already supported in Chrome, Safari and Firefox. 

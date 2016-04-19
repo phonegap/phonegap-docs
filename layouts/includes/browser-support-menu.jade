@@ -19,7 +19,7 @@ aside.sidebar
                 li: a(href="/references/desktop-app" class=document.url === 'references/desktop-app'? "current" : "") PhoneGap Desktop
                 li: a(href="/references/developer-app" class=document.url === 'references/developer-app' ? "current" : "") PhoneGap Developer
                 li: a(href="/references/browser-support" class=document.url === 'references/browser-support'? "current" : "") PhoneGap Browser Support
-                    - var subPages = [{title:"Usage", url:"references/browser-support/howto"},{title:"Plugin Support", url:"references/browser-support/plugin-support"},{title:"Multi-Device Testing", url:"references/browser-support/multi-device"},{title:"Custom Plugins", url:"references/browser-support/custom-plugins"},{title:"Caution/Next Steps", url:"references/browser-support/caution-next-steps"}]
+                    - var subPages = [{title:"Usage", url:"references/browser-support/usage/desktop"},{title:"Plugin Support", url:"references/browser-support/plugin-support"},{title:"Multi-Device Testing", url:"references/browser-support/multi-device"},{title:"Custom Plugins", url:"references/browser-support/custom-plugins"},{title:"Caution/Next Steps", url:"references/browser-support/caution-next-steps"}]
                     ul
                         each page in subPages
                             li: a(href="/#{page.url}" class=document.url === page.url ? "current" : "")!=page.title

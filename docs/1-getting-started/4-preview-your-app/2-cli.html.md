@@ -11,33 +11,19 @@ tabs:
 next: 1-getting-started/5-going-further.html.md
 ---
 
-The PhoneGap CLI has a `serve` command for starting a small web server to host your project to be consumed by the PhoneGap Developer App or any browser.  
-
+The PhoneGap CLI has a `serve` command that starts a small web server to host your project where it can then be consumed by the PhoneGap Developer App 
+running on a mobile device or your desktop browser.  
 
 ### Preview in a Desktop Browser
-You can preview and test out your apps in your desktop browser first to get started most quickly. PhoneGap will default to supporting 
-the browser when you invoke the `serve` command.  The browser platform will automatically be added in this case and you'll be able to 
-test your app with the `deviceready` event fired and support for the core plugins. In many cases the data you receive from the core 
-plugins will simply be mock data or just handle any errors that would otherwise be thrown, but you can still get your development 
-started quickly with this option and flesh out bugs quickly with your favorite debugging tools. For instance, if you're using a framework
-like AngularJS or React, there are several Chrome plugins to help you debug more easily before you move to your device. Once you are 
-
-To preview your app in the browser, following these steps:
- 
-1. `cd` into the project created in the step 3 (or any PhoneGap project root) 
-
-2. Serve it using the CLI `serve` command:
-
-  `$ phonegap serve`
-
-3. Open your browser to the IP address the app was served on. You can find it in the console output of the `serve` command. 
-
-4. You can now use your favorite browser debugging tools to help you develop quickly. 
-
-  ![](/images/browser-debug.png)
-
-<div class="alert--tip">You can specifically disable browser support using the `--no-browser` option with the `serve` command.</div>
-
+You can test your apps in your desktop browser first to speed up your initial development process. For instance, if you're using a framework
+like Angular or React, there are tools available for specifically debugging those frameworks in the browser that can be quite helpful 
+ before moving over to a device. Recently PhoneGap began supporting the browser platform as a target automatically to help you test 
+ with the `deviceready` event and Apache Cordova core plugins more easily in an environment you're already familiar with.  
+  
+  ![](/images/browser-support/browser-debug.png)
+  
+<div class="alert--info">Refer to the [PhoneGap Browser Support Reference guide](/references/browser-support) for specific details.</div>
+  
 ### Preview on a Device
 You can use the **PhoneGap Developer App** paired with the **PhoneGap CLI** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
 The PhoneGap CLI starts a small web server to host your project and returns the server address for you to pair with from the PhoneGap Developer App running on your mobile device.
@@ -55,7 +41,7 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
 
 2. Now go to your mobile device where the PhoneGap Developer App is running, enter the server address on the main screen and tap **Connect**.
 
-  <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-enter-add.png"/>
 
 
  <div class="alert--info"> **NOTE:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
