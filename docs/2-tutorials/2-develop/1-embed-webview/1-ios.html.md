@@ -127,7 +127,7 @@ Custom Class value from the default `ViewController` to`CDVViewController` in th
 7. Run your app now from Xcode. The [PhoneGap iOS sample app](https://github.com/phonegap/phonegap-webview-ios) that was included in the CocoaPod dependencies
 will be run by default (see <a href="#how">the explanation section</a> for exactly how this works).   
 
-    <img class="mobile-image" src="/images/template-run.png"/>    
+    <img class="mobile-image" src="/images/template-run.png" alt="Template run"/>    
 
  The sample app CocoaPod folder is outlined in the project below to point it out specifically. When you're ready to start using your own code for the webview,
  simply replace the contents in the `www` folder with your own app content and it will be linked up and ready to go.
@@ -469,7 +469,7 @@ over to the left to align it as shown below:
 ###Run it!
 Now stop and run your application in the emulator or on your iPhone. You should see a blank table now for the Native **History** view as shown here:
 
-<img class="mobile-image" src="/images/running-empty.png"/>
+<img class="mobile-image" src="/images/running-empty.png" alt="Running empty"/>
 
 In the next lesson we'll show how you can add items to this table from a WebView button control by communication via a plugin.
 

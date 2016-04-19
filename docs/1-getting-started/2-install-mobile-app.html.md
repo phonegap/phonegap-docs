@@ -21,7 +21,7 @@ an easy way for developers to get started creating and testing their PhoneGap ap
 
 2. Once installed, tap the PhoneGap Developer app icon from your home screen to open it:
 
- <img class="mobile-image" src="/images/dev-app-enter-add.png"/>
+ <img class="mobile-image" src="/images/dev-app-enter-add.png" alt="PhoneGap Developer App, iOS"/>
 
 3. Once installed, move on to the next step where you will create your first PhoneGap app using the tool you selected in step 1.
 
