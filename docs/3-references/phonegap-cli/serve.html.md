@@ -22,6 +22,8 @@ phonegap serve [options]
 --port, -p <n>       port for web server (default: 3000)
 --autoreload         enable app refresh on file changes (default: true)
 --no-autoreload      disable app refresh on file changes
+--browser            enable desktop browser support (default: true)
+--no-browser         disable desktop browser support
 --localtunnel        enable a local tunnel for public access (default: false)
 ```
 
@@ -35,6 +37,8 @@ $ phonegap app
 $ phonegap serve
 $ phonegap serve --port 1337
 $ phonegap serve --no-autoreload
+$ phonegap serve --browser
+$ phonegap serve --no-browser
 $ phonegap serve --localtunnel
 $ phonegap app
 ```    

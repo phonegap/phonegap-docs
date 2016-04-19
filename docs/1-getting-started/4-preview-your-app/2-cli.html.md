@@ -11,12 +11,23 @@ tabs:
 next: 1-getting-started/5-going-further.html.md
 ---
 
+The PhoneGap CLI has a `serve` command that starts a small web server to host your project where it can then be consumed by the PhoneGap Developer App 
+running on a mobile device or your desktop browser.  
 
-You can use the **PhoneGap Developer App** paired with the **PhoneGap CLI** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
-
-The PhoneGap CLI starts a small web server to host your project and returns the server address for you to use from the PhoneGap Developer App running on your mobile device.
-
+### Preview in a Desktop Browser
+You can test your apps in your desktop browser first to speed up your initial development process. For instance, if you're using a framework
+like Angular or React, there are tools available for specifically debugging those frameworks in the browser that can be quite helpful 
+ before moving over to a device. Recently PhoneGap began supporting the browser platform as a target automatically to help you test 
+ with the `deviceready` event and Apache Cordova core plugins more easily in an environment you're already familiar with.  
+  
+  ![](/images/browser-support/browser-debug.png)
+  
+<div class="alert--info">Refer to the [PhoneGap Browser Support Reference guide](/references/browser-support) for specific details.</div>
+  
 ### Preview on a Device
+You can use the **PhoneGap Developer App** paired with the **PhoneGap CLI** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code.
+The PhoneGap CLI starts a small web server to host your project and returns the server address for you to pair with from the PhoneGap Developer App running on your mobile device.
+
 <div class="alert--warning">Double check to ensure you're running your device and computer on the same network before continuing. </div>
 
 1. `cd` into the project directory created in the previous step and type `$ phonegap serve`. You will receive the server address the app is being hosted on in the output received in the console (`192.168.1.11:3000` in this example):
@@ -30,7 +41,7 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
 
 2. Now go to your mobile device where the PhoneGap Developer App is running, enter the server address on the main screen and tap **Connect**.
 
-  <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-enter-add.png"/>
 
 
  <div class="alert--info"> **NOTE:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
