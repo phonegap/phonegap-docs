@@ -41,7 +41,7 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
 
 2. Now go to your mobile device where the PhoneGap Developer App is running, enter the server address on the main screen and tap **Connect**.
 
-  <img class="mobile-image" src="/images/dev-app-enter-add.png"/>
+  <img class="mobile-image" src="/images/dev-app-enter-add.png" alt="PhoneGap Developer App, iOS"/>
 
 
  <div class="alert--info"> **NOTE:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
@@ -51,12 +51,12 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
  [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap)
  list for further help.
 
-  <img class="mobile-image" src="/images/dev-app-success.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-success.jpg" alt="Developer App, connection success"/>
 
 
  Once the PhoneGap Developer app connects and loads your mobile application, it should be displayed for preview as shown below:
 
- <img class="mobile-image" src="/images/dev-app-preview.jpg"/>
+ <img class="mobile-image" src="/images/dev-app-preview.jpg" alt="Developer App, preview"/>
 
 <div class="alert--tip"> **TIP:** Gestures can be used while you're previewing your app. A 3 finger tap will return you to the main screen, a 4 finger tap will cause a refresh. </div>
 
@@ -68,7 +68,7 @@ The PhoneGap CLI starts a small web server to host your project and returns the 
   ![](/images/editor.jpg)
 
 5. Now check your mobile device where your PhoneGap Developer app is running and you will see your app reload and automatically display the new text!
-  <img class="mobile-image" src="/images/dev-app-code-update.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-code-update.jpg" alt="Developer App update preview"/>
   ![](/images/phonegap-app-developer-workflow-v2.gif)
 
 6.  Continue making updates to your project to get familiar with this workflow.

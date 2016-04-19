@@ -18,5 +18,5 @@ visit [this link](https://itunes.apple.com/app/id843536693) to go directly to it
 
 2. Once installed, tap the PhoneGap Developer app icon from your home screen you will be presented with the following screen:
 
-  <img class="mobile-image" src="/images/dev-app-enter-add.png">
+  <img class="mobile-image" src="/images/dev-app-enter-add.png" alt="PhoneGap Developer App, iOS">
 

@@ -40,7 +40,7 @@ showing the server address it's running on at the bottom of the PhoneGap Desktop
    <div class="alert--info"> **NOTE:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
 
 
-  <img class="mobile-image" src="/images/dev-app-enter-add.png"/>
+  <img class="mobile-image" src="/images/dev-app-enter-add.png" alt="PhoneGap Developer App, iOS"/>
 
 
   You should see the connection occur followed by a success message as shown below. If you receive an error of any kind, ensure
@@ -48,11 +48,11 @@ showing the server address it's running on at the bottom of the PhoneGap Desktop
    [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and
    [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap) list for further help.
 
-  <img class="mobile-image" src="/images/dev-app-success.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-success.jpg" alt="Developer App, connection success"/>
 
   Once the PhoneGap Developer app connects, it will load and display your application as shown below:  
 
-  <img class="mobile-image" src="/images/dev-app-preview.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-preview.jpg" alt="Developer App, preview"/>
 
   <div class="alert--tip"> **TIP:** Gestures can be used while you're previewing your app. A 3 finger tap will return you to the main screen, a 4 finger tap will cause a refresh.
   </div>
@@ -74,7 +74,7 @@ showing the server address it's running on at the bottom of the PhoneGap Desktop
 
 5. Now check your mobile device where the PhoneGap Developer app is running and you will see your application reload and automatically display the new text:
 
-    <img class="mobile-image" src="/images/dev-app-code-update.jpg"/>
+    <img class="mobile-image" src="/images/dev-app-code-update.jpg" alt="Developer App update preview"/>
 
 6.  Continue making updates to your project to get familiar with this workflow.
 
