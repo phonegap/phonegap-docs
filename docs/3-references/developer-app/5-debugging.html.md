@@ -67,7 +67,7 @@ the pairing process (ie: http://192.168.1.20:3000).
   through code are not supported:
   ![](/images/weinre-demo.png)      
 
-  <img class="mobile-image" src="/images/weinre-inspect.png"/>
+  <img class="mobile-image" src="/images/weinre-inspect.png" alt="Weinre inspector"/>
 
  #### Video Demo
  ![](/images/weinre-demo-video.gif)

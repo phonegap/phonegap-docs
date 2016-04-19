@@ -128,7 +128,7 @@ expand: dev-app
   On Windows, you must allow NodeJS network access. The first time that NodeJS accesses
   the network, it will prompt you for permission:
 
-  <img class="mobile-image" src="/images/node_js_allow_firewall.png">
+  <img class="mobile-image" src="/images/node_js_allow_firewall.png" alt="Firewall allow NodeJS">
 
   If no prompt appears, you can manually allow access:
 
@@ -141,7 +141,7 @@ expand: dev-app
     1. Select _Allow another app_
     1. Locate NodeJS on your system
 
-  <img class="mobile-image" src="/images/node_js_firewall_allowed_apps.png">
+  <img class="mobile-image" src="/images/node_js_firewall_allowed_apps.png" alt="Firewall allowed apps">
 
   On Mac OSX, the firewall is in `System Preferences > Security & Privacy` ([Apple's firewall documentation](https://support.apple.com/kb/PH21748?viewlocale=en_US&locale=en_US)).
 

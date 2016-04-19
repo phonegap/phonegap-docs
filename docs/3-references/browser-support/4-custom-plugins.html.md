@@ -15,7 +15,7 @@ and ensure you've defined the `browser` platform handling in your `plugin.xml` m
 to implement your specific `browser` platform handling code in the `src/browser`
 path in your plugin root. For instance:
 
-  <img class="mobile-image" src="/images/browser-support/custom-plugin.png"/>
+  <img class="mobile-image" src="/images/browser-support/custom-plugin.png" alt="Custom plugin directory structure"/>
 
 You'll need to ensure you name these browser platform-specific JS files with different names then the client-side implementation included in the `www` by default. Most of the Apache Cordova plugins add the word `Proxy` to the
  class. You can take a look at any of the [Apache Cordova core plugins](/plugin-apis/) for specific examples.

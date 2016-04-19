@@ -53,7 +53,7 @@ element, modify the `id` attribute to set your own unique app bundle id.
   settings as desired. You can also use Safari or Chrome Remote debugging to help you debug your apps more easily since it's no longer packaged
   as a release build for the App Store.   
 
-  <img class="mobile-image" src="/images/custom-build1.png"/>   
+  <img class="mobile-image" src="/images/custom-build1.png" alt="Developer app, custom build"/>   
 
   ### Video Demo
   In this short video we are running a locally built version of the PhoneGap Developer app on iOS with the addition of a 3rd party Social Sharing

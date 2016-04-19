@@ -23,18 +23,18 @@ Locate the server address it's currently running on in the footer of the app as 
 
 2. Open the PhoneGap Developer App on a mobile device and enter the server address noted above then tap  **Connect**.
   <div class="alert--info"> **NOTE:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
-  <img class="mobile-image" src="/images/dev-app-enter-add.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-enter-add.png" alt="Developer App, enter server address"/>
 
 3. You should see the connection occur followed by a success message as shown below. If you receive an error of any kind, ensure
    once again that you are connected to the same network on both your device and computer. You could also check the
    [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and
    [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap) list for further help.
 
-  <img class="mobile-image" src="/images/dev-app-success.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-success.jpg" alt="Developer App, connection success"/>
 
 4. Once the PhoneGap Developer app connects, it will load and display your application as shown below:  
 
-  <img class="mobile-image" src="/images/dev-app-preview.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-preview.jpg" alt="Developer App, preview"/>
 
   <div class="alert--tip"> **TIP:** Gestures can be used while you're previewing your app. A "3 finger tap" will return you to the main screen
   and a "4 finger tap" will cause a refresh.

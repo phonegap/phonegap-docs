@@ -22,18 +22,18 @@ or the [PhoneGap CLI](/getting-started/4-preview-your-app/cli) and note the IP a
   <div class="alert--info"> **NOTE:** Tap directly on the server address displayed in the terminal screen
   of the PhoneGap Developer app and change it to yours. The value filled in by default is only a sample. </div>
 
-  <img class="mobile-image" src="/images/dev-app-enter-add.png"/>
+  <img class="mobile-image" src="/images/dev-app-enter-add.png" alt="PhoneGap Developer App, iOS"/>
 
 3. You should see status messages that the app is being `DOWNLOADED` and `EXTRACTED` followed by a `SUCCESS` message. If you receive an
 error of any kind, double check to make sure you are connected to the same network on both your device and computer. Check the
 [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) or [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap) list for further help.
 
-  <img class="mobile-image" src="/images/dev-app-success.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-success.jpg" alt="Developer App, connection success"/>
 
 4. Once the PhoneGap Developer app connects to the IP address where your project is being served, it will load and display your application as
 shown below:  
 
-  <img class="mobile-image" src="/images/dev-app-preview.jpg"/>
+  <img class="mobile-image" src="/images/dev-app-preview.jpg" alt="Developer App, preview"/>
 
 ### Video Example
 
