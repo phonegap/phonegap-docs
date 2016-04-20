@@ -14,7 +14,15 @@ module.exports = {
   ],
   "plugins": {
     "cleanurls": {
-      "static": true
+      "trailingSlashes": true,
+      "static": true,
+      getRedirectTemplate: function(url, title) {
+        if(url != "/") {
+          url = (url.lastIndexOf('/') == url.length - 1)? url : url + "/";
+          url = (url.indexOf('/') == 0)? url: "/" + url;
+        }
+        return "<!DOCTYPE html>\n<html>\n	<head>\n		<title>" + (title || 'Redirect') + "</title>\n		<meta http-equiv=\"REFRESH\" content=\"0; url=" + url + "\">\n		<link rel=\"canonical\" href=\"" + url + "\" />\n	</head>\n	<body>\n		This page has moved. You will be automatically redirected to its new location. If you aren't forwarded to the new page, <a href=\"" + url + "\">click here</a>.\n		<script>document.location.href = \"" + url + "\"</script>\n	</body>\n</html>";
+      }
     },
     "stylus": {
       "stylusLibraries": {

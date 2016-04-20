@@ -1,14 +1,14 @@
 ---
 title: Troubleshooting and FAQ
 url: references/desktop-app/troubleshoot-faq
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/references/desktop-app/10-troubleshoot-faq.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/10-troubleshoot-faq.html.md
 layout: subpage
 expand: desktop
 ---
 
 ### Building / Compiling the PhoneGap Desktop
 
--How do I fix the `too many files open error` or `Fatal error: EMFile, open error` using the `Grunt` task to 
+-How do I fix the `too many files open error` or `Fatal error: EMFile, open error` using the `Grunt` task to
 build / compile PhoneGap Desktop?
 
   >_On Mac OSX follow these [instructions](https://github.com/phonegap/phonegap-app-desktop/issues/168#issuecomment-53630951)._
