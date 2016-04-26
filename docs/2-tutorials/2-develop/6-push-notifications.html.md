@@ -66,7 +66,7 @@ As of **PhoneGap Developer App** release 1.6.2 and **PhoneGap CLI** release 6.2.
 
  Once the PhoneGap Developer app connects and loads your mobile application, it should be displayed for preview as shown below:
 
- <img class="mobile-image" src="/images/dev-app-preview.jpg" alt="Developer App, preview"/>
+ <img class="mobile-image" src="/images/dev-app-preview-push.jpg" alt="Developer App, preview"/>
 
  The grey `Requesting Registration ID` line under the PhongGap Bot should turn into a green `Registered` line and you should see the following in your terminal session.
 
@@ -88,7 +88,7 @@ As of **PhoneGap Developer App** release 1.6.2 and **PhoneGap CLI** release 6.2.
 
 2. This will result in a push notification being received by the app.
 
-   <img class="mobile-image" src="/images/dev-app-success.jpg" alt="Developer App, connection success"/>
+   <img class="mobile-image" src="/images/dev-app-success-push.jpg" alt="Developer App, connection success"/>
 
 ### Explaining Push
 
