@@ -6,7 +6,7 @@ layout: subpage
 
 You can use the **PhoneGap Developer App** paired with the **PhoneGap CLI** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code. The PhoneGap CLI starts a small web server to host your project and returns the server address for you to pair with from the PhoneGap Developer App running on your mobile device.
 
-As of **PhoneGap Developer App** release 1.6.2 and **PhoneGap CLI** release 6.2.0 you can now test push notification functionality without needing to setup a GCM project for Android or an Apple push certification for iOS.
+Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** release 1.6.2, you can now test push notification functionality without needing to set up a [Google Cloud Messaging (GCM) ](https://developer.android.com/google/gcm/index.html) project for Android or an [Apple Push Notification Service (APNs)](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html) certification for iOS.
 
 <div class="alert--warning">Double check to ensure you're running your device and computer on the same network before continuing. </div>
 
@@ -26,6 +26,8 @@ As of **PhoneGap Developer App** release 1.6.2 and **PhoneGap CLI** release 6.2.
 
 		Creating a new cordova project.
 
+		Retrieving phonegap-template-push using npm...
+
 3. Change into the new project directory with the cd command:
 
 		$ cd myApp/
@@ -38,7 +40,7 @@ As of **PhoneGap Developer App** release 1.6.2 and **PhoneGap CLI** release 6.2.
 
 		$ cd www/
 
- <div class="alert--tip">**TIP:** Details about the rest of the files and folders created in the root project  will be covered in guides further along. For now just focus on the ***www*** folder and its contents.</div>
+ <div class="alert--tip">**TIP:** Details about the rest of the files and folders created in the root project will be covered in guides further along. For now just focus on the ***www*** folder and its contents.</div>
 
 6. Type `$ phonegap serve`. You will receive the server address the app is being hosted on in the output received in the console (`192.168.1.11:3000` in this example):
 
@@ -61,12 +63,17 @@ As of **PhoneGap Developer App** release 1.6.2 and **PhoneGap CLI** release 6.2.
  [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap)
  list for further help.
 
-  <img class="mobile-image" src="/images/dev-app-success.jpg" alt="Developer App, connection success"/>
+ <img class="mobile-image" src="/images/dev-app-success.jpg" alt="Developer App, connection success"/>
 
+ The first time you run an app inside the **PhoneGap Developer App** that requests the permission to receive push notifications you will see the following dialog:
+
+ <img class="mobile-image" src="/images/dev-app-push-permission.jpg" alt="Developer App, push permission request"/>
+
+ Please click on the `OK` button to give the app the required permission. Subsequent runs of the application will not show you this permission dialog.
 
  Once the PhoneGap Developer app connects and loads your mobile application, it should be displayed for preview as shown below:
 
- <img class="mobile-image" src="/images/dev-app-preview-push.jpg" alt="Developer App, preview"/>
+ <img class="mobile-image" src="/images/dev-app-preview-push.jpg" alt="Developer App, push registration"/>
 
  The grey `Requesting Registration ID` line under the PhongGap Bot should turn into a green `Registered` line and you should see the following in your terminal session.
 
@@ -88,7 +95,42 @@ As of **PhoneGap Developer App** release 1.6.2 and **PhoneGap CLI** release 6.2.
 
 2. This will result in a push notification being received by the app.
 
-   <img class="mobile-image" src="/images/dev-app-success-push.jpg" alt="Developer App, connection success"/>
+   <img class="mobile-image" src="/images/dev-app-success-push.jpg" alt="Developer App, push received"/>
+
+
+### Sending Your Second and Third Pushes
+
+1. Now minimize the **PhoneGap Desktop App**.
+
+2. From your terminal window, enter the following command if you are testing on iOS:
+
+		$ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service apns --payload '{ "aps": { "alert": "Hello World" } }'
+
+  or enter the following command if you are testing on Android:
+
+		$ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service gcm --payload '{ "data": { "title": "Hello", "message": "World"} }'
+
+  replacing the deviceID with the one you received from the registration event in the previously.
+
+3. This will result in a push notification being received by the app while it is in the background.
+
+  <img class="mobile-image" src="/images/dev-app-success-push-bg.jpg" alt="Developer App, push received background"/>
+
+4. Now, lock your device.
+
+5. From your terminal window, enter the following command if you are testing on iOS:
+
+		$ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service apns --payload '{ "aps": { "alert": "Hello World" } }'
+
+  or enter the following command if you are testing on Android:
+
+		$ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service gcm --payload '{ "data": { "title": "Hello", "message": "World"} }'
+
+  replacing the deviceID with the one you received from the registration event in the previously.
+
+6. This will result in a push notification being received by the app while the device is locked.
+
+  <img class="mobile-image" src="/images/dev-app-success-push-locked.jpg" alt="Developer App, push received locked"/>
 
 ### Explaining Push
 
@@ -114,11 +156,13 @@ First we need to initialize the push notification system. The `init` function se
 
 #### Registration
 
-Next we'll setup an event handler for the `registration` event. Once the app has successfully registered with the remote push service our event handler will be called. The function is called with only one parameter which is a data object and the object only has one property the `registrationId` received from the remote push service.
+Next we'll setup an event handler for the registration event. Once the app has successfully registered with the remote push service, our event handler will be called. The event handler is called with one parameter, a data object containing one property; the registrationId received from the remote push service.
 
-Then we'll get the value of the saved `registrationId` from `localStorage`. If the old registration ID does not match the newly received registration ID we need to do two things. First, save the new `registrationId` into `localStorage`. Second, and the implementation is left up to the user, send the registration ID to your push service. For the purpose of this guide that functionality is not needed.
+Then we'll get the value of the saved `registrationId` from `localStorage`. If the old registration ID does not match the newly received registration ID we need to do two things. First, save the new `registrationId` into `localStorage`. Second, send the registration ID to your push service.
 
-You'll see that the `registration` event handler updates the HTML to visually display that the app is now registered. It does this by setting the CSS display attribute to none on the initial <p> element that was shown and instead shows the Registered element in index.html by setting its display attribute to block.
+<div class="alert--info"> **NOTE:** The implementation for this second step is left up to the user and not relevant for the purposes of this guide. </div>
+
+You'll see that the `registration` event handler updates the HTML to visually display that the app is now registered. It does this by setting the CSS display attribute to none on the initial &lt;p&gt; element that was shown and instead shows the Registered element in index.html by setting its display attribute to block.
 
 		push.on('registration', function(data) {
 		    console.log('registration event: ' + data.registrationId);
@@ -148,7 +192,7 @@ Next we'll setup an event handler for the `error` event. If anything goes wrong 
 
 #### Receiving notifications
 
-Finally, we'll setup an event handler for the `notification` event. When the app is running in the foreground this event is called when a notification is received. The function is called with only one parameter which is a data object and the object has multiple properties including title and message. We'll then use those properties to display a dialog box to the user.
+Finally, we'll setup an event handler for the notification event, called only when the app receives a push notification while running in the foreground. This event handler function will have one data object parameter that could contain multiple properties, including title and message.
 
 		push.on('notification', function(data) {
 				console.log('notification event');
