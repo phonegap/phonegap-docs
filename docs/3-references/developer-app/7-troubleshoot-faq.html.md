@@ -34,6 +34,7 @@ expand: dev-app
   - [Status Bar](https://www.npmjs.com/package/cordova-plugin-statusbar)
   - [Vibration](https://www.npmjs.com/package/cordova-plugin-vibration)
   - [Content Sync](https://www.npmjs.com/package/phonegap-plugin-contentsync)
+  - [Push Notifications](https://www.npmjs.com/package/phonegap-plugin-push)
 
  <div class='alert--warning'>If you're using a plugin in your project that is not shown in this list, it will not work with the PhoneGap Developer
  App out of the box. However, you can create your own [custom build of the PhoneGap Developer app](/references/developer-app/custom-build/ios)
@@ -186,3 +187,7 @@ expand: dev-app
       alert(fileName, 'Line:', lineNumber, 'Error:', e.message);
     };
   ```
+
+### Sending Push Notifications to the PhoneGap Developer App
+
+  To learn how to send push notifications to your app being served by the **PhoneGap Developer App** see this [Developer Guide](/develop/push-notifications/).

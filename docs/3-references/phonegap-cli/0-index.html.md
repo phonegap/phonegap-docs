@@ -17,7 +17,7 @@ and packaging PhoneGap applications for multiple platforms. The use cases for th
 2. Paired with PhoneGap Build
 3. Standalone
 
-More details about these use cases can be found in the [Installation guide](/references/phonegap-cli/install). 
+More details about these use cases can be found in the [Installation guide](/references/phonegap-cli/install).
 
 ### Supported Platforms
 The PhoneGap CLI is supported on Mac and Windows.  
@@ -33,6 +33,7 @@ The sections covered in this reference include:
 - [Using Templates](/references/phonegap-cli/templates)
 - [Cordova-specific Commands](/references/phonegap-cli/cordova)
 - [Updating CLI Version](/references/phonegap-cli/update)
+- [Sending Push Notifications](/references/phonegap-cli/push)
 
 <div class="alert--info">**NOTE:** The PhoneGap CLI is built as a layer on top of the Apache Cordova CLI, so any command that can be used in Cordova
 is also supported by the PhoneGap CLI. This guide will detail the *additional* features that distinguish the PhoneGap

@@ -17,7 +17,7 @@ aside.sidebar
          h2 References
          ul
             li: a(href="/references/phonegap-cli" class=document.url === 'references/phonegap-cli' ? "current" : "") PhoneGap CLI
-               - var subPages = [{title:"Installing the CLI", url:"references/phonegap-cli/install"},{title:"Help Commands", url:"references/phonegap-cli/help"},{title:"Creating an App", url:"references/phonegap-cli/create"},{title:"Serving an App", url:"references/phonegap-cli/serve"},{title:"Using Templates", url:"references/phonegap-cli/templates"},{title:"Use with PhoneGap Build", url:"references/phonegap-cli/remote-usage"},{title:"Cordova Commands", url:"references/phonegap-cli/cordova"},{title:"Updating the CLI Version", url:"references/phonegap-cli/update"}]
+               - var subPages = [{title:"Installing the CLI", url:"references/phonegap-cli/install"},{title:"Help Commands", url:"references/phonegap-cli/help"},{title:"Creating an App", url:"references/phonegap-cli/create"},{title:"Serving an App", url:"references/phonegap-cli/serve"},{title:"Using Templates", url:"references/phonegap-cli/templates"},{title:"Use with PhoneGap Build", url:"references/phonegap-cli/remote-usage"},{title:"Cordova Commands", url:"references/phonegap-cli/cordova"},{title:"Updating the CLI Version", url:"references/phonegap-cli/update"},{title:"Sending Push Notifications", url:"references/phonegap-cli/push"}]
                ul
                   each page in subPages
                      li: a(href="/#{page.url}" class=document.url === page.url ? "current" : "")!=page.title
