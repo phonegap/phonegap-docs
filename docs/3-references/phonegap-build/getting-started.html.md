@@ -7,10 +7,10 @@ expand: build
 
 1. [What Do I Upload?](#what_do_i_upload)
 2. [How Do I Configure My Application?](#configure_application)
-3. [What's Next?](#whats_next)
-3. [Where can I Get Help?](#help)
+3. [How Do I Structure My Application?](#structure_application)
+4. [Where can I Get Help?](#help)
 
-<a id="what_do_i_upload"></a>
+<a class="anchor" id="what_do_i_upload"></a>
 ### 1. What Do I Upload?
 
 #### Preparing the Assets
@@ -25,12 +25,12 @@ PhoneGap Build will inject `phonegap.js`, `cordova.js` (identical sources), and 
 
 For maximum sizes of zip uploads, see the <a href="https://build.phonegap.com/plans">plans page</a>.
 
-<a id="configure_application"></a>
+<a class="anchor" id="configure_application"></a>
 ### 2. How Do I Configure My Application?
 
 You'll need an application configuration file, or `config.xml`, in your app package to configure how your app is built. This includes PhoneGap version, icons and splash screens, platforms, and much more. [See this page for a breakdown of PhoneGap versions supported by PhoneGap Build](https://build.phonegap.com/current-support). See the [configuration section](../configuring/) for more on the config.xml file.
 
-<a id="structure_application"></a>
+<a class="anchor" id="structure_application"></a>
 ### 3. How Do I Structure My Application?
 
 PhoneGap Build's only requirement for your application structure is that the `config.xml` and `index.html` is in the top level of your application.  Other than that
@@ -47,7 +47,7 @@ A typical use case is for a directory containing the icons and splashcreens for 
 
 Please note that the `.pgbomit` file is a placeholder file only, it is not read and its only function is to highlight a directory.  It is *not* like .gitignore or other file types that can contain patterns.
 
-<a id="help"></a>
+<a class="anchor" id="help"></a>
 ### 4. Where can I get help?
 
 Please search all communication channels prior to posting questions to help us reduce repetition and keep the forums useful and efficient! Here's some channels:
@@ -55,4 +55,4 @@ Please search all communication channels prior to posting questions to help us r
 - Search our old [community forum](https://community.phonegap.com)
 - For help on developing your application (plugins, APIs, platform quirks, etc), see the [Adobe PhoneGap Forum](https://forums.adobe.com/community/phonegap/)
 - For help specifically using the PhoneGap Build Service (website, API, build errors), post to the [Adobe PhoneGap Build Forum](https://forums.adobe.com/community/phonegap/)
-- [Stackoverflow](www.stackoverflow.com)
+- [Stackoverflow](http://www.stackoverflow.com)

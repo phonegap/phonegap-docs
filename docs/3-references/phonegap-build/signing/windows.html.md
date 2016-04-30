@@ -11,7 +11,7 @@ expand: build-signing
 <a id="windows"></a>
 ### Windows 10 (Universal) Signing
 
-Windows builds have a slightly more involved signing process than the previous Windows Phone Publisher ID method, which was a simple GUID setting. A .pfx certificate file is now required to sign your app and distribute it to the App Store. [This article on MSDN](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx) explains how to create a PFX store file. Ensure the Subject Name of your signing certificate matches the Windows Publisher ID from your [Microsoft Developer Account](https://developer.microsoft.com/en-us/dashboard/account/management).
+Windows builds have a slightly more involved signing process than the previous Windows Phone Publisher ID method, which was a simple GUID setting. A .pfx certificate file is now required to sign your app and distribute it to the App Store. [This article on MSDN](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832%28v=vs.85%29.aspx) explains how to create a PFX store file. Ensure the Subject Name of your signing certificate matches the Windows Publisher ID from your [Microsoft Developer Account](https://developer.microsoft.com/en-us/dashboard/account/management).
 
 Go to your [PhoneGap Build Account Settings](https://buildstage.phonegap.com/people/edit), select the **Signing Keys** tab, upload your **Windows 10** pfx key and unlock it, and select it when building your application.
 
@@ -22,7 +22,7 @@ Go to your [PhoneGap Build Account Settings](https://buildstage.phonegap.com/peo
     ```&lt;author&gt;Adobe Systems Canada Inc&lt;/author&gt;```
 
 2. A new config.xml preference `windows-identity-name` has been introduced to set the App Idenity Name in your App Manifest. This preference must match the App Identity Name from your *Windows Dev Center Account -> App Management -> App Identity*:
-	
+
 	```&lt;preference name="windows-identity-name" value="PhonegapBuild.PGBDeveloper" /&gt;```
 
 <a id="winphone8"></a>
@@ -34,4 +34,3 @@ Go to your [PhoneGap Build Account Settings](https://buildstage.phonegap.com/peo
 4. Add the Publisher ID to your Signing Keys in your [PhoneGap Build Account Settings](https://build.phonegap.com/people/edit).
 5. Build your app using the newly added Windows Publisher ID, selected in a dropdown in your App details.
 6. Upload the resulting xap/appx file to the Windows Dev Center.
-

@@ -84,7 +84,7 @@ The API's write interface includes the following:
 
 <a class="api info" href="#_post_https_build_phonegap_com_api_v1_keys_platform"><span>POST</span><code>/api/v1/keys/:platform</code> Add a Signing Key for A Specific Platform</a>
 
-<a class="api primary" href="#_put_https_build_phonegap_com_api_v1_keys_platform"><span>PUT</span><code>/api/v1/keys/:platform/:id</code> Update/Unlock a Singing Key for a Specific Platform</a>
+<a class="api primary" href="#-put-https-build-phonegap-com-api-v1-keys-platform-id-"><span>PUT</span><code>/api/v1/keys/:platform/:id</code> Update/Unlock a Singing Key for a Specific Platform</a>
 
 <a class="api danger" href="#_delete_https_build_phonegap_com_api_v1_apps_id"><span>DELETE</span><code>/api/v1/apps/:id</code> Delete an App</a>
 
@@ -550,7 +550,7 @@ Once the builds are queued, you will want to watch the results of `GET
 `pending` to either `complete` or `error`.
 
 <span id="_post_https_build_phonegap_com_api_v1_apps_id_build_platform"></span>
-### `POST https://build.phonegap.com/api/v1/apps/:id/build/:platform
+### `POST https://build.phonegap.com/api/v1/apps/:id/build/:platform`
 
 A simpler URL to build for a single platform:
 
@@ -671,7 +671,7 @@ The following are required for iOS builds:
 * a title for your certificate-profile pair
 
 Details on how to obtain these files are in our [iOS
-Signing](/docs/ios-builds) documentation.
+Signing](/references/phonegap-build/signing/ios) documentation.
 
 A sample post would look like this:
 
@@ -702,7 +702,7 @@ The following are required for Android builds:
 * a title for your key
 
 Details on how to get your keystore file and the associated data are
-available in our [Android Code Signing](/docs/android-signing)
+available in our [Android Code Signing](/references/phonegap-build/signing/android)
 documentation.
 
 Here is a sample post:

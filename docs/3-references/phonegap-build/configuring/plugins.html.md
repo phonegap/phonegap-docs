@@ -20,21 +20,21 @@ There are two steps to including a plugin in your project:
 1. <a href="#importing-config">Importing the native code using the config.xml</a>
 2. <a href="#importing-native">Referencing the JavaScript code for the plugin</a>
 
-<a id="importing-config"></a>
+<a class="anchor" id="importing-config"></a>
 #### Importing the native code
 
 To import the native code into your PhoneGap Build project, you will need to add the correct `<plugin>` or deprecated `<gap:plugin>` tag to your config.xml file.
 
-<b>If you omit the `spec` (or `version`) tag of a npm or PhoneGap Build plugin, your app will always be built with the latest version of the plugin. It will be updated automatically the next time you update your application code after a plugin is updated, which may cause unexpected behaviour.</b> For more info on plugin versioning, <a href="#plugin-versions">click here</a>.
+<b>If you omit the `spec` (or `version`) tag of a npm or PhoneGap Build plugin, your app will always be built with the latest version of the plugin. It will be updated automatically the next time you update your application code after a plugin is updated, which may cause unexpected behavior.</b> For more info on plugin versioning, <a href="#plugin-version">click here</a>.
 
 - [&lt;plugin&gt; tag](#plugin)
 - [&lt;gap:plugin&gt; tag](#gap-plugin)
 - [Plugin source](#plugin-source)
 - [Plugin version/location](#plugin-version)
-- [Plugin parameters](#plugin-parameters)
+- [Plugin parameters](#plugin-params)
 - [Usage example](#usage-example)
 
-<a id="plugin"></a>
+<a class="anchor" id="plugin"></a>
 #### &lt;plugin&gt;
 
 - **name**: Plugins should be referenced by the plugin ID which is normally in a reverse domain format (ex: com.phonegap.plugins.barcodescanner). Optional if the plugin is git-backed.
@@ -42,7 +42,7 @@ To import the native code into your PhoneGap Build project, you will need to add
 - **source**: Optional, can either be "pgb", "npm" or "git".  Defaults to "npm" (or "git" if a git URL is detected).
 - **params**: Plugins may require parameters for configuration properties. <a href="#plugin-params">Here is a detailed explanation.</a>
 
-<a id="gap-plugin"></a>
+<a class="anchor" id="gap-plugin"></a>
 #### &lt;gap:plugin&gt;
 
 - **name**: Plugins should be referenced by the plugin ID which is normally in a reverse domain format (ex: com.phonegap.plugins.barcodescanner).
@@ -50,7 +50,7 @@ To import the native code into your PhoneGap Build project, you will need to add
 - **source**: Optional, can either be `pgb`, `npm` or `git`.  Defaults to `pgb` (or `git` if a git URL is detected).
 - **params**: Plugins may require parameters for configuration properties. <a href="#plugin-params">Here is a detailed explanation.</a>
 
-<a id="plugin-sources"></a>
+<a class="anchor" id="plugin-source"></a>
 #### Plugin Source
 
 Plugins can be included from either our repository, located <a href="https://build.phonegap.com/plugins">here</a>, at <a href="https://www.npmjs.com/">npm</a> or from a public git repository.
@@ -71,7 +71,7 @@ To include a plugin from the PhoneGap Build <a href="https://build.phonegap.com/
 
 The param fragments are handled identically regardless of the source of the plugin.
 
-<a id="plugin-versions"></a>
+<a class="anchor" id="plugin-version"></a>
 #### Plugin Version / Location
 
 Here is the most simplistic way of using a versioned plugin. The `spec` attribute is the recommended way to specify the version. `spec` is used so as to be compatibile with the Cordova CLI, which uses a `spec` attribute to describe the version or location of the plugin.
@@ -100,7 +100,7 @@ And finally, this version tag:
 
 would load the latest 2.2.x version so long as x is greater or equal to 3.
 
-<a id="plugin-params"></a>
+<a class="anchor" id="plugin-params"></a>
 #### Plugin Parameters
 
 Plugins may require configuration information to be present; this can be done with adding <param> children to the <plugin> tag:
@@ -112,6 +112,7 @@ Plugins may require configuration information to be present; this can be done wi
 
 <i class="glyphicon glyphicon-check"></i> Make sure to check the documentation of the plugin to see if parameters are necessary.
 
+<a class="anchor" id="usage-example"></a>
 #### Usage Example
 
 Here is a config.xml that includes the Barcode Scanner plugin from npm as an example:
@@ -138,7 +139,7 @@ Here is a config.xml that includes the Barcode Scanner plugin from npm as an exa
         <plugin name="phonegap-plugin-barcodescanner" />
     </widget>
 
-<a id="importing-native"></a>
+<a class="anchor" id="importing-native"></a>
 ### Referencing the JavaScript code
 
 If a plugin utilizes the <code>js-module</code> element to direct cordova to load the plugin javascripts, then no <code>&lt;script&gt;</code> references will be necessary to load a plugin. This is the case for the core cordova plugins, but 3rd party plugins will be implementation-dependent. Refer to the plugin's documentation to determine if you'll need to manually include the javascript.

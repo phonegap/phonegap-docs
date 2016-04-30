@@ -114,7 +114,7 @@ To start your new local Weinre instance run the following command:
 You will now see output like the following:
 
     Hardeeps-MacBook-Air:~ hardeep$ weinre
-    2013-07-01T20:03:34.890Z weinre: starting server at http://localhost:8080
+    2013-07-01T20:03:34.890Z weinre: starting server at `http://localhost:8080`
 
 Weinre is now up and running! If you are running this behind a router that uses NAT you will need to find your IP address. You will use this IP when specifying your configuration with Build.
 
@@ -132,10 +132,8 @@ Now include a reference to the Weinre debug script on your debug server, like so
 
 __I can't connect to my Local Server__
 
-First of all make sure that your server is running. Chances are if you're using the default configuration you can visit http://localhost:8080 and it should be responding.
+First of all make sure that your server is running. Chances are if you're using the default configuration you can visit `http://localhost:8080` and it should be responding.
 
 If this works it's most likely the IP address you're providing to Build; please verify that it is correct. A google search such as `windows [version] find ip address` or `OSX [version] find ip address` will help you find articles on getting the right ip.
 
-Assuming that you're using a router running NAT verify that you can visit it within your network by visiting http://[ip address]:8080.
-
-
+Assuming that you're using a router running NAT verify that you can visit it within your network by visiting `http://[ip address]:8080`.
