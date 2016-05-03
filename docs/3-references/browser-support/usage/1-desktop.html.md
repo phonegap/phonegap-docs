@@ -8,7 +8,6 @@ tabs:
     url: references/browser-support/usage/desktop
   - label: CLI
     url: references/browser-support/usage/cli
-expand: browser-support
 ---
 
 <div class="alert--warning">You should ensure you have the [latest version](/getting-started/1-install-phonegap/desktop) of PhoneGap Desktop

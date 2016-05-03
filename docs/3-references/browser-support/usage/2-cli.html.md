@@ -8,7 +8,6 @@ tabs:
     url: references/browser-support/usage/desktop
   - label: CLI
     url: references/browser-support/usage/cli
-expand: browser-support
 ---
 
 <div class="alert--warning">You should ensure you have installed the latest version of the PhoneGap CLI by running `$ npm update -g phonegap@latest`</div>

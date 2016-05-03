@@ -9,6 +9,7 @@ tabs:
   - label: CLI
     url: getting-started/4-preview-your-app/cli
 next: 1-getting-started/5-going-further.html.md
+menuHide: true
 ---
 
 The PhoneGap CLI has a `serve` command that starts a small web server to host your project where it can then be consumed by the PhoneGap Developer App 

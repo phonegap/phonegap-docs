@@ -1,9 +1,8 @@
 ---
-title: Update PhoneGap Desktop on Windows
+title: Update Version
 url: references/desktop-app/7-update-version/win
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/7-update-version/2-win.html.md
 layout: subpage
-expand: desktop
 tabs:
 - label: Mac
   url: references/desktop-app/7-update-version/mac

@@ -17,7 +17,7 @@ your first PhoneGap project. This project will be a PhoneGap mobile app with the
 in just a few simple steps.
 
 
-###Create Default PhoneGap Project
+### Create Default PhoneGap Project
 The PhoneGap desktop tools include a default Hello World project for beginners to start with. It's proven to be the quickest and easiest way to understand the basics of building a mobile PhoneGap app so let's start there:
 
 1. Click the plus sign and select **Create new PhoneGap project** as shown below:

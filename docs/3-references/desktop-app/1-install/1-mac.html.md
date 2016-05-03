@@ -1,9 +1,8 @@
 ---
-title: Mac Installation
+title: Installation
 url: references/desktop-app/install/mac
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/1-install/1-mac.html.md
 layout: subpage
-expand: desktop
 tabs:
 - label: Mac
   url: references/desktop-app/install/mac
@@ -12,7 +11,7 @@ tabs:
 ---
 
 
-1. Download the latest [Mac OS X Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.3.0/PhoneGapDesktop.dmg).
+1. Download the latest [Mac OS X Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.3.1/PhoneGapDesktop.dmg).
 
 2. Double-click the downloaded file to run the installer. You will initially be prompted with a license agreement to accept:
 ![](/images/license-agreement.png)

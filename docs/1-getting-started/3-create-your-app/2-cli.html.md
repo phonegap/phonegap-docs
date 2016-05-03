@@ -16,7 +16,7 @@ to your computer and the [PhoneGap Developer App](/getting-started/2-install-mob
 your first PhoneGap project. This project will be a PhoneGap mobile app with the ability to run on multiple devices and across operating systems
 in just a few simple steps.
 
-###Create Default PhoneGap Project
+### Create Default PhoneGap Project
 The PhoneGap CLI has a default Hello World project for beginners to start with. It's proven to be the quickest and easiest way to understand the
 basics of building a mobile PhoneGap app so let's start by creating the default project with the CLI.
 

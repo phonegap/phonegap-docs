@@ -1,8 +1,8 @@
 ---
-title: PhoneGap Developer App Reference Guide
+title: PhoneGap Developer
 url: references/developer-app
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/developer-app/0-index.html.md
 layout: subpage
-expand: dev-app
 ---
 
 ### Overview

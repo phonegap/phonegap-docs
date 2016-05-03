@@ -12,6 +12,10 @@ module.exports = {
   "layoutsPaths": [
     "layouts"
   ],
+  "regenerateDelay": 0,
+  "watchOptions": {      
+    "catchupDelay": 0
+  },
   "plugins": {
     "cleanurls": {
       "trailingSlashes": true,
@@ -73,6 +77,26 @@ module.exports = {
         .on('add', function(model) {
           model.setMetaDefaults({ 'layout': 'default' });
         });
+    },
+    gsDocs: function() {
+      return this.getCollection('html')
+          .findAllLive({ extension: 'md' })          
+    },
+    getStartedDocs: function() {
+      return this.getCollection('gsDocs')
+          .findAllLive({url: {$startsWith:'getting-started/' }}, [{ relativeBase: 1 }])          
+    },   
+    referenceDocs: function() {
+      return this.getCollection('gsDocs')
+          .findAllLive({url: {$startsWith:'references/' }}, [{ relativeBase: 1 }])          
+    },      
+    tutorialDocs: function() {
+        return this.getCollection('gsDocs')
+            .findAllLive({url:{$startsWith:'tutorials/'}}, [{ relativeBase: 1 }])
+    }, 
+    pgbDocs: function() {
+      return this.getCollection('gsDocs')
+          .findAllLive({url:{$startsWith:'phonegap-build/'}}, [{ relativeBase: 1 }])          
     }
   }
 };

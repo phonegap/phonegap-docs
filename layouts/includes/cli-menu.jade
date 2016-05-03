@@ -1,28 +1,46 @@
+script.
+    var expand = function (cls) {
+        console.log('test');
+        var elems = document.getElementsByClassName(cls);
+        for (var i = 0; i < elems.length; i++) {
+            var obj = elems[i];
+            if (obj.style.display == '')
+                obj.style.display = 'none';
+            else
+                obj.style.display = '';
+        }
+        var collElems = document.getElementsByTagName("li");
+        for (var j = 0; j < collElems.length; j++) {
+            var obj = collElems[j];
+            if (obj.indexOf(cls) == -1) {
+                if (obj.style.display == '')
+                    obj.style.display = 'none';
+            }
+        }
+    }
 aside.sidebar
-   .sidebar__content
-      .mobile-docs-header
-         button.mobile-docs-toggle Docs Menu
-      nav.sidebar__list
-         h2 Getting Started
-         - var pages = [{title:"Step 1: Install PhoneGap", url:"getting-started/1-install-phonegap/desktop"},{title:"Step 2: Install Mobile App", url:"getting-started/2-install-mobile-app"},{title:"Step 3: Create Your App", url:"getting-started/3-create-your-app/desktop"},{title:"Step 4: Preview Your App", url:"getting-started/4-preview-your-app/desktop"},{title:"Step 5: Going Further", url:"getting-started/5-going-further"}]
-         ul
-            each page in pages
-               li: a(href="/#{page.url}" class=document.url === page.url? "current" : "")!=page.title
-         h2 Tutorials
-         h3 Developer Guides
-         ul
-            li: a(href="/develop/hello-world-explained" class=document.url === 'develop/hello-world-explained'? "current" : "") Hello World Explained
-            li: a(href="/develop/1-embed-webview/ios" class=document.url === 'develop/1-embed-webview/ios'? "current" : "") Embedding the Webview
-         h2 References
-         ul
-            li: a(href="/references/phonegap-cli" class=document.url === 'references/phonegap-cli' ? "current" : "") PhoneGap CLI
-               - var subPages = [{title:"Installing the CLI", url:"references/phonegap-cli/install"},{title:"Help Commands", url:"references/phonegap-cli/help"},{title:"Creating an App", url:"references/phonegap-cli/create"},{title:"Serving an App", url:"references/phonegap-cli/serve"},{title:"Using Templates", url:"references/phonegap-cli/templates"},{title:"Use with PhoneGap Build", url:"references/phonegap-cli/remote-usage"},{title:"Cordova Commands", url:"references/phonegap-cli/cordova"},{title:"Updating the CLI Version", url:"references/phonegap-cli/update"}]
-               ul
-                  each page in subPages
-                     li: a(href="/#{page.url}" class=document.url === page.url ? "current" : "")!=page.title
-               li: a(href="/references/desktop-app" class=document.url === 'references/desktop-app'? "current" : "") PhoneGap Desktop
-               li: a(href="/references/developer-app" class=document.url === 'references/developer-app' ? "current" : "") PhoneGap Developer
-               li: a(href="/references/browser-support" class=document.url === 'references/browser-support'? "current" : "") PhoneGap Browser Support
-               li: a(href="/plugin-apis" class=document.url === 'plugin-apis'? "current" : "") Plugin APIs
-
-
+    .sidebar__content
+        .mobile-docs-header
+            button.mobile-docs-toggle Docs Menu
+        nav.sidebar__list
+            h2: a(onclick="expand('gs')") Getting Started
+            - var gsPages = [{title:"Step 1: Install PhoneGap", url:"getting-started/1-install-phonegap/desktop"},{title:"Step 2: Install Mobile App", url:"getting-started/2-install-mobile-app"},{title:"Step 3: Create Your App", url:"getting-started/3-create-your-app/desktop"},{title:"Step 4: Preview Your App", url:"getting-started/4-preview-your-app/desktop"},{title:"Step 5: Going Further", url:"getting-started/5-going-further"}]
+            ul
+                each page in gsPages
+                    li: a(href="/#{page.url}" style="display:none " class="gs" class=document.url === page.url ? "current" : "")!=page.title
+            h2: a(onclick="expand('tute')") Tutorials
+            //h3: a(href="getting-started/1-install-phonegap/desktop") Developer Guides
+            ul
+                li: a(href="/develop/hello-world-explained" class="tute" style="display:none " class=document.url === 'develop/hello-world-explained' ? "current" : "") Hello World Explained
+                li: a(href="/develop/1-embed-webview/ios" class="tute"  style="display:none "  class=document.url === 'develop/1-embed-webview/ios' ? "current" : "") Embedding the Webview
+            h2: a(onclick="expand('ref')") References
+            ul
+                li: a(href="/references/phonegap-cli" onclick="expand('cli')" style="display:none " class="ref" class=document.url === 'references/phonegap-cli' ? "current" : "") PhoneGap CLI
+                    - var subPages = [{title:"Installing the CLI", url:"references/phonegap-cli/install"},{title:"Help Commands", url:"references/phonegap-cli/help"},{title:"Creating an App", url:"references/phonegap-cli/create"},{title:"Serving an App", url:"references/phonegap-cli/serve"},{title:"Using Templates", url:"references/phonegap-cli/templates"},{title:"Use with PhoneGap Build", url:"references/phonegap-cli/remote-usage"},{title:"Cordova Commands", url:"references/phonegap-cli/cordova"},{title:"Updating the CLI Version", url:"references/phonegap-cli/update"}]
+                    ul
+                        each page in subPages
+                            li: a(href="/#{page.url}" style="display:none " class="cli" class=document.url === page.url ? "current" : "")!=page.title
+                li: a(href="/references/desktop-app" onclick="expand('desktop')" style="display:none " class="ref" class=document.url === 'references/desktop-app' ? "current" : "") PhoneGap Desktop
+                li: a(href="/references/phonegap-developer-app" onclick="expand('dev')" style="display:none " class="ref" class=document.url === 'references/developer-app' ? "current" : "") PhoneGap Developer
+                li: a(href="/references/browser-support" onclick="expand('browser')" style="display:none " class="ref" class=document.url === 'references/browser-support' ? "current" : "") PhoneGap Browser Support
+                li: a(href="/plugin-apis" style="display:none " class=document.url === 'plugin-apis' ? "current" : "") Plugin APIs

@@ -1,8 +1,8 @@
 ---
-title: PhoneGap CLI Reference Guide
+title: PhoneGap CLI
 url: references/phonegap-cli
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/0-index.html.md
 layout: subpage
-expand: cli
 ---
 
 ### Overview
@@ -33,6 +33,7 @@ The sections covered in this reference include:
 - [Using Templates](/references/phonegap-cli/templates)
 - [Cordova-specific Commands](/references/phonegap-cli/cordova)
 - [Updating CLI Version](/references/phonegap-cli/update)
+- [Sending Push Notifications](/references/phonegap-cli/push)
 
 <div class="alert--info">**NOTE:** The PhoneGap CLI is built as a layer on top of the Apache Cordova CLI, so any command that can be used in Cordova
 is also supported by the PhoneGap CLI. This guide will detail the *additional* features that distinguish the PhoneGap

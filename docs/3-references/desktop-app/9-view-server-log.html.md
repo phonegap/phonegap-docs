@@ -1,9 +1,8 @@
 ---
-title: Viewing the Server Log
+title: Server Log
 url: references/desktop-app/view-server-log
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/9-view-server-log.html.md
 layout: subpage
-expand: desktop
 ---
 
 The server log displays messages about the status of the active project and can be a useful tool when testing your app.

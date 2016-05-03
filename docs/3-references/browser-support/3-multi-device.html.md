@@ -3,7 +3,6 @@ title: Multi-Device Testing
 url: references/browser-support/multi-device
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/browser-support/3-multi-device.html.md
 layout: subpage
-expand: browser-support
 ---
 
 ### Multiple Platform Support  

@@ -1,6 +1,6 @@
 ---
 title: Config.xml Properties
-url: configure/config-xml-properties
+url: tutorials/configure/config-xml-properties
 layout: subpage
 write: false
 ---

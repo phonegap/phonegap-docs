@@ -1,9 +1,8 @@
 ---
 title: Using Hooks
-url: configure/using-hooks
+url: tutorials/configure/using-hooks
 layout: subpage
 write: false
-order: 5
 ---
 
 Hooks are scripts (snippets of code) that the CLI executes at certain points in your application build process. They allow you to extend the 

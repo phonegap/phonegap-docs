@@ -1,15 +1,13 @@
 ---
-title: Minimize Reflows
-url: optimize/minimize-reflows
+title: Repaints, Reflows and Animations
+url: tutorials/optimize/minimize-reflows
 layout: subpage
-write: false
 ---
 
-### Problem:
+### Overview:
 Setting properties that cause a change to layout (`display`, `float`) or visibility (`width`, `height`, `color`, `outline`)
 will trigger a **reflow** or **repaint** and can greatly affect your application performance.
  
-#### In Summary
 - A *reflow* is caused by a change to a property affecting the layout of the page and causes the browser 
 engine to recompute the dimensions and position of the element as well as trigger a reflow on each on of 
 the element's children, ancestors and elements after it.
@@ -17,7 +15,6 @@ the element's children, ancestors and elements after it.
 - A *repaint* is caused by a change to a property affecting visibility and is costly since the browser 
 must verify the visibility of all other nodes in the DOM tree. 
  
-
 #### What causes a reflow?
 + Resizing the window
 + Changing the font
@@ -36,7 +33,6 @@ useful [CSS Triggers Reference]([http://csstriggers.com](http://csstriggers.com)
 Be cautious of manipulating DOM elements that cause reflows and repaints. If you're adding animations, stick to animating
  `transform` and `opacity` properties for better mobile web browser performance. 
 
-
 ### 10 Best Practices to Minimize Reflows 
 
 1. Avoid setting multiple inline styles; avoid setting styles individually.  
@@ -50,10 +46,5 @@ Be cautious of manipulating DOM elements that cause reflows and repaints. If you
 9. If you make complex rendering changes such as animations, do so out of the flow. Use position-absolute or position-fixed to accomplish this.
 10. Avoid unnecessary complex CSS selectors - descendant selectors in particular.
 
-### Additional Reading (and source credits):
-- [Reflows & Repaints: CSS Performance making your JavaScript Slow?](http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/)
-- [Minimizing Browser Reflows](https://developers.google.com/speed/articles/reflow)
-- [Avoiding unneccessary Paints](http://www.html5rocks.com/en/tutorials/speed/unnecessary-paints)
-- [How Bad is DOM Interaction](http://andyshora.com/how-bad-is-dom-interaction-javascript.html)
 
 

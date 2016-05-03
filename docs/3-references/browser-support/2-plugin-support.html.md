@@ -3,7 +3,6 @@ title: Plugin Support
 url: references/browser-support/plugin-support
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/browser-support/2-plugin-support.html.md
 layout: subpage
-expand: browser-support
 ---
 
 The browser platform includes the ability to use any of the [Apache Cordova core plugins](/plugin-apis/) in your apps without disrupting your development. The level of support for them will vary depending on the type of functionality the plugin exposes. In some cases the browser version of the plugin may return mock data, and in other cases

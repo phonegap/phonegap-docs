@@ -1,9 +1,8 @@
 ---
 title: Help Options
 url: references/phonegap-cli/help
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/help.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/9-help.html.md
 layout: subpage
-expand: cli
 ---
 
 You can use the PhoneGap CLI to get general or specific help in a number of ways. You can use it as a command with any combination of

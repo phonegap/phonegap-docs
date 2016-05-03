@@ -19,14 +19,14 @@ CLI this option may be best going forward.
 
 <div class="alert--info">**NOTE:** The getting started steps vary based on the initial PhoneGap tool you install here in step 1. For the rest of the steps be sure to choose either the **Desktop** or **CLI** tab at the top accordingly.</div>
 
-###Requirements
+### Requirements
 There are a few simple requirements you'll need prior to installing the PhoneGap CLI:
 
 - [node.js](http://nodejs.org/) - a JavaScript runtime to build your JavaScript code
 - [git](http://git-scm.com) - used in the background by the CLI to download assets. It comes pre-installed on some operating systems. 
    To see if you already have it installed, type `git` from the command line.
 
-###Install Steps
+### Install Steps
 
 1. Install the [PhoneGap CLI](https://www.npmjs.com/package/phonegap) via `npm` with the following command from the Terminal app (Mac) or Command Prompt (Win).
     <br>

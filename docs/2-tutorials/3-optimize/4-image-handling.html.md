@@ -1,8 +1,7 @@
 ---
 title: Image Handling
-url: optimize/image-handling
+url: tutorials/optimize/image-handling
 layout: subpage
-write: false
 ---
 
 Image optimization should be done for any mobile hybrid application you're creating, yet the details of how to do it are often unknown

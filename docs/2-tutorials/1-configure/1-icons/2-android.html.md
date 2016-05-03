@@ -1,8 +1,14 @@
 ---
-title: Icons
-url: configure/icons
+title: Android Icons
+url: tutorials/configure/icons/android
 layout: subpage
-write: false
+tabs:
+  - label: iOS
+    url: tutorials/configure/icons/ios
+  - label: Android
+    url: tutorials/configure/icons/android
+  - label: Windows
+    url: tutorials/configure/icons/win    
 ---
 
 ## Icon Configuration

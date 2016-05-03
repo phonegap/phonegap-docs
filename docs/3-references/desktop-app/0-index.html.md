@@ -1,8 +1,8 @@
 ---
-title: PhoneGap Desktop Reference
+title: PhoneGap Desktop
 url: references/desktop-app
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/0-index.html.md
 layout: subpage
-expand: desktop
 ---
 
 ### Overview

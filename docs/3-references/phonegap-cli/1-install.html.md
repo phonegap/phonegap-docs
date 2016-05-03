@@ -1,9 +1,8 @@
 ---
-title: Installing the CLI
+title: Installation
 url: references/phonegap-cli/install
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/install.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/1-install.html.md
 layout: subpage
-expand: cli
 ---
 
 There are a few basic requirements you'll need prior to installing the PhoneGap CLI:
@@ -20,7 +19,7 @@ Run the following command to install the latest version of the PhoneGap CLI:
 $ npm install -g phonegap
 ```    
 
-####Installing a Specific Version
+#### Installing a Specific Version
 You can install a specific version of the [PhoneGap CLI](https://www.npmjs.com/package/phonegap) via `npm` by specifying the version number after the `@` symbol:
 ```bash         
 $ npm install -g phonegap@5.1.1

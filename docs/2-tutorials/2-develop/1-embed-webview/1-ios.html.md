@@ -1,16 +1,16 @@
 ---
 title: "Embedding the Webview"
-url: develop/1-embed-webview/ios
+url: tutorials/develop/1-embed-webview/ios
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/2-tutorials/2-develop/1-embed-webview/1-ios.html.md
 layout: subpage
 tabs:
   - label: iOS
-    url: develop/1-embed-webview/ios
+    url: tutorials/develop/1-embed-webview/ios
   - label: Android
-    url: develop/1-embed-webview/android
+    url: tutorials/develop/1-embed-webview/android    
 ---
 
-##Creating Apps with PhoneGap and iOS Native Components
+## Creating Apps with PhoneGap and iOS Native Components
 
 Before getting started you should read [this blog post](http://phonegap.com/blog/2015/03/12/mobile-choices-post1/) about choosing a mobile strategy.
 As a quick refresher, the type of app we're referring to here includes a blend of native controls and one or more webviews. One common use case implemented in many popular
@@ -279,12 +279,12 @@ See this [video](https://www.youtube.com/watch?v=eTV-tNzWxGc) to understand how 
 ### Option 2: Combining iOS Native and WebView Components from Scratch
 In this section we'll cover the manual approach to combining iOS native components with Cordova webview components.
 
-###Reference App
+### Reference App
 We'll use this [sample application](https://github.com/phonegap/phonegap-sample-hybrid-ios) for reference throughout the tutorial. It contains two views;
 a Cordova view and a native view. The final sample app will have a button on the Cordova webview that will add an item to a table control in the native view to
 represent a bookmark to show how to communicate between the web and native views.
 
-###Lesson 1: Create a Default Cordova iOS Project
+### Lesson 1: Create a Default Cordova iOS Project
 Most developers use the PhoneGap or Cordova CLI to create their projects, and while it is possible to use it for this approach, it's not recommended since
 we are only working with the iOS platform project itself. Instead, we'll use the [cordova-ios](https://github.com/apache/cordova-ios) project. This is the same
 project used from the CLI when you add the iOS platform.
@@ -308,7 +308,7 @@ on iOS so you can receive log messages):
     `$ plugman install --platform ios --project . --plugin cordova-plugin-console`
 
 
-###Lesson 2: Set up the Storyboard
+### Lesson 2: Set up the Storyboard
 1. Open the `HybridIOSApp.xcodeproj` file in Xcode (requires Mac OS). This is the base native project we're extending.
 
 2. Create an iOS storyboard to lay out each screen as a 'scene'. Ensure you have the `Classes` folder of your `HybridIOSApp`
@@ -388,7 +388,7 @@ set the entry point as well that needs to be removed. Open **AppDelegate.m** and
 Hello Cordova app and the native view is currently blank. We will change that in the next lesson.
 
 
-###Lesson 3: Adding to the Native View
+### Lesson 3: Adding to the Native View
 In this lesson we'll set up a table in our native view to allow for items to be added to it and displayed when a button is clicked from the Cordova WebView.
 To set up our native view to display a table, we'll also need to define a custom `UITableViewController` class for our logic.
 
@@ -466,14 +466,14 @@ over to the left to align it as shown below:
            return cell;
          }
 
-###Run it!
+### Run it!
 Now stop and run your application in the emulator or on your iPhone. You should see a blank table now for the Native **History** view as shown here:
 
 <img class="mobile-image" src="/images/running-empty.png" alt="Running empty"/>
 
 In the next lesson we'll show how you can add items to this table from a WebView button control by communication via a plugin.
 
-###Troubleshoot
+### Troubleshoot
 If you have any errors upon run, double check your code updates above against the sample project and ensure your Storyboard matches. You should also
 specifically check to ensure your Native View Controller outlets look the same as in this screenshot below and the **View -> Table View** is shown
 as an Outlet.
@@ -486,7 +486,7 @@ Your app name should be set as the scheme, and the iPhone 6 simulator or your ow
   ![](/images/target.png)
 
 
-###Lesson 4: Web to Native Communication
+### Lesson 4: Web to Native Communication
 
 The way to communicate between the Cordova and native iOS views is via a Cordova plugin. Let's create our own custom plugin now and we'll
 see how we can gain access to the `TableViewController` to add an item to the table.
@@ -515,7 +515,7 @@ message back, but you could also pass the error status along with a message or a
 
 For a list of the different result types, see [this doc](http://cordova.apache.org/docs/en/edge/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide).
 
-###Create a Cordova Plugin
+### Create a Cordova Plugin
 Start creating your custom plugin by going to the **Xcode File -> New -> File** menu and selecting Cocoa Touch. Ensure to choose the `CDVPlugin` as the subclass
 for your new plugin and name it something like `MyHybridPlugin` and save into your **Classes** folder.
 
@@ -595,7 +595,7 @@ and parameters (the string to add to the native table view):
 
 </div>
 
-###Use the Plugin
+### Use the Plugin
 
 1. Now open your Cordova **index.js** file located in the project under the `www/js` folder and add a method on the JavaScript side called `addBookmark`
 that will call the `addBookmark` method in the plugin via the `exec` call (highlighted in red).
@@ -645,6 +645,6 @@ native view. Keep adding items and see them added into your native table view!
 <div class="alert--info">The full [sample project](https://github.com/phonegap/phonegap-sample-hybrid-ios) for this guide can be found in the [PhoneGap GitHub repository](https://github.com/phonegap/phonegap-sample-hybrid-ios)
 for further reference.</div>
 
-###Conclusion
+### Conclusion
 While it may not be the most aesthetically pleasing looking app, it illustrates how easily you can combine native and webview elements to get you thinking about more options in
 approaching this for your own hybrid app development!

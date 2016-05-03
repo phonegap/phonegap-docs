@@ -1,9 +1,8 @@
 ---
-title: Serving an App
+title: Serve an App
 url: references/phonegap-cli/serve
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/serve.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/3-serve.html.md
 layout: subpage
-expand: cli
 ---
 
   The `serve` command is used to start up a local web server to host the application for the

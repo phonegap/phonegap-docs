@@ -1,32 +1,32 @@
 ---
 title: "Embedding the Webview"
-url: develop/1-embed-webview/android
+url: tutorials/develop/1-embed-webview/android
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/2-tutorials/2-develop/1-embed-webview/2-android.html.md
 layout: subpage
 tabs:
   - label: iOS
-    url: develop/1-embed-webview/ios
+    url: tutorials/develop/1-embed-webview/ios
   - label: Android
-    url: develop/1-embed-webview/android
+    url: tutorials/develop/1-embed-webview/android
 ---
 
-##Creating Apps with PhoneGap and Android Native Components  
+## Creating Apps with PhoneGap and Android Native Components  
 
 In this guide we'll walk through the basic steps needed to create a native hybrid Android app that has elements of both native Android components
 and a Cordova webview. For more information about why you might choose this approach, read [this blog post](http://phonegap.com/blog/2015/03/12/mobile-choices-post1/).
 
-###Requirements:
+### Requirements:
 - [Android Studio](http://developer.android.com/tools/studio/index.html)
 - [Plugman](https://github.com/apache/cordova-plugman)
 
-###Reference App
+### Reference App
 We'll use this [sample application](https://github.com/phonegap/phonegap-sample-hybrid-android) for reference throughout the tutorial. It contains two views;
 a Cordova view and a native view. The final sample app will have a button on the Cordova webview that will add an item to a list in the native view
 to show how to communicate between the web and native views. The sample also uses a couple other Cordova plugins to show how they're installed and for
 further reference use.
 
 
-###Step 1: Create a Base Cordova Project
+### Step 1: Create a Base Cordova Project
 Most developers use the PhoneGap or Cordova CLI to create their projects, however for this type of project it's not recommended since we are only
 working with the Android platform project specifically and we don't want to rebuild or overwrite the platform level code each time we run. Instead
 we'll use the [cordova-android](https://github.com/apache/cordova-android) project itself. (This is the same project used from the CLI when you add the
@@ -51,7 +51,7 @@ base project you cloned or unzipped locally to create the default **Hello Cordov
     	Copying template files...
     	Android project created with cordova-android@4.1.0-dev
 
-###Step 2: Add Plugins
+### Step 2: Add Plugins
 
 2. Next use [plugman](https://github.com/apache/cordova-plugman) to add any desired plugins. Plugman is the tool used to work with Cordova plugins when
 we're not using a CLI specifically. While still on the command line, `cd` into the root project created above:
@@ -65,30 +65,30 @@ we're not using a CLI specifically. While still on the command line, `cd` into t
 		$ plugman install --platform android --project . --plugin cordova-plugin-device		
 		$ plugman install --platform android --project . --plugin nl.x-services.plugins.toast
 
-###Step 3: Import the project into Android Studio
+### Step 3: Import the project into Android Studio
 Go to **File -> Import Project** and select the root **HybridAndroidApp** project created above. Allow the Gradle Sync to occur by clicking Ok in
  the dialog that pops up:
 
- ![](../../../images/gradle-ok.png)
+ ![](/images/gradle-ok.png)
 
  <div class="alert--warning">Stop and run the app now to ensure you see the default Hello Cordova app running and the DEVICE READY message
  before moving on.</div>
 
-###Step 4: Create a layout for a native view
+### Step 4: Create a layout for a native view
 Next create a layout resource file to represent a native list view. The layout resource is an xml file that defines how a view will look. It
 will be used in the `MyListActivity.java` Class created in the next step.
 
 To create a layout, right click on the **res** folder in the project navigator on the left and then select the **New -> Android Resource Directory**
 option. In the dialog popup, select **layout** for the Directory name and Resource type and leave Source set to **main**.
 
- ![](../../../images/res-folder.png)
+ ![](/images/res-folder.png)
 
- ![](../../../images/layout-folder.png)
+ ![](/images/layout-folder.png)
 
 Now right click on the new **layout** folder in the project navigator and select **New -> Layout Resource** file. Put in a name of `activity_list` and leave the Root element
 and Directory name as is.
 
- ![](../../../images/layout-resource.png)
+ ![](/images/layout-resource.png)
 
 Paste in the following content to represent a simple list view. We'll use this list view to add items when pressing a button from the Cordova view:
 
@@ -103,7 +103,7 @@ Paste in the following content to represent a simple list view. We'll use this l
 		/>		
 	</LinearLayout>
 
-###Step 5: Create a Native List Activity
+### Step 5: Create a Native List Activity
 Now we need a native `Activity` class to represent the logic behind this view.  Based on the android docs,
 an activity is a single, focused thing a user can do. Almost all activities interact with the user, so the `Activity` class takes care of creating
 a window for your UI. Create a new Java Class called `MyListActivity` in your project's `java/<package-name>` folder at the same level as the
@@ -146,7 +146,7 @@ a window for your UI. Create a new Java Class called `MyListActivity` in your pr
   Note the line `setContentView(R.layout.activity_list);`.
   This is the line where we specify the layout view to associate with this `Activity`.  
 
-###Step 6: Add to the AndroidManifest.xml
+### Step 6: Add to the AndroidManifest.xml
 
 In this step we'll add our new `Activity` to the `AndroidManifest.xml`. Open the
 `AndroidManifest.xml` in the root of your project (or it may be listed in Android Studio under a **manifests** folder depending on your view) and insert
@@ -159,9 +159,9 @@ an &lt;activity&gt; element for `MyListActivity` in the &lt;application&gt; elem
 		</activity>
 
 
-###Step 7: Cordova to Native Communication
+### Step 7: Cordova to Native Communication
 
-###Hybrid Plugin
+### Hybrid Plugin
 In this section we'll use a custom plugin to communicate between the native and cordova views. You can go through the steps below to create your
  own plugin, or install or clone it from [here](https://github.com/hollyschinsky/HybridBridgePlugin.git) for use or if you want to skip the plugin
  creation process for now and move on to [Step 8](#step8).
@@ -171,7 +171,7 @@ In this section we'll use a custom plugin to communicate between the native and 
   </div>	  	
 
 
-####Plugin Create Steps (Optional) 	
+#### Plugin Create Steps (Optional) 	
 1. Create a new folder somewhere outside of your hybrid android project named **HybridBridgePlugin** with two subdirectories named `src` and `www`. 	
 
 2. Next, navigate into the `www/js` folder and create a JavaScript file for the plugin interface named `HybridBridge.js`. Insert the following code:
@@ -287,7 +287,7 @@ and create the Java interface for the plugin in a file named `HybridBridge.java`
   </div>      
 
    Your final plugin structure should look like the following:
-	  ![](../../../images/plugin-structure.png)
+	  ![](/images/plugin-structure.png)
 
 4. Now, open your terminal and cd into the root of your hybrid android project. Install your new plugin with the following syntax and using the
  path to your own hybrid plugin after the `--plugin` option:
@@ -299,7 +299,7 @@ and create the Java interface for the plugin in a file named `HybridBridge.java`
 	  	$ plugman install --platform android --plugin https://github.com/hollyschinsky/HybridBridgePlugin.git --project .
 
 <a class="anchor" id="step8">
-###Step 8: Use the Hybrid Plugin
+### Step 8: Use the Hybrid Plugin
 </a>
 1. Open `<project-root>/assets/www/index.html` and modify the `app div` block to include the new `input` and `button` HTML elements shown below:
 
@@ -353,15 +353,15 @@ and create the Java interface for the plugin in a file named `HybridBridge.java`
 		}
 
 
-###Step 9: Run it!
+### Step 9: Run it!
  Run it now from Android Studio and choose either an emulator or device target. Here it is running in a Nexus 5 emulator. Enter text and
  click Add Item to ensure it's working correctly. Click the other buttons to display device info, show a toast message etc, taking advantage
  of the other plugins added to the project.
 
 
-  ![](../../../images/hybrid-android-run.png)
+  ![](/images/hybrid-android-run.png)
 
-###Step 10: Troubleshooting
+### Step 10: Troubleshooting
  If you run into any issues, start by checking logcat (the device console for Android) to look for errors. You can use the `logcat` window
  from Android Studio or run it from the command line with:
 

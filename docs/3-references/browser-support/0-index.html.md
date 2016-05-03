@@ -1,8 +1,8 @@
 ---
-title: PhoneGap Desktop Browser Support
+title: PhoneGap Browser Support
 url: references/browser-support
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/browser-support/0-index.html.md
 layout: subpage
-expand: browser-support
 ---
 
 PhoneGap apps are built with web technologies providing the benefit of allowing you to use your desktop browser

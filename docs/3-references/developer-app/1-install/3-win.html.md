@@ -1,9 +1,8 @@
 ---
-title: Windows Device Installation
+title: Installation
 url: references/developer-app/install/win
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/developer-app/1-install/3-win.html.md
 layout: subpage
-expand: dev-app
 tabs:
    - label: iOS
      url: references/developer-app/install/ios

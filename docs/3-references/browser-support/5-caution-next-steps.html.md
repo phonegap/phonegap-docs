@@ -3,7 +3,6 @@ title: Caution / Next Steps
 url: references/browser-support/caution-next-steps
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/browser-support/5-caution-next-steps.html.md
 layout: subpage
-expand: browser-support
 ---
 
 When you are developing an app to be consumed on a mobile device, it should go without saying that the best environment for testing

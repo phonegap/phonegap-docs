@@ -1,9 +1,8 @@
 ---
-title: Troubleshooting and FAQ
+title: FAQ/Troubleshoot
 url: references/desktop-app/troubleshoot-faq
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/10-troubleshoot-faq.html.md
 layout: subpage
-expand: desktop
 ---
 
 ### Building / Compiling the PhoneGap Desktop

@@ -3,7 +3,6 @@ title: Custom Plugins
 url: references/browser-support/custom-plugins
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/browser-support/4-custom-plugins.html.md
 layout: subpage
-expand: browser-support
 ---
 
 With the browser platform target support in PhoneGap, you also have the ability to write code handling for it specifically
