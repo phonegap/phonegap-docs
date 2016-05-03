@@ -1,11 +1,10 @@
 ---
-title: iOS Device Installation
+title: Installation
 url: references/developer-app/install/ios
 github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/developer-app/1-install/1-ios.html.md
 layout: subpage
-expand: dev-app
 tabs:
-  - label: Mac
+  - label: iOS
     url: references/developer-app/install/ios
   - label: Android
     url: references/developer-app/install/android
@@ -18,5 +17,5 @@ visit [this link](https://itunes.apple.com/app/id843536693) to go directly to it
 
 2. Once installed, tap the PhoneGap Developer app icon from your home screen you will be presented with the following screen:
 
-  <img class="mobile-image" src="/images/dev-app-enter-add.png">
+  <img class="mobile-image" src="/images/dev-app-enter-add.png" alt="PhoneGap Developer App, iOS">
 

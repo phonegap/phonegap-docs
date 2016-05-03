@@ -14,10 +14,13 @@ html(lang='en')
         try{Typekit.load();}catch(e){}
       script(src="https://cdnjs.cloudflare.com/ajax/libs/sizzle/2.2.0/sizzle.min.js")
       script(src="/scripts/main.js")
+      script(src="http://phonegap.com/scripts/home.js")
+      script(src="http://phonegap.com/scripts/mobile_nav.js")
     block styles
       != styles.toHTML()
       link(href='/styles/zenburn-highlight.css', rel='stylesheet')
       link(href='/styles/normalize.css', rel='stylesheet')
+      link(href='http://phonegap.com/styles/main.css', rel='stylesheet')
       link(href='/styles/index.css', rel='stylesheet')
 
 
@@ -27,14 +30,7 @@ html(lang='en')
     main
       .bounds
         block main
-          if(document.expand=='cli')
-            include ./includes/cli-menu.jade
-          else if(document.expand=='dev-app')
-            include ./includes/dev-app-menu.jade
-          else if(document.expand=='desktop')
-            include ./includes/desktop-menu.jade
-          else
-            include ./includes/sidebar.jade
+          include ./includes/sidebar.jade
           .content
             block content
               -if(document.tabs)
@@ -47,11 +43,4 @@ html(lang='en')
     block scripts
       != scripts.toHTML()
 
-    script(type='text/javascript').
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-94271-11', 'auto');
-      ga('send', 'pageview');
+    include ./includes/analytics.jade

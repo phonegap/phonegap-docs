@@ -7,3 +7,8 @@ npm-debug.log
 
 # Docpad
 /out
+
+.idea
+
+tmp
+Gemfile.lock

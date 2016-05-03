@@ -1,0 +1,45 @@
+script.
+    var expand = function (cls) {
+        var elems = document.getElementsByClassName(cls);
+        for (var i = 0; i < elems.length; i++) {
+            var obj = elems[i];
+            if (obj.style.display == '')
+                obj.style.display = 'none';
+            else
+                obj.style.display = '';
+        }
+        var collElems = document.getElementsByClassName("menu");
+        for (var j=0; j<collElems.length;j++) {
+            var obj = collElems[j];
+            if (obj.className.indexOf(cls) == -1) {
+                if (obj.style.display == '')
+                    obj.style.display = 'none';
+            }
+        }
+    }
+aside.sidebar
+    .sidebar__content
+        .mobile-docs-header
+            button.mobile-docs-toggle Docs Menu
+        nav.sidebar__list
+            h2: a(onclick="expand('gs')") Getting Started
+            - var gsPages = [{title:"Step 1: Install PhoneGap", url:"getting-started/1-install-phonegap/desktop"},{title:"Step 2: Install Mobile App", url:"getting-started/2-install-mobile-app"},{title:"Step 3: Create Your App", url:"getting-started/3-create-your-app/desktop"},{title:"Step 4: Preview Your App", url:"getting-started/4-preview-your-app/desktop"},{title:"Step 5: Going Further", url:"getting-started/5-going-further"}]
+            ul
+                each page in gsPages
+                    li: a(href="/#{page.url}" style="display:none " class="menu gs" class=document.url === page.url ? "current" : "")!=page.title
+            h2: a(onclick="expand('tute')") Tutorials
+            //h3: a(href="getting-started/1-install-phonegap/desktop") Developer Guides
+            ul
+                li: a(href="/develop/hello-world-explained" class="menu tute" style="display:none " class=document.url === 'develop/hello-world-explained' ? "current" : "") Hello World Explained
+                li: a(href="/develop/1-embed-webview/ios" class="menu tute"  style="display:none "  class=document.url === 'develop/1-embed-webview/ios' ? "current" : "") Embedding the Webview
+            h2: a(onclick="expand('ref')") References
+            ul
+                li: a(href="/references/phonegap-cli" onclick="expand('cli')" style="display:none " class="menu ref" class=document.url === 'references/phonegap-cli' ? "current" : "") PhoneGap CLI
+                li: a(href="/references/desktop-app" onclick="expand('desktop')" style="display:none " class="menu ref" class=document.url === 'references/desktop-app' ? "current" : "") PhoneGap Desktop
+                li: a(href="/references/phonegap-developer-app" onclick="expand('dev')" style="display:none " class="menu ref" class=document.url === 'references/developer-app' ? "current" : "") PhoneGap Developer
+                li: a(href="/references/browser-support" class=document.url === 'references/browser-support' ? "current" : "") PhoneGap Browser Support
+                    - var subPages = [{title:"Usage", url:"references/browser-support/usage/desktop"},{title:"Plugin Support", url:"references/browser-support/plugin-support"},{title:"Multi-Device Testing", url:"references/browser-support/multi-device"},{title:"Custom Plugins", url:"references/browser-support/custom-plugins"},{title:"Caution/Next Steps", url:"references/browser-support/caution-next-steps"}]
+                    ul
+                        each page in subPages
+                            li: a(href="/#{page.url}" class=document.url === page.url ? "current" : "")!=page.title
+                li: a(href="/plugin-apis" style="display:none " class="menu ref" class=document.url === 'plugin-apis' ? "current" : "") Plugin APIs

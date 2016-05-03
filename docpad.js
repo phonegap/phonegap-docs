@@ -12,9 +12,21 @@ module.exports = {
   "layoutsPaths": [
     "layouts"
   ],
+  "regenerateDelay": 0,
+  "watchOptions": {      
+    "catchupDelay": 0
+  },
   "plugins": {
     "cleanurls": {
-      "static": true
+      "trailingSlashes": true,
+      "static": true,
+      getRedirectTemplate: function(url, title) {
+        if(url != "/") {
+          url = (url.lastIndexOf('/') == url.length - 1)? url : url + "/";
+          url = (url.indexOf('/') == 0)? url: "/" + url;
+        }
+        return "<!DOCTYPE html>\n<html>\n	<head>\n		<title>" + (title || 'Redirect') + "</title>\n		<meta http-equiv=\"REFRESH\" content=\"0; url=" + url + "\">\n		<link rel=\"canonical\" href=\"" + url + "\" />\n	</head>\n	<body>\n		This page has moved. You will be automatically redirected to its new location. If you aren't forwarded to the new page, <a href=\"" + url + "\">click here</a>.\n		<script>document.location.href = \"" + url + "\"</script>\n	</body>\n</html>";
+      }
     },
     "stylus": {
       "stylusLibraries": {
@@ -65,6 +77,26 @@ module.exports = {
         .on('add', function(model) {
           model.setMetaDefaults({ 'layout': 'default' });
         });
+    },
+    gsDocs: function() {
+      return this.getCollection('html')
+          .findAllLive({ extension: 'md' })          
+    },
+    getStartedDocs: function() {
+      return this.getCollection('gsDocs')
+          .findAllLive({url: {$startsWith:'getting-started/' }}, [{ relativeBase: 1 }])          
+    },   
+    referenceDocs: function() {
+      return this.getCollection('gsDocs')
+          .findAllLive({url: {$startsWith:'references/' }}, [{ relativeBase: 1 }])          
+    },      
+    tutorialDocs: function() {
+        return this.getCollection('gsDocs')
+            .findAllLive({url:{$startsWith:'tutorials/'}}, [{ relativeBase: 1 }])
+    }, 
+    pgbDocs: function() {
+      return this.getCollection('gsDocs')
+          .findAllLive({url:{$startsWith:'phonegap-build/'}}, [{ relativeBase: 1 }])          
     }
   }
 };

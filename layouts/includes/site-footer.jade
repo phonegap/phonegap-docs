@@ -1,47 +1,57 @@
+include ./subfooter.jade
 footer.site-footer
   .bounds
     .site-footer__top
       .site-footer__messages
         .site-footer__message
-          h2: a(href="/getting-started/1-install-phonegap/desktop/") Get Started Now
-          .site-footer__messages__item__description: p Find out how to install PhoneGap, then create and preview an app on your device &mdash; almost as fast as a robot could do it.
+          h2: a(href='http://docs.phonegap.com/getting-started/1-install-phonegap/desktop/') Get Started Now
+          .site-footer__messages__item__description: p Find out how to install PhoneGap, then create and preview an app on your device — almost as fast as a robot could do it.
         .site-footer__message
-          h2: a(href="http://phonegap.com/blog/") Read Our Blog
-          .site-footer__messages__item__description: p Have you read our latest blog post yet? If not, go now&hellip;there is solid gold in that post.
+          h2: a(href='http://phonegap.com/blog/') Read Our Blog
+          .site-footer__messages__item__description: p Have you read our latest blog post yet? If not, go now&hellip; there is solid gold in that post.
       .site-footer__lists
         nav.site-footer__list
           h2 About
           ul
-            li: a(href="http://phonegap.com/about/") Project Overview
-            li: a(href="http://phonegap.com/about/license/") License
-            li: a(href="http://phonegap.com/about/faq/") FAQs
-            li: a(href="https://cordova.apache.org/") Apache Cordova
-            li: a(href="http://phonegap.com/about/contact/") Contact Us
+            li: a(href='http://phonegap.com/about/') Project Overview
+            li: a(href='http://phonegap.com/about/license/') License
+            li: a(href='http://phonegap.com/about/faq/') FAQs
+            li: a(href='https://cordova.apache.org/') Apache Cordova
+            li: a(href='http://phonegap.com/about/logos/') Logo
+            li: a(href='https://www.stickermule.com/user/1070635098/stickers') Stickers
+            //- li: a(href='mailto:hello@phonegap.com') Email Us
         nav.site-footer__list
-          h2 Docs &amp; Resources
+          h2 Docs & Resources
           ul
-            li: a(href="/") Documentation
-            li: a(href="http://wiki.phonegap.com/") Wiki
-            li: a(href="http://groups.google.com/group/phonegap") Google Group
-            li: a(href="http://phonegap.com/tool/") Third Party Tools
-            li: a(href="http://phonegap.com/event/") Events
-            li: a(href="http://phonegap.com/book") Books
-            li: a(href="http://plugins.cordova.io/") Plugin Library
+            li: a(href='/') Documentation
+            li: a(href='https://forums.adobe.com/community/phonegap') Community Forum
+            li: a(href='http://phonegap.com/tool/') Third Party Tools
+            li: a(href='http://phonegap.com/event/') Events
+            li: a(href='http://phonegap.com/book') Books
+            li: a(href='http://plugins.cordova.io/') Plugin Library
         nav.site-footer__list
           h2 We're Everywhere
           ul
-            li: a(href="https://github.com/phonegap/") GitHub
-            li: a(href="http://phonegap.com/community#irc") IRC
-            li: a(href="http://twitter.com/phonegap") Twitter
-            li: a(href="http://www.facebook.com/PhoneGap") Facebook
-            li: a(href="https://plus.google.com/communities/111220599704908202107") Google+
-            li: a(href="https://www.youtube.com/user/phonegap") YouTube
-            li: a(href="https://instagram.com/phonegap/") Instagram
-    //- .subscribe
-    //-   h2 Stay Connected To PhoneGap
-    //-   .subscribe__description If you'd like us to keep in touch with the latest news and updates, subscribe now.
-    //-   .subscribe__form
-    //-     input.subscribe__form__text-input(type="email", placeholder="Enter your email address")
-    //-     button.subscribe__form__submit(type="button") Sign Up
+            li: a(href='https://github.com/phonegap/') GitHub
+            li: a(href='http://webchat.freenode.net/?randomnick=1&channels=%23phonegap&uio=d4') IRC
+            li: a(href='http://twitter.com/phonegap') Twitter
+            li: a(href='http://www.facebook.com/PhoneGap') Facebook
+            li: a(href='https://plus.google.com/communities/111220599704908202107') Google+
+            li: a(href='https://www.youtube.com/user/phonegap') YouTube
+            li: a(href='https://instagram.com/phonegap/') Instagram
+    .subscribe
+      .subscribe__description
+        h2 Stay Connected to PhoneGap
+        div If you'd like us to keep in touch with the latest news and updates, subscribe now.
+      form.subscribe__form(action='http://nitobi.createsend.com/t/y/s/htjuyh/', method='post')
+        input#htjuyh-htjuyh.subscribe__form__text-input(type='email', name='cm-htjuyh-htjuyh', placeholder='Enter your email address', required)
+        input.subscribe__form__submit(type='submit', value='Sign up')
     hr
-    .site-footer__copyright Copyright &copy; 2015 Adobe Systems Inc. All rights reserved. <br/>Use of this website signifies your agreement to the <a href="http://www.adobe.com/legal/general-terms.html">Terms of Use</a> and <a href="http://adobe.com/privacy">Privacy Policy and Cookies</a>.
+    .site-footer__copyright
+      | Copyright &copy; 2015 Adobe Systems Inc. All rights reserved. 
+      br
+      | Use of this website signifies your agreement to the 
+      a(href='http://www.adobe.com/legal/general-terms.html') Terms of Use
+      |  and 
+      a(href='http://adobe.com/privacy') Privacy Policy and Cookies
+      | .

@@ -1,11 +1,10 @@
 ---
 title: Click Delay Handling
-url: optimize/click-delay-handling
+url: tutorials/optimize/click-delay-handling
 layout: subpage
-write: false
 ---
 
-##Problem
+## Overview
 
 When beginning mobile development, you may notice that your app feels sluggish when tapping UI elements on the screen. This is due to a 
 click delay caused by mobile web browsers supporting a *double tap to zoom* event. Once the first tap is interpreted, the browser 
@@ -44,5 +43,4 @@ support it [here](http://caniuse.com/#feat=css-touch-action).
  [Onsen UI](http://onsen.io/) and [Kendo UI Mobile](http://demos.telerik.com/kendo-ui/mobile-listview/index).</div>
   
   
-  **TODO: Add an example video of the issue**
-
+  

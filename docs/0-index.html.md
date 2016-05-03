@@ -4,7 +4,7 @@ url: /
 layout: subpage
 next: 1-getting-started/1-install-phonegap/1-desktop.html.md
 ---
-<img style="float:right; width: 50%; max-width: 250px;" src="/images/excited_robit.svg">
+<img style="float:right; width: 50%; max-width: 250px;" src="/images/excited_robit.svg" alt="Excited Robot">
 <p style="color:#888888;font-size:1.35rem;line-height:1.9rem;">
 Welcome to the new version of the PhoneGap Docs! We're working on putting together
 a comprehensive resource that covers all things PhoneGap and mobile app development,

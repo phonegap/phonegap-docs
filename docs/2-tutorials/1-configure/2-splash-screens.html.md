@@ -1,11 +1,8 @@
 ---
 title: Splash Screens
-url: configure/splash-screens
+url: tutorials/configure/splash-screens
 layout: subpage
-write: false
 ---
-
-## Splash Screen Configuration
 
 ## Configuring Splash Screens in config.xml
 
@@ -13,7 +10,7 @@ In the top-level `config.xml` file (not the one in `platforms`), add configurati
 
 # Example configuration 
 
-Please notice that the value of the "src" attribute is relative to the project directory and not to the *www* directory.
+The value of the "src" attribute is relative to the project directory and not to the *www* directory.
 You can name the source image whatever you like. The internal names in the app are determined by Cordova.
 
 ### Android

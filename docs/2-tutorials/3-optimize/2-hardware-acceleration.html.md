@@ -1,26 +1,33 @@
 ---
 title: Hardware Acceleration
-url: optimize/hardware-acceleration
+url: tutorials/optimize/hardware-acceleration
 layout: subpage
-write: false
 ---
 
+
+### Overview
 Hardware acceleration refers to offloading some processing from the CPU to the GPU (Graphics Processing Unit) to make your application run faster. The
 GPU is meant for the heavy computation needed when rendering graphics and has thousands of threads over a CPU, thus making your application run quite a bit faster when 
-used right. Implementing it the correct way is key with the limited memory available on the GPU since exceeding it can cause your application to crash.  
+used properly. The GPU is typically used for apps requiring 3D Rendering, WebGL and Canvas and not enabled for everything
+since enabling it is costly, especially for devices with limited batteries. Implementing it the correct way is key with the
+limited memory available on the GPU since exceeding it can cause your application to crash.    
 
-Developers often choose to use hardware acceleration in their hybrid mobile applications is for creating smoother, more native-like transitions 
-and animations. The GPU would not be used automatically for those since it's really meant for 3D Rendering, WebGL and Canvas but there's a trick 
-that can be used to tap into it when the application demands a smoother experience.
+#### How to Apply 
+The browser will choose to hardware accelerate CSS transitions on elements that have their own compositing layer
+Applying a CSS property that requires a compositing layer is a trick you can use to ensure hardware acceleration is used
+if there's a particular part of your application you feel needs it. A 3D transform is a property that can be added to an 
+element to move the processing from the CPU to the GPU, for instance: 
 
-#### The Trick 
-The trick (hack) is to apply a 3D transform to your element to move the processing from the CPU to the GPU. 
-You can do this by applying a simple CSS `translate3d` with values set to 0's as shown below.
 
-	transform: translate3d(0,0,0);
+    .accelerateMe {
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+	<div class="accelerateMe">
+        <img...>
+    </div>
+}
 	
-### Additional References: 
-+ http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/
-+ https://dev.opera.com/articles/css-will-change-property/
-+ http://www.infoq.com/interviews/arel-hybrid-mobile-development
-
