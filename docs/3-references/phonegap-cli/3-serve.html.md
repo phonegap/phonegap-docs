@@ -1,21 +1,21 @@
 ---
 title: Serve an App
 url: references/phonegap-cli/serve
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/3-serve.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/phonegap-cli/3-serve.html.md
 layout: subpage
 ---
 
-  The `serve` command is used to start up a local web server to host the application for the
-  PhoneGap Developer app (or any browser) to consume.
+The `serve` command is used to start up a local web server to host the application for the PhoneGap Developer app (or any browser) to consume.
 
-###Usage
+## Usage
+
 ```bash
 phonegap serve [options]
-```       
+```
 
-###Options
-  Some options are available for specifically setting the port to use, to enable or disable auto reload,
-  or to setup a local tunnel for public access as shown below.
+## Options
+
+Some options are available for specifically setting the port to use, to enable or disable auto reload, or to setup a local tunnel for public access as shown below.
 
 ```bash
 --port, -p <n>       port for web server (default: 3000)
@@ -26,12 +26,14 @@ phonegap serve [options]
 --localtunnel        enable a local tunnel for public access (default: false)
 ```
 
-###Alias
+## Alias
+
 ```bash
 $ phonegap app
-```    
+```
 
-###Examples
+## Examples
+
 ```bash
 $ phonegap serve
 $ phonegap serve --port 1337
@@ -40,4 +42,4 @@ $ phonegap serve --browser
 $ phonegap serve --no-browser
 $ phonegap serve --localtunnel
 $ phonegap app
-```    
+```

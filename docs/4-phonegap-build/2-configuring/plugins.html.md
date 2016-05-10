@@ -1,7 +1,7 @@
 ---
 title: Plugins
 url: phonegap-build/configuring/plugins
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/2-configuring/plugins.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/4-phonegap-build/2-configuring/plugins.html.md
 layout: subpage
 ---
 
@@ -25,12 +25,12 @@ There are two steps to including a plugin in your project:
 
 To import the native code into your PhoneGap Build project, you will need to add the correct `<plugin>` or deprecated `<gap:plugin>` tag to your config.xml file.
 
-<b>If you omit the `spec` (or `version`) tag of a npm or PhoneGap Build plugin, your app will always be built with the latest version of the plugin. It will be updated automatically the next time you update your application code after a plugin is updated, which may cause unexpected behaviour.</b> For more info on plugin versioning, <a href="#plugin-version">click here</a>.
+<b>If you omit the `spec` (or `version`) tag of a npm or PhoneGap Build plugin, your app will always be built with the latest version of the plugin. It will be updated automatically the next time you update your application code after a plugin is updated, which may cause unexpected behaviour.</b> For more info on plugin versioning, <a href="#plugin-versions">click here</a>.
 
 - [&lt;plugin&gt; tag](#plugin)
 - [&lt;gap:plugin&gt; tag](#gap-plugin)
 - [Plugin source](#plugin-source)
-- [Plugin version/location](#plugin-version)
+- [Plugin version/location](#plugin-versions)
 - [Plugin parameters](#plugin-params)
 - [Usage example](#usage-example)
 

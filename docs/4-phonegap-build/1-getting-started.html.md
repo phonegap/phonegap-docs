@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 url: phonegap-build/start
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/1-getting-started.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/4-phonegap-build/1-getting-started.html.md
 layout: subpage
 expand: build
 ---
@@ -16,7 +16,7 @@ expand: build
 
 #### Preparing the Assets
 
-PhoneGap and PhoneGap Build use an open packaging model that follows the [W3C Widget Packaging specification](http://www.w3.org/TR/widgets/). This consists of a `config.xml` file, and your web assets (html, js, css, images, etc). You should not be uploading native application code files (.c, .h, .m, java, etc). See the [PhoneGap Hello World Application](https://github.com/phonegap/phonegap-template-hello-world) for a basic example. This application is also explained in more detail [here](/develop/hello-world-explained).
+PhoneGap and PhoneGap Build use an open packaging model that follows the [W3C Widget Packaging specification](http://www.w3.org/TR/widgets/). This consists of a `config.xml` file, and your web assets (html, js, css, images, etc). You should not be uploading native application code files (.c, .h, .m, java, etc). See the [PhoneGap Hello World Application](https://github.com/phonegap/phonegap-template-hello-world) for a basic example. This application is also explained in more detail [here](/tutorials/develop/hello-world-explained/).
 
 #### Don't include phonegap.js or plugin files
 

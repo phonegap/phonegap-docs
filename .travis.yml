@@ -5,7 +5,9 @@ before_script:
   - npm run build-prod
   - rvm install 2.1.4
   - bundle install
-script: bundle exec rake test
+script:
+  - npm run lint
+  - bundle exec rake test
 sudo: false
 env:
   global:
