@@ -52,7 +52,7 @@ Please note that the `.pgbomit` file is a placeholder file only, it is not read 
 
 Please search all communication channels prior to posting questions to help us reduce repetition and keep the forums useful and efficient! Here's some channels:
 
-- Search our old [community forum](https://community.phonegap.com)
+- Search our old [community forum](http://community.phonegap.com)
 - For help on developing your application (plugins, APIs, platform quirks, etc), see the [Adobe PhoneGap Forum](https://forums.adobe.com/community/phonegap/)
 - For help specifically using the PhoneGap Build Service (website, API, build errors), post to the [Adobe PhoneGap Build Forum](https://forums.adobe.com/community/phonegap/)
 - [Stackoverflow](http://www.stackoverflow.com)

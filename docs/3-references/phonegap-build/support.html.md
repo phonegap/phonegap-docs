@@ -33,6 +33,6 @@ If you're having trouble with PhoneGap Development and coding:
 #### Other Resources
 
 - [PhoneGap Google Group](https://groups.google.com/forum/#!forum/phonegap)
-- [Old PhoneGap Build Community Forum](https://community.phonegap.com)
+- [Old PhoneGap Build Community Forum](http://community.phonegap.com)
 
 Feedback welcome!
