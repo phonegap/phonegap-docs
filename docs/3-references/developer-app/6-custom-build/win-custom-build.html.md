@@ -12,26 +12,33 @@ tabs:
 ---
 
 ### Steps
-1. Open the command line application and clone the [PhoneGap Developer app repo](https://github.com/phonegap/phonegap-app-developer)
-with the following command:
 
-        C:\> git clone https://github.com/phonegap/phonegap-app-developer.git
+1. Open the command line application and clone the [PhoneGap Developer app repo](https://github.com/phonegap/phonegap-app-developer) with the following command:
 
-2. Ensure you change into the newly created project folder:
+  ```text
+  C:\> git clone https://github.com/phonegap/phonegap-app-developer.git
+  ```
 
-        C:\> cd <your-path>/phonegap-app-developer
+1. Ensure you change into the newly created project folder:
 
-2. Next, `cd` into the `www` folder (`<your-path>/phonegap-app-developer/www`) and open the **config.xml** file.  Modify the `id` attribute
-to set your own unique apo bundle id within the root `widget` element.
+  ```text
+  C:\> cd <your-path>/phonegap-app-developer
+  ```
 
-        <?xml version='1.0' encoding='utf-8'?>
-        <widget id="org.mycompany.phonegap.app" version="1.5.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+1. Next, `cd` into the `www` folder (`<your-path>/phonegap-app-developer/www`) and open the **config.xml** file.  Modify the `id` attribute to set your own unique apo bundle id within the root `widget` element.
 
-3. Run the `build` command for the Win platform you're targeting on the command line in the root of the project:
+  ```xml
+  <?xml version='1.0' encoding='utf-8'?>
+  <widget id="org.mycompany.phonegap.app" version="1.5.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+  ```
 
-        C:\> phonegap build wp8
+1. Run the `build` command for the Win platform you're targeting on the command line in the root of the project:
 
-4. Once you've tested the app from your custom build locally on your Windows device and are ready to package for distribution, add the `release` flag:
+  ```text
+  C:\> phonegap build wp8
+  ```
+
+1. Once you've tested the app from your custom build locally on your Windows device and are ready to package for distribution, add the `release` flag:
 
         C:\> phonegap build wp8 --release
 
