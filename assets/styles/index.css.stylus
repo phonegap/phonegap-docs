@@ -109,7 +109,6 @@ article.page
 //Sidebar
 .sidebar
   display block
-  overflow: scroll
   width 100%
   margin-right 30px
   position absolute
@@ -124,7 +123,8 @@ article.page
   &.open
     max-height 400px
     box-shadow 0 3px 8px rgba(0,0,0,0.8)  
-    overflow: scroll  
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;        
 .sidebar__content
   box-sizing border-box
 .sidebar__list
