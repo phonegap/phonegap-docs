@@ -148,9 +148,7 @@ article.page
           -webkit-margin-start: 0px;
           -webkit-margin-end: 0px;           
     a
-        color #1692b2         
-        &.mobile
-            color white                                        
+        color #1692b2                                                       
   h3
     font-size 0.875rem
     text-transform uppercase
@@ -161,8 +159,6 @@ article.page
   ul
     list-style none    
     margin: 0 0 1rem;
-    // Reduced to help tutorials sidebar page
-    padding 0
     a
       color white
       display block
@@ -170,10 +166,11 @@ article.page
       box-sizing border-box
       padding 0 20px
       &.current
-        background #40aed0
-        border-top 1px solid #018bad
-        border-bottom 1px solid #018bad
-        box-shadow 0 1px 0 #56c0e2                       
+        color #ee3551
+        background transparent
+        border-top none
+        border-bottom none
+        box-shadow none                  
 .mobile-docs-header
     display block
     height 45px
