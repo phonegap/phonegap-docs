@@ -25,6 +25,6 @@
     "build-prod": "NODE_ENV=production npm run build",
     "start": "node_modules/docpad/bin/docpad run",
     "test": "jasmine-node --color spec",
-    "lint": "markdownlint ./docs"
+    "lint": "markdownlint docs"
   }
 }

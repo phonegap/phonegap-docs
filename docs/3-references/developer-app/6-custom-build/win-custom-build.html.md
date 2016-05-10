@@ -15,13 +15,13 @@ tabs:
 
 1. Open the command line application and clone the [PhoneGap Developer app repo](https://github.com/phonegap/phonegap-app-developer) with the following command:
 
-  ```text
+  ```bash
   C:\> git clone https://github.com/phonegap/phonegap-app-developer.git
   ```
 
 1. Ensure you change into the newly created project folder:
 
-  ```text
+  ```bash
   C:\> cd <your-path>/phonegap-app-developer
   ```
 
@@ -34,7 +34,7 @@ tabs:
 
 1. Run the `build` command for the Win platform you're targeting on the command line in the root of the project:
 
-  ```text
+  ```bash
   C:\> phonegap build wp8
   ```
 
@@ -45,8 +45,8 @@ tabs:
   Your newly built *.xap app bundle will be created in the platforms folder under **phonegap-app-developer/platforms/wp8/Bin/Release/<your-bundle-id>.xap**
 
 ### Video Demo
- In this short video we are running a locally built version of the PhoneGap Developer app on a Windows Phone with the addition of a 3rd party Social
- Sharing plugin built into it for sending text messages and some visual updates to the color and label of the wrapper to show that it's a custom build.
+
+In this short video we are running a locally built version of the PhoneGap Developer app on a Windows Phone with the addition of a 3rd party Social Sharing plugin built into it for sending text messages and some visual updates to the color and label of the wrapper to show that it's a custom build.
 
 <div class="video-wrapper">
   <iframe src="https://www.youtube.com/embed/_IfMzntPAus" frameborder="0" allowfullscreen></iframe>
