@@ -19,7 +19,6 @@ main
     box-sizing border-box
     padding-top 55px
 .content
-  border-left 1px solid #CCC
   margin 0 auto
   padding-left 20px
   background #FFF  
@@ -264,7 +263,8 @@ code, kbd, pre, samp
       padding-top 0
   .content
     margin 0   
-    padding-left 20px   
+    padding-left 20px
+    border-left 1px solid #CCC     
     &.open
       border-left none          
   //Sidebar
