@@ -5,17 +5,18 @@ layout: subpage
 expand: desktop
 ---
 
-### Overview
-The PhoneGap Desktop App is the easiest way to get started with PhoneGap. It's an alternative to the PhoneGap CLI yet uses the
-same libraries behind the scenes with no complicated installation. You don't need `git`, `npm`, or even `Node.js`, you simply install
- it to your desktop, create a project and run it on your device.
+## Overview
 
- ![Pairing](/images/phonegap-app-desktop-pair.png)
+The PhoneGap Desktop App is the easiest way to get started with PhoneGap. It's an alternative to the PhoneGap CLI yet uses the same libraries behind the scenes with no complicated installation. You don't need `git`, `npm`, or even `Node.js`, you simply install it to your desktop, create a project and run it on your device.
 
-### Supported Platforms
+![Pairing](/images/phonegap-app-desktop-pair.png)
+
+## Supported Platforms
+
 PhoneGap Desktop is currently available for [Mac and Windows](https://github.com/phonegap/phonegap-app-desktop/releases).
 
-### Guide Sections
+## Guide Sections
+
 The sections covered in this reference include:
 
 - [Installation Steps](/references/desktop-app/install/mac)

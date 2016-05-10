@@ -16,6 +16,7 @@
   "devDependencies": {
     "fs-extra": "0.18.0",
     "jasmine-node": "1.14.5",
+    "markdownlint-cli": "^0.1.0",
     "npm": "2.7.6"
   },
   "main": "node_modules/docpad/bin/docpad-server",
@@ -23,6 +24,7 @@
     "build": "docpad clean && node scripts/docpad-generate.js",
     "build-prod": "NODE_ENV=production npm run build",
     "start": "node_modules/docpad/bin/docpad run",
-    "test": "jasmine-node --color spec"
+    "test": "jasmine-node --color spec",
+    "lint": "markdownlint docs"
   }
 }
