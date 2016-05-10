@@ -21,7 +21,7 @@ script.
         var obj = elems[i];
         if (obj.style.display == 'none') {           
           obj.style.display = '';
-        }       
+        }             
       }    
     },   
   }
@@ -34,65 +34,46 @@ script.
 aside.sidebar
   .sidebar__content
     .mobile-docs-header
-      button.mobile-docs-toggle Docs menuitem
+      button.mobile-docs-toggle Docs Menu
     nav.sidebar__list
 
          
-      
-      
-      h2: a(href="/getting-started") Getting Started
-      ul
+            
+      h2(class="mobileHead"): a(href="/getting-started") Getting Started
+      ul.mobileBg
         each page in getCollection('getStartedDocs').toJSON() 
           - var depth = page.url.match(/\//g||[]).length         
           if (depth==1 || page.tabs!=null && page.tabs[0].url===page.url)                      
-            li: a(href="/#{page.url}" style="display:none " class="menuitem /getting-started/" class=document.url === page.url? "current" : "")!=page.title                                                       
-      h2: a(href="/tutorials") Tutorials
-      h3: a(href="/tutorials/develop" style="display:none " class="/tutorials/") Develop
-      ul
+            li: a(href="/#{page.url}" style="display:none " class="/getting-started/" class=document.url === page.url? "current" : "")!=page.title                                                       
+      h2(class="mobileHead"): a(href="/tutorials" class="mobileHead") Tutorials
+      ul.mobileBg
         - var coll = getCollection("tutorialDocs").findAllLive({url: {$startsWith:"tutorials/develop" }}, [{ relativeBase: 1 }]).toJSON()
         each page in coll
-          - var depth = page.url.match(/\//g||[]).length          
+          - var depth = page.url.match(/\//g||[]).length 
           // 2nd level starts expanding (tutorials/develop/... etc)
           if (depth>1)            
             if (page.tabs==null || page.tabs[0].url===page.url)
-                li: a(href="/#{page.url}" style="display:none " class="menuitem /tutorials/develop/" class=document.url === page.url? "current" : "")!=page.title
-      h3: a(href="/tutorials/configure/" style="display:none " class="/tutorials/") Configure
-      ul                      
-        - var coll = getCollection("tutorialDocs").findAllLive({url: {$startsWith:"tutorials/configure/" }}, [{ relativeBase: 1 }]).toJSON()
-        each page in coll
-          - var depth = page.url.match(/\//g||[]).length          
-          // 2nd level starts expanding (tutorials/configure/... etc)
-          if (depth>1)            
-            if (page.tabs==null || page.tabs[0].url===page.url)
-                li: a(href="/#{page.url}" style="display:none " class="menuitem /tutorials/configure/" class=document.url === page.url? "current" : "")!=page.title
-      h3: a(href="/tutorials/optimize/" style="display:none " class="/tutorials/") Optimize
-      ul                      
-        - var coll = getCollection("tutorialDocs").findAllLive({url: {$startsWith:"tutorials/optimize/" }}, [{ relativeBase: 1 }]).toJSON()
-        each page in coll
-          - var depth = page.url.match(/\//g||[]).length          
-          if (depth>1)            
-            if (page.tabs==null || page.tabs[0].url===page.url)
-                li: a(href="/#{page.url}" style="display:none " class="menuitem /tutorials/optimize/" class=document.url === page.url? "current" : "")!=page.title                
-      h2: a(href="/references") References
-      ul
+                li: a(href="/#{page.url}" style="display:none " class="/tutorials/" class=document.url === page.url? "current" : "")!=page.title                      
+      h2(class="mobileHead"): a(href="/references" class="mobileHead") References
+      ul.mobileBg
         each page in getCollection('referenceDocs').toJSON()
           - var depth = page.url.match(/\//g||[]).length          
           // 1st level of references are expandable
           if (depth==1)            
-            li: a(href="/#{page.url}" style="display:none "  class="menuitem /references/" class=document.url === page.url? "current" : "")!=page.title
+            li: a(href="/#{page.url}" style="display:none "  class="/references/" class=document.url === page.url? "current" : "")!=page.title
             ul(class="/#{page.url}/" style="display:none") 
               each doc in getCollection("referenceDocs").findAllLive({url: {$startsWith:page.url }}, [{ relativeBase: 1 }]).toJSON()
                 - subDepth = doc.url.match(/\//g||[]).length
                 // Now only want to list depths greater than the main category and need to check for tabs and only use 1st or will duplicate
                 if (subDepth > 1) 
                     if (doc.tabs==null || doc.tabs[0].url===doc.url)
-                        li: a(href="/#{doc.url}" style="display:none " class="menuitem /#{page.url}/"  class=document.url === doc.url ? "current" : "")!=doc.title                                                                  
-      h2: a(href="/phonegap-build") PhoneGap Build
-      ul
+                        li: a(href="/#{doc.url}" style="display:none " class="/#{page.url}/"  class=document.url === doc.url ? "current" : "")!=doc.title                                                                  
+      h2(class="mobileHead"): a(href="/phonegap-build" class="mobileHead") PhoneGap Build
+      ul.mobileBg
         each page in getCollection('pgbDocs').toJSON()
           - var depth = page.url.match(/\//g||[]).length                    
           if (depth==1 || page.tabs!=null && page.tabs[0].url===page.url)    
-            li: a(href="/#{page.url}" style="display:none " class="menuitem /phonegap-build/" class=document.url === page.url? "current" : "")!=page.title
+            li: a(href="/#{page.url}" style="display:none " class="/phonegap-build/" class=document.url === page.url? "current" : "")!=page.title
             - var coll = getCollection("pgbDocs").findAllLive({url: {$startsWith:page.url }}, [{ relativeBase: 1 }]).toJSON()
             // Only need to keep going if there's more than one matching since it will need to expand
             if (coll.length>1)
@@ -100,5 +81,5 @@ aside.sidebar
                     each doc in coll
                         - var subDepth = doc.url.match(/\//g||[]).length
                         if (subDepth>1)                 
-                            li: a(href="/#{doc.url}" style="display:none " class="menuitem /#{page.url}/" class=document.url === doc.url ? "current" : "")!=doc.title
+                            li: a(href="/#{doc.url}" style="display:none " class="/#{page.url}/" class=document.url === doc.url ? "current" : "")!=doc.title
                             
