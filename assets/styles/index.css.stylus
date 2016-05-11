@@ -21,7 +21,7 @@ main
 .content
   margin 0 auto
   padding-left 20px
-  background #FFF  
+  background #FFF
   h1,h2,h3,h4,h5,p,li
     max-width $content-maxwidth
   img
@@ -33,7 +33,7 @@ main
     margin-left auto
     margin-right auto
     display block
-      
+
 .tabs
   border-bottom 1px solid #A0A0A0
   font-size 1.5rem
@@ -79,8 +79,6 @@ $alert
   @extends $alert
 article.page
   margin-bottom 4rem
-  h2
-    font-size 1.5rem
 .next-step
   display block
   border 2px solid #C4C4C4
@@ -122,13 +120,13 @@ article.page
   box-shadow 0 2px 5px rgba(0,0,0,0)
   &.open
     max-height 400px
-    box-shadow 0 3px 8px rgba(0,0,0,0.8)  
+    box-shadow 0 3px 8px rgba(0,0,0,0.8)
     overflow: auto;
-    -webkit-overflow-scrolling: touch;        
+    -webkit-overflow-scrolling: touch;
 .sidebar__content
   box-sizing border-box
 .sidebar__list
-  color #003252  
+  color #003252
   h1
     font-size 1.125rem
     font-weight bold
@@ -139,9 +137,9 @@ article.page
     margin-bottom: .5rem;
     font-weight: regular;
     box-sizing: border-box;
-    padding: 0 10px;           
+    padding: 0 10px;
     a
-        color #1692b2                                                       
+        color #1692b2
   h3
     font-size 0.875rem
     text-transform uppercase
@@ -150,7 +148,7 @@ article.page
     a
       color #003351
   ul
-    list-style none    
+    list-style none
     margin: 0 0 1rem;
     a
       color white
@@ -163,7 +161,7 @@ article.page
         background transparent
         border-top none
         border-bottom none
-        box-shadow none                  
+        box-shadow none
 .mobile-docs-header
     display block
     height 45px
@@ -179,10 +177,10 @@ article.page
     border-radius 4px
     text-align center
     padding 0 13px
-    outline none 
+    outline none
 .open .mobile-docs-toggle
     background #003153
-    color #2fa0c3       
+    color #2fa0c3
 .video-wrapper
     position relative
     padding-bottom 56.25%
@@ -201,15 +199,13 @@ code, kbd, pre, samp
     overflow scroll
     border-radius 4px
 .sub-footer__block
-    max-width 300px
-    h3
-        font-size 1.125rem
-        text-transform uppercase
-        font-weight normal
-        margin-bottom 5px
+  max-width 300px
+.sub-footer__block__title
+  margin-bottom 0
 .sub-footer__more-link
-    font-size .875rem
-    text-transform uppercase
+  font-size .875rem
+  text-transform uppercase
+  margin 0
 .sub-footer__blocks
   display block
 .sub-footer__block
@@ -221,11 +217,14 @@ code, kbd, pre, samp
     justify-content space-between
 @media (min-width: 1020px)
   .sidebar
-     border-right 1px solid #CCC    
+     border-right 1px solid #CCC
 @media (min-width: 820px)
   body
     padding-top 180px
-  h2    
+<<<<<<< HEAD
+  h2
+=======
+>>>>>>> master
   main
     .bounds
       display flex
@@ -235,9 +234,9 @@ code, kbd, pre, samp
       margin-bottom 50px
       padding-top 0
   .content
-    margin 0                         
+    margin 0
   //Sidebar
-  .sidebar    
+  .sidebar
     display block
     width 250px
     margin-right 50px
@@ -250,26 +249,26 @@ code, kbd, pre, samp
     overflow auto
     box-shadow none
     max-height none
-    transition none         
+    transition none
     &.open
       box-shadow none
-      max-height none      
-      border none     
+      max-height none
+      border none
   .sidebar__content
     width 250px
     box-sizing border-box
-  .sidebar__list     
+  .sidebar__list
     h1
       font-size 1.125rem
       font-weight bold
       border-bottom 1px solid #999
     h2
       font-size 1.125rem
-      margin-bottom .5rem        
+      margin-bottom .5rem
       border-bottom 1px solid #E7E7E7
-      font-weight regular         
+      font-weight regular
       a
-        color #1692b2              
+        color #1692b2
     h3
       font-size 0.875rem
       text-transform uppercase
@@ -287,7 +286,7 @@ code, kbd, pre, samp
           background transparent
           border-top none
           border-bottom none
-          box-shadow none 
+          box-shadow none
   .mobile-docs-header
     display none
   .next-step
@@ -316,23 +315,23 @@ code, kbd, pre, samp
       &:hover
         text-decoration none
 @media (max-width: 819px)
-  .sidebar__list .mobileHead 
+  .sidebar__list .mobileHead
     -webkit-box-shadow inset 0 1px 0 #1d93b2,0 1px 2px #2692b0
-    box-shadow inset 0 1px 0 0 #1d93b2,0 1px 2px #2692b0   
+    box-shadow inset 0 1px 0 0 #1d93b2,0 1px 2px #2692b0
     -webkit-margin-before 0em;
     -webkit-margin-after 0em;
     -webkit-margin-start 0px;
-    -webkit-margin-end 0px;   
+    -webkit-margin-end 0px;
     line-height 2.25rem
   .sidebar__list .mobileHead a
      color white
-     box-shadow none     
-  .mobile .current 
-     background #003351                       
+     box-shadow none
+  .mobile .current
+     background #003351
   .sidebar__list .mobileBg
-     background #003351  
+     background #003351
      -webkit-margin-before 0px
      -webkit-margin-after 0px
      -webkit-margin-start 0px
      -webkit-margin-end 0px
-     -webkit-padding-start 0px                                  
+     -webkit-padding-start 0px
