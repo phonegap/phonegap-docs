@@ -8,6 +8,7 @@ layout: subpage
 ## iOS
 
 ### iOS
+
 1. Open the iTunes App Store icon from the home screen on your device.
 1. Tap the **Updates** button at the bottom of the screen
 1. The list shown will indicate which apps have updates available and allow you to update PhoneGap Developer if a new version is available.

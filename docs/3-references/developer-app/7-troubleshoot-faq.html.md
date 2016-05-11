@@ -7,7 +7,7 @@ layout: subpage
 
 ## Which plugins are supported by the PhoneGap Developer app?
 
-The PhoneGap Developer App supports all of the PhoneGap core plugins as well as some other popular plugins to allow you to easily test with them in your app on a mobile device. Below is a list of supported plugins at the time of this writing however you can get the latest list at any time by checking the [GitHub repo](https://github.com/phonegap/phonegap-app-developer/blob/master/config.xml#L23).  
+The PhoneGap Developer App supports all of the PhoneGap core plugins as well as some other popular plugins to allow you to easily test with them in your app on a mobile device. Below is a list of supported plugins at the time of this writing however you can get the latest list at any time by checking the [GitHub repo](https://github.com/phonegap/phonegap-app-developer/blob/master/config.xml#L23).
 
 - [Battery Status](https://www.npmjs.com/package/cordova-plugin-battery-status)
 - [Bluetooth](https://github.com/don/cordova-plugin-ble-central)
@@ -33,7 +33,7 @@ The PhoneGap Developer App supports all of the PhoneGap core plugins as well as 
 - [Content Sync](https://www.npmjs.com/package/phonegap-plugin-contentsync)
 - [Push Notifications](https://www.npmjs.com/package/phonegap-plugin-push)
 
-<div class='alert--warning'>If you're using a plugin in your project that is not shown in this list, it will not work with the PhoneGap Developer App out of the box. However, you can create your own [custom build of the PhoneGap Developer app](/references/developer-app/custom-build/ios) locally and include any other plugins there. We recommend always checking for the existence of any plugin in your code first before using it to avoid errors in testing in general.</div>  
+<div class='alert--warning'>If you're using a plugin in your project that is not shown in this list, it will not work with the PhoneGap Developer App out of the box. However, you can create your own [custom build of the PhoneGap Developer app](/references/developer-app/custom-build/ios) locally and include any other plugins there. We recommend always checking for the existence of any plugin in your code first before using it to avoid errors in testing in general.</div>
 
 ## What is Autoreload?
 
@@ -52,10 +52,10 @@ $ phonegap serve --no-autoreload
 
 We are working on ways to make debugging easier with the PhoneGap Developer app, but for now there are two ways it can be done:
 
-1. Using [Weinre](https://www.npmjs.com/package/weinre)  
+1. Using [Weinre](https://www.npmjs.com/package/weinre)
 1. Running your own custom build of PhoneGap Developer App (as opposed to the app marketplace version)
 
-Check out the [debugging section](/references/developer-app/debugging) for more details.   
+Check out the [debugging section](/references/developer-app/debugging) for more details.
 
 ## PhoneGap Developer App hangs on `DOWNLOADING...` for iOS
 

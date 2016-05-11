@@ -10,8 +10,7 @@ In the top-level `config.xml` file (not the one in `platforms`), add configurati
 
 ## Example configuration
 
-The value of the "src" attribute is relative to the project directory and not to the *www* directory.
-Please notice that the value of the "src" attribute is relative to the project directory and not to the *www* directory. You can name the source image whatever you like. The internal names in the app are determined by Cordova.
+The value of the "src" attribute is relative to the project directory and not to the *www* directory. Please notice that the value of the "src" attribute is relative to the project directory and not to the *www* directory. You can name the source image whatever you like. The internal names in the app are determined by Cordova.
 
 ### Android
 
@@ -70,6 +69,6 @@ Android also has a property that can be added to the config.xml to delay the spl
 </platform>
 ```
 
-### Splash Screen Plugin
-There's also a [splash screen plugin](https://github.com/apache/cordova-plugin-splashscreen) available to allow for further control over how the splash screen is displayed.
+## Splash Screen Plugin
 
+There's also a [splash screen plugin](https://github.com/apache/cordova-plugin-splashscreen) available to allow for further control over how the splash screen is displayed.

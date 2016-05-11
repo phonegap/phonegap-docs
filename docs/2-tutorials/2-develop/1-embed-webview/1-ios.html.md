@@ -529,7 +529,6 @@ Next open the `MyHybridPlugin.m` class file and modify it to the following:
 @end
 ```
 
-
 ### Code Dissection
 
 Here's an explanation of what is happening above...

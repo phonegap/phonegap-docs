@@ -7,7 +7,7 @@ layout: subpage
 
 You can use the **PhoneGap Developer App** paired with the **PhoneGap CLI** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code. The PhoneGap CLI starts a small web server to host your project and returns the server address for you to pair with from the PhoneGap Developer App running on your mobile device.
 
-Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** release 1.6.2, you can now test push notification functionality without needing to set up a [Google Cloud Messaging (GCM) ](https://developer.android.com/google/gcm/index.html) project for Android or an [Apple Push Notification Service (APNs)](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html) certification for iOS.
+Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** release 1.6.2, you can now test push notification functionality without needing to set up a [Google Cloud Messaging (GCM)](https://developer.android.com/google/gcm/index.html) project for Android or an [Apple Push Notification Service (APNs)](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html) certification for iOS.
 
 <div class="alert--warning">Double check to ensure you're running your device and computer on the same network before continuing. </div>
 
@@ -70,7 +70,6 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
 
   <img class="mobile-image" src="/images/dev-app-enter-add.png" alt="PhoneGap Developer App, iOS"/>
 
-
   <div class="alert--info"> **NOTE:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
 
   You should see the connection occur followed by a success message as shown below. If you receive an error of any kind, ensure once again that you are connected to the same network on both your  and computer. You could also check the [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap) list for further help.
@@ -114,7 +113,6 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
 1. This will result in a push notification being received by the app.
 
   <img class="mobile-image" src="/images/dev-app-success-push.jpg" alt="Developer App, push received"/>
-
 
 ## Sending Your Second and Third Pushes
 

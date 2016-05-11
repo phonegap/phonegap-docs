@@ -17,7 +17,6 @@ If you're looking for documentation on simple token authentication, [go here](..
 
 As an application developer, you first need to [register your client application with Build](https://build.phonegap.com/people/edit):
 
-
 - **Name**: A suitable display name for your application.
 - **Main Application Url**: A url where a user can go to see what this application is.
 - **Callback Url**: The url we'll redirect to after a user allows your application to interact with your Build account. More info on this below.
@@ -30,7 +29,7 @@ We'll generate a couple of fields for you:
 ### Web Application Flow
 
 You've registred your application and are ready to hook it into PhoneGap Build. The first thing you'll do is redirect users to PhoneGap Build where we'll ask them if they want to allow your app to access their resources:
-    
+
     GET https://build.phonegap.com/authorize?client_id=abcdef
 
 If they allow, we'll redirect to the Callback Url that you indicated when you registered your application, along with a `code` parameter. If they deny, we'll redirect to your Callback Url with an error parameter (`error=authorization_refused`).
@@ -41,11 +40,15 @@ Now that the user has allowed your application to access Build, you need to requ
 
 If those params fail to check out, you'll get an error with the following format:
 
-    { "error" : "invalid request" }
+```js
+{ "error" : "invalid request" }
+```
 
 If they do check out, we'll respond with a json object containing your access token:
 
-    { "access_token": "xyz123" }
+```js
+{ "access_token": "xyz123" }
+```
 
 Save it.
 
@@ -60,16 +63,22 @@ Its possible that you're creating an application that doesn't include a web serv
     POST https://build.phonegap.com/authorize?client_id=abcdef&client_secret=123456&auth_token=789hij
 
 For example, via curl:
-  
-    curl -X POST https://build.phonegap.com/authorize?client_id=abcdef&client_secret=123456&auth_token=789hij
+
+```sh
+curl -X POST https://build.phonegap.com/authorize?client_id=abcdef&client_secret=123456&auth_token=789hij
+```
 
 If those params fail to check out, you'll get an error with the following format:
 
-    { "error" : "Invalid authentication token." }
+```js
+{ "error" : "Invalid authentication token." }
+```
 
 If they do check out, we'll respond with a json object containing your access token:
 
-    { "access_token": "xyz123" }
+```js
+{ "access_token": "xyz123" }
+```
 
 And now you can make your requests on behalf of the user.
 

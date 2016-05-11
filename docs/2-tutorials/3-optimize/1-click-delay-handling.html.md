@@ -40,4 +40,5 @@ There's a [`touch-action` CSS property](https://msdn.microsoft.com/en-us/library
 <div class="alert--info">**Tip:** Some UI frameworks have built-in handling for this and you may not need to worry about implementing a solution. Be sure to check the documentation if you're using one. Some which do have it built in at the moment are [Ionic Framework](http://ionicframework.com/docs/api/page/tap/), [Onsen UI](http://onsen.io/) and [Kendo UI Mobile](http://demos.telerik.com/kendo-ui/m/index).</div>
 
 #### TODO: Add an example video of the issue
- [Onsen UI](http://onsen.io/) and [Kendo UI Mobile](http://demos.telerik.com/kendo-ui/m/index).</div>
+
+[Onsen UI](http://onsen.io/) and [Kendo UI Mobile](http://demos.telerik.com/kendo-ui/m/index).</div>

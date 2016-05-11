@@ -14,10 +14,11 @@ The `config.xml` file follows the [W3C widget specification](http://www.w3.org/T
 We're continually adding features to our `config.xml` support to give PhoneGap Build developers more power to customize their apps. If there are any specific features you'd like to see support for, [please let us know](http://forums.adobe.com/community/phonegap/build).
 
 1. [Essential Properties](#props)
-2. [Example config.xml](#example)
+1. [Example config.xml](#example)
 
-<a id="props"></a>
-### Essential Properties
+<a class="anchor" id="props"></a>
+
+## Essential Properties
 
 <code>&lt;widget&gt;</code>
 
@@ -30,41 +31,53 @@ element. It supports the following attributes:
 - **version**: for best results, use a major/minor/patch style version, with three numbers, such as `0.0.1`
 - **versionCode**: (optional) when building for Android, you can set the versionCode by specifying it in your *config.xml*. For more information on Android's versionCode attribute, see [the Android documentation](http://developer.android.com/guide/publishing/versioning.html).
 
-<code>&lt;name&gt;</code>
+```xml
+<name>
+```
 
 The name of the application.
 
-<code>&lt;description&gt;</code>
+```xml
+<description>
+```
 
 A description for your application.
 
-<code>&lt;platform&gt;</code>
+```xml
+<platform>
+```
+
 You can have zero or more of these elements present in your <code>config.xml</code>. Set the name attribute to one of `ios`, `android`, or `windows`. If you specify none, all platforms will be built. Example usage:
 
-    <platform name="ios" />
-    <platform name="android" />
-    <platform name="winphone" />
+```xml
+<platform name="ios" />
+<platform name="android" />
+<platform name="winphone" />
+```
 
-<a id="example"></a>
-### Example Config.xml
+<a class="anchor" id="example"></a>
 
-    <?xml version="1.0" encoding="UTF-8" ?>
-        <widget xmlns   = "http://www.w3.org/ns/widgets"
-            xmlns:gap   = "http://phonegap.com/ns/1.0"
-            id          = "com.phonegap.example"
-            versionCode = "10"
-            version     = "1.0.0" >
+## Example Config.xml
 
-        <!-- versionCode is optional and Android only -->
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.phonegap.example"
+    versionCode = "10"
+    version     = "1.0.0" >
 
-        <name>PhoneGap Example</name>
+<!-- versionCode is optional and Android only -->
 
-        <description>
-            An example for phonegap build docs.
-        </description>
+  <name>PhoneGap Example</name>
 
-        <author href="https://build.phonegap.com" email="support@phonegap.com">
-            Hardeep Shoker
-        </author>
+  <description>
+      An example for phonegap build docs.
+  </description>
 
-    </widget>
+  <author href="https://build.phonegap.com" email="support@phonegap.com">
+      Hardeep Shoker
+  </author>
+
+</widget>
+```

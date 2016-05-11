@@ -76,8 +76,9 @@ The API's read interface includes the following:
 
 <a class="api" href="#_get_https_build_phonegap_com_api_v1_keys_platform_id"><span class="label label-success">GET</span><code>/api/v1/keys/:platform/:id</code> Get Meta-Data About A Specific Key</a>
 
-<span id="_get_https_build_phonegap_com_api_v1_me"></span>
-### `GET https://build.phonegap.com/api/v1/me`
+<a class="anchor" id="_get_https_build_phonegap_com_api_v1_me"></a>
+
+## `GET https://build.phonegap.com/api/v1/me`
 
 Get a JSON-encoded representation of the authenticated user, as well
 as a listing of associated resources.
@@ -86,70 +87,72 @@ This should be the starting point for applications that traverse the
 PhoneGap Build API. It is aliased to
 `https://build.phonegap.com/api/v1`:
 
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/me
-        {
-            "id": 1,
-            "username":"alunny",
-            "email":"andrew.lunny@nitobi.com",
-            "apps": {
-                "id": 2,
-                "link": "/api/v1/apps",
-                "all": [
-                    {
-                        "title": "A Single App",
-                        "role": "owner",
-                        "link": "/api/v1/apps/1234"
-                    }
-                ]
-            },
-            "keys": {
-                "ios": {
-                    "all":[
-                        {
-                            "id": 34,
-                            "default":true,
-                            "title": "iOS Development Key",
-                            "link": "/api/v1/keys/ios/34"
-                        },
-                        {
-                            "id": 82,
-                            "default":false,
-                            "title": "iOS Distribution Key",
-                            "link": "/api/v1/keys/ios/82"
-                        }
-                    ],
-                    "link":"/api/v1/keys/ios"
+```sh
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/me
+{
+    "id": 1,
+    "username":"alunny",
+    "email":"andrew.lunny@nitobi.com",
+    "apps": {
+        "id": 2,
+        "link": "/api/v1/apps",
+        "all": [
+            {
+                "title": "A Single App",
+                "role": "owner",
+                "link": "/api/v1/apps/1234"
+            }
+        ]
+    },
+    "keys": {
+        "ios": {
+            "all":[
+                {
+                    "id": 34,
+                    "default":true,
+                    "title": "iOS Development Key",
+                    "link": "/api/v1/keys/ios/34"
                 },
-                "android": {
-                    "all":[
-                        {
-                            "id": 56,
-                            "default":false,
-                            "title": "Android Release Certificate",
-                            "link": "/api/v1/keys/android/56"
-                        }
-                    ],
-                    "link":"/api/v1/keys/android"
-                },
-                "winphone": {
-                    "all": [
-                        {
-                            "id": 72,
-                            "title": "Windows Publisher Key",
-                            "link": "/api/v1/keys/winphone/72",
-                            "default": false
-                        }
-                    ],
-                    "link": "/api/v1/keys/winphone",
+                {
+                    "id": 82,
+                    "default":false,
+                    "title": "iOS Distribution Key",
+                    "link": "/api/v1/keys/ios/82"
                 }
-                "link": "/api/v1/keys"
-            },
-            "link": "/api/v1/me"
+            ],
+            "link":"/api/v1/keys/ios"
+        },
+        "android": {
+            "all":[
+                {
+                    "id": 56,
+                    "default":false,
+                    "title": "Android Release Certificate",
+                    "link": "/api/v1/keys/android/56"
+                }
+            ],
+            "link":"/api/v1/keys/android"
+        },
+        "winphone": {
+            "all": [
+                {
+                    "id": 72,
+                    "title": "Windows Publisher Key",
+                    "link": "/api/v1/keys/winphone/72",
+                    "default": false
+                }
+            ],
+            "link": "/api/v1/keys/winphone",
         }
+        "link": "/api/v1/keys"
+    },
+    "link": "/api/v1/me"
+}
+```
 
+<a class="anchor" id="_get_https_build_phonegap_com_api_v1_apps"></a>
 
-<span id="_get_https_build_phonegap_com_api_v1_apps"></span>
-### `GET https://build.phonegap.com/api/v1/apps`
+## `GET https://build.phonegap.com/api/v1/apps`
 
 Get a JSON-encoded representation of the authenticated user's apps.
 
@@ -157,93 +160,39 @@ API clients can follow the `link` attribute for each app to get
 further details, including the associated signing keys and
 collaborators:
 
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps
+```sh
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps
+{
+    "apps":[
         {
-            "apps":[
-                {
-                    "title":"My Index",
-                    "id":1,
-                    "package":"com.my.index",
-                    "version":"0.0.1",
-                    "repo":null,
-                    "description":"An Index of My Applications",
-                    "debug":false,
-                    "private":true,
-                    "link":"/api/v1/apps/1",
-                    "build_count":4,
-                    "phonegap_version":"3.5.0",
-                    "hydrates":false,
-                    "status":{
-                        "android":"complete",
-                        "ios":null,
-                        "winphone":"pending"
-                    },
-                    "download":{
-                        "android":"/api/v1/apps/1/android",
-                    },
-                    "error":{
-                    },
-                    "icon":{
-                        "filename":"icon.png",
-                        "link":"/api/v1/apps/1/icon"
-                    },
-                    "role":"admin"
-                },
-                {
-                    "title":"PhoneGap: Getting Started",
-                    "id":2,
-                    "package":"com.phonegap.getting.started",
-                    "version":"1.0.0",
-                    "repo":"https://github.com/phonegap/phonegap-start.git",
-                    "description":"A template for getting started with
-                            PhoneGap development and build.phonegap.com",
-                    "debug":false,
-                    "private":true,
-                    "share":true,
-                    "link":"/api/v1/apps/2",
-                    "build_count":12,
-                    "status": {
-                        "android":"complete",
-                        "ios":"complete",
-                        "winphone":"complete"
-                    },
-                    "download":{
-                        "android":"/api/v1/apps/1/android",
-                        "ios":"/api/v1/apps/1/ios",
-                        "winphone":"/api/v1/apps/1/winphone"
-                    },
-                    "error":{},
-                    "icon":{
-                        "filename":"big-icon.png",
-                        "link":"/api/v1/apps/2/icon"
-                    },
-                    "role":"admin"
-                }
-            ],
-            "link":"/api/v1/apps"
-        }
-
-
-<span id="_get_https_build_phonegap_com_api_v1_apps_id"></span>
-### `GET https://build.phonegap.com/api/v1/apps/:id`
-
-Get a JSON-encoded representation of a particular app, if the
-authenticated user has permission to access it.
-
-In addition to the fields provided in the list of all apps, this
-detail view includes:
-
-* `keys`: all of the keys that the app is currently being built
-  with. This include the owner's default key for a platform, if
-  selected
-
-* `collaborators`: each person who has access to this app, along with
-  their role, if the authenticated user is the owner of the app.
-  Collaborators who are registered with PhoneGap Build are listed
-  under `active`; collaborators you have invited who have not yet
-  created an account are listed as `pending`:
-
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2
+            "title":"My Index",
+            "id":1,
+            "package":"com.my.index",
+            "version":"0.0.1",
+            "repo":null,
+            "description":"An Index of My Applications",
+            "debug":false,
+            "private":true,
+            "link":"/api/v1/apps/1",
+            "build_count":4,
+            "phonegap_version":"3.5.0",
+            "hydrates":false,
+            "status":{
+                "android":"complete",
+                "ios":null,
+                "winphone":"pending"
+            },
+            "download":{
+                "android":"/api/v1/apps/1/android",
+            },
+            "error":{
+            },
+            "icon":{
+                "filename":"icon.png",
+                "link":"/api/v1/apps/1/icon"
+            },
+            "role":"admin"
+        },
         {
             "title":"PhoneGap: Getting Started",
             "id":2,
@@ -254,9 +203,8 @@ detail view includes:
                     PhoneGap development and build.phonegap.com",
             "debug":false,
             "private":true,
-            "share":false,
+            "share":true,
             "link":"/api/v1/apps/2",
-            "last_build":"2014-12-03 13:52:10 -0800",
             "build_count":12,
             "status": {
                 "android":"complete",
@@ -273,43 +221,97 @@ detail view includes:
                 "filename":"big-icon.png",
                 "link":"/api/v1/apps/2/icon"
             },
-            "role":"admin",
-            "keys":{},
-            "collaborators":{
-                "link":"/api/v1/apps/9/collaborators",
-                "active":[
-                    {
-                        "id":9,
-                        "person":"andrew.lunny@nitobi.com",
-                        "role":"admin",
-                        "link":"/api/v1/apps/9/collaborators/9"
-                    },
-                    {
-                        "id":13,
-                        "person":"foo@bar.com",
-                        "role":"developer",
-                        "link":"/api/v1/apps/9/collaborators/13"
-                    }
-                ],
-                "pending":[
-                    {
-                        "person":"nobody@nitobi.com",
-                        "role":"tester"
-                    }
-                ]
-            }
+            "role":"admin"
         }
+    ],
+    "link":"/api/v1/apps"
+}
+```
+
+<a class="anchor" id="_get_https_build_phonegap_com_api_v1_apps_id"></a>
+
+## `GET https://build.phonegap.com/api/v1/apps/:id`
+
+Get a JSON-encoded representation of a particular app, if the authenticated user has permission to access it.
+
+In addition to the fields provided in the list of all apps, this detail view includes:
+
+* `keys`: all of the keys that the app is currently being built with. This include the owner's default key for a platform, if selected
+
+* `collaborators`: each person who has access to this app, along with their role, if the authenticated user is the owner of the app. Collaborators who are registered with PhoneGap Build are listed under `active`; collaborators you have invited who have not yet created an account are listed as `pending`:
+
+```sh
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2
+{
+    "title":"PhoneGap: Getting Started",
+    "id":2,
+    "package":"com.phonegap.getting.started",
+    "version":"1.0.0",
+    "repo":"https://github.com/phonegap/phonegap-start.git",
+    "description":"A template for getting started with
+            PhoneGap development and build.phonegap.com",
+    "debug":false,
+    "private":true,
+    "share":false,
+    "link":"/api/v1/apps/2",
+    "last_build":"2014-12-03 13:52:10 -0800",
+    "build_count":12,
+    "status": {
+        "android":"complete",
+        "ios":"complete",
+        "winphone":"complete"
+    },
+    "download":{
+        "android":"/api/v1/apps/1/android",
+        "ios":"/api/v1/apps/1/ios",
+        "winphone":"/api/v1/apps/1/winphone"
+    },
+    "error":{},
+    "icon":{
+        "filename":"big-icon.png",
+        "link":"/api/v1/apps/2/icon"
+    },
+    "role":"admin",
+    "keys":{},
+    "collaborators":{
+        "link":"/api/v1/apps/9/collaborators",
+        "active":[
+            {
+                "id":9,
+                "person":"andrew.lunny@nitobi.com",
+                "role":"admin",
+                "link":"/api/v1/apps/9/collaborators/9"
+            },
+            {
+                "id":13,
+                "person":"foo@bar.com",
+                "role":"developer",
+                "link":"/api/v1/apps/9/collaborators/13"
+            }
+        ],
+        "pending":[
+            {
+                "person":"nobody@nitobi.com",
+                "role":"tester"
+            }
+        ]
+    }
+}
+```
 
 If the app does not exist, or you do not have access to it, an error
 message returns with status code `404`:
 
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/520394
-        {
-            "error":"app #54 not available"
-        }
+```sh
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/520394
+{
+    "error":"app #54 not available"
+}
+```
 
-<span id="_get_https_build_phonegap_com_api_v1_apps_id_icon"></span>
-### `GET https://build.phonegap.com/api/v1/apps/:id/icon`
+<a class="anchor" id="_get_https_build_phonegap_com_api_v1_apps_id_icon"></a>
+
+## `GET https://build.phonegap.com/api/v1/apps/:id/icon`
 
 Get the main icon associated with an app, either the biggest icon
 specified in your `config.xml` file, or an icon you have uploaded
@@ -318,27 +320,34 @@ through the API or the PhoneGap Build web interface.
 If successful, this API call returns a `302` redirect to the icon
 file, and the body of the response references the URL for the file:
 
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2/icon
-        {
-            "location":""http://s3.amazonaws.com/build.phonegap.com/some-long-guid/icon.png"
-        }
+```sh
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2/icon
+{
+    "location":""http://s3.amazonaws.com/build.phonegap.com/some-long-guid/icon.png"
+}
+```
 
 If your API client can follow redirects, you can save the response as
 a `png` file. This example uses curl's `-L` option:
 
-        $ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2/icon > ~/my-icon.png
+```sh
+  $ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2/icon > ~/my-icon.png
+```
 
 If no icon ais vailable, an error message returns with status code
 404:
 
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/52/icon
+```sh
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/52/icon
 
-        {
-            "error":"No icon available for app #52"
-        }
+{
+    "error":"No icon available for app #52"
+}
+```
 
-<span id="_get_https_build_phonegap_com_api_v1_apps_id_platform"></span>
-### `GET https://build.phonegap.com/api/v1/apps/:id/:platform`
+<a class="anchor" id="_get_https_build_phonegap_com_api_v1_apps_id_platform"></a>
+
+## `GET https://build.phonegap.com/api/v1/apps/:id/:platform`
 
 Download the app package for the given platform. Available platforms
 are `android`, `ios`, and `winphone`.
@@ -347,15 +356,19 @@ If successful, this API method returns a `302` redirect to the
 application binary, and the body of the response references the file's
 URL:
 
-        $ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/50/android
-        {
-            "location":""http://s3.amazonaws.com/build.phonegap.com/some-long-guid/app.apk"
-        }
+```sh
+$ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/50/android
+{
+    "location":""http://s3.amazonaws.com/build.phonegap.com/some-long-guid/app.apk"
+}
+```
 
 If your API client can follow redirects, you can save the response
 directly:
 
-        $ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/50/android > app_50.apk
+```sh
+$ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/50/android > app_50.apk
+```
 
 When downloading, be sure you have the right file extension:
 
@@ -366,13 +379,16 @@ When downloading, be sure you have the right file extension:
 If the app package is unavailable for the specified platform, an error
 message returns with status code `404`:
 
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/52/android
-        {
-            "error":"app #52 download unavailable for android"
-        }
+```sh
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/52/android
+{
+    "error":"app #52 download unavailable for android"
+}
+```
 
-<span id="_get_https_build_phonegap_com_api_v1_keys"></span>
-### `GET https://build.phonegap.com/api/v1/keys`
+<a class="anchor" id="_get_https_build_phonegap_com_api_v1_keys"></a>
+
+## `GET https://build.phonegap.com/api/v1/keys`
 
 Get a JSON-encoded list of all the signing keys associated with your
 account.
@@ -380,94 +396,40 @@ account.
 This returns a short listing of all the associated keys, very similar
 to the list you see when requesting `/api/v1/me`:
 
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys
-        {
-            "keys":{
-                "ios":{
-                    "all":[
-                        {
-                            "id":8,
-                            "title":"My Dev Certificate",
-                            "default":false,
-                            "cert_name":"My_Dev_Cert.p12",
-                            "provision":"My_Devices.mobileprovision",
-                            "link":"/api/v1/keys/ios/8",
-                            "role":"developer",
-                            "locked":true
-                        }
-                    ],
-                    "link":"/api/v1/keys/ios"
-                },
-                "android":{
-                    "all":[
-                        {
-                            "id":1,
-                            "title":"Android Release Key",
-                            "default":false,
-                            "alias":"release",
-                            "link":"/api/v1/keys/android/1",
-                            "locked":true
-                        }
-                    ],
-                    "link":"/api/v1/keys/android"
-                },
-                "winphone":{
-                    "all":[
-                        {
-                            "id": 72,
-                            "title": "Windows Publisher Key",
-                            "link": "/api/v1/keys/winphone/72",
-                            "default": false
-                        }
-                    ],
-                    "link": "/api/v1/keys/winphone",
-                }
-            },
-            "link":"/api/v1/keys"
-        }
-
-<span id="_get_https_build_phonegap_com_api_v1_keys_platform"></span>
-### `GET https://build.phonegap.com/api/v1/keys/:platform`
-
-Get a JSON-encoded list of all the signing keys associated with your
-account, for a specific platform. That platform can be either `ios` or
-`android`:
-
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/ios
-        {
-            "keys":[
+```sh
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys
+{
+    "keys":{
+        "ios":{
+            "all":[
                 {
                     "id":8,
                     "title":"My Dev Certificate",
                     "default":false,
                     "cert_name":"My_Dev_Cert.p12",
-                    "provision":"My_Devices.mobileprovision"
+                    "provision":"My_Devices.mobileprovision",
                     "link":"/api/v1/keys/ios/8",
                     "role":"developer",
                     "locked":true
                 }
             ],
             "link":"/api/v1/keys/ios"
-        }
-
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/android
-        {
-            "keys":[
+        },
+        "android":{
+            "all":[
                 {
                     "id":1,
                     "title":"Android Release Key",
                     "default":false,
-                    "alias":"releasing",
+                    "alias":"release",
                     "link":"/api/v1/keys/android/1",
                     "locked":true
                 }
             ],
             "link":"/api/v1/keys/android"
-        }
-
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/winphone
-        {
-            "keys":[
+        },
+        "winphone":{
+            "all":[
                 {
                     "id": 72,
                     "title": "Windows Publisher Key",
@@ -475,15 +437,25 @@ account, for a specific platform. That platform can be either `ios` or
                     "default": false
                 }
             ],
-            "link":"/api/v1/keys/winphone"
+            "link": "/api/v1/keys/winphone",
         }
+    },
+    "link":"/api/v1/keys"
+}
+```
 
-<span id="_get_https_build_phonegap_com_api_v1_keys_platform_id"></span>
-### `GET https://build.phonegap.com/api/v1/keys/:platform/:id`
+<a class="anchor" id="_get_https_build_phonegap_com_api_v1_keys_platform"></a>
 
-Get a JSON-encoded representation of a single signing key:
+## `GET https://build.phonegap.com/api/v1/keys/:platform`
 
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/ios/8
+Get a JSON-encoded list of all the signing keys associated with your
+account, for a specific platform. That platform can be either `ios` or
+`android`:
+
+```sh
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/ios
+{
+    "keys":[
         {
             "id":8,
             "title":"My Dev Certificate",
@@ -494,8 +466,13 @@ Get a JSON-encoded representation of a single signing key:
             "role":"developer",
             "locked":true
         }
+    ],
+    "link":"/api/v1/keys/ios"
+}
 
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/android/1
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/android
+{
+    "keys":[
         {
             "id":1,
             "title":"Android Release Key",
@@ -504,19 +481,68 @@ Get a JSON-encoded representation of a single signing key:
             "link":"/api/v1/keys/android/1",
             "locked":true
         }
+    ],
+    "link":"/api/v1/keys/android"
+}
 
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/winphone/72
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/winphone
+{
+    "keys":[
         {
             "id": 72,
             "title": "Windows Publisher Key",
             "link": "/api/v1/keys/winphone/72",
             "default": false
         }
+    ],
+    "link":"/api/v1/keys/winphone"
+}
+```
+
+<a class="anchor" id="_get_https_build_phonegap_com_api_v1_keys_platform_id"></a>
+
+## `GET https://build.phonegap.com/api/v1/keys/:platform/:id`
+
+Get a JSON-encoded representation of a single signing key:
+
+```sh
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/ios/8
+{
+    "id":8,
+    "title":"My Dev Certificate",
+    "default":false,
+    "cert_name":"My_Dev_Cert.p12",
+    "provision":"My_Devices.mobileprovision"
+    "link":"/api/v1/keys/ios/8",
+    "role":"developer",
+    "locked":true
+}
+
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/android/1
+{
+    "id":1,
+    "title":"Android Release Key",
+    "default":false,
+    "alias":"releasing",
+    "link":"/api/v1/keys/android/1",
+    "locked":true
+}
+
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/winphone/72
+{
+    "id": 72,
+    "title": "Windows Publisher Key",
+    "link": "/api/v1/keys/winphone/72",
+    "default": false
+}
+```
 
 If the requested key is not available, then a `404` status returns,
 along with the error message as JSON:
 
-        $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/ios/8989898
-        {
-            "error":"could not find ios key #8989898"
-        }
+```sh
+$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/keys/ios/8989898
+{
+    "error":"could not find ios key #8989898"
+}
+```
