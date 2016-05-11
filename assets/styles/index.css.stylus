@@ -77,8 +77,6 @@ $alert
   @extends $alert
 article.page
   margin-bottom 4rem
-  h2
-    font-size 1.5rem
 .next-step
   display block
   border 2px solid #C4C4C4
@@ -199,14 +197,12 @@ code, kbd, pre, samp
   border-radius 4px
 .sub-footer__block
   max-width 300px
-  h3
-    font-size 1.125rem
-    text-transform uppercase
-    font-weight normal
-    margin-bottom 5px
+.sub-footer__block__title
+  margin-bottom 0
 .sub-footer__more-link
   font-size .875rem
   text-transform uppercase
+  margin 0
 .sub-footer__blocks
   display block
 .sub-footer__block
@@ -219,8 +215,6 @@ code, kbd, pre, samp
 @media (min-width: 820px)
   body
     padding-top 180px
-  h2
-    margin 0 0 1.5rem
   main
     .bounds
       display flex
