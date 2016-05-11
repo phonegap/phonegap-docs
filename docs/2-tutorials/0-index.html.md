@@ -3,8 +3,7 @@ title: Tutorials
 url: tutorials
 layout: subpage
 ---
-
-## Mobile App Development Phases
+# Mobile App Development Phases
 
 Creating a mobile app can require several stages which can be categorized in the following phases:
 
