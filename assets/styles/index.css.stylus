@@ -221,10 +221,6 @@ code, kbd, pre, samp
 @media (min-width: 820px)
   body
     padding-top 180px
-<<<<<<< HEAD
-  h2
-=======
->>>>>>> master
   main
     .bounds
       display flex
