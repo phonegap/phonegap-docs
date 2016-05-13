@@ -112,12 +112,12 @@ article.page
   left 0
   top 0
   max-height 45px
-  overflow hidden
+  overflow scroll
   transition max-height 0.5s ease-in-out, box-shadow 0.5s ease-in-out
   z-index 1
   box-shadow 0 2px 5px rgba(0,0,0,0)
   &.open
-    max-height 400px
+    max-height calc(100vh - 60px)
     box-shadow 0 3px 8px rgba(0,0,0,0.8)
 .sidebar__content
   box-sizing border-box
@@ -128,8 +128,10 @@ article.page
     font-weight bold
     box-sizing border-box
     padding 0 10px
+    margin 0
   h2
     font-size 1.125rem
+    margin 0
     margin-bottom .5rem
     font-weight regular
     box-sizing border-box
@@ -141,6 +143,7 @@ article.page
     text-transform uppercase
     box-sizing border-box
     padding 0 10px
+    margin 0
     a
       color #003351
   ul
