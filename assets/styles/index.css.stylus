@@ -109,17 +109,17 @@ article.page
   display block
   width 100%
   margin-right 30px
-  position absolute
+  position fixed
   background #2fa0c3
   left 0
-  top 0
+  top 60px
   max-height 45px
   overflow hidden
   transition max-height 0.5s ease-in-out, box-shadow 0.5s ease-in-out
   z-index 1
   box-shadow 0 2px 5px rgba(0,0,0,0)
   &.open
-    max-height 400px
+    max-height calc(100vh - 60px)
     box-shadow 0 3px 8px rgba(0,0,0,0.8)
     overflow: auto;
     -webkit-overflow-scrolling: touch;
