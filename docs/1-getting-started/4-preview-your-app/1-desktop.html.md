@@ -15,7 +15,7 @@ You can use the **PhoneGap Developer App** paired with **PhoneGap Desktop** to i
 
 **PhoneGap Desktop** starts a small web server to host your project and returns a server address you can then enter into the **PhoneGap Developer** app running on your mobile device or in your desktop browser. The project is served automatically upon project creation, but you can also manually start any project that's inactive by clicking the green play (** &gt; **) button next to it.
 
-### Preview in a Desktop Browser
+## Preview in a Desktop Browser
 
 You can leverage your desktop browser to preview and test yours apps first to speed up your initial development process. For instance, if you're using a framework like Angular or React, there are tools available for specifically debugging those frameworks in the browser that can be quite helpful before moving over to a device. Recently PhoneGap began supporting the browser platform as a target automatically to help you test with the `deviceready` event and Apache Cordova core plugins more easily in an environment you're already familiar with.
 

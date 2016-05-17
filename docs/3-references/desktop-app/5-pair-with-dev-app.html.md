@@ -9,7 +9,7 @@ You can use the **PhoneGap Developer App** paired with **PhoneGap Desktop** to i
 
 The local web server started by **PhoneGap Desktop** that hosts your project returns a server address you can enter into the **PhoneGap Developer** app running on a mobile device.
 
-### Preview on a Device
+## Preview on a Device
 
 <div class="alert--warning">Double check to ensure you're running your device and computer on the same network before continuing.</div>
 
@@ -33,7 +33,7 @@ The local web server started by **PhoneGap Desktop** that hosts your project ret
 
   <div class="alert--tip"> **TIP:** Gestures can be used while you're previewing your app. A "3 finger tap" will return you to the main screen and a "4 finger tap" will cause a refresh.</div>
 
-#### Video Example
+### Video Example
 
 <div class="video-wrapper">
   <iframe src="https://www.youtube.com/embed/pggw-9b8RVY" frameborder="0" allowfullscreen></iframe>

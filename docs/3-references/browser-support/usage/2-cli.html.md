@@ -34,7 +34,7 @@ The browser platform support ensures the `deviceready` event is fired in the bro
 
 <div class="alert--info">**Note:** Check out the [plugin support section](/references/browser-support/plugin-support) for more details on how plugins can be used in the browser.</div>
 
-### No Browser Support Flag
+## No Browser Support Flag
 
 Of course, using the browser support may not be necessary for all users. If you would like to continue serving applications without the browser, you can do so by running
 

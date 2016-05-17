@@ -13,7 +13,7 @@ If you're looking for documentation on simple token authentication, [go here](..
 - [Web Application Flow](#web-application-flow)
 - [Non Web Application Flow](#non-web-application-flow)
 
-### Client Application Registration
+## Client Application Registration
 
 As an application developer, you first need to [register your client application with Build](https://build.phonegap.com/people/edit):
 
@@ -26,7 +26,7 @@ We'll generate a couple of fields for you:
 - **Client ID**: A unique identifier that you'll include in requests, identifying your application.
 - **Client Secret**: Don't share this, it will verify that the request is indeed from your application.
 
-### Web Application Flow
+## Web Application Flow
 
 You've registred your application and are ready to hook it into PhoneGap Build. The first thing you'll do is redirect users to PhoneGap Build where we'll ask them if they want to allow your app to access their resources:
 
@@ -56,7 +56,7 @@ Now, you can make requests to PhoneGap Build on behalf of this user:
 
     GET https://build.phonegap.com/api/v1/me?access_token=xyz123
 
-### Non Web Application Flow
+## Non Web Application Flow
 
 Its possible that you're creating an application that doesn't include a web server or browser to allow users to authorize your application to access the PhoneGap Build API. Don't fret, there is a solution. Users will obtain a simple auth token from Build (in their [account settings](https://build.phonegap.com/people/edit)), which they'll then pass to your application. If they give that token to your application, they have authorized it to access Build. You'll then exchange that simple auth token for an Oauth client access token. Of course, you'll still need to register your application with Build as above.
 

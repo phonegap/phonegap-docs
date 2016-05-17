@@ -11,7 +11,7 @@ apps you build across platforms without additional platform SDK setup. It automa
 providing instant access to the native device features without having to install any plugins or compile anything locally. It's meant to provide
 an easy way for developers to get started creating and testing their PhoneGap applications quickly with minimal setup.
 
-### Install PhoneGap Developer
+## Install PhoneGap Developer
 
 1. Locate the free PhoneGap Developer app from one of the following supported app marketplaces and install it to your mobile device:
 

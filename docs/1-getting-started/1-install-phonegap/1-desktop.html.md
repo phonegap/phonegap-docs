@@ -24,7 +24,7 @@ Select your operating system to continue:
 
 <a class="anchor" id="mac"></a>
 
-### Mac OS X Installation
+## Mac OS X Installation
 
 1. Download the latest [Mac OS X Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.3.2/PhoneGapDesktop.dmg).
 
@@ -42,7 +42,7 @@ Select your operating system to continue:
 
 <a class="anchor" id="win"></a>
 
-### Windows Installation
+## Windows Installation
 
 1. Download the latest [Windows Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.3.2/PhoneGapSetup-win32.exe).
 

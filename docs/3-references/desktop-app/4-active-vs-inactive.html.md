@@ -13,14 +13,14 @@ In the screenshot below, the first project is ***active*** and the second projec
 
 ![Project Listing](../../../images/docs-active-project.png)
 
-### Activate a Project
+## Activate a Project
 
 To **activate** a project:
 
 1. Create or open an existing project and it will automatically become active.
 1. Manually click on the play button for any project in the list.
 
-### Deactivate a Project
+## Deactivate a Project
 
 To **deactivate** a project:
 

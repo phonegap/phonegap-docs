@@ -29,7 +29,7 @@ element. It supports the following attributes:
 
 - **id**: the unique identifier for your application. To support all supported platforms, this *must* be reverse-domain name style (e.g. `com.yourcompany.yourapp`)
 - **version**: for best results, use a major/minor/patch style version, with three numbers, such as `0.0.1`
-- **versionCode**: (optional) when building for Android, you can set the versionCode by specifying it in your *config.xml*. For more information on Android's versionCode attribute, see [the Android documentation](http://developer.android.com/guide/publishing/versioning.html).
+- **versionCode**: (optional) when building for Android, you can set the versionCode by specifying it in your *config.xml*. For more information on Android's versionCode attribute, see [the Android documentation](https://developer.android.com/studio/publish/versioning.html).
 
 ```xml
 <name>

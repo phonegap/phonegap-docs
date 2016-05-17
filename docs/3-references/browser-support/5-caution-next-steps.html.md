@@ -17,7 +17,7 @@ When you are developing an app to be consumed on a mobile device, it should go w
 - The application is being served from an IP address rather than a filesystem affecting the way security is handled.
 - Performance testing for things like low battery, poor network coverage, low available memory and interrupt testing for situations like incoming/outgoing calls, texts, notifications etc cannot be properly tested in the browser.
 
-### Development/Testing Options:
+## Development/Testing Options:
 
 1. Use the browser to develop as much of your app as possible with the tooling you already know and use daily while being aware of the limitations noted above.
 
