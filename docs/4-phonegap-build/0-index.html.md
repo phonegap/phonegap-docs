@@ -7,9 +7,9 @@ layout: subpage
 
 **PhoneGap Build** is a cloud service for **compiling PhoneGap applications**.
 
-Adobe PhoneGap provides a way for users to create mobile applications using technologies such as HTML, CSS, and Javascript. Applications created with PhoneGap can be distributed to various vendor app stores (ex: Apple App Store) and installed on a end-user's device like any other native application. Each vendor provides a different toolchain, and each PhoneGap release is compatible with a specific set of tools.bThis is where PhoneGap Build comes into help.
+Adobe PhoneGap provides a way for users to create mobile applications using technologies such as HTML, CSS, and Javascript. Applications created with PhoneGap can be distributed to various vendor app stores (ex: Apple App Store) and installed on a end-user's device like any other native application. Each vendor provides a different toolchain, and each PhoneGap release is compatible with a specific set of tools. This is where PhoneGap Build comes into help.
 
-Here are some of the benifits **PhoneGap Build** provides:
+Here are some of the benefits **PhoneGap Build** provides:
 
 ## Managed Compilation and Signing (No SDKs)
 
