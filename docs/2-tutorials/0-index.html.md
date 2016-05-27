@@ -3,14 +3,16 @@ title: Tutorials
 url: tutorials
 layout: subpage
 ---
-## Mobile App Development Phases
 
-Creating a mobile app can require several stages which can be categorized in the following phases:
+Building a mobile app requires several phases from configuring, developing, debugging and optimizing 
+to finally distributing it to the app stores. Some of these phases can prove to be more challenging. This 
+section of tutorials is offered to help developers tackle some of those challenging issues.  
 
-- Configuring
-- Developing
-- Debugging
-- Optimizing
-- Distributing
+<div class="landing-submenu">
+    [Embedding the Webview](develop/1-embed-webview/ios)
+    [Hello World Explained](develop/hello-world-explained)
+    [Push Notifications](develop/push-notifications)
+</div>
 
-In this section of our docs, we aim to provide information and resources to help you deal with the most challenging topics in each stage of the app building cycle. This section is a continuous work in progress as the challenges mobiledevelopers face are ever changing. Be sure to check back often to learn more.
+This section is a continuous work in progress as the challenges mobile developers face are ever changing. 
+Be sure to check back often to learn more.

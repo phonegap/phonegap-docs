@@ -25,11 +25,8 @@ script.
       }    
     },   
   }
-  document.addEventListener('DOMContentLoaded', function (event) {
-    
+  document.addEventListener('DOMContentLoaded', function (event) {    
     app.init();
-     
-      
   })
 
 
@@ -42,13 +39,13 @@ aside.sidebar
 
          
             
-      h2(class="mobileHead"): a(href="/getting-started") Getting Started
+      h2(class="mobileHead"): a(href="/getting-started" class=document.url === "getting-started"? "current" : "") Getting Started               
       ul.mobileBg
         each page in getCollection('getStartedDocs').toJSON() 
           - var depth = page.url.match(/\//g||[]).length         
           if (depth==1 || page.tabs!=null && page.tabs[0].url===page.url)                      
             li: a(href="/#{page.url}" style="display:none " class="/getting-started/" class=document.url === page.url? "current" : "")!=page.title                                                       
-      h2(class="mobileHead"): a(href="/tutorials" class="mobileHead") Tutorials
+      h2(class="mobileHead"): a(href="/tutorials" class=document.url === "tutorials"? "current" : "") Tutorials
       ul.mobileBg
         - var coll = getCollection("tutorialDocs").findAllLive({url: {$startsWith:"tutorials/develop" }}, [{ relativeBase: 1 }]).toJSON()
         each page in coll
@@ -57,7 +54,7 @@ aside.sidebar
           if (depth>1)            
             if (page.tabs==null || page.tabs[0].url===page.url)
                 li: a(href="/#{page.url}" style="display:none " class="/tutorials/" class=document.url === page.url? "current" : "")!=page.title                      
-      h2(class="mobileHead"): a(href="/references" class="mobileHead") References
+      h2(class="mobileHead"): a(href="/references" class=document.url === "references"? "current" : "") References
       ul.mobileBg
         each page in getCollection('referenceDocs').toJSON()
           - var depth = page.url.match(/\//g||[]).length          
@@ -71,7 +68,7 @@ aside.sidebar
                 if (subDepth > 1) 
                     if (doc.tabs==null || doc.tabs[0].url===doc.url)
                         li: a(href="/#{doc.url}" style="display:none " class="/#{page.url}/"  class=document.url === doc.url ? "current" : "")!=doc.title                                                                  
-      h2(class="mobileHead"): a(href="/phonegap-build" class="mobileHead") PhoneGap Build
+      h2(class="mobileHead"): a(href="/phonegap-build" class=document.url === "phonegap-build"? "current" : "") PhoneGap Build
       ul.mobileBg
         each page in getCollection('pgbDocs').toJSON()
           - var depth = page.url.match(/\//g||[]).length                    

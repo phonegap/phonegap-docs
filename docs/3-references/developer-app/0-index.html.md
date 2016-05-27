@@ -1,5 +1,5 @@
 ---
-title: PhoneGap Developer
+title: PhoneGap Developer App
 url: references/developer-app
 github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/developer-app/0-index.html.md
 layout: subpage

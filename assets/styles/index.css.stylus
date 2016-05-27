@@ -133,13 +133,21 @@ article.page
     box-sizing border-box
     padding 0 10px
   h2
+    text-transform uppercase
     font-size: 1.125rem;
     margin-bottom: .5rem;
-    font-weight: regular;
+    font-weight: normal;
     box-sizing: border-box;
     padding: 0 10px;
     a
         color #1692b2
+        &.current
+            color #ee3551
+            background transparent
+            border-top none
+            border-bottom none
+            box-shadow none
+          
   h3
     font-size 0.875rem
     text-transform uppercase
@@ -155,7 +163,8 @@ article.page
       display block
       width 100%
       box-sizing border-box
-      padding 0 20px
+      // No padding on main menu based on mockups HS
+      //padding 0 20px
       &.current
         color #ee3551
         background transparent
@@ -259,6 +268,8 @@ code, kbd, pre, samp
       font-weight bold
       border-bottom 1px solid #999
     h2
+      text-transform uppercase
+      -webkit-margin-before 0em;
       font-size 1.125rem
       margin-bottom .5rem
       border-bottom 1px solid #E7E7E7
@@ -274,15 +285,25 @@ code, kbd, pre, samp
       list-style none
       margin 0 0 1rem
       // Reduced to help tutorials sidebar page
-      padding 0 0 0 1rem
+      // Modified to matchin mockups HS
+      padding 0 0 0 .5rem
       a
-        color #1692b2
+        // color #1692b2
+        // Added next two lines to match mockups - HS
+        color #000000
+        text-transform uppercase 
+        font-weight bold
+        line-height 2.1rem
         &.current
           color #ee3551
           background transparent
           border-top none
           border-bottom none
           box-shadow none
+      ul li a
+        color #1692b2
+        font-weight normal 
+        text-transform none         
   .mobile-docs-header
     display none
   .next-step
@@ -330,4 +351,51 @@ code, kbd, pre, samp
      -webkit-margin-after 0px
      -webkit-margin-start 0px
      -webkit-margin-end 0px
-     -webkit-padding-start 0px
+     -webkit-padding-start 0px 
+  .sidebar__list ul a 
+    //test
+    margin-left: 20px;
+    line-height: 3rem;   
+.get-started-submenu
+   width: 100% 
+   display:flex 
+   flex-wrap: wrap
+   justify-content: space-between
+   div
+      width 42%
+      font-size 1.125rem
+      font-weight bold
+      color #2fa0c3 
+      border-bottom 3px solid #2fa0c3   
+      margin-bottom 2% 
+      strong
+        font-weight bold
+        color #2fa0c3       
+        font-size .75rem
+        line-height .75rem
+        text-transform uppercase 
+        display block        
+      a 
+        font-size 1.125rem
+        font-weight bold
+.landing-submenu
+   width: 100% 
+   display:flex 
+   flex-wrap: wrap
+   justify-content: space-between
+   a
+      width 42%
+      font-size 1.125rem
+      font-weight bold
+      color #2fa0c3 
+      border-bottom 3px solid #2fa0c3   
+      margin-bottom 2% 
+  
+        
+        
+  
+     
+      
+
+        
+      
