@@ -248,28 +248,6 @@ code, kbd, pre, samp
   margin 0 auto
 .mobile .current
   background #003351
-.get-started-submenu
-  width 100%
-  display flex
-  flex-wrap wrap
-  justify-content space-between
-  div
-    width 42%
-    font-size 1.125rem
-    font-weight bold
-    color #2fa0c3
-    border-bottom 3px solid #2fa0c3
-    margin-bottom 2%
-    strong
-      font-weight bold
-      color #2fa0c3
-      font-size .75rem
-      line-height .75rem
-      text-transform uppercase
-      display block
-    a
-      font-size 1.125rem
-      font-weight bold
 .landing-submenu
   list-style none
   width 100%
@@ -293,6 +271,15 @@ code, kbd, pre, samp
     padding-bottom 8px
     &:hover
       text-decoration none
+ol.landing-submenu
+  counter-reset step-counter
+  a::before
+    counter-increment step-counter
+    content "Step " counter(step-counter) ":"
+    display block
+    text-transform uppercase
+    font-size .875rem
+    line-height .875rem
 @media (min-width: 820px)
   body
     padding-top 180px
