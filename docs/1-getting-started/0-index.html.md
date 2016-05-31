@@ -4,7 +4,7 @@ url: getting-started
 layout: subpage
 ---
 
-The getting started guides are provided to help new users get up and running as quickly as possible with the least amount of setup and time required.
+This guide is geared to helping people new to PhoneGap get up and running as quickly as possible with the least amount of setup and time.
 
 <ol class="landing-submenu">
   <li>[Install PhoneGap](1-install-phonegap/desktop)</li>
