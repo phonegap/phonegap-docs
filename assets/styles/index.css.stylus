@@ -257,7 +257,7 @@ code, kbd, pre, samp
   padding 0
   li
     display block
-    width 45%
+    width 100%
     position relative
     padding-right 5%
   a
@@ -371,6 +371,8 @@ ol.landing-submenu
       padding-top 50px
       &:hover
         text-decoration none
+  .landing-submenu li
+    width 45%
 @media (min-width: 900px)
   .sub-footer__blocks
     display flex
