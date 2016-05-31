@@ -12,14 +12,12 @@ Adobe PhoneGap provides a way for users to create mobile applications using tech
 <div class="landing-submenu">
   [Overview](overview)
   [Getting Started](start)
-  [Configuring](configuring)    
+  [Configuring](configuring)
   [Debugging](debugging)
-  [Signing](signing)
+  [Signing](signing/ios)
   [Developer API](developer-api)
-  [Support](support)    
+  [Support](support)
 </div>
-  
-
 
 Here are some of the benefits **PhoneGap Build** provides:
 
