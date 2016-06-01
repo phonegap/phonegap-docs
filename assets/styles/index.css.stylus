@@ -344,15 +344,15 @@ ol.landing-submenu
       text-transform uppercase
       font-weight bold
       line-height 1rem
-      padding-top 10px
-      padding-bottom 10px
+      padding-top 8px
+      padding-bottom 8px
     &__sub3
       font-size 1rem
       color #003351
       padding-left 10px
       line-height 1rem
-      padding-top 10px
-      padding-bottom 10px
+      padding-top 8px
+      padding-bottom 8px
   .mobile-docs-header
     display none
   .next-step
