@@ -5,7 +5,7 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-referenc
 layout: subpage
 ---
 
-The guides in this section cover all of the PhoneGap specific tooling documentation guides for reference. If you're new to PhoneGap, we recommend starting with the [Getting Started guides](/getting-started) first to get started most quickly with the least amount of setup. Once you've gone through it you'll have a better understanding of the tools and options available.
+<p class="sub-paragraph">The guides in this section cover all of the PhoneGap specific tooling documentation guides for reference. If you're new to PhoneGap, we recommend starting with the [Getting Started guides](/getting-started) first to get started most quickly with the least amount of setup. Once you've gone through it you'll have a better understanding of the tools and options available.</p>
 
 <ul class="landing-submenu">
   <li>[PhoneGap Browser Support](browser-support)</li>

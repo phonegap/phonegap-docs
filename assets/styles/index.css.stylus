@@ -280,6 +280,10 @@ ol.landing-submenu
     text-transform uppercase
     font-size .875rem
     line-height .875rem
+.sub-paragraph
+  color #888888
+  font-size 1.35rem
+  line-height 1.9rem
 @media (min-width: 820px)
   body
     padding-top 180px
