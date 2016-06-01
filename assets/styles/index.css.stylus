@@ -12,6 +12,7 @@ body
     display none
   &.menu-open
     overflow hidden
+    max-height 100vh
 main
   .bounds
     display flex
@@ -150,7 +151,7 @@ $navblock
 .open .sidenav
   overflow auto
   -webkit-overflow-scrolling touch
-  max-height 100%
+  max-height calc(100% - 45px)
 .sidenav
   color #003252
   ul
@@ -182,6 +183,7 @@ $navblock
     line-height 1rem
     padding-top 1rem
     padding-bottom 1rem
+    text-transform uppercase
     &:hover
       background #153f5e
     &.current
@@ -217,8 +219,8 @@ $navblock
     color #003351
     border 1px solid #003351
 .open .mobile-docs-toggle
-  background #003153
-  color #2fa0c3
+  color #043450
+  border-color #043450
 .video-wrapper
   position relative
   padding-bottom 56.25%

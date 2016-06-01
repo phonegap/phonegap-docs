@@ -81,4 +81,4 @@ aside.sidebar
                       each doc in coll
                           - var subDepth = doc.url.match(/\//g||[]).length
                           if (subDepth>1)
-                              li: a(href="/#{doc.url}" style="display:none " class="/#{page.url}/" class=document.url === doc.url ? "current" : "")!=doc.title
+                              li: a.sidenav__sub3(href="/#{doc.url}" style="display:none " class="/#{page.url}/" class=document.url === doc.url ? "current" : "")!=doc.title
