@@ -5,9 +5,7 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/4-phonegap
 layout: subpage
 ---
 
-**PhoneGap Build** is a cloud service for **compiling PhoneGap applications**.
-
-<p class="sub-paragraph">Adobe PhoneGap provides a way for users to create mobile applications using technologies such as HTML, CSS, and Javascript. Applications created with PhoneGap can be distributed to various vendor app stores (ex: Apple App Store) and installed on a end-user's device like any other native application. Each vendor provides a different toolchain, and each PhoneGap release is compatible with a specific set of tools. This is where PhoneGap Build comes into help.</p>
+<p class="sub-paragraph">The first paragraph text should be edited to read: [PhoneGap Build](http://build.phonegap.com/) is a cloud service for compiling PhoneGap applications. These docs will get you started, but if your question isn’t answered here you can always check out the [community forum](https://forums.adobe.com/community/phonegap/build).</p>
 
 <ul class="landing-submenu">
   <li>[Overview](overview)</li>
