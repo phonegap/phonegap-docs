@@ -5,7 +5,7 @@ github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/4-phonegap
 layout: subpage
 ---
 
-<p class="sub-paragraph">The first paragraph text should be edited to read: [PhoneGap Build](http://build.phonegap.com/) is a cloud service for compiling PhoneGap applications. These docs will get you started, but if your question isn’t answered here you can always check out the [community forum](https://forums.adobe.com/community/phonegap/build).</p>
+<p class="sub-paragraph">[PhoneGap Build](http://build.phonegap.com/) is a cloud service for compiling PhoneGap applications. These docs will get you started, but if your question isn't answered here you can always check out the [community forum](https://forums.adobe.com/community/phonegap/build).</p>
 
 <ul class="landing-submenu">
   <li>[Overview](overview)</li>
