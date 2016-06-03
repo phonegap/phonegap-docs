@@ -10,8 +10,7 @@ expand: dev-app
 
 Augmented reality has now come to the PhoneGap Developer App with the inclusion of the Wikitude Cordova plugin. Users of the PhoneGap Developer App will now be able to detect images or locations and project 2D images or 3D models.
 
-To see an example, here's a video:
-[video link](video link)
+To see an example, here's a [video](video link).
 
 You can test the above demo by opening the PhoneGap Developer App (v1.7.0 and higher - Windows Phone not supported) and launching from this address: `ar.phonegap.com`.
 
