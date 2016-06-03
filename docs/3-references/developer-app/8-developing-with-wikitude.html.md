@@ -1,5 +1,5 @@
 ---
-title: Using Augmented Reality with the Wikitude Cordova Plugin
+title: Augmented Reality with the Wikitude Cordova Plugin
 url: references/developer-app/wikitude
 github_url: https://github.com/phonegap/phonegap-docs/blob/wikitude/docs/3-references/developer-app/8-developing-with-wikitude.md
 layout: subpage
@@ -10,7 +10,7 @@ expand: dev-app
 
 Augmented reality has now come to the PhoneGap Developer App with the inclusion of the Wikitude Cordova plugin. Users of the PhoneGap Developer App will now be able to detect images or locations and project 2D images or 3D models.
 
-To see an example, here's a [video](video link).
+To see an example, here's a [video](https://www.youtube.com/watch?v=Om8CiurYLWg&feature=youtu.be).
 
 You can test the above demo by opening the PhoneGap Developer App (v1.7.0 and higher - Windows Phone not supported) and launching from this address: `ar.phonegap.com`.
 
@@ -28,10 +28,11 @@ app.wikitudePlugin.loadARchitectWorld(function succes(){}, function error(){},
     architectWorld.startupConfiguration
 );
 ```
+## Examples and Guides
 
-* [ar.phonegap.com project repo](https://github.com/timkim/phonegap-app-augmented-reality)
-* [Wikitude developer guide](http://www.wikitude.com/developer/documentation/phonegap)
-* [Sample code repo](https://github.com/Wikitude/wikitude-cordova-plugin-samples)
+The most comprehensive guide to developing with the Wikitude plugin can be found at [Wikitude's developer guides](http://www.wikitude.com/developer/documentation/phonegap). You may also want to github clone [Wikitude's sample repo](https://github.com/Wikitude/wikitude-cordova-plugin-samples/tree/feature/cordova_file_plugin_support). Just remember that when using `phonegap serve` to serve the `wikitude-cordova-plugin-samples`, you must use `cordova.file.dataDirectory + architectWorld.path` [here](https://github.com/Wikitude/wikitude-cordova-plugin-samples/blob/feature/cordova_file_plugin_support/SampleAppResources/js/index.js#L52).
+
+To see the PhoneGap Day EU 2016 T-Shirt demo, you may find the [project's repo here.](https://github.com/timkim/phonegap-app-augmented-reality)
 
 ## Uploading your own images to detect
 
