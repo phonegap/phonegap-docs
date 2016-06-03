@@ -27,3 +27,4 @@ The sections covered in this reference include:
 - [Debugging](/references/developer-app/debugging)
 - [Custom Builds](/references/developer-app/custom-build/ios)
 - [FAQ/Troubleshoot](/references/developer-app/troubleshoot-faq)
+- [Augmented Reality and Wikitude](/references/developer-app/wikitude)
