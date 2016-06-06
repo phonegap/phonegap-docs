@@ -2,7 +2,7 @@
 title: Step 3: Create Your App
 url: getting-started/3-create-your-app/desktop
 layout: subpage
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/1-getting-started/3-create-your-app/1-desktop.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/1-getting-started/3-create-your-app/1-desktop.html.md
 tabs:
   - label: Desktop App
     url: getting-started/3-create-your-app/desktop

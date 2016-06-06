@@ -3,6 +3,7 @@ title: PhoneGap Documentation
 url: /
 layout: subpage
 next: 1-getting-started/1-install-phonegap/1-desktop.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/0-index.html.md
 ---
 <img style="float:right; width: 50%; max-width: 250px;" src="/images/excited_robit.svg" alt="Excited Robot">
 <p style="color:#888888;font-size:1.35rem;line-height:1.9rem;">

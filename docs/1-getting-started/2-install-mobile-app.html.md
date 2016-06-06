@@ -1,7 +1,7 @@
 ---
 title: Step 2: Install Mobile App
 url: getting-started/2-install-mobile-app
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/1-getting-started/2-install-mobile-app.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/1-getting-started/2-install-mobile-app.html.md
 layout: subpage
 next: 1-getting-started/3-create-your-app/1-desktop.html.md
 ---

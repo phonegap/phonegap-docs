@@ -1,7 +1,7 @@
 ---
 title: API Authentication
 url: phonegap-build/developer-api/authentication
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/4-phonegap-build/5-developer-api/2-authentication.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/5-developer-api/2-authentication.html.md
 layout: subpage
 ---
 

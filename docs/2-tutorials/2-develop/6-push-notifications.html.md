@@ -1,7 +1,7 @@
 ---
 title: Push Notifications
 url: tutorials/develop/push-notifications
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/2-tutorials/2-develop/6-push-notifications.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/2-tutorials/2-develop/6-push-notifications.html.md
 layout: subpage
 ---
 

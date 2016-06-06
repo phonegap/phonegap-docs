@@ -1,7 +1,7 @@
 ---
 title: "Step 1: Install PhoneGap"
 url: getting-started/1-install-phonegap/desktop
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/1-getting-started/1-install-phonegap/1-desktop.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/1-getting-started/1-install-phonegap/1-desktop.html.md
 layout: subpage
 tabs:
   - label: Desktop App

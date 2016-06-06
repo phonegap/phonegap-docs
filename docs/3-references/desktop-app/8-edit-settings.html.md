@@ -1,7 +1,7 @@
 ---
 title: Edit Settings
 url: references/desktop-app/edit-settings
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/desktop-app/8-edit-settings.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/8-edit-settings.html.md
 layout: subpage
 ---
 

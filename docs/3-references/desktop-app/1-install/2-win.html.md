@@ -1,7 +1,7 @@
 ---
 title: Installation
 url: references/desktop-app/install/win
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/desktop-app/1-install/2-win.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/1-install/2-win.html.md
 layout: subpage
 tabs:
   - label: Mac

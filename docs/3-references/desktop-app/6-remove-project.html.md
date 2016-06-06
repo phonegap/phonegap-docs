@@ -1,7 +1,7 @@
 ---
 title: Remove a Project
 url: references/desktop-app/remove-project
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/desktop-app/6-remove-project.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/6-remove-project.html.md
 layout: subpage
 ---
 

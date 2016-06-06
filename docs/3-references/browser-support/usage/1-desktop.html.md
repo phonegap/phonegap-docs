@@ -1,7 +1,7 @@
 ---
 title: Usage
 url: references/browser-support/usage/desktop
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/browser-support/usage/1-desktop.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/browser-support/usage/1-desktop.html.md
 layout: subpage
 tabs:
   - label: Desktop App

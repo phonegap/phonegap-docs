@@ -1,7 +1,7 @@
 ---
 title: Configuring
 url: phonegap-build/configuring
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/4-phonegap-build/2-configuring/0-index.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/2-configuring/0-index.html.md
 layout: subpage
 ---
 

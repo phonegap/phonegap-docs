@@ -1,7 +1,7 @@
 ---
 title: Installation
 url: references/phonegap-cli/install
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/phonegap-cli/1-install.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/1-install.html.md
 layout: subpage
 ---
 

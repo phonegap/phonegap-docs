@@ -1,7 +1,7 @@
 ---
 title: Custom Build
 url: references/developer-app/custom-build/win
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/developer-app/6-custom-build/win-custom-build.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/developer-app/6-custom-build/win-custom-build.html.md
 layout: subpage
 tabs:
    - label: iOS

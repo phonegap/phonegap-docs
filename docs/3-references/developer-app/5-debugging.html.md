@@ -1,7 +1,7 @@
 ---
 title: Debugging
 url: references/developer-app/debugging
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/developer-app/5-debugging.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/developer-app/5-debugging.html.md
 layout: subpage
 ---
 
