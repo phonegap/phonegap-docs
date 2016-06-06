@@ -2,6 +2,7 @@
 title: Getting Started
 url: getting-started
 layout: subpage
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/1-getting-started/0-index.html.md
 ---
 
 <p class="sub-paragraph">This guide is geared to helping people new to PhoneGap get up and running as quickly as possible with the least amount of setup and time.</p>

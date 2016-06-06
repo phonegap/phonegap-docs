@@ -1,7 +1,7 @@
 ---
 title: Cordova Commands
 url: references/phonegap-cli/cordova
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/phonegap-cli/8-cordova.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/8-cordova.html.md
 layout: subpage
 ---
 

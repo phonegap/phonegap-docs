@@ -3,7 +3,7 @@ script.
 
   var app = {
     init: function () {
-      console.log("Location " + url + " host " + window.location.host + " hostname " + window.location.hostname);
+      //- console.log("Location " + url + " host " + window.location.host + " hostname " + window.location.hostname);
       var pathname = window.location.pathname;
       var urlParts = pathname.substring(1,pathname.length-1).split('/')
       var classToExpand="";
@@ -11,7 +11,7 @@ script.
         if (classToExpand.length>0) 
             classToExpand = classToExpand+urlParts[i]+"/";
         else classToExpand = "/"+urlParts[i]+"/";
-        console.log("Expand class " + classToExpand);
+        //- console.log("Expand class " + classToExpand);
         app.expand(classToExpand, true);
       }
     },

@@ -1,7 +1,7 @@
 ---
 title: Help Options
 url: references/phonegap-cli/help
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/phonegap-cli/9-help.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/9-help.html.md
 layout: subpage
 ---
 

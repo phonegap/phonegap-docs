@@ -1,7 +1,7 @@
 ---
 title: Preferences
 url: phonegap-build/configuring/preferences
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/4-phonegap-build/2-configuring/preferences.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/2-configuring/preferences.html.md
 layout: subpage
 ---
 PhoneGap utilizes the `<preference>` tag to customize your application configuration. All `<preference>` tags in your config.xml are copied to the platform-specific configuration files, which means that any preferences [supported by the PhoneGap framework](http://docs.phonegap.com/en/edge/config_ref_index.md.html#The%20config.xml%20File), or by any plugins you are using, will work on PhoneGap Build.

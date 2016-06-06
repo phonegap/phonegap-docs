@@ -1,7 +1,7 @@
 ---
 title: Plugin Support
 url: references/browser-support/plugin-support
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/browser-support/2-plugin-support.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/browser-support/2-plugin-support.html.md
 layout: subpage
 ---
 

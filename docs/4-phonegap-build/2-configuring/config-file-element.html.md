@@ -1,7 +1,7 @@
 ---
 title: Modifying Manifests
 url: phonegap-build/configuring/config-file-element
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/4-phonegap-build/2-configuring/config-file-element.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/2-configuring/config-file-element.html.md
 layout: subpage
 ---
 

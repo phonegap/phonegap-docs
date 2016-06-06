@@ -1,7 +1,7 @@
 ---
 title: Preview an App
 url: references/developer-app/previewing-app
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/developer-app/2-previewing-app.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/developer-app/2-previewing-app.html.md
 layout: subpage
 ---
 

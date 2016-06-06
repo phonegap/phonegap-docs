@@ -1,7 +1,7 @@
 ---
 title: PhoneGap CLI
 url: references/phonegap-cli
-github_url: https://github.com/phonegap/phonegap-docs/blob/stage/docs/3-references/phonegap-cli/0-index.html.md
+github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/0-index.html.md
 layout: subpage
 ---
 
