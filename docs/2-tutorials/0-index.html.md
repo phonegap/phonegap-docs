@@ -10,6 +10,7 @@ layout: subpage
   <li>[Embedding the Webview](develop/1-embed-webview/ios)</li>
   <li>[Hello World Explained](develop/hello-world-explained)</li>
   <li>[Push Notifications](develop/push-notifications)</li>
+  <li>[Wikitude's Augmented Reality](develop/wikitude)</li>
 </ul>
 
 This section is a continuous work in progress as the challenges mobile developers face are ever changing. Be sure to check back often to learn more.
