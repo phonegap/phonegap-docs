@@ -1,7 +1,6 @@
 ---
 title: Installation
 url: references/developer-app/install/win
-github_url: 3-references/developer-app/1-install/3-win.html.md
 layout: subpage
 tabs:
    - label: iOS

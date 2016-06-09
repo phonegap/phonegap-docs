@@ -2,7 +2,6 @@
 title: Step 4: Preview Your App
 url: getting-started/4-preview-your-app/cli
 layout: subpage
-github_url: 1-getting-started/4-preview-your-app/2-cli.html.md
 tabs:
   - label: Desktop App
     url: getting-started/4-preview-your-app/desktop

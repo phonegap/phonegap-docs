@@ -1,7 +1,6 @@
 ---
 title: Installation
 url: references/desktop-app/install/win
-github_url: 3-references/desktop-app/1-install/2-win.html.md
 layout: subpage
 tabs:
   - label: Mac

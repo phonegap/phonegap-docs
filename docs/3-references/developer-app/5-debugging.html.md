@@ -1,7 +1,6 @@
 ---
 title: Debugging
 url: references/developer-app/debugging
-github_url: 3-references/developer-app/5-debugging.html.md
 layout: subpage
 ---
 

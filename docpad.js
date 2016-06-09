@@ -18,8 +18,9 @@ module.exports = {
   },
   "templateData": {
     "githuburl": function(slug){
+      var reposlug = (process.env.TRAVIS_REPO_SLUG)? process.env.TRAVIS_REPO_SLUG : "phonegap/phonegap-docs";
       var gitbranch = (process.env.TRAVIS_BRANCH)? process.env.TRAVIS_BRANCH : "master";
-      return "https://github.com/phonegap/phonegap-docs/blob/"+ gitbranch +"/docs/"+slug;
+      return "https://github.com/"+ reposlug +"/blob/"+ gitbranch +"/docs/"+slug;
     }
   },
   "plugins": {

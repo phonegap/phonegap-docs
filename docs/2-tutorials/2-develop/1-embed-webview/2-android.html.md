@@ -1,7 +1,6 @@
 ---
 title: "Embedding the Webview"
 url: tutorials/develop/1-embed-webview/android
-github_url: 2-tutorials/2-develop/1-embed-webview/2-android.html.md
 layout: subpage
 tabs:
   - label: iOS

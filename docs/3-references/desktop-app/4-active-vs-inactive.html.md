@@ -1,7 +1,6 @@
 ---
 title: Active vs Inactive
 url: references/desktop-app/active-vs-inactive
-github_url: 3-references/desktop-app/4-active-vs-inactive.html.md
 layout: subpage
 ---
 

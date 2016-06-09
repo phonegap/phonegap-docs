@@ -1,7 +1,6 @@
 ---
 title: Plugin APIs
 url: references/plugin-apis
-github_url: 3-references/plugin-apis.html.md
 layout: subpage
 ---
 

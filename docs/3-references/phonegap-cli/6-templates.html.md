@@ -1,7 +1,6 @@
 ---
 title: Templates
 url: references/phonegap-cli/templates
-github_url: 3-references/phonegap-cli/6-templates.html.md
 layout: subpage
 ---
 

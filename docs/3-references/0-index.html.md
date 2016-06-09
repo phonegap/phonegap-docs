@@ -1,7 +1,6 @@
 ---
 title: References
 url: references
-github_url: 3-references/0-index.html.md
 layout: subpage
 ---
 

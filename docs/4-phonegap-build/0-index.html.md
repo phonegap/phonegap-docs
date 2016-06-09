@@ -1,7 +1,6 @@
 ---
 title: PhoneGap Build
 url: phonegap-build
-github_url: 4-phonegap-build/0-index.html.md
 layout: subpage
 ---
 

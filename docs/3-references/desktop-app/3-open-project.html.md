@@ -1,7 +1,6 @@
 ---
 title: Open a Project
 url: references/desktop-app/open-project
-github_url: 3-references/desktop-app/3-open-project.html.md
 layout: subpage
 ---
 

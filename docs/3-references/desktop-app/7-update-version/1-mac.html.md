@@ -1,7 +1,6 @@
 ---
 title: Update Version
 url: references/desktop-app/7-update-version/mac
-github_url: 3-references/desktop-app/7-update-version/1-mac.html.md
 layout: subpage
 tabs:
 - label: Mac

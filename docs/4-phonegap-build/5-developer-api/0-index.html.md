@@ -1,7 +1,6 @@
 ---
 title: Developer API
 url: phonegap-build/developer-api
-github_url: 4-phonegap-build/5-developer-api/0-index.html.md
 layout: subpage
 ---
 

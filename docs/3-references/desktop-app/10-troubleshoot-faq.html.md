@@ -1,7 +1,6 @@
 ---
 title: FAQ/Troubleshoot
 url: references/desktop-app/troubleshoot-faq
-github_url: 3-references/desktop-app/10-troubleshoot-faq.html.md
 layout: subpage
 ---
 

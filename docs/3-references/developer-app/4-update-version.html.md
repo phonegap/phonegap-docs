@@ -1,7 +1,6 @@
 ---
 title: Update Version
 url: references/developer-app/update-version
-github_url: 3-references/phonegap-cli/4-update.html.md
 layout: subpage
 ---
 

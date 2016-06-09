@@ -1,7 +1,6 @@
 ---
 title: Push Notifications
 url: tutorials/develop/push-notifications
-github_url: 2-tutorials/2-develop/6-push-notifications.html.md
 layout: subpage
 ---
 

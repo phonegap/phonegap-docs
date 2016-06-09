@@ -1,7 +1,6 @@
 ---
 title: Getting Started
 url: phonegap-build/start
-github_url: 4-phonegap-build/1-getting-started.html.md
 layout: subpage
 expand: build
 ---

@@ -1,7 +1,6 @@
 ---
 title: PhoneGap Desktop App
 url: references/desktop-app
-github_url: 3-references/desktop-app/0-index.html.md
 layout: subpage
 ---
 

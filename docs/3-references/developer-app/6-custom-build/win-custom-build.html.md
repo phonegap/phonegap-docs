@@ -1,7 +1,6 @@
 ---
 title: Custom Build
 url: references/developer-app/custom-build/win
-github_url: 3-references/developer-app/6-custom-build/win-custom-build.html.md
 layout: subpage
 tabs:
    - label: iOS

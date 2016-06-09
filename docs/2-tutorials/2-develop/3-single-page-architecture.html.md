@@ -3,7 +3,6 @@ title: Single Page Architecture
 url: develop/single-page-architecture
 layout: subpage
 write: false
-github_url: 2-tutorials/2-develop/3-single-page-architecture.html.md
 ---
 
 ## Overview

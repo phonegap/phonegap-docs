@@ -1,7 +1,6 @@
 ---
 title: OAuth
 url: phonegap-build/developer-api/oauth
-github_url: 4-phonegap-build/5-developer-api/1-oauth.html.md
 layout: subpage
 ---
 

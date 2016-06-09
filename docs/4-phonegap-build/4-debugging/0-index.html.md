@@ -1,7 +1,6 @@
 ---
 title: Debugging
 url: phonegap-build/debugging
-github_url: 4-phonegap-build/4-debugging/0-index.html.md
 layout: subpage
 ---
 

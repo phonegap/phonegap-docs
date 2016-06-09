@@ -1,7 +1,6 @@
 ---
 title: Caution / Next Steps
 url: references/browser-support/caution-next-steps
-github_url: 3-references/browser-support/5-caution-next-steps.html.md
 layout: subpage
 ---
 

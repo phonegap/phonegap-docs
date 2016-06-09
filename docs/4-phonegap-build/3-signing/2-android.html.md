@@ -1,7 +1,6 @@
 ---
 title: Signing
 url: phonegap-build/signing/android
-github_url: 4-phonegap-build/3-signing/2-android.html.md
 layout: subpage
 tabs:
   - label: iOS

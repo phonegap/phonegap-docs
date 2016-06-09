@@ -1,7 +1,6 @@
 ---
 title: Update Version
 url: references/desktop-app/7-update-version/win
-github_url: 3-references/desktop-app/7-update-version/2-win.html.md
 layout: subpage
 tabs:
 - label: Mac

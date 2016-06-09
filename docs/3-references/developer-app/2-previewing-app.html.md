@@ -1,7 +1,6 @@
 ---
 title: Preview an App
 url: references/developer-app/previewing-app
-github_url: 3-references/developer-app/2-previewing-app.html.md
 layout: subpage
 ---
 

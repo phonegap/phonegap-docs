@@ -1,7 +1,6 @@
 ---
 title: Gestures
 url: references/developer-app/gestures
-github_url: 3-references/developer-app/3-gestures.html.md
 layout: subpage
 ---
 

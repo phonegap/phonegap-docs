@@ -1,7 +1,6 @@
 ---
 title: Signing
 url: phonegap-build/signing/windows
-github_url: 4-phonegap-build/3-signing/3-windows.html.md
 layout: subpage
 tabs:
   - label: iOS

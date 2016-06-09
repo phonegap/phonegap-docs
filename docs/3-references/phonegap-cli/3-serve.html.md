@@ -1,7 +1,6 @@
 ---
 title: Serve an App
 url: references/phonegap-cli/serve
-github_url: 3-references/phonegap-cli/3-serve.html.md
 layout: subpage
 ---
 

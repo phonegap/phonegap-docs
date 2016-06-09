@@ -1,7 +1,6 @@
 ---
 title: Preview an App
 url: references/desktop-app/pair-with-dev-app
-github_url: 3-references/desktop-app/5-pair-with-dev-app.html.md
 layout: subpage
 ---
 

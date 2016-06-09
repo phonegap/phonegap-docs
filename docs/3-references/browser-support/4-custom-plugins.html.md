@@ -1,7 +1,6 @@
 ---
 title: Custom Plugins
 url: references/browser-support/custom-plugins
-github_url: 3-references/browser-support/4-custom-plugins.html.md
 layout: subpage
 ---
 

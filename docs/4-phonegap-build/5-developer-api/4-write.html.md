@@ -1,7 +1,6 @@
 ---
 title: Write API
 url: phonegap-build/developer-api/write
-github_url: 4-phonegap-build/5-developer-api/4-write.html.md
 layout: subpage
 ---
 

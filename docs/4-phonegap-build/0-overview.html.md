@@ -1,7 +1,6 @@
 ---
 title: Overview
 url: phonegap-build/overview
-github_url: 4-phonegap-build/0-overview.html.md
 layout: subpage
 expand: build
 ---
