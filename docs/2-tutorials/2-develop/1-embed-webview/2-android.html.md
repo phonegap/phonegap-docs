@@ -1,7 +1,6 @@
 ---
 title: "Embedding the Webview"
 url: tutorials/develop/1-embed-webview/android
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/2-tutorials/2-develop/1-embed-webview/2-android.html.md
 layout: subpage
 tabs:
   - label: iOS

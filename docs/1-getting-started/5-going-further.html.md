@@ -1,7 +1,6 @@
 ---
 title: Step 5: Going Further
 url: getting-started/5-going-further
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/1-getting-started/5-going-further.html.md
 layout: subpage
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Hello World Explained
 url: tutorials/develop/hello-world-explained
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/2-tutorials/2-develop/2-hello-world-explained.html.md
 layout: subpage
 ---
 
