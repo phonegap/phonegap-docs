@@ -1,7 +1,6 @@
 ---
 title: References
 url: references
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/0-index.html.md
 layout: subpage
 ---
 

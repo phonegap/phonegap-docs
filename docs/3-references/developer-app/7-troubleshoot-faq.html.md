@@ -1,7 +1,6 @@
 ---
 title: FAQ/Troubleshooting
 url: references/developer-app/troubleshoot-faq
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/developer-app/7-troubleshoot-faq.html.md
 layout: subpage
 ---
 

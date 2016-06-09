@@ -1,7 +1,6 @@
 ---
 title: Support
 url: phonegap-build/support
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/6-support.html.md
 layout: subpage
 expand: build
 ---

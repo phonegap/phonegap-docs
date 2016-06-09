@@ -1,7 +1,6 @@
 ---
 title: Usage
 url: references/browser-support/usage/cli
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/browser-support/usage/2-cli.html.md
 layout: subpage
 tabs:
   - label: Desktop App
