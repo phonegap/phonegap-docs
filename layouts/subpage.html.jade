@@ -7,4 +7,4 @@ block append content
         .label next step&hellip;
         a.next-block(href="/#{next.url}")!=next.title
   -if(document.github_url)
-    a.github-page(href=document.github_url) Edit this page on GitHub
+    a.github-page(href=githuburl(document.github_url)) Edit this page on GitHub
