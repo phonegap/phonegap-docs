@@ -1,7 +1,6 @@
 ---
 title: Push Notifications
 url: references/phonegap-cli/push
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/5-push.html.md
 layout: subpage
 ---
 

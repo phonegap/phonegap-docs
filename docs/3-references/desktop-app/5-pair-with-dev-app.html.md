@@ -1,7 +1,6 @@
 ---
 title: Preview an App
 url: references/desktop-app/pair-with-dev-app
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/5-pair-with-dev-app.html.md
 layout: subpage
 ---
 

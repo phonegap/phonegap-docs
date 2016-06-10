@@ -1,7 +1,6 @@
 ---
 title: Plugins
 url: phonegap-build/configuring/plugins
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/2-configuring/plugins.html.md
 layout: subpage
 ---
 

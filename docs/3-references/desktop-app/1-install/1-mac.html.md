@@ -1,7 +1,6 @@
 ---
 title: Installation
 url: references/desktop-app/install/mac
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/desktop-app/1-install/1-mac.html.md
 layout: subpage
 tabs:
 - label: Mac

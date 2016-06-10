@@ -1,7 +1,6 @@
 ---
 title: Remote Usage
 url: references/phonegap-cli/remote-usage
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/phonegap-cli/7-remote-usage.html.md
 layout: subpage
 ---
 

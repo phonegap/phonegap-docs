@@ -1,7 +1,6 @@
 ---
 title: Access Elements
 url: phonegap-build/configuring/access-elements
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/2-configuring/access-elements.html.md
 layout: subpage
 ---
 

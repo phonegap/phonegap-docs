@@ -1,7 +1,6 @@
 ---
 title: Read API
 url: phonegap-build/developer-api/read
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/5-developer-api/3-read.html.md
 layout: subpage
 ---
 

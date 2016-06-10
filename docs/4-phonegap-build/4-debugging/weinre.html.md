@@ -1,7 +1,6 @@
 ---
 title: Weinre
 url: phonegap-build/debugging/weinre
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/4-phonegap-build/4-debugging/weinre.html.md
 layout: subpage
 ---
 

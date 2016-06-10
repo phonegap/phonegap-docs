@@ -1,7 +1,6 @@
 ---
 title: Custom Plugins
 url: references/browser-support/custom-plugins
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/browser-support/4-custom-plugins.html.md
 layout: subpage
 ---
 

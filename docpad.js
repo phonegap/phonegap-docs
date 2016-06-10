@@ -13,8 +13,16 @@ module.exports = {
     "layouts"
   ],
   "regenerateDelay": 0,
-  "watchOptions": {      
+  "watchOptions": {
     "catchupDelay": 0
+  },
+  "templateData": {
+    "githuburl": function(slug){
+      var reposlug = (process.env.TRAVIS_REPO_SLUG)? process.env.TRAVIS_REPO_SLUG : "phonegap/phonegap-docs";
+      var gitbranch = (process.env.TRAVIS_BRANCH)? process.env.TRAVIS_BRANCH : "master";
+      gitbranch = (process.env.CI_BRANCH)? process.env.CI_BRANCH : "master";
+      return "https://github.com/"+ reposlug +"/blob/"+ gitbranch +"/docs/"+slug;
+    }
   },
   "plugins": {
     "cleanurls": {
@@ -80,23 +88,23 @@ module.exports = {
     },
     gsDocs: function() {
       return this.getCollection('html')
-          .findAllLive({ extension: 'md' })          
+          .findAllLive({ extension: 'md' })
     },
     getStartedDocs: function() {
       return this.getCollection('gsDocs')
-          .findAllLive({url: {$startsWith:'getting-started/' }}, [{ relativeBase: 1 }])          
-    },   
+          .findAllLive({url: {$startsWith:'getting-started/' }}, [{ relativeBase: 1 }])
+    },
     referenceDocs: function() {
       return this.getCollection('gsDocs')
-          .findAllLive({url: {$startsWith:'references/' }}, [{ relativeBase: 1 }])          
-    },      
+          .findAllLive({url: {$startsWith:'references/' }}, [{ relativeBase: 1 }])
+    },
     tutorialDocs: function() {
         return this.getCollection('gsDocs')
             .findAllLive({url:{$startsWith:'tutorials/'}}, [{ relativeBase: 1 }])
-    }, 
+    },
     pgbDocs: function() {
       return this.getCollection('gsDocs')
-          .findAllLive({url:{$startsWith:'phonegap-build/'}}, [{ relativeBase: 1 }])          
+          .findAllLive({url:{$startsWith:'phonegap-build/'}}, [{ relativeBase: 1 }])
     }
   }
 };
