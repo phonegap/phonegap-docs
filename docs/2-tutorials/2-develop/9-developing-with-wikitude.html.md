@@ -1,5 +1,5 @@
 ---
-title: Wikitude and Augmented Reality
+title: Augmented Reality
 url: tutorials/develop/wikitude
 github_url: https://github.com/phonegap/phonegap-docs/blob/wikitude/docs/2-tutorials/2-develop/9-developing-with-wikitude.html.md
 layout: subpage
@@ -7,7 +7,7 @@ layout: subpage
 
 ## Overview
 
-Wikitude's augmented reality Cordova plugin has now come to the PhoneGap Developer App. Users of the PhoneGap Developer App will now be able to detect images or locations and project 2D images or 3D models.
+Wikitude's augmented reality Cordova plugin has recently become available in the PhoneGap Developer App allowing developers to build apps that can detect images or locations and project 2D images or 3D models.
 
 See the demo in action on our PhoneGap Day EU 2016 T-Shirts!
 
@@ -30,7 +30,7 @@ $ phonegap serve
 
 ## Developing
 
-We have made developing with the Wikitude Cordova plugin as close to a non-PhoneGap Developer App environment, but there is one caveat. When loading the AR worlds, you must use the `cordova.file.dataDirectory` + `path/to/ARWorld` location when viewing through the PhoneGap Developer App!
+There's one additional line you'll need to include when using the Wikitude plugin with the PhoneGap Developer App specifically. When loading the AR worlds, you'll need to specify the `cordova.file.dataDirectory + path/to/ARWorld` location.
 
 For example:
 
