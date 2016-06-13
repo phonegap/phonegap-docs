@@ -97,14 +97,26 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
 
 1. Open a new terminal window and enter the following command if you are testing on iOS:
 
+  MacOS:
   ```sh
   $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service apns --payload '{ "aps": { "alert": "Hello World" } }'
   ```
 
+  Windows:
+  ```sh
+  $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service apns --payload "{ \"aps\": { \"alert\": \"Hello World\" } }"
+  ```
+
   or enter the following command if you are testing on Android:
 
+  MacOS:
   ```sh
   $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service gcm --payload '{ "data": { "title": "Hello", "message": "World"} }'
+  ```
+
+  Windows:
+  ```sh
+  $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service gcm --payload "{ \"data\": { \"title\": \"Hello\", \"message\": \"World\"} }"
   ```
 
   replacing the deviceID with the one you received from the registration event in the previous step.
@@ -119,14 +131,26 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
 
 1. From your terminal window, enter the following command if you are testing on iOS:
 
+  MacOS:
   ```sh
   $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service apns --payload '{ "aps": { "alert": "Hello World" } }'
   ```
 
+  Windows:
+  ```sh
+  $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service apns --payload "{ \"aps\": { \"alert\": \"Hello World\" } }"
+  ```
+
   or enter the following command if you are testing on Android:
 
+  MacOS:
   ```sh
   $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service gcm --payload '{ "data": { "title": "Hello", "message": "World"} }'
+  ```
+
+  Windows:
+  ```sh
+  $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service gcm --payload "{ \"data\": { \"title\": \"Hello\", \"message\": \"World\"} }"
   ```
 
   replacing the deviceID with the one you received from the registration event in the previously.
@@ -139,14 +163,26 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
 
 1. From your terminal window, enter the following command if you are testing on iOS:
 
+  MacOS:
   ```sh
   $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service apns --payload '{ "aps": { "alert": "Hello World" } }'
   ```
 
+  Windows:
+  ```sh
+  $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service apns --payload "{ \"aps\": { \"alert\": \"Hello World\" } }"
+  ```
+
   or enter the following command if you are testing on Android:
 
+  MacOS:
   ```sh
   $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service gcm --payload '{ "data": { "title": "Hello", "message": "World"} }'
+  ```
+
+  Windows:
+  ```sh
+  $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service gcm --payload "{ \"data\": { \"title\": \"Hello\", \"message\": \"World\"} }"
   ```
 
   replacing the deviceID with the one you received from the registration event in the previously.
