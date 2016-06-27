@@ -40,6 +40,8 @@ The name of the application.
 <description>
 ```
 
+A description for your application.
+
 ```xml
 <author>
 ```
