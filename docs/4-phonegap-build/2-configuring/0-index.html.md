@@ -40,7 +40,11 @@ The name of the application.
 <description>
 ```
 
-A description for your application.
+```xml
+<author>
+```
+
+The author of the application, either a company or individual (required for Windows 10 builds).
 
 ```xml
 <platform>
@@ -53,6 +57,8 @@ You can have zero or more of these elements present in your <code>config.xml</co
 <platform name="android" />
 <platform name="winphone" />
 ```
+
+All of the above fields are standard Cordova config.xml tags. For more detailed info about the above elements, and all the others available, see [the Cordova config.xml documentation](http://cordova.apache.org/docs/en/latest/config_ref/index.html). Most of these will work on PhoneGap Build, but if you face issues with any specific tags, [let us know](https://forums.adobe.com/community/phonegap/build).
 
 <a class="anchor" id="example"></a>
 
