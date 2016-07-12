@@ -44,7 +44,7 @@ This calls the `initialize` function on the app variable defined in the index.js
 
 ## `deviceready`
 
-The other important Cordova-specific feature to point out is the `deviceready` event. This event signals that Cordova's device APIs have loaded and are ready to access. If you don't rely on this event and only then start making calls to Cordova APIs then you could end up in a situation where the native code is not yet fully loaded and not available. Applications typically attach an event listener with `document.addEventListener` once the HTML document's DOM has loaded as shown below and in the default Hello application:
+The other important Cordova-specific feature to point out is the `deviceready` event. This event signals that Cordova's device APIs have loaded and are ready to access. If you start making calls to Cordova APIs without relying on this event, you could end up in a situation where the native code is not yet fully loaded and not available. Applications typically attach an event listener with `document.addEventListener` once the HTML document's DOM has loaded as shown below and in the default Hello application:
 
 ```js
 document.addEventListener('deviceready', this.onDeviceReady, false);
