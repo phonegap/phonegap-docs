@@ -151,7 +151,10 @@ that it is the issue.
 Sixth, when using a virtual machine (VM), you should configure the network adapter
 to appear as a separate network device. This means that your VM will have an
 IP address that is different from your host computer. Inside the VM network
-settings, this is often called a _bridged network_.
+settings, this is often called a _bridged network_. In some cases for the _bridged network_ to work,
+you will need to enable [ICMP Echo Requests][1].
+
+  [1]: https://technet.microsoft.com/en-us/library/cc749323(v=ws.10).aspx
 
 Seventh, when all else fails, the issue may be caused by errors in your JavaScript application.
 A helpful way to determine this is to use the `window.onerror` function to track down your errors.
