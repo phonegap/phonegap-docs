@@ -193,7 +193,7 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
 
 ## Explaining Push
 
-Now open the **www/index.js** file and we'll take a deep dive into what is going on. All of the code required to register and receive push notifications is in the `onDeviceReady` function.
+Now open the **www/js/index.js** file and we'll take a deep dive into what is going on. All of the code required to register and receive push notifications is in the `onDeviceReady` function.
 
 ### Initialization
 
