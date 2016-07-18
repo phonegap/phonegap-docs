@@ -35,9 +35,10 @@ Since the PhoneGap Developer App is an open source project, you could also use i
 
 1. Run the `build` command for iOS on the command line in the root of the project:
 
-  ```sh
-  $ cordova build ios
-  ```
+```sh
+$ cordova platform add ios
+$ cordova build ios
+```
 
   <div class='alert--warning'>At this point the build may fail with code signing errors due to provisioning if it did not associate your app id with one of your
   valid provisioning profiles with an error such as below:
