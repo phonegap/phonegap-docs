@@ -43,7 +43,7 @@ As your application may contain files or directories not required in your applic
 special file called `.pgbomit`.
 
 `.pgbomit` is a file that you can create and add to a directory that signifies to PhoneGap Build that it SHOULD NOT
-include the contents of that directory as source for the native applciation. This folder, however, can be
+include the contents of that directory as source for the native application. This folder, however, can be
 used to store any files needed during the PhoneGap Build process **up to the compile step**.
 
 A typical use case is for a directory containing the icons and splashcreens for an app. Place `.pgbomit` in that directory and none of those files/directories will be included in the binary app package, **except** those copied and used for icons and splashscreens for a specific platform.

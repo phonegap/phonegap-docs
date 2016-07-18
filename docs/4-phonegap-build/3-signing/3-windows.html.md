@@ -24,7 +24,7 @@ Go to your [PhoneGap Build Account Settings](https://buildstage.phonegap.com/peo
 
 ### In addition:
 
-1. The `author` field in your `config.xml` must match the Publisher Display Name from *Windows Dev Center -> Account Settings*, i.e:
+1. The `author` field in your `config.xml` is required and must match the Publisher Display Name from *Windows Dev Center -> Account Settings*, i.e:
 
   ```xml
   <author>Adobe Systems Canada Inc</author>
