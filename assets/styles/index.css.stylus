@@ -7,8 +7,12 @@ $code-maxwidth = 700px
 $light-weight = 300
 
 // Main Content
-body::before
-  display none
+body
+  &::before
+    display none
+  &.menu-open
+    overflow hidden
+    max-height 100vh
 main
   .bounds
     display flex
@@ -20,7 +24,10 @@ main
     padding-top 55px
 .content
   margin 0 auto
+  padding-left 0
   background #FFF
+  box-sizing border-box
+  width 100%
   h1,h2,h3,h4,h5,p,li
     max-width $content-maxwidth
   img
@@ -32,6 +39,22 @@ main
     margin-left auto
     margin-right auto
     display block
+  ul, ol, pre
+    max-width $content-maxwidth
+    box-sizing border-box
+  h1
+    font-size 1.9375rem
+    font-weight normal
+  h2
+    font-size 1.5625rem
+  h3
+    font-size 1.5625rem
+  h4
+    font-size 1.125rem
+  h5
+    font-size 1.25rem
+  h6
+    font-size 1rem
 .tabs
   border-bottom 1px solid #A0A0A0
   font-size 1.5rem
@@ -77,8 +100,6 @@ $alert
   @extends $alert
 article.page
   margin-bottom 4rem
-  h2
-    font-size 1.5rem
 .next-step
   display block
   border 2px solid #C4C4C4
@@ -108,59 +129,79 @@ article.page
 .sidebar
   display block
   width 100%
-  margin-right 50px
-  position absolute
-  background #2fa0c3
+  min-width 150px
+  margin-right 30px
+  position fixed
+  background #0092b4
   left 0
-  top 0
+  top 60px
   max-height 45px
+  height 100%
   overflow hidden
-  transition max-height 0.5s ease-in-out, box-shadow 0.5s ease-in-out
+  transition max-height 0.25s ease-in-out, box-shadow 0.25s ease-in-out
   z-index 1
   box-shadow 0 2px 5px rgba(0,0,0,0)
   &.open
-    max-height 400px
+    max-height calc(100vh - 60px)
     box-shadow 0 3px 8px rgba(0,0,0,0.8)
-.sidebar__content
+$navblock
+  display block
   box-sizing border-box
-.sidebar__list
+  padding 10px
+  width 100%
+  &:hover
+    text-decoration none
+.open .sidenav
+  overflow auto
+  -webkit-overflow-scrolling touch
+  max-height calc(100% - 45px)
+.sidenav
   color #003252
-  h1
-    font-size 1.125rem
-    font-weight bold
-    box-sizing border-box
-    padding 0 10px
-  h2
-    font-size 1.125rem
-    margin-bottom .5rem
-    font-weight regular
-    box-sizing border-box
-    padding 0 10px
-    a
-      color #1692b2
-  h3
-    font-size 0.875rem
-    text-transform uppercase
-    box-sizing border-box
-    padding 0 10px
-    a
-      color #003351
   ul
     list-style none
-    // Reduced to help tutorials sidebar page
-    margin 0 0 1rem
+    margin 0
     padding 0
-    a
-      color white
-      display block
-      width 100%
-      box-sizing border-box
-      padding 0 20px
-      &.current
-        background #40aed0
-        border-top 1px solid #018bad
-        border-bottom 1px solid #018bad
-        box-shadow 0 1px 0 #56c0e2
+  &__main, &__sub1
+    color white
+    background #30a1c3
+    @extends $navblock
+    &:hover
+      text-decoration none
+      background #43afd2
+  &__main
+    font-size 1.125rem
+    font-weight bold
+    border-bottom 1px solid #008baf
+  &__sub1
+    font-size 1.125rem
+    text-transform uppercase
+    font-weight normal
+    margin 0
+    border-bottom 1px solid #008baf
+    border-top 1px solid #4dbfe4
+  &__sub2
+    @extends $navblock
+    background #033351
+    padding-left 18px
+    line-height 1rem
+    padding-top 1rem
+    padding-bottom 1rem
+    text-transform uppercase
+    &:hover
+      background #153f5e
+    &.current
+      color #ef5e6f
+  &__sub3
+    @extends $navblock
+    background #033351
+    padding-left 28px
+    line-height 1rem
+    padding-top 1rem
+    padding-bottom 1rem
+    &:hover
+      background #153f5e
+    &.current
+      color #ef5e6f
 .mobile-docs-header
   display block
   height 45px
@@ -177,9 +218,12 @@ article.page
   text-align center
   padding 0 13px
   outline none
+  &:hover
+    color #003351
+    border 1px solid #003351
 .open .mobile-docs-toggle
-  background white
-  color #2fa0c3
+  color #043450
+  border-color #043450
 .video-wrapper
   position relative
   padding-bottom 56.25%
@@ -199,28 +243,58 @@ code, kbd, pre, samp
   border-radius 4px
 .sub-footer__block
   max-width 300px
-  h3
-    font-size 1.125rem
-    text-transform uppercase
-    font-weight normal
-    margin-bottom 5px
+.sub-footer__block__title
+  margin-bottom 0
 .sub-footer__more-link
   font-size .875rem
   text-transform uppercase
+  margin 0
 .sub-footer__blocks
   display block
 .sub-footer__block
   position relative
   margin 0 auto
-@media (min-width: 900px)
-  .sub-footer__blocks
-    display flex
-    justify-content space-between
+.mobile .current
+  background #003351
+.landing-submenu
+  list-style none
+  width 100%
+  display flex
+  flex-wrap wrap
+  margin 34px 0 20px
+  padding 0
+  li
+    display block
+    width 100%
+    position relative
+    padding-right 5%
+  a
+    display block
+    width 100%
+    font-size 1.5rem
+    font-weight bold
+    color #27a1c5
+    border-bottom 3px solid #27a1c5
+    margin-bottom 27px
+    padding-bottom 8px
+    &:hover
+      text-decoration none
+ol.landing-submenu
+  counter-reset step-counter
+  a::before
+    counter-increment step-counter
+    content "Step " counter(step-counter) ":"
+    display block
+    text-transform uppercase
+    font-size .875rem
+    line-height .875rem
+.sub-paragraph
+  color #888888
+  font-size 1.35rem
+  line-height 1.9rem
 @media (min-width: 820px)
   body
     padding-top 180px
-  h2
-    margin 0 0 1.5rem
   main
     .bounds
       display flex
@@ -231,15 +305,18 @@ code, kbd, pre, samp
       padding-top 0
   .content
     margin 0
+    padding-left 20px
+    max-width calc(100% - 210px)
   //Sidebar
   .sidebar
     display block
     width 250px
     margin-right 50px
+    padding-right 10px
     position relative
     background none
-    left none
-    top none
+    left 0
+    top 0
     height auto
     overflow auto
     box-shadow none
@@ -248,41 +325,39 @@ code, kbd, pre, samp
     &.open
       box-shadow none
       max-height none
-  .sidebar__content
-    width 250px
-    border-right 1px solid #CCC
-    padding-right 10px
-    box-sizing border-box
-  .sidebar__list
-    h1
-      font-size 1.125rem
-      font-weight bold
+      border none
+  .sidenav
+    &__main, &__sub1, &__sub2, &__sub3
+      background none
+      padding-left 0
+      &:hover
+        background none
+        text-decoration underline
+      &.current
+        color #ee3551
+    &__main, &__sub1
+      color #1692b2
+      border-top 0
+    &__main
       border-bottom 1px solid #999
-    h2
-      font-size 1.125rem
-      margin-bottom .5rem
-      border-bottom 1px solid #E7E7E7
-      font-weight regular
-      a
-        color #1692b2
-    h3
-      font-size 0.875rem
+    &__sub1
+      border-bottom 0
+      border-top 1px solid #e7e7e7
+    &__sub2
+      color #003351
+      font-size .875rem
       text-transform uppercase
-      a
-        color #003351
-    ul
-      list-style none
-      // Reduced to help tutorials sidebar page
-      margin 0 0 1rem
-      padding 0 0 0 1rem
-      a
-        color #1692b2
-        &.current
-          color #ee3551
-          background transparent
-          border-top none
-          border-bottom none
-          box-shadow none
+      font-weight bold
+      line-height 1rem
+      padding-top 8px
+      padding-bottom 8px
+    &__sub3
+      font-size 1rem
+      color #003351
+      padding-left 10px
+      line-height 1rem
+      padding-top 8px
+      padding-bottom 8px
   .mobile-docs-header
     display none
   .next-step
@@ -310,3 +385,14 @@ code, kbd, pre, samp
       padding-top 50px
       &:hover
         text-decoration none
+  .landing-submenu li
+    width 45%
+@media (min-width: 900px)
+  .sub-footer__blocks
+    display flex
+    justify-content space-between
+@media (min-width: 1020px)
+  .sidebar
+     border-right 1px solid #CCC
+  .content
+    max-width none

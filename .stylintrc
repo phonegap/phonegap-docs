@@ -1,0 +1,12 @@
+{
+    "brackets": {
+        "expect": "never",
+        "error": true
+    },
+    "colons": {
+        "expect": "never",
+        "error": true
+    },
+    "efficient": "always",
+    "namingConvention": "lowercase-hyphen"
+}

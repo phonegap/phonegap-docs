@@ -1,23 +1,84 @@
+script.
+  var url = window.location.href;
+
+  var app = {
+    init: function () {
+      //- console.log("Location " + url + " host " + window.location.host + " hostname " + window.location.hostname);
+      var pathname = window.location.pathname;
+      var urlParts = pathname.substring(1,pathname.length-1).split('/')
+      var classToExpand="";
+      for(var i=0; i<urlParts.length; i++) {
+        if (classToExpand.length>0) 
+            classToExpand = classToExpand+urlParts[i]+"/";
+        else classToExpand = "/"+urlParts[i]+"/";
+        //- console.log("Expand class " + classToExpand);
+        app.expand(classToExpand, true);
+      }
+    },
+    expand: function (cls) {
+      var elems = document.getElementsByClassName(cls);
+      for (var i = 0; i < elems.length; i++) {
+        var obj = elems[i];
+        if (obj.style.display == 'none') {
+          obj.style.display = '';
+        }
+      }
+    },
+  }
+  document.addEventListener('DOMContentLoaded', function (event) {
+    app.init();
+  })
+
 aside.sidebar
-  .sidebar__content
-    .mobile-docs-header
-      button.mobile-docs-toggle Docs Menu
-    nav.sidebar__list
-      h2 Getting Started
-      - var pages = [{title:"Step 1: Install PhoneGap", url:"getting-started/1-install-phonegap/desktop"},{title:"Step 2: Install Mobile App", url:"getting-started/2-install-mobile-app"},{title:"Step 3: Create Your App", url:"getting-started/3-create-your-app/desktop"},{title:"Step 4: Preview Your App", url:"getting-started/4-preview-your-app/desktop"},{title:"Step 5: Going Further", url:"getting-started/5-going-further"}]
-      ul
-        each page in pages
-          li: a(href="/#{page.url}" class=document.url === page.url? "current" : "")!=page.title
-      h2 Tutorials
-      h3 Developer Guides
-      ul
-        li: a(href="/develop/hello-world-explained" class=document.url === 'develop/hello-world-explained'? "current" : "") Hello World Explained
-        li: a(href="/develop/1-embed-webview/ios" class=document.url === 'develop/1-embed-webview/ios'? "current" : "") Embedding the Webview
-        li: a(href="/develop/push-notifications" class=document.url === 'develop/push-notifications'? "current" : "") Push Notifications
-      h2 References
-      ul
-        li: a(href="/references/phonegap-cli" class=document.url === 'references/phonegap-cli' ? "current" : "") PhoneGap CLI
-        li: a(href="/references/desktop-app" class=document.url === 'references/desktop-app'? "current" : "") PhoneGap Desktop
-        li: a(href="/references/developer-app" class=document.url === 'references/developer-app' ? "current" : "") PhoneGap Developer
-        li: a(href="/references/browser-support" class=document.url === 'references/browser-support'? "current" : "") PhoneGap Browser Support
-        li: a(href="/plugin-apis" class=document.url === 'plugin-apis'? "current" : "") Plugin APIs
+  .mobile-docs-header
+    button.mobile-docs-toggle Docs Menu
+  nav.sidenav
+    a.sidenav__main(href="/") Docs Home
+    ul.sidenav__list
+      li
+        a.sidenav__sub1(href="/getting-started" class=document.url === "getting-started"? "current" : "") Getting Started
+        ul.sidenav__sublist
+          each page in getCollection('getStartedDocs').toJSON()
+            - var depth = page.url.match(/\//g||[]).length
+            if (depth==1 || page.tabs!=null && page.tabs[0].url===page.url)
+              li: a.sidenav__sub2(href="/#{page.url}" style="display:none " class="/getting-started/" class=document.url === page.url? "current" : "")!=page.title
+      li
+        a.sidenav__sub1(href="/tutorials" class=document.url === "tutorials"? "current" : "") Tutorials
+        ul.sidenav__sublist
+          - var coll = getCollection("tutorialDocs").findAllLive({url: {$startsWith:"tutorials/develop" }}, [{ relativeBase: 1 }]).toJSON()
+          each page in coll
+            - var depth = page.url.match(/\//g||[]).length 
+            // 2nd level starts expanding (tutorials/develop/... etc)
+            if (depth>1)
+              if (page.tabs==null || page.tabs[0].url===page.url)
+                  li: a.sidenav__sub2(href="/#{page.url}" style="display:none " class="/tutorials/" class=document.url === page.url? "current" : "")!=page.title                      
+      li
+        a.sidenav__sub1(href="/references" class=document.url === "references"? "current" : "") References
+        ul.sidenav__sublist
+          each page in getCollection('referenceDocs').toJSON()
+            - var depth = page.url.match(/\//g||[]).length
+            // 1st level of references are expandable
+            if (depth==1)
+              li: a.sidenav__sub2(href="/#{page.url}" style="display:none "  class="/references/" class=document.url === page.url? "current" : "")!=page.title
+              ul(class="/#{page.url}/" style="display:none") 
+                each doc in getCollection("referenceDocs").findAllLive({url: {$startsWith:page.url }}, [{ relativeBase: 1 }]).toJSON()
+                  - subDepth = doc.url.match(/\//g||[]).length
+                  // Now only want to list depths greater than the main category and need to check for tabs and only use 1st or will duplicate
+                  if (subDepth > 1) 
+                      if (doc.tabs==null || doc.tabs[0].url===doc.url)
+                          li: a.sidenav__sub3(href="/#{doc.url}" style="display:none " class="/#{page.url}/"  class=document.url === doc.url ? "current" : "")!=doc.title                                                                  
+      li
+        a.sidenav__sub1(href="/phonegap-build" class=document.url === "phonegap-build"? "current" : "") PhoneGap Build
+        ul.sidenav__sublist
+          each page in getCollection('pgbDocs').toJSON()
+            - var depth = page.url.match(/\//g||[]).length
+            if (depth==1 || page.tabs!=null && page.tabs[0].url===page.url)
+              li: a.sidenav__sub2(href="/#{page.url}" style="display:none " class="/phonegap-build/" class=document.url === page.url? "current" : "")!=page.title
+              - var coll = getCollection("pgbDocs").findAllLive({url: {$startsWith:page.url }}, [{ relativeBase: 1 }]).toJSON()
+              // Only need to keep going if there's more than one matching since it will need to expand
+              if (coll.length>1)
+                  ul(class="/#{page.url}/" style="display:none") 
+                      each doc in coll
+                          - var subDepth = doc.url.match(/\//g||[]).length
+                          if (subDepth>1)
+                              li: a.sidenav__sub3(href="/#{doc.url}" style="display:none " class="/#{page.url}/" class=document.url === doc.url ? "current" : "")!=doc.title

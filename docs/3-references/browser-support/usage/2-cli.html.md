@@ -1,46 +1,42 @@
 ---
 title: Usage
 url: references/browser-support/usage/cli
-github_url: https://github.com/phonegap/phonegap-docs/blob/master/docs/3-references/browser-support/usage/2-cli.html.md
 layout: subpage
 tabs:
   - label: Desktop App
     url: references/browser-support/usage/desktop
   - label: CLI
     url: references/browser-support/usage/cli
-expand: browser-support
 ---
 
 <div class="alert--warning">You should ensure you have installed the latest version of the PhoneGap CLI by running `$ npm update -g phonegap@latest`</div>
 
 PhoneGap makes it easy to use the browser target by adding it automatically as an additional platform when you `serve` your apps with the [PhoneGap CLI](/references/phonegap-cli/serve/):
 
-    $ phonegap serve
+```sh
+$ phonegap serve
+```
 
-You will see a local IP address in the console output which you can open directly in your browser (or via `http://localhost:<portNumber>`)
-and start debugging.   
+You will see a local IP address in the console output which you can open directly in your browser (or via `http://localhost:<portNumber>`) and start debugging.
 
- ![](/images/browser-support/serve-command.png)
+![](/images/browser-support/serve-command.png)
 
-You can also start making edits to your source code and see the changes immediately in the browser without having to
-restart due to the built-in live reload feature.  
+You can also start making edits to your source code and see the changes immediately in the browser without having to restart due to the built-in live reload feature.
 
- ![](/images/browser-support/live-reload.png)
+![](/images/browser-support/live-reload.png)
 
-<div class="alert--tip">**TIP:** You can pass a port number to use specifically when serving your app using the `--port` parameter.
-For example `$ phonegap serve --port 3002`.</div>
+<div class="alert--tip">**TIP:** You can pass a port number to use specifically when serving your app using the `--port` parameter. For example `$ phonegap serve --port 3002`.</div>
 
-The browser platform support ensures the `deviceready` event is fired in the browser and allows you to use all of the core plugins without
-disrupting your development.
+The browser platform support ensures the `deviceready` event is fired in the browser and allows you to use all of the core plugins without disrupting your development.
 
- ![](/images/browser-support/chrome-debug-deviceready.png)
+![](/images/browser-support/chrome-debug-deviceready.png)
 
-<div class="alert--info">**Note:** Check out the [plugin support section](/references/browser-support/plugin-support) for more details on how
-plugins can be used in the browser.</div>
+<div class="alert--info">**Note:** Check out the [plugin support section](/references/browser-support/plugin-support) for more details on how plugins can be used in the browser.</div>
 
+## No Browser Support Flag
 
-### No Browser Support Flag  
-Of course, using the browser support may not be necessary for all users. If you would like to continue serving applications without
-the browser, you can do so by running
+Of course, using the browser support may not be necessary for all users. If you would like to continue serving applications without the browser, you can do so by running
 
-    $ phonegap serve --no-browser.
+```sh
+$ phonegap serve --no-browser.
+```
