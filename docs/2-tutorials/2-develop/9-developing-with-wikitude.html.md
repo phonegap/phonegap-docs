@@ -44,7 +44,7 @@ app.wikitudePlugin.loadARchitectWorld(function succes(){}, function error(){},
 ```
 ## Examples and Guides
 
-The most comprehensive guide to developing with the Wikitude plugin can be found at [Wikitude's developer guides](http://www.wikitude.com/developer/documentation/phonegap). You may also want to github clone [Wikitude's sample repo](https://github.com/Wikitude/wikitude-cordova-plugin-samples/tree/feature/cordova_file_plugin_support). Just remember that when using `phonegap serve` to serve the `wikitude-cordova-plugin-samples`, you must use `cordova.file.dataDirectory + architectWorld.path` [here](https://github.com/Wikitude/wikitude-cordova-plugin-samples/blob/feature/cordova_file_plugin_support/SampleAppResources/js/index.js#L52).
+The most comprehensive guide to developing with the Wikitude plugin can be found at [Wikitude's developer guides](http://www.wikitude.com/developer/documentation/phonegap). You may also want to github clone [Wikitude's sample repo](https://github.com/Wikitude/wikitude-cordova-plugin-samples). Just remember that when using `phonegap serve` to serve the `wikitude-cordova-plugin-samples`, you must use `cordova.file.dataDirectory + architectWorld.path` [here](https://github.com/Wikitude/wikitude-cordova-plugin-samples/blob/master/SampleAppResources/js/index.js#L65).
 
 To see the PhoneGap Day EU 2016 T-Shirt demo, you may find the [project's repo here.](https://github.com/timkim/phonegap-app-augmented-reality)
 
