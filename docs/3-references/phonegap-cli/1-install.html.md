@@ -43,7 +43,7 @@ Use the PhoneGap CLI to simply `create` and `serve` your PhoneGap apps for the [
 
 Use the PhoneGap CLI to create and configure your apps locally, then build and package them in the [PhoneGap Build](http://build.phonegap.com) cloud service.
 
- <div class="alert--info">**NOTE:** The `remote` command is used from the PhoneGap CLI to interface with PhoneGap Build once your project has been configured. The [Remote Usage Guide](/references/phonegap-cli/remote-usage) provides the details for this command. For details on how to specifically configure your apps for PhoneGap Build. Check out [their docs located here](http://docs.build.phonegap.com/).</div>
+ <div class="alert--info">**NOTE:** The `remote` command is used from the PhoneGap CLI to interface with PhoneGap Build once your project has been configured. The [Remote Usage Guide](/references/phonegap-cli/remote-usage) provides the details for this command. For details on how to specifically configure your apps for PhoneGap Build. Check out [their docs located here](http://docs.phonegap.com/phonegap-build/).</div>
 
 ### 3 - Standalone
 
