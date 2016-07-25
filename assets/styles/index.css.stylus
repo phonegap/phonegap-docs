@@ -300,7 +300,7 @@ ol.landing-submenu
   -webkit-appearance none
   -moz-appearance none
   appearance none
-  padding 6px 30px 6px 15px
+  padding 6px 44px 6px 15px
   border-radius 5px
   color #033450
   border 1px solid #999
