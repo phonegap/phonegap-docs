@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
     sidebar.classList.toggle('open');
     body.classList.toggle('menu-open');
   });
+
+  var languageSelect = Sizzle('#language-select')[0];
+  languageSelect.addEventListener("change", function(e){
+    var currentUrl = window.location.href;
+    var urlArray = currentUrl.replace(/https?:\/\//i, '').split('/');
+    urlArray.shift();
+    var newUrl = e.target.value + urlArray.join('/');
+    window.location = newUrl;
+  });
   /*function resize() {
       if (window.innerWidth>=820 && sidebar.classList.contains('open'))
           sidebar.classList.toggle('open');
