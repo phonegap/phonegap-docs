@@ -61,7 +61,7 @@ The API's read interface includes the following:
 
 <a class="api" href="#_get_https_build_phonegap_com_api_v1_me"><span class="label label-success">GET</span><code>/api/v1/me</code> Get A User's Profile and Resources</a>
 
-<a class="api" href="#_get_https_build_phonegap_com_api_v1_apps"><span class="label label-success">GET</span><code>/api/v1/me</code> Get A User's Apps</a>
+<a class="api" href="#_get_https_build_phonegap_com_api_v1_apps"><span class="label label-success">GET</span><code>/api/v1/apps</code> Get A User's Apps</a>
 
 <a class="api" href="#_get_https_build_phonegap_com_api_v1_apps_id"><span class="label label-success">GET</span><code>/api/v1/apps/:id</code> Get A User's App by Id</a>
 
