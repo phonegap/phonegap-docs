@@ -44,7 +44,7 @@ You can use the **PhoneGap Developer App** paired with the **PhoneGap CLI** to i
 
   <div class="alert--info"> **NOTE:** Tap directly on the server address displayed in the terminal screen of the PhoneGap Developer app to change it to match yours. The value filled in by default is only a sample. </div>
 
-  You should see the connection occur followed by a success message as shown below. If you receive an error of any kind, ensure once again that you are connected to the same network on both your  and computer. You could also check the [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap) list for further help.
+  You should see the connection occur followed by a success message as shown below. If you receive an error of any kind, ensure once again that you are connected to the same network on both your device and your computer. You could also check the [issue tracker](https://github.com/phonegap/phonegap-app-developer/issues) and [PhoneGap Google Groups](https://groups.google.com/forum/#!forum/phonegap) list for further help.
 
   <img class="mobile-image" src="/images/dev-app-success.jpg" alt="Developer App, connection success"/>
 
