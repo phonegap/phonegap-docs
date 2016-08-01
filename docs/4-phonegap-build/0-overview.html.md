@@ -12,7 +12,7 @@ Adobe PhoneGap provides a way for users to create mobile applications using tech
 
 ### Managed Compilation and Signing (No SDKs)
 
-Local development involves installing and maintaining multiple native SDKs as well as the Cordova/PhoneGap SDK. PhoneGap Build takes this headache away! Get app-store ready apps without the headache of maintaining native SDKs. PhoneGap Build will always be build against the required SDK for the platform you are targeting.
+Local development involves installing and maintaining multiple native SDKs as well as the Cordova/PhoneGap SDK. PhoneGap Build takes this headache away! Get app-store ready apps without the headache of maintaining native SDKs. PhoneGap Build will always build against the required SDK for the platform you are targeting.
 
 ### Multiple Supported Platforms
 
