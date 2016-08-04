@@ -1,6 +1,6 @@
 ---
 title: Weinre
-url: phonegap-build/debugging/weinre
+url: phonegap-build/tools/weinre
 layout: subpage
 ---
 
