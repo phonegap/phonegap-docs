@@ -71,8 +71,6 @@ The API's write interface includes the following:
 
 <a class="api primary" href="#_put_https_build_phonegap_com_api_v1_apps_id"><span>PUT</span><code>/api/v1/apps/:id</code> Update an Existing App</a>
 
-<a class="api info" href="#_post_https_build_phonegap_com_api_v1_apps_id_icon"><span>POST</span><code>/api/v1/apps/:id/icon</code> Update an Existing App's Icon</a>
-
 <a class="api info" href="#_post_https_build_phonegap_com_api_v1_apps_id_build"><span>POST</span><code>/api/v1/apps/:id/build</code> Start a Build For a Specific App</a>
 
 <a class="api info" href="#_post_https_build_phonegap_com_api_v1_apps_id_build_platform"><span>POST</span><code>/api/v1/apps/:id/build/:platform</code> Start a Build for an App for a Specific Platform</a>
@@ -480,20 +478,6 @@ $ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"pull":"true"}' https://build
 ```
 
 PhoneGap Build then tries to download the new code from your remote repository, and rebuilds your app for all supported platforms.
-
-<a class="anchor" id="_post_https_build_phonegap_com_api_v1_apps_id_icon"></a>
-
-## `POST https://build.phonegap.com/api/v1/apps/:id/icon`
-
-Sets an icon file for a given app. Send a `png` file as your post's `icon` parameter.
-
-If you want different icons for different resolutions, you should _not_ use this API method. Instead, include the different icon files in your application package and specify their use in your `config.xml` file, as detailed in the Configuration Reference.
-
-The response has a `201` created status, and the application is queued for building:
-
-```sh
-$ curl -u andrew.lunny@nitobi.com -f icon=@icon.png https://build.phonegap.com/api/v1/apps/8/icon
-```
 
 <a class="anchor" id="_post_https_build_phonegap_com_api_v1_apps_id_build"></a>
 
