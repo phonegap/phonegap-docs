@@ -1,6 +1,6 @@
 ---
 title: Debugging
-url: phonegap-build/debugging
+url: phonegap-build/tools/debugging
 layout: subpage
 ---
 
@@ -9,7 +9,7 @@ PhoneGap is an embedded webview, and both Android and iOS provide tools for debu
 - [**iOS**: Safari Web Inspector](#safari-web-inspector)
 - [**Android**: Chrome Developer Tools](#chrome-developer-tools)
 - [**Windows Phone**: Visual Studio Web Debugging Tools](#visual-studio-debug-tools)
-- [Weinre Remote Debugger](weinre)
+- [Weinre Remote Debugger](/phonegap-build/tools/weinre)
 - [Debugging Crashes and Native Exceptions](#crashes-and-native-exceptions)
 
 ## Safari Web Inspector

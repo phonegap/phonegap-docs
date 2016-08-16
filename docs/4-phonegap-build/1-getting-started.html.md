@@ -10,9 +10,7 @@ expand: build
 1. [How Do I Structure My Application?](#structure_application)
 1. [Where can I Get Help?](#help)
 
-<a class="anchor" id="what_do_i_upload"></a>
-
-## 1. What Do I Upload?
+## 1. What Do I Upload?<a class="anchor" id="what_do_i_upload"></a>
 
 ### Preparing the Assets
 
@@ -26,15 +24,11 @@ PhoneGap Build will inject `phonegap.js`, `cordova.js` (identical sources), and 
 
 For maximum sizes of zip uploads, see the <a href="https://build.phonegap.com/plans">plans page</a>.
 
-<a class="anchor" id="configure_application"></a>
-
-## 2. How Do I Configure My Application?
+## 2. How Do I Configure My Application?<a class="anchor" id="configure_application"></a>
 
 You'll need an application configuration file, or `config.xml`, in your app package to configure how your app is built. This includes PhoneGap version, icons and splash screens, platforms, and much more. See the [configuration section](../configuring/) for more on the config.xml file.
 
-<a class="anchor" id="structure_application"></a>
-
-## 3. How Do I Structure My Application?
+## 3. How Do I Structure My Application?<a class="anchor" id="structure_application"></a>
 
 PhoneGap Build's only requirement for your application structure is that the `config.xml` and `index.html` is in the top level of your application.  Other than that
 you can structure your application as dictated by your workflows.
@@ -50,9 +44,7 @@ A typical use case is for a directory containing the icons and splashcreens for 
 
 Please note that the `.pgbomit` file is a placeholder file only, it is not read and its only function is to highlight a directory.  It is *not* like .gitignore or other file types that can contain patterns.
 
-<a class="anchor" id="help"></a>
-
-## 4. Where can I get help?
+## 4. Where can I get help?<a class="anchor" id="help"></a>
 
 Please search all communication channels prior to posting questions to help us reduce repetition and keep the forums useful and efficient! Here's some channels:
 

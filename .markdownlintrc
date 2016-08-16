@@ -1,6 +1,8 @@
 {
   "frontMatter": true,
-  "MD002": false,
+  "MD002": {
+    "level": 2
+  },
   "MD006": false,
   "MD013": false,
   "MD014": false,
