@@ -337,17 +337,9 @@ $ curl -u andrew.lunny@nitobi.com -d 'data={"title":"Signing Keys","repo":"https
 
 ## `PUT https://build.phonegap.com/api/v1/apps/:id`
 
-Update an existing app, either its contents, its metadata, or both. The response is a JSON representation of the app, the same as for `GET /api/v1/apps/:id`.
+Update an existing app, either its contents, its build settings, or both. The response is a JSON representation of the app, the same as for `GET /api/v1/apps/:id`.
 
-Updating the metadata involves sending a JSON object as the parameter `data`. Available options in this JSON object are:
-
-* __title__: the title of your application.
-
-* __package__: the app's package identifier, such as `com.phonegap.www`.
-
-* __version__: the app's version, such as `0.0.1`.
-
-* __description__: the app's description.
+App metadata like title, description and version should be updated via the [config.xml file](/phonegap-build/configuring/). Updating the build settings involves sending a JSON object as the parameter `data`. Available options in this JSON object are:
 
 * __debug__: whether to build your app in debug mode, as detailed in Remote Debugging Tools.
 
@@ -356,8 +348,6 @@ Updating the metadata involves sending a JSON object as the parameter `data`. Av
 * __share__: whether the private app can be publicly viewed.
 
 * __tag__: which branch or tag to clone from the git repository.
-
-* __phonegap_version__: which release of PhoneGap your app uses.
 
 Here is a simple example that update an app's version number:
 
