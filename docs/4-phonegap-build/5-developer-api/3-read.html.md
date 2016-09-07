@@ -172,12 +172,17 @@ $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps
             "private":true,
             "link":"/api/v1/apps/1",
             "build_count":4,
-            "phonegap_version":"3.5.0",
+            "phonegap_version":"cli-6.3.0",
             "hydrates":false,
             "status":{
                 "android":"complete",
                 "ios":null,
                 "winphone":"pending"
+            },
+            "phonegap_versions":{
+                "android":"5.2.1",
+                "ios":"4.2.0",
+                "winphone":"4.4.1"
             },
             "download":{
                 "android":"/api/v1/apps/1/android",
@@ -202,11 +207,17 @@ $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps
             "private":true,
             "share":true,
             "link":"/api/v1/apps/2",
+            "phonegap_version":"cli-6.3.0",
             "build_count":12,
             "status": {
                 "android":"complete",
                 "ios":"complete",
                 "winphone":"complete"
+            },
+            "phonegap_versions":{
+                "android":"5.2.1",
+                "ios":"4.2.0",
+                "winphone":"4.4.1"
             },
             "download":{
                 "android":"/api/v1/apps/1/android",
@@ -251,12 +262,18 @@ $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2
     "private":true,
     "share":false,
     "link":"/api/v1/apps/2",
+    "phonegap_version":"cli-6.3.0",
     "last_build":"2014-12-03 13:52:10 -0800",
     "build_count":12,
     "status": {
         "android":"complete",
         "ios":"complete",
         "winphone":"complete"
+    },
+    "phonegap_versions":{
+        "android":"5.2.1",
+        "ios":"4.2.0",
+        "winphone":"4.4.1"
     },
     "download":{
         "android":"/api/v1/apps/1/android",
