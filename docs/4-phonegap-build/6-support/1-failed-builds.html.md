@@ -16,7 +16,7 @@ This usually means something has gone wrong on our end. Please [contact us](http
 
 PhoneGap Build, and PhoneGap/Cordova apps in general, require a file named `index.html` in your app. This is used as the starting point where your app will initialize.
 
-Please ensure that you have an `index.html` in the root of your app, and your build should go through correctly.
+Please ensure that you have an `index.html` in your application.
 
 <a name="phonegap_unsupported"></a>
 

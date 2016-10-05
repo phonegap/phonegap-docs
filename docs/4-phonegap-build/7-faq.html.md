@@ -33,7 +33,7 @@ PhoneGap is a mobile application development framework, based upon the open sour
 
 ## How do I get started with PhoneGap Build?
 
-Simply upload your web assets - a ZIP file of HTML, CSS and JavaScript, or a single index.html file - to PhoneGap Build, point us to your Git or SVN repository. Then we’ll undertake the compilation and packaging for you. In minutes, you’ll receive the download URLs for all mobile platforms.
+Simply upload your web assets - a ZIP file of HTML, CSS and JavaScript, or a single index.html file - to PhoneGap Build, point us to your Git or SVN repository. Then we'll undertake the compilation and packaging for you. In minutes, you'll receive the download URLs for all mobile platforms.
 
 <a name="what-to-install" class="anchor"></a>
 
@@ -45,7 +45,7 @@ No!
 
 ## What about developer accounts and SDKs? Do I need to set those up before starting with PhoneGap Build?
 
-No! But you might want to install some of the SDK emulators if you don’t own a particular device that you want to test a build for.
+No! But you might want to install some of the SDK emulators if you don't own a particular device that you want to test a build for.
 
 <a name="submitting" class="anchor"></a>
 

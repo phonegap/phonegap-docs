@@ -41,7 +41,7 @@ The default icon must be named `icon.png` and must reside in the root of your ap
   <icon src="res/icon/ios/icon-60@3x.png" platform="ios" width="180" height="180" />
 ```
 
-- **src**: (required) specifies the location of the image file, relative to your `www` directory
+- **src**: (required) specifies the location of the image file relative to your config.xml
 - **width**: (optional) but recommended to include, width in pixels
 - **height**: (optional) but recommended to include, height in pixels
 - **platform**: (optional) the target platform (`ios`, `android`, or `windows`)
