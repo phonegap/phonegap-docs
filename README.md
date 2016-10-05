@@ -84,3 +84,5 @@ When referencing a file, you should reference `path/to/file` instead of
 `path/to/file.html`. Referencing the HTML document will generate the error above.
 
 # be sure to lint by running npm lint which doesnt work
+
+# this runs through circle-ci so go there if it doesnt work.  whats the link? dunno.
