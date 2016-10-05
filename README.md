@@ -14,6 +14,11 @@ npm install
 npm start
 ```
 
+## running markdownlint
+
+you just run it
+
+
 This will start a local server in development mode. The server will generate
 all of the documentation to `/out` and watch for file changes. When a file is
 changed, BrowserSync will regenerate the file and refresh your browser.
