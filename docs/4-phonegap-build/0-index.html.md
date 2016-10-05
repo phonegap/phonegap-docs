@@ -8,7 +8,7 @@ layout: subpage
 
 <ul class="landing-submenu">
   <li>[Overview](overview)</li>
-  <li>[Getting Started](start)</li>
+  <li>[Getting Started](getting-started)</li>
   <li>[Configuring](configuring)</li>
   <li>[Tools](tools)</li>
   <li>[Signing](signing/ios)</li>
