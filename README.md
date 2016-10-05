@@ -82,3 +82,5 @@ continues to exist but will redirect to `file/index.html`.
 
 When referencing a file, you should reference `path/to/file` instead of
 `path/to/file.html`. Referencing the HTML document will generate the error above.
+
+# be sure to lint by running npm lint which doesnt work
