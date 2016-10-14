@@ -27,6 +27,7 @@ If you want to see more detail about what exactly these custom preferences are d
 
 ## Android Only
 
+- [android-versionCode](#android-versionCode)
 - [android-build-tool](#android-build-tool)
 - [android-minSdkVersion](#android-minSdkVersion)
 - [android-maxSdkVersion](#android-maxSdkVersion)
@@ -74,9 +75,12 @@ And use detect-data-types if meta tags don't work for you.</div>
 
 ## Android Only
 
-<div class='alert--warning' id="android-build-tool">**android-build-tool**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android 4.0, 4.0.1, 4.0.2).</div>
+<div class='alert--warning' id="android-versionCode">**android-versionCode**: Internal Android Version Code. Sets the [version code](https://developer.android.com/studio/publish/versioning.html) for the application. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions.
+Default is generated from version as MAJOR \* 10000 + MINOR \* 100 + PATCH, or 1 if version cannot be parsed.</div>
 
-<div class='alert--warning' id="android-minSdkVersion">**android-minSdkVersion**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android 4.0, 4.0.1, 4.0.2).</div>
+<div class='alert--warning' id="android-build-tool">**android-build-tool**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android >= 4.0).</div>
+
+<div class='alert--warning' id="android-minSdkVersion">**android-minSdkVersion**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android >= 4.0).</div>
 
 <div class='alert--warning' id="android-maxSdkVersion">**android-maxSdkVersion**: Maximum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Unset by default.</div>
 
