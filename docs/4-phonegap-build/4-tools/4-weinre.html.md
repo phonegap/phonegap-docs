@@ -121,7 +121,7 @@ Obtain the ip address of your machine running Weinre. This can be done on Window
 Now include a reference to the Weinre debug script on your debug server, like so:
 
 ```html
-<script type="text/javascript" src=http://my.server.ip/target/target-script-min.js#some_unique_key"></script>
+<script type="text/javascript" src="http://my.server.ip/target/target-script-min.js#some_unique_key"></script>
 ```
 
 <div class="alert-info">Make sure your remove this before publishing your app!</div>
