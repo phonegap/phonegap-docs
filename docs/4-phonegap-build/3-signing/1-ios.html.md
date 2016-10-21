@@ -27,7 +27,7 @@ tabs:
 
 You'll first need to obtain an Apple Developer Certificate. See apple documenation for this.
 
-Next you'll export it to the P12 keystore format. To do this on Mac® OS:
+Next you'll export it to the P12 keystore format. To do this on Mac&reg; OS:
 
 1. Open the Keychain Access application (in the Applications/Utilities folder).
 1. If you have not already added the certificate to Keychain, select File > Import. Then navigate to the certificate file (the .cer file) you obtained from Apple.
