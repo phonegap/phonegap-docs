@@ -36,18 +36,20 @@ Since the PhoneGap Developer App is an open source project, you could also use i
 1. Run the `build` command for iOS on the command line in the root of the project:
 
   ```sh
+  $ cordova platform add ios
   $ cordova build ios
   ```
 
-  <div class='alert--warning'>At this point the build may fail with code signing errors due to provisioning if it did not associate your app id with one of your
-  valid provisioning profiles with an error such as below:
+  <div class='alert--warning'>
+    <p>At this point the build may fail with code signing errors due to provisioning if it did not associate your app id with one of your valid provisioning profiles with an error such as below:</p>
 
-      Check dependencies
-      Code Sign error: No matching provisioning profile found: Your build settings specify a provisioning profile with the UUID “<some-uuid>”, however, no such provisioning profile was found.
-      CodeSign error: code signing is required for product type 'Application' in SDK 'iOS 8.4' BUILD FAILED
+    <pre class="highlight"><code class="hljs sh">Check dependencies
+    Code Sign error: No matching provisioning profile found: Your build settings specify a provisioning profile with the UUID &lt;some-uuid&gt;, however, no such provisioning profile was found.</pre></code>
 
-  The easiest way to fix this issue is to open the **PhoneGap.xcodeproj** file in the `platforms/ios` subfolder with Xcode and build/run it there.
-  You will be prompted to fix it using your Apple Developer account settings.</div>
+    <pre class="highlight"><code class="hljs sh">CodeSign error: code signing is required for product type 'Application' in SDK 'iOS 8.4' BUILD FAILED</pre></code>
+
+    <p>The easiest way to fix this issue is to open the **PhoneGap.xcodeproj** file in the `platforms/ios` subfolder with Xcode and build/run it there. You will be prompted to fix it using your Apple Developer account settings.</p>
+  </div>
 
 1. Run the app on your mobile device:
 

@@ -61,11 +61,9 @@ The API's read interface includes the following:
 
 <a class="api" href="#_get_https_build_phonegap_com_api_v1_me"><span class="label label-success">GET</span><code>/api/v1/me</code> Get A User's Profile and Resources</a>
 
-<a class="api" href="#_get_https_build_phonegap_com_api_v1_apps"><span class="label label-success">GET</span><code>/api/v1/me</code> Get A User's Apps</a>
+<a class="api" href="#_get_https_build_phonegap_com_api_v1_apps"><span class="label label-success">GET</span><code>/api/v1/apps</code> Get A User's Apps</a>
 
 <a class="api" href="#_get_https_build_phonegap_com_api_v1_apps_id"><span class="label label-success">GET</span><code>/api/v1/apps/:id</code> Get A User's App by Id</a>
-
-<a class="api" href="#_get_https_build_phonegap_com_api_v1_apps_id_icon"><span class="label label-success">GET</span><code>/api/v1/apps/:id/icon</code> Get A User's App's main Icon</a>
 
 <a class="api" href="#_get_https_build_phonegap_com_api_v1_apps_id_platform"><span class="label label-success">GET</span><code>/api/v1/apps/:id/:platform</code> Download A User's App by Platform</a>
 
@@ -174,12 +172,17 @@ $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps
             "private":true,
             "link":"/api/v1/apps/1",
             "build_count":4,
-            "phonegap_version":"3.5.0",
+            "phonegap_version":"cli-6.3.0",
             "hydrates":false,
             "status":{
                 "android":"complete",
                 "ios":null,
                 "winphone":"pending"
+            },
+            "phonegap_versions":{
+                "android":"5.2.1",
+                "ios":"4.2.0",
+                "winphone":"4.4.1"
             },
             "download":{
                 "android":"/api/v1/apps/1/android",
@@ -204,11 +207,17 @@ $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps
             "private":true,
             "share":true,
             "link":"/api/v1/apps/2",
+            "phonegap_version":"cli-6.3.0",
             "build_count":12,
             "status": {
                 "android":"complete",
                 "ios":"complete",
                 "winphone":"complete"
+            },
+            "phonegap_versions":{
+                "android":"5.2.1",
+                "ios":"4.2.0",
+                "winphone":"4.4.1"
             },
             "download":{
                 "android":"/api/v1/apps/1/android",
@@ -253,12 +262,18 @@ $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2
     "private":true,
     "share":false,
     "link":"/api/v1/apps/2",
+    "phonegap_version":"cli-6.3.0",
     "last_build":"2014-12-03 13:52:10 -0800",
     "build_count":12,
     "status": {
         "android":"complete",
         "ios":"complete",
         "winphone":"complete"
+    },
+    "phonegap_versions":{
+        "android":"5.2.1",
+        "ios":"4.2.0",
+        "winphone":"4.4.1"
     },
     "download":{
         "android":"/api/v1/apps/1/android",
@@ -305,42 +320,6 @@ message returns with status code `404`:
 $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/520394
 {
     "error":"app #54 not available"
-}
-```
-
-<a class="anchor" id="_get_https_build_phonegap_com_api_v1_apps_id_icon"></a>
-
-## `GET https://build.phonegap.com/api/v1/apps/:id/icon`
-
-Get the main icon associated with an app, either the biggest icon
-specified in your `config.xml` file, or an icon you have uploaded
-through the API or the PhoneGap Build web interface.
-
-If successful, this API call returns a `302` redirect to the icon
-file, and the body of the response references the URL for the file:
-
-```sh
-$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2/icon
-{
-    "location":""http://s3.amazonaws.com/build.phonegap.com/some-long-guid/icon.png"
-}
-```
-
-If your API client can follow redirects, you can save the response as
-a `png` file. This example uses curl's `-L` option:
-
-```sh
-  $ curl -Lu andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/apps/2/icon > ~/my-icon.png
-```
-
-If no icon ais vailable, an error message returns with status code
-404:
-
-```sh
-$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v0/apps/52/icon
-
-{
-    "error":"No icon available for app #52"
 }
 ```
 

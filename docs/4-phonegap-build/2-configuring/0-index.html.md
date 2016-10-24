@@ -6,7 +6,7 @@ layout: subpage
 
 PhoneGap and PhoneGap Build are built upon the Apache Cordova Project. Spend some time at [docs.cordova.io](http://docs.cordova.io) to get more familiar with how PhoneGap and Cordova applications are configured.
 
-At the root, PhoneGap applications are configured using a `config.xml` file at the root of your application (at the same level as your main `index.html` file).
+PhoneGap applications are configured using a `config.xml` file. This should be at the root of your application.
 
 The `config.xml` file follows the [W3C widget specification](http://www.w3.org/TR/widgets/). It allows developers to easily specify metadata about their applications. You can see a sample `config.xml` with our [PhoneGap Start](https://github.com/phonegap/phonegap-start/blob/master/www/config.xml) application.
 

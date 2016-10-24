@@ -11,6 +11,7 @@ task :test do
     :cache => {
       :timeframe => '1d'
     },
+    :timeout => 10,
     :typhoeus => {
       :followlocation => true,
       :ssl_verifypeer => false,

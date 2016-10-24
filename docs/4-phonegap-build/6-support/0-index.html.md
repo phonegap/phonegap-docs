@@ -9,7 +9,6 @@ Have a problem or question about PhoneGap Build? There are numerous support chan
 
 - [PhoneGap Build Service Support](#phonegap-build-service-support)
 - [PhoneGap App Development Support](#phonegap-app-development-support)
-- [Other Resources](#other-resources)
 
 ## PhoneGap Build Service Support
 
@@ -29,10 +28,6 @@ If you're having trouble with PhoneGap Development and coding:
 - [Stackoverflow.com](http://stackoverflow.com): Always a great resource for PhoneGap coding issues!
 - If you're having trouble with a **third party plugin**, try to contact the plugin developers directly.
 - If you think you're facing a bug with the PhoneGap / Cordova framework or a core Cordova Plugin, check out the [Apache Cordova Jira](https://cordova.apache.org/contribute/issues.html). Please search before logging a bug.
-
-## Other Resources
-
 - [PhoneGap Google Group](https://groups.google.com/forum/#!forum/phonegap)
-- [Old PhoneGap Build Community Forum](http://community.phonegap.com)
 
-Feedback welcome!
+Otherwise, hit us us up on the [PhoneGap Build Community Forum](https://forums.adobe.com/community/phonegap/build)!

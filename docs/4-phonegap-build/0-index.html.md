@@ -8,10 +8,11 @@ layout: subpage
 
 <ul class="landing-submenu">
   <li>[Overview](overview)</li>
-  <li>[Getting Started](start)</li>
+  <li>[Getting Started](getting-started)</li>
   <li>[Configuring](configuring)</li>
-  <li>[Debugging](debugging)</li>
+  <li>[Tools](tools)</li>
   <li>[Signing](signing/ios)</li>
   <li>[Developer API](developer-api)</li>
   <li>[Support](support)</li>
+  <li>[FAQ](faq)</li>
 </ul>

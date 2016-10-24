@@ -2,11 +2,6 @@
 
 > Available for your viewing pleasure at [docs.phonegap.com](http://docs.phonegap.com/).
 
-## Under Development
-
-This repository is currently undergoing a major update. At the moment, it is
-not published live to docs.phonegap.com. In the future it will be!
-
 ## Installation
 
 ```bash
@@ -23,9 +18,27 @@ This will start a local server in development mode. The server will generate
 all of the documentation to `/out` and watch for file changes. When a file is
 changed, BrowserSync will regenerate the file and refresh your browser.
 
+## Running markdownlint
+
+Running markdownlint will return a list of syntax errors that should be fixed before deplying it.
+
+```bash
+npm run lint
+```
+
+## Named Anchors
+
+If you want to use in-page navigation you should use named anchors, and not the `id` property of html elements.
+
+```markdown
+* [A link to a different place in the page](#different-place)
+
+<a name="different-place" class="anchor"></a>
+```
+
 ## Directory Structure
 
-```
+```sh
 \
  phonegap-docs/
  |
@@ -48,11 +61,11 @@ changed, BrowserSync will regenerate the file and refresh your browser.
 
 ### Production
 
-Each commit to the `master` branch is deployed to http://docs.phonegap.com.
+Each commit to the `master` branch is deployed to [docs.phonegap.com](http://docs.phonegap.com).
 
 ### Staging
 
-Each commit to the `stage` branch is deployed to http://stage.docs.phonegap.com.
+Each commit to the `stage` branch is deployed to [stage.docs.phonegap.com](http://stage.docs.phonegap.com).
 
 Commits to `master` do _not_ need to be staged. Staging is intended to test
 work that may cause issues in production, in particle design focused changes.

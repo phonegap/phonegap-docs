@@ -17,7 +17,7 @@
   "devDependencies": {
     "fs-extra": "0.18.0",
     "jasmine-node": "1.14.5",
-    "markdownlint-cli": "^0.1.0",
+    "markdownlint-cli": "^0.2.0",
     "npm": "2.7.6"
   },
   "main": "node_modules/docpad/bin/docpad-server",

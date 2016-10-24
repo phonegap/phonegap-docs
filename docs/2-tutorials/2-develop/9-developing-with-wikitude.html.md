@@ -16,13 +16,16 @@ See the demo in action on our PhoneGap Day EU 2016 T-Shirts!
 </div>
 
 ## Running from Hosted Template
+
 You can test the above demo by downloading and launching the PhoneGap Developer App (v1.7.0 and higher - Windows Phone not supported). Then use this address: `ar.phonegap.com` in the url section of the PhoneGap Developer App.
 
   <img class="mobile-image" src="/images/dev-app-wikitude.jpg" alt="PhoneGap Developer App and Wikitude"/>
 
 ## Running from Local Template
+
 Instead of running from `ar.phonegap.com` you can create your own augmented reality PhoneGap project by using the command:
-```
+
+```sh
 $ phonegap create myApp --template wikitude-augmented-reality
 $ cd myApp
 $ phonegap serve
@@ -42,9 +45,10 @@ app.wikitudePlugin.loadARchitectWorld(function succes(){}, function error(){},
     architectWorld.startupConfiguration
 );
 ```
+
 ## Examples and Guides
 
-The most comprehensive guide to developing with the Wikitude plugin can be found at [Wikitude's developer guides](http://www.wikitude.com/developer/documentation/phonegap). You may also want to github clone [Wikitude's sample repo](https://github.com/Wikitude/wikitude-cordova-plugin-samples/tree/feature/cordova_file_plugin_support). Just remember that when using `phonegap serve` to serve the `wikitude-cordova-plugin-samples`, you must use `cordova.file.dataDirectory + architectWorld.path` [here](https://github.com/Wikitude/wikitude-cordova-plugin-samples/blob/feature/cordova_file_plugin_support/SampleAppResources/js/index.js#L52).
+The most comprehensive guide to developing with the Wikitude plugin can be found at [Wikitude's developer guides](http://www.wikitude.com/developer/documentation/phonegap). You may also want to github clone [Wikitude's sample repo](https://github.com/Wikitude/wikitude-cordova-plugin-samples). Just remember that when using `phonegap serve` to serve the `wikitude-cordova-plugin-samples`, you must use `cordova.file.dataDirectory + architectWorld.path` [here](https://github.com/Wikitude/wikitude-cordova-plugin-samples/blob/master/SampleAppResources/js/index.js#L65).
 
 To see the PhoneGap Day EU 2016 T-Shirt demo, you may find the [project's repo here.](https://github.com/timkim/phonegap-app-augmented-reality)
 

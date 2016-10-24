@@ -41,7 +41,7 @@ The default icon must be named `icon.png` and must reside in the root of your ap
   <icon src="res/icon/ios/icon-60@3x.png" platform="ios" width="180" height="180" />
 ```
 
-- **src**: (required) specifies the location of the image file, relative to your `www` directory
+- **src**: (required) specifies the location of the image file relative to your config.xml
 - **width**: (optional) but recommended to include, width in pixels
 - **height**: (optional) but recommended to include, height in pixels
 - **platform**: (optional) the target platform (`ios`, `android`, or `windows`)
@@ -124,14 +124,19 @@ We support two icons for Windows Phone, a regular icon and a tile image.
 As of PhoneGap Release cli-6.0.0, the Windows Phone 8.1 package is built using cordova-windows. Here are the supported icons:
 
 ```xml
-<icon platform="winphone" width="44" height="44" src="res/Square44x44Logo.scale-100.png" />
+<icon platform="winphone" width="44"  height="44"  src="res/Square44x44Logo.scale-100.png" />
 <icon platform="winphone" width="106" height="106" src="res/Square44x44Logo.scale-240.png" />
 <icon platform="winphone" width="150" height="150" src="res/Square150x150Logo.scale-100.png" />
 <icon platform="winphone" width="360" height="360" src="res/Square150x150Logo.scale-240.png" />
-<icon platform="winphone" width="71" height="71" src="res/Square71x71Logo.scale-100.png" />
+<icon platform="winphone" width="71"  height="71"  src="res/Square71x71Logo.scale-100.png" />
 <icon platform="winphone" width="170" height="170" src="res/Square71x71Logo.scale-240.png" />
 <icon platform="winphone" width="310" height="150" src="res/Wide310x150Logo.scale-100.png" />
 <icon platform="winphone" width="744" height="360" src="res/Wide310x150Logo.scale-240.png" />
+<icon platform="winphone" width="70"  height="70"  src="res/Square70x70Logo.scale-100.png" />
+<icon platform="winphone" width="30"  height="30"  src="res/Square30x30Logo.scale-100.png" />
+<icon platform="winphone" width="310" height="310" src="res/Square310x310Logo.scale-100.png" />
+<icon platform="winphone" width="50"  height="50"  src="res/StoreLogo.scale-100.png" />
+<icon platform="winphone" width="120" height="120" src="res/StoreLogo.scale-240.png" />
 ```
 
 <a name="splashes"></a>
@@ -223,5 +228,6 @@ Windows Phone supports a single splash image and can be defined as below. Unlike
 Windows Phone 8.1 supports a single png splash as defined here
 
 ```xml
-<splash platform="winphone" width="1152" height="1920" src="www/res/SplashScreenPhone.scale-240.png" />
+<splash platform="winphone" width="1152" height="1920" src="res/SplashScreenPhone.scale-240.png" />
+<splash platform="winphone" width="620"  height="300"  src="res/SplashScreen.scale-100.png" />
 ```

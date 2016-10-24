@@ -20,7 +20,7 @@ module.exports = {
     "githuburl": function(slug){
       var reposlug = (process.env.TRAVIS_REPO_SLUG)? process.env.TRAVIS_REPO_SLUG : "phonegap/phonegap-docs";
       var gitbranch = (process.env.TRAVIS_BRANCH)? process.env.TRAVIS_BRANCH : "master";
-      gitbranch = (process.env.CI_BRANCH)? process.env.CI_BRANCH : "master";
+      gitbranch = (process.env.CI_BRANCH)? process.env.CI_BRANCH : gitbranch;
       return "https://github.com/"+ reposlug +"/blob/"+ gitbranch +"/docs/"+slug;
     }
   },

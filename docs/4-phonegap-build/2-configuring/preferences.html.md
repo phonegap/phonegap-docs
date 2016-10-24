@@ -27,6 +27,7 @@ If you want to see more detail about what exactly these custom preferences are d
 
 ## Android Only
 
+- [android-versionCode](#android-versionCode)
 - [android-build-tool](#android-build-tool)
 - [android-minSdkVersion](#android-minSdkVersion)
 - [android-maxSdkVersion](#android-maxSdkVersion)
@@ -46,20 +47,26 @@ If you want to see more detail about what exactly these custom preferences are d
 
 ## Multi-Platform
 
-<div class='alert--warning' id="phonegap-version">**phonegap-version**: The version of PhoneGap / Cordova used. For a list of currently supported PhoneGap versions, and a breakdown of the individual platform versions, [go here](https://build.phonegap.com/current-support).</div>
+<a name="phonegap-version" class="anchor"></a>
+<div class='alert--warning'>**phonegap-version**: The version of PhoneGap / Cordova used. For a list of currently supported PhoneGap versions, and a breakdown of the individual platform versions, [go here](https://build.phonegap.com/current-support).</div>
 
-<div class='alert--warning' id="orientation">**orientation**: Device orientation; possible values are <code>default, landscape, or portrait</code>. Please note that <code>default</code> means <b>both</b> landscape and portrait are enabled. If you want to use each platform's default settings (usually portrait only), remove this tag from your config.xml file.</div>
+<a name="orientation" class="anchor"></a>
+<div class='alert--warning'>**orientation**: Device orientation; possible values are <code>default, landscape, or portrait</code>. Please note that <code>default</code> means <b>both</b> landscape and portrait are enabled. If you want to use each platform's default settings (usually portrait only), remove this tag from your config.xml file.</div>
 
-<div class='alert--warning' id="fullscreen">**fullscreen**: Makes your app full screen, with values <code>true or false</code>. This hides the status bar at the top, and is false by default. Note: may not be supported by newer versions of iOS, but users can use
+<a name="fullscreen" class="anchor"></a>
+<div class='alert--warning'>**fullscreen**: Makes your app full screen, with values <code>true or false</code>. This hides the status bar at the top, and is false by default. Note: may not be supported by newer versions of iOS, but users can use
 the [config-file element on phonegap build](http://phonegap.com/blog/2014/01/30/customizing-your-android-manifest-and-ios-property-list-on-phonegap-build/), and set UIViewControllerBasedStatusBarAppearance to false and UIStatusBarHidden to true.</div>
 
 ## iOS Only
 
+<a name="phonegap" class="anchor"></a>
 <div class='alert--warning' id="target-device">**target-device**: For targeting a specific device; possible values are <code>handset, tablet, or universal</code>. Note that this currently only applies to iOS builds; by default all builds are universal.</div>
 
-<div class='alert--warning' id="prerendered-icon">**prerendered-icon**: This will cause iOS to not apply its gloss to the app's icon on the user's home screen; possible values are <code>true or false</code>, default is false.</div>
+<a name="prerendered-icon" class="anchor"></a>
+<div class='alert--warning'>**prerendered-icon**: This will cause iOS to not apply its gloss to the app's icon on the user's home screen; possible values are <code>true or false</code>, default is false.</div>
 
-<div class='alert--warning' id="detect-data-types">**detect-data-types**: Controls whether certain data types (such as phone numbers and dates) are automatically turned into links by the system. Defaults to "true" (as does the system web view). In preference to this, try using meta-tags:
+<a name="detect-data-types" class="anchor"></a>
+<div class='alert--warning'>**detect-data-types**: Controls whether certain data types (such as phone numbers and dates) are automatically turned into links by the system. Defaults to "true" (as does the system web view). In preference to this, try using meta-tags:
 
     ```xml
     <meta name="format-detection" content="telephone=no">
@@ -68,33 +75,50 @@ the [config-file element on phonegap build](http://phonegap.com/blog/2014/01/30/
 
 And use detect-data-types if meta tags don't work for you.</div>
 
-<div class='alert--warning' id="exit-on-suspend">**exit-on-suspend**: If set to true, app will terminate when suspended, for example when home button is pressed; default is <b>false</b>.</div>
+<a name="exit-on-suspend" class="anchor"></a>
+<div class='alert--warning'>**exit-on-suspend**: If set to true, app will terminate when suspended, for example when home button is pressed; default is <b>false</b>.</div>
 
-<div class='alert--warning' id="deployment-target">**deployment-target**: This sets the <code>IPHONEOS_DEPLOYMENT_TARGET</code> in the build, which tranlsates to the <code>MinimumOSVersion</code> in the ipa Propertly List.</div>
+<a name="deployment-target" class="anchor"></a>
+<div class='alert--warning'>**deployment-target**: This sets the <code>IPHONEOS_DEPLOYMENT_TARGET</code> in the build, which tranlsates to the <code>MinimumOSVersion</code> in the ipa Propertly List.</div>
 
 ## Android Only
 
-<div class='alert--warning' id="android-build-tool">**android-build-tool**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android 4.0, 4.0.1, 4.0.2).</div>
+<a name="android-versionCode" class="anchor"></a>
+<div class='alert--warning'>**android-versionCode**: Internal Android Version Code. Sets the [version code](https://developer.android.com/studio/publish/versioning.html) for the application. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions.
+Default is generated from version as MAJOR \* 10000 + MINOR \* 100 + PATCH, or 1 if version cannot be parsed.</div>
 
-<div class='alert--warning' id="android-minSdkVersion">**android-minSdkVersion**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android 4.0, 4.0.1, 4.0.2).</div>
+<a name="android-build-tool" class="anchor"></a>
+<div class='alert--warning'>**android-build-tool**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android >= 4.0).</div>
 
+<a name="android-minSdkVersion" class="anchor"></a>
+<div class='alert--warning'>**android-minSdkVersion**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android >= 4.0).</div>
+
+<a name="android-maxSdkVersion" class="anchor"></a>
 <div class='alert--warning' id="android-maxSdkVersion">**android-maxSdkVersion**: Maximum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Unset by default.</div>
 
-<div class='alert--warning' id="android-targetSdkVersion">**android-targetSdkVersion**:
+<a name="android-targetSdkVersion" class="anchor"></a>
+<div class='alert--warning'>**android-targetSdkVersion**:
 Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file -- an integer designating the API Level that the application targets. If not set, the default value equals that given to minSdkVersion. More details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#target). Unset by default.</div>
 
-<div class='alert--warning' id="android-installLocation">**android-installLocation**: Where an app can be installed - defaults to <code>internalOnly</code> (as the Android SDK). <code>auto</code> or <code>preferExternal</code> allow the app to be installed on an SD card - this can lead to unexpected behavior. More details available in [the Android documentation](http://developer.android.com/guide/appendix/install-location.html).</div>
+<a name="android-installLocation" class="anchor"></a>
+<div class='alert--warning'>**android-installLocation**: Where an app can be installed - defaults to <code>internalOnly</code> (as the Android SDK). <code>auto</code> or <code>preferExternal</code> allow the app to be installed on an SD card - this can lead to unexpected behavior. More details available in [the Android documentation](http://developer.android.com/guide/appendix/install-location.html).</div>
 
-<div class='alert--warning' id="android-windowSoftInputMode">**android-windowSoftInputMode**: How the main window of the activity interacts with the window containing the on-screen soft keyboard. More details, and possible values, available in [the Android documentation](http://developer.android.com/guide/topics/manifest/activity-element.html#wsoft).</div>
+<a name="android-windowSoftInputMode" class="anchor"></a>
+<div class='alert--warning'>**android-windowSoftInputMode**: How the main window of the activity interacts with the window containing the on-screen soft keyboard. More details, and possible values, available in [the Android documentation](http://developer.android.com/guide/topics/manifest/activity-element.html#wsoft).</div>
 
 ## Windows Only
 
-<div class='alert--warning' id="windows-arch">**windows-arch**: Select the architecture that your build targets. Valid values are `anycpu`, `arm`, `x86`, and `x64`.</div>
+<a name="windows-arch" class="anchor"></a>
+<div class='alert--warning'>**windows-arch**: Select the architecture that your build targets. Valid values are `anycpu`, `arm`, `x86`, and `x64`. Supported by cordova-windows 4.x (cli-6.1.0) and above only.</div>
 
-<div class='alert--warning' id="windows-identity-name">**windows-identity-name**: Set the App Idenity Name in your App Manifest, necessary for publishing to the App Store. This preference must match the App Identity Name from your *Windows Dev Center Account -> App Management -> App Identity*.</div>
+<a name="windows-identity-name" class="anchor"></a>
+<div class='alert--warning'>**windows-identity-name**: Set the App Idenity Name in your App Manifest, necessary for publishing to the App Store. This preference must match the App Identity Name from your *Windows Dev Center Account -> App Management -> App Identity*. Supported by cordova-windows 4.x (cli-6.1.0) and above only.</div>
+
+
+<a name="windows-appx-target" class="anchor"></a>
+<div class='alert--warning'>**windows-appx-target**: Which of the supported Windows platforms you wish to target. Supported values are `uap` (Windows 10 Mobile / Universal), `8.1-phone`, `8.1-win`. Supported by cordova-windows 4.x (cli-6.1.0) and above only.</div>
 
 <a class="anchor" id="example"></a>
-
 ## Example Config.xml
 
 ```xml

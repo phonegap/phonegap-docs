@@ -15,7 +15,7 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
 1. Enter the following command from your terminal:
 
   ```sh
-  $ phonegap create myApp --template phonegap-template-push
+  $ phonegap create myApp --template push
   ```
 
   This will create a folder named myApp in the current path location with a default project name of Hello World and id of com.phonegap.helloworld.
@@ -65,7 +65,7 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
   [phonegap]
   ```
 
-1. Now go to your mobile device where the PhoneGap Developer App is running, enter the server address on the main screen and tap **Connect**.
+1. Now go to your mobile device where the PhoneGap Developer App is running, enter the server address on the main screen and tap **Connect** (for the browser you would use `localhost:3000` as the server address).
 
   <img class="mobile-image" src="/images/dev-app-enter-add.png" alt="PhoneGap Developer App, iOS"/>
 
@@ -79,11 +79,15 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
 
   <img class="mobile-image" src="/images/dev-app-push-permission.jpg" alt="Developer App, push permission request"/>
 
+  <img src="/images/browser-push-permission.png" alt="Browser, push permission request"/>
+
   Please click on the `OK` button to give the app the required permission. Subsequent runs of the application will not show you this permission dialog.
 
   Once the PhoneGap Developer app connects and loads your mobile application, it should be displayed for preview as shown below:
 
   <img class="mobile-image" src="/images/dev-app-preview-push.jpg" alt="Developer App, push registration"/>
+
+  <img src="/images/browser-preview-push.png" alt="Browser, push registration"/>
 
   The grey `Requesting Registration ID` line under the PhongGap Bot should turn into a green `Registered` line and you should see the following in your terminal session.
 
@@ -107,7 +111,7 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
   $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service apns --payload "{ \"aps\": { \"alert\": \"Hello World\" } }"
   ```
 
-  or enter the following command if you are testing on Android:
+  or enter the following command if you are testing on Android or Browser:
 
   MacOS:
   ```sh
@@ -125,6 +129,8 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
 
   <img class="mobile-image" src="/images/dev-app-success-push.jpg" alt="Developer App, push received"/>
 
+  <img src="/images/browser-success-push.png" alt="Browser, push received"/>
+
 ## Sending Your Second and Third Pushes
 
 1. Now minimize the **PhoneGap Desktop App**.
@@ -141,7 +147,7 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
   $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service apns --payload "{ \"aps\": { \"alert\": \"Hello World\" } }"
   ```
 
-  or enter the following command if you are testing on Android:
+  or enter the following command if you are testing on Android or Browser:
 
   MacOS:
   ```sh
@@ -173,7 +179,7 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
   $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service apns --payload "{ \"aps\": { \"alert\": \"Hello World\" } }"
   ```
 
-  or enter the following command if you are testing on Android:
+  or enter the following command if you are testing on Android or Browser:
 
   MacOS:
   ```sh
@@ -204,6 +210,7 @@ var push = PushNotification.init({
   "android": {
     "senderID": "XXXXXXXX"
   },
+  "browser": {},
   "ios": {
     "sound": true,
     "vibration": true,
