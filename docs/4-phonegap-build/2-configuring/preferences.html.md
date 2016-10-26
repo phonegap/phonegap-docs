@@ -114,11 +114,11 @@ Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.
 <a name="windows-identity-name" class="anchor"></a>
 <div class='alert--warning'>**windows-identity-name**: Set the App Idenity Name in your App Manifest, necessary for publishing to the App Store. This preference must match the App Identity Name from your *Windows Dev Center Account -> App Management -> App Identity*. Supported by cordova-windows 4.x (cli-6.1.0) and above only.</div>
 
-
 <a name="windows-appx-target" class="anchor"></a>
 <div class='alert--warning'>**windows-appx-target**: Which of the supported Windows platforms you wish to target. Supported values are `uap` (Windows 10 Mobile / Universal), `8.1-phone`, `8.1-win`. Supported by cordova-windows 4.x (cli-6.1.0) and above only.</div>
 
 <a class="anchor" id="example"></a>
+
 ## Example Config.xml
 
 ```xml

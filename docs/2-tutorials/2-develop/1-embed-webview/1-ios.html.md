@@ -80,7 +80,7 @@ Once you have CocoaPods installed, you'll need a native iOS project to work with
   pod 'cordova-plugin-statusbar'
   pod 'cordova-plugin-vibration'
   pod 'cordova-plugin-wkwebview-engine'
-  
+
   # The following includes the PhoneGap iOS Platform Project Template for a quick start
   pod 'phonegap-ios-template'
 

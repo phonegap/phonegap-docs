@@ -19,18 +19,18 @@ in just a few simple steps.
 
   ![](/images/desktop-app-plus.png)
 
-2. You will be prompted with the template list dialog as shown below, where you can choose to create an app based on a sample project. 
-Each template has a brief description below the name indicating what type of project will be created. To select a template, click on the 
-radio button next to it. In the image below, the **Hello World** template is selected.
+1. You will be prompted with the template list dialog as shown below, where you can choose to create an app based on a sample project.
+
+Each template has a brief description below the name indicating what type of project will be created. To select a template, click on the radio button next to it. In the image below, the **Hello World** template is selected.
 
 ![Templates Dialog](/images/templates-list.png)
- 
-The first template option in the list is the default Hello World project. It's proven to be the quickest and easiest way to understand the 
-basics of building a mobile PhoneGap app so let's start there. 
+
+The first template option in the list is the default Hello World project. It's proven to be the quickest and easiest way to understand the
+basics of building a mobile PhoneGap app so let's start there.
 
 1. Ensure the radio button next to the **Hello World** template is selected.
 
-2. Click on the green **Next** button. 
+1. Click on the green **Next** button.
 
 1. You will be presented with a screen to enter information about your project. Choose the path on your local hard drive where you want to create the project, a designated name and an optional *identifier*. Once the information has been entered, click the green **Create project** button.
 

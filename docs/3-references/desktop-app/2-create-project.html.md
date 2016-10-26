@@ -29,8 +29,7 @@ and drop.
 
 Once you've chosen to create a new project you will be prompted with the **STEP 1 of 2 | SELECT A TEMPLATE** dialog where you can choose
 to create your app based on a template from the list shown. Each template has a brief description below the name
-indicating what type of project will be created. To select a template, click on the radio button next to it. In the 
-image below, the **Hello World** template is selected.  
+indicating what type of project will be created. To select a template, click on the radio button next to it. In the image below, the **Hello World** template is selected.
 
 ![Templates Dialog](/images/templates-list.png)
 
@@ -44,8 +43,6 @@ the **STEP 2: PROJECT DETAILS** dialog to enter the details about your app.
 1. Enter a name for your project in the **Name** section.
 1. Optionally enter a project ID in the **ID** text field. If you choose not to enter a project ID, your project will be given a default ID of `com.phonegap.helloworld`. This ID field will be used for the *package identifier* for Android and the *bundle identifier* for iOS and is typically in reverse domain style.
 1. Click on the **Create project** button. Your new project will be created and started on the local web server. The project created will be based on the default PhoneGap Hello World application.
-
-  
 
 ## Next Steps
 
