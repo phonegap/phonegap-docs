@@ -9,7 +9,7 @@ tabs:
   url: references/desktop-app/install/win  
 ---
 
-1. Download the latest [Mac OS X Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.4.0/PhoneGapDesktop.dmg).
+1. Download the latest [Mac OS X Installer](https://github.com/phonegap/phonegap-app-desktop/releases/download/0.4.1/PhoneGapDesktop.dmg).
 
 1. Double-click the downloaded file to run the installer. You will initially be prompted with a license agreement to accept:
 
