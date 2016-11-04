@@ -99,7 +99,6 @@ Once you have CocoaPods installed, you'll need a native iOS project to work with
 
         end
 
-
    <div class="alert--info">**Note:** The `Cordova` CocoaPod is specified first and contains all of the `CordovaLib` core classes. The sample Podfile also specifies a number of plugin dependencies to make those available for use in your apps.  Lastly, the `phonegap-ios-template` refers to a PhoneGap sample app `CocoaPod` that's included to help you get started quickly. The sample app uses the plugins listed in this `Podfile` sample so you can test them out easily as well.</div>
 
 1. Next, run `pod install` from the command line to install the Cordova dependencies defined above:
@@ -301,9 +300,9 @@ project used from the CLI when you add the iOS platform.
 
 1. Use [plugman](https://github.com/apache/cordova-plugman) to add any desired plugins to your project. If you don't have plugman, you can install it via npm. (You should add the [Cordova console plugin](https://github.com/apache/cordova-plugin-console) at minimum on iOS so you can receive log messages):
 
-  ```sh  
+```sh
   $ plugman install --platform ios --project . --plugin cordova-plugin-console
-  ```
+```
 
 ### Lesson 2: Set up the Storyboard
 
