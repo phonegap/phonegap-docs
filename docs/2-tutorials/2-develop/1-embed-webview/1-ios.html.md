@@ -52,17 +52,21 @@ Once you have CocoaPods installed, you'll need a native iOS project to work with
   $ pod init
   ```
 
-  Open it and replace the contents with those from [this `Podfile` sample](https://github.com/phonegap/phonegap-webview-ios/blob/master/Podfile_sample) from the reference application. Only copy the contents prior to the `target` specification lines. The targets should already be set to the name of your project automatically if you used the `pod init` (see this [demo video](https://www.youtube.com/watch?v=M6Q6ak7UfvQ) for help if needed).
+  Open it and copy the `pod` lines from the contents of [this `Podfile` sample](https://github.com/phonegap/phonegap-webview-ios/blob/master/Podfile_sample) into the first `target` specification for your project. The targets will already be set to the name of your project if you used the `pod init`. See this [demo video](https://www.youtube.com/watch?v=6_Gq_SwpNwg) for help if needed).
 
   ```ruby
-  # Define a global platform for your project
-  platform :ios, '9.0'
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
 
+target 'CordovaProj' do
+  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CordovaProj
   # CordovaLib Dependency Pod
   pod 'Cordova'
 
   # Cordova Core Plugin Dependency Pod References
-
   pod 'CordovaPlugin-console'
   pod 'cordova-plugin-camera'
   pod 'cordova-plugin-contacts'
@@ -84,19 +88,18 @@ Once you have CocoaPods installed, you'll need a native iOS project to work with
   # The following includes the PhoneGap iOS Platform Project Template for a quick start
   pod 'phonegap-ios-template'
 
-  # Change the target value to the name of your native Xcode project
-  target 'YourNativeProj' do
-
+  target 'CordovaProjTests' do
+    inherit! :search_paths
+    # Pods for testing
   end
 
-  target 'YourNativeProjTests' do
-
+  target 'CordovaProjUITests' do
+    inherit! :search_paths
+    # Pods for testing
   end
 
-  target 'YourNativeProjUITests' do
-
-  end
-  ```
+end
+```
 
    <div class="alert--info">**Note:** The `Cordova` CocoaPod is specified first and contains all of the `CordovaLib` core classes. The sample Podfile also specifies a number of plugin dependencies to make those available for use in your apps.  Lastly, the `phonegap-ios-template` refers to a PhoneGap sample app `CocoaPod` that's included to help you get started quickly. The sample app uses the plugins listed in this `Podfile` sample so you can test them out easily as well.</div>
 
