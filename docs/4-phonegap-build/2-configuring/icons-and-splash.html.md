@@ -69,10 +69,12 @@ The names below reflect the names of the destination files when they are added t
 <!-- Settings Icon -->
 <icon src="icon-small.png" platform="ios" width="29" height="29" />
 <icon src="icon-small@2x.png" platform="ios" width="58" height="58" />
+<icon src="icon-small@3x.png" platform="ios" width="87" height="87" />
 
 <!-- Spotlight Icon -->
 <icon src="icon-40.png" platform="ios" width="40" height="40" />
 <icon src="icon-40@2x.png" platform="ios" width="80" height="80" />
+<icon src="icon-40@3x.png" platform="ios" width="120" height="120" />
 ```
 
 #### iOS 6.1
