@@ -48,11 +48,19 @@ If you want to use in-page navigation you should use named anchors, and not the 
  |
  |__ docs/        # Markdown documents rendered to /out/**/*.html
  |
+ |__ drafts/      # ???
+ |
  |__ layouts/     # Layouts and view templates
  |
  |__ out/         # Outputted static website
  |
  |__ public/      # Static assets copied to /out/**/*
+ |
+ |__ scripts/     # ???
+ |
+ |__ spec/        # Tests?
+ |
+ |__ vendor/      # ???
  |
  |__ docpad.json  # Configuration
 ```
