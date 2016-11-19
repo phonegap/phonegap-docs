@@ -43,6 +43,10 @@ bundle install
 
 ### Running Tests
 
+The tests check the _generated_ documentation, so ensure you are either running
+the local server or have manually generated the documentation via a `npm run
+build` before running the tests!
+
 ```bash
 npm run test
 ```
