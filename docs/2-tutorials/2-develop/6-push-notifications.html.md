@@ -6,7 +6,7 @@ layout: subpage
 
 You can use the **PhoneGap Developer App** paired with the **PhoneGap CLI** to immediately preview your app on a device without installing platform SDKs, registering devices, or compiling code. The PhoneGap CLI starts a small web server to host your project and returns the server address for you to pair with from the PhoneGap Developer App running on your mobile device.
 
-Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** release 1.6.2, you can now test push notification functionality without needing to set up a [Google Cloud Messaging (GCM)](https://developer.android.com/google/gcm/index.html) project for Android or an [Apple Push Notification Service (APNs)](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html) certification for iOS.
+Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** release 1.6.2, you can now test push notification functionality without needing to set up a [Google Cloud Messaging (GCM)](https://developer.android.com/google/gcm/index.html) project for Android or an [Apple Push Notification Service (APNs)](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html) certification for iOS.
 
 <div class="alert--warning">Double check to ensure you're running your device and computer on the same network before continuing. </div>
 
