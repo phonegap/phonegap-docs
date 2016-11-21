@@ -20,15 +20,41 @@ changed, BrowserSync will regenerate the file and refresh your browser.
 
 ## Running markdownlint
 
-Running markdownlint will return a list of syntax errors that should be fixed before deplying it.
+Running markdownlint will return a list of syntax errors that should be fixed
+before deployment.
 
 ```bash
 npm run lint
 ```
 
+## Tests
+
+### Requirements
+
+A running [ruby](https://www.ruby-lang.org/en/) environment is a must, along
+with a working `gem` command. Ensure you have the `bundle` command available
+by installing bundler, then also retrieve all test-running dependencies via
+`bundle install`:
+
+```bash
+gem install bundler
+bundle install
+```
+
+### Running Tests
+
+The tests check the _generated_ documentation, so ensure you are either running
+the local server or have manually generated the documentation via a `npm run
+build` before running the tests!
+
+```bash
+npm run test
+```
+
 ## Named Anchors
 
-If you want to use in-page navigation you should use named anchors, and not the `id` property of html elements.
+If you want to use in-page navigation you should use named anchors, and not the
+`id` property of html elements.
 
 ```markdown
 * [A link to a different place in the page](#different-place)
@@ -68,8 +94,8 @@ Each commit to the `master` branch is deployed to [docs.phonegap.com](http://doc
 Each commit to the `stage` branch is deployed to [stage.docs.phonegap.com](http://stage.docs.phonegap.com).
 
 Commits to `master` do _not_ need to be staged. Staging is intended to test
-work that may cause issues in production, in particle design focused changes.
-For this reason, the staging branch is mutable. Feel free to delete it or force
+work that may cause issues in production, in particular design focused changes.
+For this reason, the `stage` branch is mutable. Feel free to delete it or force
 push over its history.
 
 ## FAQ
