@@ -6,8 +6,9 @@ next: 1-getting-started/1-install-phonegap/1-desktop.html.md
 ---
 <img style="float:right; width: 50%; max-width: 250px;" src="/images/excited_robit.svg" alt="Excited Robot">
 <p style="color:#888888;font-size:1.35rem;line-height:1.9rem;">
-These docs aim to be a comprehensive resource that covers all things PhoneGap
-and mobile app development, that is both in-depth and easy to follow.
+These docs aim to be a comprehensive resource covering PhoneGap and associated
+tooling, as well as some general mobile app development concepts we think
+developers will find helpful.
 </p>
 
 <p style="color:#111111;font-size:1.1rem;line-height:1.7rem;">
