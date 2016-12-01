@@ -11,7 +11,297 @@ tabs:
     url: tutorials/develop/1-embed-webview/android-with-extension
 ---
 
-## Creating Apps with PhoneGap and Android Native Components
+## Options
+
+There are two options available to embed an Android WebView into an existing
+native Android app.
+
+- [IntelliJ Plugin for Android Studio and JetBrain](#intellij)
+- [Manual Approach](#manual)
+
+<a class="anchor" id="intellij"></a>
+
+## Option 1: IntelliJ Plugin for Android Studio and JetBrain
+
+### Step 1: Create an Android project
+
+1. Create a new Android project, set Application name to "ComponentCase", Company Domain to "phonegapday.com" and edit Package name to be "com.phonegapday". Click next.
+
+  ![step1](/images/tutorials/develop/embed-webview/android/step1.png)
+2. Check "Phone and Tablet" and set Minimum SDK to API 21: Android 5.0 (Lollipop)
+
+  ![step2](/images/tutorials/develop/embed-webview/android/step2.png)
+3. Click next and select "Navigation Drawer Activity".
+
+  ![step3](/images/tutorials/develop/embed-webview/android/step3.png)
+4. Click next and click Finish
+
+  ![step4](/images/tutorials/develop/embed-webview/android/step4.png)
+5. Clean up a few things
+  1. open `res/menu/activity_main_drawer.xml` and make sure it looks like this
+  ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_webview"
+                android:title="Webview" />
+            <item
+                android:id="@+id/nav_list_webview"
+                android:title="List (WebView)" />
+            <item
+                android:id="@+id/nav_list_native"
+                android:title="List (Native)" />
+        </group>
+    </menu>
+  ```
+  2. open `res/layout/app_bar_main.xml` and delete the `FloatingActionButton`
+  3. delete all `ic_menu` from `res/drawable`
+  3. open `res/layout/nav_header_main.xml` and change the first TextView's text by "ComponentCase". Delete the ImageView and the other TextView.
+  4. open `res/values/dimens.xml` and change `nav_header_height` to '100dp'
+  5. open 'MainActivity' and delete lines 26-33 (FloatingActionButton) and make sure your `onNavigationItemSelected` method looks like this
+  ```Java
+    public boolean onNavigationItemSelected(MenuItem item) {
+          // Handle navigation view item clicks here.
+          int id = item.getItemId();
+
+          if (id == R.id.nav_webview) {
+              // Handle the camera action
+          } else if (id == R.id.nav_list_webview) {
+
+          } else if (id == R.id.nav_list_native) {
+
+          }
+
+          DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+          drawer.closeDrawer(GravityCompat.START);
+          return true;
+      }
+  ```
+
+### Step 2: Setup the Cordova WebView in the Android project
+
+1. Go to cordova-android/framework and run `android update project -p .` then run `ant jar`. There should be a `cordova-5.2.0-dev.jar` generated in the same folder.
+2. Copy cordova-5.2.0-dev.jar to your `app/libs` folder.
+3. Select `Project Files` on the left hand pane in Android Studio, right click on `cordova-5.2.0-dev.jar` and click `Add as Library`, click Ok.
+3. Currently there is no easy way to install plugins in an Android Studio project. We will need to create a cordova android project, install plugins and then copy necessary files to the right location in our project. Run the following commands:
+  `cordova create myApp`
+  `cd myApp`
+  `cordova platform add android`
+  `cordova plugin add cordova-plugin-device`
+  `cordova plugin add cordova-plugin-console`
+  `cordova plugin add /path/to/cordova-plugin-pgdayeu16`
+4. We will now create some folders that are used by cordova.
+  1. Right click on `app` in `Project` and select `New` > `Folder` > `Assets folder`
+  2. Right click on `assets` and select `New` > `Directory` and name it `www`
+  3. Copy everything from `www-shared/www` to this newly created `assets/www`
+  4. Right click on `res` and select `New` > `Directory` and name it xml
+  5. Copy `/path/to/your/cordova_android_project/platforms/android/res/xml/config.xml` to your `ComponentCase/app/src/main/res/xml`
+  6. Copy `cordova.js`, `cordova_plugins.js` and `plugins/` from `/path/to/your/cordova_android_project/platforms/assets/www/` to your `ComponentCase/app/src/main/assets/www`
+  7. Copy `/path/to/your/cordova_android_project/platforms/android/src/org` to your `ComponentCase/app/src/main/java`
+  8. Copy `/path/to/your/cordova_android_project/platforms/android/src/com/phonegapday/PGDayEU16Plugin.java` to your `ComponentCase/app/src/main/assets/src/main/java/com/phonegapday`
+
+### Step 3: Add the Cordova WebView
+
+1. open `res/layout/content_main.xml` and replace the TextView with the following
+
+  ```XML
+    <org.apache.cordova.engine.SystemWebView
+        android:id="@+id/WebViewComponent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </org.apache.cordova.engine.SystemWebView>
+  ```
+2. Add the following attributes to `MainActivity.java`. Make sure you fix the imports.
+
+  ```Java
+    private String TAG = "ComponentWrapper";
+    private SystemWebView webView;
+    private CordovaWebView webInterface;
+    private CordovaInterfaceImpl stupidface = new CordovaInterfaceImpl(this);
+  ```
+3. Add the following lines at the bottom of your `onCreate` method
+
+  ```Java
+  //Set up the webview
+  ConfigXmlParser parser = new ConfigXmlParser();
+  parser.parse(this);
+
+  webView = (SystemWebView) findViewById(R.id.WebViewComponent);
+  webInterface = new CordovaWebViewImpl(new SystemWebViewEngine(webView));
+  webInterface.init(stupidface, parser.getPluginEntries(), parser.getPreferences());
+  webView.loadUrl(parser.getLaunchUrl());
+  ```
+
+4. These methods are required for `CordovaWebView` to work properly. Add them and fix imports
+
+  ```Java
+    @Override
+    public void onDestroy()
+    {
+        webInterface.handleDestroy();
+        super.onDestroy();
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        stupidface.onActivityResult(requestCode, resultCode, intent);
+    }
+
+    public void onRequestPermissionsResult(int requestCode, String permissions[],
+                                           int[] grantResults) {
+        try
+        {
+            stupidface.onRequestPermissionResult(requestCode, permissions, grantResults);
+        }
+        catch (JSONException e)
+        {
+            Log.d(TAG, "JSONException: Parameters fed into the method are not valid");
+            e.printStackTrace();
+        }
+
+    }
+
+  ```
+
+### Step 4: Add ListView to control the WebView
+
+1. Add the following line to your `res/values/strings.xml`
+
+  ```XML
+  <string name="add_bookmark">Add Bookmark</string>
+  ```
+1. Right click on `res/layout` and select `New` -> `XML` -> `Layout XML File`. Name it `bookmark_main`. Make sure it looks like this
+
+  ```XML
+  <?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/bookmarkLayout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:visibility="gone"
+      android:weightSum="1">
+
+      <ListView
+          android:id="@+id/bookmarkView"
+          android:layout_width="match_parent"
+          android:layout_height="465dp"
+          android:layout_gravity="center_horizontal" />
+
+      <EditText
+          android:id="@+id/bookmark"
+          android:inputType="textUri"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:imeActionLabel="@string/add_bookmark" />
+  </LinearLayout>
+  ```
+1. Add the following attributes to your `MainActivity.java`
+
+  ```Java
+  // need this for page navigation
+  private String[] urls = new String[2];
+  private ListView listView;
+  private LinearLayout bookmarkLayout;
+  private ArrayList<String> bookmarks = new ArrayList<String>();
+  ```
+2. Set up the native ListView by adding the following lines to your `onCreate` method. Fix imports
+
+  ```Java
+  // Set up the bookmark view
+  bookmarks.add("http://google.com"); // dummy bookmark
+  bookmarkLayout = (LinearLayout) findViewById(R.id.bookmarkLayout);
+  listView = (ListView) findViewById(R.id.bookmarkView);
+  if(listView != null) {
+      listView.setAdapter(new ArrayAdapter<String>(this,
+              android.R.layout.simple_list_item_activated_1,
+              android.R.id.text1,
+              bookmarks));
+  }
+  EditText bookmark = (EditText)findViewById(R.id.bookmark);
+  if(bookmark != null) {
+    bookmark.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            if (event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                String text = v.getText().toString();
+                addItem(text);
+                v.setText("");
+                InputMethodManager in = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                in.hideSoftInputFromWindow(
+                        v.getApplicationWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
+            }
+            return false;
+        }
+    });
+  }
+  ```
+3. Add the following methods
+
+  ```Java
+  protected ArrayList<String> getBookmarks() {
+      return bookmarks;
+  }
+
+  protected void addItem(String item) {
+      if(item != null) {
+          bookmarks.add(item);
+          ((BaseAdapter)listView.getAdapter()).notifyDataSetChanged();
+      }
+  }
+
+  ```
+3. Add this line to your `res/layout/content_main.xml`
+
+  ```XML
+  <include layout="@layout/bookmark_main"/>
+  ```
+4. Add these lines at the bottom of your `onCreate` method
+
+  ```Java
+  urls[0] = parser.getLaunchUrl();
+  urls[1] = urls[0].replace("index.html", "listeditor.html");
+  webView.loadUrl(urls[0]);
+  ```
+5. Make sure your `onNavigationItemSelected` looks like this
+
+  ```Java
+  public boolean onNavigationItemSelected(MenuItem item) {
+      // Handle navigation view item clicks here.
+      int id = item.getItemId();
+
+      if (id == R.id.nav_webview) {
+          bookmarkLayout.setVisibility(View.GONE);
+          webView.setVisibility(View.VISIBLE);
+          webView.loadUrl(urls[0]);
+      } else if (id == R.id.nav_list_webview) {
+          bookmarkLayout.setVisibility(View.GONE);
+          webView.setVisibility(View.VISIBLE);
+          webView.loadUrl(urls[1]);
+      } else if (id == R.id.nav_list_native) {
+          bookmarkLayout.setVisibility(View.VISIBLE);
+          webView.setVisibility(View.GONE);
+      }
+
+      DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+      drawer.closeDrawer(GravityCompat.START);
+      return true;
+  }
+  ```
+6. Make sure to add this attribute to your `<activity>` tag in your `AndroidManifest.xml`
+
+  ```
+  android:windowSoftInputMode="adjustPan"
+  ```
+7. To avoid seeing weird `eglCodecCommon` errors in the console add this to your filter: `^(?!eglCodecCommon)` 
+
+<a class="anchor" id="manual"></a>
+
+## Option 2: Creating Apps with PhoneGap and Android Native Components
 
 In this guide we'll walk through the basic steps needed to create a native hybrid Android app that has elements of both native Android components and a Cordova webview. For more information about why you might choose this approach, read [this blog post](http://phonegap.com/blog/2015/03/12/mobile-choices-post1/).
 
