@@ -14,68 +14,86 @@ tabs:
 There are two options available to embed an Android WebView into an existing
 native Android app.
 
-- [IntelliJ Plugin for Android Studio and JetBrain](#intellij)
+- [IntelliJ Plugin for Android Studio and JetBrains](#intellij)
 - [Manual Approach](#manual)
 
 <a class="anchor" id="intellij"></a>
 
-## Option 1: IntelliJ Plugin for Android Studio and JetBrain
+## Option 1: IntelliJ Plugin for Android Studio and JetBrains
 
 ### Step 1: Create an Android project
 
-1. Create a new Android project, set Application name to "ComponentCase", Company Domain to "phonegapday.com" and edit Package name to be "com.phonegapday". Click next.
+> You can skip this step if you have an existing Android project.
+
+1. Create a new Android project:
+  - Set _Application name_ to "ComponentCase"
+  - Set _Company Domain_ to "phonegapday.com"
+  - Set _Package name_ to "com.phonegapday"
+  - Click _Next_
 
   ![step1](/images/tutorials/develop/embed-webview/android/step1.png)
-2. Check "Phone and Tablet" and set Minimum SDK to API 21: Android 5.0 (Lollipop)
+2. On the _Target Android Devices_ screen:
+  - Select "Phone and Tablet"
+  - Set _Minimum SDK_ to "API 21: Android 5.0 (Lollipop)"
+  - Click _Next_
 
   ![step2](/images/tutorials/develop/embed-webview/android/step2.png)
-3. Click next and select "Navigation Drawer Activity".
+3. On the _Add an Activity to Mobile_ screen:
+  - Select "Navigation Drawer Activity"
+  - Click _Next_
 
   ![step3](/images/tutorials/develop/embed-webview/android/step3.png)
-4. Click next and click Finish
+4. On the _Customize the Activity_ screen:
+  - Click _Finish_
 
   ![step4](/images/tutorials/develop/embed-webview/android/step4.png)
-5. Clean up a few things
-  1. open `res/menu/activity_main_drawer.xml` and make sure it looks like this
-  ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <menu xmlns:android="http://schemas.android.com/apk/res/android">
-        <group android:checkableBehavior="single">
-            <item
-                android:id="@+id/nav_webview"
-                android:title="Webview" />
-            <item
-                android:id="@+id/nav_list_webview"
-                android:title="List (WebView)" />
-            <item
-                android:id="@+id/nav_list_native"
-                android:title="List (Native)" />
-        </group>
-    </menu>
+5. Finally, we can clean up the new project:
+  1. Open `res/menu/activity_main_drawer.xml` and ensure it matches:
+  ```xml
+      <?xml version="1.0" encoding="utf-8"?>
+      <menu xmlns:android="http://schemas.android.com/apk/res/android">
+          <group android:checkableBehavior="single">
+              <item
+                  android:id="@+id/nav_webview"
+                  android:title="Webview" />
+              <item
+                  android:id="@+id/nav_list_webview"
+                  android:title="List (WebView)" />
+              <item
+                  android:id="@+id/nav_list_native"
+                  android:title="List (Native)" />
+          </group>
+      </menu>
   ```
-  2. open `res/layout/app_bar_main.xml` and delete the `FloatingActionButton`
-  3. delete all `ic_menu` from `res/drawable`
-  3. open `res/layout/nav_header_main.xml` and change the first TextView's text by "ComponentCase". Delete the ImageView and the other TextView.
-  4. open `res/values/dimens.xml` and change `nav_header_height` to '100dp'
-  5. open 'MainActivity' and delete lines 26-33 (FloatingActionButton) and make sure your `onNavigationItemSelected` method looks like this
-  ```Java
-    public boolean onNavigationItemSelected(MenuItem item) {
-          // Handle navigation view item clicks here.
-          int id = item.getItemId();
+  2. Open `res/layout/app_bar_main.xml`:
+    - Delete the `FloatingActionButton`
+  3. Delete all `ic_menu` from `res/drawable`
+  4. Open `res/layout/nav_header_main.xml`
+    - Update the first TextView's text to "ComponentCase"
+    - Delete the ImageView and the other TextView
+  5. Open `res/values/dimens.xml`
+    - Update `nav_header_height` to '100dp'
+  6. Open 'MainActivity'
+    - Delete lines 26-33 (`FloatingActionButton`)
+    - Ensure the `onNavigationItemSelected` method matches:
+    ```java
+        public boolean onNavigationItemSelected(MenuItem item) {
+            // Handle navigation view item clicks here.
+            int id = item.getItemId();
 
-          if (id == R.id.nav_webview) {
-              // Handle the camera action
-          } else if (id == R.id.nav_list_webview) {
+            if (id == R.id.nav_webview) {
+                // Handle the webview action
+            } else if (id == R.id.nav_list_webview) {
+                // Handle the webview (list) action
+            } else if (id == R.id.nav_list_native) {
+                // Handle the native (list) action
+            }
 
-          } else if (id == R.id.nav_list_native) {
-
-          }
-
-          DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-          drawer.closeDrawer(GravityCompat.START);
-          return true;
-      }
-  ```
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
+        }
+    ```
 
 ### Step 2: Setup the Cordova WebView in the Android project
 
