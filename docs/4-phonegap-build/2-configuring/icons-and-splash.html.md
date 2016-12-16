@@ -65,6 +65,7 @@ The names below reflect the names of the destination files when they are added t
 <!-- iPad -->
 <icon src="icon-76.png" platform="ios" width="76" height="76" />
 <icon src="icon-76@2x.png" platform="ios" width="152" height="152" />
+<icon src="icon-83.5@2x.png" platform="ios" width="167" height="167" />
 
 <!-- Settings Icon -->
 <icon src="icon-small.png" platform="ios" width="29" height="29" />
