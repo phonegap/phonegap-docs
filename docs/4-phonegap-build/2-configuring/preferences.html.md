@@ -24,6 +24,7 @@ If you want to see more detail about what exactly these custom preferences are d
 - [detect-data-types](#detect-data-types)
 - [exit-on-suspend](#exit-on-suspend)
 - [deployment-target](#deployment-target)
+- [swift-version](#swift-version)
 
 ## Android Only
 
@@ -80,6 +81,9 @@ And use detect-data-types if meta tags don't work for you.</div>
 
 <a name="deployment-target" class="anchor"></a>
 <div class='alert--warning'>**deployment-target**: This sets the <code>IPHONEOS_DEPLOYMENT_TARGET</code> in the build, which tranlsates to the <code>MinimumOSVersion</code> in the ipa Propertly List.</div>
+
+<a name="swift-version" class="anchor"></a>
+<div class='alert--warning'>**swift-version**: This sets the <code>SWIFT_VERSION</code> for the build. Valid values are 2.3 or 3.0. Defaults to 3.0</div>
 
 ## Android Only
 
