@@ -92,7 +92,7 @@ And use detect-data-types if meta tags don't work for you.</div>
 Default is generated from version as MAJOR \* 10000 + MINOR \* 100 + PATCH, or 1 if version cannot be parsed.</div>
 
 <a name="android-build-tool" class="anchor"></a>
-<div class='alert--warning'>**android-build-tool**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android >= 4.0).</div>
+<div class='alert--warning'>**android-build-tool**: Specifies which android build tool to use. Values can be `gradle` or `ant`. Defaults to `gradle` for android >= 5 or `ant` for android < 5.</div>
 
 <a name="android-minSdkVersion" class="anchor"></a>
 <div class='alert--warning'>**android-minSdkVersion**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android >= 4.0).</div>
