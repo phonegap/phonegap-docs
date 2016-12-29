@@ -16,6 +16,7 @@ If you want to see more detail about what exactly these custom preferences are d
 - [phonegap-version](#phonegap-version)
 - [orientation](#orientation)
 - [fullscreen](#fullscreen)
+- [signing-key](#signing-key)
 
 ## iOS Only
 
@@ -57,6 +58,10 @@ If you want to see more detail about what exactly these custom preferences are d
 <a name="fullscreen" class="anchor"></a>
 <div class='alert--warning'>**fullscreen**: Makes your app full screen, with values <code>true or false</code>. This hides the status bar at the top, and is false by default. Note: may not be supported by newer versions of iOS, but users can use
 the [config-file element on phonegap build](http://phonegap.com/blog/2014/01/30/customizing-your-android-manifest-and-ios-property-list-on-phonegap-build/), and set UIViewControllerBasedStatusBarAppearance to false and UIStatusBarHidden to true.</div>
+
+<a name="signing-key" class="anchor"></a>
+<div class='alert--warning'>**signing-key**: specifies which signing key to use when building. This can either be the key's <code>id</code> or <code>title</code>. If a title is specified
+it will use the most recently uploaded key with that title. A <code>platform</code> must be specified either placing this preference inside a platform tag or adding a platform attribute.</div>
 
 ## iOS Only
 
