@@ -81,7 +81,7 @@ The API's write interface includes the following:
 
 <a class="api info" href="#_post_https_build_phonegap_com_api_v1_keys_platform"><span>POST</span><code>/api/v1/keys/:platform</code> Add a Signing Key for A Specific Platform</a>
 
-<a class="api primary" href="#-put-https-build-phonegap-com-api-v1-keys-platform-id-"><span>PUT</span><code>/api/v1/keys/:platform/:id</code> Update/Unlock a Singing Key for a Specific Platform</a>
+<a class="api primary" href="#-put-https-build-phonegap-com-api-v1-keys-platform-id-"><span>PUT</span><code>/api/v1/keys/:platform/:id</code> Update/Unlock a Signing Key for a Specific Platform</a>
 
 <a class="api danger" href="#_delete_https_build_phonegap_com_api_v1_apps_id"><span>DELETE</span><code>/api/v1/apps/:id</code> Delete an App</a>
 
