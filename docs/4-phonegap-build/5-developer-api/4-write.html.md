@@ -394,7 +394,7 @@ $ curl -u andrew.lunny@nitobi.com -X PUT -d 'data={"version":"0.2.0"}' https://b
 
 By default, the app is built for all supported platforms once the metadata changes.
 
-### Signing Keys
+### App Signing Keys
 
 As with creating a new app, you can specify a signing key to use for each platform that you wish to build for. You can also put a key's credentials, which ensures the key is unlocked and ready to use.
 
