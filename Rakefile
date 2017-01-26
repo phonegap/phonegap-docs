@@ -7,7 +7,10 @@ desc "build and test website"
 task :test do
   HTMLProofer.check_directory("./out", {
     :empty_alt_ignore => true,
-    :url_ignore => [/http:\/\/192.168.1.20(:\d\d\d\d)?/],
+    :url_ignore => [
+      /http:\/\/192.168.1.20(:\d\d\d\d)?/,
+      "https://plus.google.com/communities/111220599704908202107"
+    ],
     :http_status_ignore => [0, 403, 999],
     :cache => {
       :timeframe => '1d'
