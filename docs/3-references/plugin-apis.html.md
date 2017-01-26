@@ -20,6 +20,7 @@ The most current version of the Cordova Core Plugin APIs are found in their resp
 - [Geolocation](https://github.com/apache/cordova-plugin-geolocation)
 - [Globalization](https://github.com/apache/cordova-plugin-globalization)
 - [InAppBrowser](https://github.com/apache/cordova-plugin-inappbrowser)
+- [Media](https://github.com/apache/cordova-plugin-media)
 - [Media Capture](https://github.com/apache/cordova-plugin-media-capture)
 - [Network Information](https://github.com/apache/cordova-plugin-network-information)
 - [Splash Screen](https://github.com/apache/cordova-plugin-splashscreen)
