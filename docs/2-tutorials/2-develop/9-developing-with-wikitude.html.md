@@ -54,7 +54,7 @@ To see the PhoneGap Day EU 2016 T-Shirt demo, you may find the [project's repo h
 
 ## Uploading your own images to detect
 
-In order to detect your own images, you must signup to the Wikitude developer program. Once there, you can upload your files and download a `.wtc` file. See [this guide](http://www.wikitude.com/external/doc/documentation/latest/phonegap/clientrecognition.html#client-recognition) for more info.
+In order to detect your own images, you must signup to the Wikitude developer program. Once there, you can upload your files and download a `.wtc` file. See [this guide](http://www.wikitude.com/external/doc/documentation/latest/phonegap/gettingstartedcloudrecognition.html#getting-started-with-the-cloud-recognition-service) for more info.
 
 ## Going beyond the PhoneGap Developer App
 
