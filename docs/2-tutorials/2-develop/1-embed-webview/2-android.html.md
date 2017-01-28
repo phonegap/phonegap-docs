@@ -259,7 +259,7 @@ $ plugman install --platform android --plugin https://github.com/hollyschinsky/H
       <engine name="cordova" version=">=3.0.0"/>
     </engines>
 
-    <js-module src="www/HybridBridge.js" name="HybridBridge">
+    <js-module src="www/js/HybridBridge.js" name="HybridBridge">
       <clobbers target="HybridBridge" />
     </js-module>
 
@@ -270,7 +270,7 @@ $ plugman install --platform android --plugin https://github.com/hollyschinsky/H
           <param name="android-package" value="org.sample.hybrid.HybridBridge" />
         </feature>
       </config-file>
-      <source-file src="src/android/org/sample/hybrid/HybridBridge.java" target-dir="src/org/sample/hybrid"/>
+      <source-file src="src/org/sample/hybrid/HybridBridge.java" target-dir="src/org/sample/hybrid"/>
     </platform>
   </plugin>
   ```
