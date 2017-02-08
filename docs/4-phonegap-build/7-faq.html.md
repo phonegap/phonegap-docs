@@ -81,7 +81,7 @@ This message means an account with that email address, created before Build had 
 
 <a name="app-upgrade" class="anchor"></a>
 
-## I'm seeing "This app isn't using the latest version of PhoneGap. We recommend upgrading to ...""
+## I'm seeing "This app isn't using the latest version of PhoneGap. We recommend upgrading ..."
 
 If you're seeing this message, it means that there is a newer version of Phonegap available to build with. This can be set in your [config.xml file](/phonegap-build/configuring) with the [phonegap-version preference](/phonegap-build/configuring/preferences/#phonegap-version), for example:
 
