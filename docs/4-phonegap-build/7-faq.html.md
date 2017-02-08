@@ -15,6 +15,7 @@ expand: build
 1. [Can I integrate PhoneGap Build with my existing tools?](#existing-tools)
 1. [What is the difference between public and private apps?](#public-private)
 1. [When I try to log in with my Adobe ID, I get "That email address is already linked to a PhoneGap Build account."](#already-linked)
+2. [I'm seeing "This app isn't using the latest version of PhoneGap. We recommend upgrading..."](#app-upgrade)
 1. [Where do I go to find PhoneGap Build help?](#where-help)
 
 <a name="what-is-build" class="anchor"></a>
@@ -77,6 +78,16 @@ Private apps have their source code hosted in a private (non-publicly accessible
 ## When I try to log in with my Adobe ID, I get "That email address is already linked to a PhoneGap Build account."
 
 This message means an account with that email address, created before Build had Adobe ID authentication, already exists. You need to log in with that old account, and then link your Adobe ID to it. So on the [sign in page](https://buildstage.phonegap.com/people/sign_in), click where it says "Click here if you don't sign in with an Adobe ID". Sign in with either an email/password or using your Github account (however you would have created the old account). Once logged in, you will be prompted that "To continue using PhoneGap Build we ask you to please link an AdobeID to this account." and limited to the account settings page. Now Connect your Adobe ID, and you're done!
+
+<a name="app-upgrade" class="anchor"></a>
+
+## I'm seeing "This app isn't using the latest version of PhoneGap. We recommend upgrading to ...""
+
+If you're seeing this message, it means that there is a newer version of Phonegap available to build with. This can be set in your [config.xml file](/phonegap-build/configuring) with the [phonegap-version preference](/phonegap-build/configuring/preferences/#phonegap-version), for example:
+
+    <preference name="phonegap-version" value="cli-6.4.0" />
+
+If you omit this preference, Phonegap Build will use a default version (which is incremented approximately every 6 months). A list of Phonegap Build's currently supported Phonegap versions, and the default, can be seen [here](http://build.phonegap.com/current-support). In general you won't need to upgrade every time a new version becomes available, but you should upgrade whenever you can to ensure you are taking advantage of any new security fixes, and support for the latest devices. When you upgrade your Phonegap version, always fully test your app, especially if you're utilizing plugins and device APIs, as behaviour can and will change across versions.
 
 <a name="where-help" class="anchor"></a>
 
