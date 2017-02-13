@@ -115,7 +115,7 @@ Starting with **PhoneGap CLI** release 6.2.0 and **PhoneGap Developer App** rele
 
   MacOS:
   ```sh
-  $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service gcm --payload '{ "data": { "title": "Hello", "message": "World"} }'
+  $ phonegap push --deviceID APA91bE1MmeTc92igNoi5OkDWUV --service gcm --payload "{ \"data\": { \"title\": \"Hello\", \"message\": \"World\"} }"
   ```
 
   Windows:
