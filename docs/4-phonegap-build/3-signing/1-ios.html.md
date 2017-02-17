@@ -25,7 +25,7 @@ tabs:
 
 ### Convert the iPhone Developer Certificate to a P12 file on Mac OS
 
-You'll first need to obtain an Apple Developer Certificate. See apple documenation for this.
+You'll first need to obtain an Apple Developer Certificate. See apple documentation for this.
 
 Next you'll export it to the P12 keystore format. To do this on Mac&reg; OS:
 
