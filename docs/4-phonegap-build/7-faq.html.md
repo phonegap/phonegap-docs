@@ -77,7 +77,7 @@ Private apps have their source code hosted in a private (non-publicly accessible
 
 ## When I try to log in with my Adobe ID, I get "That email address is already linked to a PhoneGap Build account."
 
-This message means an account with that email address, created before Build had Adobe ID authentication, already exists. You need to log in with that old account, and then link your Adobe ID to it. So on the [sign in page](https://buildstage.phonegap.com/people/sign_in), click where it says "Click here if you don't sign in with an Adobe ID". Sign in with either an email/password or using your Github account (however you would have created the old account). Once logged in, you will be prompted that "To continue using PhoneGap Build we ask you to please link an AdobeID to this account." and limited to the account settings page. Now Connect your Adobe ID, and you're done!
+This message means an account with that email address, created before Build had Adobe ID authentication, already exists. You need to log in with that old account, and then link your Adobe ID to it. So on the [sign in page](https://build.phonegap.com/people/sign_in), click where it says "Click here if you don't sign in with an Adobe ID". Sign in with either an email/password or using your Github account (however you would have created the old account). Once logged in, you will be prompted that "To continue using PhoneGap Build we ask you to please link an AdobeID to this account." and limited to the account settings page. Now Connect your Adobe ID, and you're done!
 
 <a name="app-upgrade" class="anchor"></a>
 
