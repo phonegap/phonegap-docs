@@ -35,8 +35,7 @@ native Android app.
 ![Initialize Phonegap Project](/images/tutorials/develop/embed-webview/android/phonegap_initialize.png)
   
 Once the phonegap project has been initialized , plugins can be installed from by going to
-`Tools` > `PhoneGap` > `Install Plugin from npm`
-Plugins residing in local filesystem can be installed by going to `Tools` > `PhoneGap` > `Install Plugin from filesystem`
+`Tools` > `PhoneGap` > `Install Plugin from npm`. Plugins residing in local filesystem can be installed by going to `Tools` > `PhoneGap` > `Install Plugin from filesystem`
 
 ![Install Plugins](/images/tutorials/develop/embed-webview/android/install_plugin.png)
 
