@@ -57,7 +57,7 @@ Plugins residing in local filesystem can be installed by going to `Tools` > `Pho
     private String TAG = "ComponentWrapper";
     private SystemWebView webView;
     private CordovaWebView webInterface;
-    private CordovaInterfaceImpl stupidface = new CordovaInterfaceImpl(this);
+    private CordovaInterfaceImpl pgwebView = new CordovaInterfaceImpl(this);
   ```
 3. Add the following lines at the bottom of your `onCreate` method
 
@@ -68,7 +68,7 @@ Plugins residing in local filesystem can be installed by going to `Tools` > `Pho
 
   webView = (SystemWebView) findViewById(R.id.WebViewComponent);
   webInterface = new CordovaWebViewImpl(new SystemWebViewEngine(webView));
-  webInterface.init(stupidface, parser.getPluginEntries(), parser.getPreferences());
+  webInterface.init(pgwebView, parser.getPluginEntries(), parser.getPreferences());
   webView.loadUrl(parser.getLaunchUrl());
   ```
 
@@ -85,14 +85,14 @@ Plugins residing in local filesystem can be installed by going to `Tools` > `Pho
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
-        stupidface.onActivityResult(requestCode, resultCode, intent);
+        pgwebView.onActivityResult(requestCode, resultCode, intent);
     }
 
     public void onRequestPermissionsResult(int requestCode, String permissions[],
                                            int[] grantResults) {
         try
         {
-            stupidface.onRequestPermissionResult(requestCode, permissions, grantResults);
+            pgwebView.onRequestPermissionResult(requestCode, permissions, grantResults);
         }
         catch (JSONException e)
         {
@@ -105,7 +105,7 @@ Plugins residing in local filesystem can be installed by going to `Tools` > `Pho
   ```
 
   The result of including this embedded webview in an Android project may look like the following image :
-  
+
   ![Webview](/images/tutorials/develop/embed-webview/android/webview.png)
 
 
