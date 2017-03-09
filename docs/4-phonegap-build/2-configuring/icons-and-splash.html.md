@@ -42,8 +42,8 @@ The default icon must be named `icon.png` and must reside in the root of your ap
 ```
 
 - **src**: (required) specifies the location of the image file relative to your config.xml
-- **width**: (optional) but recommended to include, width in pixels
-- **height**: (optional) but recommended to include, height in pixels
+- **width**: (required) width in pixels
+- **height**: (required) height in pixels
 - **platform**: (optional) the target platform (`ios`, `android`, or `windows`)
 
 ### iOS
@@ -103,12 +103,12 @@ The names below reflect the names of the destination files when they are added t
 We support all Android resource qualifiers. Commonly used qualifiers refer to device density and language.
 
 ```xml
-<icon src="ldpi.png" platform="android" qualifier="ldpi" />
-<icon src="mdpi.png" platform="android" qualifier="mdpi" />
-<icon src="hdpi.png" platform="android" qualifier="hdpi" />
-<icon src="xhdpi.png" platform="android" qualifier="xhdpi" />
-<icon src="xxhdpi.png" platform="android" qualifier="xxhdpi" />
-<icon src="fr-xxhdpi.png" platform="android" qualifier="fr-xxhdpi" />
+<icon src="ldpi.png" platform="android" qualifier="ldpi" width="36" height="36" />
+<icon src="mdpi.png" platform="android" qualifier="mdpi" width="48" height="48" />
+<icon src="hdpi.png" platform="android" qualifier="hdpi" width="72" height="72" />
+<icon src="xhdpi.png" platform="android" qualifier="xhdpi" width="96" height="96" />
+<icon src="xxhdpi.png" platform="android" qualifier="xxhdpi" width="144" height="144" />
+<icon src="xxxhdpi.png" platform="android" qualifier="xxxhdpi" width="192" height="192" />
 ```
 
 A list of these qualifiers can be viewed on Table-2 [here](http://developer.android.com/guide/topics/resources/providing-resources.html). Note that compound qualifiers (eg. "port-xhdpi") have to be in the same order as viewed on this table.
