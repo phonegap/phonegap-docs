@@ -9,5 +9,3 @@ layout: subpage
 <ul class="landing-submenu">
   <li>[Embedding the Webview](app-stack/1-conference-memories)</li>
 </ul>
-
-This section is a continuous work in progress as the challenges mobile developers face are ever changing. Be sure to check back often to learn more.
