@@ -43,8 +43,8 @@ Later on in the file you'll see were we setup `Vue`. Three really important line
    ```js
    // Register App Component
    components: {
-     app: App,
-   },
+     app: App
+   }
    ```
 
 Below is the relevant code snippet from the main.js.
@@ -62,12 +62,12 @@ new Vue({ // eslint-disable-line no-new
     animateNavBackIcon: window.isiOS,
     pushState: true,
     pushStateNoAnimation: true,
-    panelLeftBreakpoint: 960,
+    panelLeftBreakpoint: 960
   },
   // Register App Component
   components: {
-    app: App,
-  },
+    app: App
+  }
 });
 ```
 
@@ -89,7 +89,7 @@ This is where we import a couple of components, `LeftPanel` represents our slide
 ```js
 components: {
   'left-panel-view': LeftPanel,
-  'home-page': Home,
+  'home-page': Home
 },
 ```
 
