@@ -4,8 +4,11 @@ url: app-stack/conference-memories
 layout: subpage
 ---
 
-<p class="sub-paragraph">Building a mobile app requires several phases from configuring, developing, debugging and optimizing to finally distributing it to the app stores. Some of these phases can prove to be more challenging. This section of tutorials is offered to help developers tackle some of those challenging issues.</p>
+<p class="sub-paragraph">A PhoneGap example app using Framework7 + Vue.js and the Adobe CreativeSDK.</p>
 
 <ul class="landing-submenu">
-  <li>[Embedding the Webview](app-stack/1-conference-memories)</li>
+  <li>[Prerequisites](app-stack/1-prerequisites)</li>
+  <li>[Getting Started](app-stack/2-getting-started)</li>
+  <li>[Template Explained](app-stack/3-template-explained)</li>
+  <li>[Modify UI](app-stack/4-modify-ui)</li>
 </ul>
