@@ -56,6 +56,17 @@ The PhoneGap CLI has a default Hello World project for beginners to start with b
   $ npm run dev
   ```
 
+   You should see the following in your terminal:
+
+  ```sh
+  confapp@1.0.0 dev /Users/smacdona/code/confApp
+  node build/dev-server.js
+
+   DONE  Compiled successfully in 7532ms
+
+  Listening at http://localhost:8080
+  ```
+
    This will open the app in your browser by at [localhost:8080](http://localhost:8080)
 
   ![](/images/conference-memories/browser-debug.png)
