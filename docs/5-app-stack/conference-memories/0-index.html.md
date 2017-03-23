@@ -11,4 +11,5 @@ layout: subpage
   <li>[Getting Started](2-getting-started)</li>
   <li>[Template Explained](3-template-explained)</li>
   <li>[Modify UI](4-modify-ui)</li>
+  <li>[Logging In](5-logging-in)</li>
 </ul>
