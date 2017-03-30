@@ -3,7 +3,9 @@ title: Preferences
 url: phonegap-build/configuring/preferences
 layout: subpage
 ---
-PhoneGap utilizes the `<preference>` tag to customize your application configuration. All `<preference>` tags in your config.xml are copied to the platform-specific configuration files, which means that any preferences [supported by the PhoneGap framework](http://docs.phonegap.com/en/edge/config_ref_index.md.html#The%20config.xml%20File), or by any plugins you are using, will work on PhoneGap Build.
+PhoneGap utilizes the `<preference>` tag to customize your application configuration. All `<preference>` tags in your config.xml are copied to the platform-specific configuration files, which means that any preferences supported by the PhoneGap framework, or by any plugins you are using, will work on PhoneGap Build.
+
+**[Apache Cordova config.xml preferences documentation](https://cordova.apache.org/docs/en/latest/config_ref/index.html#preference)**
 
 **Note**: make sure you select your PhoneGap version when looking at the PhoneGap docs page.
 
@@ -36,6 +38,14 @@ If you want to see more detail about what exactly these custom preferences are d
 - [android-targetSdkVersion](#android-targetSdkVersion)
 - [android-installLocation](#android-installLocation)
 - [android-windowSoftInputMode](#android-windowSoftInputMode)
+
+**Note**: The **AndroidLaunchMode** preference is not currently supported on Phonegap Build. You can work around this by using the config-file element to set the value in your config.xml directly:
+
+```xml
+<config-file platform="android" parent="/manifest/application" mode="merge">
+    <activity android:launchMode="singleTop" />
+</config-file>
+```
 
 ## Windows Only (cli-6.1.1 and above)
 
