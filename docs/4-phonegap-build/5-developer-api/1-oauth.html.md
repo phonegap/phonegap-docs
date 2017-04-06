@@ -27,7 +27,7 @@ We'll generate a couple of fields for you:
 
 ## Web Application Flow
 
-You've registred your application and are ready to hook it into PhoneGap Build. The first thing you'll do is redirect users to PhoneGap Build where we'll ask them if they want to allow your app to access their resources:
+You've registered your application and are ready to hook it into PhoneGap Build. The first thing you'll do is redirect users to PhoneGap Build where we'll ask them if they want to allow your app to access their resources:
 
     GET https://build.phonegap.com/authorize?client_id=abcdef
 
