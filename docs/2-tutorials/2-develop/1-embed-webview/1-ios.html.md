@@ -6,7 +6,9 @@ tabs:
   - label: iOS
     url: tutorials/develop/1-embed-webview/ios
   - label: Android
-    url: tutorials/develop/1-embed-webview/android    
+    url: tutorials/develop/1-embed-webview/android
+  - label: Android with AS extension
+    url: tutorials/develop/1-embed-webview/android-with-extension
 ---
 
 ## Creating Apps with PhoneGap and iOS Native Components
