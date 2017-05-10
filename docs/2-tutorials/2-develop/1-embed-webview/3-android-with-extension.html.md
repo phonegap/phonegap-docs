@@ -11,14 +11,24 @@ tabs:
     url: tutorials/develop/1-embed-webview/android-with-extension
 ---
 
-*  create a new android project, set application name to "componentcase", company domain to "phonegapday.com" and edit package name to be "com.phonegapday". click next.
+## Creating Apps with PhoneGap and Android Native Components using the Android Studio extension.
+
+* create a new android project, set application name to "componentcase", company domain to "phonegapday.com" and edit package name to be "com.phonegapday". click next.
+
 ![step1](/images/android-webviews/step1.png)
+
 * check "phone and tablet" and set minimum sdk to api 21: android 5.0 (lollipop)
+
 ![step2](/images/android-webviews/step2.png)
+
 * click next and select "navigation drawer activity".
+
 ![step3](/images/android-webviews/step3.png)
+
 * click next and click finish
+
 ![step4](/images/android-webviews/step4.png)
+
 * clean up a few things
   * open `res/menu/activity_main_drawer.xml` and make sure it looks like this
   ```xml
@@ -64,25 +74,24 @@ tabs:
 * Make sure you have [NodeJS](https://nodejs.org) installed. If you already have [NodeJS](https://nodejs.org) installed make sure you `npm install -g plugman`
 * Go to **Android Studio** > `Preferences` > `Plugins` and click on _install JetBrains Plugin_ button.
 * Search for `PhoneGap` and install it. Make sure you don't install the **PhoneGap/Cordova Plugin**
-* Restart **Android Studio** 
+* Restart **Android Studio**
 * Go to `Tools` > `PhoneGap` > `Initialize Project`
 * Copy everything from www-shared/www to this newly created assets/www
 * Go to `Tools` > `PhoneGap` > `Install Plugin from npm`
 * Type in `cordova-plugin-device`
 * Go to `Tools` > `PhoneGap` > `Install Plugin from npm`
+
 1* Type in `cordova-plugin-console`
 1* Go to `Tools` > `PhoneGap` > `Install Plugin from filesystem`
 1* Select `cordova-plugin-pgdayeu16` which can be found at [cordova-plugin-pgdayeu16](https://github.com/imhotep/PGDayEUWs2016/tree/master/cordova-plugin-pgdayeu16)
 
-
-
 * Add the following line to your `res/values/strings.xml`
-  
+
   ```XML
   <string name="add_bookmark">Add Bookmark</string>
-  ```  
+  ```
 * Right click on `res/layout` and select `New` -> `XML` -> `Layout XML File`. Name it `bookmark_main`. Make sure it looks like this
-  
+
   ```XML
   <?xml version="1.0" encoding="utf-8"?>
   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -108,7 +117,7 @@ tabs:
   </LinearLayout>
   ```
 * Add the following attributes to your `MainActivity.java`
-  
+
   ```Java
   // need this for page navigation
   private String[] urls = new String[2];
@@ -117,7 +126,7 @@ tabs:
   private ArrayList<String> bookmarks = new ArrayList<String>();
   ```
 * Set up the native ListView by adding the following lines to your `onCreate` method. Fix imports
-  
+
   ```Java
   // Set up the bookmark view
   bookmarks.add("http://google.com"); // dummy bookmark
@@ -149,7 +158,7 @@ tabs:
   }
   ```
 * Add the following methods
-  
+
   ```Java
   protected ArrayList<String> getBookmarks() {
       return bookmarks;
@@ -164,19 +173,19 @@ tabs:
 
   ```
 * Add this line to your `res/layout/content_main.xml`
-  
+
   ```XML
   <include layout="@layout/bookmark_main"/>
   ```
-* Add these lines at the bottom of your `onCreate` method 
-  
+* Add these lines at the bottom of your `onCreate` method
+
   ```Java
   urls[0] = parser.getLaunchUrl();
   urls[1] = urls[0].replace("index.html", "listeditor.html");
   webView.loadUrl(urls[0]);
   ```
 * Make sure your `onNavigationItemSelected` looks like this
-  
+
   ```Java
   public boolean onNavigationItemSelected(MenuItem item) {
       // Handle navigation view item clicks here.
@@ -201,8 +210,8 @@ tabs:
   }
   ```
 * Make sure to add this attribute to your `<activity>` tag in your `AndroidManifest.xml`
-  
-  ```
+
+  ```XML
   android:windowSoftInputMode="adjustPan"
   ```
-* To avoid seeing weird `eglCodecCommon` errors in the console add this to your filter: `^(?!eglCodecCommon)` 
+* To avoid seeing weird `eglCodecCommon` errors in the console add this to your filter: `^(?!eglCodecCommon)`
