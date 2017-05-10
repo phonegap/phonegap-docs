@@ -13,6 +13,16 @@ tabs:
 
 ## Creating Apps with PhoneGap and Android Native Components using the Android Studio extension.
 
+### Prerequisites:
+
+* ***PhoneGap Android Studio extension***
+
+Please install it directly in Android Studio. Under *Preferences* > *Plugins*.
+
+![requirement](/images/android-webviews/req.png)
+
+### Embedding a WebView
+
 * create a new android project, set application name to "componentcase", company domain to "phonegapday.com" and edit package name to be "com.phonegapday". click next.
 
 ![step1](/images/android-webviews/step1.png)
