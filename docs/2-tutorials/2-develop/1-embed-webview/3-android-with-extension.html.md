@@ -11,97 +11,158 @@ tabs:
     url: tutorials/develop/1-embed-webview/android-with-extension
 ---
 
-## Creating Apps with PhoneGap and Android Native Components using the Android Studio extension.
+This tutorial will show you how to add PhoneGap/Cordova support to an existing Android project using PhoneGap's Android Studio extension.
 
-### Prerequisites:
+**Notice: make sure you're in `Text` mode when editing XML files. Select the `Text` tab at the bottom of the XML editor.**
 
-* ***PhoneGap Android Studio extension***
+### Create Android project 
 
-Please install it directly in Android Studio. Under *Preferences* > *Plugins*.
-
-![requirement](/images/android-webviews/req.png)
-
-### Embedding a WebView
-
-* create a new android project, set application name to "componentcase", company domain to "phonegapday.com" and edit package name to be "com.phonegapday". click next.
+* Create a new android project, set Application name to "ComponentCase", Company Domain to "phonegapday.com" and edit Package name to be "com.phonegapday". Click next.
 
 ![step1](/images/android-webviews/step1.png)
 
-* check "phone and tablet" and set minimum sdk to api 21: android 5.0 (lollipop)
+* Check "Phone and Tablet" and set Minimum SDK to API 21: Android 5.0 (Lollipop)
 
 ![step2](/images/android-webviews/step2.png)
 
-* click next and select "navigation drawer activity".
+* Click next and select "Navigation Drawer Activity".
 
 ![step3](/images/android-webviews/step3.png)
 
-* click next and click finish
+* Click next and click Finish
 
 ![step4](/images/android-webviews/step4.png)
 
-* clean up a few things
+* Clean up a few things
   * open `res/menu/activity_main_drawer.xml` and make sure it looks like this
-  ```xml
+  ```XML
     <?xml version="1.0" encoding="utf-8"?>
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
-        <group android:checkablebehavior="single">
+        <group android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_webview"
-                android:title="webview" />
+                android:title="Webview" />
             <item
                 android:id="@+id/nav_list_webview"
-                android:title="list (webview)" />
+                android:title="List (WebView)" />
             <item
                 android:id="@+id/nav_list_native"
-                android:title="list (native)" />
+                android:title="List (Native)" />
         </group>
     </menu>
   ```
-  * open `res/layout/app_bar_main.xml` and delete the `floatingactionbutton`
+  * open `res/layout/app_bar_main.xml` and delete the `FloatingActionButton`
   * delete all `ic_menu*` from `res/drawable`
-  * open `res/layout/nav_header_main.xml` and change the first textview's text by "componentcase". delete the imageview and the other textview.
+  * open `res/layout/nav_header_main.xml` and change the first `TextView`'s text to "**ComponentCase**". Delete the `ImageView` and the other `TextView`.
   * open `res/values/dimens.xml` and change `nav_header_height` to '100dp'
-  * open 'mainactivity' and delete lines 26-33 (floatingactionbutton) and make sure your `onnavigationitemselected` method looks like this
-  ```java
-    public boolean onnavigationitemselected(menuitem item) {
-          // handle navigation view item clicks here.
-          int id = item.getitemid();
+  * open `MainActivity.java` and delete lines 26-33 (FloatingActionButton) and make sure your `onNavigationItemSelected` method looks like this
+  ```Java
+    public boolean onNavigationItemSelected(MenuItem item) {
+          // Handle navigation view item clicks here.
+          int id = item.getItemId();
 
-          if (id == r.id.nav_webview) {
-              // handle the camera action
-          } else if (id == r.id.nav_list_webview) {
+          if (id == R.id.nav_webview) {
+              // Handle the camera action
+          } else if (id == R.id.nav_list_webview) {
 
-          } else if (id == r.id.nav_list_native) {
+          } else if (id == R.id.nav_list_native) {
 
           }
 
-          drawerlayout drawer = (drawerlayout) findviewbyid(r.id.drawer_layout);
-          drawer.closedrawer(gravitycompat.start);
+          DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+          drawer.closeDrawer(GravityCompat.START);
           return true;
       }
   ```
 
+### Set up PhoneGap/Cordova in your project 
+
 * Make sure you have [NodeJS](https://nodejs.org) installed. If you already have [NodeJS](https://nodejs.org) installed make sure you `npm install -g plugman`
-* Go to **Android Studio** > `Preferences` > `Plugins` and click on _install JetBrains Plugin_ button.
+* Go to **Android Studio** > `Preferences` > `Plugins` and click on _Browse Repositories_ button.
 * Search for `PhoneGap` and install it. Make sure you don't install the **PhoneGap/Cordova Plugin**
 * Restart **Android Studio**
 * Go to `Tools` > `PhoneGap` > `Initialize Project`
-* Copy everything from www-shared/www to this newly created assets/www
+* You should see a notification: **"Gradle files have changed since last project sync. A project sync may be necessary for the IDE to work properly"**. Click on **Sync Now**
+* Copy everything from [www-shared/www](https://github.com/imhotep/PGDayEUWs2016/tree/master/www-shared) to this newly created `assets/www`
+  * You can run the following to get `www-shared` easily inside your `app/src/main/assets` folder
+  ```Bash
+  svn export --force https://github.com/imhotep/PGDayEUWs2016.git/trunk/www-shared/www
+  ```
 * Go to `Tools` > `PhoneGap` > `Install Plugin from npm`
 * Type in `cordova-plugin-device`
 * Go to `Tools` > `PhoneGap` > `Install Plugin from npm`
+* Type in `cordova-plugin-console`
+* Go to `Tools` > `PhoneGap` > `Install Plugin from filesystem`
+* Select `cordova-plugin-pgdayeu16` which can be found at [cordova-plugin-pgdayeu16](https://github.com/imhotep/PGDayEUWs2016/tree/master/cordova-plugin-pgdayeu16)
+  * Again you can easily fetch the plugin to your filesystem using the following command
+  ```Bash
+  svn export https://github.com/imhotep/PGDayEUWs2016.git/trunk/cordova-plugin-pgdayeu16
+  ```
 
-1* Type in `cordova-plugin-console`
-1* Go to `Tools` > `PhoneGap` > `Install Plugin from filesystem`
-1* Select `cordova-plugin-pgdayeu16` which can be found at [cordova-plugin-pgdayeu16](https://github.com/imhotep/PGDayEUWs2016/tree/master/cordova-plugin-pgdayeu16)
+### Embedding CordovaWebView
+
+* open `res/layout/content_main.xml` and replace the TextView with the following
+  ```XML
+  <org.apache.cordova.engine.SystemWebView
+      android:id="@+id/WebViewComponent"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+  </org.apache.cordova.engine.SystemWebView>
+  ``` 
+* Add the following attributes to `MainActivity.java`. Make sure you fix the imports.
+  ```Java
+  private String TAG = "ComponentWrapper";
+  private SystemWebView webView;
+  private CordovaWebView webInterface;
+  private CordovaInterfaceImpl stupidface = new CordovaInterfaceImpl(this);
+  ```
+* Add the following lines at the bottom of your `onCreate` method
+  ```Java
+  //Set up the webview
+  ConfigXmlParser parser = new ConfigXmlParser();
+  parser.parse(this);
+
+  webView = (SystemWebView) findViewById(R.id.WebViewComponent);
+  webInterface = new CordovaWebViewImpl(new SystemWebViewEngine(webView));
+  webInterface.init(stupidface, parser.getPluginEntries(), parser.getPreferences());
+  webView.loadUrl(parser.getLaunchUrl());
+  ```
+* These methods are required for `CordovaWebView` to work properly. Add them and fix imports
+  ```Java
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+      super.onActivityResult(requestCode, resultCode, intent);
+      stupidface.onActivityResult(requestCode, resultCode, intent);
+  }
+
+  @Override
+  public void onDestroy() {
+      webInterface.handleDestroy();
+      super.onDestroy();
+  }
+
+  public void onRequestPermissionsResult(int requestCode, String permissions[],
+                                         int[] grantResults) {
+      try
+      {
+          stupidface.onRequestPermissionResult(requestCode, permissions, grantResults);
+      }
+      catch (JSONException e)
+      {
+          Log.d(TAG, "JSONException: Parameters fed into the method are not valid");
+          e.printStackTrace();
+      }
+
+  }
+  ```
+
+### Adding native and web list views
 
 * Add the following line to your `res/values/strings.xml`
-
   ```XML
   <string name="add_bookmark">Add Bookmark</string>
   ```
 * Right click on `res/layout` and select `New` -> `XML` -> `Layout XML File`. Name it `bookmark_main`. Make sure it looks like this
-
   ```XML
   <?xml version="1.0" encoding="utf-8"?>
   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -135,7 +196,7 @@ Please install it directly in Android Studio. Under *Preferences* > *Plugins*.
   private LinearLayout bookmarkLayout;
   private ArrayList<String> bookmarks = new ArrayList<String>();
   ```
-* Set up the native ListView by adding the following lines to your `onCreate` method. Fix imports
+* Set up the native ListView by adding the following lines to your `onCreate` method
 
   ```Java
   // Set up the bookmark view
@@ -182,6 +243,7 @@ Please install it directly in Android Studio. Under *Preferences* > *Plugins*.
   }
 
   ```
+* Fix imports
 * Add this line to your `res/layout/content_main.xml`
 
   ```XML
@@ -224,4 +286,8 @@ Please install it directly in Android Studio. Under *Preferences* > *Plugins*.
   ```XML
   android:windowSoftInputMode="adjustPan"
   ```
+
+### Run the application
+
+* Run the application by clicking on `Run` -> `Run 'app'`. You notice that elements added in the webview and native view are sychronized. Check out the plugin code for more details.
 * To avoid seeing weird `eglCodecCommon` errors in the console add this to your filter: `^(?!eglCodecCommon)`
