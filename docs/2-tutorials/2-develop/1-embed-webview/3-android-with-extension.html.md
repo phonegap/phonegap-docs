@@ -11,11 +11,13 @@ tabs:
     url: tutorials/develop/1-embed-webview/android-with-extension
 ---
 
+## Creating Apps with PhoneGap and Android Native Components with the Android Studio extension
+
 This tutorial will show you how to add PhoneGap/Cordova support to an existing Android project using PhoneGap's Android Studio extension.
 
 **Notice: make sure you're in `Text` mode when editing XML files. Select the `Text` tab at the bottom of the XML editor.**
 
-### Create Android project 
+### Create Android project
 
 * Create a new android project, set Application name to "ComponentCase", Company Domain to "phonegapday.com" and edit Package name to be "com.phonegapday". Click next.
 
@@ -75,7 +77,7 @@ This tutorial will show you how to add PhoneGap/Cordova support to an existing A
       }
   ```
 
-### Set up PhoneGap/Cordova in your project 
+### Set up PhoneGap/Cordova in your project
 
 * Make sure you have [NodeJS](https://nodejs.org) installed. If you already have [NodeJS](https://nodejs.org) installed make sure you `npm install -g plugman`
 * Go to **Android Studio** > `Preferences` > `Plugins` and click on _Browse Repositories_ button.
@@ -108,7 +110,7 @@ This tutorial will show you how to add PhoneGap/Cordova support to an existing A
       android:layout_width="match_parent"
       android:layout_height="match_parent">
   </org.apache.cordova.engine.SystemWebView>
-  ``` 
+  ```
 * Add the following attributes to `MainActivity.java`. Make sure you fix the imports.
   ```Java
   private String TAG = "ComponentWrapper";
