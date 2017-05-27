@@ -105,6 +105,10 @@ module.exports = {
     pgbDocs: function() {
       return this.getCollection('gsDocs')
           .findAllLive({url:{$startsWith:'phonegap-build/'}}, [{ relativeBase: 1 }])
+    },
+    appStackDocs: function() {
+      return this.getCollection('gsDocs')
+          .findAllLive({url:{$startsWith:'app-stack/'}}, [{ relativeBase: 1 }])
     }
   }
 };
