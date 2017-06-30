@@ -28,3 +28,4 @@ The sections covered in this reference include:
 - [Updating Software Version](/references/desktop-app/7-update-version/mac)
 - [Editing Settings](/references/desktop-app/edit-settings)
 - [Troubleshooting/FAQ](/references/desktop-app/troubleshoot-faq)
+- [Developer Console](/references/desktop-app/developer-console)
