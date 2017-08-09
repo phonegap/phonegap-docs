@@ -1,14 +1,16 @@
 ---
-title: Signing
+title: Windows Signing
 url: phonegap-build/signing/windows
 layout: subpage
-tabs:
+tabs: 
+  - label: Overview
+    url: phonegap-build/signing/overview
   - label: iOS
     url: phonegap-build/signing/ios
   - label: Android
     url: phonegap-build/signing/android
   - label: Windows
-    url: phonegap-build/signing/windows  
+    url: phonegap-build/signing/windows 
 ---
 
 - [Windows 10 (Universal) Signing](#windows): `phonegap-version cli-6.1.1` and greater

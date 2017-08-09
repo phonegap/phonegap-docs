@@ -1,15 +1,19 @@
 ---
-title: Signing
+title: iOS Signing
 url: phonegap-build/signing/ios
 layout: subpage
 tabs:
+  - label: Overview
+    url: phonegap-build/signing/overview 
   - label: iOS
     url: phonegap-build/signing/ios
   - label: Android
     url: phonegap-build/signing/android
   - label: Windows
-    url: phonegap-build/signing/windows  
+    url: phonegap-build/signing/windows 
 ---
+
+A Certificate and Mobile Provisioning file are required to build your iOS apps on PhoneGap Build, and in order to obtain these, an membership in the Apple Developer Program is required. During development, you will use a Development certificate which will allow you to install your iOS apps on a pre-selected set of specific devices (identified by their UUID). Once you're ready to publish, you'll sign the application with a Distribution certificate.
 
 - [Creating your key on Mac](#mac-users)
 - [Creating your key on Windows](#windows-users)
@@ -17,13 +21,11 @@ tabs:
 - [Create Provisioning Profile](#create-provisioning-profile)
 - [Submit to Build](#submit-to-build)
 
-<div class="alert-info">**Note**: it is Phonegap Build's policy not to retrieve signing keys for users, for legal reasons. Back them up.</div>
-
 ***
 
 ## Mac Users
 
-### Convert the iPhone Developer Certificate to a P12 file on Mac OS
+### Generating your p12 certificate
 
 You'll first need to obtain an Apple Developer Certificate. See apple documentation for this.
 
