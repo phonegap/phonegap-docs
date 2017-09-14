@@ -9,4 +9,3 @@ layout: subpage
 ## Understanding the Stock API request/result format
 
 ## Add JavaScript handling
-

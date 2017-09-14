@@ -6,9 +6,8 @@ layout: subpage
 
 ## Overview
 
-https://vuejs.org/v2/guide/state-management.html
+`https://vuejs.org/v2/guide/state-management.html`
 
 ## Add JavaScript handling
 
 Update main.js with new global store
-

@@ -7,9 +7,9 @@ layout: subpage
 ## Add UI Components
 
 - Images Grid
-- Handle no results returned with an <f7-block>
+- Handle no results returned with an `<f7-block>`
 - Preloader components
 
-## Infinite scroll handling 
+## Infinite scroll handling
 
-## Page Reinit handling 
+## Page Reinit handling

@@ -25,4 +25,3 @@ layout: subpage
 
 - Use devtools to look at response even though UI not there yet
 - Look at Vue devtools too
-

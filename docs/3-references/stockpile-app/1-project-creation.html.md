@@ -7,9 +7,11 @@ layout: subpage
 ## PhoneGap Templates
 
 ## Useful Devtools
+
 - Vue Chrome Extension
 
 ## Development Workflow Overview
+
 - Running for dev vs prod
 
 ## Project/File Structure
