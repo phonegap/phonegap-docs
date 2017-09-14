@@ -68,7 +68,7 @@ To develop apps via Build, you must use a P12 certificate file. You generate thi
 
 ## Register devices
 
-1. Visit [Apple Developer Portal](https://developer.apple.com/ios/manage/provisioningprofiles/index.action).
+1. Visit [Apple Developer Portal](https://developer.apple.com/).
 1. Go to Device section. Under Manage tab, provide Device Name and Device ID (40 hex characters)
 
 ## Create Provisioning Profile
