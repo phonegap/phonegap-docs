@@ -68,7 +68,7 @@ Please read the documentation of the plugin to get a list of all required parame
 
 ### Error adding config-file element
 
-The build has failed as your config.xml may contain `config-file` elements that will produce a malformed or illegally formatted `WMAppManifest.xml` file. The `WMAppManifest.xml` for windows phone projects has a [strictly defined format](http://msdn.microsoft.com/library/windows/apps/ff769509.aspx). Make sure your `config-file` elements are valid. A common error is not defining a xmlns namespace for an element eg. `<tag xmlns=""></tag>`
+The build has failed as your config.xml may contain `config-file` elements that will produce a malformed or illegally formatted `WMAppManifest.xml` file. The `WMAppManifest.xml` for windows phone projects has a [strictly defined format](https://msdn.microsoft.com/library/windows/apps/ff769509.aspx). Make sure your `config-file` elements are valid. A common error is not defining a xmlns namespace for an element eg. `<tag xmlns=""></tag>`
 
 <a name="path_too_long"></a>
 
