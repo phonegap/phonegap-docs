@@ -16,7 +16,7 @@ an easy way for developers to get started creating and testing their PhoneGap ap
 
   - [iTunes](https://itunes.apple.com/app/id843536693)
   - [Google Play](https://play.google.com/store/apps/details?id=com.adobe.phonegap.app)
-  - [Windows Phone Store](http://www.windowsphone.com/en-us/store/app/phonegap-developer/5c6a2d1e-4fad-4bf8-aaf7-71380cc84fe3)
+  - [Windows Phone Store](https://www.microsoft.com/en-us/store/p/phonegap-developer/9wzdncrdfsj0)
 
 1. Once installed, tap the PhoneGap Developer app icon from your home screen to open it:
 

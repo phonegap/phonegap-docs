@@ -17,7 +17,7 @@ expand: build
 1. [When I try to log in with my Adobe ID, I get "That email address is already linked to a PhoneGap Build account."](#already-linked)
 1. [I'm seeing "This app isn't using the latest version of PhoneGap. We recommend upgrading..."](#app-upgrade)
 1. [Where do I go to find PhoneGap Build help?](#where-help)
-2. [My build has suddenly started failing, what happened?](#sudden-failure)
+1. [My build has suddenly started failing, what happened?](#sudden-failure)
 
 <a name="what-is-build" class="anchor"></a>
 
