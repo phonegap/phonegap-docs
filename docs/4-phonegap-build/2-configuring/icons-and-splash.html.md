@@ -108,6 +108,7 @@ We support all Android resource qualifiers. Commonly used qualifiers refer to de
 <icon src="hdpi.png" platform="android" qualifier="hdpi" />
 <icon src="xhdpi.png" platform="android" qualifier="xhdpi" />
 <icon src="xxhdpi.png" platform="android" qualifier="xxhdpi" />
+<icon src="xxxhdpi.png" platform="android" qualifier="xxxhdpi" />
 <icon src="fr-xxhdpi.png" platform="android" qualifier="fr-xxhdpi" />
 ```
 
@@ -212,6 +213,7 @@ We support all Android resource qualifiers. Commonly used qualifiers refer to de
 <splash src="fr-xhdpi.png" platform="android" qualifier="fr-xhdpi" />
 <splash src="portrait-xxhdpi.png" platform="android" qualifier="port-xxhdpi" />
 <splash src="landscape-xxhdpi.png" platform="android" qualifier="land-xxhdpi" />
+<splash src="xxxhdpi.png" platform="android" qualifier="xxxhdpi" />
 ```
 
 A list of these qualifiers can be viewed on Table-2 [here](http://developer.android.com/guide/topics/resources/providing-resources.html). Note that compound qualifiers (eg. "port-xhdpi") have to be in the same order as viewed on this table.
