@@ -20,7 +20,7 @@ tabs:
 
 ## Windows 10 (Universal) Signing
 
-Windows builds have a slightly more involved signing process than the previous Windows Phone Publisher ID method, which was a simple GUID setting. A .pfx certificate file is now required to sign your app and distribute it to the App Store. [This article on MSDN](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832%28v=vs.85%29.aspx) explains how to create a PFX store file. Ensure the Subject Name of your signing certificate matches the Windows Publisher ID from your [Microsoft Developer Account](https://developer.microsoft.com/en-us/dashboard/account/management).
+Windows builds have a slightly more involved signing process than the previous Windows Phone Publisher ID method, which was a simple GUID setting. A .pfx certificate file is now required to sign your app and distribute it to the App Store. [This article on MSDN](https://docs.microsoft.com/en-us/windows/uwp/packaging/create-certificate-package-signing) explains how to create a PFX store file. Ensure the Subject Name of your signing certificate matches the Windows Publisher ID from your [Microsoft Developer Account](https://developer.microsoft.com/en-us/dashboard/account/management).
 
 Go to your [PhoneGap Build Account Settings](https://build.phonegap.com/people/edit), select the **Signing Keys** tab, upload your **Windows 10** pfx key and unlock it, and select it when building your application.
 
