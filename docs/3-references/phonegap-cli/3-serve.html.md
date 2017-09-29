@@ -5,6 +5,7 @@ layout: subpage
 ---
 
 The `serve` command is used to start up a local web server to host the application for the PhoneGap Developer app (or any browser) to consume.
+YOU NEED TO BE IN YOUR APP FOLDER TO BE ABLE TO START THE WEB SERVER!
 
 ## Usage
 
