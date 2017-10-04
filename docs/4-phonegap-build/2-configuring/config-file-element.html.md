@@ -4,6 +4,10 @@ url: phonegap-build/configuring/config-file-element
 layout: subpage
 ---
 
+<div class='alert--warning' style="font-style:bold">
+As of cli-7.0.1 on PhoneGap Build (and as long as you're using the new builder), modifying manifests is handled by Cordova with the `edit-config` element. Check out the [cordova edit-config docs](https://cordova.apache.org/docs/en/latest/config_ref/index.html#edit-config) for usage details. Otherwise if you're using cli-6.5.0 and below (and/or the old builder), use the config-file element as documented below.
+</div>
+
 PhoneGap Build aims to take away the pains of configuring SDKs and compiling native applications so you can focus on writing great code. As part of this, we obfuscate management of the platform configuration files -- namely your [Android Manifest](http://developer.android.com/guide/topics/manifest/manifest-intro.html) (AndroidManifest.xml) and your [iOS Property List](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html) (Info.plist). We configure these files based on the preferences you specify in your app's config.xml file. However, the specifications of these xml files are constantly changing, and it would be impossible for us to expose all of the possible configurations through the use of simple preferences. So for those cases that we haven't covered, you can contribute xml directly to your Android Manifest and iOS Propertly List files, via the `config-file` element (beta feature).
 
 The `config-file` spec is based on the [config-file element in PhoneGap's plugin.xml spec](http://docs.phonegap.com/en/3.3.0/plugin_ref_spec.md.html#Plugin%20Specification_config_file_element), though has a slightly different implementation.
