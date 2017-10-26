@@ -73,7 +73,7 @@ To develop apps via Build, you must use a P12 certificate file. You generate thi
 
 ## Create Provisioning Profile
 
-1. Visit [Apple Developer Portal](https://developer.apple.com/ios/manage/provisioningprofiles/index.action).
+1. Visit [Apple Developer Portal](https://developer.apple.com/).
 1. Go to Provisioning section. Create new profile under Development tab.
 1. Fill the form with Profile Name, Certificates (as per .cer above), App ID and your development device.
 
