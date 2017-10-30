@@ -10,4 +10,10 @@ layout: subpage
 
 ## Add JavaScript handling
 
-Update main.js with new global store
+Update main.js with this new global store object:
+
+	// Global store defaults
+	window.store = {
+	  images: [],
+	  imagesById: {}
+	};

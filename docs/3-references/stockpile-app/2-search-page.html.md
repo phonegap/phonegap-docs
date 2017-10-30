@@ -20,13 +20,15 @@ Let's begin by coding the first view you are presented with when the app is run,
 ### Part 1: Navigation Bar 
 There are some minor changes to make to the `<f7-navbar>` block. The `<f7-navbar>` block has a left and center definition to it currently, which refer to what you see in the app for the hamburger menu icon on the left and the Search title in the center. 
 
-1. Change the icon reference for the side menu to use one from the *Framework7 Icons* library we added during project setup instead. The default `icon-bars` icon is referenced now (from the default Framework7 library), but to use icons from the *Framework7 Icons* library specifically, use the `icon-f7` attribute, with the icon name as the value, as shown here: 
+<img class="mobile-image" src="/images/stockpile/navbar1.png" alt="Stockpile Navbar"/>
+
+1. Change the side menu icon reference in the left side of the navbar to use one from the *Framework7 Icons* library we added during project setup instead. The default `icon-bars` icon is currently referenced which is part of the default Framework7 library, but to use icons from the *Framework7 Icons* library specifically, use the `icon-f7` attribute with the [icon name](http://framework7.io/icons/) as the value, which in this case is `bars`. For instance:
 
 		<f7-link icon-f7="bars" open-panel="left"></f7-link>
 
     <div class="alert--info">See [this link](http://framework7.io/vue/icon.html) for details and syntax for using icons with Framework7+Vue projects.</div>
 
-2. Change the value of the `<f7-nav-center />` tag content to use a dynamic variable named `title` (curly braces denote the [Vue template syntax](https://vuejs.org/v2/guide/syntax.html)) instead of the **Home** string, so in the future if you want to change it you only have to do it in one place:
+2. Change the value of the `<f7-nav-center />` tag content to use a dynamic variable named `title` defined in a template string like below: (curly braces denote the [Vue template syntax](https://vuejs.org/v2/guide/syntax.html)) instead of the **Home** string, so in the future if you want to change it you only have to do it in one place:
 
         <f7-nav-center sliding>{{ title }}</f7-nav-center>
 
@@ -37,7 +39,7 @@ There are some minor changes to make to the `<f7-navbar>` block. The `<f7-navbar
 	        	title: 'Home Page'
 	      	};
 	    }
-
+    
 3. Your final `<f7-navbar>` block should look like the snippet below:
 
 	    <f7-navbar>
@@ -52,7 +54,8 @@ Continuing in `Search.vue`...
 
 1. Replace this UI block from the base app:
 
-		   <f7-block inner>
+		<f7-block-title>{{ title }}</f7-block-title>	
+		<f7-block inner>
 		     <p>
 		       This is an example of split view application layout where left
 		       view degrades to panel on narrow screens (iPad portrait and
@@ -64,7 +67,7 @@ Continuing in `Search.vue`...
 		       control one view from another without any line of JavaScript
 		       just using "data-view" attribute on links.
 		     </p>
-		   </f7-block>
+		</f7-block>
 
 	with:
 
@@ -74,7 +77,9 @@ Continuing in `Search.vue`...
 		    </f7-list>
 		</form>
 
-	This new code adds a [block content title](http://framework7.io/vue/content-block-title.html) to the page and an HTML form with some Vue-specific syntax that registers a reference to the `form` component (via [`ref`](https://vuejs.org/v2/guide/components.html#Child-Component-Refs) and specifies an event handler function of `onSubmit` to call on form submission. The `prevent` keyword is a [Vue modifier](https://vuejs.org/v2/guide/events.html#Event-Modifiers) that prevents the page from being reloaded on submission (for instance if the user hits enter within the form).
+	This new code adds a [block content title](http://framework7.io/vue/content-block-title.html) to the page and an HTML form with a `GET` method and an `onSubmit()` event handler function. 
+	
+    <div class="alert--info">**Note:** The Vue-specific syntax in the `form` element registers a reference to the `form` component via [`ref`](https://vuejs.org/v2/guide/components.html#Child-Component-Refs) and specifies an event handler function of `onSubmit` to call on form submission. The `prevent` keyword is a [Vue modifier](https://vuejs.org/v2/guide/events.html#Event-Modifiers) that prevents the page from being reloaded on submission (for instance if the user hits enter within the form).</div>
 
 2. Now populate the `<f7-list>` with the necessary UI components.
 
@@ -97,7 +102,16 @@ Continuing in `Search.vue`...
 		     </f7-button>
 		</f7-block>
     
-	This block specifies a hidden field to store the results `limit` to be passed in the request, and a hidden search input field and button that will call the `onSubmit()` event handler function. 
+	This block specifies a hidden field to store the required `limit` value to be passed in the request, and a hidden search input field and button that will call the `onSubmit()` event handler function. 
+
+5. Define a `hidden` class for the above input in a new style block after the closing `</script>` tag at the bottom of the page:
+
+		<style scoped>
+		  .hidden {
+		    display: none;
+		  }
+		</style>
+
 
 4. Your UI should be complete now and the code below the closing `</f7-navbar>` should look like the following:
 
@@ -123,9 +137,14 @@ Continuing in `Search.vue`...
 ## Add JavaScript handling
 In this section you should scroll down to the bottom of the page where the JavaScript default export block is defined to make some changes and additions. 
 
-1. Rename this component by changing `name: Home` to `name: Search`.
+1. Rename this Vue component by changing `name: Home` to `name: Search`.
 
-2. Within the `data ()` function, set the value for the `title` variable to `Search`.  (You may recall this variable from earlier in the lesson when used in the navigation bar).
+		export default {
+	        name: 'Search',
+	        ...
+	    }
+
+2. Within the `data ()` function, set the value for the `title` variable to `Search`.  (You may recall this variable from earlier in the lesson when it was used in the navigation bar).
 
 2. Add a `methods` object with a stub for the `onSubmit()` function so your code will compile. We will add more to this section later. The resulting `export` block should appear as below at this point:
 
@@ -141,6 +160,26 @@ In this section you should scroll down to the bottom of the page where the JavaS
 	        }
 	    };
 
+3. In the default export, add a [computed property](https://vuejs.org/v2/guide/computed.html) for `isMaterial` just after the `methods` object:
+		
+		export default {
+	        name: 'Search',
+	        data () {
+	            return {
+	                title: 'Search'
+	            };
+	        },
+	        methods: {
+	            onSubmit () {}
+	        },
+	        computed: {
+		      isMaterial () {
+		          return window.isMaterial;
+		       }
+		   }
+	    };
+	    
+
 <!--TODO 
 
 
@@ -152,7 +191,7 @@ In this section you should scroll down to the bottom of the page where the JavaS
 
 In this step you will change the routing of the app to display  the _Search_ page instead of the _Home_ page.
 
-1. Open `~src/routes.js` and replace the instances of _Home_ with _Search_, for example:
+1. Open `~src/routes.js` and replace all instances of _Home_ with _Search_, for example:
 
 	    import Search from './components/pages/Search';
 	    import About from './components/pages/About';
@@ -168,9 +207,9 @@ In this step you will change the routing of the app to display  the _Search_ pag
 	    },
 	    ...
 
-2. We can test out our routing updates via the left panel menu where you can switch between views, but we first need to update the string to **Search** rather than **Home** . 
+2. We can test out our routing updates via the left panel menu where you can switch between views, but first rename the menu item title to **Search** rather than **Home** . 
 
-    Open `~src/components/LeftPanel.vue` and change the link title from **Home** to **Search** in the menu list item:
+    Open `~src/components/LeftPanel.vue` and change the following list-item title from **Home** to **Search**:
 
 	    <f7-list-item
 	        link="/"
@@ -181,10 +220,41 @@ In this step you will change the routing of the app to display  the _Search_ pag
 	    />
 
 ## Run it! 
-Take a moment to stop and run the app where it's at to make sure everything works so far as expected. You should see the new UI components and changes to content but when you try to submit the search form it will not do anything at this point since we haven't told it to yet. 
+Take a moment to stop and run the app where it's at to make sure everything works so far as expected. You should see the new Search page and UI components but when you try to submit the search form it will not do anything at this point since we haven't put anything in our `onSubmit` handler yet. 
 
-You should also open the left panel menu and click between the links to ensure the `Search` link shows the right view and content.
+You should also open the left panel menu and click between the menu options to ensure the new `Search` view is shown when toggling between views and `Search` is clicked. 
 
+<img class="mobile-image" src="/images/stockpile/search-lesson.png" alt="Stockpile Search "/>
+
+<img class="mobile-image" src="/images/stockpile/search-lesson2.png" alt="Side Menu"/>
+
+<!-- TODO - THIS MOVE UNTIL RESULTS PAGE AVAILABLE -->
+### Handling form submission
+Now we need to add some code to actually do something when the **Find Images** button is hit. We have a stubbed out onSubmit () function currently that is called but doesn't do anything quite yet. 
+
+- Modify your `onSubmit ()` function as shown below:
+
+		onSubmit () {
+		  const { searchInput, searchForm } = this.$refs;
+		  const { filter, limit, q } = this.$f7.formToJSON(searchForm);
+		  const { router } = this.$f7.mainView;
+		  const input = searchInput.$el.querySelector('input');
+
+		  input.blur();
+
+		  if (!q.trim()) {
+		    this.$f7.alert('Please enter a search term', 'Search Error');
+		    return;
+		  }
+		  router.loadPage(`/results/${filter || 'words'}/${limit}/${q}/search`);
+		}
+
+- Ensure the search is always at the top of the history by adding this function (hack).  This should be added after the methods object in the default export:
+
+		created () {
+	  		this.$f7.mainView.history = ['/'];
+		}
+	
 <!--TODO should i make these a list of things to try instead of paragraphs? 
 
 Screenshot? And more on this page

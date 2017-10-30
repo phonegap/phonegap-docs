@@ -76,7 +76,7 @@ Framework7 provides an icon library that we will want to add to provide more ico
 
 		npm install framework7-icons --save
 
-2. In `main.js`, just above the import for the routes, add an import for the icons as shown below:
+2. In `~src/main.js`, just above the import for the routes, add an import for the icons as shown below:
 
     	// Import the Framework7 Icons
     	import Framework7Icons from 'framework7-icons/css/framework7-icons.css';
@@ -84,16 +84,16 @@ Framework7 provides an icon library that we will want to add to provide more ico
     	// Import Routes
     	...
 
-## Development Workflow Overview
+## Run it! 
 
-Since this app was built based on webpack, it can be run in development mode or production mode. While building out the app, easiest to run in development mode and test in the browser as long as you can to build out the majority of the functionality until device-specific testing is needed.
+Since this app was built based on webpack, it can be run in development mode or production mode. While building out the app, it's easiest to run in development mode and test in the browser as long as you can to build out the majority of the functionality until device-specific testing is needed.
 
 #### Development mode
 First start the development webpack server with the following command:
 
 	npm run dev
 
-Then open the app in your browser by visiting `localhost:8080`
+Then open the app in your browser by visiting `localhost:8080`.
 
 #### Production mode
 
@@ -111,3 +111,14 @@ or
 	cordova serve
 
 <div class="alert--tip">The last option with `cordova serve` is particularly useful for debugging [Progressive Web Apps](/references/references/stockpile-app/9-pwa-features). </div>
+
+When the app is run in development mode in the browser, it should appear like the screenshots below, which is essentially the PhoneGap Default Split Panel template renamed.
+
+<!--TODO SCREENSHOTS already taken -->
+<img class="mobile-image" src="/images/stockpile/run-browser-android-project-lesson1.png" alt="Stockpile Browser"/>
+
+Open the Chrome devtools and use the mobile emulation button to try out different device simulations. You need to reload the page when switching between Android and iOS to see the stylesheets applied. 
+
+<img class="mobile-image" src="/images/stockpile/run-browser-ios.png" alt="Stockpile iOS"/>
+
+<img class="mobile-image" src="/images/stockpile/navbar.png" alt="Stockpile Android"/>
