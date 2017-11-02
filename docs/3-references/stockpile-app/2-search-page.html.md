@@ -1,10 +1,10 @@
 ---
-title: Lesson 2 - Search Page
+title: Lesson 2 - Search View
 url: references/stockpile-app/2-search-page
 layout: subpage
 ---
 
-Let's begin by coding the first view you are presented with when the app is run, the **Search** page. The search page consists of a title and an HTML form with some UI elements, including a title, input field for the search term, a submission button and a hidden field to store a limit needed when using the Stock API later. 
+Let's begin by coding the first view you are presented with when the app is run, the **Search** view. The search view consists of a title and an HTML form with some UI elements, including a title, input field for the search term, a submission button and a hidden field to store a limit needed when using the Stock API later. 
 
 <img class="mobile-image" src="/images/stockpile/search.png" alt="Stockpile Search Screen"/>
 
