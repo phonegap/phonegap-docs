@@ -8,7 +8,7 @@ The Stockpile app comes bundled with a few different libraries that can be used 
 
 ## Running tests
 
-To run unit tests & e2e tests: `npm test`.
+To run unit tests & E2E tests: `npm test`.
 
 ## Karma tests (unit tests)
 
@@ -41,6 +41,17 @@ function add(x,y) {
 If you mocked `x=1` and `y=2`, you would expect the `add` method to return `3`.
 
 [Stubs](http://sinonjs.org/releases/v4.1.1/stubs/) are used to test a method's behavior by simulating data to cause the method to behave in a certain manner. For example, you could simulate a situation that would cause the method to result in an error; this would be useful to test if your error handling is working as expected.
+
+In this example, you could create a stub that checked if `displayDivideByZeroErr` was called when `y=0`.
+
+```
+function divide(x,y) {
+  if (y == 0)
+    displayDivideByZeroErr();
+  else
+    return x / y;
+}
+```
 
 [Spies](http://sinonjs.org/releases/v4.1.1/spies/) are used to test a method by watching to see if the method behaves as expected.
 
