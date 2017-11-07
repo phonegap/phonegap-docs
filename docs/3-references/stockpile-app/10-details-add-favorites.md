@@ -1,0 +1,110 @@
+---
+title: Lesson 11 - Add Favorites to Details
+url: references/stockpile-app/11-details-add-favorites
+layout: subpage
+---
+
+Now that there's an API available for favoriting items, you need to add some user interface to allow a user to actually mark an item as a favorite. A good place to do this is in the Details view. In this lesson you will add a star icon that will be used to display and toggle an item's favorited status.
+
+## Implement the UI
+1. Open the `Details.vue` file
+2. Replace the current `<f7-navbar.../>` block with the following snippet, which now includes an empty or filled star icon to indicate if this image is a favorite or not (filled=favorite, empty=not). The icon also has a click handler set on it to call a function to toggle its status.
+
+		<f7-navbar :back-link="backLink" sliding>
+		  <f7-nav-center>
+		    Details
+		  </f7-nav-center>
+		  <f7-nav-right>
+		    <f7-link icon-f7="star_filled" @click="toggleFavorite"
+		      v-if="isFavorite"
+		    />
+		    <f7-link icon-f7="star" @click="toggleFavorite" v-else />
+		  </f7-nav-right>
+		</f7-navbar>
+
+    The resulting navigation bar should look like the image below:
+  <img class="mobile-image" src="/images/stockpile/navbar2.png" alt="Stockpile Navbar"/>
+
+#### Computed properties
+<div class="alert--info">Each of the next steps applies to the `computed: {}` property block previously defined in Details.vue.</div>
+
+1. In the computed properties block, add a new one called `displayingFavorite` to indicate if this item was selected off the favorites view or not. This code checks the route URL for the existence of a `displayingFavorite` parameter to determine if this view was a result of selecting an item in the favorites list or not.
+
+		displayingFavorite () {
+		  const { displayingFavorite = false } = this.$route.query;
+		  return !!displayingFavorite;
+		}
+        
+    <div class="alert--tip">In the Favorites view lesson you added a method `clickItem`, which defined a `displayingFavorite=true` parameter in the path when the details page is loaded, to indicate when the view was shown from Favorites specifically. </div>
+   
+4. Define a new computed property for for `backLink`, which uses the `displayingFavorite` property defined above  to determine where to go back to (either the **Favorites** list or **Results** list): 
+
+		
+		  backLink () {
+		    if (this.displayingFavorite) {
+		      return 'Favorites';
+		    } else {
+		      return 'Results';
+		    }
+		  }
+		}
+
+5. Add a computed property to check if an item is already a favorite by comparing id's to those in the existing `favorites` array: 
+
+		isFavorite () {
+		  const filteredFavorites =
+		    this.favorites.filter(favorite => favorite.id.toString() === this.id);
+		  return !!filteredFavorites.length;
+		}
+		
+6. Update (or just replace) the `item ()` computed property with the following, to support an item being selected from the favorites view as well:
+
+		item () {
+		  // Fallback default for when images* and favorites* are reset in
+		  //  the store
+		  if (this.displayingFavorite) {
+		    if (this.favoritesById && this.favoritesById[this.id]) {
+		      this.stockItem = Object.assign(
+		        {},
+		        this.stockItem,
+		        this.favoritesById[this.id]);
+		    }
+		    return this.stockItem;
+		  }
+		  if (this.imagesById && this.imagesById[this.id]) {
+		    this.stockItem = Object.assign(
+		      {},
+		      this.stockItem,
+		      this.imagesById[this.id]);
+		  }
+		  return this.stockItem;
+		}
+
+
+1. Add an import for the `toggleFavorite` function created previously in the `favorites.js` file, just under the import for `moment.js`: 
+
+		import { toggleFavorite } from '../../utils/favorites';
+
+2. Next, in your `methods` object, you already have a `toggleFavorite()` stub created from a previous step. Replace it with this code snippet:
+
+		toggleFavorite () {
+            const { mainView: { router } } = this.$f7;
+            if (this.displayingFavorite) {
+              // let the animation happen before removing the fave
+              setTimeout(() => {
+                toggleFavorite(this.item);
+              }, 410);
+              router.back();
+            } else {
+              toggleFavorite(this.item);
+            }
+        },
+
+	This code runs when the star icon is clicked to toggle the *favorite* status of the item. It will take a different course based on whether it was displayed as a result of a click on a Favorited list item or not. 
+    - If it was shown from the favorites list, it was already favorited, so clicking the star is essentially *unfavoriting* it, and as a result the item will be removed from the favorites array (via the API call to `toggleFavorite`). At this time the view is also reset (via `router.back()`). 
+    - If it was shown from the regular results list, the `toggleFavorite` function is called directly and the view does not need to reset (since the user could still *unfavorite* it again). 
+    
+    <div class="alert--tip">Note that there are two `toggleFavorite` methods used above, an instance `toggleFavorite` method and the `toggleFavorite` method imported from the API defined in favorite.js. The instance method simply calls the API method of the same name.</div>
+	
+
+

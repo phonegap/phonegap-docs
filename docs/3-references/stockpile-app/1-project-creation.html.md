@@ -1,10 +1,11 @@
 ---
-title: Lesson 1 - Project Setup & Creation
+title: Lesson 1 - Project Creation & Setup
 url: references/stockpile-app/1-project-creation
 layout: subpage
 ---
+This lesson provides the steps to create a new PhoneGap app project based on a starter template and provides details about the resulting project structure. Before moving on you will add an icon library and test out your new base app to ensure it's running properly.
 
-## Create your project
+## Project Creation
 1. Open a terminal window and run the `phonegap create` command below, specifying your desired *folder location*,  *package*, *name* and the [PhoneGap Split-Panel template](https://github.com/phonegap/phonegap-template-vue-f7-split-panel) for the `--template` parameter as shown below:
 
         phonegap create Stockpile com.phonegap.stockpile Stockpile --template https://github.com/phonegap/phonegap-template-vue-f7-split-panel
@@ -17,12 +18,12 @@ layout: subpage
         cd Stockpile
         npm install
 
-Before moving on, it's important to understand the project structure and specifically what folder you'll be making most of your changes in. Below is the project structure you should see. It is a combination of the Vue
+Before moving on, it's important to understand the project structure and specifically what folder you'll be making most of your changes in. Below is the project structure you should see. It is a combination of the Vue CLI project template for webpack with a PhoneGap generated project. 
 
 ## Project Structure
 ![Project Structure](/images/stockpile/folder-structure.png)
 
-The PhoneGap Split View template was built using the standard [VueJS Webpack template](https://github.com/vuejs-templates/webpack), which generates the folders and files below in addition to the standard PhoneGap project assets above. 
+The PhoneGap Split View template was built using the standard [VueJS Webpack template](https://github.com/vuejs-templates/webpack) which generates the folders and files below in addition to the standard PhoneGap project assets above. 
 
 A quick explanation of what those folders and files are for is below but you can refer to the [Vue Webpack template docs](https://github.com/vuejs-templates/webpack/blob/develop/docs) for specific details. 
 
@@ -84,6 +85,8 @@ Framework7 provides an icon library that we will want to add to provide more ico
     	// Import Routes
     	...
 
+<div class="alert--info">**Note:** This app only uses a couple of icons, so the better approach might be to include only the icons needed, particularly in terms of performance and when running as a Progressive Web App. </div>
+
 ## Run it! 
 
 Since this app was built based on webpack, it can be run in development mode or production mode. While building out the app, it's easiest to run in development mode and test in the browser as long as you can to build out the majority of the functionality until device-specific testing is needed.
@@ -122,3 +125,10 @@ Open the Chrome devtools and use the mobile emulation button to try out differen
 <img class="mobile-image" src="/images/stockpile/run-browser-ios.png" alt="Stockpile iOS"/>
 
 <img class="mobile-image" src="/images/stockpile/navbar.png" alt="Stockpile Android"/>
+
+## View Patterns
+The Split Panel template provides a nice app structure to get started with since it already includes a navigation bar, some basic views, a side menu and routing wired up and working. Since the new app will also use most of this, it's easier to re-use existing pages and content where possible and simply change, update and add as needed. So for each of the views you may notice a similar high-level pattern of changes that need to occur: 
+
+1. Update the UI
+2. Implement the JavaScript for the new UI
+3. Update the routing

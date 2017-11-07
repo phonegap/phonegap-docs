@@ -4,25 +4,27 @@ url: references/stockpile-app/2-search-page
 layout: subpage
 ---
 
-Let's begin by coding the first view you are presented with when the app is run, the **Search** view. The search view consists of a title and an HTML form with some UI elements, including a title, input field for the search term, a submission button and a hidden field to store a limit needed when using the Stock API later. 
+You will begin by coding the first view presented when the app is run, the **Search** view. The search view consists of an HTML form with some UI elements, including a title, input field for the search term, a submission button and a hidden field to store a results limit. The existing **Home** page from the base app will be used to implement this new **Search** vuew.
 
-<img class="mobile-image" src="/images/stockpile/search.png" alt="Stockpile Search Screen"/>
+
+<img class="mobile-image" src="/images/stockpile/ios-search.png" alt="Stockpile Search Screen"/>
+
 
 ## Implement the UI 
 
 <div class="alert--tip">**TIP:** Be sure to keep the [Framework7 Docs](https://framework7.io/) and the [Framework7+Vue Docs](https://framework7.io/vue/) handy for a quick reference while building out your app. Details on all of the UI components and attributes used throughout the app can be found there. The components prefixed with `<f7-*>` specifically refer to [Framework7 Vue components](https://framework7.io/vue/).</div>
 
-1. Rename `~src/components/pages/Home.vue` to `Search.vue`. This page will encapsulate the functionality for our Search view.
+1. Rename `~src/components/pages/Home.vue` to `Search.vue`. 
 2. In `Search.vue`, change the page name from **home** to **search**:
 
 		<f7-page name="search">
 
-### Part 1: Navigation Bar 
-There are some minor changes to make to the `<f7-navbar>` block. The `<f7-navbar>` block has a left and center definition to it currently, which refer to what you see in the app for the hamburger menu icon on the left and the Search title in the center. 
+### Navigation Bar 
+Each of the views you will work with in this guide has a navigation bar implemented with the Framework7 `<f7-navbar>` component though each will have slight modifications. The `<f7-navbar>` block in the base app has a `left` and `center` defined, which refer to what you see in the app for the hamburger menu icon on the left and the Search title in the center. You will make some slight modifications to the navbar
 
 <img class="mobile-image" src="/images/stockpile/navbar1.png" alt="Stockpile Navbar"/>
 
-1. Change the side menu icon reference in the left side of the navbar to use one from the *Framework7 Icons* library we added during project setup instead. The default `icon-bars` icon is currently referenced which is part of the default Framework7 library, but to use icons from the *Framework7 Icons* library specifically, use the `icon-f7` attribute with the [icon name](http://framework7.io/icons/) as the value, which in this case is `bars`. For instance:
+1. Change the side menu icon reference in the left side of the navbar to use one from the *Framework7 Icons* library you added during project setup instead. The default `icon-bars` icon is currently referenced which is part of the default Framework7 library, but to use icons from the *Framework7 Icons* library specifically, use the `icon-f7` attribute with the [icon name](http://framework7.io/icons/) as the value, which in this case is `bars`. For instance:
 
 		<f7-link icon-f7="bars" open-panel="left"></f7-link>
 
@@ -32,14 +34,14 @@ There are some minor changes to make to the `<f7-navbar>` block. The `<f7-navbar
 
         <f7-nav-center sliding>{{ title }}</f7-nav-center>
 
-    <div class="alert--info">**Note:** The title variable is defined in the JavaScript block at the bottom of the page via this [`data`](https://vuejs.org/v2/api/#data) function:
-
-		data () {
-	      	return {
-	        	title: 'Home Page'
-	      	};
-	    }
+    <div class="alert--info">**Note:** The title variable is defined in the JavaScript block at the bottom of the page via this [`data`](https://vuejs.org/v2/api/#data) function:</div>
     
+		data () {
+			return {
+				title: 'Home Page'
+			};
+		}
+   
 3. Your final `<f7-navbar>` block should look like the snippet below:
 
 	    <f7-navbar>
@@ -49,7 +51,7 @@ There are some minor changes to make to the `<f7-navbar>` block. The `<f7-navbar
 	      <f7-nav-center sliding>{{ title }}</f7-nav-center>
 	    </f7-navbar>
 
-### Part 2: Page Content 
+### Page Content 
 Continuing in `Search.vue`...
 
 1. Replace this UI block from the base app:
@@ -102,9 +104,9 @@ Continuing in `Search.vue`...
 		     </f7-button>
 		</f7-block>
     
-	This block specifies a hidden field to store the required `limit` value to be passed in the request, and a hidden search input field and button that will call the `onSubmit()` event handler function. 
+	This block specifies a hidden field to store the required max `limit` value pass in to the request, a hidden submit input field (see the next step) and a button that will call the `onSubmit()` event handler function. 
 
-5. Define a `hidden` class for the above input in a new style block after the closing `</script>` tag at the bottom of the page:
+5. In the previous step we defined this element: `<input type="submit" class="hidden" value="Search" />`, which  is used to set the keyboard button to **Search** instead of **Return**. However, we don't want that to actually show an input field so we have added a class name of `hidden` that we still need to define. We can't set the type to `hidden` since it needs to be `submit`. In this step, define a `hidden` class and set the  `display` to `none`.
 
 		<style scoped>
 		  .hidden {
@@ -112,8 +114,9 @@ Continuing in `Search.vue`...
 		  }
 		</style>
 
+    <div class="alert--info">**Note:** The [`scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html) attribute ensures this style block only applies to this component. </div>
 
-4. Your UI should be complete now and the code below the closing `</f7-navbar>` should look like the following:
+4. Your UI should now be complete and the code below the closing `</f7-navbar>` should look like the following:
 
 	    <f7-block-title>Search for Stock images by keyword</f7-block-title>
 	    <form ref="searchForm" form method="GET">
@@ -146,7 +149,7 @@ In this section you should scroll down to the bottom of the page where the JavaS
 
 2. Within the `data ()` function, set the value for the `title` variable to `Search`.  (You may recall this variable from earlier in the lesson when it was used in the navigation bar).
 
-2. Add a `methods` object with a stub for the `onSubmit()` function so your code will compile. We will add more to this section later. The resulting `export` block should appear as below at this point:
+2. Add a `methods` object with a stub for the `onSubmit()` function so your code will compile. You will add more to this section later. The resulting `export` block should appear as below at this point:
 
 	    export default {
 	        name: 'Search',
@@ -207,7 +210,7 @@ In this step you will change the routing of the app to display  the _Search_ pag
 	    },
 	    ...
 
-2. We can test out our routing updates via the left panel menu where you can switch between views, but first rename the menu item title to **Search** rather than **Home** . 
+2. You can test out the routing updates via the left panel menu where you can switch between views, but first rename the menu item title to **Search** rather than **Home** . 
 
     Open `~src/components/LeftPanel.vue` and change the following list-item title from **Home** to **Search**:
 
@@ -220,7 +223,7 @@ In this step you will change the routing of the app to display  the _Search_ pag
 	    />
 
 ## Run it! 
-Take a moment to stop and run the app where it's at to make sure everything works so far as expected. You should see the new Search page and UI components but when you try to submit the search form it will not do anything at this point since we haven't put anything in our `onSubmit` handler yet. 
+Take a moment to stop and run the app where it's at to make sure everything works so far as expected. You should see the new Search page and UI components but when you try to submit the search form it will not do anything at this point since you haven't put anything in the `onSubmit` handler yet. 
 
 You should also open the left panel menu and click between the menu options to ensure the new `Search` view is shown when toggling between views and `Search` is clicked. 
 
@@ -230,7 +233,7 @@ You should also open the left panel menu and click between the menu options to e
 
 <!-- TODO - THIS MOVE UNTIL RESULTS PAGE AVAILABLE -->
 ### Handling form submission
-Now we need to add some code to actually do something when the **Find Images** button is hit. We have a stubbed out onSubmit () function currently that is called but doesn't do anything quite yet. 
+Now you need to add some code to actually do something when the **Find Images** button is hit. You have a stubbed out `onSubmit ()` function currently that is called but doesn't do anything quite yet. 
 
 - Modify your `onSubmit ()` function as shown below:
 
@@ -251,10 +254,11 @@ Now we need to add some code to actually do something when the **Find Images** b
 
 - Ensure the search is always at the top of the history by adding this function (hack).  This should be added after the methods object in the default export:
 
-		created () {
-	  		this.$f7.mainView.history = ['/'];
-		}
+			created () {
+		  		this.$f7.mainView.history = ['/'];
+			}
 	
+
 <!--TODO should i make these a list of things to try instead of paragraphs? 
 
 Screenshot? And more on this page
