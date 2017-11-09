@@ -52,9 +52,7 @@ Each of the views you will work with in this guide has a navigation bar implemen
 	    </f7-navbar>
 
 ### Page Content 
-Continuing in `Search.vue`...
-
-1. Replace this UI block from the base app:
+1. Next, replace this UI block:
 
 		<f7-block-title>{{ title }}</f7-block-title>	
 		<f7-block inner>
@@ -94,7 +92,7 @@ Continuing in `Search.vue`...
 				autocorrect="off" autocapitalize="off"  />
 		</f7-list-item>
 
- 3. Next, ***after*** the closing `</f7-list>` tag and ***before*** the closing `</form>` tag, add the following block:
+3. Next, ***after*** the closing `</f7-list>` tag and ***before*** the closing `</form>` tag, add the following block:
 
 		<f7-block>
 		     <input type="hidden" name="limit" value="60" />
@@ -106,17 +104,9 @@ Continuing in `Search.vue`...
     
 	This block specifies a hidden field to store the required max `limit` value pass in to the request, a hidden submit input field (see the next step) and a button that will call the `onSubmit()` event handler function. 
 
-5. In the previous step we defined this element: `<input type="submit" class="hidden" value="Search" />`, which  is used to set the keyboard button to **Search** instead of **Return**. However, we don't want that to actually show an input field so we have added a class name of `hidden` that we still need to define. We can't set the type to `hidden` since it needs to be `submit`. In this step, define a `hidden` class and set the  `display` to `none`.
+5. In the previous step the `<input type="submit" class="hidden" value="Search" />` element was added, which  is used specifically for iOS to set the keyboard button text to **Search** instead of **Return**. However, that input field is actually not meant to show, so the `hidden` class name is used but needs to be define. 
 
-		<style scoped>
-		  .hidden {
-		    display: none;
-		  }
-		</style>
-
-    <div class="alert--info">**Note:** The [`scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html) attribute ensures this style block only applies to this component. </div>
-
-4. Your UI should now be complete and the code below the closing `</f7-navbar>` should look like the following:
+4. Your UI components have all been added. Double check to ensure your code below the closing `</f7-navbar>` looks like the following:
 
 	    <f7-block-title>Search for Stock images by keyword</f7-block-title>
 	    <form ref="searchForm" form method="GET">
@@ -137,8 +127,18 @@ Continuing in `Search.vue`...
 	       </f7-block>
 	    </form>
 
+6. Before moving on to the JavaScript additions, scroll to the bottom of the page and define a `hidden` class with the `display` set to `none`:
+
+		<style scoped>
+		  .hidden {
+		    display: none;
+		  }
+		</style>
+
+    <div class="alert--info">**Note:** The [`scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html) attribute ensures this style block only applies to this component. </div>
+
 ## Add JavaScript handling
-In this section you should scroll down to the bottom of the page where the JavaScript default export block is defined to make some changes and additions. 
+Scroll down to the `<script>` tag that holds the JavaScript `export` block since this part of the lesson will focus in there. 
 
 1. Rename this Vue component by changing `name: Home` to `name: Search`.
 
@@ -181,18 +181,34 @@ In this section you should scroll down to the bottom of the page where the JavaS
 		       }
 		   }
 	    };
-	    
 
-<!--TODO 
+4. Ensure the Search page is always at the top of the view stack by adding this [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) on the [`created ()`](https://vuejs.org/v2/api/#created) event. Add it after the `computed` object in the default export:
 
+        export default {
+	        name: 'Search',
+	        data () {
+	            return {
+	                title: 'Search'
+	            };
+	        },
+	        methods: {
+	            onSubmit () {}
+	        },
+	        computed: {
+		      isMaterial () {
+		          return window.isMaterial;
+		       }
+		    }
+            created () {
+		  		this.$f7.mainView.history = ['/'];
+			 }
+	    };
 
-- data() properties - set name/title
-- methods() - handle form submission
-- computed properties, created() hack
--->
+    <div class="alert--tip">This is basically a hack to keep the page at the top of the stack in terms of navigation and history. </div>
+    
 ## Page Routing Updates
 
-In this step you will change the routing of the app to display  the _Search_ page instead of the _Home_ page.
+In this step you will change the routing of the app to display the _Search_ page instead of the _Home_ page.
 
 1. Open `~src/routes.js` and replace all instances of _Home_ with _Search_, for example:
 
@@ -210,7 +226,7 @@ In this step you will change the routing of the app to display  the _Search_ pag
 	    },
 	    ...
 
-2. You can test out the routing updates via the left panel menu where you can switch between views, but first rename the menu item title to **Search** rather than **Home** . 
+2. You can test out the routing updates via the left panel menu where you can switch between views, but first rename the side menu item to **Search** rather than **Home** . 
 
     Open `~src/components/LeftPanel.vue` and change the following list-item title from **Home** to **Search**:
 
@@ -223,7 +239,7 @@ In this step you will change the routing of the app to display  the _Search_ pag
 	    />
 
 ## Run it! 
-Take a moment to stop and run the app where it's at to make sure everything works so far as expected. You should see the new Search page and UI components but when you try to submit the search form it will not do anything at this point since you haven't put anything in the `onSubmit` handler yet. 
+Take a moment to stop and run the app now to make sure everything works so far as expected. You should see the new Search page but when you try to submit the search form it will not do anything at this point since you haven't put anything in the `onSubmit` handler yet. 
 
 You should also open the left panel menu and click between the menu options to ensure the new `Search` view is shown when toggling between views and `Search` is clicked. 
 
@@ -231,7 +247,9 @@ You should also open the left panel menu and click between the menu options to e
 
 <img class="mobile-image" src="/images/stockpile/search-lesson2.png" alt="Side Menu"/>
 
-<!-- TODO - THIS MOVE UNTIL RESULTS PAGE AVAILABLE -->
+<div class="alert--info">**NOTE:** In this lesson you were given more helper reference code and instruction to help you get started versus what you will see in subsequent views. Most of them follow a similar pattern however, so you can refer back to this lesson for more contextual help as needed. </div>
+
+<!-- TODO - THIS MOVE UNTIL RESULTS PAGE AVAILABLE 
 ### Handling form submission
 Now you need to add some code to actually do something when the **Find Images** button is hit. You have a stubbed out `onSubmit ()` function currently that is called but doesn't do anything quite yet. 
 
@@ -251,13 +269,7 @@ Now you need to add some code to actually do something when the **Find Images** 
 		  }
 		  router.loadPage(`/results/${filter || 'words'}/${limit}/${q}/search`);
 		}
-
-- Ensure the search is always at the top of the history by adding this function (hack).  This should be added after the methods object in the default export:
-
-			created () {
-		  		this.$f7.mainView.history = ['/'];
-			}
-	
+-->	
 
 <!--TODO should i make these a list of things to try instead of paragraphs? 
 

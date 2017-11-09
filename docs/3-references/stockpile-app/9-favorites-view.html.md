@@ -115,13 +115,13 @@ In this section you should scroll down to the bottom of the page where the JavaS
 		  toggleFavorite(favorite);
 		}
 
-10. Add this [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) for [`created ()`](https://vuejs.org/v2/api/#created) just after the `methods` object to force the router to reset the view stack when the Favorites instance is [`created ()`](https://vuejs.org/v2/api/#created).
+10. Add this [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) for [`created ()`](https://vuejs.org/v2/api/#created) just after the `methods` object to force the router to reset the view stack when the Search view instance is [`created ()`](https://vuejs.org/v2/api/#created).
 
 		created () {
 		  this.$f7.mainView.history = ['/favorites/'];
 		}
         
-    <div class="alert--tip">This is a bit of a hack needed to keep the page at the top of the history in terms of navigation and history. </div>
+    <div class="alert--tip">This is a bit of a hack needed to keep the page at the top of the stack in terms of navigation and history. </div>
 
 ## Page Routing Updates
 

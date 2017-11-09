@@ -51,7 +51,7 @@ The **Favorites** view manages a list of images that have been *favorited* in th
 		}
 
 		
-3. Next code the `addFavorite()` and `removeFavorite()` functions to manage adding and removing favorites with the global `store` object. The `updateFavoritesById` function is called each time to ensure the `favoritesById` array is updated with the change as well. 
+3. Next, code the `addFavorite()` and `removeFavorite()` functions to manage adding and removing favorites with the global `store` object. The `updateFavoritesById` function is called each time to ensure the `favoritesById` array is updated with the change as well. 
 		
 		function addFavorite (favorite) {
 		  store.favorites.push(favorite);
@@ -87,58 +87,17 @@ The **Favorites** view manages a list of images that have been *favorited* in th
 		  saveFavoritesToLocalStorage();
 		}
 
-## Use the Favorites API
+#### Managing Favorites Data
+The `favorites` should be populated from local storage initially when the app is run to load any items that have already been favorited. You initially created the data objects for the `favorites` in the Global Store to be empty but in this step you will call the new `fetchFavoritesFromLocalStorage` method as well as index them by id when the app starts up.
 
-This Favorites API will be used from a few different views. In this section you will code the necessary imports to allow the functions to be accessed.
-
-#### Details View
-In this step you'll add the ability to show and toggle the favorite status of an image in the Details View.
-
-1. Open the `Details.vue` file
-2. Replace the current `<f7-navbar.../>` block with the following snippet to include an empty or filled in clickable star icon to indicate if this image is a favorite or not (filled=favorite, empty=not).
-
-		<f7-navbar :back-link="backLink" sliding>
-		  <f7-nav-center>
-		    Details
-		  </f7-nav-center>
-		  <f7-nav-right>
-		    <f7-link icon-f7="star_filled" @click="toggleFavorite"
-		      v-if="isFavorite"
-		    />
-		    <f7-link icon-f7="star" @click="toggleFavorite" v-else />
-		  </f7-nav-right>
-		</f7-navbar>
-
-    The resulting navigation bar should look like the image below:
-  <img class="mobile-image" src="/images/stockpile/navbar2.png" alt="Stockpile Navbar"/>
-
-1. Now add an import for the new `toggleFavorite` function created in the `favorites.js` file just under the import for `moment.js`: 
-
-		import { toggleFavorite } from '../../utils/favorites';
-
-2. Replace the `toggleFavorite()` stub you added in the previous lesson with the following code, which subsequently calls the `toggleFavorite()` method in the `favorites.js` API:
-
-		toggleFavorite () {
-		  toggleFavorite(this.item);
-		}
-
-	This code is triggered when the star icon is clicked on this view and will need to take a different path depending on if it was shown due to a  from the *favorited* list results or not. Since this view is shown from either the Results page or the Favorites list, there needs to be a way to determine which it came from, and the `this.displayFavorite` variable is used for that reason. It will be set to true when it finds the `?displayingFavorite=true`, which is added when the item is selected on the Favorites list. 
-
-http://localhost:8080/#!//results/details/71458925?displayingFavorite=true
-	
-If it has already been favorited, then the item will be removed from the favorites list (via the imported `toggleFavorite` function) and go back to the previous view (via `router.back()`). If it's not an item chosen from the*favorited* item, it will be toggled via the imported `toggleFavorite` function.
-
-
-#### Main Global Store
-2. Now open `main.js` and add an import for the `fetchFavoritesFromLocalStorage` function after the other imports:
+2. Open `main.js` and add an import for the `fetchFavoritesFromLocalStorage` function after the other imports:
 
 		import { fetchFavoritesFromLocalStorage } from './utils/favorites';
 		
 3. Then, replace the line you added earlier to define the `const favorites = [];` with a call to the new `fetchFavoritesFromLocalStorage` to actually populate it with the `favorites` from local storage when the app is run:
-
 		const favorites = fetchFavoritesFromLocalStorage();
 		
-4. Next, replace the `const favoritesById = [];` with the following to index them by id:
+4. Next, replace the `const favoritesById = [];` with the following snippet, to index `favorites` by `id`:
 
 		const favoritesById = favorites.reduce((a, b) => {
 		  const c = a;
@@ -146,5 +105,23 @@ If it has already been favorited, then the item will be removed from the favorit
 		  return c;
 		}, {});
 		
+    In the end your global store handling data should look like the following:
+    
+        // Set up a global store
+        const favorites = fetchFavoritesFromLocalStorage();
+        const favoritesById = favorites.reduce((a, b) => {
+          const c = a;
+          c[b.id] = b;
+          return c;
+        }, {});
 
-In the next lesson you will implement the UI and associated JavaScript handling for the **Favorites** view.
+        // Global store defaults
+        window.store = {
+          images: [],
+          imagesById: {},
+          favorites,
+          favoritesById
+        };
+
+
+In the next lesson you will implement the UI and associated JavaScript needed to show the **Favorites** list view.

@@ -265,5 +265,7 @@ The new `mounted ()` lifecycle hook should be added just AFTER the `computed:` b
 		
 This code will set up some defaults for the parameters and replace the current `params` with the new values (using `Object.assign`) before calling the `fetchResults()`. The parameters 
 
+## Run it
+<!-- Explain what you see and what it did - replace this image not right now-->
 
 <!-- TODO - explain with screenshots with code breakpoints or a video or something? -->

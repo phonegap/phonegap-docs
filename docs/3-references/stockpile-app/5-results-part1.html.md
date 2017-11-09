@@ -71,7 +71,7 @@ The results view is a little more extensive to code since it's built dynamically
 		}
 
 <div class="alert--info">Since this view is shown from both the main search and after clicking on various items from the details view, a different message is shown depending on the type of search performed (by keyword, category, similar etc). A `filter` value from the route parameters is checked to determine which message to display. This value is set to 'words' to indicate a search by keyword if this results page is shown from the main Search page (in the [`onSubmit` function](https://github.com/phonegap/phonegap-app-stockpile/blob/master/src/components/pages/Search.vue#L52)), but will be set to `similar`, `creator_id`, or `category` if resulting from a click off the Details view. Look at the [**Details.vue** component in the final project](https://github.com/phonegap/phonegap-app-stockpile/blob/master/src/components/pages/Details.vue#L128-L153) to see these filters being set.</div>
-	
+
 
 <!-- TODO - add a note about the spread operator to replace the Object.assign 
 
@@ -106,7 +106,30 @@ Update the routes to use the new Results page and the side menu to remove the `A
 
 3. Lastly, remove the whole `<f7-list-item>` side menu link for `About` in `~src/components/LeftPanel.vue`.
 
+<!-- TODO - THIS MOVE UNTIL RESULTS PAGE AVAILABLE -->
+
+## Handling Search Form submission
+Before moving on to building out more of the Results page, you could revisit the Search page to code some action into the `onSubmit` form handler to route to this Results page in progress. 
+
+1. Open `Search.vue` and replace the stubbed out `onSubmit ()` method with the following:
+
+		onSubmit () {
+		  const { searchInput, searchForm } = this.$refs;
+		  const { filter, limit, q } = this.$f7.formToJSON(searchForm);
+		  const { router } = this.$f7.mainView;
+		  const input = searchInput.$el.querySelector('input');
+
+		  input.blur();
+
+		  if (!q.trim()) {
+		    this.$f7.alert('Please enter a search term', 'Search Error');
+		    return;
+		  }
+		  router.loadPage(`/results/${filter || 'words'}/${limit}/${q}/search`);
+		}
+
 ## Run it
+<!-- Explain what you see and what it did - replace this image not right now-->
 
 <img class="mobile-image" src="/images/stockpile/results-lesson1.png" alt="Stockpile Results Lesson 1 Screen"/>
 <!--TODO - Use the Chrome devtools to look at response even though UI not there yet

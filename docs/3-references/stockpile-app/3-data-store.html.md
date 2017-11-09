@@ -12,10 +12,16 @@ To handle state management in smaller to medium Vue applications, one common pat
 
 1. Open `~src/main.js` and add the following store object to the [global `window` object:](https://developer.mozilla.org/en-US/docs/Web/API/Window/window)
 
+        // Set up a global store
+        const favorites = [];
+        const favoritesById = [];
+
 		// Global store defaults
 		window.store = {
 		  images: [],
 		  imagesById: {},
+          favorites,
+          favoritesById
 		 };
 
 <div class="alert--info">**Note:** The variables held in our store will manage the array of images returned from the Stock API and those that were favorited as well as two variables to access an object from one of those arrays by ID.</div>

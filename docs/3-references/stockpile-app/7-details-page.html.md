@@ -103,7 +103,7 @@ Continuing in `Details.vue`...
 
 		/* global store */
 
-2. Then replace the `data()` method with one returning the the global store object to provide access to it:
+2. Then replace the `data()` method with one returning the global store object to provide access to it:
 
 		data () {
 		  return store;
@@ -146,6 +146,14 @@ Continuing in `Details.vue`...
 		  ];
 		}
 
+5. Add an empty `isFavorite` computed property to avoid compiler errors. You will code more there later in the guide when adding support for favorites:
+
+		isFavorite () {
+		  const filteredFavorites =
+		    this.favorites.filter(favorite => favorite.id.toString() === this.id);
+		  return !!filteredFavorites.length;
+		}
+        
 6. Lastly, add some computed properties to set the path to use for routing when a user clicks on the Category, Creator or Find Similar links:
 		
 		categoryLink () {
@@ -159,24 +167,30 @@ Continuing in `Details.vue`...
 		}
 
 #### Methods
-3. Define the `loadInPhotoBrowser ()` method that will be called when a card is clicked. It will use the [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component we defined to open the image in a new window and allow it to be zoomed, panned etc:
+1. Insert a `methods` object after the `data ()` object and define a method stub for `fetchResults ()`:
+
+		methods: {
+		  fetchResults () {}
+		}
+        
+3. Define the `loadInPhotoBrowser ()` method. This method is called when a card is clicked and will use the [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component you defined in the UI to open the image in a new window and allow it to be zoomed, panned etc:
 
 		loadInPhotoBrowser () {
 		  this.$refs.pb.open();
 		}
 
-4. Define the `onPageBeforeAnimation` handler
+4. Define the `onPageBeforeAnimation` handler to disable exposition if enabled:
 
 		onPageBeforeAnimation () {
 		  // When going 'back' from the photo browser, make sure we disable
-		  //  exposition (hidden navbar, etc) if it was enabled
+		  // exposition (hidden navbar, etc) if it was enabled
 		  const { pb: photoBrowser } = this.$refs;
 		  if (photoBrowser.f7PhotoBrowser.exposed) {
 		    photoBrowser.disableExposition();
 		  }
 		}
 
-6. Add the `imgBackground ()` method 
+6. Add the `imgBackground ()` method to determine the specific sized thumbnail url to use: 
 
 		imgBackground (size = 0) {
 		  const url = size > 0 ? `thumbnail_${size}_url` : 'thumbnail_url';
@@ -184,7 +198,7 @@ Continuing in `Details.vue`...
 		  return `background-image: url(${this[url]})`;
 		}
 
-5. Add a function to toggle favorites, leave as a stub for now. 
+5. Include a method for toggling favorites, even though the favoriting support has not been added yet. You will revisit this method later:
 
 		toggleFavorite () {}
 
@@ -249,7 +263,7 @@ After the `<script>` tag, add a `<style>` tag to style the image container and c
 
 ## Page Routing Updates
 
-In this step you will change the routing of the app to display  the _Details_ page instead of the _Another_ page.
+In this step you will change the routing to display the _Details_ page instead of _Another_.
 
 1. Open `~src/routes.js` and replace the import for _Another_ with _Details_, for example:
 
@@ -261,3 +275,8 @@ In this step you will change the routing of the app to display  the _Details_ pa
 		  path: '/results/details/:id',
 		  component: Details
 		} 
+        
+   <div class="alert--info">The result of this route would then look something like `   http://localhost:8080/#!//results/details/60875206`</div>
+
+## Run it
+<!-- Explain what you see and what it did - replace this image not right now-->
