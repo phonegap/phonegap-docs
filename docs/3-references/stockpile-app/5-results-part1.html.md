@@ -3,10 +3,9 @@ title: Lesson 5 - Results View Part 1
 url: references/stockpile-app/5-results-part1
 layout: subpage
 ---
-The results view is presented when search results are returned. It displays a title showing the number of results returned and a grid to display the images. It also includes infinite scrolling and a preloader component to display while the results are fetched. 
+The **Results** view is presented when search results are returned. It displays a title showing the number of results returned and a grid to display the images. It also includes infinite scrolling and a preloader component to display while the results are fetched. 
 
 <img class="mobile-image" src="/images/stockpile/results-view.png" alt="Stockpile Results Screen"/>
-<!--<img class="mobile-image" src="/images/stockpile/search-results.png" alt="Stockpile Results Screen"/>-->
 
 The results view is a little more extensive to code since it's built dynamically based on which view a user is coming from. It's returned from the main Search page but it's also used to show the results from the details page when a user clicks the *Category*, *Created by* or *Find Similar* link on the image details, outlined in red in the screenshot below:
 
@@ -28,20 +27,20 @@ The results view is a little more extensive to code since it's built dynamically
 
 		<f7-block-title v-if="results">{{ imagesReturned }}</f7-block-title>
 
-5. Remove this list component completely: 
+5. Remove the `<f7-list/>` component completely: 
 
 		<f7-list>
 		    <f7-list-item link="/about/another/" title="Another Page"></f7-list-item>
-		 </f7-list>
+        </f7-list>
 
 ### Add JavaScript Handling
 1. In the default export `data ()` function, add an `images` property to contain an array to use in the global store and a `results` variable to manage if results were returned:
 
 		data () {
-		      return {
-		        images: [],
-		        results: true
-		      };
+          return {
+            images: [],
+            results: true
+          };
 		 },
 
 
@@ -70,26 +69,9 @@ The results view is a little more extensive to code since it's built dynamically
 			}
 		}
 
-<div class="alert--info">Since this view is shown from both the main search and after clicking on various items from the details view, a different message is shown depending on the type of search performed (by keyword, category, similar etc). A `filter` value from the route parameters is checked to determine which message to display. This value is set to 'words' to indicate a search by keyword if this results page is shown from the main Search page (in the [`onSubmit` function](https://github.com/phonegap/phonegap-app-stockpile/blob/master/src/components/pages/Search.vue#L52)), but will be set to `similar`, `creator_id`, or `category` if resulting from a click off the Details view. Look at the [**Details.vue** component in the final project](https://github.com/phonegap/phonegap-app-stockpile/blob/master/src/components/pages/Details.vue#L128-L153) to see these filters being set.</div>
+<div class="alert--info">Since this view is shown from both the main search page and links on the details view, a different message is shown depending on the type of search performed (by keyword, category, similar etc). A `filter` value from the route parameters is checked to determine which message to display. This value is set to 'words' to indicate a search by keyword if this results page is shown from the main Search page (in the [`onSubmit` function](https://github.com/phonegap/phonegap-app-stockpile/blob/master/src/components/pages/Search.vue#L52)), but will be set to `similar`, `creator_id`, or `category` if resulting from a click off the Details view. Look at the [**Details.vue** component in the final project](https://github.com/phonegap/phonegap-app-stockpile/blob/master/src/components/pages/Details.vue#L128-L153) to see these filters being set.</div>
 
-
-<!-- TODO - add a note about the spread operator to replace the Object.assign 
-
-```this.imagesById = Object.assign({}, this.imagesById, imagesById);
-```
-becomes
-```this.imagesById = {...this.imagesById, imagesById};```
-
-Link to https://babeljs.io/docs/plugins/transform-object-rest-spread/
-
-Use the screenshot on multiple-results- to explain how it's replacing the main store object with that page each time as you go back thru the history
-
--->
-
-<!-- ADD THIS LATER WHEN WE NEED TO USE IT WITH THE RESULTS GRID? -->
-
-
-## Update Routes
+## Update the Routing
 
 Update the routes to use the new Results page and the side menu to remove the `About` link.
 
@@ -106,9 +88,8 @@ Update the routes to use the new Results page and the side menu to remove the `A
 
 3. Lastly, remove the whole `<f7-list-item>` side menu link for `About` in `~src/components/LeftPanel.vue`.
 
-<!-- TODO - THIS MOVE UNTIL RESULTS PAGE AVAILABLE -->
 
-## Handling Search Form submission
+## Handling Search Form Submission
 Before moving on to building out more of the Results page, you could revisit the Search page to code some action into the `onSubmit` form handler to route to this Results page in progress. 
 
 1. Open `Search.vue` and replace the stubbed out `onSubmit ()` method with the following:
@@ -127,12 +108,14 @@ Before moving on to building out more of the Results page, you could revisit the
 		  }
 		  router.loadPage(`/results/${filter || 'words'}/${limit}/${q}/search`);
 		}
+    
+    The `onSubmit` method gathers the form data, ensures there was a search term entered and passes the parameters into the router to load the results page. At this point the routing is all wired up to display the results view from the search view, but the Stock API has not yet been called to populate the `images` array and the UI hasn't been added yet to handle those results. You will work on adding those pieces in the next lesson. 
 
 ## Run it
-<!-- Explain what you see and what it did - replace this image not right now-->
+Run the app again in dev mode, enter a search term, hit the FIND IMAGES button and verify you see the following:
 
-<img class="mobile-image" src="/images/stockpile/results-lesson1.png" alt="Stockpile Results Lesson 1 Screen"/>
-<!--TODO - Use the Chrome devtools to look at response even though UI not there yet
-- Look at Vue devtools too-->
+<img class="mobile-image" src="/images/stockpile/6-results-part1.png" alt="Stockpile Results Part 1 Screen"/>
 
+The results page now loads with the "Loading results..." message (since there are no results yet) but there's nothing more to show yet. Move on to part 2 to begin adding the rest of the functionality for this view.
 
+<div class="alert--tip">Note that the message component is tied to the `results` variable, which is defaulted to `true`. You could set it to `false` to test how the `v-if` applies and no message displays.</div>

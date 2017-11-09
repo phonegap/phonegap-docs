@@ -4,11 +4,9 @@ url: references/stockpile-app/2-search-page
 layout: subpage
 ---
 
-You will begin by coding the first view presented when the app is run, the **Search** view. The search view consists of an HTML form with some UI elements, including a title, input field for the search term, a submission button and a hidden field to store a results limit. The existing **Home** page from the base app will be used to implement this new **Search** vuew.
-
+You will begin by coding the first view presented when the app is run, the **Search** view. The search view consists of an HTML form with some UI elements, including a title, input field for the search term, a submission button and a hidden field to store a results limit. The existing **Home** page from the base app will be used to implement this new **Search** view.
 
 <img class="mobile-image" src="/images/stockpile/ios-search.png" alt="Stockpile Search Screen"/>
-
 
 ## Implement the UI 
 
@@ -20,7 +18,7 @@ You will begin by coding the first view presented when the app is run, the **Sea
 		<f7-page name="search">
 
 ### Navigation Bar 
-Each of the views you will work with in this guide has a navigation bar implemented with the Framework7 `<f7-navbar>` component though each will have slight modifications. The `<f7-navbar>` block in the base app has a `left` and `center` defined, which refer to what you see in the app for the hamburger menu icon on the left and the Search title in the center. You will make some slight modifications to the navbar
+Each of the views you will work with in this guide has a navigation bar implemented with the Framework7 `<f7-navbar>` component though each will have slight modifications. The `<f7-navbar>` block in the base app has a `left` and `center` defined, which refer to what you see in the app for the hamburger menu icon on the left and the Search title in the center. You will make some slight modifications to the navbar.
 
 <img class="mobile-image" src="/images/stockpile/navbar1.png" alt="Stockpile Navbar"/>
 
@@ -34,7 +32,7 @@ Each of the views you will work with in this guide has a navigation bar implemen
 
         <f7-nav-center sliding>{{ title }}</f7-nav-center>
 
-    <div class="alert--info">**Note:** The title variable is defined in the JavaScript block at the bottom of the page via this [`data`](https://vuejs.org/v2/api/#data) function:</div>
+    <div class="alert--info">**Note:** The `title` variable is defined in the JavaScript block at the bottom of the page via this [`data`](https://vuejs.org/v2/api/#data) function:</div>
     
 		data () {
 			return {
@@ -102,9 +100,9 @@ Each of the views you will work with in this guide has a navigation bar implemen
 		     </f7-button>
 		</f7-block>
     
-	This block specifies a hidden field to store the required max `limit` value pass in to the request, a hidden submit input field (see the next step) and a button that will call the `onSubmit()` event handler function. 
+	This block specifies a hidden field to store the required max limit of results to return, a hidden submit field and a button that calls an `onSubmit()` event handler. 
 
-5. In the previous step the `<input type="submit" class="hidden" value="Search" />` element was added, which  is used specifically for iOS to set the keyboard button text to **Search** instead of **Return**. However, that input field is actually not meant to show, so the `hidden` class name is used but needs to be define. 
+    <div class="alert--info">In the previous step the `<input type="submit" class="hidden" value="Search" />` element was added, which is used specifically for iOS to set the keyboard button text to **Search** instead of **Return**. However, that input field is actually not meant to show, so the `hidden` class name is used but still needs to be define.</div> 
 
 4. Your UI components have all been added. Double check to ensure your code below the closing `</f7-navbar>` looks like the following:
 
@@ -127,7 +125,7 @@ Each of the views you will work with in this guide has a navigation bar implemen
 	       </f7-block>
 	    </form>
 
-6. Before moving on to the JavaScript additions, scroll to the bottom of the page and define a `hidden` class with the `display` set to `none`:
+6. Before moving on to the JavaScript additions, scroll to the bottom of the page and add a `<style>..</style>` block wth a `.hidden` class that has a `display` set to `none` for the hidden submit field style:
 
 		<style scoped>
 		  .hidden {
@@ -135,12 +133,12 @@ Each of the views you will work with in this guide has a navigation bar implemen
 		  }
 		</style>
 
-    <div class="alert--info">**Note:** The [`scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html) attribute ensures this style block only applies to this component. </div>
+    <div class="alert--tip">The [`scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html) attribute ensures this style block only applies to this component. </div>
 
-## Add JavaScript handling
-Scroll down to the `<script>` tag that holds the JavaScript `export` block since this part of the lesson will focus in there. 
+## Add JavaScript Handling
+Now locate the the `<script>` tag that holds the JavaScript `export` block since this part of the lesson will focus in there. 
 
-1. Rename this Vue component by changing `name: Home` to `name: Search`.
+1. Rename this component by changing the `name: Home` to `name: Search`.
 
 		export default {
 	        name: 'Search',
@@ -149,7 +147,13 @@ Scroll down to the `<script>` tag that holds the JavaScript `export` block since
 
 2. Within the `data ()` function, set the value for the `title` variable to `Search`.  (You may recall this variable from earlier in the lesson when it was used in the navigation bar).
 
-2. Add a `methods` object with a stub for the `onSubmit()` function so your code will compile. You will add more to this section later. The resulting `export` block should appear as below at this point:
+        data () {
+            return {
+                title: 'Search'
+            };
+        },
+
+2. Add a [`methods` object](https://vuejs.org/v2/guide/events.html) with a stub for the `onSubmit()` function so your code will compile. You will add more to this section later. The resulting `export` block should appear as below at this point:
 
 	    export default {
 	        name: 'Search',
@@ -163,27 +167,26 @@ Scroll down to the `<script>` tag that holds the JavaScript `export` block since
 	        }
 	    };
 
-3. In the default export, add a [computed property](https://vuejs.org/v2/guide/computed.html) for `isMaterial` just after the `methods` object:
+    <div class="alert--tip">The Vue `methods` object is where you will typically define your event handlers.</div>
+    
+3. In the default export, add a [computed property](https://vuejs.org/v2/guide/computed.html) object and define an `isMaterial` property just after the `methods` object:
 		
-		export default {
-	        name: 'Search',
-	        data () {
-	            return {
-	                title: 'Search'
-	            };
-	        },
-	        methods: {
-	            onSubmit () {}
-	        },
-	        computed: {
-		      isMaterial () {
-		          return window.isMaterial;
-		       }
-		   }
-	    };
+        computed: {
+          isMaterial () {
+              return window.isMaterial;
+           }
+        }
 
-4. Ensure the Search page is always at the top of the view stack by adding this [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) on the [`created ()`](https://vuejs.org/v2/api/#created) event. Add it after the `computed` object in the default export:
+4. Ensure the Search page is always at the top of the view stack by adding this [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) on the [`created ()`](https://vuejs.org/v2/api/#created) lifecycle event. Add it after the `computed` object in the default export:
 
+        created () {
+            this.$f7.mainView.history = ['/'];
+         }
+
+    <div class="alert--tip">This is basically a hack to keep the page at the top of the stack in terms of navigation and history. </div>
+
+5. The final export block should look like the following:
+             
         export default {
 	        name: 'Search',
 	        data () {
@@ -201,12 +204,10 @@ Scroll down to the `<script>` tag that holds the JavaScript `export` block since
 		    }
             created () {
 		  		this.$f7.mainView.history = ['/'];
-			 }
+            }
 	    };
-
-    <div class="alert--tip">This is basically a hack to keep the page at the top of the stack in terms of navigation and history. </div>
     
-## Page Routing Updates
+## Update the Routing
 
 In this step you will change the routing of the app to display the _Search_ page instead of the _Home_ page.
 
@@ -226,7 +227,7 @@ In this step you will change the routing of the app to display the _Search_ page
 	    },
 	    ...
 
-2. You can test out the routing updates via the left panel menu where you can switch between views, but first rename the side menu item to **Search** rather than **Home** . 
+2. If you remember from the initial project, there is a side menu with links to different pages. This menu has list items that map to a path in the routes.js modified above, however the title value still says **Home**. 
 
     Open `~src/components/LeftPanel.vue` and change the following list-item title from **Home** to **Search**:
 
@@ -241,13 +242,11 @@ In this step you will change the routing of the app to display the _Search_ page
 ## Run it! 
 Take a moment to stop and run the app now to make sure everything works so far as expected. You should see the new Search page but when you try to submit the search form it will not do anything at this point since you haven't put anything in the `onSubmit` handler yet. 
 
-You should also open the left panel menu and click between the menu options to ensure the new `Search` view is shown when toggling between views and `Search` is clicked. 
+You should also open the left panel menu and click between the menu options to ensure the new **Search** view is shown when toggling between views and back to **Search**. 
 
-<img class="mobile-image" src="/images/stockpile/search-lesson.png" alt="Stockpile Search "/>
+<img class="mobile-image" src="/images/stockpile/lesson2-search.png" alt="Stockpile Search "/>
 
-<img class="mobile-image" src="/images/stockpile/search-lesson2.png" alt="Side Menu"/>
-
-<div class="alert--info">**NOTE:** In this lesson you were given more helper reference code and instruction to help you get started versus what you will see in subsequent views. Most of them follow a similar pattern however, so you can refer back to this lesson for more contextual help as needed. </div>
+<div class="alert--info">**Note:** In this lesson you were given more helper reference code and instruction to help you get started versus what you will see in subsequent views. Most of them follow a similar pattern however, so you can refer back to this lesson for more contextual help as needed. </div>
 
 <!-- TODO - THIS MOVE UNTIL RESULTS PAGE AVAILABLE 
 ### Handling form submission

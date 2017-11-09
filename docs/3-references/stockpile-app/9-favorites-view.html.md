@@ -10,7 +10,7 @@ In this part 2 you will implement the **Favorites** view UI specifically and it'
 
 ## Implement the UI 
 
-### Part 1: Navigation Bar 
+### Navigation Bar 
 Replace the current `<f7-navbar ../>` component with the following:
 
 		<f7-navbar sliding>
@@ -22,7 +22,7 @@ Replace the current `<f7-navbar ../>` component with the following:
 		      </f7-nav-center>
 		</f7-navbar>
 
-### Part 2: Content Updates 
+### Content Updates 
 1. Rename `~src/components/pages/Services.vue` to `Favorites.vue`. 
 2. In `Favorites.vue`, change the `<f7-page name../>` from **services** to **favorites**.
 3. Replace the `<f7-block-title />` and `<f7-block-inner />` with the following list and content block code:
@@ -55,7 +55,7 @@ Replace the current `<f7-navbar ../>` component with the following:
 
 <!-- TODO - Explain MORE -->
 
-## Add JavaScript handling
+## Add JavaScript Handling
 In this section you should scroll down to the bottom of the page where the JavaScript default export block is defined to make some changes and addition
 
 1. At the top of the `<script>` tag, add an eslint exception for the global `store`
@@ -123,7 +123,7 @@ In this section you should scroll down to the bottom of the page where the JavaS
         
     <div class="alert--tip">This is a bit of a hack needed to keep the page at the top of the stack in terms of navigation and history. </div>
 
-## Page Routing Updates
+## Update the Routing
 
 In this step you will change the routing of the app to display the _Favorites_  page instead of the  _Services_ page.
 

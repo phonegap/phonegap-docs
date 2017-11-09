@@ -10,7 +10,7 @@ To handle state management in smaller to medium Vue applications, one common pat
 
 ## Create a Global Store
 
-1. Open `~src/main.js` and add the following store object to the [global `window` object:](https://developer.mozilla.org/en-US/docs/Web/API/Window/window)
+1. Open `~src/main.js` and add the following store object to the [global `window` object:](https://developer.mozilla.org/en-US/docs/Web/API/Window/window) bottom of the file:
 
         // Set up a global store
         const favorites = [];
@@ -24,7 +24,7 @@ To handle state management in smaller to medium Vue applications, one common pat
           favoritesById
 		 };
 
-<div class="alert--info">**Note:** The variables held in our store will manage the array of images returned from the Stock API and those that were favorited as well as two variables to access an object from one of those arrays by ID.</div>
+<div class="alert--info">**Note:** The variables held in this store will manage the array of images returned from the Stock API and those that were favorited as well as two variables to access an object from one of those arrays by ID.</div>
 
 ## Resources:
 - [Simple state management, simpler than Vuex](http://vuetips.com/simple-state-management-vue-stash)
