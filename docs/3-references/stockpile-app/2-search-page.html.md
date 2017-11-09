@@ -6,14 +6,43 @@ layout: subpage
 
 You will begin by coding the first view presented when the app is run, the **Search** view. The search view consists of an HTML form with some UI elements, including a title, input field for the search term, a submission button and a hidden field to store a results limit. The existing **Home** page from the base app will be used to implement this new **Search** view.
 
-<img class="mobile-image" src="/images/stockpile/ios-search.png" alt="Stockpile Search Screen"/>
+<img class="mobile-image" src="/images/stockpile/android/search.png" alt="Stockpile Search Screen"/>
+
+## Renaming & Routing Updates
+1. Rename the existing `~src/components/pages/Home.vue` to `Search.vue`. 
+2. Update the routing for this app to load the `Search` component instead of the `Home` component. Open `~src/routes.js` and replace all instances of _Home_ with _Search_, for example:
+
+	    import Search from './components/pages/Search';
+	    import About from './components/pages/About';
+	    ...
+
+	    {
+	        path: '/',
+	        component: Search
+	    },
+	    {
+	        path: '/about/',
+	        component: About
+	    },
+	    ...
+
+2. The Split Panel template includes a side menu with links to each page. Each of those menu items links to a `path` in the `routes.js` file, so you'll want to update the `title` corresponding to the route you just modified for descriptive purposes, since the root path (`/`) now loads `Search` and not `Home`.
+
+    Open `~src/components/LeftPanel.vue` and change the following list item title from **Home** to **Search**:
+
+	    <f7-list-item
+	        link="/"
+	        title="Search"
+	        link-view="#main-view"
+	        link-reload
+	        link-close-panel
+	    />
 
 ## Implement the UI 
 
 <div class="alert--tip">**TIP:** Be sure to keep the [Framework7 Docs](https://framework7.io/) and the [Framework7+Vue Docs](https://framework7.io/vue/) handy for a quick reference while building out your app. Details on all of the UI components and attributes used throughout the app can be found there. The components prefixed with `<f7-*>` specifically refer to [Framework7 Vue components](https://framework7.io/vue/).</div>
 
-1. Rename `~src/components/pages/Home.vue` to `Search.vue`. 
-2. In `Search.vue`, change the page name from **home** to **search**:
+1. In `Search.vue`, change the page name from "home" to "search":
 
 		<f7-page name="search">
 
@@ -183,7 +212,8 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
             this.$f7.mainView.history = ['/'];
          }
 
-    <div class="alert--tip">This is basically a hack to keep the page at the top of the stack in terms of navigation and history. </div>
+    <div class="alert--tip">Don't worry too much about this syntax since it's Framework7 specific, just understand that it ensures this page is kept at the top of the stack in terms of navigation and history since it's meant to be a top-level page (versus one that is only navigated to like Results or Details). </div>
+
 
 5. The final export block should look like the following:
              
@@ -207,38 +237,6 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
             }
 	    };
     
-## Update the Routing
-
-In this step you will change the routing of the app to display the _Search_ page instead of the _Home_ page.
-
-1. Open `~src/routes.js` and replace all instances of _Home_ with _Search_, for example:
-
-	    import Search from './components/pages/Search';
-	    import About from './components/pages/About';
-	    ...
-
-	    {
-	        path: '/',
-	        component: Search
-	    },
-	    {
-	        path: '/about/',
-	        component: About
-	    },
-	    ...
-
-2. If you remember from the initial project, there is a side menu with links to different pages. This menu has list items that map to a path in the routes.js modified above, however the title value still says **Home**. 
-
-    Open `~src/components/LeftPanel.vue` and change the following list-item title from **Home** to **Search**:
-
-	    <f7-list-item
-	        link="/"
-	        title="Search"
-	        link-view="#main-view"
-	        link-reload
-	        link-close-panel
-	    />
-
 ## Run it! 
 Take a moment to stop and run the app now to make sure everything works so far as expected. You should see the new Search page but when you try to submit the search form it will not do anything at this point since you haven't put anything in the `onSubmit` handler yet. 
 

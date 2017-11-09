@@ -8,34 +8,8 @@ The **Favorites** view manages a list of images that have been *favorited* in th
 
 <img class="mobile-image" src="/images/stockpile/favorites.png" alt="Stockpile Favorites Screen"/>
 
-## Update the Global Store
-2. Open `main.js` and add an import for the `fetchFavoritesFromLocalStorage` function after the other imports:
-
-		import { fetchFavoritesFromLocalStorage } from './utils/favorites';
-		
-3. Then, just before the global `window.store` definition, create a new `favorites` constant:
-
-		const favorites = [];
-		
-     and a new `favoritesById` constant:
-
-		const favoritesById = [];
-		
-	You will revisit these variables after you create the Favorites API.
-
-4. Lastly, while in `main.js`, add the new `favorites` and `favoritesById` constants to the global `store` object`:
-
-		window.store = {
-		  images: [],
-		  imagesById: {},
-		  favorites,
-		  favoritesById
-		};
-
-     You will be referencing the new store objects in your Favorites API in the next section. 
-
 ## Favorites API
-1. In the `utils` folder, create a new file and name it `favorites.js`
+1. In the `utils` folder, create a new file named `favorites.js`
 2. Add an [eslint exception](https://eslint.org/docs/rules/no-undef) for the global `store` and `localStorage` variables at the top
 
 		/* global store localStorage */
@@ -123,5 +97,6 @@ The `favorites` should be populated from local storage initially when the app is
           favoritesById
         };
 
+		
 
 In the next lesson you will implement the UI and associated JavaScript needed to show the **Favorites** list view.

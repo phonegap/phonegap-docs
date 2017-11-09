@@ -5,8 +5,7 @@ layout: subpage
 ---
 The **Details** view includes an image container and a card style UI component to present the specific details of the image selected. This view is shown when an image is selected from the **Results** view or the **Favorites** view.
 
-<img class="mobile-image" src="/images/stockpile/details-view.png" alt="Stockpile Details Screen"/>
-<!--<img class="mobile-image" src="/images/stockpile/details.png" alt="Stockpile Details Screen"/>-->
+<img class="mobile-image" src="/images/stockpile/android/details.png" alt="Stockpile Details Screen"/>
 
 Some of the details displayed can also lead to subsequent queries to the Adobe Stock API when clicked. For instance, when a user clicks the *Category*, *Created by* or *Find Similar* links (outlined in red in the screenshot below), a new query will run based on which was clicked and load the results page with the new results.
 
@@ -16,46 +15,40 @@ For instance, if the *Find Similar* link was clicked, you would see a different 
 
 <img class="mobile-image" src="/images/stockpile/similar-results.png" alt="Stockpile Details Screen"/>
 
-## Implement the UI 
+## Renaming & Routing Updates
+1. Rename the existing `~src/components/pages/Another.vue` to `Details.vue`
+    
+        import Details from './components/pages/Details';
 
-1. Rename `~src/components/pages/Another.vue` to `Details.vue`. 
-2. In `Details.vue`, change the page name from **another** to **details** and add an event listener to call the `onPageBeforeAnimation` function before the page animates:
-
-		<f7-page name="details" @page:beforeanimation="onPageBeforeAnimation">
-        
-## Update the Routing
-In this step you will change the routing to display the _Details_ page instead of _Another_.
-
-1. Open `~src/routes.js` and replace the import for _Another_ with _Details_, for example:
+2. Next update the routing for this app to load the `Details` component instead of the `Another` component.
+Open `~src/routes.js` and replace the import for _Another_ with _Details_ like the line below:
 
 	    import Details from './components/pages/Details';
 
-2. Replace the route for `/about/another/` with:
-
-		{
+3. Then replace the route for the `Another` component that currently specifies `path: '/about/another/',` to point to the `Details` component with the following `path`:
+   
+	    {
 		  path: '/results/details/:id',
 		  component: Details
-		} 
+		},
         
-   <div class="alert--info">The result of this route would then look something like `   http://localhost:8080/#!//results/details/60875206`</div>
-        
+   Similar to the Results route, the Details route also uses [dynamic route matching by pattern](http://framework7.io/vue/navigation-router.html) based on the `id` parameter of the image selected.
+
+   <div class="alert--tip">For instance, example of a URL matching this Details route would be:  `http://localhost:8080/#!//results/details/60875206`</div>
+
+## Implement the UI 
+1. In `Details.vue`, change the page name from **another** to **details** and add an event listener to call the `onPageBeforeAnimation` function before the page animates:
+
+		<f7-page name="details" @page:beforeanimation="onPageBeforeAnimation">
 
 ### Navigation Bar 
-The navigation bar needs to show the Details title and a star icon to use for favoriting an image. A Vue `v-if` directive is used to show the star filled when the image has already been favorited, otherwise it will be an empty star. It also needs a click event handler to be called to toggle the favorite status for a given image. 
-
 1. Replace the current `<f7-navbar.../>` block with the following:
 
-		<f7-navbar :back-link="backLink" sliding>
-		  <f7-nav-center>
-		    Details
-		  </f7-nav-center>
-		  <f7-nav-right>
-		    <f7-link icon-f7="star_filled" @click="toggleFavorite"
-		      v-if="isFavorite"
-		    />
-		    <f7-link icon-f7="star" @click="toggleFavorite" v-else />
-		  </f7-nav-right>
-		</f7-navbar>
+        <f7-navbar back-link="Back" sliding>
+          <f7-nav-center>
+            Details
+          </f7-nav-center>
+        </f7-navbar>
 
 <img class="mobile-image" src="/images/stockpile/navbar2.png" alt="Stockpile Navbar"/>
 
@@ -113,6 +106,15 @@ Continuing in `Details.vue`...
 
 
 ## Add JavaScript Handling
+Now locate the the `<script>` tag that holds the JavaScript `export` block since you will be working in that section for the following steps.
+
+1. Rename this component by changing the `name: Another` to `name: Details`
+
+		export default {
+	        name: 'Details',
+	        ...
+	    }
+
 1. In the top of the `<script>` tag, add an [eslint exception for the global store object](https://eslint.org/docs/rules/no-undef)
 
 		/* global store */
@@ -143,8 +145,6 @@ Continuing in `Details.vue`...
         computed: {
           ...,
           item () {
-            // Fallback default for when images* and favorites* are reset in
-                //  the store
             if (this.imagesById && this.imagesById[this.id]) {
               this.stockItem = Object.assign(
                 {},
@@ -169,16 +169,13 @@ Continuing in `Details.vue`...
           }
 		},
 
-5. Add an empty `isFavorite` computed property to avoid compiler errors. You will code more there later in the guide when adding support for favorites:
+<!--5. Add an empty `isFavorite` computed property to avoid compiler errors. You will code more there later in the guide when adding support for favorites:
 
 		computed: {
           ...,
-         isFavorite () {
-		  const filteredFavorites =
-		    this.favorites.filter(favorite => favorite.id.toString() === this.id);
-		  return !!filteredFavorites.length;
+         isFavorite () {}
 		}
-        
+   -->     
 6. Lastly, add the following computed properties to set the path to the current item data to use for routing when a user clicks on the Category, Creator or Find Similar links:
 		
 		computed: {
@@ -240,12 +237,12 @@ Continuing in `Details.vue`...
           }
         }
         
-5. Include a method for toggling favorites, even though the favoriting support has not been added yet. You will revisit this method later:
+<!--5. Include a method for toggling favorites, even though the favoriting support has not been added yet. You will revisit this method later:
 
 		toggleFavorite () {}
 
-
-4. Install `moment.js` to use for date formatting: 
+-->
+4. Install [`moment.js`](https://momentjs.com/) to use for date formatting: 
 			
 		npm install moment --save
 
@@ -308,4 +305,4 @@ After the `<script>` tag, add a `<style>` tag to style the image container and c
 
 
 ## Run it
-<!-- Explain what you see and what it did - replace this image not right now-->
+<img class="mobile-image" src="/images/stockpile/7-details.png" alt="Stockpile Details Screen"/>
