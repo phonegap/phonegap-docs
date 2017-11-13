@@ -6,7 +6,7 @@ layout: subpage
 This lesson provides the steps to create a new PhoneGap app project based on a starter template and provides details about the resulting project structure. Before moving on you will add an icon library and test out your new base app to ensure it's running properly.
 
 ## Project Creation
-1. Open a terminal window and run the `phonegap create` command below, specifying your desired *folder location*,  *package*, *name* and the [PhoneGap Split Panel template](https://github.com/phonegap/phonegap-template-vue-f7-split-panel) for the `--template` parameter as shown below:
+1. Open a terminal window and run the `phonegap create` command below, specifying your desired folder location,  package, name and the [phonegap-template-vue-f7-split-panel](https://github.com/phonegap/phonegap-template-vue-f7-split-panel) for the `--template` parameter as shown below:
 
         phonegap create Stockpile com.phonegap.stockpile Stockpile --template https://github.com/phonegap/phonegap-template-vue-f7-split-panel
 
@@ -95,19 +95,21 @@ Open your terminal and start the development server with the following `npm` com
 
 	npm run dev
 
-The app will open up in your browser at `localhost:8080` (or you can manually open it there).  When the app is run in development mode in the browser, it should appear like the screenshots below, which is essentially the [PhoneGap Default Split Panel](https://github.com/phonegap/phonegap-template-vue-f7-split-panel/) template renamed.
+The app will open up in your browser at `localhost:8080` (or you can manually open it there).  When the app is run in development mode in the browser, it should appear like the screenshots below, which is basically the [PhoneGap Default Split Panel](https://github.com/phonegap/phonegap-template-vue-f7-split-panel/) app renamed at this point.
 
 ![](/images/stockpile/run-browser-lesson1.png)
 
 #### Production mode
-"Production mode" is meant to be used when you are ready to start testing your app on a device. This includes an actual device or a simulator. To build it for production mode, you should use the `build` run target.
+Build in "production mode" when you are ready to start testing your app on a device. This includes an actual device or a simulator. To build it for production mode, use the `build` run target:
 
 	 npm run build
 
-Once the build is complete, you then run the normal `phonegap` and `cordova` commands to actually deploy the package to an ios or android target using:
+Once the build is complete, you can then run the normal `phonegap` and `cordova` commands to actually deploy the package to an ios or android target using:
 
-	 phonegap run ios
-   phonegap run android
+```
+    phonegap run ios
+    phonegap run android
+```
 
 After the `build` command, you could also use the [`phonegap serve`](http://docs.phonegap.com/getting-started/4-preview-your-app/cli/) command to serve the app for use by the [PhoneGap Developer App](http://docs.phonegap.com/getting-started/2-install-mobile-app/) running on a device.
 

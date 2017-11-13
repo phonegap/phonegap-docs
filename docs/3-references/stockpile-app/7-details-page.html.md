@@ -11,7 +11,7 @@ Some of the details displayed can also lead to subsequent queries to the Adobe S
 
 <img class="mobile-image" src="/images/stockpile/details-results-routes.png" alt="Stockpile Details Results Routes Screen"/>
 
-For instance, if the *Find Similar* link was clicked, you would see a different message displayed with the number of results at the top:
+For instance, if the **FIND SIMILAR** link was clicked, you would see a different message displayed with the number of results at the top:
 
 <img class="mobile-image" src="/images/stockpile/similar-results.png" alt="Stockpile Details Screen"/>
 
@@ -21,15 +21,19 @@ For instance, if the *Find Similar* link was clicked, you would see a different 
 2. Next update the routing for this app to load the `Details` component instead of the `Another` component.
 Open `~src/routes.js` and replace the import for _Another_ with _Details_ like the line below:
 
-	    import Details from './components/pages/Details';
+ ```javascript
+    import Details from './components/pages/Details';
+```    
 
 3. Then replace the route for the `Another` component that currently specifies `path: '/about/another/',` to point to the `Details` component with the following `path`:
    
-	    {
-		  path: '/results/details/:id',
-		  component: Details
-		},
-        
+ ```javascript   
+    {
+      path: '/results/details/:id',
+      component: Details
+    },
+```
+
    Similar to the Results route, the Details route also uses [dynamic route matching by pattern](http://framework7.io/vue/navigation-router.html) based on the `id` parameter of the image selected.
 
    <div class="alert--tip">For instance, example of a URL matching this Details route would be:  `http://localhost:8080/#!//results/details/60875206`</div>
@@ -37,16 +41,20 @@ Open `~src/routes.js` and replace the import for _Another_ with _Details_ like t
 ## Implement the UI 
 1. In `Details.vue`, change the page name from **another** to **details** and add an event listener to call the `onPageBeforeAnimation` function before the page animates:
 
-		<f7-page name="details" @page:beforeanimation="onPageBeforeAnimation">
+ ```html
+    <f7-page name="details" @page:beforeanimation="onPageBeforeAnimation">
+```
 
 ### Navigation Bar 
 1. Replace the current `<f7-navbar.../>` block with the following:
 
-        <f7-navbar back-link="Back" sliding>
-          <f7-nav-center>
-            Details
-          </f7-nav-center>
-        </f7-navbar>
+ ```html
+    <f7-navbar back-link="Back" sliding>
+      <f7-nav-center>
+        Details
+      </f7-nav-center>
+    </f7-navbar>
+```
 
 <img class="mobile-image" src="/images/stockpile/navbar2.png" alt="Stockpile Navbar"/>
 
@@ -56,212 +64,239 @@ Continuing in `Details.vue`...
 1. Remove the `<f7-block-title .../>` and the entire `<f7-block inner...>` component.
 2. Add a `card` component to contain the details of the image selected:
 
-		<f7-card>
-		</f7-card>
+ ```html
+    <f7-card>
+    </f7-card>
+```        
 
 2. Next add this header component inside the `<f7-card../>` element which contains a container `<div/>` (styled later) to hold the image itself and its title. The image also has a `click` handler that will load the image in a photo browser component, and a `style` function it's bound to for setting the thumbnail URL with the appropriate size:
 
-		<f7-card-header>
-		  <div class="img-container" :style="imgBackground()"
-		    @click="loadInPhotoBrowser">
-		    <div class="img-container-inner" :style="imgBackground(500)"></div>
-		    <div class="caption">{{item.title}}</div>
-		  </div>
-		</f7-card-header>
+ ```html
+    <f7-card-header>
+      <div class="img-container" :style="imgBackground()"
+        @click="loadInPhotoBrowser">
+        <div class="img-container-inner" :style="imgBackground(500)"></div>
+        <div class="caption">{{item.title}}</div>
+      </div>
+    </f7-card-header>
+```
 
-3. Next add the card content just after the card header added above: 
+3. Then add the card content just after the card header added above: 
 
-		<f7-card-content>
-            <f7-list>
-              <f7-list-item title="Category" :after="item.category.name"
-                :link="categoryLink"
-              ></f7-list-item>
-              <f7-list-item
-                title="Created by" :after="item.creator_name" :link="creatorLink"
-              ></f7-list-item>
-              <f7-list-item
-                title="Creation date" :after="creationDate"></f7-list-item>
-            </f7-list>
-		</f7-card-content>
-      
+ ```html
+    <f7-card-content>
+        <f7-list>
+          <f7-list-item title="Category" :after="item.category.name"
+            :link="categoryLink"
+          ></f7-list-item>
+          <f7-list-item
+            title="Created by" :after="item.creator_name" :link="creatorLink"
+          ></f7-list-item>
+          <f7-list-item
+            title="Creation date" :after="creationDate"></f7-list-item>
+        </f7-list>
+    </f7-card-content>
+```
+
 4. Complete the card with a footer: 
 
-        <f7-card-footer>
-            <f7-link :href="item.comp_url" external>Download Comp</f7-link>
-            <f7-link :href="findMoreLink">Find Similar</f7-link>
-        </f7-card-footer>
-      
+ ```html
+    <f7-card-footer>
+        <f7-link :href="item.comp_url" external>Download Comp</f7-link>
+        <f7-link :href="findMoreLink">Find Similar</f7-link>
+    </f7-card-footer>
+```
+
 5. Just after the card closing tag, add a photo browser component and bind the photos, lazy loading and toolbar values: 
 
-		<f7-photo-browser
-		  ref="pb"
-		  type="page"
-		  :photos="photos"
-		  :lazyLoading="true"
-		  backLinkText="Details"
-		  :toolbar="false"
-		></f7-photo-browser>
-
+ ```html
+    <f7-photo-browser
+      ref="pb"
+      type="page"
+      :photos="photos"
+      :lazyLoading="true"
+      backLinkText="Details"
+      :toolbar="false">
+    </f7-photo-browser>
+```    
 
 ## Add JavaScript Handling
 Now locate the the `<script>` tag that holds the JavaScript `export` block since you will be working in that section for the following steps.
 
-1. Rename this component by changing the `name: Another` to `name: Details`
+1. Rename this component by changing the name from `Another` to `Details`:
 
-		export default {
-	        name: 'Details',
-	        ...
-	    }
+ ```javascript
+    export default {
+        name: 'Details',
+        ...
+    }
+```
 
-1. In the top of the `<script>` tag, add an [eslint exception for the global store object](https://eslint.org/docs/rules/no-undef)
+1. In the top of the `<script>` tag, add an [eslint exception for the global store object:](https://eslint.org/docs/rules/no-undef)
 
-		/* global store */
+ ```javascript
+    /* global store */
+```
 
 2. Then replace the `data()` method with one returning the global store object to provide access to it:
 
-		data () {
-		  return store;
-		},
+ ```javascript
+    data () {
+      return store;
+    },
+```
 
-#### Add Computed Properties
-3. After the `data ()` object, insert a new `computed` property block:
-
-		computed: {
-		},
-
-6. In this new `computed` block, define `id` as a computed property:
-
-		computed: {
-          id () {
-            const { id } = this.$route.params;
-            return id;
-          }
-		},
-        
-6. Add in a computed property for `item`:
-        
-        computed: {
-          ...,
-          item () {
-            if (this.imagesById && this.imagesById[this.id]) {
-              this.stockItem = Object.assign(
-                {},
-                this.stockItem,
-                this.imagesById[this.id]);
-            }
-            return this.stockItem;
-          }
-		},
-        
-6. Add another computed property to return an array of photos for the Photo Browser component with just the one selected image in it:
-
-		computed: {
-          ...,
-          photos () {
-            return [
-              {
-                url: this.item.thumbnail_1000_url,
-                caption: this.item.title || ''
-              }
-            ];
-          }
-		},
-
-<!--5. Add an empty `isFavorite` computed property to avoid compiler errors. You will code more there later in the guide when adding support for favorites:
-
-		computed: {
-          ...,
-         isFavorite () {}
-		}
-   -->     
-6. Lastly, add the following computed properties to set the path to the current item data to use for routing when a user clicks on the Category, Creator or Find Similar links:
-		
-		computed: {
-          ...,
-          categoryLink () {
-            return `/results/category/60/${this.item.category.id}/details`;
-          },
-          creatorLink () {
-            return `/results/creator_id/60/${this.item.creator_id}/details`;
-          },
-          findMoreLink () {
-            return `/results/similar/60/${this.item.id}/details`;
-          }
-        }
-
-#### Add Methods
-1. Insert a `methods` object after the `data ()` object and before the `computed` properties block:
-
-        methods: {
-        }
-
-2. Define a method stub for `fetchResults ()`:
-
-		methods: {
-		  fetchResults () {}
-		}
-        
-3. Define the `loadInPhotoBrowser ()` method. This method is called when a card is clicked and will use the [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component you defined in the UI to open the image in a new window and allow it to be zoomed, panned etc:
-
-        methods: {
-          ...,
-          loadInPhotoBrowser () {
-            this.$refs.pb.open();
-          }
-        }
-        
-4. Define the `onPageBeforeAnimation` handler to disable exposition if enabled:
-
-		methods: {
-          ...,
-          onPageBeforeAnimation () {
-            // When going 'back' from the photo browser, make sure we disable
-            // exposition (hidden navbar, etc) if it was enabled
-            const { pb: photoBrowser } = this.$refs;
-            if (photoBrowser.f7PhotoBrowser.exposed) {
-              photoBrowser.disableExposition();
-            }
-          }
-        }
-
-6. Add the `imgBackground ()` method to determine the specific sized thumbnail url to use: 
-
-		methods: {
-          ...,
-          imgBackground (size = 0) {
-            const url = size > 0 ? `thumbnail_${size}_url` : 'thumbnail_url';
-            if (this.item[url]) this[url] = this.item[url];
-            return `background-image: url(${this[url]})`;
-          }
-        }
-        
-<!--5. Include a method for toggling favorites, even though the favoriting support has not been added yet. You will revisit this method later:
-
-		toggleFavorite () {}
-
--->
-4. Install [`moment.js`](https://momentjs.com/) to use for date formatting: 
+3. Install [`moment.js`](https://momentjs.com/) to use for date formatting: 
 			
-		npm install moment --save
+        npm install moment --save
 
    then at the start of the `<script>` tag, add an import for it: 
 
-	import moment from 'moment';
+```javascript
+    import moment from 'moment';
+```
 
-   Add a computed property to calculate the `creationDate` using moment.js to format:
+#### Computed Properties
+3. After the `data` object, insert a new `computed` property block:
 
-	computed: {
+ ```javascript
+    computed: {
+    },
+```
+
+6. In this new `computed` block, define `id` as a computed property:
+
+ ```javascript
+    computed: {
+      id () {
+        const { id } = this.$route.params;
+        return id;
+      }
+    },
+```    
+        
+6. Add in a computed property for `item`:
+
+ ```javascript
+    computed: {
+      ...,
+      item () {
+        if (this.imagesById && this.imagesById[this.id]) {
+          this.stockItem = Object.assign(
+            {},
+            this.stockItem,
+            this.imagesById[this.id]);
+        }
+        return this.stockItem;
+      }
+    },
+```    
+        
+6. Add another computed property to return an array of photos for the Photo Browser component with just the one selected image in it:
+
+ ```javascript
+    computed: {
+      ...,
+      photos () {
+        return [
+          {
+            url: this.item.thumbnail_1000_url,
+            caption: this.item.title || ''
+          }
+        ];
+      }
+    },
+```
+
+7. Add a computed property to calculate the `creationDate` using moment.js to format:
+
+ ```javascript
+    computed: {
       ...,
       creationDate () {
         const created = moment(this.item.creation_date);
         return created.format('MMMM Do YYYY');
       }
     }
+```  
 
+6. Lastly, add the following computed properties to set the path to the current item data to use for routing when a user clicks on the Category, Creator or Find Similar links:
+ 
+ ```javascript		
+    computed: {
+      ...,
+      categoryLink () {
+        return `/results/category/60/${this.item.category.id}/details`;
+      },
+      creatorLink () {
+        return `/results/creator_id/60/${this.item.creator_id}/details`;
+      },
+      findMoreLink () {
+        return `/results/similar/60/${this.item.id}/details`;
+      }
+    }
+```    
+
+#### Methods
+1. Insert a `methods` object after the `data ()` object and before the `computed` properties block:
+ 
+ ```javascript
+    methods: {
+    }
+```    
+
+2. Define a method stub for `fetchResults ()`:
+
+ ```javascript
+    methods: {
+      fetchResults () {}
+    }
+```
+
+3. Define the `loadInPhotoBrowser ()` method. This method is called when a card is clicked and will use the [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component you defined in the UI to open the image in a new window and allow it to be zoomed, panned etc:
+
+ ```javascript
+    methods: {
+      ...,
+      loadInPhotoBrowser () {
+        this.$refs.pb.open();
+      }
+    }
+```    
+        
+4. Define the `onPageBeforeAnimation` handler to disable exposition if enabled:
+ 
+ ```javascript
+    methods: {
+      ...,
+      onPageBeforeAnimation () {
+        // When going 'back' from the photo browser, make sure we disable
+        // exposition (hidden navbar, etc) if it was enabled
+        const { pb: photoBrowser } = this.$refs;
+        if (photoBrowser.f7PhotoBrowser.exposed) {
+          photoBrowser.disableExposition();
+        }
+      }
+    }
+```
+
+6. Add the `imgBackground ()` method to determine the specific sized thumbnail url to use: 
+ 
+ ```javascript
+    methods: {
+      ...,
+      imgBackground (size = 0) {
+        const url = size > 0 ? `thumbnail_${size}_url` : 'thumbnail_url';
+        if (this.item[url]) this[url] = this.item[url];
+        return `background-image: url(${this[url]})`;
+      }
+    }
+```    
 
 ## Define Styles
 After the `<script>` tag, add a `<style>` tag to style the image container and caption.
 
+```
 	<style scoped>
 	  .swiper {
 	    height: 300px;
@@ -300,7 +335,7 @@ After the `<script>` tag, add a `<style>` tag to style the image container and c
 	    z-index: 3;
 	  }
 	</style>
-
+```
 
 ## Run it
 ![](/images/stockpile/7-details.png)
