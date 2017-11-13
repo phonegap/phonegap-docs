@@ -13,27 +13,27 @@ The Adobe Stock API requires a developer key to make API calls to it, so in this
 
 1. Open a browser and navigate to the [Adobe IO Console](https://console.adobe.io/integrations)
 
-![](/images/stockpile/stockapi/01-adobe-i0-console.png)
+  ![](/images/stockpile/stockapi/01-adobe-i0-console.png)
 
 2. Login with your Adobe ID (or create a new Adobe ID)
 
-![](/images/stockpile/stockapi/02-new-integrations.png)
+  ![](/images/stockpile/stockapi/02-new-integrations.png)
 
 2. Click **"New Integration"**, then choose "Access an API"
 
-![](/images/stockpile/stockapi/03-access-an-api.png)
+  ![](/images/stockpile/stockapi/03-access-an-api.png)
 
 3. Next choose **"Adobe Stock"** and **"OAuth Integration"** below that
 
-![](/images/stockpile/stockapi/04-adobe-stock-oauth.png)
+  ![](/images/stockpile/stockapi/04-adobe-stock-oauth.png)
 
 4. Choose **"New integration"**
 
-![](/images/stockpile/stockapi/05-create-new-integration.png)
+  ![](/images/stockpile/stockapi/05-create-new-integration.png)
 
 5. Give your integration a name like "Stockpile" and a Description like "A test Adobe Stock integration with a PhoneGap app"
 
-![](/images/stockpile/stockapi/06-create-new-integration-pt2.png)
+  ![](/images/stockpile/stockapi/06-create-new-integration-pt2.png)
 
 6. Choose **Web** as the platform
 
@@ -43,11 +43,11 @@ The Adobe Stock API requires a developer key to make API calls to it, so in this
 
 9. Your integration has been created. Click **Continue to integration details** to get your API key
 
-![](/images/stockpile/stockapi/07-integration-completed.png)
+  ![](/images/stockpile/stockapi/07-integration-completed.png)
 
 10. Your API key will be under **API Key (Client ID)** on the left.
 
-![](/images/stockpile/stockapi/08-api-key.png)
+ ![](/images/stockpile/stockapi/08-api-key.png)
 
 ## Config.js
 Now that you've obtained a key, you will need to have it available for use by the API calls. One way to do this is to create a configration file to store the properties.
@@ -75,14 +75,14 @@ You'll also need to update the Content Security Policy for the app to allow cont
 
   Open the `index.html` file and replace the `<meta>` tag with the current CSP to:
 
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://stock.adobe.io 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; img-src * data:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://stock.adobe.io 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; img-src * data:">
 
 ## Add JavaScript handling
 To keep things more readable and maintainable for this app, it's better to code the functions for interacting with the Stock API in a separate JavaScript file.
 
 1. In the `utils` folder you created above, create a new file named `stockAPI.js` and add the following content:
 
-		/* global fetch */
+		`/* global fetch */`
 
 		import { apiHeaders } from './config';
 

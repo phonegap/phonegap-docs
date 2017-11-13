@@ -303,4 +303,4 @@ After the `<script>` tag, add a `<style>` tag to style the image container and c
 
 
 ## Run it
-<img class="mobile-image" src="/images/stockpile/7-details.png" alt="Stockpile Details Screen"/>
+![](/images/stockpile/7-details.png)

@@ -160,12 +160,12 @@ In this section you will need to scroll down to the bottom of the page where the
 		  this.$f7.mainView.history = ['/favorites/'];
 		}
         
-    <div class="alert--tip">Don't worry too much about this syntax since it's Framework7 specific, just understand that it ensures this page is kept at the top of the stack in terms of navigation and history since it's meant to be a top-level page (versus one that is only navigated to like Results or Details). </div>
+    <div class="alert--tip">Don't worry much about this syntax since it's Framework7 specific, just understand that it ensures this page is kept at the top of the stack in terms of navigation and history since it's meant to be a top-level page (versus one that is only navigated to like Results or Details). </div>
 
 ## Run it! 
 Run the app again in dev mode and try out the side menu link to load this new Favorites page. Does it look like this? Why is it empty?
 
-<img class="mobile-image" src="/images/stockpile/9-favorites1.png" alt="Stockpile Favorites "/>
+![](/images/stockpile/9-favorites1.png)
 
 <div class="alert--tip">If you didn't see a blank page but actually saw a favorites list load, it may be because you've run the full version of the Stockpile app prior to this and the localStorage in your browser still has the contents. You can use the Chrome devtools -> Application tab to clear the localStorage and run it again (highlight the `favorites` key and press the delete button to clear).</div>
-<img class="mobile-image" src="/images/stockpile/9-old-faves-delete.png" alt="Stockpile Old Favorites "/>
+![](/images/stockpile//images/stockpile/9-old-faves-delete.png)

@@ -39,9 +39,12 @@ In part two you will add support for the more advanced features of the Results p
 		  </div>
 		</f7-block>
 
-The above block:
-	- Only displays if the `results` variable value is true
+  The above block:
 
+    - Only displays if the `results` variable value is true
+    - Uses [Vue v-for](https://vuejs.org/v2/guide/list.html) to create placeholders for 60 images (the pre-defined results limit set)
+    - Uses [Vue v-for](https://vuejs.org/v2/guide/list.html) to loop through the `images` array to display
+    - Sets an event handler called `onImageClick` to be called when an image is clicked (passing in the id of the image clicked).
 
 2. Just before the closing `</f7-page>` tag, add a block to be displayed when there are no results returned:
 
@@ -64,7 +67,6 @@ In this section you will add the event handlers for the UI components added in t
 1. Add a `methods` object to the default export just after the `data` object:
 
 		methods: {
-		  
 		}
 
 2. Add a `fetchResults` method stub to the `methods` object:
@@ -90,7 +92,7 @@ In this section you will add the event handlers for the UI components added in t
 
 3. Add infinite scroll handling
 
-Add the `onInfiniteScroll` method into the `methods` object to load the next set of images based on the results offset:
+  Add the `onInfiniteScroll` method into the `methods` object to load the next set of images based on the results offset:
 
 	   methods: {
             ...,
@@ -106,25 +108,23 @@ Add the `onInfiniteScroll` method into the `methods` object to load the next set
 
 3. Add Page Reinit handling
 
-Code the `onPageReinit` method to handle when the app returns from deep navigation and needs to display the correct results. It refreshes the global data `store` object with the data from this view. 
+    Code the `onPageReinit` method to handle when the app returns from deep navigation and needs to display the correct results. It refreshes the global data `store` object with the data from this view. In the `methods` object, add the following:
+       
+        methods: {
+            ...,
+            onPageReinit () {
+              // load the data for this page back into the store
+              Object.assign(window.store, {
+                images: this.images,
+                imagesById: this.imagesById,
+                totalReturned: this.totalReturned
+              });
+            }
+         }
 
-In the `methods` object, add the following:
+   This method uses the new [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) method to refresh the global `store` with the values from this view. You could also use the new [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) instead if it's fully supported everywhere you want your app to run.
 
-    methods: {
-        ...,
-        onPageReinit () {
-          // load the data for this page back into the store
-          Object.assign(window.store, {
-            images: this.images,
-            imagesById: this.imagesById,
-            totalReturned: this.totalReturned
-          });
-        }
-    }
-
-This method uses the new [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) method to refresh the global `store` with the values from this view. You could also use the new [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) instead if it's fully supported everywhere you want your app to run.
-
-<!-- TODO Use the screenshot on multiple-results- to explain how it's replacing the main store object with that page each time as you go back thru the history -->
+   <!-- TODO Use the screenshot on multiple-results- to explain how it's replacing the main store object with that page each time as you go back thru the history -->
 
 ## Fetch Results Handling
 Previously in this guide you created a `stockAPI.js` file with some functions used to format the query and fetch the data from the Adobe Stock API. That file contains the `fetchStockAPIJSON` function needed now.
@@ -135,7 +135,7 @@ Previously in this guide you created a `stockAPI.js` file with some functions us
 	
 2. Now go back into the `fetchResults` method stub created previously and update the signature with 4 new parameters and add the two constant variables for `columns` and `parameters` arrays shown below:
 
-		fetchResults (q, limit, filter, offset = 0) {
+        fetchResults (q, limit, filter, offset = 0) {
             const columns = [
               'nb_results', 'id', 'title', 'thumbnail_url', 'thumbnail_500_url',
               'thumbnail_1000_url', 'content_type', 'creation_date',
@@ -154,58 +154,79 @@ Previously in this guide you created a `stockAPI.js` file with some functions us
 	
 3. Just below the ending `parameters` array added above, add this next piece of code into the `fetchResults` method to call your Stock API function:
  
-		        fetchStockAPIJSON({ columns, parameters })
-		          .then(json => {
-		            // remove preloader if no results returned
-		            //  either from the end of the pagination or no results
-		            if (json.nb_results === 0) {
-		              this.$$('.initial-preloader').remove();
-		              this.$$('.infinite-scroll-preloader').remove();
-		            }
-		            // set initial totalReturned
-		            //  only if nb_results is > existing totalReturned
-		            //  this is because sometimes nb_results is 0
-		            if (json.nb_results >= this.totalReturned) {
-		              this.totalReturned = json.nb_results;
-		            }
-		            // set results bool to true if we have results
-		            //  and false if we do not
-		            this.results = !!this.totalReturned;
-		            // merge the two arrays adding in the new results
-		            this.images = this.images.concat(json.files);
-		            // reduce the images array into an object referenced by id...
-		            const imagesById = this.images.reduce((a, b) => {
-		              const c = a;
-		              c[b.id] = b;
-		              return c;
-		            }, {});
-		            // ...then merge with existing imagesById
-		            this.imagesById = Object.assign({}, this.imagesById, imagesById);
-		            // update the store
-		            // merging new and existing data using Object.assign()
-		            window.store = Object.assign(window.store, {
-		              images: this.images,
-		              imagesById: this.imagesById,
-		              totalReturned: this.totalReturned
-		            });
-		            // set the new offset
-		            this.offset = offset + limit; // not working currently...see: issue #4
-		            // remove the preloader if we have all the results
-		            if (json.files.length === 0 || this.totalReturned <= limit) {
-		              this.$$('.infinite-scroll-preloader').remove();
-		            }
-		          }).catch(ex => {
-		            console.log('fetching failed', ex);
-		            this.$f7.addNotification({
-		              title: 'Error',
-		              message: 'Failed to fetch from Adobe Stock',
-		              hold: 3000
-		            });
-		            this.$$('.infinite-scroll-preloader').remove();
-		          });
-		      },
+            fetchStockAPIJSON({ columns, parameters })
+              .then(json => {
+                // remove preloader if no results returned
+                //  either from the end of the pagination or no results
+                if (json.nb_results === 0) {
+                  this.$$('.initial-preloader').remove();
+                  this.$$('.infinite-scroll-preloader').remove();
+                }
+                // set initial totalReturned
+                //  only if nb_results is > existing totalReturned
+                //  this is because sometimes nb_results is 0
+                if (json.nb_results >= this.totalReturned) {
+                  this.totalReturned = json.nb_results;
+                }
+                // set results bool to true if we have results
+                //  and false if we do not
+                this.results = !!this.totalReturned;
+                // merge the two arrays adding in the new results
+                this.images = this.images.concat(json.files);
+                // reduce the images array into an object referenced by id...
+                const imagesById = this.images.reduce((a, b) => {
+                  const c = a;
+                  c[b.id] = b;
+                  return c;
+                }, {});
+                // ...then merge with existing imagesById
+                this.imagesById = Object.assign({}, this.imagesById, imagesById);
+                // update the store
+                // merging new and existing data using Object.assign()
+                window.store = Object.assign(window.store, {
+                  images: this.images,
+                  imagesById: this.imagesById,
+                  totalReturned: this.totalReturned
+                });
+                // set the new offset
+                this.offset = offset + limit; // not working currently...see: issue #4
+                // remove the preloader if we have all the results
+                if (json.files.length === 0 || this.totalReturned <= limit) {
+                  this.$$('.infinite-scroll-preloader').remove();
+                }
+              }).catch(ex => {
+                console.log('fetching failed', ex);
+                this.$f7.addNotification({
+                  title: 'Error',
+                  message: 'Failed to fetch from Adobe Stock',
+                  hold: 3000
+                });
+                this.$$('.infinite-scroll-preloader').remove();
+              });
+          },
 
-<!-- TODO - Explain the above -->
+    <!-- TODO - Explain the above -->
+    
+4. Add a [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) to call `fetchResults` when the Results instance is [mounted](https://vuejs.org/v2/api/#mounted).
+
+  The new `mounted` lifecycle hook should be added just AFTER the `computed` property block, and will be called when the instance has been mounted
+  
+    		computed: {
+              ...
+            }
+			mounted () {
+					const { params } = this.$route;
+					// set some initial defaults
+					params.offset = parseInt(params.offset, 10) || 0;
+					params.limit = parseInt(params.limit, 10) || 60;
+					params.images = [];
+					params.totalReturned = 0;
+					Object.assign(this, params);
+					this.fetchResults(this.q, this.limit, this.filter, this.offset);
+			}
+		
+  This code will set up some defaults for the Stock API query parameters and replace the current `params` with the new values (using [`Object.assign`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)) before calling the `fetchResults()`.
+
 
 
 ## Style the Images Grid
@@ -254,29 +275,8 @@ After the `<script>` tag, add the CSS to style the images grid:
 	  }
 	</style>
 
-
-4. Add a [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) to call `fetchResults` run when the Results instance is [`mounted ()`](https://vuejs.org/v2/api/#mounted).
-
-The new `mounted ()` lifecycle hook should be added just AFTER the `computed:` block, and will be called when instance has been mounted:
-
-		computed: {		
-		  // (for reference)	
-		},		
-		mounted () {
-          const { params } = this.$route;
-          // set some initial defaults
-          params.offset = parseInt(params.offset, 10) || 0;
-          params.limit = parseInt(params.limit, 10) || 60;
-          params.images = [];
-          params.totalReturned = 0;
-          Object.assign(this, params);
-          this.fetchResults(this.q, this.limit, this.filter, this.offset);
-		}
-		
-This code will set up some defaults for the Stock API query parameters and replace the current `params` with the new values (using [`Object.assign`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)) before calling the `fetchResults()`.
-
 ## Run it
 Run the app again in dev mode, enter a search term (ie: cat), hit the FIND IMAGES button and verify that you see your results page now load with the number of results message and images grid populated as seen below:
 
-<img class="mobile-image" src="/images/stockpile/6-results-part2.png" alt="Stockpile Results Part 2 Screen"/>
+  ![](/images/stockpile/6-results-part2.png)
 
