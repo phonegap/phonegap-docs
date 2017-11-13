@@ -17,8 +17,6 @@ For instance, if the *Find Similar* link was clicked, you would see a different 
 
 ## Renaming & Routing Updates
 1. Rename the existing `~src/components/pages/Another.vue` to `Details.vue`
-    
-        import Details from './components/pages/Details';
 
 2. Next update the routing for this app to load the `Details` component instead of the `Another` component.
 Open `~src/routes.js` and replace the import for _Another_ with _Details_ like the line below:
@@ -55,7 +53,7 @@ Open `~src/routes.js` and replace the import for _Another_ with _Details_ like t
 ### Page Content
 Continuing in `Details.vue`...
 
-1. Remove the `<f7-block-title .../>` and the entire `<f7-block inner...> component`.
+1. Remove the `<f7-block-title .../>` and the entire `<f7-block inner...>` component.
 2. Add a `card` component to contain the details of the image selected:
 
 		<f7-card>

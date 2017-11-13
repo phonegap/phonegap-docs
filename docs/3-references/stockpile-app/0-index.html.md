@@ -6,7 +6,7 @@ layout: subpage
 
 ## Overview
 
-The Stockpile App is a sample mobile app written by the Adobe PhoneGap team to showcase how to use PhoneGap to build highly performant, fully-featured mobile apps. The app allows you to query images from the [Adobe Stock Photo Library](https://stock.adobe.com/), view details about the images, download them, add favorites, query similar and more. It was built using the latest web standards and is being provided to developers to use as a reference when creating their own mobile apps. 
+The Stockpile App is a sample mobile app written by the Adobe PhoneGap team to showcase how to use PhoneGap to build highly performant, fully-featured mobile apps. The app allows you to search for images from the [Adobe Stock Photo Library](https://stock.adobe.com/), view details, download, add favorites and more. It was built using the latest web standards and is being provided to developers to use as a reference when creating their own mobile apps. 
 
 This guide will walk through how to build Stockpile step by step with a series of lessons aimed to teach mobile app development with PhoneGap using a proven technology stack.
 

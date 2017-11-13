@@ -13,12 +13,12 @@ In part two you will add support for the more advanced features of the Results p
 		  infinite-scroll @infinite="onInfiniteScroll"
 		  :infinite-scroll-preloader="false">
 
-    The above block:
+ The above block:
 
-    - Defines a page event handler called `onPageReinit` to call when the `reinit` event fires
-    - Adds properties needed for [infinite scroll](https://framework7.io/docs/infinite-scroll.html) ability to the Results view and an event handler named `onInfiniteScroll` to call.
+     - Defines a page event handler called `onPageReinit` to call when the `reinit` event fires
+     - Adds properties needed for [infinite scroll](https://framework7.io/docs/infinite-scroll.html) ability to the Results view and an event handler named `onInfiniteScroll` to call.
 
-2. Replace the `<f7-block inner />` with the following content block that will display the images array in a grid:
+2. Add this content block which will display the images array in a grid:
 
 		<f7-block v-if="results">
 		  <div class="grid">
@@ -39,15 +39,10 @@ In part two you will add support for the more advanced features of the Results p
 		  </div>
 		</f7-block>
 
+The above block:
+	- Only displays if the `results` variable value is true
 
-	The above block:
 
-     - Only displays if the `results` variable value is true
-     - Uses the [Framework7 Grid Layout](http://framework7.io/vue/grid.html) 
-     - Uses [Vue v-for](https://vuejs.org/v2/guide/list.html) to create placeholders for 60 images (the pre-defined results limit set)
-     - Uses [Vue v-for](https://vuejs.org/v2/guide/list.html) to loop through the `images` array to display 
-     - Sets an event handler called `onImageClick` to be called when an image is clicked (passing in the id of the image clicked.
-        
 2. Just before the closing `</f7-page>` tag, add a block to be displayed when there are no results returned:
 
 		<f7-block v-if="!results">
@@ -66,19 +61,19 @@ In part two you will add support for the more advanced features of the Results p
 ## Add JavaScript Handling
 In this section you will add the event handlers for the UI components added in the previous section. This includes the two event handlers set in the `<f7-page>` component for handling page reinitialization and infinite scrolling and the event handler to call when the user clicks on an image.
 
-1. Add a `methods` object to the default export just after the `data` object 
+1. Add a `methods` object to the default export just after the `data` object:
 
 		methods: {
 		  
 		}
 
-2. Add a method stub to the `methods` object for `fetchResults`:
+2. Add a `fetchResults` method stub to the `methods` object:
 
 		methods: {
 		  fetchResults () {}
 		}
 
-	You will revisit this method shortly. 
+	You will revisit this method shortly...
 	
 2. Add an `onImageClick` method  the `methods` object to route to the **Details** page when an image is clicked:
 
@@ -95,7 +90,7 @@ In this section you will add the event handlers for the UI components added in t
 
 3. Add infinite scroll handling
 
-Add the `onInfiniteScroll` method into the `methods` object to load the next set of images based on the limit/offset. 
+Add the `onInfiniteScroll` method into the `methods` object to load the next set of images based on the results offset:
 
 	   methods: {
             ...,
@@ -278,7 +273,7 @@ The new `mounted ()` lifecycle hook should be added just AFTER the `computed:` b
           this.fetchResults(this.q, this.limit, this.filter, this.offset);
 		}
 		
-This code will set up some defaults for the Stock API query parameters and replace the current `params` with the new values (using [`Object.assign`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)) before calling the `fetchResults()`. 
+This code will set up some defaults for the Stock API query parameters and replace the current `params` with the new values (using [`Object.assign`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)) before calling the `fetchResults()`.
 
 ## Run it
 Run the app again in dev mode, enter a search term (ie: cat), hit the FIND IMAGES button and verify that you see your results page now load with the number of results message and images grid populated as seen below:

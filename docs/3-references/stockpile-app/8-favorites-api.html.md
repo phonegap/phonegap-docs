@@ -14,7 +14,7 @@ The **Favorites** view manages a list of images that have been *favorited* in th
 
 		/* global store localStorage */
 
-3. Add an `updateFavoritesById()` function to take the array of `favorites` and store them as an object keyed by their id (resulting in the `favoritesById` being indexed by id):
+3. Add a local function called `updateFavoritesById()` to take the array of `favorites` and store them as an object keyed by their id (resulting in the `favoritesById` being indexed by id):
 
 		function updateFavoritesById () {
 		  store.favoritesById = store.favorites.reduce((a, b) => {
@@ -25,7 +25,7 @@ The **Favorites** view manages a list of images that have been *favorited* in th
 		}
 
 		
-3. Next, code the `addFavorite()` and `removeFavorite()` functions to manage adding and removing favorites with the global `store` object. The `updateFavoritesById` function is called each time to ensure the `favoritesById` array is updated with the change as well. 
+3. Next, code the `addFavorite()` and `removeFavorite()` local functions to manage adding and removing favorites with the global `store` object. The `updateFavoritesById` function is called each time to ensure the `favoritesById` array is updated with the change as well. 
 		
 		function addFavorite (favorite) {
 		  store.favorites.push(favorite);
@@ -37,19 +37,19 @@ The **Favorites** view manages a list of images that have been *favorited* in th
 		  updateFavoritesById();
 		}
 
-3. Add a function to save the `favorites` array as a JSON string to `localStorage`:
+3. Add a local function to save the `favorites` array as a JSON string to `localStorage`:
 	
 		function saveFavoritesToLocalStorage () {
 		  localStorage.setItem('favorites', JSON.stringify(store.favorites));
 		}
 
-3. Add a function to fetch the `favorites` JSON object from `localStorage`:
+3. Add an export function to fetch the `favorites` JSON object from `localStorage`:
 
 		export function fetchFavoritesFromLocalStorage () {
 		  return JSON.parse(localStorage.getItem('favorites')) || [];
 		}
 
-4. Next add a `toggleFavorite` function to toggle the status of an item by adding or removing it from the favorites array depending on if it's already been favorited or not. Once the change is made to the array, a call to save to `localStorage` is necessary to keep it in sync:
+4. Next add an export function called `toggleFavorite` which will be called to toggle the status of an item by adding or removing it from the favorites array depending on if it's already been favorited or not. Once the change is made to the array, a call to save to `localStorage` is necessary to keep it in sync:
 
 		export function toggleFavorite (favorite) {
 		  const alreadyAFavorite = store.favorites.filter(fave => fave.id === favorite.id);
