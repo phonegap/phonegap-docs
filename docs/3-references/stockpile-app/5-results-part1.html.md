@@ -5,7 +5,7 @@ layout: subpage
 ---
 The **Results** view is presented when search results are returned. It displays a message showing the number of results returned and a grid to display the images. It also includes infinite scrolling and a preloader component to display while the results are fetched.
 
-<img class="mobile-image" src="/images/stockpile/android/results-keyword.png" alt="Stockpile Results Screen"/>
+![](/images/stockpile/results-phone.png)
 
 The **Results** view is a little trickier to code since it's dynamically built based on which view a user is coming from. It's the view returned with the results from the main search, but it's also used to show the results from the **Details** page when a user clicks the **Category**, **Created by** or **FIND SIMILAR** link on the image details. Those links are outlined in red in the screenshot below:
 
