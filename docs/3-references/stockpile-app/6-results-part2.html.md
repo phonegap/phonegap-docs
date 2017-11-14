@@ -3,7 +3,7 @@ title: Lesson 6 - Results View Part 2
 url: references/stockpile-app/6-results-part2
 layout: subpage
 ---
-In part two you will add support for the more advanced features of the Results page, including displaying the array of results, infinite scrolling, preloading and more. 
+In part two you will add support for the more advanced features of the **Results** page, including displaying the array of results, infinite scrolling, using a preloader and more.
 
 ## Continued UI Implementation
 
@@ -153,7 +153,7 @@ Previously in this guide you created a `stockAPI.js` file with some functions us
     import fetchStockAPIJSON from '../../utils/stockAPI';
 ```    
 	
-2. Now go back into the `fetchResults` method stub created previously and update the signature with 4 new parameters and add the two constant variables for `columns` and `parameters` arrays shown below:
+2. Now go back to the `fetchResults` method stub created previously and update the signature with 4 new parameters and define two constant variables for `columns` and `parameters` as shown below:
 
  ```javascript
     fetchResults (q, limit, filter, offset = 0) {
@@ -228,7 +228,9 @@ Previously in this guide you created a `stockAPI.js` file with some functions us
       });
    },
 ```
-        
+
+    This code determines if there were results returned or not and sets variables for the number returned and with the images retrieved and then replaces the store data with the latest. If none were returned, or the limit was hit, the preloader is removed. If an error occurs a message is displayed and the preloader is removed.
+
 4. Add a [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) to call `fetchResults` when the Results instance is [mounted](https://vuejs.org/v2/api/#mounted).
 
   The new `mounted` lifecycle hook should be added just AFTER the `computed` property block, and will be called when the instance has been mounted:
@@ -300,7 +302,10 @@ After the `<script>` tag, add the CSS to style the images grid:
 ```
 
 ## Run it
-Run the app again in dev mode, enter a search term (ie: cat), hit the FIND IMAGES button and verify that you see your results page now load with the number of results message and images grid populated as seen below:
+Run the app again in `dev` mode, enter a search term (ie: cat), hit the **FIND IMAGES** button and verify that you see your results page now load with the number of results message and images grid populated as seen below:
 
   ![](/images/stockpile/6-results-part2.png)
 
+This animated image shows how the infite scrolling and preloader displays when you scroll down to fetch more results.
+
+  <img class="mobile-image" src="/images/stockpile/vids/stockpile-details2.gif" alt="Stockpile App"/>

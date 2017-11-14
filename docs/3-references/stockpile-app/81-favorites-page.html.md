@@ -6,7 +6,7 @@ layout: subpage
 
 In this part 2 you will implement the **Favorites** view UI specifically and it's associated handling. The **Favorites** view show a list of items containing the images the user has favorited along with the title, category and creation date for each, and a [swipeout](http://framework7.io/vue/swipeout-list.html) button to allow it to be deleted. Each of the list items links to the **Details** page when clicked. 
 
-<img class="mobile-image" src="/images/stockpile/favorites.png" alt="Stockpile Favorites Screen"/>
+![](/images/stockpile/favorites-phone.png)
 
 ## Renaming & Routing Updates
 1. Rename the existing `~src/components/pages/Services.vue` to `Favorites.vue`
@@ -89,9 +89,10 @@ Replace the current `<f7-navbar ../>` component with the following:
     </f7-content-block>
 ```
 
-   This code will create a list of items using the `[Framework7 media-list](http://framework7.io/vue/list.html)` modifier if there are currently any items favorited (the `hasFavorites` will be added in the JavaScript handling below). If there are none, a UI block is shown to notify the user to use the star icon.
+   This code will create a list of items using the `[Framework7 media-list](http://framework7.io/vue/list.html)` modifier if there are currently any items favorited (the `hasFavorites` will be added in the JavaScript handling below). If there are none, a UI block is shown to notify the user to use the star icon. It will bind all of the item data to the UI components of the list item for display, and also set a click handler to open the details of the item, and a delete handler to call when the swipeout delete button is clicked. These functions will be added in the JavaScript section below. The animated image below shows how the favorites list appears after this code is rendered and and what the swipeout delete looks like:
 
-<!-- TODO - Explain MORE -->
+   <img class="mobile-image" src="/images/stockpile/vids/stockpile-faves-delete.gif" alt="Stockpile Delete Fave"/>
+
 
 ## Add JavaScript Handling
 In this section you will need to scroll down to the bottom of the page where the JavaScript default export block is defined to make some changes and additions.
@@ -183,6 +184,12 @@ In this section you will need to scroll down to the bottom of the page where the
       toggleFavorite(favorite);
     }
 ```    
+
+This animated image shows how you can swipe the list item out to show the delete button, and how the favorite status is toggled when it's clicked so the item is no longer displayed in the favorites list.
+
+   <img class="mobile-image" src="/images/stockpile/vids/stockpile-faves-delete.gif" alt="Stockpile Delete Fave"/>
+
+
 
 10. Add a [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) for the [`created ()`](https://vuejs.org/v2/api/#created) event just after the `computed` object to force the router to reset the view stack when the Search view instance is [`created ()`](https://vuejs.org/v2/api/#created).
 

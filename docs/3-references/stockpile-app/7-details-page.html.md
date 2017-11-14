@@ -5,15 +5,12 @@ layout: subpage
 ---
 The **Details** view includes an image container and a card style UI component to present the specific details of the image selected. This view is shown when an image is selected from the **Results** view or the **Favorites** view.
 
-<img class="mobile-image" src="/images/stockpile/android/details.png" alt="Stockpile Details Screen"/>
+![](/images/stockpile/details-phone.png)
 
-Some of the details displayed can also lead to subsequent queries to the Adobe Stock API when clicked. For instance, when a user clicks the *Category*, *Created by* or *Find Similar* links (outlined in red in the screenshot below), a new query will run based on which was clicked and load the results page with the new results.
+Some of the details displayed can also lead to subsequent queries to the Adobe Stock API when clicked. For instance, when a user clicks the **Category**, **Created by** or **FIND SIMILAR** links (outlined in red in the screenshot below), a new query will run based on which was clicked and load the results page with the new results as shown here:
 
-<img class="mobile-image" src="/images/stockpile/details-results-routes.png" alt="Stockpile Details Results Routes Screen"/>
+<img class="mobile-image" src="/images/stockpile/vids/stockpile-details2.gif" alt="Stockpile App"/>
 
-For instance, if the **FIND SIMILAR** link was clicked, you would see a different message displayed with the number of results at the top:
-
-<img class="mobile-image" src="/images/stockpile/similar-results.png" alt="Stockpile Details Screen"/>
 
 ## Renaming & Routing Updates
 1. Rename the existing `~src/components/pages/Another.vue` to `Details.vue`
@@ -56,10 +53,8 @@ Open `~src/routes.js` and replace the import for _Another_ with _Details_ like t
     </f7-navbar>
 ```
 
-<img class="mobile-image" src="/images/stockpile/navbar2.png" alt="Stockpile Navbar"/>
-
 ### Page Content
-Continuing in `Details.vue`...
+Still in `Details.vue`...
 
 1. Remove the `<f7-block-title .../>` and the entire `<f7-block inner...>` component.
 2. Add a `card` component to contain the details of the image selected:
@@ -107,7 +102,7 @@ Continuing in `Details.vue`...
     </f7-card-footer>
 ```
 
-5. Just after the card closing tag, add a photo browser component and bind the photos, lazy loading and toolbar values: 
+5. Just after the card closing tag, add a [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component and bind the photos, lazy loading and toolbar values: 
 
  ```html
     <f7-photo-browser
@@ -138,7 +133,7 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
     /* global store */
 ```
 
-2. Then replace the `data()` method with one returning the global store object to provide access to it:
+2. Then replace the `data` method with one returning the global `store` object to provide access to it:
 
  ```javascript
     data () {
@@ -152,7 +147,7 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
 
    then at the start of the `<script>` tag, add an import for it: 
 
-```javascript
+ ```javascript
     import moment from 'moment';
 ```
 
@@ -208,7 +203,7 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
     },
 ```
 
-7. Add a computed property to calculate the `creationDate` using moment.js to format:
+7. Add a computed property to calculate the `creationDate` using `moment.js` to format it:
 
  ```javascript
     computed: {
@@ -238,14 +233,14 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
 ```    
 
 #### Methods
-1. Insert a `methods` object after the `data ()` object and before the `computed` properties block:
+1. Insert a `methods` object after the `data` object and before the `computed` properties block:
  
  ```javascript
     methods: {
     }
 ```    
 
-2. Define a method stub for `fetchResults ()`:
+2. Define a method stub for `fetchResults`:
 
  ```javascript
     methods: {
@@ -264,7 +259,7 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
     }
 ```    
         
-4. Define the `onPageBeforeAnimation` handler to disable exposition if enabled:
+4. Define the `onPageBeforeAnimation` handler to disable exposition if enabled (see the [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component docs for more details):
  
  ```javascript
     methods: {
@@ -294,10 +289,13 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
 ```    
 
 ## Define Styles
-After the `<script>` tag, add a `<style>` tag to style the image container and caption.
+After the closing `</script>` tag, add this `<style>` block to style the image container and caption.
 
-```
-	<style scoped>
+```html
+  <style scoped>
+```    
+
+```css    
 	  .swiper {
 	    height: 300px;
 	  }
@@ -334,7 +332,10 @@ After the `<script>` tag, add a `<style>` tag to style the image container and c
 	    padding: 8px 16px;
 	    z-index: 3;
 	  }
-	</style>
+```
+
+```html
+  </style>
 ```
 
 ## Run it

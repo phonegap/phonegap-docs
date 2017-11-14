@@ -3,35 +3,34 @@ title: Lesson 4 - Using the Adobe Stock API
 url: references/stockpile-app/4-stock-api
 layout: subpage
 ---
-
-The Stockpile app uses the [Adobe Stock API](https://www.adobe.io/apis/creativecloud/stock/) to retrieve images based on search criteria. There are some setup and configuration steps you will need to do first though to enable your app to query the Adobe Stock database. This lesson will walk you through each of those steps.
+The Stockpile app uses the [Adobe Stock API](https://www.adobe.io/apis/creativecloud/stock/) to retrieve images based on search criteria. There are some setup and configuration steps you will need to do first to enable your app to query the Adobe Stock database. This lesson will walk you through each of those steps.
 
 ## Obtaining a Stock API key
-The Adobe Stock API requires a developer key to make API calls to it, so in this lesson you'll go through the setup steps for querying the Adobe Stock database from our app.
+The Adobe Stock API requires a developer key to make API calls to it, so in this lesson you'll go through the setup steps required for querying the Adobe Stock database from your app.
 
 <div class="alert--tip">You will need an Adobe ID to use the Stock API. If you don't have one yet, you will have the option to create one in the steps below. </div>
 
-1. Open a browser and navigate to the [Adobe IO Console](https://console.adobe.io/integrations)
+1. Open a browser and navigate to the [Adobe IO Console](https://console.adobe.io/integrations):
 
   ![](/images/stockpile/stockapi/01-adobe-i0-console.png)
 
-2. Login with your Adobe ID (or create a new Adobe ID)
+2. Login with your Adobe ID (or create a new Adobe ID):
 
   ![](/images/stockpile/stockapi/02-new-integrations.png)
 
-2. Click **"New Integration"**, then choose "Access an API"
+2. Click **"New Integration"**, then choose "Access an API":
 
   ![](/images/stockpile/stockapi/03-access-an-api.png)
 
-3. Next choose **"Adobe Stock"** and **"OAuth Integration"** below that
+3. Next choose **"Adobe Stock"** and **"OAuth Integration"** below that:
 
   ![](/images/stockpile/stockapi/04-adobe-stock-oauth.png)
 
-4. Choose **"New integration"**
+4. Choose **"New integration"**:
 
   ![](/images/stockpile/stockapi/05-create-new-integration.png)
 
-5. Give your integration a name like "Stockpile" and a Description like "A test Adobe Stock integration with a PhoneGap app"
+5. Give your integration a name like "Stockpile" and a Description like "A test Adobe Stock integration with a PhoneGap app":
 
   ![](/images/stockpile/stockapi/06-create-new-integration-pt2.png)
 
@@ -41,15 +40,15 @@ The Adobe Stock API requires a developer key to make API calls to it, so in this
 
 8. Prove you are not a robot, then click the **Create integration** button
 
-9. Your integration has been created. Click **Continue to integration details** to get your API key
+9. Your integration has been created. Click **Continue to integration details** to get your API key:
 
   ![](/images/stockpile/stockapi/07-integration-completed.png)
 
-10. Your API key will be under **API Key (Client ID)** on the left.
+10. Your API key will be under **API Key (Client ID)** on the left:
 
  ![](/images/stockpile/stockapi/08-api-key.png)
 
-## Config.js
+## Key Configuration
 Now that you've obtained a key, you will need to have it available for use by the API calls. One way to do this is to create a configration file to store the properties.
 
 1. Create a new `utils` folder within the `src` folder

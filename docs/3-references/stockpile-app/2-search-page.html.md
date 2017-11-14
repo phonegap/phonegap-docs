@@ -3,10 +3,9 @@ title: Lesson 2 - Search View
 url: references/stockpile-app/2-search-page
 layout: subpage
 ---
-
 In this lesson you'll begin by coding the first view presented when the app is run, the **Search** view. This view consists of an HTML form with a title, input field, submission button and a hidden field to store a results limit. The **Home** page from the base template will be modified to implement this new **Search** view.
 
-<img class="mobile-image" src="/images/stockpile/android/search.png" alt="Stockpile Search Screen"/>
+![](/images/stockpile/details-phone.png)
 
 ## Renaming & Routing Updates
 1. Locate the existing `~src/components/pages/Home.vue` file and rename it to `Search.vue`.
@@ -195,7 +194,7 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
 
 2. Within the `data ()` function, set the value for the `title` variable to `Search`.  (You may recall this variable from earlier in the lesson when it was used in the navigation bar).
 
-```javascript
+ ```javascript
     data () {
         return {
             title: 'Search'

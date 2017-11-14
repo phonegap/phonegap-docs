@@ -73,7 +73,7 @@ The **Favorites** view manages a list of images that have been *favorited* in th
 ```
 
 #### Managing Favorites Data
-The `favorites` should be populated from local storage initially when the app is run to load any items that have already been favorited. You initially created the data objects for the `favorites` in the Global Store to be empty but in this step you will call the new `fetchFavoritesFromLocalStorage` method as well as index them by id when the app starts up.
+The `favorites` should be populated from local storage initially when the app is run to load any items that have already been favorited. You initially created the data objects for the `favorites` in the global store as an empty array but in this step you will call the new `fetchFavoritesFromLocalStorage` method and index them by `id` when the app starts up.
 
 2. Open `main.js` and add an import for the `fetchFavoritesFromLocalStorage` function after the other imports:
 
@@ -81,7 +81,7 @@ The `favorites` should be populated from local storage initially when the app is
     import { fetchFavoritesFromLocalStorage } from './utils/favorites';
 ```    
 		
-3. Then, replace the line you added earlier to define the `const favorites = [];` with a call to the new `fetchFavoritesFromLocalStorage` to actually populate it with the `favorites` from local storage when the app is run:
+3. Then, replace the `const favorites = [];` line you added earlier  with a call to the new `fetchFavoritesFromLocalStorage` to actually populate it with the `favorites` from local storage when the app is run:
 
  ```javascript	
     const favorites = fetchFavoritesFromLocalStorage();

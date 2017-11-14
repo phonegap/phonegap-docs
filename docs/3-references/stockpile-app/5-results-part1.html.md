@@ -7,9 +7,16 @@ The **Results** view is presented when search results are returned. It displays 
 
 <img class="mobile-image" src="/images/stockpile/android/results-keyword.png" alt="Stockpile Results Screen"/>
 
-The results view is a little trickier to code since it's built dynamically based on which view a user is coming from. It's the view returned with the results from the main search, but it's also used to show the results from the **Details** page when a user clicks the **Category**, **Created by** or **FIND SIMILAR** link on the image details, outlined in red in the screenshot below:
+The **Results** view is a little trickier to code since it's dynamically built based on which view a user is coming from. It's the view returned with the results from the main search, but it's also used to show the results from the **Details** page when a user clicks the **Category**, **Created by** or **FIND SIMILAR** link on the image details. Those links are outlined in red in the screenshot below:
 
 <img class="mobile-image" src="/images/stockpile/details-results-routes.png" alt="Stockpile Details Results Routes Screen"/>
+
+An example of what will be returned by clicking these links is shown in this animated image:
+
+ <img class="mobile-image" src="/images/stockpile/vids/stockpile-details2.gif" alt="Stockpile App"/>
+
+
+ <div class="alert--tip">Notice how the message displayed with the results changes depending on which you clicked, indicated either the category, creator or that it's a *similar* result. You will code this message in this lesson and move on to part 2 to add the images grid.</div>
 
 ## Renaming & Routing Updates
 1. Rename the existing `~src/components/pages/About.vue` to `Results.vue`. 

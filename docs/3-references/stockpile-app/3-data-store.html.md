@@ -26,7 +26,7 @@ To handle state management in smaller to medium Vue applications, one common pat
      };
 ```
 
-<div class="alert--info">**Note:** The variables held in this store will manage the array of images returned from the Stock API and those that were favorited as well as two variables to access an object from one of those arrays by ID.</div>
+<div class="alert--tip">The variables held in this global store will manage the array of images returned from the Stock API and those that were favorited, as well as two variables to access an object from one of those arrays by ID.</div>
 
 ## Resources:
 - [Simple state management, simpler than Vuex](http://vuetips.com/simple-state-management-vue-stash)
