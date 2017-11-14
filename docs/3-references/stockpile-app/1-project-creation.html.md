@@ -18,7 +18,7 @@ This lesson provides the steps to create a new PhoneGap project based on a start
         cd Stockpile
         npm install
 
-<div class="alert--note">**IMPORTANT:** You will be updating the files and folders within the **`src`** folder specifically when going through the lessons in this guide. Do not confuse it with the `www` folder. That folder will be regenerated when the `npm run build` command is used. Refer to the [project overview](/references/stockpile-app/01-project-overview/) for more details.</div>
+<div class="alert--info">**IMPORTANT:** You will be updating the files and folders within the **`src`** folder specifically when going through the lessons in this guide. Do not confuse it with the `www` folder. That folder will be regenerated when the `npm run build` command is used. Refer to the [project overview](/references/stockpile-app/01-project-overview/) for more details.</div>
 
 ## Rename the App
 1. You're now ready to start editing the project to transform it into your own Stockpile app. Open the root `Stockpile` project folder in your favorite code editor.
@@ -67,10 +67,9 @@ Build in "production mode" when you're ready to start actually testing your app 
 
 Once the build is complete, you can then run the normal `phonegap` and `cordova` commands to actually deploy the package to an ios or android target using:
 
-```
-    phonegap run ios
-    phonegap run android
-```
+  phonegap run ios
+  phonegap run android
+
 
 After the `build` command, you could also use the [`phonegap serve`](http://docs.phonegap.com/getting-started/4-preview-your-app/cli/) command to serve the app for use by the [PhoneGap Developer App](http://docs.phonegap.com/getting-started/2-install-mobile-app/) running on a device.
 
@@ -81,14 +80,6 @@ After the `build` command, you could also use the [`phonegap serve`](http://docs
 Open the Chrome devtools and use the mobile emulation button to try out different device simulations. You'll need to reload the page when switching between Android and iOS to see the stylesheets applied.
 
 ![](/images/stockpile/run-browser-ios.png)
-![](/images/stockpile/run-browser-android-devtools.png)
 
 ## ESLint tips
 The Vue template this app is based on automatically defaults to the [`semistandard` ESLint option,](https://github.com/vuejs-templates/webpack/blob/develop/docs/linter.md) which is the [JavaScript `standard` style](https://standardjs.com/) extended to include semicolons. Take a few minutes to familiarize yourself with [the rules](https://standardjs.com/) if you're not familiar already, to help avoid compiler errors and speed up your development time while working through this guide.
-
-## About this Guide
-The Split Panel template provides a good app structure to get started with since it already includes a navigation bar, some basic views, a side menu and page routing wired up. Since the Stockpile app needs this as well, it's easier to re-use existing pages and content where possible. For each of the views you may notice a similar high-level pattern of changes that need to occur:
-
-1. Update the view routing
-2. Update the UI for the view
-2. Implement the JavaScript for the view updates

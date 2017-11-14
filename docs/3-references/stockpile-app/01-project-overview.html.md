@@ -80,3 +80,12 @@ Defines the overall app UI structure, platform detection code, `backButton` hand
 
 ## src/routes.js
 Sets up basic routing for each of the templates. A **route** is what a single page app uses to determine what page to display based on a mapping between a path (URL) and a *.vue component. The `src/components/*` folders contain [single file Vue components](https://vuejs.org/v2/guide/single-file-components.html) which encapsulate the functionality needed to display a view when a route is matched. This includes the UI elements, JavaScript and CSS all in one file.
+
+## About this Guide
+The Split Panel template provides a good app structure to get started with since it already includes a navigation bar, some basic views, a side menu and page routing wired up. Since the Stockpile app needs this as well, it's easier to re-use existing pages and content where possible. For each of the views you may notice a similar high-level pattern of changes that need to occur:
+
+1. Update the view routing
+2. Update the UI for the view
+2. Implement the JavaScript for the view updates
+
+<div class="alert--tip">The split panel template automatically expands the left panel into a split view when the app is run on a device larger than a phone. </div>
