@@ -6,6 +6,7 @@ layout: subpage
 In this lesson you'll begin by coding the first view presented when the app is run, the **Search** view. This view consists of an HTML form with a title, input field, submission button and a hidden field to store a results limit. The **Home** page from the base template will be modified to implement this new **Search** view.
 
 ![](/images/stockpile/search-phone.png)
+iOS                                 Android
 
 ## Renaming & Routing Updates
 1. Locate the existing `~src/components/pages/Home.vue` file and rename it to `Search.vue`.

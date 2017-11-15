@@ -79,9 +79,10 @@ After the `build` command, you could also use the [`phonegap serve`](http://docs
 
 <div class="alert--tip">The last option with `phonegap serve` is particularly useful for debugging [Progressive Web Apps](/references/references/stockpile-app/9-pwa-features). </div>
 
-Open the Chrome devtools and use the mobile emulation button to try out different device simulations. You'll need to reload the page when switching between Android and iOS to see the stylesheets applied.
+Open the Chrome devtools and use the mobile emulation button to try out different device simulations. You'll need to reload the page when switching between iOS and Android to see the stylesheets applied.
 
 ![](/images/stockpile/run-browser-ios.png)
+![](/images/stockpile/run-browser-android.png)
 
 ## ESLint tips
 The Vue template this app is based on automatically defaults to the [`semistandard` ESLint option,](https://github.com/vuejs-templates/webpack/blob/develop/docs/linter.md) which is the [JavaScript `standard` style](https://standardjs.com/) extended to include semicolons. Take a few minutes to familiarize yourself with [the rules](https://standardjs.com/) if you're not familiar already, to help avoid compiler errors and speed up your development time while working through this guide.
