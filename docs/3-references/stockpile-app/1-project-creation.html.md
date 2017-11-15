@@ -18,7 +18,7 @@ This lesson provides the steps to create a new PhoneGap project based on a start
         cd Stockpile
         npm install
 
-<div class="alert--info">**IMPORTANT:** You will be updating the files and folders within the **`src`** folder specifically when going through the lessons in this guide. Do not confuse it with the `www` folder. That folder will be regenerated when the `npm run build` command is used. Refer to the [project overview](/references/stockpile-app/01-project-overview/) for more details.</div>
+  <div class="alert--info">**IMPORTANT:** You will be updating the files and folders within the **`src`** folder specifically when going through the lessons in this guide. Do not confuse it with the `www` folder. That folder will be regenerated when the `npm run build` command is used. Refer to the [project overview](/references/stockpile-app/01-project-overview/) for more details.</div>
 
 ## Rename the App
 1. You're now ready to start editing the project to transform it into your own Stockpile app. Open the root `Stockpile` project folder in your favorite code editor.
@@ -27,25 +27,27 @@ This lesson provides the steps to create a new PhoneGap project based on a start
 
 		<title>Stockpile</title>
 
+	<div class="alert--tip">**TIP:** If you're looking for a good code editor check out [Visual Studio Code](https://code.visualstudio.com/).</div>
+
 ## Add the Framework7 Icons Library
-Framework7 provides just a couple commonly used icons in their default package (back arrow and menu bars), but they also offer a free icon font library to provide additional icons (and iOS specific icons) as you develop your apps. Follow the steps below to install the [Framework7 Icons Font] (https://framework7.io/icons/) library.
+Framework7 provides just a couple commonly used icons in their default package (back arrow and menu bars), but they also offer a free icon font library to provide additional icons (and iOS specific icons) as you develop your apps. Follow the steps below to install the [Framework7 Icons Font](https://framework7.io/icons/) library.
 
 1. Install the `framework7-icons` package from npm:
 
 		npm install framework7-icons --save
 
-2. Then open `~src/main.js` and add an import for the new icons as shown below just above the route.js import:
+2. Then open `~src/main.js` and add an import for the new icons as shown below just above the routes import:
 
     	// Import the Framework7 Icons
     	import Framework7Icons from 'framework7-icons/css/framework7-icons.css';
     	
     	// Import Routes
-    	...
+    	import Routes from './routes';
 
 <div class="alert--info">**Note:** This app only uses a couple of icons, but since this is a guide to building a mobile app, it's important to know there are icon font libraries available to you. There's also a free [Material Icons](https://material.io/icons/) library you can check out if you're interested in using material design specific icons. You could even include both icon font libraries with a conditional icon that used either the iOS or the Material design version. For more information about how to do this, and using icons with Framework7 in general, see the [Framework7 docs](http://framework7.io/vue/icon.html). This app did not need that extensive of a solution, and in the interest of performance, just the Framework7 Icons library was included. </div>
 
 ## Run it!
-Since this app was built based on webpack, it can be run in **development mode** or **production mode**. While building the app, it's easiest to run in development mode and test it in the browser as long as possible to develop the majority of the functionality until device-specific testing is needed.
+Since this app was built based on webpack, it can be run in **development mode** or **production mode**. While building the app, it's easiest to run it in development mode and test it in the browser as long as possible to develop the majority of the functionality until device-specific testing is needed.
 
 #### Development mode
 Open your terminal and start the development server with the following `npm` command:
@@ -67,8 +69,8 @@ Build in "production mode" when you're ready to start actually testing your app 
 
 Once the build is complete, you can then run the normal `phonegap` and `cordova` commands to actually deploy the package to an ios or android target using:
 
-  phonegap run ios
-  phonegap run android
+		phonegap run ios
+		phonegap run android
 
 
 After the `build` command, you could also use the [`phonegap serve`](http://docs.phonegap.com/getting-started/4-preview-your-app/cli/) command to serve the app for use by the [PhoneGap Developer App](http://docs.phonegap.com/getting-started/2-install-mobile-app/) running on a device.

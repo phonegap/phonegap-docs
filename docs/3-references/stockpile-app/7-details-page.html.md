@@ -7,13 +7,12 @@ The **Details** view includes an image container and a card style UI component t
 
 ![](/images/stockpile/details-phone.png)
 
-Some of the details displayed can also lead to subsequent queries to the Adobe Stock API when clicked. For instance, when a user clicks the **Category**, **Created by** or **FIND SIMILAR** links (outlined in red in the screenshot below), a new query will run based on which was clicked and load the results page with the new results as shown here:
+Some of the details displayed can also lead to subsequent queries to the Adobe Stock API when clicked. For instance, when a user clicks the **Category**, **Created by** or **FIND SIMILAR** links, a new query will run based on which was clicked and load the results page with the new results as shown here:
 
 <img class="mobile-image" src="/images/stockpile/vids/stockpile-details2.gif" alt="Stockpile App"/>
 
-
 ## Renaming & Routing Updates
-1. Rename the existing `~src/components/pages/Another.vue` to `Details.vue`
+1. Rename the existing `~src/components/pages/Another.vue` to `Details.vue`.
 
 2. Next update the routing for this app to load the `Details` component instead of the `Another` component.
 Open `~src/routes.js` and replace the import for _Another_ with _Details_ like the line below:
@@ -248,7 +247,7 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
     }
 ```
 
-3. Define the `loadInPhotoBrowser ()` method. This method is called when a card is clicked and will use the [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component you defined in the UI to open the image in a new window and allow it to be zoomed, panned etc:
+3. Define the `loadInPhotoBrowser` method. This method is called when a card is clicked and will use the [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component you defined in the UI to open the image in a new window and allow it to be zoomed, panned etc:
 
  ```javascript
     methods: {

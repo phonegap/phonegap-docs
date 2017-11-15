@@ -61,7 +61,7 @@ Each of the views you will work with in this guide has a navigation bar implemen
     <f7-link icon-f7="bars" open-panel="left"></f7-link>
 ```
 
-    <div class="alert--info">See [this link](http://framework7.io/vue/icon.html) for details and syntax for using icons with Framework7+Vue projects.</div>
+    <div class="alert--tip">See [this link](http://framework7.io/vue/icon.html) for details and syntax for using icons with Framework7+Vue projects.</div>
 
 2. Change the value of the `<f7-nav-center />` tag content to use a dynamic variable named `title` defined in a template string like below: (curly braces denote the [Vue template syntax](https://vuejs.org/v2/guide/syntax.html) instead of the **Home** string, so in the future if you want to change it you only have to do it in one place:
 
@@ -69,7 +69,7 @@ Each of the views you will work with in this guide has a navigation bar implemen
     <f7-nav-center sliding>{{ title }}</f7-nav-center>
 ```    
 
-    <div class="alert--tip">**Note:** The `title` variable is defined in the JavaScript block at the bottom of the page via this [`data`](https://vuejs.org/v2/api/#data) function. You will modify it in the JavaScript updates below.</div>
+    <div class="alert--info">**Note:** The `title` variable is defined in the JavaScript block at the bottom of the page via this [`data`](https://vuejs.org/v2/api/#data) function. You will modify it in the JavaScript updates below.</div>
 
 3. Your final `<f7-navbar>` block should look like the snippet below:
 
@@ -230,7 +230,7 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
     }
 ```
 
-4. Ensure the Search page is always at the top of the view stack by adding this [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) on the [`created ()`](https://vuejs.org/v2/api/#created) lifecycle event. Add it after the `computed` object in the default export:
+4. Ensure the Search page is always at the top of the view stack by adding this [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) on the [`created`](https://vuejs.org/v2/api/#created) lifecycle event. Add it after the `computed` object in the default export:
 
  ```javascript
     created () {
