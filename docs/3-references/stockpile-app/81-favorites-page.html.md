@@ -4,32 +4,33 @@ url: references/stockpile-app/81-favorites-page
 layout: subpage
 ---
 
-In this part 2 you will implement the **Favorites** view UI specifically and it's associated handling. The **Favorites** view show a list of items containing the images the user has favorited along with the title, category and creation date for each, and a [swipeout](http://framework7.io/vue/swipeout-list.html) button to allow it to be deleted. Each of the list items links to the **Details** page when clicked. 
+In this part 2 you will implement the **Favorites** view UI specifically and it's associated handling. The **Favorites** view show a list of items containing the images the user has favorited along with the title, category and creation date for each, and a [swipeout](http://framework7.io/vue/swipeout-list.html) button to allow it to be deleted. Each of the list items links to the **Details** page when clicked.
 
 ![](/images/stockpile/favorites-phone.png)
 
 ## Renaming & Routing Updates
+
 1. Rename the existing `~src/components/pages/Services.vue` to `Favorites.vue`
-2. Next update the routing for this app to load the `Favorites` component instead of the `Services` component.
+1. Next update the routing for this app to load the `Favorites` component instead of the `Services` component.
 
     Open `~src/routes.js` and replace the import for `Services` with `Favorites`:
 
- ```javascript
+```javascript
     import Favorites from './components/pages/Favorites';
-```    
+```
 
-3. Then replace the route for the `'/services/'` path to `'/favorites/'` and specify the `Favorites` component:
+1. Then replace the route for the `'/services/'` path to `'/favorites/'` and specify the `Favorites` component:
 
- ```javascript
+```javascript
     {
       path: '/favorites/',
       component: Favorites
     },
 ```
 
-4. Lastly, you'll want to be able to access the **Favorites** page from the side menu. Open `~src/components/LeftPanel.vue` and replace the `<f7-list-item../>` element for `"/services/"` with the following:
+1. Lastly, you'll want to be able to access the **Favorites** page from the side menu. Open `~src/components/LeftPanel.vue` and replace the `<f7-list-item../>` element for `"/services/"` with the following:
 
- ```html
+```html
     <f7-list-item
       link="/favorites/"
       title="Favorites"
@@ -39,17 +40,19 @@ In this part 2 you will implement the **Favorites** view UI specifically and it'
     />
 ```
 
-## Implement the UI 
+## Implement the UI
+
 In `Favorites.vue`, change the page name from "services" to "favorites":
 
 ```html
     <f7-page name="favorites">
 ```
 
-### Navigation Bar 
+### Navigation Bar
+
 Replace the current `<f7-navbar ../>` component with the following:
 
- ```html
+```html
     <f7-navbar sliding>
           <f7-nav-left>
             <f7-link icon-f7="bars" open-panel="left"></f7-link>
@@ -60,10 +63,11 @@ Replace the current `<f7-navbar ../>` component with the following:
     </f7-navbar>
 ```
 
-### Content Updates 
+### Content Updates
+
 1. Completely replace the `<f7-block-title />` and `<f7-block-inner />` elements with the following list and content block code:
 
- ```html
+```html
     <f7-list media-list v-if="hasFavorites">
         <f7-list-item v-for="favorite in favorites"
           :key="favorite.id"
@@ -93,13 +97,13 @@ Replace the current `<f7-navbar ../>` component with the following:
 
    <img class="mobile-image" src="/images/stockpile/vids/stockpile-faves-delete.gif" alt="Stockpile Delete Fave"/>
 
-
 ## Add JavaScript Handling
+
 In this section you will need to scroll down to the bottom of the page where the JavaScript default export block is defined to make some changes and additions.
 
 1. Rename this component by changing the `name: Services` to `name: Favorites`
 
- ```javascript
+```javascript
     export default {
         name: 'Favorites',
         ...
@@ -107,22 +111,22 @@ In this section you will need to scroll down to the bottom of the page where the
 ```
 
 1. At the top of the `<script>` tag, add an eslint exception for the global `store`
- 
- ```javascript
+
+```javascript
     /* global store */
-```    
+```
 
-2. Completely replace the `data` method with one returning just the `store` object:
+1. Completely replace the `data` method with one returning just the `store` object:
 
- ```javascript
+```javascript
     data () {
       return store;
     }
 ```
 
-3. Add a `computed` object with a property for the `hasFavorites` used in the UI above:
- 
- ```javascript
+1. Add a `computed` object with a property for the `hasFavorites` used in the UI above:
+
+```javascript
     computed: {
       hasFavorites () {
         return !!this.favorites.length;
@@ -130,78 +134,77 @@ In this section you will need to scroll down to the bottom of the page where the
     }
 ```
 
-4. Insert a `methods` object after the `data` block
+1. Insert a `methods` object after the `data` block
 
- ```javascript
+```javascript
     methods: {
     }
-```        
+```
 
-5. In the `methods` object, insert a `clickItem()` method which will load the Details page for a given item when clicked and pass the `displayingFavorite=true` parameter on the URL to indicate it's displaying an item from the **Favorites** page (vs an item from the regular **Results** page): 
+1. In the `methods` object, insert a `clickItem()` method which will load the Details page for a given item when clicked and pass the `displayingFavorite=true` parameter on the URL to indicate it's displaying an item from the **Favorites** page (vs an item from the regular **Results** page):
 
- ```javascript
+```javascript
     clickItem (id) {
       this.$f7.mainView.router
         .loadPage(`/results/details/${id}?displayingFavorite=true`);
     }
-```        
+```
 
-5. In the `methods` object, insert a `mediaItemImage()` method to return the URL of the image:
+1. In the `methods` object, insert a `mediaItemImage()` method to return the URL of the image:
 
- ```javascript
+```javascript
     mediaItemImage (url, title) {
       return `<img alt="${title}" width="80" src="${url}" />`;
     }
-```        
-		
-6. In the `<script>` block just after the `/* global store */`, add an import for [`moment.js`](https://momentjs.com/):
+```
 
- ```javascript
+1. In the `<script>` block just after the `/* global store */`, add an import for [`moment.js`](https://momentjs.com/):
+
+```javascript
     import moment from 'moment';
 ```
- 
- <div class="alert--tip">This step assumes you installed `moment.js` in the [Details page lesson](/7-details-page).</div>    
-		
-7. In the `methods` object, insert a `formatDate()`, which uses moment.js to format the date:
 
- ```javascript
+ <div class="alert--tip">This step assumes you installed `moment.js` in the [Details page lesson](/7-details-page).</div>
+
+1. In the `methods` object, insert a `formatDate()`, which uses moment.js to format the date:
+
+```javascript
     formatDate (date) {
       const created = moment(date);
       return `Created: ${created.format('MMMM Do YYYY')}`;
     }
 ```
 
-8. Back in the `<script>` block, after the `moment.js` import, add an import for the `toggleFavorite()` function you coded in the `favorites.js` API: 
+1. Back in the `<script>` block, after the `moment.js` import, add an import for the `toggleFavorite()` function you coded in the `favorites.js` API:
 
- ```javascript
+```javascript
     import { toggleFavorite } from '../../utils/favorites';
 ```
 
-9. Add an `onSwipeoutDeleted()` method to the `methods` object to handle the `swipeout` delete event:
+1. Add an `onSwipeoutDeleted()` method to the `methods` object to handle the `swipeout` delete event:
 
- ```javascript
+```javascript
     onSwipeoutDeleted (favorite) {
       toggleFavorite(favorite);
     }
-```    
+```
 
 This animated image shows how you can swipe the list item out to show the delete button, and how the favorite status is toggled when it's clicked so the item is no longer displayed in the favorites list.
 
    <img class="mobile-image" src="/images/stockpile/vids/stockpile-faves-delete.gif" alt="Stockpile Delete Fave"/>
 
+1. Add a [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) for the [`created ()`](https://vuejs.org/v2/api/#created) event just after the `computed` object to force the router to reset the view stack when the Search view instance is [`created ()`](https://vuejs.org/v2/api/#created).
 
-
-10. Add a [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) for the [`created ()`](https://vuejs.org/v2/api/#created) event just after the `computed` object to force the router to reset the view stack when the Search view instance is [`created ()`](https://vuejs.org/v2/api/#created).
-
- ```javascript
+```javascript
     created () {
       this.$f7.mainView.history = ['/favorites/'];
     }
-```    
-        
+```
+
   <div class="alert--tip">Don't worry much about this syntax since it's Framework7 specific, just understand that it ensures this page is kept at the top of the stack in terms of navigation and history since it's meant to be a top-level page (versus one that is only navigated to like Results or Details). </div>
 
-## Run it! 
+## Run it!
+
 Run the app again in dev mode and try out the side menu link to load this new Favorites page. Does it look like this? Why is it empty?
 
 ![](/images/stockpile/9-favorites1.png)
