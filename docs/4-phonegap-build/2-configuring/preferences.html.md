@@ -3,11 +3,11 @@ title: Preferences
 url: phonegap-build/configuring/preferences
 layout: subpage
 ---
-PhoneGap utilizes the `<preference>` tag to customize your application configuration. All `<preference>` tags in your config.xml are copied to the platform-specific configuration files, which means that any preferences supported by the PhoneGap framework, or by any plugins you are using, will work on PhoneGap Build.
+**For a complete list of all of the preferences supported, refer to the [Apache Cordova config.xml preferences documentation](https://cordova.apache.org/docs/en/latest/config_ref/index.html#preference).**
 
-**[Apache Cordova config.xml preferences documentation](https://cordova.apache.org/docs/en/latest/config_ref/index.html#preference)**
+PhoneGap utilizes the `<preference>` tag to customize your application configuration. All `<preference>` tags in your config.xml are copied to the platform-specific configuration files, which means that any preferences supported by the Cordova framework, or by any plugins you are using, will work on PhoneGap Build.
 
-**Note**: make sure you select your PhoneGap version when looking at the PhoneGap docs page.
+**Note**: make sure you select your Cordova version when looking at the Cordova docs page.
 
 In addition, PhoneGap Build supports some of its own custom preferences, used for things like selecting the PhoneGap version, platform sdk version targeting, and others. These custom preferences are listed below.
 
@@ -16,6 +16,7 @@ If you want to see more detail about what exactly these custom preferences are d
 ## Multi-Platform
 
 - [phonegap-version](#phonegap-version)
+- [pgb-builder-version](#pgb-builder-version)
 - [orientation](#orientation)
 - [fullscreen](#fullscreen)
 - [signing-key](#signing-key)
@@ -60,7 +61,7 @@ If you want to see more detail about what exactly these custom preferences are d
 ## Multi-Platform
 
 <a name="phonegap-version" class="anchor"></a>
-<div class='alert--warning'>**phonegap-version**: The version of PhoneGap / Cordova used. For a list of currently supported PhoneGap versions, and a breakdown of the individual platform versions, [go here](https://build.phonegap.com/current-support).</div>
+<div class='alert--warning'>**phonegap-version**: PhoneGap Build only -- the version of PhoneGap / Cordova to be used. For a list of currently supported PhoneGap versions, and a breakdown of the individual platform versions, [go here](https://build.phonegap.com/current-support).</div>
 
 <a name="orientation" class="anchor"></a>
 <div class='alert--warning'>**orientation**: Device orientation; possible values are <code>default, landscape, or portrait</code>. Please note that <code>default</code> means <b>both</b> landscape and portrait are enabled. If you want to use each platform's default settings (usually portrait only), remove this tag from your config.xml file.</div>
@@ -70,8 +71,10 @@ If you want to see more detail about what exactly these custom preferences are d
 the [config-file element on phonegap build](http://phonegap.com/blog/2014/01/30/customizing-your-android-manifest-and-ios-property-list-on-phonegap-build/), and set UIViewControllerBasedStatusBarAppearance to false and UIStatusBarHidden to true.</div>
 
 <a name="signing-key" class="anchor"></a>
-<div class='alert--warning'>**signing-key**: specifies which signing key to use when building. This can either be the key's <code>id</code> or <code>title</code>. If a title is specified
-it will use the most recently uploaded key with that title. A <code>platform</code> must be specified either placing this preference inside a platform tag or adding a platform attribute.</div>
+<div class='alert--warning'>**signing-key**: specifies which signing key to use when building. This can either be the key's <code>id</code> or <code>title</code>. If a title is specified it will use the most recently uploaded key with that title. A <code>platform</code> must be specified either placing this preference inside a platform tag or adding a platform attribute.</div>
+
+<a name="pgb-builder-version" class="anchor"></a>
+<div class='alert--warning'>**pgb-builder-version**: With the release of cli-7.0.1 on PhoneGap Build, we did some refactoring of the build servers which may change how your app behaves. By default, this new builder is used for cli-7.0.1 and above, and the older builder is used for the older versions. However you can explicitly specify which builder to use ("1" for old builder, "2" for new builder). [See this blog post for more info.](https://blog.phonegap.com/phonegap-7-0-1-now-on-build-and-it-includes-some-important-changes-89087fe465f5)</div>
 
 ## iOS Only
 

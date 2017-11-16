@@ -17,6 +17,7 @@ expand: build
 1. [When I try to log in with my Adobe ID, I get "That email address is already linked to a PhoneGap Build account."](#already-linked)
 1. [I'm seeing "This app isn't using the latest version of PhoneGap. We recommend upgrading..."](#app-upgrade)
 1. [Where do I go to find PhoneGap Build help?](#where-help)
+1. [My build has suddenly started failing, what happened?](#sudden-failure)
 
 <a name="what-is-build" class="anchor"></a>
 
@@ -94,3 +95,9 @@ If you omit this preference, Phonegap Build will use a default version (which is
 ## Where do I go to find PhoneGap Build help?
 
 Ask a question on our community forum: <http://community.phonegap.com/build>, or ask us on Twitter: <http://twitter.com/PhoneGapBuild>
+
+<a name="sudden-failure" class="anchor"></a>
+
+## My build has suddenly started failing, what happened?
+
+9 times out of 10 this is because one of the plugins you are using was updated on NPM (or wherever you're sourcing it), and you weren't locking the version. With the version unset, PGB will use the latest version of the plugin, which can introduce breaking changes. [See the docs for details](http://docs.phonegap.com/phonegap-build/configuring/plugins/#plugin-version). One other possibility is that the default phonegap-version was incremented, and you're not setting your phonegap-version preference. This is more rare as the default phonegap-version is only incremented approximately annually.

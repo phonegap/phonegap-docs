@@ -9,7 +9,8 @@ task :test do
     :empty_alt_ignore => true,
     :url_ignore => [
       /http:\/\/192.168.1.20(:\d\d\d\d)?/,
-      "https://plus.google.com/communities/111220599704908202107"
+      "https://plus.google.com/communities/111220599704908202107",
+      "https://www.microsoft.com/en-us/store/p/phonegap-developer/9wzdncrdfsj0"
     ],
     :http_status_ignore => [0, 403, 999],
     :cache => {
