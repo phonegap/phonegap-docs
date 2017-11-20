@@ -6,7 +6,7 @@ layout: subpage
 
 The **Favorites** view manages a list of images that have been *favorited* in the app and relies on [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage) to persist favorites across sessions. An example of the favorites view is shown below for reference. However in this first part you're going to code a Favorites JavaScript API of sorts to allow the app to manage them more easily.
 
-<img class="mobile-image" src="/images/stockpile/favorites.png" alt="Stockpile Favorites Screen"/>
+<img class="mobile-image" src="/images/stockpile/favorites-phone.png" alt="Stockpile Favorites Screen"/>
 
 ## Favorites API
 

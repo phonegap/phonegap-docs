@@ -82,7 +82,7 @@ After the `build` command, you could also use the [`phonegap serve`](http://docs
 
          phonegap serve
 
-<div class="alert--tip">The last option with `phonegap serve` is particularly useful for debugging [Progressive Web Apps](/references/references/stockpile-app/9-pwa-features). </div>
+<div class="alert--tip">The last option with `phonegap serve` is particularly useful for debugging [Progressive Web Apps](/references/stockpile-app/911-pwa-features). </div>
 
 Open the Chrome devtools and use the mobile emulation button to try out different device simulations. You'll need to reload the page when switching between iOS and Android to see the stylesheets applied.
 

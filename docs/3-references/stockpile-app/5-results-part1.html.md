@@ -14,7 +14,7 @@ The **Results** view is a little trickier to code since it's dynamically built b
 
 An example of what will be returned by clicking these links is shown in this animated image:
 
- <img class="mobile-image" src="/images/stockpile/vids/stockpile-details1.gif" alt="Stockpile App"/>
+ <img class="mobile-image" src="/images/stockpile/vids/stockpile-details.gif" alt="Stockpile App"/>
 
  <div class="alert--tip">Notice how the message displayed with the results changes depending on which you clicked, indicated either the category, creator or that it's a *similar* result. You will code this message in this lesson and move on to part 2 to add the images grid.</div>
 

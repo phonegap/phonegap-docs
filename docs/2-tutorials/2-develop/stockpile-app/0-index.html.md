@@ -1,6 +1,6 @@
 ---
 title: Adobe Stockpile Sample App
-url: develop/stockpile-app
+url: references/stockpile-app
 layout: subpage
 ---
 
@@ -26,6 +26,7 @@ The Stockpile app was built using [Framework7 with Vue.js bindings](http://frame
 </div>
 
 ## Helpful Resources
+
 - [Framework7](https://framework7.io/)
 - [Framework7+Vue Docs](https://framework7.io/vue/)
 - [VueJS Guide](https://vuejs.org/v2/guide/)

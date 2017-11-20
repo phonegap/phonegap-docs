@@ -308,8 +308,8 @@ After the `<script>` tag, add the CSS to style the images grid:
 
 Run the app again in `dev` mode, enter a search term (ie: cat), hit the **FIND IMAGES** button and verify that you see your results page now load with the number of results message and images grid populated as seen below:
 
-  ![](/images/stockpile/6-results-part1.png)
+  ![](/images/stockpile/6-results-part2.png)
 
 This animated image shows how the infite scrolling and preloader displays when you scroll down to fetch more results.
 
-  <img class="mobile-image" src="/images/stockpile/vids/stockpile-details1.gif" alt="Stockpile App"/>
+  <img class="mobile-image" src="/images/stockpile/vids/stockpile-details.gif" alt="Stockpile App"/>

@@ -95,7 +95,7 @@ Replace the current `<f7-navbar ../>` component with the following:
 
    This code will create a list of items using the `[Framework7 media-list](http://framework7.io/vue/list.html)` modifier if there are currently any items favorited (the `hasFavorites` will be added in the JavaScript handling below). If there are none, a UI block is shown to notify the user to use the star icon. It will bind all of the item data to the UI components of the list item for display, and also set a click handler to open the details of the item, and a delete handler to call when the swipeout delete button is clicked. These functions will be added in the JavaScript section below. The animated image below shows how the favorites list appears after this code is rendered and and what the swipeout delete looks like:
 
-   <img class="mobile-image" src="/images/stockpile/vids/stockpile-faves-delete.gif" alt="Stockpile Delete Fave"/>
+   <img class="mobile-image" src="/images/stockpile/vids/stockpile-fave-delete.gif" alt="Stockpile Delete Fave"/>
 
 ## Add JavaScript Handling
 
@@ -164,7 +164,7 @@ In this section you will need to scroll down to the bottom of the page where the
     import moment from 'moment';
 ```
 
- <div class="alert--tip">This step assumes you installed `moment.js` in the [Details page lesson](/7-details-page).</div>
+ <div class="alert--tip">This step assumes you installed `moment.js` in the [Details page lesson](../7-details-page).</div>
 
 1. In the `methods` object, insert a `formatDate()`, which uses moment.js to format the date:
 
@@ -191,7 +191,7 @@ In this section you will need to scroll down to the bottom of the page where the
 
 This animated image shows how you can swipe the list item out to show the delete button, and how the favorite status is toggled when it's clicked so the item is no longer displayed in the favorites list.
 
-   <img class="mobile-image" src="/images/stockpile/vids/stockpile-faves-delete.gif" alt="Stockpile Delete Fave"/>
+   <img class="mobile-image" src="/images/stockpile/vids/stockpile-fave-delete.gif" alt="Stockpile Delete Fave"/>
 
 1. Add a [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) for the [`created ()`](https://vuejs.org/v2/api/#created) event just after the `computed` object to force the router to reset the view stack when the Search view instance is [`created ()`](https://vuejs.org/v2/api/#created).
 

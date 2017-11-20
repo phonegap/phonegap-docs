@@ -6,7 +6,7 @@ layout: subpage
 
 ## Overview
 
-To handle state management in smaller to medium Vue applications, one common pattern is to use a [global store](`https://vuejs.org/v2/guide/state-management.html`) defined on the `window` object for access throughout the app. You can then assign any shared object to be a property on a Vue instance's `data` source and it will automatically be converted to a [reactive variable](https://vuejs.org/v2/guide/reactivity.html).
+To handle state management in smaller to medium Vue applications, one common pattern is to use a [global store](https://vuejs.org/v2/guide/state-management.html) defined on the `window` object for access throughout the app. You can then assign any shared object to be a property on a Vue instance's `data` source and it will automatically be converted to a [reactive variable](https://vuejs.org/v2/guide/reactivity.html).
 
 ## Create a Global Store
 

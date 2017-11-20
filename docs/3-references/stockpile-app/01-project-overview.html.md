@@ -16,7 +16,7 @@ This app is based on a PhoneGap Framework7 Vue template. The PhoneGap Framework7
 
 1. [Split Panel](https://www.npmjs.com/package/phonegap-template-vue-f7-split-panel)
 
-  ![ios](/images/stockpile/example-split-ios.png) iOS
+  ![ios](/images/stockpile/example-split-iOS.png) iOS
   ![android](/images/stockpile/example-split-android.png) Android
 
 The templates each have a similar project structure, based off the [vue-pwa-webpack template](https://github.com/vuejs-templates/pwa) and are configured with Cordova/PhoneGap, Vue.js, Framework7, Webpack, Babel, ESLint and Hot Reloading as well as Progressive Web App support. They also have unit tests and CSS extraction built-in.

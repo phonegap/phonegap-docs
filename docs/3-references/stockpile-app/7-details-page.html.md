@@ -10,7 +10,7 @@ The **Details** view includes an image container and a card style UI component t
 
 Some of the details displayed can also lead to subsequent queries to the Adobe Stock API when clicked. For instance, when a user clicks the **Category**, **Created by** or **FIND SIMILAR** links, a new query will run based on which was clicked and load the results page with the new results as shown here:
 
-<img class="mobile-image" src="/images/stockpile/vids/stockpile-details1.gif" alt="Stockpile App"/>
+<img class="mobile-image" src="/images/stockpile/vids/stockpile-details.gif" alt="Stockpile App"/>
 
 ## Renaming & Routing Updates
 
@@ -33,7 +33,7 @@ Open `~src/routes.js` and replace the import for _Another_ with _Details_ like t
     },
 ```
 
-   Similar to the Results route, the Details route also uses [dynamic route matching by pattern](http://framework1.io/vue/navigation-router.html) based on the `id` parameter of the image selected.
+   Similar to the Results route, the Details route also uses [dynamic route matching by pattern](http://framework7.io/vue/navigation-router.html) based on the `id` parameter of the image selected.
 
    <div class="alert--tip">For instance, example of a URL matching this Details route would be:  `http://localhost:8080/#!//results/details/60875206`</div>
 
@@ -107,7 +107,7 @@ Still in `Details.vue`...
     </f7-card-footer>
 ```
 
-1. Just after the card closing tag, add a [Framework7 Photo Browser](http://framework1.io/vue/photo-browser.html) component and bind the photos, lazy loading and toolbar values:
+1. Just after the card closing tag, add a [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component and bind the photos, lazy loading and toolbar values:
 
 ```html
     <f7-photo-browser
@@ -256,7 +256,7 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
     }
 ```
 
-1. Define the `loadInPhotoBrowser` method. This method is called when a card is clicked and will use the [Framework7 Photo Browser](http://framework1.io/vue/photo-browser.html) component you defined in the UI to open the image in a new window and allow it to be zoomed, panned etc:
+1. Define the `loadInPhotoBrowser` method. This method is called when a card is clicked and will use the [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component you defined in the UI to open the image in a new window and allow it to be zoomed, panned etc:
 
 ```javascript
     methods: {
@@ -267,7 +267,7 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
     }
 ```
 
-1. Define the `onPageBeforeAnimation` handler to disable exposition if enabled (see the [Framework7 Photo Browser](http://framework1.io/vue/photo-browser.html) component docs for more details):
+1. Define the `onPageBeforeAnimation` handler to disable exposition if enabled (see the [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component docs for more details):
 
 ```javascript
     methods: {
