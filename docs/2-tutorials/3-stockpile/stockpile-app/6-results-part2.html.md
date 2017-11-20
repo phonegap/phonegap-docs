@@ -1,6 +1,6 @@
 ---
 title: Lesson 6 - Results View Part 2
-url: references/stockpile-app/6-results-part2
+url: tutorials/stockpile/6-results-part2
 layout: subpage
 ---
 In part two you will add support for the more advanced features of the **Results** page, including displaying the array of results, infinite scrolling, using a preloader and more.

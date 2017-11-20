@@ -99,12 +99,16 @@ module.exports = {
           .findAllLive({url: {$startsWith:'references/' }}, [{ relativeBase: 1 }])
     },
     tutorialDocs: function() {
-        return this.getCollection('gsDocs')
-            .findAllLive({url:{$startsWith:'tutorials/'}}, [{ relativeBase: 1 }])
-    },
-    pgbDocs: function() {
       return this.getCollection('gsDocs')
-          .findAllLive({url:{$startsWith:'phonegap-build/'}}, [{ relativeBase: 1 }])
+          .findAllLive({url:{$startsWith:'tutorials/'}}, [{ relativeBase: 1 }])
+    },
+    stockpileDocs: function() {
+      return this.getCollection('gsDocs')
+          .findAllLive({url:{$startsWith:'tutorials/stockpile'}}, [{ relativeBase: 1 }])
+    }, 
+    pgbDocs: function() {      
+      return this.getCollection('gsDocs')
+          .findAllLive({url:{$startsWith:'phonegap-build/'}}, [{ relativeBase: 1 }])          
     }
   }
 };

@@ -1,6 +1,6 @@
 ---
 title: Lesson 9 - Favorites View
-url: references/stockpile-app/81-favorites-page
+url: tutorials/stockpile/81-favorites-page
 layout: subpage
 ---
 

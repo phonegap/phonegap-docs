@@ -1,6 +1,6 @@
 ---
 title: Lesson 5 - Results View Part 1
-url: references/stockpile-app/5-results-part1
+url: tutorials/stockpile/5-results-part1
 layout: subpage
 ---
 

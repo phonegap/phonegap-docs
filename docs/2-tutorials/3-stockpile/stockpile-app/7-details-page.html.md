@@ -1,6 +1,6 @@
 ---
 title: Lesson 7 - Details View
-url: references/stockpile-app/7-details-page
+url: tutorials/stockpile/7-details-page
 layout: subpage
 ---
 

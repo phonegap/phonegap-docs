@@ -1,6 +1,6 @@
 ---
 title: Lesson 4 - Using the Adobe Stock API
-url: references/stockpile-app/4-stock-api
+url: tutorials/stockpile/4-stock-api
 layout: subpage
 ---
 The Stockpile app uses the [Adobe Stock API](https://www.adobe.io/apis/creativecloud/stock/) to retrieve images based on search criteria. There are some setup and configuration steps you will need to do first to enable your app to query the Adobe Stock database. This lesson will walk you through each of those steps.

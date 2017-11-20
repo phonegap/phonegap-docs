@@ -1,6 +1,6 @@
 ---
 title: Lesson 8 - Favorites API
-url: references/stockpile-app/8-favorites-api
+url: tutorials/stockpile/8-favorites-api
 layout: subpage
 ---
 

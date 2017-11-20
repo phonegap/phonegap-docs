@@ -1,7 +1,8 @@
 ---
 title: Adobe Stockpile Sample App
-url: references/stockpile-app
+url: tutorials/stockpile
 layout: subpage
+next: 2-tutorials/3-stockpile/stockpile-app/01-project-overview.html.md
 ---
 
 The Stockpile App is a sample mobile app written by the Adobe PhoneGap team to help teach developers how to use PhoneGap to build highly performant, fully-featured mobile apps. The Stockpile app allows you to search for images from the [Adobe Stock Photo Library](https://stock.adobe.com/), view details, download, add favorites and more. It was built using the latest web standards and is being provided to developers to use as a reference when creating their own mobile apps.
@@ -26,7 +27,6 @@ The Stockpile app was built using [Framework7 with Vue.js bindings](http://frame
 </div>
 
 ## Helpful Resources
-
 - [Framework7](https://framework7.io/)
 - [Framework7+Vue Docs](https://framework7.io/vue/)
 - [VueJS Guide](https://vuejs.org/v2/guide/)
