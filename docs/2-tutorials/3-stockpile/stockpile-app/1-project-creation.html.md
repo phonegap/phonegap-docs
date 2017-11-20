@@ -12,7 +12,7 @@ This lesson provides the steps to create a new PhoneGap project based on a start
 
         phonegap create Stockpile com.phonegap.stockpile Stockpile --template phonegap-template-vue-f7-split-panel
 
-  <div class="alert--tip">PhoneGap provides starter templates and layouts to help you get started building your apps quickly. The templates vary in the types of frameworks and configurations used, some more basic and some fully configured with a build process like Webpack. To create a new PhoneGap project with a template, you specify the `--template` parameter upon project creation. To locate the various templates available, go to [npmjs.org](https://www.npmjs.com/search?q=phonegap:template) and use the search term `phonegap:template`. See the [project overview](/references/stockpile-app/01-project-overview/) for more details about the templates and project structure.
+  <div class="alert--tip">PhoneGap provides starter templates and layouts to help you get started building your apps quickly. The templates vary in the types of frameworks and configurations used, some more basic and some fully configured with a build process like Webpack. To create a new PhoneGap project with a template, you specify the `--template` parameter upon project creation. To locate the various templates available, go to [npmjs.org](https://www.npmjs.com/search?q=phonegap:template) and use the search term `phonegap:template`. See the [project overview](/tutorials/stockpile/01-project-overview/) for more details about the templates and project structure.
   </div>
 
 1. Next, navigate into the new Stockpile folder and run the `npm install` command to install the project dependencies:
@@ -20,7 +20,7 @@ This lesson provides the steps to create a new PhoneGap project based on a start
         cd Stockpile
         npm install
 
-  <div class="alert--info">**IMPORTANT:** You will be updating the files and folders within the **`src`** folder specifically when going through the lessons in this guide. Do not confuse it with the `www` folder. That folder will be regenerated when the `npm run build` command is used. Refer to the [project overview](/references/stockpile-app/01-project-overview/) for more details.</div>
+  <div class="alert--info">**IMPORTANT:** You will be updating the files and folders within the **`src`** folder specifically when going through the lessons in this guide. Do not confuse it with the `www` folder. That folder will be regenerated when the `npm run build` command is used. Refer to the [project overview](/tutorials/stockpile/01-project-overview/) for more details.</div>
 
 ## Rename the App
 
@@ -83,7 +83,7 @@ After the `build` command, you could also use the [`phonegap serve`](http://docs
 
          phonegap serve
 
-<div class="alert--tip">The last option with `phonegap serve` is particularly useful for debugging [Progressive Web Apps](/references/stockpile-app/911-pwa-features). </div>
+<div class="alert--tip">The last option with `phonegap serve` is particularly useful for debugging [Progressive Web Apps](/tutorials/stockpile/911-pwa-features). </div>
 
 Open the Chrome devtools and use the mobile emulation button to try out different device simulations. You'll need to reload the page when switching between iOS and Android to see the stylesheets applied.
 
