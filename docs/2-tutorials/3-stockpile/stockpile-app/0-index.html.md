@@ -1,5 +1,5 @@
 ---
-title: Adobe Stockpile Sample App
+title: Building the Adobe Stockpile App
 url: tutorials/stockpile
 layout: subpage
 next: 2-tutorials/3-stockpile/stockpile-app/01-project-overview.html.md

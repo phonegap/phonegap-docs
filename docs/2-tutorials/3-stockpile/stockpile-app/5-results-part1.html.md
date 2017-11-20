@@ -2,6 +2,7 @@
 title: Lesson 5 - Results View Part 1
 url: tutorials/stockpile/5-results-part1
 layout: subpage
+next: 2-tutorials/3-stockpile/stockpile-app/6-results-part2.html.md
 ---
 
 The **Results** view is presented when search results are returned. It displays a message showing the number of results returned and a grid to display the images. It also includes infinite scrolling and a preloader component to display while the results are fetched.

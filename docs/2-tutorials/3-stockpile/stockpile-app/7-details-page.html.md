@@ -2,6 +2,7 @@
 title: Lesson 7 - Details View
 url: tutorials/stockpile/7-details-page
 layout: subpage
+next: 2-tutorials/3-stockpile/stockpile-app/8-favorites-api.html.md
 ---
 
 The **Details** view includes an image container and a card style UI component to present the specific details of the image selected. This view is shown when an image is selected from the **Results** view or the **Favorites** view.

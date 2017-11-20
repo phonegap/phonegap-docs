@@ -2,6 +2,7 @@
 title: Lesson 8 - Favorites API
 url: tutorials/stockpile/8-favorites-api
 layout: subpage
+next: 2-tutorials/3-stockpile/stockpile-app/81-favorites-page.html.md
 ---
 
 The **Favorites** view manages a list of images that have been *favorited* in the app and relies on [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage) to persist favorites across sessions. An example of the favorites view is shown below for reference. However in this first part you're going to code a Favorites JavaScript API of sorts to allow the app to manage them more easily.

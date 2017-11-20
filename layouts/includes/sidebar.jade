@@ -55,7 +55,7 @@ aside.sidebar
           - var coll = getCollection("stockpileDocs").toJSON()
           each page in coll
             - var depth = page.url.match(/\//g||[]).length
-            // 1st level of references are expandable
+            // 1st level of stockpile is expandable
             if (depth==1)
               li: a.sidenav__sub2(href="/#{page.url}" style="display:none "  class="/tutorials/" class=document.url === page.url? "current" : "")!=page.title
               ul(class="/#{page.url}/" style="display:none") 

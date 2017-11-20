@@ -2,6 +2,7 @@
 title: Lesson 9 - Favorites View
 url: tutorials/stockpile/81-favorites-page
 layout: subpage
+next: 2-tutorials/3-stockpile/stockpile-app/9.10-details-add-favorites.html.md
 ---
 
 In this part 2 you will implement the **Favorites** view UI specifically and it's associated handling. The **Favorites** view show a list of items containing the images the user has favorited along with the title, category and creation date for each, and a [swipeout](http://framework7.io/vue/swipeout-list.html) button to allow it to be deleted. Each of the list items links to the **Details** page when clicked.
