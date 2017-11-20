@@ -52,6 +52,19 @@ aside.sidebar
             if (depth>1)
               if (page.tabs==null || page.tabs[0].url===page.url)
                   li: a.sidenav__sub2(href="/#{page.url}" style="display:none " class="/tutorials/" class=document.url === page.url? "current" : "")!=page.title                      
+          - var coll = getCollection("stockpileDocs").toJSON()
+          each page in coll
+            - var depth = page.url.match(/\//g||[]).length
+            // 1st level of stockpile is expandable
+            if (depth==1)
+              li: a.sidenav__sub2(href="/#{page.url}" style="display:none "  class="/tutorials/" class=document.url === page.url? "current" : "")!=page.title
+              ul(class="/#{page.url}/" style="display:none") 
+                each doc in getCollection("stockpileDocs").findAllLive({url: {$startsWith:page.url }}, [{ relativeBase: 1 }]).toJSON()
+                  - subDepth = doc.url.match(/\//g||[]).length
+                  // Now only want to list depths greater than the main category and need to check for tabs and only use 1st or will duplicate
+                  if (subDepth > 1) 
+                      if (doc.tabs==null || doc.tabs[0].url===doc.url)
+                          li: a.sidenav__sub3(href="/#{doc.url}" style="display:none " class="/#{page.url}/"  class=document.url === doc.url ? "current" : "")!=doc.title                                                                                    
       li
         a.sidenav__sub1(href="/references" class=document.url === "references"? "current" : "") References
         ul.sidenav__sublist
