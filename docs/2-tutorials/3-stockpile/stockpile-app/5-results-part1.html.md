@@ -42,7 +42,7 @@ An example of what will be returned by clicking these links is shown in this ani
 
     Open `~src/components/LeftPanel.vue` and remove the whole `<f7-list-item ../>` element for the `/about/` link:
 
-```html
+  ```html
     <f7-list-item
         link="/about/"
         title="About"
@@ -50,46 +50,46 @@ An example of what will be returned by clicking these links is shown in this ani
         link-reload
         link-close-panel
     />
-```
+  ```
 
 ## Implement the UI
 
 1. In `Results.vue`, change the page name from **about** to **results**:
 
-```html
+  ```html
     <f7-page name="results">
-```
+  ```
 
 1. Replace the entire `<f7-navbar .../>` block with the following navbar. This new navbar binds the `back-link` to a computed property that determines which title to show based on which page the results came from. You will code this `backLink` property shortly:
 
-```html
+  ```html
     <f7-navbar sliding :back-link="backLink" title="Results"></f7-navbar>
-```
+  ```
 
 1. Replace the `<f7-block-title>` contents with:
 
-```html
+  ```html
     <f7-block-title v-if="results">{{ imagesReturned }}</f7-block-title>
-```
+  ```
 
 1. Remove this `<f7-block ../>` component completely:
 
-```html
+  ```html
     <f7-block inner>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Distinctio est aliquam officiis quaerat placeat, cum explicabo magni
             soluta totam maxime autem minima accusamus eos suscipit dignissimos
             corporis modi voluptatum fugiat!
     </f7-block>
-```
+  ```
 
 1. Remove the following `<f7-list/>` component completely:
 
-```html
+  ```html
     <f7-list>
         <f7-list-item link="/about/another/" title="Another Page"></f7-list-item>
     </f7-list>
-```
+  ```
 
 ### Add JavaScript Handling
 
@@ -97,34 +97,34 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
 
 1. Rename this component by changing the name `About` to `Results`:
 
-```javascript
+  ```javascript
     export default {
         name: 'Results',
         ...
     }
-```
+  ```
 
 1. In the `data` object, remove the current `title` property, then add an `images` property to contain an array to use in the global store and a `results` variable to manage if results were returned:
 
-```javascript
+  ```javascript
     data () {
       return {
         images: [],
         results: true
       };
      },
-```
+  ```
 
 1. After the `data` object, insert a new `computed` property block:
 
-```javascript
+  ```javascript
     computed: {
     }
-```
+  ```
 
 1. In this new `computed` block, define a `backLink` property to determine which title to use on the link based on the route:
 
-```javascript
+  ```javascript
     computed: {
       backLink () {
         // back link label for iOS
@@ -132,11 +132,11 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
         return referrer === 'details' ? 'Details' : 'Search';
       }
     }
-```
+  ```
 
 1. Next, define the `imagesReturned` computed property for the UI to dynamically display the number of results returned:
 
-```javascript
+  ```javascript
     computed: {
         ...,
         imagesReturned () {
@@ -160,9 +160,9 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
           return message;
         }
     }
-```
+  ```
 
-      <div class="alert--info">Since this view is shown from both the main search page and links on the details view, a different message is shown depending on the type of search performed (by keyword, category, similar etc). A `filter` value from the route parameters is checked to determine which message to display. This value is set to 'words' to indicate a search by keyword if this results page is shown from the main Search page (in the [`onSubmit` function](https://github.com/phonegap/phonegap-app-stockpile/blob/master/src/components/pages/Search.vue#L52)), but will be set to `similar`, `creator_id`, or `category` if resulting from a click off the Details view. Look at the [Details.vue component in the final project](https://github.com/phonegap/phonegap-app-stockpile/blob/master/src/components/pages/Details.vue#L128-L153) to see these filters being set.</div>
+  <div class="alert--info">Since this view is shown from both the main search page and links on the details view, a different message is shown depending on the type of search performed (by keyword, category, similar etc). A `filter` value from the route parameters is checked to determine which message to display. This value is set to 'words' to indicate a search by keyword if this results page is shown from the main Search page (in the [`onSubmit` function](https://github.com/phonegap/phonegap-app-stockpile/blob/master/src/components/pages/Search.vue#L52)), but will be set to `similar`, `creator_id`, or `category` if resulting from a click off the Details view. Look at the [Details.vue component in the final project](https://github.com/phonegap/phonegap-app-stockpile/blob/master/src/components/pages/Details.vue#L128-L153) to see these filters being set.</div>
 
 ## Handling Search Form Submission
 
@@ -170,7 +170,7 @@ Before moving on, revisit the **Search** page to add some functionality into the
 
 1. Open `Search.vue` and replace the stubbed out `onSubmit` method with the following:
 
-```javascript
+  ```javascript
     onSubmit () {
       const { searchInput, searchForm } = this.$refs;
       const { filter, limit, q } = this.$f7.formToJSON(searchForm);
@@ -185,9 +185,9 @@ Before moving on, revisit the **Search** page to add some functionality into the
       }
       router.loadPage(`/results/${filter || 'words'}/${limit}/${q}/search`);
     }
-```
+  ```
 
-    The `onSubmit` method gathers the form data, ensures there was a search term entered and passes the parameters into the router to load the results page. At this point the routing is all wired up to display the results view from the search view, but the Stock API has not yet been called to populate the `images` array and the UI hasn't been added yet to handle those results. You will work on adding those pieces in the next lesson.
+The `onSubmit` method gathers the form data, ensures there was a search term entered and passes the parameters into the router to load the results page. At this point the routing is all wired up to display the results view from the search view, but the Stock API has not yet been called to populate the `images` array and the UI hasn't been added yet to handle those results. You will work on adding those pieces in the next lesson.
 
 ## Run it
 

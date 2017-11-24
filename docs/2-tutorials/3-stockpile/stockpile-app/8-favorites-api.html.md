@@ -52,7 +52,7 @@ The **Favorites** view manages a list of images that have been *favorited* in th
     }
 ```
 
-1. Add an export function to fetch the `favorites` JSON object from `localStorage`:
+1. Add an exported function to fetch the `favorites` JSON object from `localStorage`:
 
 ```javascript
     export function fetchFavoritesFromLocalStorage () {
@@ -60,7 +60,7 @@ The **Favorites** view manages a list of images that have been *favorited* in th
     }
 ```
 
-1. Next add an export function called `toggleFavorite` which will be called to toggle the status of an item by adding or removing it from the favorites array depending on if it's already been favorited or not. Once the change is made to the array, a call to save to `localStorage` is necessary to keep it in sync:
+1. Next add an exported function called `toggleFavorite` which will be called to toggle the status of an item by adding or removing it from the favorites array depending on if it's already been favorited or not. Once the change is made to the array, a call to save to `localStorage` is necessary to keep it in sync:
 
 ```javascript
     export function toggleFavorite (favorite) {
