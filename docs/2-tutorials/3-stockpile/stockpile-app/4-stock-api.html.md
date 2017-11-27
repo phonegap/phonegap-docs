@@ -4,7 +4,7 @@ url: tutorials/stockpile/4-stock-api
 layout: subpage
 next: 2-tutorials/3-stockpile/stockpile-app/5-results-part1.html.md
 ---
-The Stockpile app uses the [Adobe Stock API](https://www.adobe.io/apis/creativecloud/stock/) to retrieve images based on search criteria. There are some setup and configuration steps you will need to do first to enable your app to query the Adobe Stock database. This lesson will walk you through each of those steps.
+The Stockpile app uses the [Adobe Stock API](https://www.adobe.io/apis/creativecloud/stock.html) to retrieve images based on search criteria. There are some setup and configuration steps you will need to do first to enable your app to query the Adobe Stock database. This lesson will walk you through each of those steps.
 
 ## Obtaining a Stock API key
 
@@ -58,10 +58,12 @@ Now that you've obtained a key, you will need to have it available for use by th
 1. Create a file named `config.js` under `~src/utils/`
 1. Paste in the following header data to match the header data format the [Adobe Stock API](https://www.adobe.io/apis/creativecloud/stock/docs/api/search.html) requires, replacing the `x-api-key` parameter with your new API key:
 
-        export const apiHeaders = {
-          'x-api-key': '*******************************', // replace with your api-key
-          'X-Product': 'Stockpile/1.0.0'
-        };
+  ```javascript
+    export const apiHeaders = {
+      'x-api-key': '*******************************', // replace with your api-key
+      'X-Product': 'StockpileTutorial/1.0.0'
+    };
+  ```
 
 ## Fetch Polyfill
 
@@ -69,7 +71,7 @@ You will be using the [`fetch` API](https://developer.mozilla.org/en-US/docs/Web
 
     npm install whatwg-fetch --save
 
-   then import it for use by opening `main.js` and adding the following at the top, just below the `babel-polyfill` import:
+then import it for use by opening `main.js` and adding the following at the top, just below the `babel-polyfill` import:
 
     import 'whatwg-fetch';
 
@@ -77,9 +79,11 @@ You will be using the [`fetch` API](https://developer.mozilla.org/en-US/docs/Web
 
 You'll also need to update the Content Security Policy for the app to allow content to come from Adobe Stock API by including its URL `https://stock.adobe.io` in the meta tag.
 
-  Open the `index.html` file and replace the `<meta>` tag with the current CSP to:
+Open the `index.html` file and replace the `<meta>` tag with the current CSP to:
 
+```html
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://stock.adobe.io 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; img-src * data:">
+```
 
 ## Add JavaScript handling
 
@@ -87,45 +91,47 @@ To keep things more readable and maintainable for this app, it's better to code 
 
 1. In the `utils` folder you created above, create a new file named `stockAPI.js` and add the following content:
 
-        `/* global fetch */`
+  ```javascript
+    /* global fetch */
 
-        import { apiHeaders } from './config';
+    import { apiHeaders } from './config';
 
-        const apiBase = 'https://stock.adobe.io/Rest/Media/1/Search/Files';
+    const apiBase = 'https://stock.adobe.io/Rest/Media/1/Search/Files';
 
-        // function to format an array of columns into the query string needed
-        export function formatResultColumns (columns) {
-          if (columns.length < 1) return '';
-          return `result_columns[]=${columns.join('&result_columns[]=')}`;
-        }
+    // function to format an array of columns into the query string needed
+    export function formatResultColumns (columns) {
+      if (columns.length < 1) return '';
+      return `result_columns[]=${columns.join('&result_columns[]=')}`;
+    }
 
-        // function to format an object containing parameters into the query string needed
-        export function formatSearchParameters (parameters) {
-          return parameters
-            .map(param => `search_parameters[${param.key}]=${param.val}`)
-            .join('&');
-        }
+    // function to format an object containing parameters into the query string needed
+    export function formatSearchParameters (parameters) {
+      return parameters
+        .map(param => `search_parameters[${param.key}]=${param.val}`)
+        .join('&');
+    }
 
-        // function to call the Adobe Stock API and return the results
-        export default function fetchStockAPIJSON (options) {
-          const { columns, parameters } = options;
-          const resultColumns = formatResultColumns(columns);
-          const searchParameters = formatSearchParameters(parameters);
-          const apiURL = `${apiBase}?${resultColumns}&${searchParameters}`;
-          const myInit = {
-            method: 'GET',
-            headers: new Headers(apiHeaders)
-          };
-          return new Promise((resolve, reject) => {
-            fetch(apiURL, myInit)
-              .then(response => response.json())
-              .then((json) => {
-                resolve(json);
-              }).catch((ex) => {
-                reject(ex);
-              });
+    // function to call the Adobe Stock API and return the results
+    export default function fetchStockAPIJSON (options) {
+      const { columns, parameters } = options;
+      const resultColumns = formatResultColumns(columns);
+      const searchParameters = formatSearchParameters(parameters);
+      const apiURL = `${apiBase}?${resultColumns}&${searchParameters}`;
+      const myInit = {
+        method: 'GET',
+        headers: new Headers(apiHeaders)
+      };
+      return new Promise((resolve, reject) => {
+        fetch(apiURL, myInit)
+          .then(response => response.json())
+          .then((json) => {
+            resolve(json);
+          }).catch((ex) => {
+            reject(ex);
           });
-        }
+      });
+    }
+  ```
 
 These functions format the query string to pass in to the [Adobe Stock API](https://www.adobe.io/apis/creativecloud/stock/docs/api/search.html). They take the `config.js` header (with the API key) and format the parameters and search criteria into a query string, then fetch the results from the Adobe Stock API. The `fetchStockAPIJSON ()` is called from the **Search** view when the **Find Images** button is clicked.
 

@@ -10,20 +10,20 @@ In part two you will add support for the more advanced features of the **Results
 
 1. Open `~src/components/pages/Results.vue` and replace the `<f7-page />` opening tag with:
 
-```html
+  ```html
     <f7-page name="results" @page:reinit="onPageReinit"
       infinite-scroll @infinite="onInfiniteScroll"
       :infinite-scroll-preloader="false">
-```
+  ```
 
  The above block:
 
-     - Defines a page event handler called `onPageReinit` to call when the `reinit` event fires
-     - Adds properties needed for [infinite scroll](https://framework7.io/docs/infinite-scroll.html) ability to the Results view and an event handler named `onInfiniteScroll` to call.
+  - Defines a page event handler called `onPageReinit` to call when the `reinit` event fires
+  - Adds properties needed for [infinite scroll](https://framework7.io/docs/infinite-scroll.html) ability to the Results view and an event handler named `onInfiniteScroll` to call.
 
 1. Add this content block which will display the images array in a grid:
 
-```html
+  ```html
     <f7-block v-if="results">
       <div class="grid">
         <div class="cell"
@@ -42,33 +42,33 @@ In part two you will add support for the more advanced features of the **Results
         </div>
       </div>
     </f7-block>
-```
+  ```
 
   The above block:
 
-    - Only displays if the `results` variable value is true
-    - Uses [Vue v-for](https://vuejs.org/v2/guide/list.html) to create placeholders for 60 images (the pre-defined results limit set)
-    - Uses [Vue v-for](https://vuejs.org/v2/guide/list.html) to loop through the `images` array to display
-    - Sets an event handler called `onImageClick` to be called when an image is clicked (passing in the id of the image clicked).
+  - Only displays if the `results` variable value is true
+  - Uses [Vue v-for](https://vuejs.org/v2/guide/list.html) to create placeholders for 60 images (the pre-defined results limit set)
+  - Uses [Vue v-for](https://vuejs.org/v2/guide/list.html) to loop through the `images` array to display
+  - Sets an event handler called `onImageClick` to be called when an image is clicked (passing in the id of the image clicked).
 
 1. Just before the closing `</f7-page>` tag, add a block to be displayed when there are no results returned:
 
-```html
+  ```html
     <f7-block v-if="!results">
       <p class="center">No results found.</p>
       <p class="center">Go back and try a different search?</p>
     </f7-block>
-```
+  ```
 
-    The [`v-if`](https://vuejs.org/v2/guide/conditional.html) directive is used to determine if this block should display or not based on the `results` variable value.
+  The [`v-if`](https://vuejs.org/v2/guide/conditional.html) directive is used to determine if this block should display or not based on the `results` variable value.
 
 1. Lastly, after the block above (and before the closing `<f7-page>`), define a [preloader component](https://framework7.io/docs/preloader.html) to be displayed while the infinite scroll results are loaded:
 
-```html
+  ```html
     <div class="infinite-scroll-preloader">
       <f7-preloader :style="images.length ? '' : 'display: none; animation: none'" />
     </div>
-```
+  ```
 
 ## Add JavaScript Handling
 
@@ -76,24 +76,24 @@ In this section you will add the event handlers for the UI components added in t
 
 1. Add a `methods` object to the default export just after the `data` object:
 
-```javascript
+  ```javascript
     methods: {
-    }
-```
+    },
+  ```
 
 1. Add a `fetchResults` method stub to the `methods` object:
 
-```javascript
+  ```javascript
     methods: {
       fetchResults () {}
-    }
-```
+    },
+  ```
 
   You will revisit this method shortly...
 
 1. Add an `onImageClick` method  the `methods` object to route to the **Details** page when an image is clicked:
 
-```javascript
+  ```javascript
     methods: {
         ...,
         onImageClick (id) {
@@ -102,7 +102,7 @@ In this section you will add the event handlers for the UI components added in t
           router.loadPage(`/results/details/${id}`);
         }
     }
-```
+  ```
 
   The code above gets access to the Framework7 router object to then load the **Details** page for the image id clicked. (The Details page is not yet created but will be in the next lesson).
 
@@ -110,7 +110,7 @@ In this section you will add the event handlers for the UI components added in t
 
   Add the `onInfiniteScroll` method into the `methods` object to load the next set of images based on the results offset:
 
-```javascript
+  ```javascript
     methods: {
         ...,
         onInfiniteScroll () {
@@ -122,13 +122,13 @@ In this section you will add the event handlers for the UI components added in t
           this.fetchResults(this.q, limit, this.filter, offset);
         }
     }
-```
+  ```
 
 1. Add [page reinitialization](http://framework7.io/vue/page.html) handling:
 
     Code the `onPageReinit` method to handle when the app returns from deep navigation and needs to display the correct results. It refreshes the global data `store` object with the data from this view. In the `methods` object, add the following:
 
-```javascript
+  ```javascript
     methods: {
         ...,
         onPageReinit () {
@@ -140,11 +140,11 @@ In this section you will add the event handlers for the UI components added in t
           });
         }
      }
-```
+  ```
 
-   This method uses the new [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) method to refresh the global `store` with the values from this view. You could also use the new [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) instead if it's fully supported everywhere you want your app to run.
+  This method uses the new [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) method to refresh the global `store` with the values from this view. You could also use the new [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) instead if it's fully supported everywhere you want your app to run.
 
-   <!-- TODO Use the screenshot on multiple-results- to explain how it's replacing the main store object with that page each time as you go back thru the history -->
+  <!-- TODO Use the screenshot on multiple-results- to explain how it's replacing the main store object with that page each time as you go back thru the history -->
 
 ## Fetch Results Handling
 
@@ -152,13 +152,13 @@ Previously in this guide you created a `stockAPI.js` file with some functions us
 
 1. While in `Results.vue`, scroll down to the default export block and add the import for the `fetchStockAPIJSON` function at the top of the `<script>` block.
 
-```javascript
+  ```javascript
     import fetchStockAPIJSON from '../../utils/stockAPI';
-```
+  ```
 
 1. Now go back to the `fetchResults` method stub created previously and update the signature with 4 new parameters and define two constant variables for `columns` and `parameters` as shown below:
 
-```javascript
+  ```javascript
     fetchResults (q, limit, filter, offset = 0) {
         const columns = [
           'nb_results', 'id', 'title', 'thumbnail_url', 'thumbnail_500_url',
@@ -172,14 +172,14 @@ Previously in this guide you created a `stockAPI.js` file with some functions us
           { key: filter, val: q },
           { key: 'offset', val: offset }
         ];
-    }
-```
+    },
+  ```
 
   The `columns` and `parameters` are used in the next step as parameters to the imported `fetchStockAPIJSON` function to use for creating the [query string to the Stock API](https://www.adobe.io/apis/creativecloud/stock/docs/api/search.html).
 
 1. Just below the ending `parameters` array added above, add this next piece of code into the `fetchResults` method to call your Stock API function:
 
-```javascript
+  ```javascript
     fetchStockAPIJSON({ columns, parameters })
       .then(json => {
         // remove preloader if no results returned
@@ -229,16 +229,15 @@ Previously in this guide you created a `stockAPI.js` file with some functions us
         });
         this.$$('.infinite-scroll-preloader').remove();
       });
-   },
-```
+   ```
 
-    This code determines if there were results returned or not and sets variables for the number returned and with the images retrieved and then replaces the store data with the latest. If none were returned, or the limit was hit, the preloader is removed. If an error occurs a message is displayed and the preloader is removed.
+  This code determines if there were results returned or not and sets variables for the number returned and with the images retrieved and then replaces the store data with the latest. If none were returned, or the limit was hit, the preloader is removed. If an error occurs a message is displayed and the preloader is removed.
 
 1. Add a [lifecycle hook](https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks) to call `fetchResults` when the Results instance is [mounted](https://vuejs.org/v2/api/#mounted).
 
   The new `mounted` lifecycle hook should be added just AFTER the `computed` property block, and will be called when the instance has been mounted:
 
-   ```javascript
+  ```javascript
     computed: {
       ...
     },
@@ -252,7 +251,7 @@ Previously in this guide you created a `stockAPI.js` file with some functions us
         Object.assign(this, params);
         this.fetchResults(this.q, this.limit, this.filter, this.offset);
     }
-   ```
+  ```
 
    This code will set up some defaults for the Stock API query parameters and replace the current `params` with the new values (using [`Object.assign`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)) before calling the `fetchResults()`.
 
