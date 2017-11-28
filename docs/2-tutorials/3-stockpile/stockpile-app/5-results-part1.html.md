@@ -36,7 +36,7 @@ An example of what will be returned by clicking these links is shown in this ani
           component: Results
         },
 
-   <div class="alert--tip">This path uses [dynamic route matching by pattern](http://framework7.io/vue/navigation-router.html), so when this pattern is found in a URL, it will load the `Results` component and match the 4 variables passed in dynamically for `filter`, `limit`, `q` and `referrer` respectively.  For example: `http://localhost:8080/#!//results/words/60/cat/search` would be a matching URL. Once you complete the next lesson you will see how the browser URL dynamically changes each time based upon the search criteria when this page is loaded. </div>
+   <div class="alert--tip">**Dynamic Routing:** This path uses the [dynamic route matching by pattern in Framework7]( http://framework7.io/vue/navigation-router.html#dynamic-route-matching), so when the above path pattern is found in a URL, the router will load the `Results` component and pass the 4 dynamic variables (`filter`, `limit`, `q` and `referrer`) with their actual values in the URL.  For example: `http://localhost:8080/#!//results/words/60/cat/search` could be a resulting URL, where *words* is the `filter`, *60* is the `limit`, *cat* is the `q` (query) and *search* is the `referrer`. Once you complete the next lesson you will see how the browser URL is dynamically changed with new values each time a new search is executed. </div>
 
 1. You will also need to update the side menu for this step to remove the `About` list item completely, since this results page will be loaded dynamically based on search results and never from the side menu.
 
@@ -60,7 +60,7 @@ An example of what will be returned by clicking these links is shown in this ani
     <f7-page name="results">
   ```
 
-1. Replace the entire `<f7-navbar .../>` block with the following navbar. This new navbar binds the `back-link` to a computed property that determines which title to show based on which page the results came from. You will code this `backLink` property shortly:
+1. Replace the entire `<f7-navbar .../>` block with the following navbar. This new navbar binds the [`back-link`]( http://framework7.io/vue/navigation-router.html#dynamic-route-matching) attribute to a computed property returning a label that was dynamically set based on where the results page was routed from. You'll see this label next to the back arrow icon on the results page. You will code this `backLink` computed property shortly:
 
   ```html
     <f7-navbar sliding :back-link="backLink" title="Results"></f7-navbar>
@@ -122,7 +122,7 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
     }
   ```
 
-1. In this new `computed` block, define a `backLink` property to determine which title to use on the link based on the route:
+1. In this new `computed` block, define a `backLink` property to determine which label to use with the back icon based on the route:
 
   ```javascript
     computed: {
@@ -133,6 +133,14 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
       }
     }
   ```
+
+ **Route Parameters:** The `this.$route.params` variable provides access to the [Framework7 route parameters](http://framework7.io/vue/navigation-router.html#dynamic-route-matching) that were passed in when the Results page was loaded. As a reminder, in the **Renaming & Routing Updates** section above you defined a `path` for the Results page as `path: '/results/:filter/:limit/:q/:referrer'`. The `referrer` is one of those parameters that is checked now to determine what label to return for the back button. Also, to make it more clear, if you viewed the value of `this.$route.params` in the [Vue Devtools](https://github.com/vuejs/vue-devtools) you would see each of the name:value pairs set as shown below:
+
+    ![](/images/stockpile/route-params.png)
+
+ See the [Framework7 Dynamic Route Matching docs](http://framework7.io/vue/navigation-router.html#dynamic-route-matching) for more details.
+
+ <div class="alert--info">This label only shows on iOS. On Android you will only see the page title that you're currently on, not this previous page label too.</div>
 
 1. Next, define the `imagesReturned` computed property for the UI to dynamically display the number of results returned:
 
