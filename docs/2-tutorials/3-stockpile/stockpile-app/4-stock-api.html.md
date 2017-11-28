@@ -77,13 +77,15 @@ then import it for use by opening `main.js` and adding the following at the top,
 
 ## Content Security Policy Updates
 
-You'll also need to update the Content Security Policy for the app to allow content to come from Adobe Stock API by including its URL `https://stock.adobe.io` in the meta tag.
+You'll also need to update the [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) for the app to allow content to come from Adobe Stock API by including its URL `https://stock.adobe.io` in the meta tag.
 
 Open the `index.html` file and replace the `<meta>` tag with the current CSP to:
 
 ```html
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://stock.adobe.io 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; img-src * data:">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://stock.adobe.io 'unsafe-eval' 'unsafe-inline' ws://*; style-src 'self' 'unsafe-inline'; media-src *; img-src * data:">
 ```
+
+<div class="alert--info">**IMPORTANT:** This CSP should be used for example purposes only and should **NEVER** be used in a production app as it is extremely insecure and provides wide open access. It's important to understand the meaning of the different attributes to ensure you're using the most secure one for your app. Please refer to [the documentation here](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) for more details.  You can also check out the [CSP is Awesome tool](http://cspisawesome.com/) to help you generate your own CSP's.</div>
 
 ## Add JavaScript handling
 
