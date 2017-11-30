@@ -9,7 +9,7 @@ The Stockpile App is a sample mobile app written by the Adobe PhoneGap team to h
 
 <img class="mobile-image" src="/images/stockpile/vids/stockpile-run2.gif" alt="Stockpile App"/>
 
-This guide will walk through how to build Stockpile step by step with a series of lessons aimed to teach mobile app development with PhoneGap using a proven technology stack. Before moving on, take a moment to try out the [hosted version of the app here](https://phonegap-stockpile-app.firebaseapp.com/) to see what the end result should look like.
+This guide will walk through how to build Stockpile step by step with a series of lessons aimed to teach mobile app development with PhoneGap using a proven technology stack. The source code for each of the lessons is also provided in the [Stockpile app repo](https://github.com/phonegap/phonegap-app-stockpile/tree/tutorial-docs/docs) in case you run into problems and need to reset your working version at any point.
 
 ## Technology Stack
 
