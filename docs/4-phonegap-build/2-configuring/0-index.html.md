@@ -4,7 +4,7 @@ url: phonegap-build/configuring
 layout: subpage
 ---
 
-PhoneGap and PhoneGap Build are built upon the Apache Cordova Project. Spend some time at [docs.cordova.io](http://docs.cordova.io) to get more familiar with how PhoneGap and Cordova applications are configured.
+PhoneGap and PhoneGap Build are built upon the Apache Cordova Project. Spend some time with [the Cordova docs](https://cordova.apache.org/docs) to get more familiar with how PhoneGap and Cordova applications are configured.
 
 PhoneGap applications are configured using a `config.xml` file. This should be at the root of your application.
 
