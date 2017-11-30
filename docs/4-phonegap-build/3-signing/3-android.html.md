@@ -23,7 +23,7 @@ tabs:
 
 ## Generating a private key
 
-1. [Download and install Java](http://www.java.com/en/download/index.jsp).
+1. [Download and install Java](https://www.java.com/en/download/).
 
 1. [Set Java_Home directory](http://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/index.html).
 
