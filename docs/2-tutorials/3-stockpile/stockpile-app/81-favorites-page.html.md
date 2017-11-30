@@ -55,12 +55,12 @@ Replace the current `<f7-navbar ../>` component with the following:
 
   ```html
     <f7-navbar sliding>
-          <f7-nav-left>
-            <f7-link icon-f7="bars" open-panel="left"></f7-link>
-          </f7-nav-left>
-          <f7-nav-center>
-            Favorites
-          </f7-nav-center>
+      <f7-nav-left>
+        <f7-link icon-f7="bars" open-panel="left"></f7-link>
+      </f7-nav-left>
+      <f7-nav-center>
+        Favorites
+      </f7-nav-center>
     </f7-navbar>
   ```
 

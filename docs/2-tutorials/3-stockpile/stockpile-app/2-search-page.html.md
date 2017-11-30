@@ -153,7 +153,7 @@ Each of the views you will work with in this guide has a navigation bar implemen
 
   ```html
     <f7-block-title>Search for Stock images by keyword</f7-block-title>
-    <form ref="searchForm" form method="GET">
+    <form ref="searchForm" form method="GET" @submit.prevent="onSubmit">
       <f7-list>
         <f7-list-item>
           <f7-label floating v-if="isMaterial">Image search</f7-label>

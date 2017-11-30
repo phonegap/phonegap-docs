@@ -25,7 +25,7 @@ The Adobe Stockpile App uses the Split Panel template and you will learn how to 
 
 ## Project Structure
 
-Before moving on, below is a quick overview of the project structure you should see. This will be similar for each of the PhoneGap templats, and is a combination of the [vue-pwa-webpack template](https://github.com/vuejs-templates/pwa) and a PhoneGap CLI created project.
+Before moving on, below is a quick overview of the project structure you should see. This will be similar for each of the PhoneGap templates, and is a combination of the [vue-pwa-webpack template](https://github.com/vuejs-templates/pwa) and a PhoneGap CLI created project.
 
 A quick note about the contents of each asset is noted in the comments, but you can also refer to the [Vue Webpack template project docs](https://github.com/vuejs-templates/webpack/blob/develop/docs/structure.md) for specific details.
 
@@ -69,7 +69,7 @@ A quick note about the contents of each asset is noted in the comments, but you 
 
 ## www
 
-When the project is initially created, the `www` folder will include a sample PhoneGap Hello World application by default. Once you run the build commands however, the `www` will get ovewritten each time. Once built, the `www/index.html` file specifically represents the final template `index.html` for the single page application. During development and builds, Webpack will generate assets, and the URLs for those generated assets will be automatically injected into this index.html template to render the final HTML. DO NOT MODIFY the contents of the `www` folder or `www/index.html` file. All of your updates will be done in the `src` folder instead.
+When the project is initially created, the `www` folder will include a sample PhoneGap Hello World application by default. Once you run the build commands however, the `www` will get overwritten each time. Once built, the `www/index.html` file specifically represents the final template `index.html` for the single page application. During development and builds, Webpack will generate assets, and the URLs for those generated assets will be automatically injected into this index.html template to render the final HTML. DO NOT MODIFY the contents of the `www` folder or `www/index.html` file. All of your updates will be done in the `src` folder instead.
 
 ## src/main.js
 

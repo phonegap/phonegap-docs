@@ -153,7 +153,8 @@ Previously in this guide you created a `stockAPI.js` file with some functions us
 1. While in `Results.vue`, scroll down to the default export block and add the import for the `fetchStockAPIJSON` function at the top of the `<script>` block.
 
   ```javascript
-    import fetchStockAPIJSON from '../../utils/stockAPI';
+    <script>
+      import fetchStockAPIJSON from '../../utils/stockAPI';
   ```
 
 1. Now go back to the `fetchResults` method stub created previously and update the signature with 4 new parameters and define two constant variables for `columns` and `parameters` as shown below:

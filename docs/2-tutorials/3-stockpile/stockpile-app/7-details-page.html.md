@@ -31,7 +31,7 @@ Some of the details displayed can also lead to subsequent queries to the Adobe S
     {
       path: '/results/details/:id',
       component: Details
-    },
+    }
   ```
 
   Similar to the Results route, the Details route also uses [dynamic route matching by pattern](http://framework7.io/vue/navigation-router.html) based on the `id` parameter of the image selected.
@@ -249,19 +249,10 @@ Now locate the the `<script>` tag that holds the JavaScript `export` block since
     }
   ```
 
-1. Define a method stub for `fetchResults`:
-
-  ```javascript
-    methods: {
-      fetchResults () {}
-    }
-  ```
-
 1. Define the `loadInPhotoBrowser` method. This method is called when a card is clicked and will use the [Framework7 Photo Browser](http://framework7.io/vue/photo-browser.html) component you defined in the UI to open the image in a new window and allow it to be zoomed, panned etc:
 
   ```javascript
     methods: {
-      ...,
       loadInPhotoBrowser () {
         this.$refs.pb.open();
       }
