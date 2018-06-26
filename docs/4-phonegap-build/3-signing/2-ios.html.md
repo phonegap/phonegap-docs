@@ -13,7 +13,7 @@ tabs:
     url: phonegap-build/signing/windows 
 ---
 
-A Certificate and Mobile Provisioning file are required to build your iOS apps on PhoneGap Build, and in order to obtain these, an membership in the Apple Developer Program is required. During development, you will use a Development certificate which will allow you to install your iOS apps on a pre-selected set of specific devices (identified by their UUID). Once you're ready to publish, you'll sign the application with a Distribution certificate.
+A Certificate and Mobile Provisioning file are required to build your iOS apps on PhoneGap Build, and in order to obtain these, a membership in the Apple Developer Program is required. During development, you will use a Development certificate which will allow you to install your iOS apps on a pre-selected set of specific devices (identified by their UUID). Once you're ready to publish, you'll sign the application with a Distribution certificate.
 
 - [Creating your key on Mac](#mac-users)
 - [Creating your key on Windows](#windows-users)
