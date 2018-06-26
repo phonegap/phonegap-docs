@@ -11,7 +11,7 @@ tabs:
     url: references/developer-app/install/win
 ---
 
-1. The PhoneGap Developer App is not currently available in the iOS App Store.  It is possible to install build and install it yourself.  Details here: https://blog.phonegap.com/update-on-the-phonegap-developer-app-ios-99e07e3309dd
+1. The PhoneGap Developer App is not currently available in the iOS App Store.  It is possible to install build and install it yourself.  [Details Here](https://blog.phonegap.com/update-on-the-phonegap-developer-app-ios-99e07e3309dd)
 
 1. Once installed, tap the PhoneGap Developer app icon from your home screen you will be presented with the following screen:
 
