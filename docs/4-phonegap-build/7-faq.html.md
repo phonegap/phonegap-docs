@@ -23,7 +23,7 @@ expand: build
 
 ## What is the PhoneGap Build service and how is it different from PhoneGap?
 
-PhoneGap is a mobile application development framework, based upon the open source [Apache Cordova](http://incubator.apache.org/cordova/) project. It allows you to write an app once with HTML, CSS and JavaScript, and then deploy it to a wide range of mobile devices without losing the features of a native app.  PhoneGap Build is a cloud-based service built on top of the PhoneGap framework. It allows you to easily build those same mobile apps in the cloud.
+PhoneGap is a mobile application development framework, based upon the open source [Apache Cordova](https://cordova.apache.org/) project. It allows you to write an app once with HTML, CSS and JavaScript, and then deploy it to a wide range of mobile devices without losing the features of a native app.  PhoneGap Build is a cloud-based service built on top of the PhoneGap framework. It allows you to easily build those same mobile apps in the cloud.
 
 <a name="what-versions" class="anchor"></a>
 
