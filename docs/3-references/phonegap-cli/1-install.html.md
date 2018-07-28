@@ -31,7 +31,7 @@ $ npm install -g phonegap@5.1.1
 
 ## PhoneGap CLI Use Cases
 
-The PhoneGap CLI can be used for different stages of development and with other tools offered by the PhoneGap team. The multiples use cases are outlined below and will determine any other dependencies that may need to be installed.
+The PhoneGap CLI can be used for different stages of development and with other tools offered by the PhoneGap team. The multiple use cases are outlined below and will determine any other dependencies that may need to be installed.
 
 ### 1 - Paired with the PhoneGap Developer App
 
