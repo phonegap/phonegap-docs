@@ -486,7 +486,7 @@ When an error results, you will likely want to pass a message or object back ind
 pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Arg was null"];
 ```
 
-For a list of the different result types, see [this doc](http://cordova.apache.org/docs/en/edge/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide).
+For a list of the different result types, see [this doc](https://cordova.apache.org/docs/en/edge/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide).
 
 ### Create a Cordova Plugin
 

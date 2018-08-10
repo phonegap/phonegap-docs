@@ -10,7 +10,7 @@ Plugins can be from <a href="https://build.phonegap.com/plugins" target="_blank"
 
 Plugins need to be implemented differently for each platform, and may not be supported across all PhoneGap platforms. If you're deploying across multiple platforms, ensure that the experience degrades gracefully for users who do not have the plugin available.
 
-If you would like to develop and publish your a plugin to be used by the community, [please see the Plugin Development Guide at Apache Cordova](http://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/index.html). To submit a plugin to <a href="https://www.npmjs.com/">npm</a> please view their <a href="https://docs.npmjs.com/getting-started/publishing-npm-packages">documentation</a>.
+If you would like to develop and publish your a plugin to be used by the community, [please see the Plugin Development Guide at Apache Cordova](https://cordova.apache.org/docs/en/latest/guide/hybrid/plugins/index.html). To submit a plugin to <a href="https://www.npmjs.com/">npm</a> please view their <a href="https://docs.npmjs.com/getting-started/publishing-npm-packages">documentation</a>.
 
 ## Including a plugin in your project
 

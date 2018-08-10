@@ -14,4 +14,4 @@ layout: subpage
   <li>[Plugin APIs](plugin-apis)</li>
 </ul>
 
-If you're looking for information on the Cordova CLI or specific Cordova configuration, you should refer to the [Official Apache Cordova Documentation](http://cordova.apache.org/docs/en/latest/).
+If you're looking for information on the Cordova CLI or specific Cordova configuration, you should refer to the [Official Apache Cordova Documentation](https://cordova.apache.org/docs/en/latest/).
