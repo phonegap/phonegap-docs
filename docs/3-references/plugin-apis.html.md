@@ -30,4 +30,4 @@ The most current version of the Cordova Core Plugin APIs are found in their resp
 
 ## General Plugin Discovery
 
-You can also find a full directory of Cordova Plugins on the [Cordova Plugin page](http://cordova.apache.org/plugins/)
+You can also find a full directory of Cordova Plugins on the [Cordova Plugin page](https://cordova.apache.org/plugins/)

@@ -18,7 +18,7 @@ The PhoneGap CLI provides a command line interface for creating PhoneGap apps as
 
 There are a few simple requirements you'll need prior to installing the PhoneGap CLI:
 
-- [node.js](http://nodejs.org/) - a JavaScript runtime to build your JavaScript code
+- [node.js](https://nodejs.org/) - a JavaScript runtime to build your JavaScript code
 - [git](http://git-scm.com) - used in the background by the CLI to download assets. It comes pre-installed on some operating systems.
 
 To see if you already have it installed, type `git` from the command line.

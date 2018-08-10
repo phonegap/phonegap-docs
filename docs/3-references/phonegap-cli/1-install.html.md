@@ -6,7 +6,7 @@ layout: subpage
 
 There are a few basic requirements you'll need prior to installing the PhoneGap CLI:
 
-- [Node.js](http://nodejs.org/) - a JavaScript runtime to build your JavaScript code
+- [Node.js](https://nodejs.org/) - a JavaScript runtime to build your JavaScript code
 - [git](http://git-scm.com) - used in the background by the CLI to download assets. It comes pre-installed on some operating systems. You can check if it's already installed by typing `git` from the command line.
 
 ## Install via npm
@@ -47,6 +47,6 @@ Use the PhoneGap CLI to create and configure your apps locally, then build and p
 
 ### 3 - Standalone
 
-The PhoneGap CLI can be used to do everything from creating your apps to packaging them for distribution. To build, run and package apps for multiple platforms you'll need to install some additional SDK's and/or tools for the platforms you wish to target. Refer to the [Cordova Platform Guides](http://cordova.apache.org/docs/en/edge/index.html) for details on how to proceed for each platform.
+The PhoneGap CLI can be used to do everything from creating your apps to packaging them for distribution. To build, run and package apps for multiple platforms you'll need to install some additional SDK's and/or tools for the platforms you wish to target. Refer to the [Cordova Platform Guides](https://cordova.apache.org/docs/en/edge/index.html) for details on how to proceed for each platform.
 
 <div class="alert--tip">**TIP:** If you're developing for iOS on a Mac, you may want to install the [ios-sim](https://github.com/phonegap/ios-sim#installation) iOS simulator to emulate easily from the command line rather than going into Xcode.</div>

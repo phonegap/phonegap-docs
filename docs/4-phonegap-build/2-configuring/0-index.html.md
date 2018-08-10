@@ -10,7 +10,7 @@ PhoneGap applications are configured using a `config.xml` file. This should be a
 
 The `config.xml` file follows the [W3C widget specification](http://www.w3.org/TR/widgets/). It allows developers to easily specify metadata about their applications. You can see a sample `config.xml` with our [PhoneGap Start](https://github.com/phonegap/phonegap-start/blob/master/www/config.xml) application.
 
-We're continually adding features to our `config.xml` support to give PhoneGap Build developers more power to customize their apps. If there are any specific features you'd like to see support for, [please let us know](http://forums.adobe.com/community/phonegap/build).
+We're continually adding features to our `config.xml` support to give PhoneGap Build developers more power to customize their apps. If there are any specific features you'd like to see support for, [please let us know](https://forums.adobe.com/community/phonegap/build).
 
 1. [Essential Properties](#props)
 1. [Example config.xml](#example)
@@ -60,7 +60,7 @@ You can have zero or more of these elements present in your <code>config.xml</co
 <platform name="winphone" />
 ```
 
-All of the above fields are standard Cordova config.xml tags. For more detailed info about the above elements, and all the others available, see [the Cordova config.xml documentation](http://cordova.apache.org/docs/en/latest/config_ref/index.html). Most of these will work on PhoneGap Build, but if you face issues with any specific tags, [let us know](https://forums.adobe.com/community/phonegap/build).
+All of the above fields are standard Cordova config.xml tags. For more detailed info about the above elements, and all the others available, see [the Cordova config.xml documentation](https://cordova.apache.org/docs/en/latest/config_ref/index.html). Most of these will work on PhoneGap Build, but if you face issues with any specific tags, [let us know](https://forums.adobe.com/community/phonegap/build).
 
 <a class="anchor" id="example"></a>
 

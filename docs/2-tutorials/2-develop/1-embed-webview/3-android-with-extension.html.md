@@ -79,7 +79,7 @@ This tutorial will show you how to add PhoneGap/Cordova support to an existing A
 
 ### Set up PhoneGap/Cordova in your project
 
-* Make sure you have [NodeJS](https://nodejs.org) installed. If you already have [NodeJS](https://nodejs.org) installed make sure you `npm install -g plugman`
+* Make sure you have [NodeJS](https://nodejs.org) installed. If you already have NodeJS installed make sure you `npm install -g plugman`
 * Go to **Android Studio** > `Preferences` > `Plugins` and click on _Browse Repositories_ button.
 * Search for `PhoneGap` and install it. Make sure you don't install the **PhoneGap/Cordova Plugin**
 * Restart **Android Studio**
