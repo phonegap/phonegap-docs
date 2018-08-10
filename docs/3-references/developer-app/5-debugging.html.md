@@ -15,7 +15,7 @@ more complete control over your debugging environment you should plan to use the
 
 You can run weinre on your local machine and use it to debug your application being served from either the PhoneGap Desktop App or the PhoneGap CLI.
 
-1. Install weinre using npm (requires [Node.js](http://nodejs.org))
+1. Install weinre using npm (requires [Node.js](https://nodejs.org))
 
   ```sh
   $ sudo npm install -g weinre
