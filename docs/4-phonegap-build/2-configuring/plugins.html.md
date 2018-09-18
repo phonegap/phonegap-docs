@@ -169,11 +169,20 @@ Here is a config.xml that includes the Barcode Scanner plugin from npm as an exa
 
 If a plugin utilizes the <code>js-module</code> element to direct cordova to load the plugin javascripts, then no <code>&lt;script&gt;</code> references will be necessary to load a plugin. This is the case for the core cordova plugins, but 3rd party plugins will be implementation-dependent. Refer to the plugin's documentation to determine if you'll need to manually include the javascript.
 
-If you do need to manually include the plugin javascript, it would look like the following:
+If you do need to manually include the plugin javascript, include what you wish to add and the cordova.js script, it should look like one of the following:
 
 ```xml
 <script src="cordova.js"></script>
 <script src="barcodescanner.js"></script>
 ```
+or
+
+```xml
+<script src="cordova.js"></script>
+<script src="ble.js"></script>
+<script src="BLECentralPlugin.js"></script>
+```
+
+You may need to tag other dependencies as well depending on the plugin
 
 Whether the script tag is required or not, **do not include the actual plugin files in the zip or repository which you submit to PhoneGap Build**. These files will be injected by PhoneGap Build, and including them may cause problems.
