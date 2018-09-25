@@ -10,19 +10,19 @@
   },
   "dependencies": {
     "autoprefixer-stylus": "^0.5.0",
-    "docpad": "^6.82.4",
-    "docpad-plugin-browsersync": "~2.0.7",
-    "docpad-plugin-cleanurls": "~2.8.1",
+    "docpad": "^6.80.9",
+    "docpad-plugin-browsersync": "^2.0.7",
+    "docpad-plugin-cleanurls": "^2.11.0",
     "docpad-plugin-eco": "~2.1.0",
     "docpad-plugin-highlightjs": "~2.3.0",
-    "docpad-plugin-jade": "^3.0.0",
+    "docpad-plugin-jade": "~2.10.0",
     "docpad-plugin-marked": "~2.3.0",
-    "docpad-plugin-stylus": "~2.11.0",
+    "docpad-plugin-stylus": "^2.14.0",
     "jasmine": "^3.2.0"
   },
   "devDependencies": {
     "fs-extra": "0.18.0",
-    "markdownlint-cli": "^0.2.0",
+    "markdownlint-cli": "^0.13.0",
     "npm": "^6.4.1"
   },
   "main": "node_modules/docpad/bin/docpad-server",
