@@ -169,7 +169,7 @@ Here is a config.xml that includes the Barcode Scanner plugin from npm as an exa
 
 If a plugin utilizes the <code>js-module</code> element to direct cordova to load the plugin javascripts, then no <code>&lt;script&gt;</code> references will be necessary to load a plugin. This is the case for the core cordova plugins, but 3rd party plugins will be implementation-dependent. Refer to the plugin's documentation to determine if you'll need to manually include the javascript.
 
-If you do need to manually include the plugin javascript, include what you wish to add and the cordova.js script, it should look like one of the following:
+If you do need to manually include the plugin javascript, include it after the cordova.js script tag. It should look like one of the following:
 
 ```xml
 <script src="cordova.js"></script>
