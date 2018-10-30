@@ -128,7 +128,7 @@ If no prompt appears, you can manually allow access:
 
 <img class="mobile-image" src="/images/node_js_firewall_allowed_apps.png" alt="Firewall allowed apps">
 
-On Mac OSX, the firewall is in `System Preferences > Security & Privacy` ([Apple's firewall documentation](https://support.apple.com/kb/PH21748?viewlocale=en_US&locale=en_US)).
+On Mac OSX, the firewall is in `System Preferences > Security & Privacy`
 
 Fifth, the network firewall may be blocking the port used by `phonegap serve`. If you have access to your router/network settings, then you open the port for internal network communication. If you can't open the port through your network settings, then you can try specify a different port:
 
