@@ -394,13 +394,13 @@ $ plugman install --platform android --plugin https://github.com/hollyschinsky/H
 1. Now, open your terminal and cd into the root of your hybrid android project. Install your new plugin with the following syntax and using the path to your own hybrid plugin after the `--plugin` option:
 
   ```sh
-  $ plugman install --platform android --plugin ~/HybridBridgePlugin --project .
+  $ plugman install --platform android --project . --plugin ~/HybridBridgePlugin 
   ```
 
   If you have any issues with the above you can install the sample plugin directly with the following command:
 
   ```sh
-  $ plugman install --platform android --plugin https://github.com/hollyschinsky/HybridBridgePlugin.git --project .
+  $ plugman install --platform android --project . --plugin https://github.com/hollyschinsky/HybridBridgePlugin.git 
   ```
 
 <a class="anchor" id="step8"></a>
