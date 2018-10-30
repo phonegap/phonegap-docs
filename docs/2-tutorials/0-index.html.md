@@ -9,7 +9,6 @@ layout: subpage
 <ul class="landing-submenu">
   <li>[Embedding the Webview](develop/1-embed-webview/ios)</li>
   <li>[Hello World Explained](develop/hello-world-explained)</li>
-  <li>[Push Notifications](develop/push-notifications)</li>
   <li>[Wikitude's Augmented Reality](develop/wikitude)</li>
 </ul>
 
