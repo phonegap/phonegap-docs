@@ -11,7 +11,104 @@ tabs:
     url: tutorials/develop/1-embed-webview/android-with-extension
 ---
 
-## Creating Apps with PhoneGap and Android Native Components
+## Options
+
+There are two options available to embed an Android WebView into an existing
+native Android app.
+
+- [IntelliJ Plugin for Android Studio and JetBrains](#intellij)
+- [Manual Approach](#manual)
+
+<a class="anchor" id="intellij"></a>
+
+## Option 1: IntelliJ Plugin for Android Studio and JetBrains
+
+### Step 1: Setup the Cordova WebView in the Android project
+
+1. Make sure you have [NodeJS](https://nodejs.org) installed. If you already have [NodeJS](https://nodejs.org) installed make sure you `npm install -g plugman`
+1. Go to **Android Studio** > `Preferences` > `Plugins` and click on _install JetBrains Plugin_ button.
+1. Search for `PhoneGap` and install it. Make sure you don't install the **PhoneGap/Cordova Plugin**
+1. Restart **Android Studio**
+1. Go to `Tools` > `PhoneGap` > `Initialize Project`
+
+![Initialize Phonegap Project](/images/tutorials/develop/embed-webview/android/phonegap_initialize.png)
+
+Once the phonegap project has been initialized , plugins can be installed from by going to
+`Tools` > `PhoneGap` > `Install Plugin from npm`. Plugins residing in local filesystem can be installed by going to `Tools` > `PhoneGap` > `Install Plugin from filesystem`
+
+![Install Plugins](/images/tutorials/develop/embed-webview/android/install_plugin.png)
+
+### Step 2: Add the Cordova WebView
+
+1. open `res/layout/content_main.xml` and replace the TextView with the following
+
+  ```XML
+    <org.apache.cordova.engine.SystemWebView
+        android:id="@+id/WebViewComponent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </org.apache.cordova.engine.SystemWebView>
+  ```
+1. Add the following attributes to `MainActivity.java`. Make sure you fix the imports.
+
+  ```Java
+    private String TAG = "ComponentWrapper";
+    private SystemWebView webView;
+    private CordovaWebView webInterface;
+    private CordovaInterfaceImpl pgwebView = new CordovaInterfaceImpl(this);
+  ```
+1. Add the following lines at the bottom of your `onCreate` method
+
+  ```Java
+  //Set up the webview
+  ConfigXmlParser parser = new ConfigXmlParser();
+  parser.parse(this);
+
+  webView = (SystemWebView) findViewById(R.id.WebViewComponent);
+  webInterface = new CordovaWebViewImpl(new SystemWebViewEngine(webView));
+  webInterface.init(pgwebView, parser.getPluginEntries(), parser.getPreferences());
+  webView.loadUrl(parser.getLaunchUrl());
+  ```
+
+1. These methods are required for `CordovaWebView` to work properly. Add them and fix imports
+
+  ```Java
+    @Override
+    public void onDestroy()
+    {
+        webInterface.handleDestroy();
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        pgwebView.onActivityResult(requestCode, resultCode, intent);
+    }
+
+    public void onRequestPermissionsResult(int requestCode, String permissions[],
+                                           int[] grantResults) {
+        try
+        {
+            pgwebView.onRequestPermissionResult(requestCode, permissions, grantResults);
+        }
+        catch (JSONException e)
+        {
+            Log.d(TAG, "JSONException: Parameters fed into the method are not valid");
+            e.printStackTrace();
+        }
+
+    }
+
+  ```
+
+  The result of including this embedded webview in an Android project may look like the following image :
+
+  ![Webview](/images/tutorials/develop/embed-webview/android/webview.png)
+
+<a class="anchor" id="manual"></a>
+
+## Option 2: Creating Apps with PhoneGap and Android Native Components
 
 In this guide we'll walk through the basic steps needed to create a native hybrid Android app that has elements of both native Android components and a Cordova webview. For more information about why you might choose this approach, read [this blog post](http://phonegap.com/blog/2015/03/12/mobile-choices-post1/).
 
@@ -293,13 +390,13 @@ $ plugman install --platform android --plugin https://github.com/hollyschinsky/H
 1. Now, open your terminal and cd into the root of your hybrid android project. Install your new plugin with the following syntax and using the path to your own hybrid plugin after the `--plugin` option:
 
   ```sh
-  $ plugman install --platform android --plugin ~/HybridBridgePlugin --project .
+  $ plugman install --platform android --project . --plugin ~/HybridBridgePlugin
   ```
 
   If you have any issues with the above you can install the sample plugin directly with the following command:
 
   ```sh
-  $ plugman install --platform android --plugin https://github.com/hollyschinsky/HybridBridgePlugin.git --project .
+  $ plugman install --platform android --project . --plugin https://github.com/hollyschinsky/HybridBridgePlugin.git
   ```
 
 <a class="anchor" id="step8"></a>
@@ -348,7 +445,7 @@ $ plugman install --platform android --plugin https://github.com/hollyschinsky/H
   addItem: function() {
     console.log("Plugin ADD ITEM CALLED " + HybridBridge);
     var item = document.getElementById("bookmark").value;
-    HybridBridge.addItem(item,function(){console.log("Hybrid Bridge Success")},function(e){console.log("Hybrid Bridge Error" + e)});
+    HybridBridge.addItem(item, "org.sample.hybridandroidapp.MyListActivity", function(){console.log("Hybrid Bridge Success")},function(e){console.log("Hybrid Bridge Error" + e)});
   },
   showDeviceInfo: function(){
     var message = 'Cordova version: ' + device.cordova;

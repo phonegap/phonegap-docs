@@ -18,7 +18,7 @@ PhoneGap and PhoneGap Build use an open packaging model that follows the [W3C Wi
 
 #### Don't include phonegap.js or plugin files
 
-PhoneGap Build will inject `phonegap.js`, `cordova.js` (identical sources), and any files required by your plugins, into the root of your www. This is because these files differ depending on the versions of PhoneGap and any plugins you are using. However you do still need to source phonegap.js or cordova.js (both are available and they are identical) from your html files.
+PhoneGap Build will inject `cordova.js` and any files required by your plugins, into the root of your www. This is because these files differ depending on the versions of PhoneGap and any plugins you are using. However you do still need to source cordova.js from your html files.
 
     <script src="cordova.js"></script>
 

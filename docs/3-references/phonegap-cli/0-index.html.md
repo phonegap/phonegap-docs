@@ -22,15 +22,14 @@ The PhoneGap CLI is supported on Mac and Windows.
 
 The sections covered in this reference include:
 
-- [Installing the CLI](/references/phonegap-cli/install)
-- [Help Options](/references/phonegap-cli/help)
-- [Creating an app](/references/phonegap-cli/create)
-- [Use with PhoneGap Build](/references/phonegap-cli/remote-usage)
-- [Serving an App](/references/phonegap-cli/serve)
-- [Using Templates](/references/phonegap-cli/templates)
-- [Cordova-specific Commands](/references/phonegap-cli/cordova)
-- [Updating CLI Version](/references/phonegap-cli/update)
-- [Sending Push Notifications](/references/phonegap-cli/push)
+* [Installing the CLI](/references/phonegap-cli/install)
+* [Help Options](/references/phonegap-cli/help)
+* [Creating an app](/references/phonegap-cli/create)
+* [Use with PhoneGap Build](/references/phonegap-cli/remote-usage)
+* [Serving an App](/references/phonegap-cli/serve)
+* [Using Templates](/references/phonegap-cli/templates)
+* [Cordova-specific Commands](/references/phonegap-cli/cordova)
+* [Updating CLI Version](/references/phonegap-cli/update)
 
 <div class="alert--info">**NOTE:** The PhoneGap CLI is built as a layer on top of the Apache Cordova CLI, so any command that can be used in Cordova
 is also supported by the PhoneGap CLI. This guide will detail the *additional* features that distinguish the PhoneGap CLI from the Cordova CLI and should be used along with the [Cordova CLI Reference](https://cordova.apache.org/docs/en/edge/index.html). For more details on the difference between PhoneGap and Apache Cordova, check out [this page](/getting-started/5-going-further).</div>
