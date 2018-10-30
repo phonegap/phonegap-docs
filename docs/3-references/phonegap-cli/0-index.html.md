@@ -8,9 +8,9 @@ layout: subpage
 
 The PhoneGap CLI provides a command line interface for creating PhoneGap apps as an alternative to using the [PhoneGap Desktop](/references/desktop-app) application. The PhoneGap CLI was the main tool used for creating PhoneGap apps prior to PhoneGap Desktop and contains additional features over the PhoneGap Desktop for building, running and packaging PhoneGap applications for multiple platforms. The use cases for the PhoneGap CLI will vary depending on the user and level they want to use it:
 
-1.  Paired with the PhoneGap Developer App
-1.  Paired with PhoneGap Build
-1.  Standalone
+1. Paired with the PhoneGap Developer App
+1. Paired with PhoneGap Build
+1. Standalone
 
 More details about these use cases can be found in the [Installation guide](/references/phonegap-cli/install).
 

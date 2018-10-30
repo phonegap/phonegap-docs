@@ -175,6 +175,7 @@ If you do need to manually include the plugin javascript, include it after the c
 <script src="cordova.js"></script>
 <script src="barcodescanner.js"></script>
 ```
+
 or
 
 ```xml

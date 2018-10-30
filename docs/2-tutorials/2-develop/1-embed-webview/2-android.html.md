@@ -23,23 +23,20 @@ native Android app.
 
 ## Option 1: IntelliJ Plugin for Android Studio and JetBrains
 
-
 ### Step 1: Setup the Cordova WebView in the Android project
 
 1. Make sure you have [NodeJS](https://nodejs.org) installed. If you already have [NodeJS](https://nodejs.org) installed make sure you `npm install -g plugman`
-2. Go to **Android Studio** > `Preferences` > `Plugins` and click on _install JetBrains Plugin_ button.
-3. Search for `PhoneGap` and install it. Make sure you don't install the **PhoneGap/Cordova Plugin**
-4. Restart **Android Studio** 
-5. Go to `Tools` > `PhoneGap` > `Initialize Project`
+1. Go to **Android Studio** > `Preferences` > `Plugins` and click on _install JetBrains Plugin_ button.
+1. Search for `PhoneGap` and install it. Make sure you don't install the **PhoneGap/Cordova Plugin**
+1. Restart **Android Studio**
+1. Go to `Tools` > `PhoneGap` > `Initialize Project`
 
 ![Initialize Phonegap Project](/images/tutorials/develop/embed-webview/android/phonegap_initialize.png)
-  
+
 Once the phonegap project has been initialized , plugins can be installed from by going to
 `Tools` > `PhoneGap` > `Install Plugin from npm`. Plugins residing in local filesystem can be installed by going to `Tools` > `PhoneGap` > `Install Plugin from filesystem`
 
 ![Install Plugins](/images/tutorials/develop/embed-webview/android/install_plugin.png)
-
-
 
 ### Step 2: Add the Cordova WebView
 
@@ -52,7 +49,7 @@ Once the phonegap project has been initialized , plugins can be installed from b
         android:layout_height="match_parent">
     </org.apache.cordova.engine.SystemWebView>
   ```
-2. Add the following attributes to `MainActivity.java`. Make sure you fix the imports.
+1. Add the following attributes to `MainActivity.java`. Make sure you fix the imports.
 
   ```Java
     private String TAG = "ComponentWrapper";
@@ -60,7 +57,7 @@ Once the phonegap project has been initialized , plugins can be installed from b
     private CordovaWebView webInterface;
     private CordovaInterfaceImpl pgwebView = new CordovaInterfaceImpl(this);
   ```
-3. Add the following lines at the bottom of your `onCreate` method
+1. Add the following lines at the bottom of your `onCreate` method
 
   ```Java
   //Set up the webview
@@ -73,7 +70,7 @@ Once the phonegap project has been initialized , plugins can be installed from b
   webView.loadUrl(parser.getLaunchUrl());
   ```
 
-4. These methods are required for `CordovaWebView` to work properly. Add them and fix imports
+1. These methods are required for `CordovaWebView` to work properly. Add them and fix imports
 
   ```Java
     @Override
@@ -82,7 +79,7 @@ Once the phonegap project has been initialized , plugins can be installed from b
         webInterface.handleDestroy();
         super.onDestroy();
     }
-  
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
@@ -108,7 +105,6 @@ Once the phonegap project has been initialized , plugins can be installed from b
   The result of including this embedded webview in an Android project may look like the following image :
 
   ![Webview](/images/tutorials/develop/embed-webview/android/webview.png)
-
 
 <a class="anchor" id="manual"></a>
 
@@ -394,13 +390,13 @@ $ plugman install --platform android --plugin https://github.com/hollyschinsky/H
 1. Now, open your terminal and cd into the root of your hybrid android project. Install your new plugin with the following syntax and using the path to your own hybrid plugin after the `--plugin` option:
 
   ```sh
-  $ plugman install --platform android --project . --plugin ~/HybridBridgePlugin 
+  $ plugman install --platform android --project . --plugin ~/HybridBridgePlugin
   ```
 
   If you have any issues with the above you can install the sample plugin directly with the following command:
 
   ```sh
-  $ plugman install --platform android --project . --plugin https://github.com/hollyschinsky/HybridBridgePlugin.git 
+  $ plugman install --platform android --project . --plugin https://github.com/hollyschinsky/HybridBridgePlugin.git
   ```
 
 <a class="anchor" id="step8"></a>
