@@ -11,7 +11,108 @@ tabs:
     url: tutorials/develop/1-embed-webview/android-with-extension
 ---
 
-## Creating Apps with PhoneGap and Android Native Components
+## Options
+
+There are two options available to embed an Android WebView into an existing
+native Android app.
+
+- [IntelliJ Plugin for Android Studio and JetBrains](#intellij)
+- [Manual Approach](#manual)
+
+<a class="anchor" id="intellij"></a>
+
+## Option 1: IntelliJ Plugin for Android Studio and JetBrains
+
+
+### Step 1: Setup the Cordova WebView in the Android project
+
+1. Make sure you have [NodeJS](https://nodejs.org) installed. If you already have [NodeJS](https://nodejs.org) installed make sure you `npm install -g plugman`
+2. Go to **Android Studio** > `Preferences` > `Plugins` and click on _install JetBrains Plugin_ button.
+3. Search for `PhoneGap` and install it. Make sure you don't install the **PhoneGap/Cordova Plugin**
+4. Restart **Android Studio** 
+5. Go to `Tools` > `PhoneGap` > `Initialize Project`
+
+![Initialize Phonegap Project](/images/tutorials/develop/embed-webview/android/phonegap_initialize.png)
+  
+Once the phonegap project has been initialized , plugins can be installed from by going to
+`Tools` > `PhoneGap` > `Install Plugin from npm`. Plugins residing in local filesystem can be installed by going to `Tools` > `PhoneGap` > `Install Plugin from filesystem`
+
+![Install Plugins](/images/tutorials/develop/embed-webview/android/install_plugin.png)
+
+
+
+### Step 2: Add the Cordova WebView
+
+1. open `res/layout/content_main.xml` and replace the TextView with the following
+
+  ```XML
+    <org.apache.cordova.engine.SystemWebView
+        android:id="@+id/WebViewComponent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </org.apache.cordova.engine.SystemWebView>
+  ```
+2. Add the following attributes to `MainActivity.java`. Make sure you fix the imports.
+
+  ```Java
+    private String TAG = "ComponentWrapper";
+    private SystemWebView webView;
+    private CordovaWebView webInterface;
+    private CordovaInterfaceImpl pgwebView = new CordovaInterfaceImpl(this);
+  ```
+3. Add the following lines at the bottom of your `onCreate` method
+
+  ```Java
+  //Set up the webview
+  ConfigXmlParser parser = new ConfigXmlParser();
+  parser.parse(this);
+
+  webView = (SystemWebView) findViewById(R.id.WebViewComponent);
+  webInterface = new CordovaWebViewImpl(new SystemWebViewEngine(webView));
+  webInterface.init(pgwebView, parser.getPluginEntries(), parser.getPreferences());
+  webView.loadUrl(parser.getLaunchUrl());
+  ```
+
+4. These methods are required for `CordovaWebView` to work properly. Add them and fix imports
+
+  ```Java
+    @Override
+    public void onDestroy()
+    {
+        webInterface.handleDestroy();
+        super.onDestroy();
+    }
+  
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        pgwebView.onActivityResult(requestCode, resultCode, intent);
+    }
+
+    public void onRequestPermissionsResult(int requestCode, String permissions[],
+                                           int[] grantResults) {
+        try
+        {
+            pgwebView.onRequestPermissionResult(requestCode, permissions, grantResults);
+        }
+        catch (JSONException e)
+        {
+            Log.d(TAG, "JSONException: Parameters fed into the method are not valid");
+            e.printStackTrace();
+        }
+
+    }
+
+  ```
+
+  The result of including this embedded webview in an Android project may look like the following image :
+
+  ![Webview](/images/tutorials/develop/embed-webview/android/webview.png)
+
+
+<a class="anchor" id="manual"></a>
+
+## Option 2: Creating Apps with PhoneGap and Android Native Components
 
 In this guide we'll walk through the basic steps needed to create a native hybrid Android app that has elements of both native Android components and a Cordova webview. For more information about why you might choose this approach, read [this blog post](http://phonegap.com/blog/2015/03/12/mobile-choices-post1/).
 
