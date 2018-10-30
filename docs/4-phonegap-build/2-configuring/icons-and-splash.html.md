@@ -5,7 +5,7 @@ layout: subpage
 ---
 
 <div class='alert--warning' style="font-style:bold">
-As of cli-7.0.1 and the new builder ([more info](https://blog.phonegap.com/phonegap-7-0-1-now-on-build-and-it-includes-some-important-changes-89087fe465f5)), PhoneGap Build hands off to Cordova put read your icon and splash configurations and put them where they need to be. As a result, we recommend referring to the Cordova [Icon](https://cordova.apache.org/docs/en/latest/config_ref/images.html) and [Splashscreen Plugin](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/index.html) docs for the most up to date instructions. Otherwise if you're still using cli-6.5.0 (and the old builder), see below.
+As of cli-7.0.1 and the new builder ([more info](https://blog.phonegap.com/phonegap-7-0-1-now-on-build-and-it-includes-some-important-changes-89087fe465f5)), PhoneGap Build hands off handling the splash screen to Cordova. As a result, we recommend referring to the Cordova [Icon](https://cordova.apache.org/docs/en/latest/config_ref/images.html) and [Splashscreen Plugin](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/index.html) docs for the most up to date instructions. Otherwise if you're still using cli-6.5.0 (and the old builder), see below.
 </div>
 
 - [Icons](#icons)
