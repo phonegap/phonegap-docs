@@ -1,6 +1,3 @@
----
-url: 404.html
----
 - var scripts = getBlock('scripts')
 - var styles = getBlock('styles')
 
@@ -8,7 +5,7 @@ doctype html
 html(lang='en')
 
   head
-    title PhoneGap Docs 404
+    title=document.title +" | PhoneGap Docs"
     block meta
       meta(name="viewport", content="initial-scale=1.0")
       script(src="//use.typekit.net/exp7awb.js")
@@ -24,22 +21,28 @@ html(lang='en')
       link(href='/styles/zenburn-highlight.css', rel='stylesheet')
       link(href='/styles/normalize.css', rel='stylesheet')
       link(href='http://phonegap.com/styles/main.css', rel='stylesheet')
-
-  body.no-subheader
+      link(href='/styles/index.css', rel='stylesheet')
+  body
     block site-header
-      include ../layouts/includes/site-header.jade
-    .page-content
-      .wrapper
-        .four-oh-four
-          h1.four-oh-four-title 404
-          p.four-oh-four-description Sorry, the page you are looking for does not exist.
-          .four-oh-four-image
-            img(src='http://phonegap.com/images/landspeeder_white_border.png', alt='Landspeeder')
-          a.button--cta(href='/') Speed to the homepage
+      include ./includes/site-header.pug
+    main
+      .bounds
+        block main
+          include ./includes/sidebar.pug
+          .content
+            p.language-select-container
+              select#language-select.language-select
+                option(value="http://docs.phonegap.com/" selected) English
+                option(value="http://ja.docs.phonegap.com/") Japanese
+            block content
+              -if(document.tabs)
+                include ./includes/tabs.pug
+              h1!= document.title
+              != content
     block site-footer
-      include ../layouts/includes/site-footer.jade
+      include ./includes/site-footer.pug
 
     block scripts
       != scripts.toHTML()
 
-    include ../layouts/includes/analytics.jade
+    include ./includes/analytics.pug

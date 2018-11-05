@@ -18,6 +18,11 @@ var docpad = require('docpad'),
 docpad.createInstance(docpadInstanceConfig, function(e, docpadInstance) {
     if (e) throw new Error('failed');
 
+    console.log('docpadGenerateConfig ', docpadGenerateConfig);
+    console.log('docpadInstanceConfig ', docpadInstanceConfig);
+    
+
+
     docpadInstance.action('generate', docpadGenerateConfig, function(e, result) {
         if (e) {
             console.error(e);

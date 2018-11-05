@@ -113,10 +113,10 @@ push over its history.
 You may see an error such as :
 
 ```bash
-error: Something went wrong while rendering: /Users/mwbrooks/Development/lib/phonegap-docs/docs/tutorials/optimize/index.html.jade
+error: Something went wrong while rendering: /Users/mwbrooks/Development/lib/phonegap-docs/docs/tutorials/optimize/index.html.pug
 The error follows:
 
-TypeError: /Users/mwbrooks/Development/lib/phonegap-docs/layouts/tutorialspage.html.jade:21
+TypeError: /Users/mwbrooks/Development/lib/phonegap-docs/layouts/tutorialspage.html.pug:21
     19|       .prev &nbsp;
     20|     -if(document.next)
   > 21|       - var next = getCollection("html").findOne({url:document.next}).toJSON();
