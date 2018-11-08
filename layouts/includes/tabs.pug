@@ -4,4 +4,4 @@ nav.tabs: ul
     -if(tab.url == document.url)
       li.tabs__item--current!=tab.label
     -else
-      li.tabs__item: a(href="/#{tab.url}")!=tab.label    
+      li.tabs__item: a(href="/" + tab.url)!=tab.label

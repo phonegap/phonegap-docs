@@ -41,7 +41,7 @@ aside.sidebar
           each page in getCollection('getStartedDocs').toJSON()
             - var depth = page.url.match(/\//g||[]).length
             if (depth==1 || page.tabs!=null && page.tabs[0].url===page.url)
-              li: a.sidenav__sub2(href="/#{page.url}" style="display:none " class="/getting-started/" class=document.url === page.url? "current" : "")!=page.title
+              li: a.sidenav__sub2(href="/" + page.url style="display:none " class="/getting-started/" class=document.url === page.url? "current" : "")!=page.title
       li
         a.sidenav__sub1(href="/tutorials" class=document.url === "tutorials"? "current" : "") Tutorials
         ul.sidenav__sublist
@@ -51,7 +51,7 @@ aside.sidebar
             // 2nd level starts expanding (tutorials/develop/... etc)
             if (depth>1)
               if (page.tabs==null || page.tabs[0].url===page.url)
-                  li: a.sidenav__sub2(href="/#{page.url}" style="display:none " class="/tutorials/" class=document.url === page.url? "current" : "")!=page.title                      
+                  li: a.sidenav__sub2(href="/" + page.url style="display:none " class="/tutorials/" class=document.url === page.url? "current" : "")!=page.title
       li
         a.sidenav__sub1(href="/references" class=document.url === "references"? "current" : "") References
         ul.sidenav__sublist
@@ -59,26 +59,26 @@ aside.sidebar
             - var depth = page.url.match(/\//g||[]).length
             // 1st level of references are expandable
             if (depth==1)
-              li: a.sidenav__sub2(href="/#{page.url}" style="display:none "  class="/references/" class=document.url === page.url? "current" : "")!=page.title
+              li: a.sidenav__sub2(href="/" + page.url style="display:none "  class="/references/" class=document.url === page.url? "current" : "")!=page.title
               ul(class="/#{page.url}/" style="display:none") 
                 each doc in getCollection("referenceDocs").findAllLive({url: {$startsWith:page.url }}, [{ relativeBase: 1 }]).toJSON()
                   - subDepth = doc.url.match(/\//g||[]).length
                   // Now only want to list depths greater than the main category and need to check for tabs and only use 1st or will duplicate
                   if (subDepth > 1) 
                       if (doc.tabs==null || doc.tabs[0].url===doc.url)
-                          li: a.sidenav__sub3(href="/#{doc.url}" style="display:none " class="/#{page.url}/"  class=document.url === doc.url ? "current" : "")!=doc.title                                                                  
+                          li: a.sidenav__sub3(href=doc.url style="display:none " class="/#{page.url}/"  class=document.url === doc.url ? "current" : "")!=doc.title
       li
         a.sidenav__sub1(href="/phonegap-build" class=document.url === "phonegap-build"? "current" : "") PhoneGap Build
         ul.sidenav__sublist
           each page in getCollection('pgbDocs').toJSON()
             - var depth = page.url.match(/\//g||[]).length
             if (depth==1 || page.tabs!=null && page.tabs[0].url===page.url)
-              li: a.sidenav__sub2(href="/#{page.url}" style="display:none " class="/phonegap-build/" class=document.url === page.url? "current" : "")!=page.title
-              - var coll = getCollection("pgbDocs").findAllLive({url: {$startsWith:page.url }}, [{ relativeBase: 1 }]).toJSON()
+              li: a.sidenav__sub2(href="/" + page.url style="display:none " class="/phonegap-build/" class=document.url === page.url? "current" : "")!=page.title
+              - var coll = getCollection("pgbDocs").toJSON()
               // Only need to keep going if there's more than one matching since it will need to expand
               if (coll.length>1)
                   ul(class="/#{page.url}/" style="display:none") 
                       each doc in coll
                           - var subDepth = doc.url.match(/\//g||[]).length
                           if (subDepth>1)
-                              li: a.sidenav__sub3(href="/#{doc.url}" style="display:none " class="/#{page.url}/" class=document.url === doc.url ? "current" : "")!=doc.title
+                              li: a.sidenav__sub3(href=doc.url style="display:none " class="/#{page.url}/" class=document.url === doc.url ? "current" : "")!=doc.title
