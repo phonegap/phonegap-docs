@@ -33,7 +33,21 @@ module.exports = {
           url = (url.lastIndexOf('/') == url.length - 1)? url : url + "/";
           url = (url.indexOf('/') == 0)? url: "/" + url;
         }
-        return "<!DOCTYPE html>\n<html>\n	<head>\n		<title>" + (title || 'Redirect') + "</title>\n		<meta http-equiv=\"REFRESH\" content=\"0; url=" + url + "\">\n		<link rel=\"canonical\" href=\"" + url + "\" />\n	</head>\n	<body>\n		This page has moved. You will be automatically redirected to its new location. If you aren't forwarded to the new page, <a href=\"" + url + "\">click here</a>.\n		<script>document.location.href = \"" + url + "\"</script>\n	</body>\n</html>";
+        let retTemplate =
+`<!DOCTYPE html>
+<html>
+<head>
+  <title>${title || 'Redirect'}</title>
+  <meta http-equiv="REFRESH" content="0; url=${url}">
+  <link rel="canonical" href="${url}"/>
+</head>
+<body>
+  This page has moved. You will be automatically redirected to its new location.
+  If you aren't forwarded to the new page, <a href="${url}">click here</a>.
+  <script>document.location.href="${url}"</script>
+</body>
+</html>`;
+        return retTemplate;
       }
     },
     "stylus": {
@@ -103,8 +117,9 @@ module.exports = {
             .findAllLive({url:{$startsWith:'tutorials/'}}, [{ relativeBase: 1 }])
     },
     pgbDocs: function() {
-      return this.getCollection('gsDocs')
-          .findAllLive({url:{$startsWith:'phonegap-build/'}}, [{ relativeBase: 1 }])
+      let retVal = this.getCollection('gsDocs')
+        .findAllLive({url:{$startsWith:'phonegap-build/'}}, [{ relativeBase: 1 }]);
+      return retVal;
     }
   }
 };
