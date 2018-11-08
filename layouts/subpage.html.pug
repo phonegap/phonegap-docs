@@ -5,5 +5,5 @@ block append content
     - var next = getCollection("html").findOne({relativePath:document.next}).toJSON()
       .next-step
         .label next step&hellip;
-        a.next-block(href="/#{next.url}")!=next.title
+        a.next-block(href="/" + next.url)!=next.title
   a.github-page(href=githuburl(document.relativePath)) Edit this page on GitHub
