@@ -66,7 +66,7 @@ aside.sidebar
                   // Now only want to list depths greater than the main category and need to check for tabs and only use 1st or will duplicate
                   if (subDepth > 1) 
                       if (doc.tabs==null || doc.tabs[0].url===doc.url)
-                          li: a.sidenav__sub3(href=doc.url style="display:none " class="/#{page.url}/"  class=document.url === doc.url ? "current" : "")!=doc.title
+                          li: a.sidenav__sub3(href="/" + doc.url style="display:none " class="/#{page.url}/"  class=document.url === doc.url ? "current" : "")!=doc.title
       li
         a.sidenav__sub1(href="/phonegap-build" class=document.url === "phonegap-build"? "current" : "") PhoneGap Build
         ul.sidenav__sublist
@@ -81,4 +81,4 @@ aside.sidebar
                       each doc in coll
                           - var subDepth = doc.url.match(/\//g||[]).length
                           if (subDepth>1)
-                              li: a.sidenav__sub3(href=doc.url style="display:none " class="/#{page.url}/" class=document.url === doc.url ? "current" : "")!=doc.title
+                              li: a.sidenav__sub3(href="/" + doc.url style="display:none " class="/#{page.url}/" class=document.url === doc.url ? "current" : "")!=doc.title
