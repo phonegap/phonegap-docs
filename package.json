@@ -29,6 +29,6 @@
     "build-prod": "NODE_ENV=production npm run build",
     "start": "docpad run",
     "test": "bundle exec rake test",
-    "lint": "markdownlint docs"
+    "lint": "markdownlint docs -c .markdownlintrc"
   }
 }
