@@ -3,8 +3,10 @@ node_js:
 - '8'
 before_script:
 - npm run build-prod
+- mv node_modules/.bin/which node_modules/.bin/which.backup
 - rvm install 2.2.3
 - bundle install
+- mv node_modules/.bin/which.backup node_modules/.bin/which
 script:
 - npm run lint
 - bundle exec rake test
