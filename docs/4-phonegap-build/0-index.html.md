@@ -17,4 +17,4 @@ layout: subpage
   <li>[FAQ](faq)</li>
 </ul>
 
-_&nbsp;_
+## _&nbsp;_

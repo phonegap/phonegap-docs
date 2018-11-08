@@ -18,6 +18,6 @@ We've also put together a helpful <a href="/tutorials/develop/hello-world-explai
 on extending our "Hello World" example app.
 </p>
 
-_&nbsp;_
+## _&nbsp;_
 
 <div style="clear: both; margin-bottom: 20px;"></div>
