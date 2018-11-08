@@ -15,7 +15,7 @@ var docpad = require('docpad'),
  * available to capture an error.
  */
 
-docpad.createInstance(docpadInstanceConfig, function(e, docpadInstance) {
+docpad.create(docpadInstanceConfig, function(e, docpadInstance) {
     if (e) throw new Error('failed');
 
     docpadInstance.action('generate', docpadGenerateConfig, function(e, result) {

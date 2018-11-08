@@ -7,7 +7,7 @@ layout: subpage
 <p class="sub-paragraph">This guide is geared to helping people new to PhoneGap get up and running as quickly as possible with the least amount of setup and time.</p>
 
 <ol class="landing-submenu">
-  <li>[Install PhoneGap](1-install-phonegap/desktop)</li>
+  <li><a href='1-install-phonegap/desktop'>Install PhoneGap</a></li>
   <li>[Install Mobile App](2-install-mobile-app)</li>
   <li>[Create Your App](3-create-your-app/desktop)</li>
   <li>[Preview Your App](4-preview-your-app/desktop)</li>

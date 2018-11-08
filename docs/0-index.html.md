@@ -17,4 +17,7 @@ If you are new to PhoneGap, we recommend beginning by working through our
 We've also put together a helpful <a href="/tutorials/develop/hello-world-explained/">tutorial</a>
 on extending our "Hello World" example app.
 </p>
+
+## _&nbsp;_
+
 <div style="clear: both; margin-bottom: 20px;"></div>

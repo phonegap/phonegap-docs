@@ -32,9 +32,10 @@ describe('phonegap-docs', function() {
         var projectPath = path.join(__dirname, '..'),
             packagePath = path.join(projectPath, 'package.json'),
             packageContent = JSON.parse(fs.readFileSync(packagePath), 'utf8');
-
+        let packageConfig = require('../package.json');
+        console.log('packageConfig = ' + packageConfig);
         // build docs
-        npm.load(packageContent, function(e, npm) {
+        npm.load(packageConfig, function(e, npm) {
             npm.commands['run-script'](['build-prod'], function(e) {
                 expect(e).toEqual(null);
                 done();

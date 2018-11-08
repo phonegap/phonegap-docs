@@ -1,9 +1,9 @@
-extends ./default.html.jade
+extends ./default.html.pug
 
 block append content
   -if(document.next)
     - var next = getCollection("html").findOne({relativePath:document.next}).toJSON()
       .next-step
         .label next step&hellip;
-        a.next-block(href="/#{next.url}")!=next.title
+        a.next-block(href="/" + next.url)!=next.title
   a.github-page(href=githuburl(document.relativePath)) Edit this page on GitHub

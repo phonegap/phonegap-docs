@@ -1,3 +1,6 @@
+---
+url: 404.html
+---
 - var scripts = getBlock('scripts')
 - var styles = getBlock('styles')
 
@@ -5,7 +8,7 @@ doctype html
 html(lang='en')
 
   head
-    title=document.title +" | PhoneGap Docs"
+    title PhoneGap Docs 404
     block meta
       meta(name="viewport", content="initial-scale=1.0")
       script(src="//use.typekit.net/exp7awb.js")
@@ -21,28 +24,22 @@ html(lang='en')
       link(href='/styles/zenburn-highlight.css', rel='stylesheet')
       link(href='/styles/normalize.css', rel='stylesheet')
       link(href='http://phonegap.com/styles/main.css', rel='stylesheet')
-      link(href='/styles/index.css', rel='stylesheet')
-  body
+
+  body.no-subheader
     block site-header
-      include ./includes/site-header.jade
-    main
-      .bounds
-        block main
-          include ./includes/sidebar.jade
-          .content
-            p.language-select-container
-              select#language-select.language-select
-                option(value="http://docs.phonegap.com/" selected) English
-                option(value="http://ja.docs.phonegap.com/") Japanese
-            block content
-              -if(document.tabs)
-                include ./includes/tabs.jade
-              h1!= document.title
-              != content
+      include ../layouts/includes/site-header.pug
+    .page-content
+      .wrapper
+        .four-oh-four
+          h1.four-oh-four-title 404
+          p.four-oh-four-description Sorry, the page you are looking for does not exist.
+          .four-oh-four-image
+            img(src='http://phonegap.com/images/landspeeder_white_border.png', alt='Landspeeder')
+          a.button--cta(href='/') Speed to the homepage
     block site-footer
-      include ./includes/site-footer.jade
+      include ../layouts/includes/site-footer.pug
 
     block scripts
       != scripts.toHTML()
 
-    include ./includes/analytics.jade
+    include ../layouts/includes/analytics.pug
