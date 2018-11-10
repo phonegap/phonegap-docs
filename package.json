@@ -25,7 +25,7 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "build": "docpad clean && node scripts/docpad-generate.js",
+    "build": "docpad clean && docpad generate",
     "build-prod": "NODE_ENV=production npm run build",
     "start": "docpad run",
     "test": "bundle exec rake test",
