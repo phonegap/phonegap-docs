@@ -89,4 +89,4 @@ To disable support for all but normalScreens, set them to false:
 
 Your xml will be merged with the default manifest xml, and when conflicts occur, your specified values will take precedence. To check and debug the resulting Android Manifest, you can use the [Android apk-tool](https://code.google.com/p/android-apktool/) to unpack your compiled apk, and examine the AndroidManifest.xml.
 
-If you have any questions about using this beta feature, [don't hesitate to ask](http://community.phonegap.com/nitobi).
+If you have any questions about using this beta feature, [don't hesitate to ask](https://forums.adobe.com/community/phonegap).

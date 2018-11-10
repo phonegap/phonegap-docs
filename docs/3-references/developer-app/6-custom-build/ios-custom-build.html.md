@@ -83,4 +83,4 @@ If you want to distribute your version of the PhoneGap Developer app to others f
 
   ** Notice the final product exported is a file with an *.ipa* extension. Keep track of where you put this since you will need it for submitting your application to the app store. **
 
-<div class="alert--tip">**TIP:** If you are stuck in the packaging or provisioning process, check out [this page](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html) for specific details on the process.</div>
+<div class="alert--tip">**TIP:** If you are stuck in the packaging or provisioning process, check out <a href='https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html'>this page</a> for specific details on the process.</div>

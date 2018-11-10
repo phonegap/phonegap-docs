@@ -31,7 +31,7 @@ The browser platform support ensures the `deviceready` event is fired in the bro
 
 ![](/images/browser-support/chrome-debug-deviceready.png)
 
-<div class="alert--info">**Note:** Check out the [plugin support section](/references/browser-support/plugin-support) for more details on how plugins can be used in the browser.</div>
+<div class="alert--info">**Note:** Check out the <a href='/references/browser-support/plugin-support'>plugin support section</a> for more details on how plugins can be used in the browser.</div>
 
 ## No Browser Support Flag
 

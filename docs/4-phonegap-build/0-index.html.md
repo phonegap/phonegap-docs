@@ -4,17 +4,17 @@ url: phonegap-build
 layout: subpage
 ---
 
-<p class="sub-paragraph">[PhoneGap Build](http://build.phonegap.com/) is a cloud service for compiling PhoneGap applications. These docs will get you started, but if your question isn't answered here you can always check out the [community forum](https://forums.adobe.com/community/phonegap/build).</p>
+<p class="sub-paragraph"><a href='https://build.phonegap.com/'>PhoneGap Build</a> is a cloud service for compiling PhoneGap applications. These docs will get you started, but if your question isn't answered here you can always check out the <a href='https://forums.adobe.com/community/phonegap/build'>community forum</a>.</p>
 
 <ul class="landing-submenu">
-  <li>[Overview](overview)</li>
-  <li>[Getting Started](getting-started)</li>
-  <li>[Configuring](configuring)</li>
-  <li>[Tools](tools)</li>
-  <li>[Signing](signing/ios)</li>
-  <li>[Developer API](developer-api)</li>
-  <li>[Support](support)</li>
-  <li>[FAQ](faq)</li>
+  <li><a href='overview'>Overview</a></li>
+  <li><a href='getting-started'>Getting Started</a></li>
+  <li><a href='configuring'>Configuring</a></li>
+  <li><a href='tools'>Tools</a></li>
+  <li><a href='signing/overview'>Signing</a></li>
+  <li><a href='developer-api'>Developer API</a></li>
+  <li><a href='support'>Support</a></li>
+  <li><a href='faq'>FAQ</a></li>
 </ul>
 
 ## _&nbsp;_

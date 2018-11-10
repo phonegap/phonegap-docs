@@ -14,7 +14,7 @@ The server log displays messages about the status of the active project and can 
 
 1. To view the server log, click on the log button in the side menu shown below:
 
-  <div align="center">![Server Log Button](/images/docs-server-log-button.png)</div>
+  ![Server Log Button](/images/docs-server-log-button.png)
 
 1. You will be presented with a viewer displaying messages from local server and other useful messages.
 

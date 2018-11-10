@@ -61,20 +61,20 @@ If you want to see more detail about what exactly these custom preferences are d
 ## Multi-Platform
 
 <a name="phonegap-version" class="anchor"></a>
-<div class='alert--warning'>**phonegap-version**: PhoneGap Build only -- the version of PhoneGap / Cordova to be used. For a list of currently supported PhoneGap versions, and a breakdown of the individual platform versions, [go here](https://build.phonegap.com/current-support).</div>
+<div class='alert--warning'>**phonegap-version**: PhoneGap Build only -- the version of PhoneGap / Cordova to be used. For a list of currently supported PhoneGap versions, and a breakdown of the individual platform versions, <a href='https://build.phonegap.com/current-support'>go here</a>.</div>
 
 <a name="orientation" class="anchor"></a>
 <div class='alert--warning'>**orientation**: Device orientation; possible values are <code>default, landscape, or portrait</code>. Please note that <code>default</code> means <b>both</b> landscape and portrait are enabled. If you want to use each platform's default settings (usually portrait only), remove this tag from your config.xml file.</div>
 
 <a name="fullscreen" class="anchor"></a>
 <div class='alert--warning'>**fullscreen**: Makes your app full screen, with values <code>true or false</code>. This hides the status bar at the top, and is false by default. Note: may not be supported by newer versions of iOS, but users can use
-the [config-file element on phonegap build](http://phonegap.com/blog/2014/01/30/customizing-your-android-manifest-and-ios-property-list-on-phonegap-build/), and set UIViewControllerBasedStatusBarAppearance to false and UIStatusBarHidden to true.</div>
+the <a href='http://phonegap.com/blog/2014/01/30/customizing-your-android-manifest-and-ios-property-list-on-phonegap-build/'>config-file element on phonegap build</a>, and set UIViewControllerBasedStatusBarAppearance to false and UIStatusBarHidden to true.</div>
 
 <a name="signing-key" class="anchor"></a>
 <div class='alert--warning'>**signing-key**: specifies which signing key to use when building. This can either be the key's <code>id</code> or <code>title</code>. If a title is specified it will use the most recently uploaded key with that title. A <code>platform</code> must be specified either placing this preference inside a platform tag or adding a platform attribute.</div>
 
 <a name="pgb-builder-version" class="anchor"></a>
-<div class='alert--warning'>**pgb-builder-version**: With the release of cli-7.0.1 on PhoneGap Build, we did some refactoring of the build servers which may change how your app behaves. By default, this new builder is used for cli-7.0.1 and above, and the older builder is used for the older versions. However you can explicitly specify which builder to use ("1" for old builder, "2" for new builder). [See this blog post for more info.](https://blog.phonegap.com/phonegap-7-0-1-now-on-build-and-it-includes-some-important-changes-89087fe465f5)</div>
+<div class='alert--warning'>**pgb-builder-version**: With the release of cli-7.0.1 on PhoneGap Build, we did some refactoring of the build servers which may change how your app behaves. By default, this new builder is used for cli-7.0.1 and above, and the older builder is used for the older versions. However you can explicitly specify which builder to use ("1" for old builder, "2" for new builder). <a href='https://blog.phonegap.com/phonegap-7-0-1-now-on-build-and-it-includes-some-important-changes-89087fe465f5'>See this blog post for more info.</a></div>
 
 ## iOS Only
 
@@ -106,27 +106,27 @@ And use detect-data-types if meta tags don't work for you.</div>
 ## Android Only
 
 <a name="android-versionCode" class="anchor"></a>
-<div class='alert--warning'>**android-versionCode**: Internal Android Version Code. Sets the [version code](https://developer.android.com/studio/publish/versioning.html) for the application. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions.
+<div class='alert--warning'>**android-versionCode**: Internal Android Version Code. Sets the <a href='https://developer.android.com/studio/publish/versioning.html'>version code</a> for the application. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions.
 Default is generated from version as MAJOR \* 10000 + MINOR \* 100 + PATCH, or 1 if version cannot be parsed.</div>
 
 <a name="android-build-tool" class="anchor"></a>
 <div class='alert--warning'>**android-build-tool**: Specifies which android build tool to use. Values can be `gradle` or `ant`. Defaults to `gradle` for android >= 5 or `ant` for android < 5.</div>
 
 <a name="android-minSdkVersion" class="anchor"></a>
-<div class='alert--warning'>**android-minSdkVersion**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android >= 4.0).</div>
+<div class='alert--warning'>**android-minSdkVersion**: Minimum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in the Android documentation:(http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Defaults to 14 (Android >= 4.0).</div>
 
 <a name="android-maxSdkVersion" class="anchor"></a>
-<div class='alert--warning' id="android-maxSdkVersion">**android-maxSdkVersion**: Maximum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html). Unset by default.</div>
+<div class='alert--warning' id="android-maxSdkVersion">**android-maxSdkVersion**: Maximum Android SDK version. Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file - more details are in the <a href='http://developer.android.com/guide/topics/manifest/uses-sdk-element.html'>Android documentation</a>. Unset by default.</div>
 
 <a name="android-targetSdkVersion" class="anchor"></a>
 <div class='alert--warning'>**android-targetSdkVersion**:
-Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file -- an integer designating the API Level that the application targets. If not set, the default value equals that given to minSdkVersion. More details are in [the Android documentation](http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#target). Unset by default.</div>
+Corresponds to the <code>usesSdk</code> attributes in the <code>AndroidManifest.xml</code> file -- an integer designating the API Level that the application targets. If not set, the default value equals that given to minSdkVersion. More details are in <a href='http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#target'>the Android documentation</a>. Unset by default.</div>
 
 <a name="android-installLocation" class="anchor"></a>
-<div class='alert--warning'>**android-installLocation**: Where an app can be installed - defaults to <code>internalOnly</code> (as the Android SDK). <code>auto</code> or <code>preferExternal</code> allow the app to be installed on an SD card - this can lead to unexpected behavior. More details available in [the Android documentation](http://developer.android.com/guide/appendix/install-location.html).</div>
+<div class='alert--warning'>**android-installLocation**: Where an app can be installed - defaults to <code>internalOnly</code> (as the Android SDK). <code>auto</code> or <code>preferExternal</code> allow the app to be installed on an SD card - this can lead to unexpected behavior. More details available in <a href='http://developer.android.com/guide/appendix/install-location.html'>the Android documentation</a>.</div>
 
 <a name="android-windowSoftInputMode" class="anchor"></a>
-<div class='alert--warning'>**android-windowSoftInputMode**: How the main window of the activity interacts with the window containing the on-screen soft keyboard. More details, and possible values, available in [the Android documentation](http://developer.android.com/guide/topics/manifest/activity-element.html#wsoft).</div>
+<div class='alert--warning'>**android-windowSoftInputMode**: How the main window of the activity interacts with the window containing the on-screen soft keyboard. More details, and possible values, available in <a href='http://developer.android.com/guide/topics/manifest/activity-element.html#wsoft'>the Android documentation</a>.</div>
 
 ## Windows Only
 

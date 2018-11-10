@@ -9,7 +9,7 @@ tabs:
     url: references/browser-support/usage/cli
 ---
 
-<div class="alert--warning">You should ensure you have the [latest version](/getting-started/1-install-phonegap/desktop) of PhoneGap Desktop before getting started.</div>
+<div class="alert--warning">You should ensure you have the <a href='/getting-started/1-install-phonegap/desktop'>latest version</a> of PhoneGap Desktop before getting started.</div>
 
 PhoneGap makes it easy to take advantage of the browser target by automatically adding it as an additional platform when your apps are *served* (run on a local web server).
 
@@ -21,12 +21,12 @@ You can then open that IP Address directly in your browser (or via `http://local
 
 ![](/images/browser-support/live-reload.png)
 
-<div class="alert--tip">**TIP:** You can change the port number used for serving your projects via the [PhoneGap Desktop settings](/references/desktop-app/edit-settings).</div>
+<div class="alert--tip">**TIP:** You can change the port number used for serving your projects via the <a href='/references/desktop-app/edit-settings'>PhoneGap Desktop settings</a>.</div>
 
-<div class="alert--info">**Note:** If you're new to PhoneGap Desktop, check out the [Getting Started guide](/getting-started/1-install-phonegap/desktop).</div>
+<div class="alert--info">**Note:** If you're new to PhoneGap Desktop, check out the <a href='/getting-started/1-install-phonegap/desktop'>Getting Started guide</a>.</div>
 
 The browser platform support ensures the `deviceready` event is fired in the browser and allows you to use all of the core plugins without disrupting your development.
 
 ![](/images/browser-support/chrome-debug-deviceready.png)
 
-<div class="alert--info">**Note:** Check out the [plugin support section](/references/browser-support/plugin-support) for more details on how plugins can be used in the browser.</div>
+<div class="alert--info">**Note:** Check out the <a href='/references/browser-support/plugin-support'>plugin support section</a> for more details on how plugins can be used in the browser.</div>

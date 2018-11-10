@@ -14,4 +14,4 @@ For instance, take a look at the simple [DeviceProxy class](https://github.com/a
 
 Some of the core plugins use JavaScript API's that are actually supported in the Desktop browser natively, and in those cases the plugin will defer to use them. For instance, `cordova-plugin-geolocation` uses an API that is already supported in Chrome, Safari and Firefox.
 
-<div class="alert--tip">**TIP:** Check the [Can I Use](http://caniuse.com) site to see which JavaScript APIs are currently supported by a given browser.</div>
+<div class="alert--tip">**TIP:** Check the <a href='http://caniuse.com'>Can I Use</a> site to see which JavaScript APIs are currently supported by a given browser.</div>

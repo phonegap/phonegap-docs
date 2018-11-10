@@ -26,4 +26,4 @@ When you are developing an app to be consumed on a mobile device, it should go w
 
 1. Leverage mobile testing and automation services ([Sauce Labs](https://saucelabs.com), [Appium](http://appium.io/) etc) and mobile app intelligence services ([Apteligent](https://www.apteligent.com/), [Crashlytics](https://try.crashlytics.com/)) to provide crash test reporting and other analytics to ensure your app is providing the best user experience once delivered.
 
-<div class="alert--info">**Note:** Make a point to check out this [Next Steps Guide](https://cordova.apache.org/docs/en/latest/guide/next/index.html) in the Apache Cordova docs for more information on testing, remote debugging and more.</div>
+<div class="alert--info">**Note:** Make a point to check out this <a href='https://cordova.apache.org/docs/en/latest/guide/next/index.html'>Next Steps Guide</a> in the Apache Cordova docs for more information on testing, remote debugging and more.</div>

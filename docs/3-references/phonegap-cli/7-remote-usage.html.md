@@ -34,6 +34,6 @@ $ phonegap remote run ios
 $ phonegap remote logout
 ```
 
-<div class="alert--info">**NOTE:** You'll need to have an existing [PhoneGap Build](http://build.phonegap.com) account to use these commands. You'll be prompted to enter your credentials after running the `$ phonegap remote login` command. An Adobe ID can be used as well.</div>
+<div class="alert--info">**NOTE:** You'll need to have an existing <a href='https://build.phonegap.com'>PhoneGap Build</a> account to use these commands. You'll be prompted to enter your credentials after running the `$ phonegap remote login` command. An Adobe ID can be used as well.</div>
 
 <div class="alert--tip">**TIP:** The `phonegap remote run` command will execute both the `build` and `install` commands automatically and is the quickest path to building your app with the PhoneGap Build cloud service. The result is a QR code that can be scanned by your mobile device directly from the terminal to install the app.</div>

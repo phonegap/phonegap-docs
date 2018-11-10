@@ -9,7 +9,7 @@ Version 1 supports two forms of authentication: basic authentication over HTTPS,
 When using basic authentication, use your PhoneGap Build credentials (username and password) to authenticate each request:
 
 ```sh
-$ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/me
+$ curl -u andrew.lunny@adobe.com https://build.phonegap.com/api/v1/me
 {
   "created_at":"2010-10-12T19:10:16Z",
   "updated_at":"2010-11-29T19:58:00Z",
@@ -21,7 +21,7 @@ $ curl -u andrew.lunny@nitobi.com https://build.phonegap.com/api/v1/me
 To use token authentication, use basic authentication to post to `/token` with your request, and the token returns in the response:
 
 ```sh
-$ curl -u andrew.lunny@nitobi.com -X POST -d "" https://build.phonegap.com/token
+$ curl -u andrew.lunny@adobe.com -X POST -d "" https://build.phonegap.com/token
 {
   "token":"ASTRINGTOKEN"
 }
@@ -33,7 +33,7 @@ Then pass this token as a parameter for any call that you make:
 $ curl https://build.phonegap.com/api/v1/me?auth_token=ASTRINGTOKEN
 {
   "username":"alunny",
-  "email":"andrew.lunny@nitobi.com"
+  "email":"andrew.lunny@adobe.com"
 }
 ```
 

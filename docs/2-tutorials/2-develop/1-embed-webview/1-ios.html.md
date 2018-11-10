@@ -630,8 +630,7 @@ Here's an explanation of what is happening above...
 
   ![](/images/running-final.png)
 
-<div class="alert--info">The full [sample project](https://github.com/phonegap/phonegap-sample-hybrid-ios) for this guide can be found in the [PhoneGap GitHub repository](https://github.com/phonegap/phonegap-sample-hybrid-ios)
-for further reference.</div>
+<div class="alert--info">The full <a href='https://github.com/phonegap/phonegap-sample-hybrid-ios'>sample project</a> for this guide can be found in the <a href='https://github.com/phonegap/phonegap-sample-hybrid-ios'>PhoneGap GitHub repository</a> for further reference.</div>
 
 ### Conclusion
 

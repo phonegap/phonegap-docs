@@ -10,7 +10,7 @@ The PhoneGap Developer App runs on your mobile device and is used to preview the
 
  ![Pairing](/images/phonegap-developer-app-pairing.png)
 
-<div class="alert--info">**Note:** See our [Getting Started Guide](/getting-started/1-install-phonegap/desktop) for a step by step walkthrough of how to do this from scratch.</div>
+<div class="alert--info">**Note:** See our <a href='/getting-started/1-install-phonegap/desktop'>Getting Started Guide</a> for a step by step walkthrough of how to do this from scratch.</div>
 
 ## Supported Platforms
 

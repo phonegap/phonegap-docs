@@ -8,10 +8,10 @@ layout: subpage
 
 <ol class="landing-submenu">
   <li><a href='1-install-phonegap/desktop'>Install PhoneGap</a></li>
-  <li>[Install Mobile App](2-install-mobile-app)</li>
-  <li>[Create Your App](3-create-your-app/desktop)</li>
-  <li>[Preview Your App](4-preview-your-app/desktop)</li>
-  <li>[Going Further](5-going-further)</li>
+  <li><a href='2-install-mobile-app'>Install Mobile App</a></li>
+  <li><a href='3-create-your-app/desktop'>Create Your App</a></li>
+  <li><a href='4-preview-your-app/desktop'>Preview Your App</a></li>
+  <li><a href='5-going-further'>Going Further</a></li>
 </ol>
 
 Once you've completed the getting started section, be sure to head over to the [tutorials](/tutorials) and [references](/references) sections where you'll be able to dig into more advanced mobile app development related topics and find numerous useful resources.

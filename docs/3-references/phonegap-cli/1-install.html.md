@@ -43,10 +43,10 @@ Use the PhoneGap CLI to simply `create` and `serve` your PhoneGap apps for the [
 
 Use the PhoneGap CLI to create and configure your apps locally, then build and package them in the [PhoneGap Build](http://build.phonegap.com) cloud service.
 
- <div class="alert--info">**NOTE:** The `remote` command is used from the PhoneGap CLI to interface with PhoneGap Build once your project has been configured. The [Remote Usage Guide](/references/phonegap-cli/remote-usage) provides the details for this command. For details on how to specifically configure your apps for PhoneGap Build. Check out [their docs located here](http://docs.phonegap.com/phonegap-build/).</div>
+ <div class="alert--info">**NOTE:** The `remote` command is used from the PhoneGap CLI to interface with PhoneGap Build once your project has been configured. The <a href='/references/phonegap-cli/remote-usage'>Remote Usage Guide</a> provides the details for this command. For details on how to specifically configure your apps for PhoneGap Build. Check out <a href='http://docs.phonegap.com/phonegap-build/'>the docs located here</a>.</div>
 
 ### 3 - Standalone
 
 The PhoneGap CLI can be used to do everything from creating your apps to packaging them for distribution. To build, run and package apps for multiple platforms you'll need to install some additional SDK's and/or tools for the platforms you wish to target. Refer to the [Cordova Platform Guides](https://cordova.apache.org/docs/en/edge/index.html) for details on how to proceed for each platform.
 
-<div class="alert--tip">**TIP:** If you're developing for iOS on a Mac, you may want to install the [ios-sim](https://github.com/phonegap/ios-sim#installation) iOS simulator to emulate easily from the command line rather than going into Xcode.</div>
+<div class="alert--tip">**TIP:** If you're developing for iOS on a Mac, you may want to install the <a href='https://github.com/phonegap/ios-sim#installation'>ios-sim</a> iOS simulator to emulate easily from the command line rather than going into Xcode.</div>

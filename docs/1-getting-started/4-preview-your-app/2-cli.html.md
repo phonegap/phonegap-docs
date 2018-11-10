@@ -19,7 +19,7 @@ You can test your apps in your desktop browser first to speed up your initial de
 
   ![](/images/browser-support/browser-debug.png)
 
-<div class="alert--info">Refer to the [PhoneGap Browser Support Reference guide](/references/browser-support) for specific details.</div>
+<div class="alert--info">Refer to the <a href='/references/browser-support'>PhoneGap Browser Support Reference guide</a> for specific details.</div>
 
 ## Preview on a Device
 

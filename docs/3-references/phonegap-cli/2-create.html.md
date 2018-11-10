@@ -41,4 +41,4 @@ $ phonegap create path/to/myApp --id "com.example.app" --name "My App" --copy-fr
 $ phonegap create path/to/myApp --link-to ../myOtherApp
 ```
 
-<div class="alert--info">**Note:** Check out the [templates](/references/phonegap-cli/templates) guide for more details on how to create applications based on templates.</div>
+<div class="alert--info">**Note:** Check out the <a href='/references/phonegap-cli/templates'>templates</a> guide for more details on how to create applications based on templates.</div>
