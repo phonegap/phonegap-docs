@@ -11,8 +11,18 @@ building, packaging and distributing your mobile application.
 
 There are two choices available for building and packaging your applications:
 
-1. Build and package locally using the [PhoneGap CLI](http://docs.phonegap.com/references/phonegap-cli/)
-1. Use [PhoneGap Build](http://build.phonegap.com) cloud service for simplifying the build and app packaging process
+- Build and package locally using the [PhoneGap CLI](http://docs.phonegap.com/references/phonegap-cli/)
+  - you should be comfortable with command line environments
+  - you will need to install SDKs for each device, and there are some restrictions based on your operating system.
+
+      *ex. you cannot build iOS apps on a Windows PC, and cannot build Windows from a Mac*
+
+*OR*
+
+- Build and package with [PhoneGap Build](http://build.phonegap.com) cloud service
+  - build from anywhere, even trigger builds from your device and install it directly
+  - can pull and build directly from your repo
+  - no hardware, SDKs, or developer tooling to setup
 
 Which you choose will depend on how comfortable you are working with a command line environment and more closely with the native SDKs and tools versus leaving it to a cloud service and providing the required details.
 
