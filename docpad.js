@@ -1,5 +1,11 @@
 var path = require('path');
 
+
+
+let version = require('./package.json').version;
+console.log('generating as docVersion : ' + version);
+
+
 module.exports = {
   "srcPath": ".",
   "documentsPaths": [
@@ -17,6 +23,7 @@ module.exports = {
     "catchupDelay": 0
   },
   "templateData": {
+    "docVersion":version,
     "githuburl": function(slug){
       var reposlug = (process.env.TRAVIS_REPO_SLUG)? process.env.TRAVIS_REPO_SLUG : "phonegap/phonegap-docs";
       var gitbranch = (process.env.TRAVIS_BRANCH)? process.env.TRAVIS_BRANCH : "master";
@@ -59,16 +66,7 @@ module.exports = {
         "compress": true,
         "include css": true
       }
-    },
-    "browsersync": {
-      "open": true,
-      "ghostMode": {
-          "clicks": true,
-          "location": true,
-          "forms": true,
-          "scroll": true
-        }
-      }
+    }
   },
   "environments": {
     "development": {

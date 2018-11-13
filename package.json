@@ -1,6 +1,6 @@
 {
   "name": "phonegap-docs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The official PhoneGap documentation.",
   "repository": "git@github.com:phonegap/phonegap-docs.git",
   "engines": {
