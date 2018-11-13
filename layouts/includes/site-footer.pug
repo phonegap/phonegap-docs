@@ -11,14 +11,13 @@ footer.site-footer
           .site-footer__messages__item__description: p Have you read our latest blog post yet? If not, go now&hellip; there is solid gold in that post.
       .site-footer__lists
         nav.site-footer__list
-          h4 About
+          h4 About #{docVersion}
           ul
             li: a(href='http://phonegap.com/about/') Project Overview
             li: a(href='http://phonegap.com/about/license/') License
             li: a(href='http://phonegap.com/about/faq/') FAQs
             li: a(href='https://cordova.apache.org/') Apache Cordova
             li: a(href='http://phonegap.com/about/logos/') Logo
-            li: a(href='https://www.stickermule.com/user/1070635098/stickers') Stickers
             li: a(href='http://phonegap.com/about/contact') Contact Us
         nav.site-footer__list
           h4 Docs & Resources
@@ -28,15 +27,13 @@ footer.site-footer
             li: a(href='http://phonegap.com/tool/') Third Party Tools
             li: a(href='http://phonegap.com/event/') Events
             li: a(href='http://phonegap.com/book') Books
-            li: a(href='https://plugins.cordova.io/') Plugin Library
+            li: a(href='https://cordova.apache.org/plugins/') Plugin Library
         nav.site-footer__list
           h4 We're Everywhere
           ul
             li: a(href='https://github.com/phonegap/') GitHub
-            li: a(href='http://webchat.freenode.net/?randomnick=1&channels=%23phonegap&uio=d4') IRC
             li: a(href='http://twitter.com/phonegap') Twitter
             li: a(href='http://www.facebook.com/PhoneGap') Facebook
-            li: a(href='https://plus.google.com/communities/111220599704908202107') Google+
             li: a(href='https://www.youtube.com/user/phonegap') YouTube
     .subscribe
       .subscribe__description
@@ -47,10 +44,11 @@ footer.site-footer
         input.subscribe__form__submit(type='submit', value='Sign up')
     hr
     .site-footer__copyright
-      | Copyright &copy; 2015 Adobe Systems Inc. All rights reserved.
+      | Copyright &copy; 2018 Adobe. All rights reserved.
       br
       | Use of this website signifies your agreement to the
       a(href='http://www.adobe.com/legal/general-terms.html') Terms of Use
       |  and
       a(href='http://adobe.com/privacy') Privacy Policy and Cookies
       | .
+      div (v#{docVersion})
