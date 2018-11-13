@@ -17,7 +17,7 @@ There are two choices available for building and packaging your applications:
 
       *ex. you cannot build iOS apps on a Windows PC, and cannot build Windows from a Mac*
 
-*OR*
+### OR
 
 - Build and package with [PhoneGap Build](http://build.phonegap.com) cloud service
   - build from anywhere, even trigger builds from your device and install it directly
