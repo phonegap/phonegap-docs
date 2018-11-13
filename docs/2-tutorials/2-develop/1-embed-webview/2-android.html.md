@@ -188,7 +188,7 @@ $ plugman install --platform android --plugin https://github.com/hollyschinsky/H
   module.exports = new HybridBridge();
   ```
 
-1. Now create folders to reflect your Java package as subdirectories of the `src` folder (`src/org/sample/hybrid`). Navigate into `src/org/sample/hybrid` and create the Java interface for the plugin in a file named `HybridBridge.java`. Insert the following code:
+1. Now create folders to reflect your Java package as subdirectories of the `src` folder (`src/android/org/sample/hybrid`). Navigate into `src/android/org/sample/hybrid` and create the Java interface for the plugin in a file named `HybridBridge.java`. Insert the following code:
 
   ```java
   package org.sample.hybrid;
