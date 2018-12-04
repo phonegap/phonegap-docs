@@ -3,6 +3,7 @@ title: Augmented Reality
 url: tutorials/develop/wikitude
 github_url: https://github.com/phonegap/phonegap-docs/blob/wikitude/docs/2-tutorials/2-develop/9-developing-with-wikitude.html.md
 layout: subpage
+write: false
 ---
 
 ## Overview
