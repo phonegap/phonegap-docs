@@ -14,9 +14,9 @@ The core sections discussed in this documentation article are:
 
 Here are some additional notes on using the API.
 
-- [JSON](#JSON)
-- [JSONP](#JSONP)
-- [HATEOAS](#HATEOAS)
+- [JSON](#json)
+- [JSONP](#jsonp)
+- [HATEOAS](#hateoas)
 
 ## JSON
 
