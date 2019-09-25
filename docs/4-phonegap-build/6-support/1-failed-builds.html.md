@@ -197,7 +197,7 @@ For the brave the documentation is [here](http://tools.android.com/tech-docs/new
 
 ## Plugin error
 
-The most likely cause for this error is error is that you have included plugin  javascript files in your app package, such as barcodescanner.js, GAPlugin.js,  cdv-plugin-fb-connect.js, or any other plugin files such as the childbrowser  assets directory.
+The most likely cause for this error is that you have included plugin  javascript files in your app package, such as barcodescanner.js, GAPlugin.js,  cdv-plugin-fb-connect.js, or any other plugin files such as the childbrowser  assets directory.
 
 Previously we used pluginstall to install plugins, which would simply overwrite files in your app. However we recently migrated to plugman, which will not overwrite these files and instead fails. So make sure you remove them!
 
