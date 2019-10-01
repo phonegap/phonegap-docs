@@ -292,24 +292,6 @@ ol.landing-submenu
   color #888888
   font-size 1.35rem
   line-height 1.9rem
-.language-select-container
-  text-align right
-  padding 0
-  margin 0
-.language-select
-  -webkit-appearance none
-  -moz-appearance none
-  appearance none
-  padding 6px 44px 6px 15px
-  border-radius 5px
-  color #033450
-  border 1px solid #999
-  background url('/images/chevron.svg') no-repeat
-  background-position right center
-  background-size 30px 9px
-  line-height normal
-  &::-ms-expand
-    display none
 @media (min-width: 820px)
   body
     padding-top 180px
