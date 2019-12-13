@@ -16,7 +16,7 @@
     "docpad-plugin-pug": "~2.2.0",
     "docpad-plugin-stylus": "~2.14.0",
     "jasmine": "^3.3.0",
-    "npm": "^6.4.1",
+    "npm": "^6.13.4",
     "serve": "^10.0.2"
   },
   "devDependencies": {
