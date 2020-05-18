@@ -16,6 +16,7 @@ If you are new to PhoneGap, we recommend beginning by working through our
 <a href="/getting-started/1-install-phonegap/desktop">Getting Started Guide</a>.
 We've also put together a helpful <a href="/tutorials/develop/hello-world-explained/">tutorial</a>
 on extending our "Hello World" example app.
+  
 </p>
 
 ## _&nbsp;_
