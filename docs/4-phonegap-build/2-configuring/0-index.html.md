@@ -71,7 +71,7 @@ All of the above fields are standard Cordova config.xml tags. For more detailed 
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.phonegap.example"
-    versionCode = "10"
+    android-versionCode = "10"
     version     = "1.0.0" >
 
 <!-- versionCode is optional and Android only -->
