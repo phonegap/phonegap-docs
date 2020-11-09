@@ -94,7 +94,7 @@ If you omit this preference, Phonegap Build will use a default version (which is
 
 ## Where do I go to find PhoneGap Build help?
 
-Ask a question on our community forum: <http://community.phonegap.com/build>, or ask us on Twitter: <http://twitter.com/PhoneGapBuild>
+Ask a question on our community forum: <https://community.adobe.com/t5/PhoneGap-Build/bd-p/phonegap-build>, or ask us on Twitter: <http://twitter.com/PhoneGapBuild>
 
 <a name="sudden-failure" class="anchor"></a>
 
