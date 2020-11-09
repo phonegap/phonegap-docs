@@ -125,6 +125,15 @@ article.page
     padding-top 20px
     &:hover
       text-decoration none
+.announcement-banner
+  color #fff
+  width 100%
+  text-align center
+  background #F1B70B
+  top 0px
+  transition top .5s ease-in-out
+.scroll .announcement-banner
+  top -90px
 //Sidebar
 .sidebar
   display block
