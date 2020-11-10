@@ -17,7 +17,7 @@
     "docpad-plugin-stylus": "~2.14.0",
     "jasmine": "^3.3.0",
     "npm": "^6.4.1",
-    "serve": "^10.0.2"
+    "serve": "^10.1.2"
   },
   "devDependencies": {
     "fs-extra": "0.18.0",
