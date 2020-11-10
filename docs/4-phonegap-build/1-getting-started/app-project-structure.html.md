@@ -42,4 +42,4 @@ An example of an app that uses this format is below:
 
 ![](/images/build/legacy_project.png)
 
-Please note the `.pgbomit` file above. This indicates that before building the app this directory should be deleted.  A typical use case is that this directoy contains the splash screens or icons for all platforms and should not be included in the app.
+Please note the `.pgbomit` file above. This indicates that before building the app this directory should be deleted.  A typical use case is that this directory contains the splash screens or icons for all platforms and should not be included in the app.
